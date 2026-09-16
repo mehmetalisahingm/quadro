@@ -47,4 +47,46 @@ cd quadro
 git switch -c codex/gorev-adi
 ```
 
-Uygulamayı çalıştırma komutları, temel kurulum görevi tamamlandığında bu README'ye eklenecek.
+## Geliştirme
+
+### Gereksinimler
+
+- **Node.js ≥ 20.9** (repoda `.nvmrc` = 22; `nvm use` ile eşitleyebilirsin)
+- **npm** (tek paket yöneticisi; kilit dosyası `package-lock.json`)
+- Stack: **Next.js 15 (App Router) + TypeScript**
+
+### Kurulum ve çalıştırma
+
+```sh
+npm ci          # temiz kurulum (CI ile aynı)
+npm run dev     # geliştirme sunucusu → http://localhost:3000
+```
+
+### Komutlar
+
+| Komut | Açıklama |
+| --- | --- |
+| `npm run dev` | Geliştirme sunucusu |
+| `npm run build` | Üretim derlemesi |
+| `npm run start` | Üretim sunucusu (önce `build`) |
+| `npm run lint` | ESLint (`next lint`) |
+| `npm run typecheck` | TypeScript tip denetimi (`tsc --noEmit`) |
+| `npm run test` | Testler (Vitest) |
+| `npm run check` | lint + typecheck + test + build (CI ile aynı sıra) |
+
+CI, her `push` ve `pull_request` üzerinde bu kontrolleri (`npm ci` → lint → typecheck → test → build) çalıştırır: [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+
+### Klasör sahipliği
+
+Sahiplik [`.github/CODEOWNERS`](.github/CODEOWNERS) ve [`CONTRIBUTING.md`](CONTRIBUTING.md) ile aynıdır.
+
+| Yol | Sahip |
+| --- | --- |
+| `src/app/` | Mehmet |
+| `src/components/`, `src/styles/`, `src/animations/`, `public/` | Mehmet |
+| `src/features/game/`, `src/app/api/puzzle/` | Utku |
+| `src/lib/persistence/`, `src/lib/daily/`, `src/lib/analytics/`, `src/lib/monitoring/` | Utku |
+| `package.json`, `package-lock.json`, `.github/workflows/` | Utku |
+| `src/content/`, `docs/` | Mehmet + Utku |
+
+> Q01 yalnızca temel iskeleti kurar. `src/app/` içindeki başlangıç kabuğu Mehmet'in ana sayfa görevlerinde (Q05, Q11) geliştirilecektir.
