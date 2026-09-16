@@ -1,14 +1,13 @@
-import { APP_NAME, APP_TAGLINE } from "@/lib/config";
+import { HomeHero } from "@/components/home/HomeHero";
 
 export default function HomePage() {
   return (
-    <main>
-      <h1>{APP_NAME}</h1>
-      <p>{APP_TAGLINE}</p>
-      <p>
-        Proje temeli hazır. Ana sayfa ve oyun arayüzü sonraki görevlerde
-        (Q05, Q11, Q13) uygulanacaktır.
-      </p>
+    <main className="q-page-shell">
+      <HomeHero
+        state="new"
+        puzzleNumber={1}
+        dateLabel="20 EYLÜL 2026"
+      />
     </main>
   );
 }
