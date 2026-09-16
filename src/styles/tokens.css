@@ -1,0 +1,129 @@
+/* Quadro design tokens — see docs/DESIGN_SYSTEM.md. */
+:root {
+  color-scheme: light;
+
+  --q-color-canvas: #f6f3ee;
+  --q-color-surface: #fffefb;
+  --q-color-surface-raised: #ffffff;
+  --q-color-ink: #20242d;
+  --q-color-ink-muted: #696b73;
+  --q-color-ink-subtle: #8a8a90;
+  --q-color-border: #d9d4cc;
+  --q-color-border-strong: #b8b1a8;
+  --q-color-focus: #096a72;
+  --q-color-focus-soft: rgb(9 106 114 / 0.24);
+  --q-color-danger: #b42318;
+  --q-color-danger-soft: #fbe9e7;
+
+  --q-group-yellow: #f2cf62;
+  --q-group-yellow-ink: #332700;
+  --q-group-green: #8ac79a;
+  --q-group-green-ink: #11351e;
+  --q-group-blue: #8abbd7;
+  --q-group-blue-ink: #092d3a;
+  --q-group-purple: #b8a3de;
+  --q-group-purple-ink: #291b4d;
+
+  --q-font-sans: "IBM Plex Sans", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --q-font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
+  --q-font-weight-regular: 400;
+  --q-font-weight-medium: 500;
+  --q-font-weight-semibold: 650;
+  --q-font-weight-bold: 700;
+
+  --q-space-1: 4px;
+  --q-space-2: 8px;
+  --q-space-3: 12px;
+  --q-space-4: 16px;
+  --q-space-5: 20px;
+  --q-space-6: 24px;
+  --q-space-7: 32px;
+  --q-space-8: 48px;
+
+  --q-radius-sm: 10px;
+  --q-radius-md: 16px;
+  --q-radius-lg: 24px;
+  --q-radius-pill: 999px;
+  --q-touch-target: 44px;
+  --q-content-max: 1120px;
+  --q-board-max: 640px;
+
+  --q-shadow-card: 0 1px 1px rgb(32 36 45 / 0.05), 0 6px 18px rgb(32 36 45 / 0.06);
+  --q-shadow-card-hover: 0 2px 2px rgb(32 36 45 / 0.06), 0 10px 24px rgb(32 36 45 / 0.1);
+  --q-shadow-focus: 0 0 0 3px var(--q-color-focus-soft);
+
+  --q-motion-fast: 120ms;
+  --q-motion-feedback: 220ms;
+  --q-motion-group: 380ms;
+  --q-motion-final: 520ms;
+  --q-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --q-ease-spring: cubic-bezier(0.22, 1.2, 0.36, 1);
+}
+
+/* Shared primitives are deliberately small; components should compose them. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--q-color-canvas);
+  color: var(--q-color-ink);
+  font-family: var(--q-font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--q-color-canvas);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  min-block-size: var(--q-touch-target);
+}
+
+:focus-visible {
+  outline: 3px solid var(--q-color-focus);
+  outline-offset: 3px;
+  box-shadow: var(--q-shadow-focus);
+}
+
+.q-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.q-card {
+  border: 1px solid var(--q-color-border);
+  border-radius: var(--q-radius-md);
+  background: var(--q-color-surface);
+  box-shadow: var(--q-shadow-card);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
