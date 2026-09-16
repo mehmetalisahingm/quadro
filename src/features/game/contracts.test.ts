@@ -8,44 +8,16 @@ import {
   type Four,
   type GameController,
   type GameSnapshot,
-  type Puzzle,
   type PuzzleGroup,
   type SubmitOutcome,
   type SubmitResult,
   type WordId,
 } from "@/features/game/contracts";
+import { standardPuzzle } from "@/features/game/fixtures/puzzles";
 
-// docs/CONTRACTS.md içindeki belge örneğiyle aynı bulmaca; yayın stoğunda yer almaz.
-function group(
-  id: string,
-  title: string,
-  difficulty: PuzzleGroup["difficulty"],
-  texts: Four<string>,
-): PuzzleGroup {
-  const [a, b, c, d] = texts;
-  const word = (text: string) => ({ id: slugifyTr(text), text });
-  return {
-    id,
-    title,
-    words: [word(a), word(b), word(c), word(d)],
-    difficulty,
-    explanation: `${title} için örnek açıklama.`,
-  };
-}
-
-const renkler = group("renkler", "RENKLER", 1, ["KIRMIZI", "MAVİ", "YEŞİL", "SARI"]);
-const meyveler = group("meyveler", "MEYVELER", 2, ["ELMA", "ARMUT", "KİRAZ", "İNCİR"]);
-const gezegenler = group("gezegenler", "GEZEGENLER", 3, ["MARS", "VENÜS", "SATÜRN", "MERKÜR"]);
-const sehirler = group("sehirler", "ŞEHİRLER", 4, ["ADANA", "BURSA", "İZMİR", "MUĞLA"]);
-
-const puzzle: Puzzle = {
-  schemaVersion: 1,
-  revision: 1,
-  id: "ornek-001",
-  date: "2026-09-20",
-  language: "tr",
-  groups: [renkler, meyveler, gezegenler, sehirler],
-};
+// docs/CONTRACTS.md örnek akışlarıyla aynı standart fixture; yayın stoğunda yer almaz.
+const puzzle = standardPuzzle;
+const [renkler, meyveler, gezegenler, sehirler] = puzzle.groups;
 
 function idsOf(target: PuzzleGroup): Four<WordId> {
   const [a, b, c, d] = target.words;
