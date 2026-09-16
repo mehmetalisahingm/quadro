@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "q-002",
+  "date": "2026-09-21",
+  "language": "tr",
+  "purpose": "blind-review",
+  "words": [
+    { "id": "q002-w11", "text": "TAŞ" },
+    { "id": "q002-w04", "text": "BAL" },
+    { "id": "q002-w15", "text": "CEZA" },
+    { "id": "q002-w07", "text": "TAVŞAN" },
+    { "id": "q002-w09", "text": "İMZA" },
+    { "id": "q002-w14", "text": "BİLET" },
+    { "id": "q002-w02", "text": "PEYNİR" },
+    { "id": "q002-w05", "text": "KURT" },
+    { "id": "q002-w16", "text": "SAÇ" },
+    { "id": "q002-w10", "text": "GOL" },
+    { "id": "q002-w01", "text": "ZEYTİN" },
+    { "id": "q002-w08", "text": "KAPLAN" },
+    { "id": "q002-w13", "text": "AĞAÇ" },
+    { "id": "q002-w12", "text": "TUR" },
+    { "id": "q002-w03", "text": "REÇEL" },
+    { "id": "q002-w06", "text": "ASLAN" }
+  ]
+}
