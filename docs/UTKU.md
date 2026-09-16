@@ -1,4 +1,4 @@
-# Utku'in görevleri
+# Utku'nun görevleri
 
 GitHub: [@Utkuuzun14](https://github.com/Utkuuzun14) · **A — motor ve altyapı**
 

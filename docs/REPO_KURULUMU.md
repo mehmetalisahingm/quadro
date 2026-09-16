@@ -17,7 +17,9 @@ Tarih: 16 Eylül 2026
 
 ## Ana dal koruması
 
-İlk push sonrasında GitHub API üzerinden doğrulanacak.
+GitHub API ile koruma açılması denendi; mevcut hesap planı private repoda bu özelliği desteklemediği için HTTP 403 döndü. GitHub Pro veya public repo gerektiği bildirildi. Repo private olarak korundu; **main dalında zorunlu PR/onay koruması etkin değildir.**
+
+Bu nedenle diğer kişinin review'u ve PR üzerinden çalışma şu anda ekip kuralıdır; GitHub tarafından zorlanmaz. Squash birleştirme ayarları, görev atamaları, CODEOWNERS ve şablonlar etkindir. CI kurulumu sonrasında başarılı kontrollerin zorunlu hale getirilmesi de hesap planının desteğine bağlıdır.
 
 ## CI ve uygulama
 
