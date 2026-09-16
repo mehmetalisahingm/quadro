@@ -23,7 +23,7 @@ Quadro geçici proje adıdır. Nihai oyun adı henüz seçilmedi.
 - [Tüm görevler ve bağımlılıklar](docs/GOREVLER.md)
 - [GitHub issue'ları](https://github.com/mehmetalisahingm/quadro/issues)
 - [Fazlar / milestones](https://github.com/mehmetalisahingm/quadro/milestones)
-- [Çalışma ve inceleme kuralları](CONTRIBUTING.md)
+- [Çalışma kuralları](CONTRIBUTING.md)
 - [Görev tanımlarının kaynak verisi](docs/TASKS.json)
 
 Görev ilerlemesinin güncel kaynağı GitHub issue durumudur. Belgelerdeki listeler başlangıç planını gösterir.
@@ -39,7 +39,7 @@ Bu akış gerçek motorla birleşmeden kapsamlı son animasyonlara geçilmez. G�
 1. Repo davetini kabul et ve depoyu klonla.
 2. Kendi görev sayfandaki başlangıç issue'sunu aç; bağımlılıkları kontrol et.
 3. `main` üzerinden kısa ömürlü bir `codex/...` dalı aç.
-4. Issue kabul ölçütlerini karşılayıp PR aç; diğer kişiden review iste.
+4. Issue kabul ölçütlerini karşılayıp PR aç; kendi doğrulama kanıtını ekle. Review zorunlu değildir.
 
 ```sh
 git clone https://github.com/mehmetalisahingm/quadro.git

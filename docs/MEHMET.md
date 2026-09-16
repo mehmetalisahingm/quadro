@@ -2,7 +2,7 @@
 
 GitHub: [@mehmetalisahingm](https://github.com/mehmetalisahingm) · **B — tasarım ve arayüz**
 
-Ana sorumluluğunda 21 issue bulunur. Diğer geliştirici @Utkuuzun14 review yapar. Bulmaca görevlerinde review, cevaplar görülmeden kör çözümle başlar.
+Ana sorumluluğunda 21 issue bulunur. Her teslimin doğrulamasını sen yaparsın; @Utkuuzun14 review'u zorunlu değildir. Bulmaca görevlerinde istersen cevapları görmeden kör deneme yapabilirsin.
 
 [GitHub'da açık görevlerim](https://github.com/mehmetalisahingm/quadro/issues?q=is%3Aissue%20is%3Aopen%20assignee%3Amehmetalisahingm)
 
@@ -13,7 +13,7 @@ Ana sorumluluğunda 21 issue bulunur. Diğer geliştirici @Utkuuzun14 review yap
 ## Teslim düzeni
 
 - Issue bağımlılıklarını kontrol et; tek amaçlı bir `codex/...` dalı aç.
-- Kabul ölçütlerini ve ilgili doğrulamayı tamamlayıp diğer kişiden PR review iste.
+- Kabul ölçütlerini ve ilgili doğrulamayı tamamlayıp PR aç; kendi kanıtını ekle. Review isteği zorunlu değildir.
 - Ortak dosyalara etkisi olan değişiklikleri önce diğer kişiyle netleştir.
 - Sonuç tamamlanmadıysa issue açık kalsın; kalan işi ve kanıtı yaz.
 
@@ -49,7 +49,7 @@ Ana sorumluluğunda 21 issue bulunur. Diğer geliştirici @Utkuuzun14 review yap
 
 | Görev | Sorumlu | Önce tamamlanacaklar |
 | --- | --- | --- |
-| [Q29 / #29](https://github.com/mehmetalisahingm/quadro/issues/29) — Utku'nun 15 bulmacasına kör çözüm ve yayın review'u | Mehmet | [Q27 / #27](https://github.com/mehmetalisahingm/quadro/issues/27) |
+| [Q29 / #29](https://github.com/mehmetalisahingm/quadro/issues/29) — Utku'nun 15 bulmacasına bağımsız kör deneme ve kalite notları | Mehmet | [Q27 / #27](https://github.com/mehmetalisahingm/quadro/issues/27) |
 | [Q30 / #30](https://github.com/mehmetalisahingm/quadro/issues/30) — Kart, grup birleşimi ve final animasyonları | Mehmet | [Q16 / #16](https://github.com/mehmetalisahingm/quadro/issues/16), [Q24 / #24](https://github.com/mehmetalisahingm/quadro/issues/24) |
 | [Q31 / #31](https://github.com/mehmetalisahingm/quadro/issues/31) — Minimal sesler ve tercih yönetimi | Mehmet | [Q14 / #14](https://github.com/mehmetalisahingm/quadro/issues/14), [Q15 / #15](https://github.com/mehmetalisahingm/quadro/issues/15), [Q20 / #20](https://github.com/mehmetalisahingm/quadro/issues/20) |
 | [Q32 / #32](https://github.com/mehmetalisahingm/quadro/issues/32) — Mobil, klavye ve erişilebilirlik kabulü | Mehmet | [Q12 / #12](https://github.com/mehmetalisahingm/quadro/issues/12), [Q23 / #23](https://github.com/mehmetalisahingm/quadro/issues/23), [Q25 / #25](https://github.com/mehmetalisahingm/quadro/issues/25), [Q30 / #30](https://github.com/mehmetalisahingm/quadro/issues/30), [Q31 / #31](https://github.com/mehmetalisahingm/quadro/issues/31) |

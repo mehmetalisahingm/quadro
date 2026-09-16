@@ -33,7 +33,7 @@
     {
       "id": 3,
       "title": "F3 — Kalite ve pilot",
-      "description": "Kör içerik onayı, animasyon/ses, erişilebilirlik, performans, ölçüm ve pilot doğrulaması."
+      "description": "İsteğe bağlı kör içerik denemesi, animasyon/ses, erişilebilirlik, performans, ölçüm ve pilot doğrulaması."
     },
     {
       "id": 4,
@@ -83,7 +83,7 @@
         "Tekrar tahmin, one-away, son hak, bitmiş oyun, karıştır ve seçim temizle davranışları belgeli.",
         "Kelime kimlikleri ve Türkçe normalizasyon yaklaşımı belirli; UI iş kuralı hesaplamıyor."
       ],
-      "validation": "Mehmet'in sözleşme review'u ve doğru/yanlış/terminal cevap örnekleri."
+      "validation": "Mehmet'in sözleşme ihtiyaç kontrolü ve doğru/yanlış/terminal cevap örnekleri."
     },
     {
       "id": "Q03",
@@ -123,7 +123,7 @@
         "Renk, tipografi, boşluk, köşe, gölge ve hareket tokenları belgeli.",
         "Seçili, odaklı, pasif, doğru ve yanlış durumları yalnız renge bağımlı değil."
       ],
-      "validation": "Mobil ve masaüstü tasarım panosu; Utku'nun uygulanabilirlik review'u."
+      "validation": "Mobil ve masaüstü tasarım panosu; token ve ekran tariflerinin kendi kontrolü."
     },
     {
       "id": "Q05",
@@ -162,16 +162,16 @@
       "acceptance": [
         "Her bulmaca 16 kelime, dört açıklama ve şaşırtma gerekçesi içeriyor.",
         "Alternatif tam çözümler ve doğal olmayan ifadeler için inceleme ölçütleri tanımlı.",
-        "Cevaplar kör çözücüye önceden gösterilmeyecek şekilde ayrılmış."
+        "Cevaplar isteğe bağlı kör denemeden önce açılmayacak şekilde ayrılmış."
       ],
-      "validation": "Üç taslak ve doldurulmuş editoryal kayıtlar; Utku'ya kör çözüm teslimi."
+      "validation": "Üç taslak ve doldurulmuş editoryal kayıtlar; isteğe bağlı kör deneme notu."
     },
     {
       "id": "Q07",
       "owner": "utku",
       "phase": 0,
       "area": "content",
-      "title": "İki prototip bulmaca ve Mehmet'in ilk taslaklarına kör review",
+      "title": "İki prototip bulmaca ve ilk taslaklarla bağımsız kör deneme",
       "dependencies": [
         "Q06"
       ],
@@ -183,9 +183,9 @@
       "acceptance": [
         "İki yeni prototip rehbere uygun ve açıklamalı.",
         "Mehmet'in üç taslağı için tahmin sırası, takılma ve itiraz notları kayıtlı.",
-        "Revizyonlar yazara iletilmiş; kendi bulmacalarına tek başına onay verilmemiş."
+        "Bağımsız deneme notları yazara iletilebilir; her yazar kendi içeriğinin editoryal kontrolünü yapar."
       ],
-      "validation": "Beş prototiplik havuz ve üç bağımsız kör çözüm kaydı."
+      "validation": "Beş prototiplik havuz ve isteğe bağlı bağımsız kör deneme kaydı."
     },
     {
       "id": "Q08",
@@ -384,7 +384,7 @@
         "Son doğru grup animasyonu ile won ekranı aynı doğru sonucu alıyor.",
         "Kazanma, kaybetme ve yanlış/tekrar senaryoları uçtan uca çalışıyor."
       ],
-      "validation": "Bir kazanma ve bir kaybetme oturumunun tarayıcı kanıtı; Mehmet'in entegrasyon review'u."
+      "validation": "Bir kazanma ve bir kaybetme oturumunun tarayıcı kanıtı; Mehmet'in entegrasyon çalıştırma kanıtı."
     },
     {
       "id": "Q17",
@@ -605,9 +605,9 @@
       "acceptance": [
         "15 farklı adayın tamamı yapısal doğrulamadan geçiyor.",
         "Her adayın açıklaması, şaşırtmaları ve olası alternatifleri kayıtlı.",
-        "Kör review için cevaplardan ayrı çözücü görünümü hazırlanmış; kendi kendine yayın onayı verilmemiş."
+        "Cevaplardan ayrı kör deneme görünümü hazırlanmış; yazar kendi editoryal kontrolünü kaydetmiş."
       ],
-      "validation": "15 adayın kontrol çıktısı ve Utku'ya inceleme teslim listesi."
+      "validation": "15 adayın kontrol çıktısı ve isteğe bağlı kör deneme listesi."
     },
     {
       "id": "Q27",
@@ -627,16 +627,16 @@
       "acceptance": [
         "15 farklı adayın tamamı yapısal doğrulamadan geçiyor.",
         "Açıklamalar, kaynak gerektiren bilgiler ve yanıltıcı bağlar kayıtlı.",
-        "Mehmet'e kör review teslimi yapılmış; prototipler mükerrer sayılmamış."
+        "Mehmet'e isteğe bağlı kör deneme gönderilmiş; prototipler mükerrer sayılmamış."
       ],
-      "validation": "15 adayın kontrol çıktısı ve Mehmet'e inceleme teslim listesi."
+      "validation": "15 adayın kontrol çıktısı ve isteğe bağlı kör deneme listesi."
     },
     {
       "id": "Q28",
       "owner": "utku",
       "phase": 3,
       "area": "content",
-      "title": "Mehmet'in 15 bulmacasına kör çözüm ve yayın review'u",
+      "title": "Mehmet'in 15 bulmacasına bağımsız kör deneme ve kalite notları",
       "dependencies": [
         "Q26"
       ],
@@ -647,17 +647,17 @@
       "scope": "1–15 adaylarını cevaba bakmadan çöz; alternatif tam gruplamaları, zorluk ve doğal Türkçe kullanımını incele.",
       "acceptance": [
         "Her aday için bağımsız çözüm kaydı mevcut.",
-        "İtiraz edilen bağlar Mehmet'le düzeltilmiş ve tekrar kontrol edilmiş.",
-        "Onaylananların kimliği/revizyonu açık; reddedilenler stokta sayılmıyor."
+        "Gerekli revizyonlar kaydedilmiş ve kendi kalite kontrolü tamamlanmış.",
+        "Yazar kontrolünden geçenlerin kimliği/revizyonu açık; elenenler stokta sayılmıyor."
       ],
-      "validation": "15 adayın onay/revizyon tablosu ve kör çözüm notları."
+      "validation": "15 adayın editoryal kontrol/revizyon tablosu ve varsa kör deneme notları."
     },
     {
       "id": "Q29",
       "owner": "mehmet",
       "phase": 3,
       "area": "content",
-      "title": "Utku'nun 15 bulmacasına kör çözüm ve yayın review'u",
+      "title": "Utku'nun 15 bulmacasına bağımsız kör deneme ve kalite notları",
       "dependencies": [
         "Q27"
       ],
@@ -668,10 +668,10 @@
       "scope": "16–30 adaylarını cevapları görmeden çöz; şaşırtmanın adilliğini ve açıklamaları incele.",
       "acceptance": [
         "Her aday için bağımsız çözüm ve alternatif bağlantı kaydı mevcut.",
-        "İtirazlar Utku tarafından düzeltilip yeniden incelenmiş.",
-        "Onaylanan adaylar kimlik/revizyonla kayıtlı; kendi içeriği için tek başına onay yok."
+        "Gerekli revizyonlar Utku tarafından kaydedilip kendi kalite kontrolünden geçirilmiş.",
+        "Yazar kontrolünden geçen adaylar kimlik/revizyonla kayıtlı; elenenler stokta sayılmıyor."
       ],
-      "validation": "15 adayın onay/revizyon tablosu ve kör çözüm notları."
+      "validation": "15 adayın editoryal kontrol/revizyon tablosu ve varsa kör deneme notları."
     },
     {
       "id": "Q30",
@@ -890,11 +890,11 @@
       ],
       "scope": "Birlikte belirlenecek yayın gününden itibaren 30 onaylı bulmacayı tarihle; günlük atama ve yedek stok sorumluluğunu belirle.",
       "acceptance": [
-        "30 gün kesintisiz ve benzersiz; tamamı diğer kişi tarafından onaylı.",
+        "30 gün kesintisiz ve benzersiz; tamamı yazarın editoryal kontrolünden geçmiş.",
         "Doğrulayıcı tüm takvimde geçiyor; ilk yayın günü güncel ve açık.",
         "14 günlük hazır stok hedefi, revizyon ve acil içerik düzeltme akışı belgeli."
       ],
-      "validation": "Takvim kontrol çıktısı, onay matrisi ve ilk/son gün endpoint doğrulaması."
+      "validation": "Takvim kontrol çıktısı, editoryal kontrol matrisi ve ilk/son gün endpoint doğrulaması."
     },
     {
       "id": "Q39",
@@ -963,9 +963,9 @@
       "acceptance": [
         "30 onaylı içerik, başarılı teknik kontrol ve görsel kabul birlikte doğrulanmış.",
         "Kritik açık hata yok; bilinen sınırlar ve geri bildirim yolu açık.",
-        "Yayın kararı iki kişinin onayıyla, sürüm ve tarih belirtilerek kaydedilmiş."
+        "Yayın kararı sürüm ve tarih belirtilerek teslim sahiplerinin kaydına alınmış."
       ],
-      "validation": "İki kişinin onay kaydı, güncel README ve yayın kontrol listesi."
+      "validation": "Teslim sahiplerinin yayın kaydı, güncel README ve yayın kontrol listesi."
     },
     {
       "id": "Q42",
