@@ -1,20 +1,56 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-import { GAME_CONSTANTS } from "@/features/game/contracts";
+import {
+  GAME_CONSTANTS,
+  type SubmitOutcome,
+} from "@/features/game/contracts";
 import type { SampleScenarioId } from "@/features/game/fixtures";
 import { useSampleGame } from "@/features/game/react/useSampleGame";
 
+import { MistakeMeter } from "./MistakeMeter";
+import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
 
 export type GameBoardProps = {
   scenarioId?: SampleScenarioId;
 };
 
+function feedbackMessage(outcome: SubmitOutcome | null): string {
+  if (!outcome) return "";
+
+  switch (outcome.verdict) {
+    case "correct":
+      return `${outcome.solvedGroup.title} grubunu buldun.`;
+    case "one-away":
+      return "Bir kelime uzaktasın.";
+    case "wrong":
+      return "Bu dört kelime aynı grupta değil.";
+    case "repeated":
+      return "Bu dörtlüyü daha önce denedin.";
+    case "invalid":
+      if (outcome.reason === "selection-count") return "Gruplamak için dört kelime seç.";
+      if (outcome.reason === "game-ended") return "Bu oyun sona erdi.";
+      return "Bu seçim artık geçerli değil.";
+  }
+}
+
 export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
-  const { puzzle, controller } = useSampleGame(scenarioId);
+  const { puzzle, controller, initialResult } = useSampleGame(scenarioId);
   const { snapshot } = controller;
+  const [feedback, setFeedback] = useState<SubmitOutcome | null>(
+    initialResult?.outcome ?? null,
+  );
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(
+    () => () => {
+      if (transitionTimer.current) clearTimeout(transitionTimer.current);
+    },
+    [],
+  );
 
   const wordById = useMemo(
     () =>
@@ -26,9 +62,16 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
     [puzzle],
   );
 
+  const groupById = useMemo(
+    () => new Map(puzzle.groups.map((group) => [group.id, group] as const)),
+    [puzzle],
+  );
+
   const isPlaying = snapshot.status === "playing";
   const canSubmit =
-    isPlaying && snapshot.selectedWordIds.length === GAME_CONSTANTS.groupSize;
+    isPlaying &&
+    !isTransitioning &&
+    snapshot.selectedWordIds.length === GAME_CONSTANTS.groupSize;
 
   const statusLabel =
     snapshot.status === "won"
@@ -36,6 +79,20 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
       : snapshot.status === "lost"
         ? "Oyun sona erdi"
         : "Dört kelime seç";
+
+  const submitSelection = () => {
+    if (!canSubmit) return;
+
+    setIsTransitioning(true);
+    const result = controller.submitSelection();
+    setFeedback(result.outcome);
+
+    if (transitionTimer.current) clearTimeout(transitionTimer.current);
+    transitionTimer.current = setTimeout(() => {
+      setIsTransitioning(false);
+      transitionTimer.current = null;
+    }, 260);
+  };
 
   return (
     <section className="q-game-shell" aria-labelledby="game-board-title">
@@ -55,6 +112,20 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
         </span>
       </div>
 
+      <MistakeMeter
+        remaining={snapshot.mistakesRemaining}
+        total={GAME_CONSTANTS.maxMistakes}
+      />
+
+      {snapshot.solvedGroupIds.length > 0 ? (
+        <div className="q-solved-list" aria-label="Bulduğun gruplar">
+          {snapshot.solvedGroupIds.map((groupId) => {
+            const group = groupById.get(groupId);
+            return group ? <SolvedGroup key={groupId} group={group} /> : null;
+          })}
+        </div>
+      ) : null}
+
       <div className="q-game-board" aria-label="16 kelimelik oyun tahtası">
         {snapshot.remainingWordOrder.length > 0 ? (
           snapshot.remainingWordOrder.map((wordId) => {
@@ -67,7 +138,7 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
                 id={wordId}
                 text={word.text}
                 selected={snapshot.selectedWordIds.includes(wordId)}
-                disabled={!isPlaying}
+                disabled={!isPlaying || isTransitioning}
                 onToggle={controller.toggleWord}
               />
             );
@@ -77,12 +148,23 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
         )}
       </div>
 
+      <div
+        className="q-game-feedback"
+        data-verdict={feedback?.verdict ?? "idle"}
+        role="status"
+        aria-live="polite"
+      >
+        {feedbackMessage(feedback)}
+      </div>
+
       <div className="q-game-controls" aria-label="Oyun kontrolleri">
         <button
           type="button"
           className="q-game-control"
           onClick={controller.shuffle}
-          disabled={!isPlaying || snapshot.remainingWordOrder.length < 2}
+          disabled={
+            !isPlaying || isTransitioning || snapshot.remainingWordOrder.length < 2
+          }
         >
           Karıştır
         </button>
@@ -90,17 +172,19 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
           type="button"
           className="q-game-control"
           onClick={controller.clearSelection}
-          disabled={!isPlaying || snapshot.selectedWordIds.length === 0}
+          disabled={
+            !isPlaying || isTransitioning || snapshot.selectedWordIds.length === 0
+          }
         >
           Temizle
         </button>
         <button
           type="button"
           className="q-game-control q-game-submit"
-          onClick={() => controller.submitSelection()}
+          onClick={submitSelection}
           disabled={!canSubmit}
         >
-          Grupla
+          {isTransitioning ? "Kontrol ediliyor…" : "Grupla"}
         </button>
       </div>
 
