@@ -1,0 +1,994 @@
+{
+  "project": "Quadro",
+  "repository": "mehmetalisahingm/quadro",
+  "created": "2026-09-16",
+  "owners": {
+    "mehmet": {
+      "name": "Mehmet",
+      "login": "mehmetalisahingm",
+      "role": "B — tasarım ve arayüz"
+    },
+    "utku": {
+      "name": "Utku",
+      "login": "Utkuuzun14",
+      "role": "A — motor ve altyapı"
+    }
+  },
+  "phases": [
+    {
+      "id": 0,
+      "title": "F0 — Temel ve ilk içerik",
+      "description": "Ortak sözleşme, görsel yön ve beş kör denenmiş prototip. Motor ve UI için paralel çalışılabilir başlangıç."
+    },
+    {
+      "id": 1,
+      "title": "F1 — İlk çalışan oyun",
+      "description": "Ana sayfa → gerçek bulmaca → kazanma/kaybetme → paylaşım; gerçek motorla entegrasyon ve ilk tarayıcı kontrolleri."
+    },
+    {
+      "id": 2,
+      "title": "F2 — Günlük kullanım ve kayıt",
+      "description": "Günlük yayın, kayıt, süre, seri, istatistik ve ilk 30 bulmacanın taslakları."
+    },
+    {
+      "id": 3,
+      "title": "F3 — Kalite ve pilot",
+      "description": "Kör içerik onayı, animasyon/ses, erişilebilirlik, performans, ölçüm ve pilot doğrulaması."
+    },
+    {
+      "id": 4,
+      "title": "F4 — Yayın ve ilk hafta",
+      "description": "30 onaylı günlük içerik, gerçek cihaz kabulü, dağıtım, ortak yayın kararı ve ilk hafta değerlendirmesi."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "Q01",
+      "owner": "utku",
+      "phase": 0,
+      "area": "foundation",
+      "title": "Proje temeli, geliştirme komutları ve CI",
+      "dependencies": [],
+      "files": [
+        "package.json",
+        "src/app/",
+        "tsconfig.json",
+        ".github/workflows/"
+      ],
+      "scope": "Next.js ve TypeScript temelini kur; tek paket yöneticisi, kilit dosyası, lint, typecheck, test ve build komutlarını belirle. Mevcut planlama dosyalarını koru.",
+      "acceptance": [
+        "Temiz klonda kurulum ve geliştirme sunucusu çalışıyor.",
+        "CI gerçek lint, typecheck, ilgili testler ve üretim derlemesini çalıştırıyor.",
+        "README'de gereksinimler, komutlar ve klasör sahipliği açıklanmış."
+      ],
+      "validation": "Temiz kurulum çıktısı, yerel build ve ilk başarılı CI bağlantısı."
+    },
+    {
+      "id": "Q02",
+      "owner": "utku",
+      "phase": 0,
+      "area": "engine",
+      "title": "Ortak oyun tipleri ve kesin kural sözleşmesi",
+      "dependencies": [
+        "Q01"
+      ],
+      "files": [
+        "src/features/game/contracts.ts",
+        "docs/CONTRACTS.md",
+        "docs/GAME_RULES.md"
+      ],
+      "scope": "Planın Puzzle, GameSnapshot, SubmitResult ve GameController sözleşmelerini oluştur. Tahmin sonucu ile oyun durumunu ayrı tut; Mehmet ile UI ihtiyaçlarını karşılaştır.",
+      "acceptance": [
+        "Son doğru gönderim hem doğru grubu hem won durumunu taşıyor.",
+        "Tekrar tahmin, one-away, son hak, bitmiş oyun, karıştır ve seçim temizle davranışları belgeli.",
+        "Kelime kimlikleri ve Türkçe normalizasyon yaklaşımı belirli; UI iş kuralı hesaplamıyor."
+      ],
+      "validation": "Mehmet'in sözleşme review'u ve doğru/yanlış/terminal cevap örnekleri."
+    },
+    {
+      "id": "Q03",
+      "owner": "utku",
+      "phase": 0,
+      "area": "engine",
+      "title": "Geçerli örnek bulmacalar ve UI adaptörü",
+      "dependencies": [
+        "Q02"
+      ],
+      "files": [
+        "src/features/game/fixtures/",
+        "src/features/game/react/"
+      ],
+      "scope": "Mehmet'in motoru beklemeden geliştirebilmesi için GameController sözleşmesini karşılayan örnek adaptör ve ekran durumları hazırla.",
+      "acceptance": [
+        "Standart fixture tam 4 grup ve 16 benzersiz kelime içeriyor.",
+        "Doğru, çok yakın, yanlış, son hak, won, lost ve yarım oyun durumları üretilebiliyor.",
+        "Uzun Türkçe kelimeler bulunuyor; iki gruplu öğretici ayrı örnek olarak tanımlı."
+      ],
+      "validation": "Her durumun nasıl açılacağını anlatan kısa kullanım notu ve tip kontrolü."
+    },
+    {
+      "id": "Q04",
+      "owner": "mehmet",
+      "phase": 0,
+      "area": "ui",
+      "title": "Quadro görsel kimliği ve tasarım sistemi",
+      "dependencies": [],
+      "files": [
+        "docs/DESIGN_SYSTEM.md",
+        "src/styles/"
+      ],
+      "scope": "Geçici Quadro adıyla sıcak kırık beyaz, koyu mürekkep ve dört vurgu renginden başlayan özgün bir görsel yön belirle. Tipografi, kart oranları, boşluk ve durumları tasarla.",
+      "acceptance": [
+        "Türkçe karakterler ve uzun kelimeler için okunabilir font seçilmiş.",
+        "Renk, tipografi, boşluk, köşe, gölge ve hareket tokenları belgeli.",
+        "Seçili, odaklı, pasif, doğru ve yanlış durumları yalnız renge bağımlı değil."
+      ],
+      "validation": "Mobil ve masaüstü tasarım panosu; Utku'nun uygulanabilirlik review'u."
+    },
+    {
+      "id": "Q05",
+      "owner": "mehmet",
+      "phase": 0,
+      "area": "ui",
+      "title": "Ana sayfanın ilk ziyaret, devam ve sonuç tasarımları",
+      "dependencies": [
+        "Q04"
+      ],
+      "files": [
+        "docs/design/",
+        "src/components/home/"
+      ],
+      "scope": "İlk ekranda oyunu anlatan başlığı, günlük CTA'yı ve isteğe bağlı örneği tasarla. Kartlardan oyun alanına kısa geçişi tanımla.",
+      "acceptance": [
+        "320 px ve yaygın mobil genişlikte ana eylem kaydırmadan erişilebilir.",
+        "İlk ziyaret, yarım oyun ve bitmiş oyun için ayrı ana eylem tasarlanmış.",
+        "Örnek günlük cevabı göstermiyor; oynamak zorunlu intro beklemiyor."
+      ],
+      "validation": "Üç kullanıcı durumu için mobil/masaüstü tasarımları ve tıklanabilir akış."
+    },
+    {
+      "id": "Q06",
+      "owner": "mehmet",
+      "phase": 0,
+      "area": "content",
+      "title": "Bulmaca yazım rehberi ve üç ilk prototip",
+      "dependencies": [],
+      "files": [
+        "docs/PUZZLE_GUIDE.md",
+        "src/content/editorial/",
+        "src/content/puzzles/"
+      ],
+      "scope": "Türkçe çift anlam, deyim ve ortak ifade kurallarını yaz. Dört farklı zorluk taşıyan üç prototip bulmaca ve editoryal kayıtlarını hazırla.",
+      "acceptance": [
+        "Her bulmaca 16 kelime, dört açıklama ve şaşırtma gerekçesi içeriyor.",
+        "Alternatif tam çözümler ve doğal olmayan ifadeler için inceleme ölçütleri tanımlı.",
+        "Cevaplar kör çözücüye önceden gösterilmeyecek şekilde ayrılmış."
+      ],
+      "validation": "Üç taslak ve doldurulmuş editoryal kayıtlar; Utku'ya kör çözüm teslimi."
+    },
+    {
+      "id": "Q07",
+      "owner": "utku",
+      "phase": 0,
+      "area": "content",
+      "title": "İki prototip bulmaca ve Mehmet'in ilk taslaklarına kör review",
+      "dependencies": [
+        "Q06"
+      ],
+      "files": [
+        "src/content/puzzles/",
+        "src/content/editorial/"
+      ],
+      "scope": "Kendi iki prototipini hazırla; Mehmet'in üç bulmacasını cevaplara bakmadan çöz. Zorluk, sahte bağlar ve alternatif tam çözüm olasılıklarını kaydet.",
+      "acceptance": [
+        "İki yeni prototip rehbere uygun ve açıklamalı.",
+        "Mehmet'in üç taslağı için tahmin sırası, takılma ve itiraz notları kayıtlı.",
+        "Revizyonlar yazara iletilmiş; kendi bulmacalarına tek başına onay verilmemiş."
+      ],
+      "validation": "Beş prototiplik havuz ve üç bağımsız kör çözüm kaydı."
+    },
+    {
+      "id": "Q08",
+      "owner": "mehmet",
+      "phase": 0,
+      "area": "content",
+      "title": "İlk beş bulmacanın dış oyuncu denemesi",
+      "dependencies": [
+        "Q06",
+        "Q07"
+      ],
+      "files": [
+        "docs/research/",
+        "src/content/editorial/"
+      ],
+      "scope": "Utku'nun iki bulmacasını kör çöz; ilk beş prototipi farklı deneyimlerden toplam 5–10 kişiye denet. Verileri topla ve gerekli içerik revizyonlarını yap.",
+      "acceptance": [
+        "Her bulmaca için açıklama sonrası adalet değerlendirmesi var.",
+        "İlk kullanımda kuralın anlaşılması ve şaşırtıcı kelimeler gözlenmiş.",
+        "Yayına uygun adaylar ve yeniden yazılacaklar gerekçeleriyle ayrılmış."
+      ],
+      "validation": "Gerçek katılımcı sayısı ve bulgular; anonim gözlem özeti ve revizyon listesi."
+    },
+    {
+      "id": "Q09",
+      "owner": "utku",
+      "phase": 1,
+      "area": "engine",
+      "title": "Seçim, karıştırma ve doğru grup motoru",
+      "dependencies": [
+        "Q02"
+      ],
+      "files": [
+        "src/features/game/engine/",
+        "src/features/game/state/"
+      ],
+      "scope": "Saf fonksiyonlarla dört kart seçimini, deselection, temizleme, karıştırma ve doğru grup çözümünü uygula.",
+      "acceptance": [
+        "En fazla dört farklı çözülmemiş kimlik seçilebiliyor.",
+        "Doğru grup bir kez açılıyor; seçim temizleniyor ve hak değişmiyor.",
+        "Karıştırma yalnız kalan kartların sırasını etkiliyor; seçimi koruyor."
+      ],
+      "validation": "Seçim sınırı, doğru grup, bilinmeyen kimlik ve karıştırma davranış testleri."
+    },
+    {
+      "id": "Q10",
+      "owner": "utku",
+      "phase": 1,
+      "area": "engine",
+      "title": "Yanlış, çok yakın, tekrar ve oyun bitiş kuralları",
+      "dependencies": [
+        "Q09"
+      ],
+      "files": [
+        "src/features/game/engine/",
+        "src/features/game/tests/"
+      ],
+      "scope": "Hata haklarını, üç doğru kelime kontrolünü, sıra bağımsız tekrar tespitini ve terminal durumları tamamla.",
+      "acceptance": [
+        "One-away ve yanlış birer hak tüketiyor; tekrar/geçersiz gönderim tüketmiyor.",
+        "Dördüncü yanlış lost; dördüncü doğru grup won üretiyor.",
+        "Oyun bittikten sonra tahmin kabul edilmiyor; kayıpta açılan cevaplar çözülmüş sayılmıyor."
+      ],
+      "validation": "Son hak, tekrar farklı sıra, son grup ve bitmiş oyun senaryolarının testleri."
+    },
+    {
+      "id": "Q11",
+      "owner": "mehmet",
+      "phase": 1,
+      "area": "ui",
+      "title": "Ana sayfa ve uygulama kabuğunun uygulanması",
+      "dependencies": [
+        "Q01",
+        "Q03",
+        "Q05"
+      ],
+      "files": [
+        "src/app/page.tsx",
+        "src/app/layout.tsx",
+        "src/components/home/",
+        "src/styles/"
+      ],
+      "scope": "Onaylı ana sayfa tasarımını responsive uygula; /play girişini ve ortak sayfa kabuğunu oluştur.",
+      "acceptance": [
+        "Başlık, gün/numara, ana eylem ve kısa örnek bağlantısı çalışıyor.",
+        "Mobilde ilk eylem görünür; gereksiz düzen sıçraması yok.",
+        "Ana sayfadan oyuna geçiş klavye ve dokunmayla kullanılabiliyor."
+      ],
+      "validation": "320 px, telefon ve masaüstü görüntüleri; CTA akışının tarayıcı kontrolü."
+    },
+    {
+      "id": "Q12",
+      "owner": "mehmet",
+      "phase": 1,
+      "area": "ui",
+      "title": "İsteğe bağlı kısa öğretici",
+      "dependencies": [
+        "Q03",
+        "Q11"
+      ],
+      "files": [
+        "src/components/tutorial/",
+        "src/components/home/"
+      ],
+      "scope": "Günlük bulmacadan bağımsız iki gruplu kısa örnek geliştir. Oyuncu seçim ve doğru grubun açılmasını deneyimleyebilsin.",
+      "acceptance": [
+        "Öğreticiye katılmak zorunlu değil; çıkış ve oyuna geçiş açık.",
+        "Örnek günlük cevabı, süreyi, hakları veya istatistikleri etkilemiyor.",
+        "Yanlış ve doğru seçimler kısa, anlaşılır Türkçe mesajlarla açıklanıyor."
+      ],
+      "validation": "Öğreticiye girip çıkma ve ardından günlük oyunun temiz başlaması kontrolü."
+    },
+    {
+      "id": "Q13",
+      "owner": "mehmet",
+      "phase": 1,
+      "area": "ui",
+      "title": "4×4 oyun tahtası, WordTile ve kontroller",
+      "dependencies": [
+        "Q03",
+        "Q04"
+      ],
+      "files": [
+        "src/components/game/GameBoard.tsx",
+        "src/components/game/WordTile.tsx"
+      ],
+      "scope": "Sözleşmeye bağlı kart ızgarasını, dört seçim sınırının gösterimini ve Grupla/Karıştır/Temizle kontrollerini uygula.",
+      "acceptance": [
+        "UI seçim ve doğruluğu kendisi hesaplamıyor; controller kullanıyor.",
+        "320 px ve uzun Türkçe kelimelerde anlam kaybettiren kırpma bulunmuyor.",
+        "Seçili kart, klavye odağı ve Grupla etkinliği belirgin."
+      ],
+      "validation": "Tüm seçim durumları ve uzun kelimeler için mobil/masaüstü görüntüleri."
+    },
+    {
+      "id": "Q14",
+      "owner": "mehmet",
+      "phase": 1,
+      "area": "ui",
+      "title": "Çözülen gruplar, hak göstergesi ve tahmin geri bildirimi",
+      "dependencies": [
+        "Q13"
+      ],
+      "files": [
+        "src/components/game/SolvedGroup.tsx",
+        "src/components/game/MistakeMeter.tsx"
+      ],
+      "scope": "Doğru kategori satırını, kalan hakları ve yanlış/çok yakın/tekrar mesajlarını aynı tahta üzerinde göster.",
+      "acceptance": [
+        "Doğru grupta başlık ve kelimeler okunabilir biçimde açılıyor.",
+        "One-away mesajı farklı kelimeyi ifşa etmiyor ve yeterince uzun görünüyor.",
+        "Geçiş sırasında tekrar gönderme kilitli; hareket kapalıyken de bütün bilgiler mevcut."
+      ],
+      "validation": "Fixture üzerinden correct, wrong, one-away ve repeated durumlarının kanıtı."
+    },
+    {
+      "id": "Q15",
+      "owner": "mehmet",
+      "phase": 1,
+      "area": "ui",
+      "title": "Kazanma/kaybetme sonucu ve metin paylaşımı",
+      "dependencies": [
+        "Q14"
+      ],
+      "files": [
+        "src/components/game/GameResult.tsx",
+        "src/components/game/ShareCard.tsx"
+      ],
+      "scope": "Her iki bitiş durumunu, grup açıklamalarını ve gerçek tahmin geçmişinden spoilersız paylaşımı uygula.",
+      "acceptance": [
+        "Bulunan grup sayısı, hata, süre ve açıklamalar doğru gösteriliyor.",
+        "Paylaşımda her geçerli tahmin bir satır; cevap kelimeleri bulunmuyor.",
+        "Yerel paylaşım, kopyalama ve pano başarısızlığında seçilebilir metin çalışıyor."
+      ],
+      "validation": "Won/lost örnekleri, kopyalanan gerçek metin ve paylaşım alternatiflerinin kontrolü."
+    },
+    {
+      "id": "Q16",
+      "owner": "utku",
+      "phase": 1,
+      "area": "engine",
+      "title": "Gerçek motor ile arayüzün ilk entegrasyonu",
+      "dependencies": [
+        "Q10",
+        "Q11",
+        "Q12",
+        "Q15"
+      ],
+      "files": [
+        "src/features/game/react/",
+        "src/app/play/"
+      ],
+      "scope": "Örnek adaptörü gerçek motorla bağla. Mehmet ile ana sayfa → gerçek bulmaca → sonuç → paylaşım akışını birlikte tamamla.",
+      "acceptance": [
+        "Standart oyun çalışma zamanında mock sonuç kullanmıyor.",
+        "Son doğru grup animasyonu ile won ekranı aynı doğru sonucu alıyor.",
+        "Kazanma, kaybetme ve yanlış/tekrar senaryoları uçtan uca çalışıyor."
+      ],
+      "validation": "Bir kazanma ve bir kaybetme oturumunun tarayıcı kanıtı; Mehmet'in entegrasyon review'u."
+    },
+    {
+      "id": "Q17",
+      "owner": "utku",
+      "phase": 1,
+      "area": "quality",
+      "title": "İlk çalışan akışın tarayıcı regresyonları",
+      "dependencies": [
+        "Q16"
+      ],
+      "files": [
+        "tests/e2e/",
+        ".github/workflows/"
+      ],
+      "scope": "Gerçek motorlu ilk akış için anlamlı otomatik tarayıcı testleri ekle; kontrolün CI'da nasıl çalışacağını belgele.",
+      "acceptance": [
+        "Yeni kullanıcı oyunu başlatıp kazanabiliyor ve sonucunu paylaşabiliyor.",
+        "Dördüncü yanlışla kayıp, tekrar tahmin ve hızlı çift gönderme kontrol edilmiş.",
+        "Testler deterministik test içeriği kullanıyor; canlı günün cevaplarına bağımlı değil."
+      ],
+      "validation": "Başarılı tarayıcı test çıktıları ve CI bağlantısı."
+    },
+    {
+      "id": "Q18",
+      "owner": "utku",
+      "phase": 2,
+      "area": "content",
+      "title": "Bulmaca şeması ve içerik doğrulayıcı",
+      "dependencies": [
+        "Q02",
+        "Q08"
+      ],
+      "files": [
+        "src/features/game/validator/",
+        "src/content/",
+        "scripts/"
+      ],
+      "scope": "Yapısal doğrulayıcı ve içerik kontrol komutunu oluştur; oyuncuya verilen veri ile editoryal notları ayır.",
+      "acceptance": [
+        "Dört grup/16 kelime, benzersiz kimlik, dolu açıklama ve 1–4 zorlukları kontrol ediliyor.",
+        "Türkçe harf, Unicode ve boşluk normalizasyonuyla tekrarlar yakalanıyor.",
+        "Eksik/geçersiz tarih veya aynı güne iki atama kontrolü var; CI hatada duruyor."
+      ],
+      "validation": "Geçerli veri ve her kritik hata sınıfından örneklerle doğrulayıcı testleri."
+    },
+    {
+      "id": "Q19",
+      "owner": "utku",
+      "phase": 2,
+      "area": "engine",
+      "title": "Türkiye saatine göre günlük bulmaca yayını",
+      "dependencies": [
+        "Q18",
+        "Q16"
+      ],
+      "files": [
+        "src/lib/daily/",
+        "src/app/api/puzzle/"
+      ],
+      "scope": "Europe/Istanbul yayın gününü sunucuda belirle; yalnız yayımlanmış günlük içeriği sun ve eksik içerik durumunu tanımla.",
+      "acceptance": [
+        "Herkes için yayın günü Türkiye gece yarısında değişiyor.",
+        "Gelecek gün dosyaları ve editoryal kayıtlar istemci paketinde bulunmuyor.",
+        "Yükleme/eksik günlük içerik durumları UI'nın işleyeceği açık sonuçlar üretiyor."
+      ],
+      "validation": "Gece yarısı sınır testleri ve istemci paketindeki içerik denetimi."
+    },
+    {
+      "id": "Q20",
+      "owner": "utku",
+      "phase": 2,
+      "area": "engine",
+      "title": "İlerleme kaydı, sürümleme ve güvenli devam",
+      "dependencies": [
+        "Q16",
+        "Q18"
+      ],
+      "files": [
+        "src/lib/persistence/",
+        "src/features/game/state/"
+      ],
+      "scope": "Oturumu puzzleId/revision/schemaVersion ile kaydet; kart sırası, seçim, hak ve tahmin geçmişini yeniden yükle.",
+      "acceptance": [
+        "Yenilemeden sonra aynı durum ve kart sırasından devam ediliyor.",
+        "Bozuk veya uyumsuz kayıt uygulamayı çökertmiyor; geçmiş sonuçlar korunuyor.",
+        "İki kez bitiş işlenmesi veya eski kaydın bugünkü bulmacaya uygulanması engelleniyor."
+      ],
+      "validation": "Yenileme, bozuk kayıt, revizyon uyuşmazlığı ve tekrar sonuç testleri."
+    },
+    {
+      "id": "Q21",
+      "owner": "utku",
+      "phase": 2,
+      "area": "engine",
+      "title": "Aktif oyun süresi ve sekme yaşam döngüsü",
+      "dependencies": [
+        "Q20"
+      ],
+      "files": [
+        "src/features/game/state/",
+        "src/features/game/react/"
+      ],
+      "scope": "Yalnız görünür oyun ekranında işleyen süreyi motor adaptörüne bağla; kayıt ve geri yüklemeyle tutarlı çalıştır.",
+      "acceptance": [
+        "Ana sayfa, öğretici ve arka plan sekmesi süreyi artırmıyor.",
+        "Yenileme ve yeniden odaklanmada süre sıfırlanmıyor veya iki kez sayılmıyor.",
+        "Oyun bittiğinde süre duruyor; arayüzde ve paylaşımda aynı değer kullanılıyor."
+      ],
+      "validation": "Görünürlük, odak, yenileme ve terminal durumların kontrollü saat testleri."
+    },
+    {
+      "id": "Q22",
+      "owner": "utku",
+      "phase": 2,
+      "area": "engine",
+      "title": "Seri ve kişisel istatistik hesapları",
+      "dependencies": [
+        "Q19",
+        "Q20",
+        "Q21"
+      ],
+      "files": [
+        "src/features/game/scoring/",
+        "src/lib/persistence/"
+      ],
+      "scope": "Günlük kazanma serisi, en uzun seri, oynanan/kazanılan oyunlar ve ortalama hata hesaplarını tek kaynaktan üret.",
+      "acceptance": [
+        "Bir bulmaca sonucu istatistiği yalnız bir kez değiştiriyor.",
+        "Kayıp, gün atlama ve gece yarısından sonra eski günün bitirilmesi belgeli kurala uyuyor.",
+        "Cihaz bazlı veri ve bozuk kayıt kurtarma davranışı açık."
+      ],
+      "validation": "Tarih sınırları, arka arkaya kazanç, kayıp ve tekrar sonuç testleri."
+    },
+    {
+      "id": "Q23",
+      "owner": "mehmet",
+      "phase": 2,
+      "area": "ui",
+      "title": "Geri dönen kullanıcı ve yeni gün ana sayfası",
+      "dependencies": [
+        "Q11",
+        "Q19",
+        "Q20",
+        "Q22"
+      ],
+      "files": [
+        "src/components/home/",
+        "src/app/page.tsx"
+      ],
+      "scope": "Gerçek kayıt verisiyle Başla/Devam et/Sonucu gör durumlarını bağla; yeni günlük bulmaca zamanını göster.",
+      "acceptance": [
+        "Yarım oyun doğru bulmacaya dönüyor; bitmiş oyun sonucunu açıyor.",
+        "Açık eski oyun gece yarısında kullanıcının önünden kaldırılmıyor.",
+        "Yeni gün ve kalan süre Türkiye saatine göre tutarlı görünüyor."
+      ],
+      "validation": "Üç kullanıcı durumu ve gece yarısı geçişinin tarayıcı kanıtı."
+    },
+    {
+      "id": "Q24",
+      "owner": "mehmet",
+      "phase": 2,
+      "area": "ui",
+      "title": "Yükleme, içerik hatası ve kayıt kurtarma ekranları",
+      "dependencies": [
+        "Q19",
+        "Q20",
+        "Q23"
+      ],
+      "files": [
+        "src/components/game/",
+        "src/app/play/"
+      ],
+      "scope": "Günlük içerik yükleme/erişim hatalarını ve uyumsuz kayıt kurtarmayı anlaşılır arayüzlerle karşıla.",
+      "acceptance": [
+        "Yüklenme halinde yerleşim tutarlı ve eylemler güvenli.",
+        "İçerik hatasında anlaşılır mesaj ve yeniden deneme bulunuyor.",
+        "Kayıt kurtarma kullanıcıya açıklanıyor; eski sonuçlar yanlışlıkla silinmiyor."
+      ],
+      "validation": "Ağ hatası, eksik gün ve bozuk kayıt senaryolarının görüntüleri."
+    },
+    {
+      "id": "Q25",
+      "owner": "mehmet",
+      "phase": 2,
+      "area": "ui",
+      "title": "Seri ve istatistik arayüzü",
+      "dependencies": [
+        "Q15",
+        "Q22"
+      ],
+      "files": [
+        "src/components/stats/",
+        "src/app/stats/"
+      ],
+      "scope": "Seri, en uzun seri, kazanma oranı ve hata bilgilerini sade bir istatistik görünümüne bağla.",
+      "acceptance": [
+        "Hesaplamalar Utku'nun sağladığı kaynaktan geliyor.",
+        "İlk kullanım ve henüz sonuç olmayan durumlar düzgün gösteriliyor.",
+        "Verinin bu tarayıcıya ait olduğu anlaşılır; mobil ve klavyeyle erişilebilir."
+      ],
+      "validation": "Boş, birkaç oyunlu ve uzun serili fixture görüntüleri; sayısal karşılaştırma."
+    },
+    {
+      "id": "Q26",
+      "owner": "mehmet",
+      "phase": 2,
+      "area": "content",
+      "title": "İlk yayın stoğu: 1–15 numaralı bulmacalar",
+      "dependencies": [
+        "Q08",
+        "Q18"
+      ],
+      "files": [
+        "src/content/puzzles/",
+        "src/content/editorial/"
+      ],
+      "scope": "İlk 30 günlük stoğun 1–15 arası adaylarını üret. Uygun ilk prototipler bu sayıya dahil edilebilir; tekrar sayılmaz.",
+      "acceptance": [
+        "15 farklı adayın tamamı yapısal doğrulamadan geçiyor.",
+        "Her adayın açıklaması, şaşırtmaları ve olası alternatifleri kayıtlı.",
+        "Kör review için cevaplardan ayrı çözücü görünümü hazırlanmış; kendi kendine yayın onayı verilmemiş."
+      ],
+      "validation": "15 adayın kontrol çıktısı ve Utku'ya inceleme teslim listesi."
+    },
+    {
+      "id": "Q27",
+      "owner": "utku",
+      "phase": 2,
+      "area": "content",
+      "title": "İlk yayın stoğu: 16–30 numaralı bulmacalar",
+      "dependencies": [
+        "Q08",
+        "Q18"
+      ],
+      "files": [
+        "src/content/puzzles/",
+        "src/content/editorial/"
+      ],
+      "scope": "İlk 30 günlük stoğun 16–30 arası adaylarını üret; farklı bağlantı türlerini ve geniş kitleyi gözet.",
+      "acceptance": [
+        "15 farklı adayın tamamı yapısal doğrulamadan geçiyor.",
+        "Açıklamalar, kaynak gerektiren bilgiler ve yanıltıcı bağlar kayıtlı.",
+        "Mehmet'e kör review teslimi yapılmış; prototipler mükerrer sayılmamış."
+      ],
+      "validation": "15 adayın kontrol çıktısı ve Mehmet'e inceleme teslim listesi."
+    },
+    {
+      "id": "Q28",
+      "owner": "utku",
+      "phase": 3,
+      "area": "content",
+      "title": "Mehmet'in 15 bulmacasına kör çözüm ve yayın review'u",
+      "dependencies": [
+        "Q26"
+      ],
+      "files": [
+        "src/content/editorial/",
+        "src/content/puzzles/"
+      ],
+      "scope": "1–15 adaylarını cevaba bakmadan çöz; alternatif tam gruplamaları, zorluk ve doğal Türkçe kullanımını incele.",
+      "acceptance": [
+        "Her aday için bağımsız çözüm kaydı mevcut.",
+        "İtiraz edilen bağlar Mehmet'le düzeltilmiş ve tekrar kontrol edilmiş.",
+        "Onaylananların kimliği/revizyonu açık; reddedilenler stokta sayılmıyor."
+      ],
+      "validation": "15 adayın onay/revizyon tablosu ve kör çözüm notları."
+    },
+    {
+      "id": "Q29",
+      "owner": "mehmet",
+      "phase": 3,
+      "area": "content",
+      "title": "Utku'nun 15 bulmacasına kör çözüm ve yayın review'u",
+      "dependencies": [
+        "Q27"
+      ],
+      "files": [
+        "src/content/editorial/",
+        "src/content/puzzles/"
+      ],
+      "scope": "16–30 adaylarını cevapları görmeden çöz; şaşırtmanın adilliğini ve açıklamaları incele.",
+      "acceptance": [
+        "Her aday için bağımsız çözüm ve alternatif bağlantı kaydı mevcut.",
+        "İtirazlar Utku tarafından düzeltilip yeniden incelenmiş.",
+        "Onaylanan adaylar kimlik/revizyonla kayıtlı; kendi içeriği için tek başına onay yok."
+      ],
+      "validation": "15 adayın onay/revizyon tablosu ve kör çözüm notları."
+    },
+    {
+      "id": "Q30",
+      "owner": "mehmet",
+      "phase": 3,
+      "area": "ui",
+      "title": "Kart, grup birleşimi ve final animasyonları",
+      "dependencies": [
+        "Q16",
+        "Q24"
+      ],
+      "files": [
+        "src/animations/",
+        "src/components/game/"
+      ],
+      "scope": "Kısa seçim, yanlış geri bildirim, doğru grup birleşimi ve sayfa içi final hareketlerini gerçek motor üzerinde tamamla.",
+      "acceptance": [
+        "Hareketler kartların okunmasını ve sonraki eylemi gereksiz geciktirmiyor.",
+        "Son grup ile bitiş ekranı çakışmıyor; çift gönderme oluşmuyor.",
+        "Azaltılmış harekette eşdeğer bilgi korunuyor; aynı elemanı iki animasyon sistemi yönetmiyor."
+      ],
+      "validation": "Mobil ve masaüstü correct/wrong/final videoları; reduced-motion kontrolü."
+    },
+    {
+      "id": "Q31",
+      "owner": "mehmet",
+      "phase": 3,
+      "area": "ui",
+      "title": "Minimal sesler ve tercih yönetimi",
+      "dependencies": [
+        "Q14",
+        "Q15",
+        "Q20"
+      ],
+      "files": [
+        "public/sounds/",
+        "src/components/settings/"
+      ],
+      "scope": "Seçim, yanlış, çok yakın, doğru ve bitiş için kısa sesler bağla; ses tercihini kullanıcı kontrolüne ver.",
+      "acceptance": [
+        "Ses ilk kullanımda kapalı ve tercih sonraki ziyarette korunuyor.",
+        "Ses açma eylemi tarayıcı kısıtlarıyla uyumlu; bir olay tek kez çalıyor.",
+        "Ses kapalıyken oyunun hiçbir bilgisi kaybolmuyor."
+      ],
+      "validation": "Ses açık/kapalı, yenileme ve mobil tarayıcı kontrolü; kullanılan varlık kaydı."
+    },
+    {
+      "id": "Q32",
+      "owner": "mehmet",
+      "phase": 3,
+      "area": "quality",
+      "title": "Mobil, klavye ve erişilebilirlik kabulü",
+      "dependencies": [
+        "Q12",
+        "Q23",
+        "Q25",
+        "Q30",
+        "Q31"
+      ],
+      "files": [
+        "src/components/",
+        "src/styles/",
+        "docs/qa/"
+      ],
+      "scope": "Tam akışı 320 px, telefon ve masaüstünde; klavye, ekran okuyucu durumları, kontrast ve uzun kelimeler açısından kontrol et.",
+      "acceptance": [
+        "Kart hedefleri en az 44×44 CSS piksel; anlam kaybettiren kırpma yok.",
+        "Görünür odak, seçili durum ve durum mesajları erişilebilir.",
+        "Renk/ses/hareket kapalı veya ayırt edilemezken akış anlaşılır."
+      ],
+      "validation": "Kontrol matrisi, görüntüler ve giderilen bulgular; kalan sorunlar issue bağlantılı."
+    },
+    {
+      "id": "Q33",
+      "owner": "utku",
+      "phase": 3,
+      "area": "quality",
+      "title": "Üretim performansı ve istemci paket denetimi",
+      "dependencies": [
+        "Q19",
+        "Q30",
+        "Q31"
+      ],
+      "files": [
+        "src/app/",
+        "src/features/game/",
+        "docs/qa/"
+      ],
+      "scope": "Üretim derlemesinde yükleme, düzen sıçraması, ses/font maliyeti ve kart etkileşimlerini ölç; gereksiz yükleri azalt.",
+      "acceptance": [
+        "Gelecek bulmacalar ve editoryal dosyalar istemci paketinde bulunmuyor.",
+        "Ana eylem bekletilmiyor; üretim bundle raporu incelenmiş.",
+        "Laboratuvar ölçümü ve gerçek cihaz gözlemi ayrı raporlanmış."
+      ],
+      "validation": "Önce/sonra üretim ölçümleri, paket analizi ve hedef cihaz notu."
+    },
+    {
+      "id": "Q34",
+      "owner": "utku",
+      "phase": 3,
+      "area": "quality",
+      "title": "Ürün olayları, geri dönüş ölçümü ve hata takibi",
+      "dependencies": [
+        "Q17",
+        "Q22",
+        "Q23",
+        "Q24"
+      ],
+      "files": [
+        "src/lib/analytics/",
+        "src/lib/monitoring/",
+        "docs/ANALYTICS.md"
+      ],
+      "scope": "Ana sayfa→başla→ilk tahmin→bitiş→paylaşım girişimi akışını ve teknik hataları ölçülebilir hale getir.",
+      "acceptance": [
+        "Olay isimleri ve alanları belgeli; aynı bitiş iki kez sayılmıyor.",
+        "D1/D7 tanımları ve tarayıcı bazlı ölçüm sınırlaması açık.",
+        "Paylaşım girişimi gerçek gönderim diye raporlanmıyor; oyun cevapları ölçüm verisine gereksiz eklenmiyor."
+      ],
+      "validation": "Test oturumunun olay dizisi, örnek hata kaydı ve ölçüm doğrulaması."
+    },
+    {
+      "id": "Q35",
+      "owner": "mehmet",
+      "phase": 3,
+      "area": "quality",
+      "title": "20–30 kişilik ürün pilotu ve düzeltme listesi",
+      "dependencies": [
+        "Q17",
+        "Q24",
+        "Q25",
+        "Q28",
+        "Q29",
+        "Q32",
+        "Q34"
+      ],
+      "files": [
+        "docs/research/",
+        "docs/qa/"
+      ],
+      "scope": "Çalışan ürünü önerilen 20–30 kişilik pilotla dene; giriş ekranından kopuşu, kural anlaşılırlığını ve bulmaca adaletini değerlendir.",
+      "acceptance": [
+        "Gerçek katılımcı sayısı ve deneyim dağılımı kaydedilmiş.",
+        "Başlama, bırakma, sonuç ve paylaşım gözlemleri toplanmış.",
+        "Kritik sorunlar sahipli issue'lara ayrılmış; yayını engelleyenler açıkça belirtilmiş."
+      ],
+      "validation": "Anonim pilot raporu ve öncelikli düzeltme/yeniden deneme listesi."
+    },
+    {
+      "id": "Q36",
+      "owner": "utku",
+      "phase": 3,
+      "area": "quality",
+      "title": "Günlük kullanımın tam regresyon paketi",
+      "dependencies": [
+        "Q17",
+        "Q19",
+        "Q20",
+        "Q21",
+        "Q22",
+        "Q24",
+        "Q25"
+      ],
+      "files": [
+        "tests/",
+        "src/features/game/tests/",
+        ".github/workflows/"
+      ],
+      "scope": "Kayıt, gün değişimi, süre, seri ve paylaşım alternatiflerini ilk akış testlerine ekle. Hataları yeniden üretilebilir testlerle kapat.",
+      "acceptance": [
+        "Yenileme, bozuk kayıt, eski gün, son hak ve tekrar gönderim kapsanmış.",
+        "Kontroller üretim derlemesiyle uyumlu ve CI'da başarıyla çalışıyor.",
+        "Gerçek Safari/iOS kontrolü ile otomatik WebKit kanıtı birbirinden ayrılmış."
+      ],
+      "validation": "Başarılı regresyon/CI raporu ve kapsanan kritik davranış listesi."
+    },
+    {
+      "id": "Q37",
+      "owner": "mehmet",
+      "phase": 4,
+      "area": "release",
+      "title": "Metadata, favicon ve paylaşım önizlemesi",
+      "dependencies": [
+        "Q11",
+        "Q15"
+      ],
+      "files": [
+        "src/app/",
+        "public/",
+        "docs/qa/"
+      ],
+      "scope": "Quadro geçici markasıyla tutarlı sayfa başlıkları, Türkçe açıklamalar, favicon ve spoilersız OG görselini hazırla.",
+      "acceptance": [
+        "Ana sayfa ve oyun bağlantısı anlamlı başlık/açıklama taşıyor.",
+        "OG görseli günlük kelimeleri veya cevapları ifşa etmiyor.",
+        "Mobil ikonlar ve gerçek bağlantı önizlemesi kontrol edilmiş."
+      ],
+      "validation": "Metadata çıktısı, ikon görüntüleri ve önizleme kanıtı."
+    },
+    {
+      "id": "Q38",
+      "owner": "utku",
+      "phase": 4,
+      "area": "content",
+      "title": "30 onaylı bulmacanın yayın takvimi ve stok kontrolü",
+      "dependencies": [
+        "Q19",
+        "Q28",
+        "Q29",
+        "Q35"
+      ],
+      "files": [
+        "src/content/puzzles/",
+        "src/content/editorial/",
+        "docs/CONTENT_OPERATIONS.md"
+      ],
+      "scope": "Birlikte belirlenecek yayın gününden itibaren 30 onaylı bulmacayı tarihle; günlük atama ve yedek stok sorumluluğunu belirle.",
+      "acceptance": [
+        "30 gün kesintisiz ve benzersiz; tamamı diğer kişi tarafından onaylı.",
+        "Doğrulayıcı tüm takvimde geçiyor; ilk yayın günü güncel ve açık.",
+        "14 günlük hazır stok hedefi, revizyon ve acil içerik düzeltme akışı belgeli."
+      ],
+      "validation": "Takvim kontrol çıktısı, onay matrisi ve ilk/son gün endpoint doğrulaması."
+    },
+    {
+      "id": "Q39",
+      "owner": "mehmet",
+      "phase": 4,
+      "area": "quality",
+      "title": "Gerçek cihaz ve son görsel yayın kabulü",
+      "dependencies": [
+        "Q32",
+        "Q35",
+        "Q37",
+        "Q38"
+      ],
+      "files": [
+        "docs/qa/"
+      ],
+      "scope": "Yayın adayını gerçek telefon/Safari ve masaüstü Chrome/Edge üzerinde baştan sona kontrol et; pilot düzeltmelerini yeniden dene.",
+      "acceptance": [
+        "İlk giriş, devam, kazanma, kaybetme ve paylaşım gerçek cihazda denenmiş.",
+        "320 px/uzun kelime ve azaltılmış hareket bulguları kapatılmış.",
+        "Açık kritik görsel veya erişilebilirlik sorunu bulunmuyor; ortamlar raporda belirtilmiş."
+      ],
+      "validation": "Cihaz/tarayıcı matrisi, ekran görüntüleri ve Mehmet'in görsel kabul kaydı."
+    },
+    {
+      "id": "Q40",
+      "owner": "utku",
+      "phase": 4,
+      "area": "release",
+      "title": "Önizleme, üretim dağıtımı ve geri alma prosedürü",
+      "dependencies": [
+        "Q33",
+        "Q36",
+        "Q37",
+        "Q38"
+      ],
+      "files": [
+        "docs/DEPLOYMENT.md",
+        "deployment configuration"
+      ],
+      "scope": "Seçilen barındırmada önizleme ve üretim yapılandırmasını kur; günlük tarih, kayıt ve paylaşım akışını hedef ortamda doğrula.",
+      "acceptance": [
+        "Gerekli ortam değişkenleri örnek dosyada belgeli; gizli değerler repoda bulunmuyor.",
+        "Önizleme ve üretim build/URL kontrolleri kayıtlı.",
+        "Yayına alınan commit ve önceki sürüme geri dönme adımları belirli."
+      ],
+      "validation": "Dağıtım URL'si, commit kimliği ve hedef ortam smoke testi."
+    },
+    {
+      "id": "Q41",
+      "owner": "mehmet",
+      "phase": 4,
+      "area": "release",
+      "title": "Ortak yayın kararı ve kullanıcıya giriş metinleri",
+      "dependencies": [
+        "Q35",
+        "Q38",
+        "Q39",
+        "Q40"
+      ],
+      "files": [
+        "docs/RELEASE_CHECKLIST.md",
+        "README.md"
+      ],
+      "scope": "Utku ile teknik/görsel kabulü birleştir; başlangıç açıklamaları, geri bildirim yolu ve paylaşım metinlerini son haline getir.",
+      "acceptance": [
+        "30 onaylı içerik, başarılı teknik kontrol ve görsel kabul birlikte doğrulanmış.",
+        "Kritik açık hata yok; bilinen sınırlar ve geri bildirim yolu açık.",
+        "Yayın kararı iki kişinin onayıyla, sürüm ve tarih belirtilerek kaydedilmiş."
+      ],
+      "validation": "İki kişinin onay kaydı, güncel README ve yayın kontrol listesi."
+    },
+    {
+      "id": "Q42",
+      "owner": "utku",
+      "phase": 4,
+      "area": "release",
+      "title": "İlk hafta işletimi, içerik devamı ve D1/D7 değerlendirmesi",
+      "dependencies": [
+        "Q34",
+        "Q38",
+        "Q41"
+      ],
+      "files": [
+        "docs/operations/",
+        "docs/CONTENT_OPERATIONS.md"
+      ],
+      "scope": "Yayın sonrası günlük içerik ve hata durumunu izle; yeterli gözlem süresi oluşunca başlangıç/geri dönüş bulgularını Mehmet'le değerlendir.",
+      "acceptance": [
+        "Günlük yayın sorumlusu ve içerik stok kontrolü belirli.",
+        "İlk hafta hataları ve kullanıcı kopuşları sahipli issue'lara dönüştürülmüş.",
+        "D7 için gerekli süre dolmadan sonuç ilan edilmemiş; sonraki öncelikler gerçek veriye bağlı."
+      ],
+      "validation": "İlk hafta raporu, ölçüm aralığı, stok durumu ve birlikte seçilen iyileştirmeler."
+    }
+  ]
+}

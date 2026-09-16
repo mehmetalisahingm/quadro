@@ -1,0 +1,21 @@
+# Local setup payloads and verification output
+.quadro-setup/
+
+# Application outputs once development starts
+node_modules/
+.next/
+out/
+dist/
+coverage/
+playwright-report/
+test-results/
+.vercel/
+*.tsbuildinfo
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

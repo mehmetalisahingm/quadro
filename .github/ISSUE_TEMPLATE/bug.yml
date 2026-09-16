@@ -1,0 +1,24 @@
+name: Hata bildirimi
+description: Oyun, içerik veya arayüz sorununu yeniden üretilebilir biçimde kaydet.
+title: "[Hata] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: Yeniden üretme adımları
+      description: Bulmaca günü/kimliği, cihaz, tarayıcı ve adımları yaz.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Beklenen ve gerçekleşen davranış
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Kanıt ve etki
+      description: Görüntü, hata çıktısı veya itiraz edilen bağlantıyı ekle. Cevapları spoiler alanında sakla.

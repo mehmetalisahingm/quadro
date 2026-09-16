@@ -1,0 +1,42 @@
+name: Geliştirme görevi
+description: Sahibi ve kabul ölçütleri belirli bir Quadro görevi aç.
+title: "[Görev] "
+body:
+  - type: dropdown
+    id: owner
+    attributes:
+      label: Ana sorumlu
+      options:
+        - Mehmet
+        - Utku
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Amaç ve kapsam
+      description: Kullanıcıya veya ekibe hangi tamamlanmış sonucu sağlayacak?
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Bağımlılıklar ve dosya sınırı
+      description: Önce tamamlanacak issue'ları ve dokunulacak alanları belirt.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Kabul ölçütleri
+      description: Kontrol edilebilir maddeler halinde yaz.
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Doğrulama ve reviewer
+      description: Nasıl test edilecek ve kim inceleyecek?
+    validations:
+      required: true

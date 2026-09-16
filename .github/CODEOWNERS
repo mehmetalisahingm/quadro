@@ -1,0 +1,18 @@
+# Default ownership; PR review is performed by the other developer.
+* @mehmetalisahingm @Utkuuzun14
+/src/features/game/ @Utkuuzun14
+/src/lib/persistence/ @Utkuuzun14
+/src/lib/daily/ @Utkuuzun14
+/src/lib/analytics/ @Utkuuzun14
+/src/lib/monitoring/ @Utkuuzun14
+/src/components/ @mehmetalisahingm
+/src/app/ @mehmetalisahingm
+/src/app/api/puzzle/ @Utkuuzun14
+/src/styles/ @mehmetalisahingm
+/src/animations/ @mehmetalisahingm
+/public/ @mehmetalisahingm
+/package.json @Utkuuzun14
+/package-lock.json @Utkuuzun14
+/.github/workflows/ @Utkuuzun14
+/src/content/ @mehmetalisahingm @Utkuuzun14
+/docs/ @mehmetalisahingm @Utkuuzun14
