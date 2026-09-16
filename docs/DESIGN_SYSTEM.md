@@ -1,6 +1,6 @@
 # Quadro tasarım sistemi
 
-Sürüm: 0.1 · Durum: Faz 0 tasarım temeli · Sahip: Mehmet · Uygulanabilirlik incelemesi: Utku
+Sürüm: 0.1 · Durum: Faz 0 tasarım temeli · Sahip: Mehmet · İsteğe bağlı geri bildirim: Utku
 
 Quadro'nun adı geçicidir. Bu sistem, oyun adının değişmesi durumunda bile korunabilecek oyun yüzeyi kurallarını tanımlar. Hedef; gösterişli bir landing page değil, ilk saniyede anlaşılır, kartlara dokunmayı keyifli kılan ve uzun süre oynandığında yorulmayan bir günlük oyun deneyimidir.
 

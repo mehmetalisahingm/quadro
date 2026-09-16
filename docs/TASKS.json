@@ -179,7 +179,7 @@
         "src/content/puzzles/",
         "src/content/editorial/"
       ],
-      "scope": "Kendi iki prototipini hazırla; Mehmet'in üç bulmacasını cevaplara bakmadan çöz. Zorluk, sahte bağlar ve alternatif tam çözüm olasılıklarını kaydet.",
+      "scope": "Kendi iki prototipini hazırla; istersen Mehmet'in üç bulmacasını cevaplara bakmadan dene. Zorluk, sahte bağlar ve alternatif tam çözüm olasılıklarını kaydet.",
       "acceptance": [
         "İki yeni prototip rehbere uygun ve açıklamalı.",
         "Mehmet'in üç taslağı için tahmin sırası, takılma ve itiraz notları kayıtlı.",
@@ -201,7 +201,7 @@
         "docs/research/",
         "src/content/editorial/"
       ],
-      "scope": "Utku'nun iki bulmacasını kör çöz; ilk beş prototipi farklı deneyimlerden toplam 5–10 kişiye denet. Verileri topla ve gerekli içerik revizyonlarını yap.",
+      "scope": "İstersen Utku'nun iki bulmacasını kör dene; ilk beş prototipi farklı deneyimlerden toplam 5–10 kişiye denet. Verileri topla ve gerekli içerik revizyonlarını yap.",
       "acceptance": [
         "Her bulmaca için açıklama sonrası adalet değerlendirmesi var.",
         "İlk kullanımda kuralın anlaşılması ve şaşırtıcı kelimeler gözlenmiş.",
@@ -644,7 +644,7 @@
         "src/content/editorial/",
         "src/content/puzzles/"
       ],
-      "scope": "1–15 adaylarını cevaba bakmadan çöz; alternatif tam gruplamaları, zorluk ve doğal Türkçe kullanımını incele.",
+      "scope": "İstersen 1–15 adaylarını cevaba bakmadan dene; alternatif tam gruplamaları, zorluk ve doğal Türkçe kullanımını incele.",
       "acceptance": [
         "Her aday için bağımsız çözüm kaydı mevcut.",
         "Gerekli revizyonlar kaydedilmiş ve kendi kalite kontrolü tamamlanmış.",
@@ -665,7 +665,7 @@
         "src/content/editorial/",
         "src/content/puzzles/"
       ],
-      "scope": "16–30 adaylarını cevapları görmeden çöz; şaşırtmanın adilliğini ve açıklamaları incele.",
+      "scope": "İstersen 16–30 adaylarını cevapları görmeden dene; şaşırtmanın adilliğini ve açıklamaları incele.",
       "acceptance": [
         "Her aday için bağımsız çözüm ve alternatif bağlantı kaydı mevcut.",
         "Gerekli revizyonlar Utku tarafından kaydedilip kendi kalite kontrolünden geçirilmiş.",
