@@ -12,10 +12,12 @@ Closes #
 - UI değişikliği varsa mobil/masaüstü görüntüleri:
 - İçerik değişikliği varsa kör çözüm ve doğrulama kaydı:
 
-## İnceleme
+## Kendi teslim kontrolün
 
 - [ ] Issue'nun kabul ölçütleri tamamlandı.
 - [ ] Sözleşme değiştiyse doküman, tipler ve örnek adaptör güncellendi.
 - [ ] Bilinen eksikler ve sınırlamalar aşağıda belirtildi.
+
+Review isteği zorunlu değildir; teslim sahibi kendi doğrulama kanıtını ekler.
 
 Bilinen eksikler:

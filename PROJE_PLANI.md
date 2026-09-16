@@ -2,7 +2,7 @@
 
 Sürüm: 3 · Tarih: 16 Eylül 2026 · Ekip: Mehmet ve Utku
 
-Bu belge ürünün tasarımını, oyun kurallarını, içerik kalitesini ve iş bölümünü tanımlar. **A = Utku (@Utkuuzun14), B = Mehmet (@mehmetalisahingm).** Utku motor/altyapı, Mehmet tasarım/arayüz sahibidir. İçerik üretimi ve karşılıklı inceleme ikisinin sorumluluğundadır. Ayrıntılı iş listesi [Görevler](docs/GOREVLER.md), kişisel başlangıç sayfaları [Mehmet](docs/MEHMET.md) ve [Utku](docs/UTKU.md) belgelerindedir.
+Bu belge ürünün tasarımını, oyun kurallarını, içerik kalitesini ve iş bölümünü tanımlar. **A = Utku (@Utkuuzun14), B = Mehmet (@mehmetalisahingm).** Utku motor/altyapı, Mehmet tasarım/arayüz sahibidir. İçerik üretimi ikisinin sorumluluğundadır; birbirlerinin review'u zorunlu değildir. Ayrıntılı iş listesi [Görevler](docs/GOREVLER.md), kişisel başlangıç sayfaları [Mehmet](docs/MEHMET.md) ve [Utku](docs/UTKU.md) belgelerindedir.
 
 ## 1. Ürün ve başarı hedefi
 
@@ -110,19 +110,19 @@ Zorluk yalnızca kategori konusundan çıkarılmaz; kör çözüm denemeleriyle 
 - Zorluk gerekçeleri ve hedeflenen yanıltıcı bağlantılar.
 - Özellikle karışabilecek kelimeler ve denenmiş alternatif gruplamalar.
 - Yazım, anlam veya kültürel bilgi için gerektiğinde doğrulama kaynağı.
-- Hazırlayan, kör çözen, revizyon ve yayın onayı.
+- Hazırlayan, isteğe bağlı kör deneme, revizyon ve yayın kararı.
 
 Grup açıklamaları zorunludur. Ortak kelimeyle tamamlanan bir kategoride dört ifadenin de doğal Türkçe kullanımı doğrulanır. Dört kelime aynı kurala uyar; gizli ve tutarsız istisnalar kullanılmaz. Büyük/küçük harfe dayalı bir oyun varsa görsel gösterimi de kurala uygundur.
 
 ### Üretim akışı
 
-`Taslak → yapısal kontrol → diğer geliştiricinin kör çözümü → alternatif bağlantı incelemesi → revizyon → yayın onayı`
+`Taslak → yapısal kontrol → isteğe bağlı kör deneme → alternatif bağlantı taraması → revizyon → yayın kararı`
 
-İlk aşamada 5 örnek bulmaca, farklı kelime oyunu deneyimine sahip toplam 5–10 dış oyuncuyla denenir. Takıldıkları kelimeler, kurdukları yanlış bağlar ve açıklamalara itirazları kaydedilir. Bulmacayı hazırlayan kişi kendi içeriğine tek başına yayın onayı vermez.
+İlk aşamada 5 örnek bulmaca, farklı kelime oyunu deneyimine sahip toplam 5–10 dış oyuncuyla denenir. Takıldıkları kelimeler, kurdukları yanlış bağlar ve açıklamalara itirazları kaydedilir. Dış oyuncu denemesi önerilir; teslim ve yayın kararı için zorunlu reviewer atanmaz.
 
 İçerik çalışması Faz 0'da başlar ve geliştirme boyunca sürer. Yayına kadar en az 30 onaylı günlük bulmaca hazırlanır; yayın sonrasında en az 14 günlük onaylı stok hedeflenir.
 
-Otomatik doğrulayıcı yapısal hataları bulur. Anlamsal adalet, özgünlük ve eğlence insan incelemesiyle değerlendirilir. Yapay zekâ önerileri taslak olarak kullanılabilir; aynı inceleme sürecinden geçer.
+Otomatik doğrulayıcı yapısal hataları bulur. Anlamsal adalet, özgünlük ve eğlence yazarın editoryal kontrolüyle değerlendirilir; ikinci kişinin kör denemesi isteğe bağlı bir kalite sinyalidir. Yapay zekâ önerileri taslak olarak kullanılabilir; yayın kararı insana aittir.
 
 ## 6. Ortak teknik sözleşme
 
@@ -262,15 +262,15 @@ https://<alan-adı>/play
 
 | Alan | Ana sahip | Diğer kişinin katkısı |
 | --- | --- | --- |
-| Oyun motoru, ortak tipler, React adaptörü | A | B, UI ihtiyaçları ve sözleşme incelemesi |
+| Oyun motoru, ortak tipler, React adaptörü | A | B, UI ihtiyaç notları |
 | Günlük yayın, kayıt, seri ve istatistik | A | B, durumların gösterimi |
 | Yapısal içerik doğrulayıcı ve otomatik kontroller | A | B, zor kelime ve ekran senaryoları |
-| Ana sayfa, öğretici, oyun ve sonuç ekranları | B | A, entegrasyon incelemesi |
+| Ana sayfa, öğretici, oyun ve sonuç ekranları | B | A, isteğe bağlı entegrasyon geri bildirimi |
 | Tasarım sistemi, responsive, erişilebilirlik, hareket ve ses | B | A, işlevsel kontrol |
-| Bulmaca hazırlama | Haftalık dönüşümlü | Diğer kişi kör çözüm ve onay |
+| Bulmaca hazırlama | Haftalık dönüşümlü | İsterse kör deneme ve geri bildirim |
 | Motor–UI entegrasyonunun takibi | A | B ile ortak çalışma |
 | Yayın hazırlığı ve teknik dağıtım | A | B, görsel kabul |
-| Yayın kararı | İkiniz | Çıkış ölçütlerinin birlikte kontrolü |
+| Yayın kararı | Teslim sahibi | İsteğe bağlı geri bildirim |
 
 Klasör sahipliği:
 
@@ -284,8 +284,8 @@ src/app/                        B — API klasörü dışındaki sayfalar/layout
 src/styles/                     B — tasarım tokenları ve stiller
 src/animations/                 B — hareketler
 public/sounds/                  B — ses varlıkları
-src/content/puzzles/            Dönüşümlü yazar + diğer kişinin onayı
-src/content/editorial/          Dönüşümlü yazar + diğer kişinin onayı
+src/content/puzzles/            Dönüşümlü yazar + kendi editoryal kontrolü
+src/content/editorial/          Dönüşümlü yazar + kendi editoryal kontrolü
 ```
 
 `package.json`, kilit dosyası, derleme ayarları ve CI değişikliklerini A koordine eder. B ihtiyaç duyduğu bağımlılıkları aynı görev içinde A ile netleştirir. Ortak alan değişikliklerinin sahibi PR açılmadan belirlenir.
@@ -294,7 +294,7 @@ src/content/editorial/          Dönüşümlü yazar + diğer kişinin onayı
 
 Küçük, tek amaçlı PR'lar ve kısa ömürlü görev dalları kullanılır. Örnek dallar: `codex/game-contracts`, `codex/homepage`, `codex/game-engine`, `codex/result-share`.
 
-Akış: `Issue → görev dalı → geliştirme → gerekli kontroller → diğer kişinin review'u → squash merge`.
+Akış: `Issue → görev dalı → geliştirme → gerekli kontroller → squash merge`.
 
 Her issue; amaç, dosya sahipliği, bağımlılık, kabul ölçütü ve doğrulama yöntemini içerir. Arayüz PR'larında mobil ve masaüstü görüntüleri, motor PR'larında ilgili kural testleri bulunur.
 
@@ -330,7 +330,7 @@ A günlük yayın, kayıt, devam etme, seri, istatistik ve doğrulayıcıyı tam
 
 ### Faz 3 — Görsel kalite ve pilot
 
-B hareketleri, ses tercihini, mobil ayrıntıları ve erişilebilirliği tamamlar. A performansı, hata takibini ve ölçüm olaylarını kurar. İçerik üretimi ve karşılıklı inceleme devam eder.
+B hareketleri, ses tercihini, mobil ayrıntıları ve erişilebilirliği tamamlar. A performansı, hata takibini ve ölçüm olaylarını kurar. İçerik üretimi ve isteğe bağlı kalite denemeleri devam eder.
 
 **Bitiş koşulu:** 20–30 kişilik önerilen pilotta ilk kullanım ve bulmaca adaleti gözlenmiştir. Ana sayfadan başlama, bırakma ve paylaşma sorunlarına göre düzeltme yapılmıştır. Pilot büyüklüğü bir çalışma hedefidir; başarı garantisi değildir.
 

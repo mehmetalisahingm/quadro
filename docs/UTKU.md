@@ -2,7 +2,7 @@
 
 GitHub: [@Utkuuzun14](https://github.com/Utkuuzun14) · **A — motor ve altyapı**
 
-Ana sorumluluğunda 21 issue bulunur. Diğer geliştirici @mehmetalisahingm review yapar. Bulmaca görevlerinde review, cevaplar görülmeden kör çözümle başlar.
+Ana sorumluluğunda 21 issue bulunur. Her teslimin doğrulamasını sen yaparsın; @mehmetalisahingm review'u zorunlu değildir. Bulmaca görevlerinde istersen cevapları görmeden kör deneme yapabilirsin.
 
 [GitHub'da açık görevlerim](https://github.com/mehmetalisahingm/quadro/issues?q=is%3Aissue%20is%3Aopen%20assignee%3AUtkuuzun14)
 
@@ -13,7 +13,7 @@ Ana sorumluluğunda 21 issue bulunur. Diğer geliştirici @mehmetalisahingm revi
 ## Teslim düzeni
 
 - Issue bağımlılıklarını kontrol et; tek amaçlı bir `codex/...` dalı aç.
-- Kabul ölçütlerini ve ilgili doğrulamayı tamamlayıp diğer kişiden PR review iste.
+- Kabul ölçütlerini ve ilgili doğrulamayı tamamlayıp PR aç; kendi kanıtını ekle. Review isteği zorunlu değildir.
 - Ortak dosyalara etkisi olan değişiklikleri önce diğer kişiyle netleştir.
 - Sonuç tamamlanmadıysa issue açık kalsın; kalan işi ve kanıtı yaz.
 
@@ -24,7 +24,7 @@ Ana sorumluluğunda 21 issue bulunur. Diğer geliştirici @mehmetalisahingm revi
 | [Q01 / #1](https://github.com/mehmetalisahingm/quadro/issues/1) — Proje temeli, geliştirme komutları ve CI | Utku | Başlangıç |
 | [Q02 / #2](https://github.com/mehmetalisahingm/quadro/issues/2) — Ortak oyun tipleri ve kesin kural sözleşmesi | Utku | [Q01 / #1](https://github.com/mehmetalisahingm/quadro/issues/1) |
 | [Q03 / #3](https://github.com/mehmetalisahingm/quadro/issues/3) — Geçerli örnek bulmacalar ve UI adaptörü | Utku | [Q02 / #2](https://github.com/mehmetalisahingm/quadro/issues/2) |
-| [Q07 / #7](https://github.com/mehmetalisahingm/quadro/issues/7) — İki prototip bulmaca ve Mehmet'in ilk taslaklarına kör review | Utku | [Q06 / #6](https://github.com/mehmetalisahingm/quadro/issues/6) |
+| [Q07 / #7](https://github.com/mehmetalisahingm/quadro/issues/7) — İki prototip bulmaca ve ilk taslaklarla bağımsız kör deneme | Utku | [Q06 / #6](https://github.com/mehmetalisahingm/quadro/issues/6) |
 
 ## F1 — İlk çalışan oyun
 
@@ -50,7 +50,7 @@ Ana sorumluluğunda 21 issue bulunur. Diğer geliştirici @mehmetalisahingm revi
 
 | Görev | Sorumlu | Önce tamamlanacaklar |
 | --- | --- | --- |
-| [Q28 / #28](https://github.com/mehmetalisahingm/quadro/issues/28) — Mehmet'in 15 bulmacasına kör çözüm ve yayın review'u | Utku | [Q26 / #26](https://github.com/mehmetalisahingm/quadro/issues/26) |
+| [Q28 / #28](https://github.com/mehmetalisahingm/quadro/issues/28) — Mehmet'in 15 bulmacasına bağımsız kör deneme ve kalite notları | Utku | [Q26 / #26](https://github.com/mehmetalisahingm/quadro/issues/26) |
 | [Q33 / #33](https://github.com/mehmetalisahingm/quadro/issues/33) — Üretim performansı ve istemci paket denetimi | Utku | [Q19 / #19](https://github.com/mehmetalisahingm/quadro/issues/19), [Q30 / #30](https://github.com/mehmetalisahingm/quadro/issues/30), [Q31 / #31](https://github.com/mehmetalisahingm/quadro/issues/31) |
 | [Q34 / #34](https://github.com/mehmetalisahingm/quadro/issues/34) — Ürün olayları, geri dönüş ölçümü ve hata takibi | Utku | [Q17 / #17](https://github.com/mehmetalisahingm/quadro/issues/17), [Q22 / #22](https://github.com/mehmetalisahingm/quadro/issues/22), [Q23 / #23](https://github.com/mehmetalisahingm/quadro/issues/23), [Q24 / #24](https://github.com/mehmetalisahingm/quadro/issues/24) |
 | [Q36 / #36](https://github.com/mehmetalisahingm/quadro/issues/36) — Günlük kullanımın tam regresyon paketi | Utku | [Q17 / #17](https://github.com/mehmetalisahingm/quadro/issues/17), [Q19 / #19](https://github.com/mehmetalisahingm/quadro/issues/19), [Q20 / #20](https://github.com/mehmetalisahingm/quadro/issues/20), [Q21 / #21](https://github.com/mehmetalisahingm/quadro/issues/21), [Q22 / #22](https://github.com/mehmetalisahingm/quadro/issues/22), [Q24 / #24](https://github.com/mehmetalisahingm/quadro/issues/24), [Q25 / #25](https://github.com/mehmetalisahingm/quadro/issues/25) |
