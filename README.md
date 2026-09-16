@@ -15,7 +15,7 @@ Quadro geçici proje adıdır. Nihai oyun adı henüz seçilmedi.
 | Mehmet — [@mehmetalisahingm](https://github.com/mehmetalisahingm) | Ana sayfa, tasarım sistemi, oyun/sonuç arayüzü, mobil deneyim | [Mehmet'in görevleri](docs/MEHMET.md) |
 | Utku — [@Utkuuzun14](https://github.com/Utkuuzun14) | Oyun motoru, ortak sözleşme, günlük yayın, kayıt/istatistik, CI ve entegrasyon | [Utku'nun görevleri](docs/UTKU.md) |
 
-İçerik üretimi iki kişiye bölünür. Birinin yazdığı bulmacayı diğeri cevapları görmeden çözer ve inceler. İlk 30 günün 1–15 taslakları Mehmet'e, 16–30 taslakları Utku'ya aittir; bu sayı nihai günlük atamadır, ilk prototipler uygun bulunursa stoğa dahil edilir.
+İçerik üretimi iki kişiye bölünür. İsteyen kişi diğerinin yazdığı bulmacayı cevapları görmeden deneyebilir ve geri bildirim bırakabilir. İlk 30 günün 1–15 taslakları Mehmet'e, 16–30 taslakları Utku'ya aittir; bu sayı nihai günlük atamadır, ilk prototipler yazarın kalite kontrolünden geçerse stoğa dahil edilir.
 
 ## Plan ve takip
 

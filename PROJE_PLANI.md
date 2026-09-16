@@ -262,15 +262,15 @@ https://<alan-adı>/play
 
 | Alan | Ana sahip | Diğer kişinin katkısı |
 | --- | --- | --- |
-| Oyun motoru, ortak tipler, React adaptörü | A | B, UI ihtiyaçları ve sözleşme incelemesi |
+| Oyun motoru, ortak tipler, React adaptörü | A | B, UI ihtiyaç notları |
 | Günlük yayın, kayıt, seri ve istatistik | A | B, durumların gösterimi |
 | Yapısal içerik doğrulayıcı ve otomatik kontroller | A | B, zor kelime ve ekran senaryoları |
-| Ana sayfa, öğretici, oyun ve sonuç ekranları | B | A, entegrasyon incelemesi |
+| Ana sayfa, öğretici, oyun ve sonuç ekranları | B | A, isteğe bağlı entegrasyon geri bildirimi |
 | Tasarım sistemi, responsive, erişilebilirlik, hareket ve ses | B | A, işlevsel kontrol |
 | Bulmaca hazırlama | Haftalık dönüşümlü | İsterse kör deneme ve geri bildirim |
 | Motor–UI entegrasyonunun takibi | A | B ile ortak çalışma |
 | Yayın hazırlığı ve teknik dağıtım | A | B, görsel kabul |
-| Yayın kararı | İkiniz | Çıkış ölçütlerinin birlikte kontrolü |
+| Yayın kararı | Teslim sahibi | İsteğe bağlı geri bildirim |
 
 Klasör sahipliği:
 
