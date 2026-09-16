@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "q-001",
+  "date": "2026-09-20",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    { "id": "q001-w11", "text": "FOTOĞRAF" },
+    { "id": "q001-w03", "text": "BATAK" },
+    { "id": "q001-w14", "text": "KUTU" },
+    { "id": "q001-w06", "text": "OJE" },
+    { "id": "q001-w09", "text": "HALAY" },
+    { "id": "q001-w01", "text": "OKEY" },
+    { "id": "q001-w16", "text": "CUMA" },
+    { "id": "q001-w07", "text": "PARFÜM" },
+    { "id": "q001-w12", "text": "KÜREK" },
+    { "id": "q001-w04", "text": "KİNG" },
+    { "id": "q001-w15", "text": "MİZAH" },
+    { "id": "q001-w05", "text": "KREM" },
+    { "id": "q001-w10", "text": "DİKKAT" },
+    { "id": "q001-w02", "text": "PİŞTİ" },
+    { "id": "q001-w13", "text": "DENİZ" },
+    { "id": "q001-w08", "text": "SALÇA" }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-001",
+  "date": "2026-09-20",
+  "language": "tr",
+  "status": "draft",
+  "author": "mehmetalisahingm",
+  "reviewer": "Utkuuzun14",
+  "groups": [
+    {
+      "id": "q001-g1",
+      "title": "MASA VE KART OYUNLARI",
+      "words": [
+        { "id": "q001-w01", "text": "OKEY" },
+        { "id": "q001-w02", "text": "PİŞTİ" },
+        { "id": "q001-w03", "text": "BATAK" },
+        { "id": "q001-w04", "text": "KİNG" }
+      ],
+      "difficulty": 1,
+      "explanation": "Dört kelime Türkiye'de yaygın masa veya iskambil oyunlarının adıdır."
+    },
+    {
+      "id": "q001-g2",
+      "title": "SÜRÜLEBİLENLER",
+      "words": [
+        { "id": "q001-w05", "text": "KREM" },
+        { "id": "q001-w06", "text": "OJE" },
+        { "id": "q001-w07", "text": "PARFÜM" },
+        { "id": "q001-w08", "text": "SALÇA" }
+      ],
+      "difficulty": 2,
+      "explanation": "Krem, oje, parfüm ve salça Türkçede doğal biçimde 'sürmek' fiiliyle kullanılır."
+    },
+    {
+      "id": "q001-g3",
+      "title": "ÇEKMEKLE KURULAN İFADELER",
+      "words": [
+        { "id": "q001-w09", "text": "HALAY" },
+        { "id": "q001-w10", "text": "DİKKAT" },
+        { "id": "q001-w11", "text": "FOTOĞRAF" },
+        { "id": "q001-w12", "text": "KÜREK" }
+      ],
+      "difficulty": 3,
+      "explanation": "Halay çekmek, dikkat çekmek, fotoğraf çekmek ve kürek çekmek yerleşik ifadelerdir."
+    },
+    {
+      "id": "q001-g4",
+      "title": "BAŞINA KARA GELENLER",
+      "words": [
+        { "id": "q001-w13", "text": "DENİZ" },
+        { "id": "q001-w14", "text": "KUTU" },
+        { "id": "q001-w15", "text": "MİZAH" },
+        { "id": "q001-w16", "text": "CUMA" }
+      ],
+      "difficulty": 4,
+      "explanation": "Karadeniz, karakutu, kara mizah ve Kara Cuma ifadeleri 'kara' ile kurulur."
+    }
+  ]
+}

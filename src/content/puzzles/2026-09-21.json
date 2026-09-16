@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-002",
+  "date": "2026-09-21",
+  "language": "tr",
+  "status": "draft",
+  "author": "mehmetalisahingm",
+  "reviewer": "Utkuuzun14",
+  "groups": [
+    {
+      "id": "q002-g1",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        { "id": "q002-w01", "text": "ZEYTİN" },
+        { "id": "q002-w02", "text": "PEYNİR" },
+        { "id": "q002-w03", "text": "REÇEL" },
+        { "id": "q002-w04", "text": "BAL" }
+      ],
+      "difficulty": 1,
+      "explanation": "Dört kelime geleneksel bir kahvaltı sofrasında doğrudan karşılaşabileceğimiz yiyeceklerdir."
+    },
+    {
+      "id": "q002-g2",
+      "title": "HAYVANLAR",
+      "words": [
+        { "id": "q002-w05", "text": "KURT" },
+        { "id": "q002-w06", "text": "ASLAN" },
+        { "id": "q002-w07", "text": "TAVŞAN" },
+        { "id": "q002-w08", "text": "KAPLAN" }
+      ],
+      "difficulty": 2,
+      "explanation": "Kurt, aslan, tavşan ve kaplan hayvan adlarıdır; bu grup diğer üçünde kullanılmayan yalın anlamdadır."
+    },
+    {
+      "id": "q002-g3",
+      "title": "ATMAKLA KURULAN İFADELER",
+      "words": [
+        { "id": "q002-w09", "text": "İMZA" },
+        { "id": "q002-w10", "text": "GOL" },
+        { "id": "q002-w11", "text": "TAŞ" },
+        { "id": "q002-w12", "text": "TUR" }
+      ],
+      "difficulty": 3,
+      "explanation": "İmza atmak, gol atmak, taş atmak ve tur atmak doğal Türkçe fiil tamlamalarıdır."
+    },
+    {
+      "id": "q002-g4",
+      "title": "KESMEKLE KURULAN İFADELER",
+      "words": [
+        { "id": "q002-w13", "text": "AĞAÇ" },
+        { "id": "q002-w14", "text": "BİLET" },
+        { "id": "q002-w15", "text": "CEZA" },
+        { "id": "q002-w16", "text": "SAÇ" }
+      ],
+      "difficulty": 4,
+      "explanation": "Ağaç kesmek, bilet kesmek, ceza kesmek ve saç kesmek aynı fiille kurulan yerleşik kullanımlardır."
+    }
+  ]
+}

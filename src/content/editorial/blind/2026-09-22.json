@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "q-003",
+  "date": "2026-09-22",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    { "id": "q003-w16", "text": "DOL" },
+    { "id": "q003-w03", "text": "DAİRE" },
+    { "id": "q003-w07", "text": "DAVUL" },
+    { "id": "q003-w10", "text": "İZİN" },
+    { "id": "q003-w14", "text": "GEL" },
+    { "id": "q003-w01", "text": "KARE" },
+    { "id": "q003-w12", "text": "DESTEK" },
+    { "id": "q003-w05", "text": "SAZ" },
+    { "id": "q003-w11", "text": "KARAR" },
+    { "id": "q003-w04", "text": "OVAL" },
+    { "id": "q003-w15", "text": "KAL" },
+    { "id": "q003-w08", "text": "ZURNA" },
+    { "id": "q003-w02", "text": "ÜÇGEN" },
+    { "id": "q003-w09", "text": "SÖZ" },
+    { "id": "q003-w13", "text": "BİL" },
+    { "id": "q003-w06", "text": "NEY" }
+  ]
+}
