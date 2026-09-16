@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "@/styles/tokens.css";
 import "@/styles/game.css";
+import "@/styles/result.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
