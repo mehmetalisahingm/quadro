@@ -91,13 +91,13 @@ if (snapshot.status !== "playing") {
 
 ## `GameController`
 
-- `snapshot` her zaman güncel durumdur. Eylemden sonra yeni durum buradan okunur; React adaptörü (Q03) yeniden çizimi sağlar.
+- `snapshot` her zaman güncel durumdur. Eylemden sonra yeni durum buradan okunur; React kancası yeniden çizimi sağlar (bkz. [Örnek adaptör ve senaryolar](#örnek-adaptör-ve-senaryolar-q03)).
 - `toggleWord`, `clearSelection` ve `shuffle` `void` döner. Kurala aykırı çağrılar hata fırlatmaz, durumu değiştirmez.
 - `submitSelection` senkron çalışır ve `SubmitResult` döner; dönen `snapshot`, `controller.snapshot`'ın yeni değeridir.
 
 ## Örnek bulmaca
 
-Aşağıdaki bulmaca yalnız belge ve test örneğidir; yayın stoğunda yer almaz. Zorluk değerleri temsilîdir. Kimlikler `slugifyTr` ile üretilmiştir ve [`contracts.test.ts`](../src/features/game/contracts.test.ts) aynı veriyi kullanır.
+Aşağıdaki bulmaca yalnız belge ve test örneğidir; yayın stoğunda yer almaz. Zorluk değerleri temsilîdir. Kimlikler `slugifyTr` ile üretilmiştir. Bulmaca [`fixtures/puzzles.ts`](../src/features/game/fixtures/puzzles.ts) içinde `standardPuzzle` olarak tanımlıdır; testler ve örnek adaptör senaryoları aynı veriyi kullanır.
 
 | Grup kimliği | Başlık | Zorluk | Kelime kimlikleri |
 | --- | --- | --- | --- |
@@ -299,3 +299,102 @@ controller.clearSelection();
 | `attemptKey(wordIds)` | Dörtlüyü sıralayıp birleştirerek sıradan bağımsız anahtar | `attemptKey(["b", "a", "d", "c"]) === attemptKey(["a", "b", "c", "d"])` | Tekrarlanan tahmin denetimi |
 
 Hepsi saf fonksiyondur ve yerel ayar verisine bağlı değildir. Kimlik ve normalizasyon kuralları için [GAME_RULES.md §7](GAME_RULES.md#7-kimlikler-ve-türkçe-normalizasyon).
+
+## Örnek adaptör ve senaryolar (Q03)
+
+Gerçek motor (Q09, Q10) hazır olmadan arayüz geliştirebilmek için `GameController` sözleşmesine uyan bellek içi örnek adaptör. [GAME_RULES.md](GAME_RULES.md) kurallarına uyar ve testlerle doğrulanır; ancak kayıt yapmaz, süre ölçmez ve gün değişimini bilmez. Q16'da gerçek motorla değiştirilir. Bileşenler yalnız `GameController` kullandığı sürece kodları değişmez.
+
+| Dosya | İçerik |
+| --- | --- |
+| [`sampleController.ts`](../src/features/game/sampleController.ts) | `createSampleController`, `createInitialSampleSnapshot`, `createSeededRandom` |
+| [`fixtures/puzzles.ts`](../src/features/game/fixtures/puzzles.ts) | `standardPuzzle`, `longWordsPuzzle`, `tutorialPuzzle` ve `TutorialPuzzle` tipi |
+| [`fixtures/scenarios.ts`](../src/features/game/fixtures/scenarios.ts) | `SAMPLE_SCENARIO_IDS`, `createSampleScenario` |
+| [`react/useSampleGame.ts`](../src/features/game/react/useSampleGame.ts) | `useSampleGame` React kancası |
+
+### React bileşeninde kullanım
+
+```tsx
+"use client";
+
+import { useState } from "react";
+
+import { GAME_CONSTANTS, type SubmitOutcome } from "@/features/game/contracts";
+import { useSampleGame } from "@/features/game/react/useSampleGame";
+
+export function BoardPreview() {
+  const { puzzle, controller, initialResult } = useSampleGame("one-away");
+  const { snapshot } = controller;
+  // Geri bildirim arayüzün durumudur; motor yalnız sonucu verir.
+  const [feedback, setFeedback] = useState<SubmitOutcome | null>(initialResult?.outcome ?? null);
+
+  // Kimlikten metne dönüşüm sunumdur, iş kuralı değildir.
+  const words = new Map(puzzle.groups.flatMap((group) => group.words).map((word) => [word.id, word]));
+
+  return (
+    <>
+      {snapshot.remainingWordOrder.map((id) => (
+        <button
+          key={id}
+          aria-pressed={snapshot.selectedWordIds.includes(id)}
+          onClick={() => controller.toggleWord(id)}
+        >
+          {words.get(id)?.text}
+        </button>
+      ))}
+      <button
+        disabled={snapshot.selectedWordIds.length !== GAME_CONSTANTS.groupSize}
+        onClick={() => setFeedback(controller.submitSelection().outcome)}
+      >
+        Grupla
+      </button>
+      <button onClick={controller.shuffle}>Karıştır</button>
+      <button onClick={controller.clearSelection}>Seçimi temizle</button>
+      <p>Kalan hak: {snapshot.mistakesRemaining}</p>
+      {feedback?.verdict === "one-away" ? <p role="status">Bir kelime uzaktasın</p> : null}
+    </>
+  );
+}
+```
+
+- `controller.snapshot` her çizimde günceldir; eylemden sonra ayrıca durum kopyası tutulmaz.
+- Mesaj ve animasyon durumu `submitSelection()` dönüşündeki `outcome` ile güncellenir. `initialResult` yalnız senaryo açılışındaki geri bildirimi göstermek içindir.
+- `reset()` senaryoyu başlangıcına döndürür. Senaryo kimliği değişirse senaryo yeniden açılır.
+- Başlangıç kart sırası tohumludur; sunucu ve istemci aynı tahtayı çizer. `Karıştır` sonrası sıra değişir.
+
+### Senaryolar
+
+`status · bulunan grup · kalan hak · seçili kart` sütunu senaryonun açılış durumudur. Senaryodan oynamaya devam edilebilir.
+
+| Kimlik | Durum | Açılış durumu | Açılış sonucu | İlgili ekran |
+| --- | --- | --- | --- | --- |
+| `empty` | Boş oyun | `playing` · 0/4 · 4 · 0 | yok | Q13 tahta; ana sayfa `new` |
+| `in-progress` | Yarım kalmış, yenileme sonrası | `playing` · 2/4 · 3 · 2 | yok | Q13; ana sayfa `in-progress` (“2/4 grup bulundu · 3 hata hakkı kaldı”) |
+| `correct` | İlk doğru grup açıldı | `playing` · 1/4 · 4 · 0 | `correct` | Q14 grup satırı |
+| `one-away` | Çok yakın | `playing` · 0/4 · 3 · 4 | `one-away` | Q14 mesaj |
+| `wrong` | Yanlış | `playing` · 0/4 · 3 · 4 | `wrong` | Q14 hata geri bildirimi |
+| `repeated` | Tekrarlanan tahmin | `playing` · 0/4 · 3 · 4 | `repeated` | Q14 mesaj |
+| `last-chance` | Son hak | `playing` · 1/4 · 1 · 4 | `one-away` | Q14 hak göstergesi |
+| `won` | Kazanılmış | `won` · 4/4 · 3 · 0 | `correct` | Q15 sonuç; ana sayfa `completed` (“4/4 grup · 1 hata · 02:18”) |
+| `lost` | Kaybedilmiş | `lost` · 1/4 · 0 · 0 | `wrong` | Q15 sonuç; kalan üç grup gösterilir, çözülmüş sayılmaz |
+| `long-words` | Uzun kelimeli boş tahta | `playing` · 0/4 · 4 · 0 | yok | Q13 320 px denemesi |
+
+Ana sayfa eşlemeleri yalnız tasarım denemesi içindir. Gerçek verinin `HomePlayerState`'e dönüşümü Q23'te tek kaynaktan hesaplanır.
+
+### React dışında kullanım
+
+```ts
+import { createSampleScenario, longWordsPuzzle } from "@/features/game/fixtures";
+import { createSampleController } from "@/features/game/sampleController";
+
+const { controller, lastResult } = createSampleScenario("last-chance");
+controller.snapshot.mistakesRemaining; // 1
+lastResult?.outcome.verdict; // "one-away"
+
+const longBoard = createSampleController({ puzzle: longWordsPuzzle }); // boş, uzun kelimeli tahta
+```
+
+### Sınırlar
+
+- Örnek bulmacalar yayın stoğunda değildir ve `src/content/puzzles/` altındaki günlük bulmacaların kelimelerini kullanmaz; bunu bir test denetler. Günlük bulmacalar fixture olarak kullanılmaz: istemci paketine girmemeleri gerekir (plan §7) ve kör denemeleri bozarlar.
+- `tutorialPuzzle` iki gruplu ayrı bir veri türüdür, `Puzzle` değildir ve `GameController` ile oynatılmaz. Hak, süre ve istatistiği etkilemeyen öğretici davranışı Q12'de belirlenir.
+- Örnek adaptör kayıt yapmaz ve süre ölçmez; `activeSeconds` senaryonun temsilî değerinde sabit kalır.
