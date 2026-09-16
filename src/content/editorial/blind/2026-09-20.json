@@ -3,7 +3,7 @@
   "id": "q-001",
   "date": "2026-09-20",
   "language": "tr",
-  "purpose": "blind-review",
+  "purpose": "optional-blind-trial",
   "words": [
     { "id": "q001-w11", "text": "FOTOĞRAF" },
     { "id": "q001-w03", "text": "BATAK" },

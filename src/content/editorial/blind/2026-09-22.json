@@ -3,7 +3,7 @@
   "id": "q-003",
   "date": "2026-09-22",
   "language": "tr",
-  "purpose": "blind-review",
+  "purpose": "optional-blind-trial",
   "words": [
     { "id": "q003-w16", "text": "DOL" },
     { "id": "q003-w03", "text": "DAİRE" },

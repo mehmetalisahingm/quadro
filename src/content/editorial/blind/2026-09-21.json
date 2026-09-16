@@ -3,7 +3,7 @@
   "id": "q-002",
   "date": "2026-09-21",
   "language": "tr",
-  "purpose": "blind-review",
+  "purpose": "optional-blind-trial",
   "words": [
     { "id": "q002-w11", "text": "TAŞ" },
     { "id": "q002-w04", "text": "BAL" },

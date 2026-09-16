@@ -1,6 +1,6 @@
 # Quadro bulmaca yazım rehberi
 
-Sürüm: 0.1 · Durum: Faz 0 prototip rehberi · Yazar: Mehmet · Kör inceleme: Utku
+Sürüm: 0.1 · Durum: Faz 0 prototip rehberi · Yazar: Mehmet · İsteğe bağlı kör deneme: Utku
 
 Quadro'nun günlük bulmacası 16 Türkçe kelimeyi dört adet dörtlü gruba ayırır. Oyuncu çözümü gördüğünde bağlantıyı savunmak için uzun bir açıklamaya ihtiyaç duymamalı; doğru cevap “bunu nasıl göremedim?” hissi vermeli. Bulmaca, bilmediği bir özel bilgi yüzünden değil, kelimeleri farklı açılardan düşündüğü için zorlaşır.
 
@@ -9,10 +9,10 @@ Quadro'nun günlük bulmacası 16 Türkçe kelimeyi dört adet dörtlü gruba ay
 | Yol | İçerik | Oyuncuya gönderilir mi? |
 | --- | --- | --- |
 | `src/content/puzzles/YYYY-MM-DD.json` | Çalışma zamanı için cevaplı, kanonik puzzle verisi | Sunucu/derleme katmanı kullanır; ham dosya istemciye kopyalanmaz. |
-| `src/content/editorial/blind/YYYY-MM-DD.json` | Aynı 16 kelimenin karıştırılmış, grup bilgisi olmayan kör çözüm tahtası | Kör çözücüye verilir. |
-| `src/content/editorial/YYYY-MM-DD.md` | Cevap anahtarı, açıklama, hedeflenen şaşırtma ve review kaydı | Yalnız içerik ekibine aittir. |
+| `src/content/editorial/blind/YYYY-MM-DD.json` | Aynı 16 kelimenin karıştırılmış, grup bilgisi olmayan kör deneme tahtası | İsteyen deneme yapana verilir. |
+| `src/content/editorial/YYYY-MM-DD.md` | Cevap anahtarı, açıklama, hedeflenen şaşırtma ve kalite notu | Yalnız içerik ekibine aittir. |
 
-Repo public olduğundan bu ayrım bir güvenlik sınırı değildir. Amaç, review yapan kişinin denemeden önce cevap anahtarını açmamasını sağlayan net bir iş akışıdır. Kör çözüm için yalnız `blind` dosyası paylaşılır; review kaydı tamamlanınca cevap anahtarı açılır.
+Repo public olduğundan bu ayrım bir güvenlik sınırı değildir. Amaç, isteyen kişinin denemeden önce cevap anahtarını açmamasını sağlayan net bir iş akışıdır. Kör deneme için yalnız `blind` dosyası paylaşılır; deneme notu tutulursa cevap anahtarı sonrasında açılır.
 
 Kanonik JSON, `docs/CONTRACTS.md` içindeki `Puzzle` tipine uyar: dört grup, her grupta dört `PuzzleWord`, benzersiz kelime kimlikleri, dil, tarih, şema ve revizyon bilgisi bulunur. `date`, `Europe/Istanbul` günlük yayın günüdür.
 
@@ -38,17 +38,17 @@ Her prototipte dört grup, hedeflenen çözüm sırasını gösteren 1–4 zorlu
 | 3 | Yüzeydeki anlamdan ayrılmayı gerektirir | `___ atmak`, `___ çekmek`, `___ vermek` |
 | 4 | Dil oyunu veya güçlü sahte bağ; çözüm sonradan adil | İlk harfi silme, `kara ___`, çift anlam |
 
-Zorluk etiketleri kategori açıklamasının yerine geçmez. Kör çözümde oyuncuların hangi gruba ilk gittiği, nerede yanıldığı ve açıklamayı adil bulup bulmadığı kaydedilir.
+Zorluk etiketleri kategori açıklamasının yerine geçmez. İsteğe bağlı kör denemede oyuncuların hangi gruba ilk gittiği, nerede yanıldığı ve açıklamayı adil bulup bulmadığı kaydedilebilir.
 
 ## Üretim akışı
 
-`Fikir havuzu → grup adayları → 16 kelimelik tahta → yapısal kontrol → kör çözüm → alternatif çözüm taraması → revizyon → ikinci kör çözüm → yayın onayı`
+`Fikir havuzu → grup adayları → 16 kelimelik tahta → yapısal kontrol → isteğe bağlı kör deneme → alternatif çözüm taraması → revizyon → yazarın yayın kararı`
 
-Her dosyanın metadata'sında yazar, kör çözücü, durum, revizyon ve tarih bulunur. Hazırlayan kişi kendi bulmacasını tek başına onaylayamaz.
+Her dosyanın metadata'sında yazar, isteğe bağlı deneme yapan kişi, durum, revizyon ve tarih bulunur. Hazırlayan kişi kendi editoryal kontrolünü kaydeder; ikinci kişinin onayı zorunlu değildir.
 
-### Kör çözüm formu
+### İsteğe bağlı kör deneme formu
 
-Kör çözücü yalnız `blind/YYYY-MM-DD.json` dosyasını açar ve cevap anahtarına bakmadan şunları kaydeder:
+İsteyen deneme yapan kişi yalnız `blind/YYYY-MM-DD.json` dosyasını açar ve cevap anahtarına bakmadan şunları kaydedebilir:
 
 - İlk tahmin ve tahmin sırası.
 - Her tahminde hangi dört kelimenin seçildiği.
@@ -57,7 +57,7 @@ Kör çözücü yalnız `blind/YYYY-MM-DD.json` dosyasını açar ve cevap anaht
 - İkinci bir tam gruplamanın mümkün görünüp görünmediği.
 - Türkçe yazım, anlam veya kültür bilgisi itirazı.
 
-Bir bulmaca kör çözümde açılamazsa bu tek başına kalite sorunu değildir; ancak neden açılamadığı açıklanmalıdır. “Bunu bilmem mümkün değildi” gerekçesi varsa grup yeniden yazılır veya çıkarılır.
+Bir bulmaca kör denemede açılamazsa bu tek başına kalite sorunu değildir; ancak neden açılamadığı açıklanmalıdır. “Bunu bilmem mümkün değildi” gerekçesi varsa grup yeniden yazılır veya çıkarılır.
 
 ### Manuel adalet kontrolü
 
@@ -72,24 +72,24 @@ Bir bulmaca kör çözümde açılamazsa bu tek başına kalite sorunu değildir
 
 ## Prototipler
 
-| ID / tarih | Taslak sahibi | Kör çözücü | Hedef zorluk profili | Ana fikir |
+| ID / tarih | Taslak sahibi | İsteğe bağlı deneme yapan | Hedef zorluk profili | Ana fikir |
 | --- | --- | --- | --- | --- |
 | `q-001` / 20 Eylül 2026 | Mehmet | Utku | 1–4 | Fiil kalıpları, `KARA` birleşikleri ve masa oyunları |
 | `q-002` / 21 Eylül 2026 | Mehmet | Utku | 1–4 | Kahvaltı, hayvanlar ve `ATMAK`/`KESMEK` kalıpları |
 | `q-003` / 22 Eylül 2026 | Mehmet | Utku | 1–4 | Şekiller, çalgılar, `VERMEK` kalıbı ve ilk harf oyunu |
 
-Üçü de taslaktır. Utku'nun kör çözüm ve itiraz kaydı tamamlanmadan günlük stoğa onaylı içerik olarak sayılmaz.
+Üçü de taslaktır. Yazarın kendi kalite kontrolü tamamlanmadan günlük stoğa alınmaz; Utku'nun kör deneme ve itiraz kaydı isteğe bağlıdır.
 
 ## Revizyon ve yayın kaydı
 
-Bir kelime değiştiğinde `revision` artırılır ve kör çözüm baştan yapılır. Yayımlanmış bir puzzle normal akışta değiştirilmez; zorunlu düzeltmede yeni revizyon, gerekçe ve kayıt uyumluluğu yazılır.
+Bir kelime değiştiğinde `revision` artırılır ve kör deneme önerilir. Yayımlanmış bir puzzle normal akışta değiştirilmez; zorunlu düzeltmede yeni revizyon, gerekçe ve kayıt uyumluluğu yazılır.
 
-İlk 30 günlük stoğun taslakları iki kişiye bölünür. Mehmet 1–15, Utku 16–30 aralığının yazarıdır; her yazarın içeriğini diğeri kör çözer. Bu dosyadaki ilk üç prototip, üretim sürecinin ve veri biçiminin örneğidir.
+İlk 30 günlük stoğun taslakları iki kişiye bölünür. Mehmet 1–15, Utku 16–30 aralığının yazarıdır; diğer kişi isterse yazarın içeriğini kör dener. Bu dosyadaki ilk üç prototip, üretim sürecinin ve veri biçiminin örneğidir.
 
 ## Kaynak ve yapay zekâ kullanımı
 
-Yaygın Türkçe kullanım, sözlük anlamı veya güncel bir isim tartışmalıysa kaynak notu editorial dosyasına eklenir. Yapay zekâ yalnız aday üretimi ve alternatif bağlantı taramasında yardımcı olabilir; son anlam, adalet ve yayın onayı insan review'undan geçer. Kaynakta olmayan bir bilgi “bilinen gerçek” diye oyuna konmaz.
+Yaygın Türkçe kullanım, sözlük anlamı veya güncel bir isim tartışmalıysa kaynak notu editorial dosyasına eklenir. Yapay zekâ yalnız aday üretimi ve alternatif bağlantı taramasında yardımcı olabilir; son anlam, adalet ve yayın kararı yazarın editoryal kontrolünden geçer. Kaynakta olmayan bir bilgi “bilinen gerçek” diye oyuna konmaz.
 
 ## Teslim ölçütü
 
-Q06 tamamlanmış sayılması için `src/content/puzzles/` altında üç cevaplı prototip, `src/content/editorial/` altında üç açıklamalı review dosyası, `src/content/editorial/blind/` altında üç cevapsız tahta ve bu rehber bulunur. Utku'ya kör çözüm teslimi PR açıklamasında belirtilir; onay sonrasında revizyonlar takip edilir.
+Q06 tamamlanmış sayılması için `src/content/puzzles/` altında üç cevaplı prototip, `src/content/editorial/` altında üç açıklamalı editorial dosyası, `src/content/editorial/blind/` altında üç cevapsız tahta ve bu rehber bulunur. Utku'ya kör deneme sunulabilir, ancak bu PR veya merge ön koşulu değildir; revizyonlar yazarın kalite kontrolüyle takip edilir.
