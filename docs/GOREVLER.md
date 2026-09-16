@@ -22,7 +22,7 @@ Ortak sözleşme, görsel yön ve beş kör denenmiş prototip. Motor ve UI içi
 | [Q04 / #4](https://github.com/mehmetalisahingm/quadro/issues/4) — Quadro görsel kimliği ve tasarım sistemi | Mehmet | Başlangıç |
 | [Q05 / #5](https://github.com/mehmetalisahingm/quadro/issues/5) — Ana sayfanın ilk ziyaret, devam ve sonuç tasarımları | Mehmet | [Q04 / #4](https://github.com/mehmetalisahingm/quadro/issues/4) |
 | [Q06 / #6](https://github.com/mehmetalisahingm/quadro/issues/6) — Bulmaca yazım rehberi ve üç ilk prototip | Mehmet | Başlangıç |
-| [Q07 / #7](https://github.com/mehmetalisahingm/quadro/issues/7) — İki prototip bulmaca ve Mehmet'in ilk taslaklarına kör review | Utku | [Q06 / #6](https://github.com/mehmetalisahingm/quadro/issues/6) |
+| [Q07 / #7](https://github.com/mehmetalisahingm/quadro/issues/7) — İki prototip bulmaca ve ilk taslaklarla bağımsız kör deneme | Utku | [Q06 / #6](https://github.com/mehmetalisahingm/quadro/issues/6) |
 | [Q08 / #8](https://github.com/mehmetalisahingm/quadro/issues/8) — İlk beş bulmacanın dış oyuncu denemesi | Mehmet | [Q06 / #6](https://github.com/mehmetalisahingm/quadro/issues/6), [Q07 / #7](https://github.com/mehmetalisahingm/quadro/issues/7) |
 
 ## F1 — İlk çalışan oyun
@@ -70,8 +70,8 @@ Kör içerik onayı, animasyon/ses, erişilebilirlik, performans, ölçüm ve pi
 
 | Görev | Sorumlu | Önce tamamlanacaklar |
 | --- | --- | --- |
-| [Q28 / #28](https://github.com/mehmetalisahingm/quadro/issues/28) — Mehmet'in 15 bulmacasına kör çözüm ve yayın review'u | Utku | [Q26 / #26](https://github.com/mehmetalisahingm/quadro/issues/26) |
-| [Q29 / #29](https://github.com/mehmetalisahingm/quadro/issues/29) — Utku'nun 15 bulmacasına kör çözüm ve yayın review'u | Mehmet | [Q27 / #27](https://github.com/mehmetalisahingm/quadro/issues/27) |
+| [Q28 / #28](https://github.com/mehmetalisahingm/quadro/issues/28) — Mehmet'in 15 bulmacasına bağımsız kör deneme ve kalite notları | Utku | [Q26 / #26](https://github.com/mehmetalisahingm/quadro/issues/26) |
+| [Q29 / #29](https://github.com/mehmetalisahingm/quadro/issues/29) — Utku'nun 15 bulmacasına bağımsız kör deneme ve kalite notları | Mehmet | [Q27 / #27](https://github.com/mehmetalisahingm/quadro/issues/27) |
 | [Q30 / #30](https://github.com/mehmetalisahingm/quadro/issues/30) — Kart, grup birleşimi ve final animasyonları | Mehmet | [Q16 / #16](https://github.com/mehmetalisahingm/quadro/issues/16), [Q24 / #24](https://github.com/mehmetalisahingm/quadro/issues/24) |
 | [Q31 / #31](https://github.com/mehmetalisahingm/quadro/issues/31) — Minimal sesler ve tercih yönetimi | Mehmet | [Q14 / #14](https://github.com/mehmetalisahingm/quadro/issues/14), [Q15 / #15](https://github.com/mehmetalisahingm/quadro/issues/15), [Q20 / #20](https://github.com/mehmetalisahingm/quadro/issues/20) |
 | [Q32 / #32](https://github.com/mehmetalisahingm/quadro/issues/32) — Mobil, klavye ve erişilebilirlik kabulü | Mehmet | [Q12 / #12](https://github.com/mehmetalisahingm/quadro/issues/12), [Q23 / #23](https://github.com/mehmetalisahingm/quadro/issues/23), [Q25 / #25](https://github.com/mehmetalisahingm/quadro/issues/25), [Q30 / #30](https://github.com/mehmetalisahingm/quadro/issues/30), [Q31 / #31](https://github.com/mehmetalisahingm/quadro/issues/31) |
