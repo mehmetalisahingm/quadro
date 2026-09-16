@@ -9,6 +9,7 @@ import {
 import type { SampleScenarioId } from "@/features/game/fixtures";
 import { useSampleGame } from "@/features/game/react/useSampleGame";
 
+import { GameResult } from "./GameResult";
 import { MistakeMeter } from "./MistakeMeter";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
@@ -157,36 +158,36 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
         {feedbackMessage(feedback)}
       </div>
 
-      <div className="q-game-controls" aria-label="Oyun kontrolleri">
-        <button
-          type="button"
-          className="q-game-control"
-          onClick={controller.shuffle}
-          disabled={
-            !isPlaying || isTransitioning || snapshot.remainingWordOrder.length < 2
-          }
-        >
-          Karıştır
-        </button>
-        <button
-          type="button"
-          className="q-game-control"
-          onClick={controller.clearSelection}
-          disabled={
-            !isPlaying || isTransitioning || snapshot.selectedWordIds.length === 0
-          }
-        >
-          Temizle
-        </button>
-        <button
-          type="button"
-          className="q-game-control q-game-submit"
-          onClick={submitSelection}
-          disabled={!canSubmit}
-        >
-          {isTransitioning ? "Kontrol ediliyor…" : "Grupla"}
-        </button>
-      </div>
+      {isPlaying ? (
+        <div className="q-game-controls" aria-label="Oyun kontrolleri">
+          <button
+            type="button"
+            className="q-game-control"
+            onClick={controller.shuffle}
+            disabled={isTransitioning || snapshot.remainingWordOrder.length < 2}
+          >
+            Karıştır
+          </button>
+          <button
+            type="button"
+            className="q-game-control"
+            onClick={controller.clearSelection}
+            disabled={isTransitioning || snapshot.selectedWordIds.length === 0}
+          >
+            Temizle
+          </button>
+          <button
+            type="button"
+            className="q-game-control q-game-submit"
+            onClick={submitSelection}
+            disabled={!canSubmit}
+          >
+            {isTransitioning ? "Kontrol ediliyor…" : "Grupla"}
+          </button>
+        </div>
+      ) : (
+        <GameResult puzzle={puzzle} snapshot={snapshot} />
+      )}
 
       <p className="q-game-note">
         Doğruluk, hak ve oyun durumu arayüzde hesaplanmaz; Q03 denetleyicisinden okunur.
