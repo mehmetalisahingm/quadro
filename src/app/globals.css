@@ -1,0 +1,36 @@
+:root {
+  color-scheme: light dark;
+  --background: #ffffff;
+  --foreground: #16181d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1115;
+    --foreground: #f2f3f5;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
