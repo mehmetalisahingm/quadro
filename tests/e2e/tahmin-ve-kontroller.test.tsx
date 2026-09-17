@@ -11,10 +11,12 @@ import {
   SEHIRLER,
   UC_GEZEGEN_BIR_SEHIR,
   YANLISLAR,
+  buttonTexts,
   control,
   feedbackText,
   finishTransition,
   guess,
+  hasBoard,
   isDisabled,
   leakedAnswers,
   openPlayPage,
@@ -140,21 +142,24 @@ describe("oyun kontrolleri", () => {
     expect(feedbackText()).toBe("");
   });
 
-  it("bitmiş oyunda tahta etkileşimi kapalıdır: kartlar seçilemez, kontroller görünmez", async () => {
+  it("bitmiş oyunda tahta etkileşimi kapalıdır: tahta ve oyun kontrolleri kalkar, yalnız paylaşım kalır", async () => {
     const user = await openPlayPage();
-    for (const words of YANLISLAR) await guess(user, words);
+    for (const words of YANLISLAR.slice(0, 3)) await guess(user, words);
+    expect(hasBoard()).toBe(true);
+    expect(control("Karıştır")).not.toBeNull();
+
+    const [, , , dorduncu] = YANLISLAR;
+    await guess(user, dorduncu);
     resultRegion("Bugünlük bu kadar.");
 
-    for (const text of ["ELMA", "MARS", "ADANA", "SARI"]) {
-      expect(isDisabled(tile(text))).toBe(true);
-      await user.click(tile(text));
-    }
-    expect(pressedTexts()).toEqual([]);
-    expect(selectionLabel()).toBe("0/4 seçili");
+    expect(hasBoard()).toBe(false);
+    expect(screen.queryAllByText(/^(ELMA|MARS|ADANA|SARI)$/, { selector: "button" })).toEqual([]);
     expect(control("Karıştır")).toBeNull();
     expect(control("Temizle")).toBeNull();
     expect(screen.queryByText(/^(Grupla|Kontrol ediliyor…)$/, { selector: "button" })).toBeNull();
-    expect(remainingMistakes()).toBe(0);
+    expect(screen.queryByText(/seçili$/)).toBeNull();
+    expect(feedbackText()).toBe("");
+    expect(buttonTexts()).toEqual(["Paylaş", "Kopyala"]);
   });
 });
 

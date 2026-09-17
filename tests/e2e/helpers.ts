@@ -76,9 +76,16 @@ export function isDisabled(element: HTMLElement): boolean {
   return element instanceof HTMLButtonElement && element.disabled;
 }
 
-/** Oyun tahtası. */
+const BOARD_LABEL = /^\d+ çözülmemiş kelimelik oyun tahtası$/;
+
+/** Oyun tahtası; etiketi kalan kart sayısını söyler ("16 çözülmemiş kelimelik oyun tahtası"). */
 export function board(): HTMLElement {
-  return screen.getByLabelText("16 kelimelik oyun tahtası");
+  return screen.getByLabelText(BOARD_LABEL);
+}
+
+/** Tahta çiziliyor mu? Oyun bitince tahtanın yerini sonuç ekranı alır. */
+export function hasBoard(): boolean {
+  return screen.queryByLabelText(BOARD_LABEL) !== null;
 }
 
 /** Tahtadaki kart metinleri, gösterim sırasıyla. */
@@ -110,16 +117,22 @@ export function selectionLabel(): string {
   return screen.getByText(/seçili$/).textContent ?? "";
 }
 
-/** Hata göstergesinin bildirdiği kalan hak. */
+/** Hata göstergesinin ekran okuyucuya bildirdiği kalan hak ("3 hata hakkı kaldı"). */
 export function remainingMistakes(): number {
-  const label = screen.getByLabelText(/hata hakkı kaldı$/).getAttribute("aria-label") ?? "";
-  return Number.parseInt(label, 10);
+  return Number.parseInt(screen.getByText(/hata hakkı kaldı$/).textContent ?? "", 10);
 }
 
-/** Oyun geri bildirim satırının metni (ilk durum bölgesi). */
+/** Oyun geri bildirim satırının metni; satır yoksa (oyun bitti) boş. */
 export function feedbackText(): string {
-  const [feedback] = screen.getAllByRole("status");
+  const feedback = screen
+    .queryAllByRole("status")
+    .find((region) => region.hasAttribute("data-verdict"));
   return feedback?.textContent ?? "";
+}
+
+/** Sayfadaki düğmelerin metinleri; oyun bitince yalnız paylaşım eylemleri kalmalıdır. */
+export function buttonTexts(): string[] {
+  return screen.queryAllByRole("button").map((button) => button.textContent ?? "");
 }
 
 /** Grupla düğmesi; geçiş sırasında "Kontrol ediliyor…" yazar. */
