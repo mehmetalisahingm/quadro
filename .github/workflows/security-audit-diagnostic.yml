@@ -20,16 +20,16 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - name: Use current npm 11
+      - name: Use current npm 11 for lock regeneration
         run: |
           npm install --global npm@11.19.1
           npm --version
 
       - name: Upgrade vulnerable framework and test toolchain
         run: |
-          npm pkg set packageManager='npm@11.19.1'
+          npm pkg set packageManager='npm@10.9.7'
           npm pkg set dependencies.next='16.3.5'
-          npm pkg set devDependencies.eslint='9.39.1'
+          npm pkg set devDependencies.eslint='10.10.0'
           npm pkg set devDependencies.eslint-config-next='16.3.5'
           npm pkg set devDependencies.vitest='4.1.11'
           npm pkg set scripts.lint='eslint . --max-warnings=0'
@@ -75,5 +75,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add package.json package-lock.json
           git diff --cached --quiet && exit 0
-          git commit -m 'chore(security): upgrade vulnerable dependencies'
+          git commit -m 'chore(security): finalize safe dependency versions'
           git push origin HEAD:codex/security-audit-cleanup
