@@ -1,0 +1,25 @@
+name: Security Audit Diagnostic
+
+on:
+  push:
+    branches:
+      - codex/security-audit-cleanup
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Audit current tree
+        run: npm audit --json || true
+      - name: Audit fix dry run
+        run: npm audit fix --dry-run --json || true
