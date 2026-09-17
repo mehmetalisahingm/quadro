@@ -17,26 +17,26 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout
+      - name: Depoyu çek
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Node kurulumu (.nvmrc sürümü + npm önbelleği)
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: npm
 
-      - name: Install (temiz kurulum)
+      - name: Bağımlılıklar (kilit dosyasıyla temiz kurulum)
         run: npm ci
 
-      - name: Lint
+      - name: Lint (ESLint CLI)
         run: npm run lint
 
-      - name: Typecheck
+      - name: Tip denetimi (tsc --noEmit)
         run: npm run typecheck
 
-      - name: Test
+      - name: Testler (Vitest)
         run: npm run test
 
-      - name: Build (üretim derlemesi)
+      - name: Üretim derlemesi (next build)
         run: npm run build

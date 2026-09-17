@@ -69,7 +69,7 @@ npm run dev     # geliştirme sunucusu → http://localhost:3000
 | `npm run dev` | Geliştirme sunucusu |
 | `npm run build` | Üretim derlemesi |
 | `npm run start` | Üretim sunucusu (önce `build`) |
-| `npm run lint` | ESLint (`next lint`) |
+| `npm run lint` | ESLint CLI (`eslint`, kurallar `.eslintrc.json`) |
 | `npm run typecheck` | TypeScript tip denetimi (`tsc --noEmit`) |
 | `npm run test` | Testler (Vitest) |
 | `npm run check` | lint + typecheck + test + build (CI ile aynı sıra) |
