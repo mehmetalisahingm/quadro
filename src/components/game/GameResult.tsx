@@ -1,5 +1,6 @@
-import { GAME_CONSTANTS, type GameSnapshot, type Puzzle } from "@/features/game/contracts";
+import type { GameSnapshot, Puzzle } from "@/features/game/contracts";
 
+import { getResultStats } from "./presentation";
 import { ShareCard } from "./ShareCard";
 
 export type GameResultProps = {
@@ -7,21 +8,17 @@ export type GameResultProps = {
   snapshot: GameSnapshot;
 };
 
-function formatDuration(totalSeconds: number): string {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-}
-
 export function GameResult({ puzzle, snapshot }: GameResultProps) {
-  const mistakesUsed = GAME_CONSTANTS.maxMistakes - snapshot.mistakesRemaining;
+  if (snapshot.status === "playing") return null;
+
   const won = snapshot.status === "won";
+  const stats = getResultStats(snapshot);
 
   return (
     <section className="q-result" aria-labelledby="game-result-title">
       <div className="q-result-heading">
         <span className="q-result-eyebrow">{won ? "TAMAMLANDI" : "OYUN BİTTİ"}</span>
-        <h2 id="game-result-title" className="q-result-title">
+        <h2 id="game-result-title" className="q-result-title" tabIndex={-1}>
           {won ? "Dört bağı da buldun." : "Bugünlük bu kadar."}
         </h2>
         <p className="q-result-copy">
@@ -34,15 +31,15 @@ export function GameResult({ puzzle, snapshot }: GameResultProps) {
       <dl className="q-result-stats">
         <div>
           <dt>Bulunan</dt>
-          <dd>{snapshot.solvedGroupIds.length}/4</dd>
+          <dd>{stats.found}/{stats.total}</dd>
         </div>
         <div>
           <dt>Hata</dt>
-          <dd>{mistakesUsed}</dd>
+          <dd>{stats.mistakesUsed}</dd>
         </div>
         <div>
           <dt>Süre</dt>
-          <dd>{formatDuration(snapshot.activeSeconds)}</dd>
+          <dd>{stats.duration}</dd>
         </div>
       </dl>
 
