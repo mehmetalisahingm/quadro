@@ -20,13 +20,14 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      - name: Use repository npm version
+      - name: Use current npm 11
         run: |
-          npm install --global npm@10.9.7
+          npm install --global npm@11.19.1
           npm --version
 
       - name: Upgrade vulnerable framework and test toolchain
         run: |
+          npm pkg set packageManager='npm@11.19.1'
           npm pkg set dependencies.next='16.3.5'
           npm pkg set devDependencies.eslint='9.39.1'
           npm pkg set devDependencies.eslint-config-next='16.3.5'
