@@ -13,10 +13,11 @@
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
+    "typecheck:browser": "tsc -p tsconfig.playwright.json --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "vitest run tests/e2e",
-    "test:browser": "node tests/browser/q17-smoke.mjs",
+    "test:browser": "playwright test -c playwright.config.mjs",
     "check": "npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
