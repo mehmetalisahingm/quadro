@@ -55,6 +55,9 @@ jobs:
       - name: Playwright aracı (sabit sürüm)
         run: npm install --no-save --package-lock=false --ignore-scripts @playwright/test@1.63.0
 
+      - name: Playwright test tip denetimi
+        run: npm run typecheck:browser
+
       - name: Chromium ve sistem bağımlılıkları
         run: npx playwright install --with-deps chromium
 
@@ -86,3 +89,14 @@ jobs:
           fi
 
           npm run test:browser
+
+      - name: Playwright raporu ve izleri
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: playwright-raporu
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: ignore
