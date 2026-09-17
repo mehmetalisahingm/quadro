@@ -34,7 +34,7 @@ const copyByState: Record<HomePlayerState, StateCopy> = {
   "in-progress": {
     eyebrow: "OYUN DEVAM EDİYOR",
     title: "Bulmacan seni bekliyor.",
-    description: "Kaldığın yer ve seçtiğin sıra bu cihazda korunur.",
+    description: "Bugünkü bulmacaya kaldığın yerden devam et.",
     primaryLabel: "Kaldığın yerden devam et",
     primaryHref: "/play",
     secondaryLabel: "Nasıl oynanır?",

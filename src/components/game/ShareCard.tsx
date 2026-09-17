@@ -2,7 +2,12 @@
 
 import { useMemo, useState } from "react";
 
-import type { GameSnapshot, Puzzle, WordId } from "@/features/game/contracts";
+import {
+  GAME_CONSTANTS,
+  type GameSnapshot,
+  type Puzzle,
+  type WordId,
+} from "@/features/game/contracts";
 
 export type ShareCardProps = {
   puzzle: Puzzle;
@@ -26,7 +31,7 @@ export function buildShareText(puzzle: Puzzle, snapshot: GameSnapshot): string {
   const rows = snapshot.attempts.map((attempt) =>
     attempt.wordIds.map((wordId) => symbolByWordId.get(wordId) ?? "⬜").join(""),
   );
-  const score = `${snapshot.solvedGroupIds.length}/4`;
+  const score = `${snapshot.solvedGroupIds.length}/${GAME_CONSTANTS.groupCount}`;
 
   return [`Quadro ${puzzle.date} ${score}`, ...rows].join("\n");
 }
@@ -38,7 +43,7 @@ export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
 
   const copy = async () => {
     try {
-      if (!navigator.clipboard) throw new Error("clipboard-unavailable");
+      if (!navigator.clipboard?.writeText) throw new Error("clipboard-unavailable");
       await navigator.clipboard.writeText(shareText);
       setShowFallback(false);
       setStatus("Sonuç panoya kopyalandı.");
@@ -49,19 +54,23 @@ export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
   };
 
   const share = async () => {
+    if (!navigator.share) {
+      await copy();
+      return;
+    }
+
     try {
-      if (!navigator.share) {
-        await copy();
-        return;
-      }
       await navigator.share({ title: "Quadro", text: shareText });
-      setStatus("Paylaşım tamamlandı.");
+      setShowFallback(false);
+      setStatus("Paylaşım işlemi tamamlandı.");
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
       setShowFallback(true);
       setStatus("Paylaşım açılamadı. Metni aşağıdan kopyalayabilirsin.");
     }
   };
+
+  const fallbackRows = Math.min(Math.max(snapshot.attempts.length + 1, 3), 10);
 
   return (
     <section className="q-share-card" aria-labelledby="share-title">
@@ -83,12 +92,14 @@ export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
         </button>
       </div>
 
-      <p className="q-share-status" role="status" aria-live="polite">{status}</p>
+      <p className="q-share-status" role="status" aria-live="polite" aria-atomic="true">
+        {status}
+      </p>
 
       {showFallback ? (
         <label className="q-share-fallback">
           <span>Paylaşım metni</span>
-          <textarea readOnly value={shareText} rows={Math.max(snapshot.attempts.length + 1, 3)} />
+          <textarea readOnly value={shareText} rows={fallbackRows} />
         </label>
       ) : null}
     </section>
