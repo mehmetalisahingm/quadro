@@ -6,17 +6,12 @@ import {
   GAME_CONSTANTS,
   type SubmitOutcome,
 } from "@/features/game/contracts";
-import type { SampleScenarioId } from "@/features/game/fixtures";
-import { useSampleGame } from "@/features/game/react/useSampleGame";
+import { useGame } from "@/features/game/react/useGame";
 
 import { GameResult } from "./GameResult";
 import { MistakeMeter } from "./MistakeMeter";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
-
-export type GameBoardProps = {
-  scenarioId?: SampleScenarioId;
-};
 
 function feedbackMessage(outcome: SubmitOutcome | null): string {
   if (!outcome) return "";
@@ -37,12 +32,10 @@ function feedbackMessage(outcome: SubmitOutcome | null): string {
   }
 }
 
-export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
-  const { puzzle, controller, initialResult } = useSampleGame(scenarioId);
+export function GameBoard() {
+  const { puzzle, controller } = useGame();
   const { snapshot } = controller;
-  const [feedback, setFeedback] = useState<SubmitOutcome | null>(
-    initialResult?.outcome ?? null,
-  );
+  const [feedback, setFeedback] = useState<SubmitOutcome | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -81,7 +74,7 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
         ? "Oyun sona erdi"
         : "Dört kelime seç";
 
-  const submitSelection = () => {
+  const submitCurrentSelection = () => {
     if (!canSubmit) return;
 
     setIsTransitioning(true);
@@ -179,7 +172,7 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
           <button
             type="button"
             className="q-game-control q-game-submit"
-            onClick={submitSelection}
+            onClick={submitCurrentSelection}
             disabled={!canSubmit}
           >
             {isTransitioning ? "Kontrol ediliyor…" : "Grupla"}
@@ -190,7 +183,7 @@ export function GameBoard({ scenarioId = "empty" }: GameBoardProps) {
       )}
 
       <p className="q-game-note">
-        Doğruluk, hak ve oyun durumu arayüzde hesaplanmaz; Q03 denetleyicisinden okunur.
+        Doğruluk, hak ve oyun durumu arayüzde hesaplanmaz; gerçek Q09/Q10 motorundan okunur.
       </p>
     </section>
   );
