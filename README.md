@@ -71,10 +71,30 @@ npm run dev     # geliştirme sunucusu → http://localhost:3000
 | `npm run start` | Üretim sunucusu (önce `build`) |
 | `npm run lint` | ESLint CLI (`eslint`, kurallar `.eslintrc.json`) |
 | `npm run typecheck` | TypeScript tip denetimi (`tsc --noEmit`) |
-| `npm run test` | Testler (Vitest) |
-| `npm run check` | lint + typecheck + test + build (CI ile aynı sıra) |
+| `npm run test` | Birim testleri (Vitest, `src/`) |
+| `npm run test:e2e` | Tarayıcı regresyonları (Playwright + Chromium, `tests/e2e/`) |
+| `npm run check` | lint + typecheck + birim testleri + build (CI'daki `verify` job'u ile aynı sıra) |
 
-CI, her `push` ve `pull_request` üzerinde bu kontrolleri (`npm ci` → lint → typecheck → test → build) çalıştırır: [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+CI, her `push` ve `pull_request` üzerinde iki job'u paralel çalıştırır: [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+
+| Job | Yaptığı |
+| --- | --- |
+| `Lint, typecheck, test, build` | `npm ci` → lint → typecheck → birim testleri → üretim derlemesi |
+| `E2E (Playwright)` | `npm ci` → `npx playwright install --with-deps chromium` → `npm run test:e2e` |
+
+Tarayıcı regresyonları ayrı job'da koşar; böylece Chromium indirmesi birim testlerini ve derlemeyi yavaşlatmaz. Başarısız koşuda Playwright raporu ve izleri `playwright-raporu` adlı artifact olarak yüklenir.
+
+### Tarayıcı regresyonları
+
+`npm run test:e2e` gerçek Chromium açar ve testleri **üretim derlemesine** karşı koşturur: `playwright.config.ts` içindeki `webServer`, `npm run build && npm run start` çalıştırır. Ayrıca elle derleme yapmak gerekmez; yerelde 3000 portunda açık bir sunucu varsa yeniden derlenmez (`reuseExistingServer`).
+
+İlk kullanımda tarayıcıyı bir kez indirin:
+
+```sh
+npx playwright install chromium
+```
+
+Testler günün canlı bulmacasına bağımlı değildir: `/play` sabit tohumlu (`DEFAULT_ENGINE_SEED`) örnek bulmacayı açar, beklenen kart sırası testte sabit yazılmak yerine motordan hesaplanır ve kartlar erişilebilir isimleriyle tıklanır.
 
 ### Klasör sahipliği
 

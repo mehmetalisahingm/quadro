@@ -40,3 +40,41 @@ jobs:
 
       - name: Üretim derlemesi (next build)
         run: npm run build
+
+  # Gerçek tarayıcı regresyonları ayrı bir job'da koşar: birim testleri ve üretim
+  # derlemesi Playwright'ın tarayıcı indirmesini beklemez, iki job paralel ilerler.
+  e2e:
+    name: E2E (Playwright)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Depoyu çek
+        uses: actions/checkout@v4
+
+      - name: Node kurulumu (.nvmrc sürümü + npm önbelleği)
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Bağımlılıklar (kilit dosyasıyla temiz kurulum)
+        run: npm ci
+
+      - name: Chromium kurulumu (Playwright)
+        run: npx playwright install --with-deps chromium
+
+      # playwright.config.ts'teki webServer önce `npm run build`, sonra `npm run start`
+      # çalıştırır; testler üretim derlemesine karşı koşar.
+      - name: Uçtan uca testler (üretim derlemesi üzerinde)
+        run: npm run test:e2e
+
+      - name: Playwright raporu ve izleri
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-raporu
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+          if-no-files-found: ignore

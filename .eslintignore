@@ -7,5 +7,9 @@ out/
 dist/
 coverage/
 
+# Playwright çıktıları (derlenmiş rapor paketleri ve izler)
+playwright-report/
+test-results/
+
 # Next.js tarafından üretilen tip bildirimi (elle düzenlenmez)
 next-env.d.ts
