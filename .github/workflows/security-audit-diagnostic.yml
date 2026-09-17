@@ -22,9 +22,13 @@ jobs:
 
       - name: Upgrade vulnerable framework and test toolchain
         run: |
-          rm -rf node_modules package-lock.json
-          npm install --save-exact next@16.3.5 eslint-config-next@16.3.5 vitest@4.1.11 eslint@9
+          npm pkg set dependencies.next='16.3.5'
+          npm pkg set devDependencies.eslint='9.39.1'
+          npm pkg set devDependencies.eslint-config-next='16.3.5'
+          npm pkg set devDependencies.vitest='4.1.11'
           npm pkg set scripts.lint='eslint . --max-warnings=0'
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: Security audit must be clean
         run: npm audit --audit-level=moderate
