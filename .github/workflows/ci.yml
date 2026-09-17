@@ -35,7 +35,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Test
+      # Birim testleri (node) ve ilk akışın tarayıcı regresyonları (tests/e2e, jsdom) birlikte koşar.
+      # jsdom npm paketidir; ayrı tarayıcı kurulumu gerekmez.
+      - name: Test (birim + akış regresyonları)
         run: npm run test
 
       - name: Build (üretim derlemesi)
