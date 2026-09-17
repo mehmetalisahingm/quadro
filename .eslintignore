@@ -1,0 +1,11 @@
+# ESLint CLI, `next lint` sarmalayıcısının aksine kök dizinden itibaren tarar.
+# Üretilmiş ve kurulan dosyalar denetim dışıdır.
+
+node_modules/
+.next/
+out/
+dist/
+coverage/
+
+# Next.js tarafından üretilen tip bildirimi (elle düzenlenmez)
+next-env.d.ts
