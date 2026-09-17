@@ -19,7 +19,16 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - name: Audit current tree
-        run: npm audit --json || true
-      - name: Audit fix dry run
-        run: npm audit fix --dry-run --json || true
+      - name: Candidate package metadata
+        run: |
+          echo 'NEXT PEERS'
+          npm view next@16.3.5 peerDependencies engines
+          echo 'ESLINT CONFIG NEXT PEERS'
+          npm view eslint-config-next@16.3.5 peerDependencies
+          echo 'VITEST 4.1.11'
+          npm view vitest@4.1.11 peerDependencies engines
+          echo 'CURRENT LATEST REACT'
+          npm view react version
+          npm view react-dom version
+          echo 'CURRENT LATEST ESLINT'
+          npm view eslint version
