@@ -1,4 +1,4 @@
-name: Security Audit Diagnostic
+name: Security Upgrade Builder
 
 on:
   push:
@@ -6,29 +6,62 @@ on:
       - codex/security-audit-cleanup
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  audit:
+  upgrade:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: actions/setup-node@v7.0.0
         with:
           node-version-file: .nvmrc
           cache: npm
-      - run: npm ci
-      - name: Candidate package metadata
+
+      - name: Upgrade vulnerable framework and test toolchain
         run: |
-          echo 'NEXT PEERS'
-          npm view next@16.3.5 peerDependencies engines
-          echo 'ESLINT CONFIG NEXT PEERS'
-          npm view eslint-config-next@16.3.5 peerDependencies
-          echo 'VITEST 4.1.11'
-          npm view vitest@4.1.11 peerDependencies engines
-          echo 'CURRENT LATEST REACT'
-          npm view react version
-          npm view react-dom version
-          echo 'CURRENT LATEST ESLINT'
-          npm view eslint version
+          npm install --save-exact next@16.3.5 eslint-config-next@16.3.5 vitest@4.1.11 eslint@9
+          npm pkg set scripts.lint='eslint . --max-warnings=0'
+
+      - name: Security audit must be clean
+        run: npm audit --audit-level=moderate
+
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Tests
+        run: npm run test
+      - name: Production build
+        run: npm run build
+
+      - name: Install fixed Playwright runner for browser regression
+        run: npm install --no-save --package-lock=false --ignore-scripts @playwright/test@1.63.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Real browser regression
+        env:
+          QUADRO_BASE_URL: http://127.0.0.1:3000
+        run: |
+          npm run start -- -H 127.0.0.1 -p 3000 > /tmp/quadro-next.log 2>&1 &
+          SERVER_PID=$!
+          cleanup() { kill "$SERVER_PID" 2>/dev/null || true; }
+          trap cleanup EXIT
+          for attempt in {1..30}; do
+            if curl -fsS "$QUADRO_BASE_URL" >/dev/null; then break; fi
+            if ! kill -0 "$SERVER_PID" 2>/dev/null; then cat /tmp/quadro-next.log; exit 1; fi
+            sleep 1
+          done
+          curl -fsS "$QUADRO_BASE_URL" >/dev/null || { cat /tmp/quadro-next.log; exit 1; }
+          npm run test:browser
+
+      - name: Commit generated dependency files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add package.json package-lock.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'chore(security): upgrade vulnerable dependencies'
+          git push origin HEAD:codex/security-audit-cleanup
