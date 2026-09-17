@@ -21,6 +21,10 @@ import {
   type SubmitResult,
   type WordId,
 } from "@/features/game/contracts";
+import { createSeededRandom, shuffleWordIds } from "@/features/game/engine/random";
+
+// Rastgelelik motorla ortaktır; aynı tohum motorda ve örnek adaptörde aynı sırayı verir.
+export { createSeededRandom };
 
 /** Varsayılan karıştırma tohumu. Sunucu ve istemcide aynı başlangıç sırasını verir. */
 export const DEFAULT_SAMPLE_SEED = 20260920;
@@ -42,35 +46,6 @@ export type SampleGameController = GameController & {
   /** Durum her değiştiğinde çağrılacak dinleyiciyi ekler; aboneliği bitiren fonksiyon döner. */
   subscribe: (listener: () => void) => () => void;
 };
-
-/**
- * Tohumlu, deterministik sayı üreteci (mulberry32). Aynı tohum her ortamda aynı diziyi verir;
- * böylece sunucu ve istemci aynı kart sırasını üretir, senaryolar tekrarlanabilir olur.
- */
-export function createSeededRandom(seed: number): () => number {
-  let state = seed >>> 0;
-  return () => {
-    state = (state + 0x6d2b79f5) >>> 0;
-    let t = state;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-/** Kimlik listesinin karıştırılmış bir kopyasını döndürür (Fisher–Yates). */
-function shuffleIds(ids: readonly WordId[], random: () => number): WordId[] {
-  const result = [...ids];
-  for (let i = result.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(random() * (i + 1));
-    const current = result[i];
-    const other = result[j];
-    if (current === undefined || other === undefined) continue;
-    result[i] = other;
-    result[j] = current;
-  }
-  return result;
-}
 
 /** Seçim tam dört kimlikse dörtlü demet, değilse `null` döndürür. */
 function asFour(ids: readonly WordId[]): Four<WordId> | null {
@@ -103,7 +78,7 @@ export function createInitialSampleSnapshot(
     dayKey: puzzle.date,
     status: "playing",
     selectedWordIds: [],
-    remainingWordOrder: shuffleIds(wordIds, random),
+    remainingWordOrder: shuffleWordIds(wordIds, random),
     solvedGroupIds: [],
     mistakesRemaining: GAME_CONSTANTS.maxMistakes,
     attempts: [],
@@ -182,7 +157,7 @@ export function createSampleController(options: SampleControllerOptions): Sample
 
     shuffle() {
       if (!isPlaying()) return;
-      commit({ ...snapshot, remainingWordOrder: shuffleIds(snapshot.remainingWordOrder, random) });
+      commit({ ...snapshot, remainingWordOrder: shuffleWordIds(snapshot.remainingWordOrder, random) });
     },
 
     submitSelection() {
