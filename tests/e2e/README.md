@@ -1,38 +1,68 @@
-# İlk akışın tarayıcı regresyonları (Q17)
+# İlk akış regresyonları (Q17)
 
-Bu dizindeki testler oyuncunun ilk akışını uçtan uca korur: ana sayfa → `/play` → oyna → kazan veya kaybet → sonuç ekranı → spoilersız paylaşım.
+Q17 iki katmanla korunur:
 
-## Nasıl çalışır
+1. `tests/e2e/**`: Vitest + jsdom + Testing Library ile hızlı DOM entegrasyon testleri.
+2. `tests/browser/q17-smoke.mjs`: Playwright + gerçek Chromium ile production build üzerinde tarayıcı kalite kapısı.
+
+İki katman birlikte ana sayfa → `/play` → oyna → kazan veya kaybet → sonuç ekranı → spoilersız paylaşım akışını korur.
+
+## Hızlı jsdom katmanı
 
 | | |
 | --- | --- |
 | Çalıştırıcı | Vitest (`vitest.config.ts`) |
 | Ortam | `jsdom`. `environmentMatchGlobs` yalnız `tests/e2e/**` dosyalarını jsdom'da koşturur; `src/**` birim testleri `node` ortamında kalır |
-| Çizim | `@testing-library/react`. Gerçek sayfa bileşenleri çizilir: `src/app/page.tsx` ve `/play` sunucu bileşeni `src/app/play/page.tsx` |
-| Etkileşim | `@testing-library/user-event`: gerçek DOM tıklamaları, çift tıklama, pano |
+| Çizim | `@testing-library/react`. Gerçek sayfa ve oyun bileşenleri çizilir |
+| Etkileşim | `@testing-library/user-event`: tıklama, çift tıklama, pano |
 | Oyun | Gerçek motor (`engine/`) `useGame` üzerinden; sahte sonuç yok |
 
-Yardımcılar `helpers.ts` içindedir. Testler kelimeleri metinleriyle seçer (`ELMA`, `MARS`…), rol ve erişilebilir adlarla sorgular.
+Yardımcılar `helpers.ts` içindedir. Bu katman one-away, tekrar tahmin, hızlı çift gönderme, terminal durum ve paylaşım sızıntısı gibi çok sayıdaki iş kuralını hızlıca denetler.
+
+## Gerçek Chromium katmanı
+
+`tests/browser/q17-smoke.mjs` Playwright ile **gerçek Chromium** açar ve `next build` + `next start` çıktısına karşı çalışır. Şunları doğrular:
+
+- ana sayfadaki gerçek Next.js bağlantısından `/play` rotasına geçiş;
+- dört doğru grupla gerçek kazanma akışı ve terminal ekranı;
+- dört farklı yanlış tahminle gerçek kaybetme akışı;
+- spoilersız paylaşım önizlemesi ve gerçek Clipboard API ile kopyalama;
+- 320 px viewport'ta yatay taşma olmaması, 16 kartın çizilmesi ve kart seçiminin çalışması.
+
+Canlı günlük cevapları kullanılmaz; test Q03'ün yayın stoğunda olmayan `standardPuzzle` fixture'ını kullanır.
 
 ## Deterministik kalma kuralları
 
-- **İçerik:** Yayın stoğunda olmayan `standardPuzzle` kullanılır. Canlı günün cevaplarına bağlı değildir; bunu bir test ayrıca denetler.
-- **Kart sırası:** Motorun sabit tohumundan (`DEFAULT_ENGINE_SEED`) gelir. Beklenen sıra testte motorla hesaplanır, elle yazılmaz.
-- **Zaman:** Gerçek bekleme yoktur. `setTimeout` sahte saattedir; Grupla'daki geri bildirim geçişi `finishTransition()` ile bitirilir. Testing Library'nin eylem sarmalayıcısı saati global `jest` üzerinden ilerlettiği için vitest saati `vi.stubGlobal("jest", …)` ile tanıtılır.
-- **Hız:** Sık çağrılan konum bulucular (kart, Grupla, Karıştır, Temizle) düğmeyi metniyle bulur. Rol sorgularında görünürlük hesabı kapalıdır (`defaultHidden: true`). Adlı rol sorguları (`getByRole(..., { name })`) jsdom'da her çağrıda tüm düğmelerin erişilebilir adını pahalı stil sorgularıyla hesaplıyor; aynı dosyada birkaç oyun bittikten sonra test başına 3–4 saniyeye çıkıp 5 saniyelik sınıra yaklaşıyordu. Anlamsal doğrulamalar (bölge, makale, bağlantı, başlık) rol sorgularıyla yapılır.
+- **İçerik:** `standardPuzzle` kullanılır; günlük yayın stoğundan bağımsızdır.
+- **Kart sırası:** motorun sabit tohumu tarafından belirlenir; jsdom testleri sıralamayı motordan hesaplar.
+- **Zaman:** jsdom katmanında sahte saat vardır. Gerçek Chromium katmanı uygulamanın 260 ms geçişini butonun yeniden etkileşime açılmasını bekleyerek doğrular.
+- **Paylaşım:** gerçek tarayıcı testi kelime/kategori cevaplarının paylaşım metninde bulunmadığını ve panoya yazılan metnin önizlemeyle aynı olduğunu denetler.
 
 ## Çalıştırma
 
+Hızlı katman:
+
 ```bash
-npm run test:e2e   # yalnız akış regresyonları
-npm run test       # birim + akış regresyonları
+npm run test:e2e   # yalnız jsdom akış regresyonları
+npm run test       # birim + jsdom akış regresyonları
 npm run check      # lint + typecheck + test + build
 ```
 
+Gerçek Chromium testi için önce production build ve Playwright gerekir. CI tam olarak şu modeli kullanır:
+
+```bash
+npm run build
+npm install --no-save --package-lock=false --ignore-scripts @playwright/test@1.63.0
+npx playwright install --with-deps chromium
+npm run start -- -H 127.0.0.1 -p 3000
+# ayrı terminal:
+npm run test:browser
+```
+
+Playwright sabit sürümle CI aracı olarak `--no-save` kurulur; uygulamanın `package-lock.json` dosyasına eklenmez.
+
 ## CI
 
-`.github/workflows/ci.yml` içindeki **Test (birim + akış regresyonları)** adımı `npm run test` çalıştırır ve bu testler oraya dahildir. jsdom ve Testing Library `devDependencies` içindedir, `npm ci` ile kurulur; ayrı tarayıcı kurulumu gerekmez. `next lint` de `tests/` dizinini denetler (`next.config.mjs` → `eslint.dirs`).
+`.github/workflows/ci.yml` önce `npm ci → lint → typecheck → test → build` zincirini çalıştırır. Ardından Playwright 1.63.0 ve Chromium kurulur, production Next.js sunucusu başlatılır ve `npm run test:browser` çalıştırılır. Gerçek tarayıcı testi geçmeden Q17 kalite kapısı yeşil sayılmaz.
 
-## Kapsamadıkları
-
-jsdom gerçek bir tarayıcı değildir. CSS, yerleşim, 320 px görünüm, animasyonlar ve Next.js istemci yönlendirmesi burada doğrulanmaz. Ana sayfa bağlantısının yalnız hedefi (`/play`) denetlenir. Bunlar için ileride Playwright ile gerçek tarayıcı testi eklenebilir.
+Gerçek Safari/iOS cihaz kabulü bu görevin dışında kalır ve son cihaz/yayın kabulünde ayrıca yapılır.
