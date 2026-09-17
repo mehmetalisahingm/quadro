@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-004",
+  "date": "2026-09-23",
+  "language": "tr",
+  "status": "draft",
+  "author": "Utkuuzun14",
+  "reviewer": "mehmetalisahingm",
+  "groups": [
+    {
+      "id": "q004-g1",
+      "title": "YAZ MEYVELERİ",
+      "words": [
+        { "id": "q004-w01", "text": "KİRAZ" },
+        { "id": "q004-w02", "text": "ERİK" },
+        { "id": "q004-w03", "text": "İNCİR" },
+        { "id": "q004-w04", "text": "DUT" }
+      ],
+      "difficulty": 1,
+      "explanation": "Kiraz, erik, incir ve dut Türkiye'de yaz aylarında olgunlaşan meyvelerdir."
+    },
+    {
+      "id": "q004-g2",
+      "title": "ANADOLU YAKASI SEMTLERİ",
+      "words": [
+        { "id": "q004-w05", "text": "MALTEPE" },
+        { "id": "q004-w06", "text": "KADIKÖY" },
+        { "id": "q004-w07", "text": "BEYKOZ" },
+        { "id": "q004-w08", "text": "ŞİLE" }
+      ],
+      "difficulty": 2,
+      "explanation": "Maltepe, Kadıköy, Beykoz ve Şile İstanbul'un Anadolu yakasındaki ilçe ve semtlerdir."
+    },
+    {
+      "id": "q004-g3",
+      "title": "SES ÇIKARAN AYGITLAR",
+      "words": [
+        { "id": "q004-w09", "text": "ZİL" },
+        { "id": "q004-w10", "text": "DÜDÜK" },
+        { "id": "q004-w11", "text": "KORNA" },
+        { "id": "q004-w12", "text": "SİREN" }
+      ],
+      "difficulty": 3,
+      "explanation": "Zil, düdük, korna ve siren uyarı veya sinyal sesi çıkaran aygıtlardır."
+    },
+    {
+      "id": "q004-g4",
+      "title": "___ ATMAK",
+      "words": [
+        { "id": "q004-w13", "text": "ADIM" },
+        { "id": "q004-w14", "text": "İMZA" },
+        { "id": "q004-w15", "text": "ÇAMUR" },
+        { "id": "q004-w16", "text": "TAŞ" }
+      ],
+      "difficulty": 4,
+      "explanation": "Dördü de 'atmak' fiiliyle yerleşik kullanılır: adım atmak, imza atmak, çamur atmak ve taş atmak."
+    }
+  ]
+}
