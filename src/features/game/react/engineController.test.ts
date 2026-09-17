@@ -40,7 +40,7 @@ describe("Q16 gerçek motor controller entegrasyonu", () => {
       random: createSeededRandom(17),
     });
 
-    const wrongGuess = (wordIndex: number) =>
+    const wrongGuess = (wordIndex: 0 | 1 | 2 | 3) =>
       standardPuzzle.groups.map((group) => group.words[wordIndex].id);
 
     select(controller, wrongGuess(0));
@@ -54,7 +54,7 @@ describe("Q16 gerçek motor controller entegrasyonu", () => {
     expect(controller.snapshot.mistakesRemaining).toBe(3);
     expect(controller.snapshot.attempts).toHaveLength(1);
 
-    for (const index of [1, 2, 3]) {
+    for (const index of [1, 2, 3] as const) {
       controller.clearSelection();
       select(controller, wrongGuess(index));
       controller.submitSelection();
