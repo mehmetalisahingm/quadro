@@ -13,12 +13,20 @@ import "@/styles/game.css";
 import "@/styles/result.css";
 import "./globals.css";
 
-const metadataBase = process.env.NEXT_PUBLIC_SITE_URL
-  ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
-  : undefined;
+function resolveMetadataBase(): URL {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return new URL(process.env.NEXT_PUBLIC_SITE_URL);
+  }
+
+  if (process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}`);
+  }
+
+  return new URL("http://localhost:3000");
+}
 
 export const metadata: Metadata = {
-  metadataBase,
+  metadataBase: resolveMetadataBase(),
   applicationName: APP_NAME,
   title: {
     default: APP_TITLE,
