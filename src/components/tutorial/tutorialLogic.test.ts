@@ -14,9 +14,17 @@ describe("Q12 öğretici mantığı", () => {
     );
   });
 
-  it("dört kelimeden az seçimde gönderimi eksik sayar", () => {
+  it("dört farklı kelime yoksa gönderimi eksik sayar", () => {
     expect(
       evaluateTutorialSelection(tutorialPuzzle, ["yaz", "kis"], []),
+    ).toEqual({ kind: "incomplete" });
+
+    expect(
+      evaluateTutorialSelection(
+        tutorialPuzzle,
+        ["yaz", "yaz", "kis", "ilkbahar"],
+        [],
+      ),
     ).toEqual({ kind: "incomplete" });
   });
 

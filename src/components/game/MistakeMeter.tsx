@@ -4,13 +4,15 @@ export type MistakeMeterProps = {
 };
 
 export function MistakeMeter({ remaining, total = 4 }: MistakeMeterProps) {
-  const used = Math.max(total - remaining, 0);
+  const safeTotal = Math.max(0, Math.floor(total));
+  const safeRemaining = Math.min(safeTotal, Math.max(0, Math.floor(remaining)));
+  const used = safeTotal - safeRemaining;
 
   return (
-    <div className="q-mistake-meter" aria-label={`${remaining} hata hakkı kaldı`}>
-      <span className="q-mistake-label">Hata hakkı</span>
+    <div className="q-mistake-meter">
+      <span className="q-mistake-label" aria-hidden="true">Hata hakkı</span>
       <span className="q-mistake-dots" aria-hidden="true">
-        {Array.from({ length: total }, (_, index) => (
+        {Array.from({ length: safeTotal }, (_, index) => (
           <span
             key={index}
             className={
@@ -19,7 +21,9 @@ export function MistakeMeter({ remaining, total = 4 }: MistakeMeterProps) {
           />
         ))}
       </span>
-      <span className="q-sr-only">{remaining} kaldı</span>
+      <span className="q-sr-only" role="status" aria-live="polite" aria-atomic="true">
+        {safeRemaining} hata hakkı kaldı
+      </span>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import type { PuzzleGroup, WordId } from "@/features/game/contracts";
+import { GAME_CONSTANTS, type PuzzleGroup, type WordId } from "@/features/game/contracts";
 import type { TutorialPuzzle } from "@/features/game/fixtures";
 
 export type TutorialVerdict =
@@ -28,13 +28,18 @@ export function evaluateTutorialSelection(
   selectedWordIds: readonly WordId[],
   solvedGroupIds: readonly string[],
 ): TutorialVerdict {
-  if (selectedWordIds.length !== 4) return { kind: "incomplete" };
+  const uniqueSelection = new Set(selectedWordIds);
+  if (
+    selectedWordIds.length !== GAME_CONSTANTS.groupSize ||
+    uniqueSelection.size !== GAME_CONSTANTS.groupSize
+  ) {
+    return { kind: "incomplete" };
+  }
 
-  const selected = new Set(selectedWordIds);
   const group = puzzle.groups.find(
     (candidate) =>
       !solvedGroupIds.includes(candidate.id) &&
-      candidate.words.every((word) => selected.has(word.id)),
+      candidate.words.every((word) => uniqueSelection.has(word.id)),
   );
 
   return group ? { kind: "correct", group } : { kind: "wrong" };

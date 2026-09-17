@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState, useSyncExternalStore } from "react";
+import { useMemo, useSyncExternalStore } from "react";
 
 import type { GameController, Puzzle } from "@/features/game/contracts";
 import { standardPuzzle } from "@/features/game/fixtures";
@@ -8,7 +8,6 @@ import { createEngineController } from "./engineController";
 export type LiveGame = {
   puzzle: Puzzle;
   controller: GameController;
-  reset: () => void;
 };
 
 /**
@@ -19,12 +18,7 @@ export type LiveGame = {
  * tamamen gerçek motor tarafından üretilir.
  */
 export function useGame(puzzle: Puzzle = standardPuzzle): LiveGame {
-  const [generation, setGeneration] = useState(0);
-
-  const source = useMemo(
-    () => createEngineController({ puzzle }),
-    [puzzle, generation],
-  );
+  const source = useMemo(() => createEngineController({ puzzle }), [puzzle]);
 
   const snapshot = useSyncExternalStore(
     source.subscribe,
@@ -43,9 +37,5 @@ export function useGame(puzzle: Puzzle = standardPuzzle): LiveGame {
     [snapshot, source],
   );
 
-  const reset = useCallback(() => {
-    setGeneration((value) => value + 1);
-  }, []);
-
-  return { puzzle, controller, reset };
+  return { puzzle, controller };
 }

@@ -24,7 +24,7 @@ a {
 .q-play-page {
   width: min(100%, var(--q-content-max));
   margin: 0 auto;
-  padding: 20px 14px 48px;
+  padding: 20px var(--q-space-4) 48px;
 }
 
 .q-play-header {

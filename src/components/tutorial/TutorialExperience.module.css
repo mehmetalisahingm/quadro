@@ -108,7 +108,7 @@
   color: var(--q-color-ink);
   box-shadow: var(--q-shadow-card);
   cursor: pointer;
-  font-size: clamp(9px, 2.75vw, 14px);
+  font-size: clamp(10px, 2.9vw, 14px);
   font-weight: var(--q-font-weight-semibold);
   line-height: 1.12;
   overflow-wrap: anywhere;
@@ -118,12 +118,6 @@
     border-color var(--q-motion-fast) var(--q-ease-standard),
     background var(--q-motion-fast) var(--q-ease-standard),
     box-shadow var(--q-motion-fast) var(--q-ease-standard);
-}
-
-.tile:hover {
-  transform: translateY(-1px);
-  border-color: var(--q-color-border-strong);
-  box-shadow: var(--q-shadow-card-hover);
 }
 
 .tile[aria-pressed="true"] {
@@ -166,7 +160,7 @@
 
 .feedback[data-kind="correct"] {
   background: color-mix(in srgb, var(--q-group-green) 58%, transparent);
-  color: #245334;
+  color: var(--q-color-success);
 }
 
 .feedback[data-kind="wrong"] {
@@ -261,6 +255,14 @@
 .playLink {
   margin-top: 4px;
   text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tile:hover {
+    transform: translateY(-1px);
+    border-color: var(--q-color-border-strong);
+    box-shadow: var(--q-shadow-card-hover);
+  }
 }
 
 @media (min-width: 480px) {

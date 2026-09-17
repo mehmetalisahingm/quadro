@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-import type { WordId } from "@/features/game/contracts";
+import { GAME_CONSTANTS, type WordId } from "@/features/game/contracts";
 import { tutorialPuzzle } from "@/features/game/fixtures";
 
 import styles from "./TutorialExperience.module.css";
@@ -12,6 +12,13 @@ import {
   tutorialWordOrder,
   type TutorialVerdict,
 } from "./tutorialLogic";
+
+const tutorialOrder = tutorialWordOrder(tutorialPuzzle);
+const tutorialWordById = new Map(
+  tutorialPuzzle.groups.flatMap((group) =>
+    group.words.map((word) => [word.id, word] as const),
+  ),
+);
 
 function messageFor(verdict: TutorialVerdict | null, completed: boolean): string {
   if (completed) return "Hazırsın. Günlük bulmacada dört farklı grubu aynı yöntemle bulacaksın.";
@@ -28,20 +35,9 @@ function messageFor(verdict: TutorialVerdict | null, completed: boolean): string
 }
 
 export function TutorialExperience() {
-  const initialOrder = useMemo(() => tutorialWordOrder(tutorialPuzzle), []);
   const [selectedWordIds, setSelectedWordIds] = useState<WordId[]>([]);
   const [solvedGroupIds, setSolvedGroupIds] = useState<string[]>([]);
   const [lastVerdict, setLastVerdict] = useState<TutorialVerdict | null>(null);
-
-  const wordById = useMemo(
-    () =>
-      new Map(
-        tutorialPuzzle.groups.flatMap((group) =>
-          group.words.map((word) => [word.id, word] as const),
-        ),
-      ),
-    [],
-  );
 
   const solvedWordIds = useMemo(
     () =>
@@ -53,7 +49,7 @@ export function TutorialExperience() {
     [solvedGroupIds],
   );
 
-  const remainingWordIds = initialOrder.filter((wordId) => !solvedWordIds.has(wordId));
+  const remainingWordIds = tutorialOrder.filter((wordId) => !solvedWordIds.has(wordId));
   const completed = solvedGroupIds.length === tutorialPuzzle.groups.length;
 
   const toggleWord = (wordId: WordId) => {
@@ -62,7 +58,7 @@ export function TutorialExperience() {
     setLastVerdict(null);
     setSelectedWordIds((current) => {
       if (current.includes(wordId)) return current.filter((id) => id !== wordId);
-      if (current.length >= 4) return current;
+      if (current.length >= GAME_CONSTANTS.groupSize) return current;
       return [...current, wordId];
     });
   };
@@ -125,9 +121,12 @@ export function TutorialExperience() {
 
       {!completed ? (
         <>
-          <div className={styles.board} aria-label="Sekiz kelimelik öğretici tahtası">
+          <div
+            className={styles.board}
+            aria-label={`${remainingWordIds.length} kelimelik öğretici tahtası`}
+          >
             {remainingWordIds.map((wordId) => {
-              const word = wordById.get(wordId);
+              const word = tutorialWordById.get(wordId);
               if (!word) return null;
               const selected = selectedWordIds.includes(wordId);
 
@@ -145,8 +144,8 @@ export function TutorialExperience() {
             })}
           </div>
 
-          <p className={styles.selection} aria-live="polite">
-            {selectedWordIds.length}/4 seçili
+          <p className={styles.selection} aria-live="polite" aria-atomic="true">
+            {selectedWordIds.length}/{GAME_CONSTANTS.groupSize} seçili
           </p>
 
           <div
@@ -154,6 +153,7 @@ export function TutorialExperience() {
             data-kind={lastVerdict?.kind ?? "idle"}
             role="status"
             aria-live="polite"
+            aria-atomic="true"
           >
             {messageFor(lastVerdict, false)}
           </div>
@@ -171,14 +171,14 @@ export function TutorialExperience() {
               type="button"
               className={styles.primaryButton}
               onClick={submit}
-              disabled={selectedWordIds.length !== 4}
+              disabled={selectedWordIds.length !== GAME_CONSTANTS.groupSize}
             >
               Kontrol et
             </button>
           </div>
         </>
       ) : (
-        <div className={styles.complete} role="status">
+        <div className={styles.complete} role="status" aria-live="polite">
           <span className={styles.completeMark} aria-hidden="true">✓</span>
           <h2>Öğretici tamamlandı</h2>
           <p>{messageFor(null, true)}</p>
