@@ -29,6 +29,9 @@ jobs:
       - name: Bağımlılıklar (kilit dosyasıyla temiz kurulum)
         run: npm ci
 
+      - name: Bağımlılık güvenlik denetimi
+        run: npm audit --audit-level=moderate
+
       - name: Lint (ESLint CLI)
         run: npm run lint
 
@@ -42,9 +45,13 @@ jobs:
       - name: Üretim derlemesi (next build)
         run: npm run build
 
+      # npm 10'un Arborist'i bu yükseltilmiş dependency graph üzerinde no-save Playwright
+      # eklerken edgesOut hatasına düşüyor. Uygulamanın lockfile sözleşmesi npm 10'da kalır;
+      # yalnız geçici CI aracı kurulumu için npm 11 kullanılır.
+      - name: Playwright kurulumu için npm 11
+        run: npm install --global npm@11.19.1
+
       # Playwright proje bağımlılığına eklenmiyor; CI aracı sabit sürümle no-save kurulur.
-      # Böylece uygulama lockfile'ı yalnız runtime/test bağımlılıklarını taşır, gerçek Chromium
-      # regresyonu ise production build üzerinde ayrı kalite kapısı olarak çalışır.
       - name: Playwright aracı (sabit sürüm)
         run: npm install --no-save --package-lock=false --ignore-scripts @playwright/test@1.63.0
 
