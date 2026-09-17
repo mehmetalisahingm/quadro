@@ -2,8 +2,12 @@ import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  // Next.js ile aynı otomatik JSX çalışma zamanı; bileşenler testte `React` içe aktarmadan çizilir.
-  esbuild: { jsx: "automatic" },
+  // Vite 8 Oxc transformer: Next/React ile aynı otomatik JSX runtime.
+  oxc: {
+    jsx: {
+      runtime: "automatic",
+    },
+  },
   test: {
     // Vitest 4'te `environmentMatchGlobs` kaldırıldı; birim ve DOM akışları ayrı projelerdir.
     projects: [
