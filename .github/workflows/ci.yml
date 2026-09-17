@@ -15,7 +15,7 @@ jobs:
   verify:
     name: Lint, typecheck, test, build
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Depoyu çek
         uses: actions/checkout@v7.0.1
@@ -35,8 +35,47 @@ jobs:
       - name: Tip denetimi (tsc --noEmit)
         run: npm run typecheck
 
-      - name: Testler (Vitest)
+      # Hızlı DOM entegrasyon katmanı: birim testleri node, tests/e2e jsdom ortamında koşar.
+      - name: Testler (birim + jsdom akış regresyonları)
         run: npm run test
 
       - name: Üretim derlemesi (next build)
         run: npm run build
+
+      # Playwright proje bağımlılığına eklenmiyor; CI aracı sabit sürümle no-save kurulur.
+      # Böylece uygulama lockfile'ı yalnız runtime/test bağımlılıklarını taşır, gerçek Chromium
+      # regresyonu ise production build üzerinde ayrı kalite kapısı olarak çalışır.
+      - name: Playwright aracı (sabit sürüm)
+        run: npm install --no-save --package-lock=false --ignore-scripts @playwright/test@1.63.0
+
+      - name: Chromium ve sistem bağımlılıkları
+        run: npx playwright install --with-deps chromium
+
+      - name: Gerçek tarayıcı regresyonu (Chromium)
+        env:
+          QUADRO_BASE_URL: http://127.0.0.1:3000
+        run: |
+          npm run start -- -H 127.0.0.1 -p 3000 > /tmp/quadro-next.log 2>&1 &
+          SERVER_PID=$!
+          cleanup() {
+            kill "$SERVER_PID" 2>/dev/null || true
+          }
+          trap cleanup EXIT
+
+          for attempt in {1..30}; do
+            if curl -fsS "$QUADRO_BASE_URL" >/dev/null; then
+              break
+            fi
+            if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+              cat /tmp/quadro-next.log
+              exit 1
+            fi
+            sleep 1
+          done
+
+          if ! curl -fsS "$QUADRO_BASE_URL" >/dev/null; then
+            cat /tmp/quadro-next.log
+            exit 1
+          fi
+
+          npm run test:browser
