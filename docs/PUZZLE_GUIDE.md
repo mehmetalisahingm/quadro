@@ -77,8 +77,9 @@ Bir bulmaca kör denemede açılamazsa bu tek başına kalite sorunu değildir; 
 | `q-001` / 20 Eylül 2026 | Mehmet | Utku | 1–4 | Fiil kalıpları, `KARA` birleşikleri ve masa oyunları |
 | `q-002` / 21 Eylül 2026 | Mehmet | Utku | 1–4 | Kahvaltı, hayvanlar ve `ATMAK`/`KESMEK` kalıpları |
 | `q-003` / 22 Eylül 2026 | Mehmet | Utku | 1–4 | Şekiller, çalgılar, `VERMEK` kalıbı ve ilk harf oyunu |
+| `q-004` / 23 Eylül 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Yaz meyveleri, Anadolu yakası semtleri, ses aygıtları ve `ATMAK` kalıbı |
 
-Üçü de taslaktır. Yazarın kendi kalite kontrolü tamamlanmadan günlük stoğa alınmaz; Utku'nun kör deneme ve itiraz kaydı isteğe bağlıdır.
+Dördü de taslaktır. Yazarın kendi kalite kontrolü tamamlanmadan günlük stoğa alınmaz; diğer kişinin kör deneme ve itiraz kaydı isteğe bağlıdır. İlk üç prototipin yazarı Mehmet, kör deneyeni Utku'dur; `q-004` Utku'nun ilk prototipidir ve kör denemesi Mehmet'e açıktır.
 
 ## Revizyon ve yayın kaydı
 
