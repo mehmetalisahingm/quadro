@@ -132,14 +132,9 @@ describe("örnek bulmacalar", () => {
     expectTypeOf<TutorialPuzzle["groups"]>().toHaveProperty("length").toEqualTypeOf<2>();
   });
 
-  // NOT: q-004 (2026-09-23) bu kümede bilerek yok. standardPuzzle'in MEYVELER grubu
-  // KİRAZ ve İNCİR kelimelerini zaten kullanıyor; q-004'un YAZ MEYVELERİ grubu da aynı
-  // ikisini içeriyor. Örtüşmenin nasıl çözüleceği (q-004'u mu yoksa örnek fixture'i mi
-  // değiştirmek) içerik sahibinin kararı; karar verilene kadar bu guard'in kapsamı
-  // 20/21/22 için olduğu gibi korunur.
   it("örnekler günlük bulmacaların kelimelerini kullanmaz (cevap ifşası yok)", () => {
     const dailyTexts = new Set(
-      [prototip20, prototip21, prototip22].flatMap((puzzle) =>
+      [prototip20, prototip21, prototip22, prototip23].flatMap((puzzle) =>
         puzzle.groups.flatMap((group) => group.words.map((word) => normalizeTr(word.text))),
       ),
     );

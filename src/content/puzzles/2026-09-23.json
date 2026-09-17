@@ -12,13 +12,13 @@
       "id": "q004-g1",
       "title": "YAZ MEYVELERİ",
       "words": [
-        { "id": "q004-w01", "text": "KİRAZ" },
-        { "id": "q004-w02", "text": "ERİK" },
-        { "id": "q004-w03", "text": "İNCİR" },
-        { "id": "q004-w04", "text": "DUT" }
+        { "id": "q004-w01", "text": "KAVUN" },
+        { "id": "q004-w02", "text": "KARPUZ" },
+        { "id": "q004-w03", "text": "ŞEFTALİ" },
+        { "id": "q004-w04", "text": "KAYISI" }
       ],
       "difficulty": 1,
-      "explanation": "Kiraz, erik, incir ve dut Türkiye'de yaz aylarında olgunlaşan meyvelerdir."
+      "explanation": "Kavun, karpuz, şeftali ve kayısı Türkiye'de yaz aylarında olgunlaşan meyvelerdir."
     },
     {
       "id": "q004-g2",
@@ -46,15 +46,15 @@
     },
     {
       "id": "q004-g4",
-      "title": "___ ATMAK",
+      "title": "___ ÇÖZMEK",
       "words": [
-        { "id": "q004-w13", "text": "ADIM" },
-        { "id": "q004-w14", "text": "İMZA" },
-        { "id": "q004-w15", "text": "ÇAMUR" },
-        { "id": "q004-w16", "text": "TAŞ" }
+        { "id": "q004-w13", "text": "DÜĞÜM" },
+        { "id": "q004-w14", "text": "BULMACA" },
+        { "id": "q004-w15", "text": "DENKLEM" },
+        { "id": "q004-w16", "text": "ŞİFRE" }
       ],
       "difficulty": 4,
-      "explanation": "Dördü de 'atmak' fiiliyle yerleşik kullanılır: adım atmak, imza atmak, çamur atmak ve taş atmak."
+      "explanation": "Dördü de 'çözmek' fiiliyle yerleşik kullanılır: düğüm çözmek, bulmaca çözmek, denklem çözmek ve şifre çözmek."
     }
   ]
 }
