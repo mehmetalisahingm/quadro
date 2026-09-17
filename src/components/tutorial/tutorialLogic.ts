@@ -8,7 +8,19 @@ export type TutorialVerdict =
 
 export function tutorialWordOrder(puzzle: TutorialPuzzle): WordId[] {
   const [first, second] = puzzle.groups;
-  return first.words.flatMap((word, index) => [word.id, second.words[index].id]);
+  const [firstA, firstB, firstC, firstD] = first.words;
+  const [secondA, secondB, secondC, secondD] = second.words;
+
+  return [
+    firstA.id,
+    secondA.id,
+    firstB.id,
+    secondB.id,
+    firstC.id,
+    secondC.id,
+    firstD.id,
+    secondD.id,
+  ];
 }
 
 export function evaluateTutorialSelection(
