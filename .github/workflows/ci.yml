@@ -29,6 +29,9 @@ jobs:
       - name: Bağımlılıklar (kilit dosyasıyla temiz kurulum)
         run: npm ci
 
+      - name: Bağımlılık güvenlik denetimi
+        run: npm audit --audit-level=moderate
+
       - name: Lint (ESLint CLI)
         run: npm run lint
 
