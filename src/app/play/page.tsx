@@ -2,10 +2,15 @@ import Link from "next/link";
 
 import { GameBoard } from "@/components/game/GameBoard";
 import { TutorialExperience } from "@/components/tutorial/TutorialExperience";
+import { standardPuzzle } from "@/features/game/fixtures/puzzles";
 
 type PlayPageProps = {
   searchParams: Promise<{ mode?: string }>;
 };
+
+// Oyun gerçek motorla oynanır. Günlük içeriğin yüklenmesi Q17/Q19 kapsamındadır; o zamana kadar
+// yayın stoğunda olmayan örnek bulmaca kullanılır, günlük cevaplar istemciye gönderilmez.
+const puzzle = standardPuzzle;
 
 export default async function PlayPage({ searchParams }: PlayPageProps) {
   const { mode } = await searchParams;
@@ -22,7 +27,7 @@ export default async function PlayPage({ searchParams }: PlayPageProps) {
         </span>
       </header>
 
-      {tutorialMode ? <TutorialExperience /> : <GameBoard />}
+      {tutorialMode ? <TutorialExperience /> : <GameBoard puzzle={puzzle} />}
     </main>
   );
 }

@@ -91,7 +91,7 @@ if (snapshot.status !== "playing") {
 
 ## `GameController`
 
-- `snapshot` her zaman güncel durumdur. Eylemden sonra yeni durum buradan okunur; React kancası yeniden çizimi sağlar (bkz. [Örnek adaptör ve senaryolar](#örnek-adaptör-ve-senaryolar-q03)).
+- `snapshot` her zaman güncel durumdur. Eylemden sonra yeni durum buradan okunur; React kancası yeniden çizimi sağlar (bkz. [Gerçek motor adaptörü](#gerçek-motor-adaptörü-q16)).
 - `toggleWord`, `clearSelection` ve `shuffle` `void` döner. Kurala aykırı çağrılar hata fırlatmaz, durumu değiştirmez.
 - `submitSelection` senkron çalışır ve `SubmitResult` döner; dönen `snapshot`, `controller.snapshot`'ın yeni değeridir.
 
@@ -300,9 +300,39 @@ controller.clearSelection();
 
 Hepsi saf fonksiyondur ve yerel ayar verisine bağlı değildir. Kimlik ve normalizasyon kuralları için [GAME_RULES.md §7](GAME_RULES.md#7-kimlikler-ve-türkçe-normalizasyon).
 
+## Gerçek motor adaptörü (Q16)
+
+Üretim akışı (`/play`) saf oyun motorunu (`src/features/game/engine/`) bu adaptörle kullanır. Adaptör iş kuralı yazmaz; her eylemi motorun ilgili fonksiyonuna devreder ve `GameController` sözleşmesini birebir uygular.
+
+| Dosya | İçerik |
+| --- | --- |
+| [`react/gameController.ts`](../src/features/game/react/gameController.ts) | `createGameController({ puzzle, snapshot?, random? })`: React'ten bağımsız, abone olunabilen denetleyici. `puzzleSeed(puzzle)`: kimlik ve revizyondan kararlı tohum |
+| [`react/useGame.ts`](../src/features/game/react/useGame.ts) | `useGame(puzzle, { initialSnapshot?, seed? })`: `{ puzzle, controller }` döndüren React kancası |
+
+- `controller.toggleWord` → `toggleWord`, `clearSelection` → `clearSelection`, `shuffle` → `shuffleBoard`, `submitSelection` → `submitSelection`. Motor değişiklik yoksa aynı snapshot nesnesini döndürdüğü için etkisiz çağrılar yeniden çizim tetiklemez.
+- `submitSelection` motorun `SubmitResult` değerini olduğu gibi döndürür; son doğru grup animasyonu (`outcome`) ile sonuç ekranı (`snapshot.status`) aynı yanıttan beslenir.
+- Başlangıç sırası `puzzleSeed(puzzle)` tohumuyla üretilir: sunucu çizimi ile istemci hidrasyonu aynı tahtayı verir, her oyuncu aynı sırayla başlar.
+- Kanca bulmacayı kimlik ve revizyonla izler; sunucudan aynı içerik yeni nesneyle gelse de oyun sıfırlanmaz. `initialSnapshot` yalnız oyun açılırken okunur (kayıt Q20).
+- Bulmaca kaynağı şimdilik yayın stoğunda olmayan `standardPuzzle`'dır; günlük içeriğin yüklenmesi Q17/Q19 kapsamındadır.
+
+```tsx
+"use client";
+
+import type { Puzzle } from "@/features/game/contracts";
+import { useGame } from "@/features/game/react/useGame";
+
+export function Board({ puzzle }: { puzzle: Puzzle }) {
+  const { controller } = useGame(puzzle);
+  // controller kullanımı örnek adaptörle aynıdır (aşağıdaki örneğe bakın).
+  return <p>Kalan hak: {controller.snapshot.mistakesRemaining}</p>;
+}
+```
+
+Motor ve örnek adaptörün aynı tohum ve aynı eylemlerle birebir aynı sonucu verdiği `engine/consistency.test.ts` ve `react/gameController.test.ts` ile doğrulanır.
+
 ## Örnek adaptör ve senaryolar (Q03)
 
-Gerçek motor (Q09, Q10) hazır olmadan arayüz geliştirebilmek için `GameController` sözleşmesine uyan bellek içi örnek adaptör. [GAME_RULES.md](GAME_RULES.md) kurallarına uyar ve testlerle doğrulanır; ancak kayıt yapmaz, süre ölçmez ve gün değişimini bilmez. Q16'da gerçek motorla değiştirilir. Bileşenler yalnız `GameController` kullandığı sürece kodları değişmez.
+Gerçek motor (Q09, Q10) hazır olmadan arayüz geliştirebilmek için `GameController` sözleşmesine uyan bellek içi örnek adaptör. [GAME_RULES.md](GAME_RULES.md) kurallarına uyar ve testlerle doğrulanır; ancak kayıt yapmaz, süre ölçmez ve gün değişimini bilmez. Q16'dan itibaren üretim akışı [gerçek motor adaptörünü](#gerçek-motor-adaptörü-q16) kullanır; örnek adaptör testler, senaryolar ve tasarım önizlemeleri için kalır. Bileşenler yalnız `GameController` kullandığı sürece iki adaptörle de aynı kodla çalışır.
 
 | Dosya | İçerik |
 | --- | --- |
