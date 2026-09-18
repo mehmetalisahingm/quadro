@@ -72,7 +72,9 @@ npm run dev     # geliştirme sunucusu → http://localhost:3000
 | `npm run lint` | ESLint CLI (`eslint`, kurallar `.eslintrc.json`) |
 | `npm run typecheck` | TypeScript tip denetimi (`tsc --noEmit`) |
 | `npm run test` | Testler (Vitest) |
-| `npm run check` | lint + typecheck + test + build (CI ile aynı sıra) |
+| `npm run validate:content` | Bulmaca içeriğinin resmi doğrulaması ([`CONTENT_SCHEMA.md`](docs/CONTENT_SCHEMA.md)) |
+| `npm run check:bundle` | İstemci paketinde günlük içerik var mı? (önce `build`; [`DAILY_PUBLISHING.md`](docs/DAILY_PUBLISHING.md)) |
+| `npm run check` | lint + typecheck + test + validate:content + build + check:bundle (CI ile aynı sıra) |
 
 CI, her `push` ve `pull_request` üzerinde bu kontrolleri (`npm ci` → lint → typecheck → test → build) çalıştırır: [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
 

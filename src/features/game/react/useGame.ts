@@ -13,9 +13,11 @@ export type LiveGame = {
 /**
  * Standart oyun çalışma zamanını gerçek Q09/Q10 motoruna bağlar.
  *
- * Q19 günlük yayın kaynağını ekleyene kadar varsayılan içerik Q03'ün deterministik
- * standart bulmacasıdır; ancak seçim, gönderim, hata hakkı, tekrar ve terminal durumlar
- * tamamen gerçek motor tarafından üretilir.
+ * Günün bulmacası Q19 ile sunucudan gelir ve `/play` tarafından buraya geçirilir.
+ * Bulmaca verilmezse Q03'ün deterministik standart bulmacası açılır; bu yalnız
+ * tahtayı tek başına çizen çağrılar içindir, günlük akışta kullanılmaz. Seçim,
+ * gönderim, hata hakkı, tekrar ve terminal durumlar her iki durumda da tamamen
+ * gerçek motor tarafından üretilir.
  */
 export function useGame(puzzle: Puzzle = standardPuzzle): LiveGame {
   const source = useMemo(() => createEngineController({ puzzle }), [puzzle]);
