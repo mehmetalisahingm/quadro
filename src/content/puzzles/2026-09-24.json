@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-005",
+  "date": "2026-09-24",
+  "language": "tr",
+  "status": "draft",
+  "author": "Utkuuzun14",
+  "reviewer": "mehmetalisahingm",
+  "groups": [
+    {
+      "id": "q005-g1",
+      "title": "DENİZ CANLILARI",
+      "words": [
+        { "id": "q005-w01", "text": "AHTAPOT" },
+        { "id": "q005-w02", "text": "MİDYE" },
+        { "id": "q005-w03", "text": "İSTAKOZ" },
+        { "id": "q005-w04", "text": "KALKAN" }
+      ],
+      "difficulty": 1,
+      "explanation": "Ahtapot, midye, istakoz ve kalkan denizde yaşayan canlılardır; kalkan bir balık türüdür."
+    },
+    {
+      "id": "q005-g2",
+      "title": "AKARSULAR",
+      "words": [
+        { "id": "q005-w05", "text": "DİCLE" },
+        { "id": "q005-w06", "text": "SAKARYA" },
+        { "id": "q005-w07", "text": "MERİÇ" },
+        { "id": "q005-w08", "text": "ARAS" }
+      ],
+      "difficulty": 2,
+      "explanation": "Dicle, Sakarya, Meriç ve Aras Türkiye'nin akarsularıdır."
+    },
+    {
+      "id": "q005-g3",
+      "title": "___ TUTMAK",
+      "words": [
+        { "id": "q005-w09", "text": "ORUÇ" },
+        { "id": "q005-w10", "text": "YAS" },
+        { "id": "q005-w11", "text": "NÖBET" },
+        { "id": "q005-w12", "text": "NABIZ" }
+      ],
+      "difficulty": 3,
+      "explanation": "Dördü de 'tutmak' fiiliyle yerleşik kullanılır: oruç tutmak, yas tutmak, nöbet tutmak ve nabız tutmak."
+    },
+    {
+      "id": "q005-g4",
+      "title": "BAHARATLAR",
+      "words": [
+        { "id": "q005-w13", "text": "KİMYON" },
+        { "id": "q005-w14", "text": "KEKİK" },
+        { "id": "q005-w15", "text": "SUMAK" },
+        { "id": "q005-w16", "text": "NANE" }
+      ],
+      "difficulty": 4,
+      "explanation": "Kimyon, kekik, sumak ve nane mutfakta baharat olarak kullanılır."
+    }
+  ]
+}

@@ -4,7 +4,9 @@ import prototip20 from "@/content/puzzles/2026-09-20.json";
 import prototip21 from "@/content/puzzles/2026-09-21.json";
 import prototip22 from "@/content/puzzles/2026-09-22.json";
 import prototip23 from "@/content/puzzles/2026-09-23.json";
+import prototip24 from "@/content/puzzles/2026-09-24.json";
 import korTahta23 from "@/content/editorial/blind/2026-09-23.json";
+import korTahta24 from "@/content/editorial/blind/2026-09-24.json";
 import {
   GAME_CONSTANTS,
   normalizeTr,
@@ -134,7 +136,7 @@ describe("örnek bulmacalar", () => {
 
   it("örnekler günlük bulmacaların kelimelerini kullanmaz (cevap ifşası yok)", () => {
     const dailyTexts = new Set(
-      [prototip20, prototip21, prototip22, prototip23].flatMap((puzzle) =>
+      [prototip20, prototip21, prototip22, prototip23, prototip24].flatMap((puzzle) =>
         puzzle.groups.flatMap((group) => group.words.map((word) => normalizeTr(word.text))),
       ),
     );
@@ -151,31 +153,35 @@ describe("mevcut günlük prototipler (src/content/puzzles)", () => {
     ["2026-09-21", prototip21],
     ["2026-09-22", prototip22],
     ["2026-09-23", prototip23],
+    ["2026-09-24", prototip24],
   ] as const)("%s Puzzle şekline uyar", (date, puzzle) => {
     expect(puzzleProblems(puzzle)).toEqual([]);
     expect(dailyFieldProblems(puzzle)).toEqual([]);
     expect(puzzle.date).toBe(date);
   });
 
-  it("q-004 kör tahtası bulmacayla aynı 16 kelimeyi grup bilgisi olmadan taşır", () => {
-    const beklenen = prototip23.groups
+  it.each([
+    ["2026-09-23", prototip23, korTahta23],
+    ["2026-09-24", prototip24, korTahta24],
+  ] as const)("%s kör tahtası bulmacayla aynı 16 kelimeyi grup bilgisi olmadan taşır", (_, puzzle, korTahta) => {
+    const beklenen = puzzle.groups
       .flatMap((group) => group.words.map((word) => `${word.id}:${word.text}`))
       .sort();
-    const korTahtada = korTahta23.words.map((word) => `${word.id}:${word.text}`).sort();
+    const korTahtada = korTahta.words.map((word) => `${word.id}:${word.text}`).sort();
 
     expect(korTahtada).toEqual(beklenen);
-    expect(korTahta23.id).toBe(prototip23.id);
-    expect(korTahta23.date).toBe(prototip23.date);
+    expect(korTahta.id).toBe(puzzle.id);
+    expect(korTahta.date).toBe(puzzle.date);
 
     // Kör tahta cevap ipucu taşımamalı: grup, başlık, zorluk veya açıklama alanı olmamalı.
-    const alanlar = Object.keys(korTahta23);
+    const alanlar = Object.keys(korTahta);
     expect(alanlar).not.toContain("groups");
     expect(alanlar).not.toContain("difficulty");
-    for (const word of korTahta23.words) expect(Object.keys(word).sort()).toEqual(["id", "text"]);
+    for (const word of korTahta.words) expect(Object.keys(word).sort()).toEqual(["id", "text"]);
 
     // Sıra karıştırılmış olmalı; kanonik sırayla birebir aynı olmamalı.
-    const kanonikSira = prototip23.groups.flatMap((group) => group.words.map((word) => word.id));
-    expect(korTahta23.words.map((word) => word.id)).not.toEqual(kanonikSira);
+    const kanonikSira = puzzle.groups.flatMap((group) => group.words.map((word) => word.id));
+    expect(korTahta.words.map((word) => word.id)).not.toEqual(kanonikSira);
   });
 });
 
