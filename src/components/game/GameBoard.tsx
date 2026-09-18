@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import {
   GAME_CONSTANTS,
+  type Puzzle,
   type SubmitOutcome,
   type WordId,
 } from "@/features/game/contracts";
@@ -15,8 +16,18 @@ import { feedbackMessage } from "./presentation";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
 
-export function GameBoard() {
-  const { puzzle, controller } = useGame();
+export type GameBoardProps = {
+  /**
+   * Oynanacak bulmaca. `/play` bunu Q19 günlük yayın katmanından, sunucuda okunmuş
+   * haliyle geçirir. Verilmezse Q03'ün örnek bulmacası açılır; böylece tahtayı tek
+   * başına çizen mevcut çağrılar (Storybook benzeri denemeler, eski testler)
+   * çalışmaya devam eder.
+   */
+  puzzle?: Puzzle;
+};
+
+export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
+  const { puzzle, controller } = useGame(dailyPuzzle);
   const { snapshot } = controller;
   const [feedback, setFeedback] = useState<SubmitOutcome | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);

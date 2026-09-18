@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "ornek-001",
+  "date": "2026-09-20",
+  "language": "tr",
+  "status": "published",
+  "author": "Utkuuzun14",
+  "reviewer": "mehmetalisahingm",
+  "groups": [
+    {
+      "id": "renkler",
+      "title": "RENKLER",
+      "words": [
+        { "id": "kirmizi", "text": "KIRMIZI" },
+        { "id": "mavi", "text": "MAVİ" },
+        { "id": "yesil", "text": "YEŞİL" },
+        { "id": "sari", "text": "SARI" }
+      ],
+      "difficulty": 1,
+      "explanation": "Kırmızı, mavi, yeşil ve sarı temel renk adlarıdır."
+    },
+    {
+      "id": "meyveler",
+      "title": "MEYVELER",
+      "words": [
+        { "id": "elma", "text": "ELMA" },
+        { "id": "armut", "text": "ARMUT" },
+        { "id": "kiraz", "text": "KİRAZ" },
+        { "id": "incir", "text": "İNCİR" }
+      ],
+      "difficulty": 2,
+      "explanation": "Elma, armut, kiraz ve incir ağaçta yetişen meyvelerdir."
+    },
+    {
+      "id": "gezegenler",
+      "title": "GEZEGENLER",
+      "words": [
+        { "id": "mars", "text": "MARS" },
+        { "id": "venus", "text": "VENÜS" },
+        { "id": "saturn", "text": "SATÜRN" },
+        { "id": "merkur", "text": "MERKÜR" }
+      ],
+      "difficulty": 3,
+      "explanation": "Mars, Venüs, Satürn ve Merkür Güneş Sistemi'ndeki gezegenlerdir."
+    },
+    {
+      "id": "sehirler",
+      "title": "ŞEHİRLER",
+      "words": [
+        { "id": "adana", "text": "ADANA" },
+        { "id": "bursa", "text": "BURSA" },
+        { "id": "izmir", "text": "İZMİR" },
+        { "id": "mugla", "text": "MUĞLA" }
+      ],
+      "difficulty": 4,
+      "explanation": "Adana, Bursa, İzmir ve Muğla Türkiye'deki il adlarıdır."
+    }
+  ]
+}

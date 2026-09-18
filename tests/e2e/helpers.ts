@@ -3,8 +3,13 @@
  *
  * Testler jsdom içinde gerçek sayfa bileşenlerini (`/` ve `/play`) çizer, gerçek motorla oynar ve
  * kullanıcı gibi tıklar (`@testing-library/user-event`). Kart sırası motorun sabit tohumundan
- * geldiği için hangi kelimeye tıklanacağı önceden bilinir. İçerik yayın stoğunda olmayan
- * `standardPuzzle`'dır; canlı günün cevaplarına bağlı değildir.
+ * geldiği için hangi kelimeye tıklanacağı önceden bilinir.
+ *
+ * İçerik Q19 günlük yayın katmanından, gerçek yolla gelir: `QUADRO_CONTENT_DIR` ve `QUADRO_TODAY`
+ * testin sahte yayın stoğunu (`tests/fixtures/content/`) ve sabit bir yayın gününü gösterir, sayfa
+ * da o günün dosyasını sunucuda okur. Dosyanın içeriği `standardPuzzle`'ın birebir aynısıdır
+ * (`src/lib/daily/dailyPuzzle.test.ts` bunu denetler), dolayısıyla testler canlı günün cevaplarına
+ * bağlı değildir ve onları ifşa etmez.
  *
  * Zaman tamamen sahte saatle ilerler: Grupla'daki geri bildirim geçişi (`setTimeout`) gerçek
  * beklemeyle değil {@link finishTransition} ile bitirilir.
@@ -18,7 +23,13 @@ import PlayPage from "@/app/play/page";
 import { normalizeTr, type Puzzle } from "@/features/game/contracts";
 import { standardPuzzle } from "@/features/game/fixtures/puzzles";
 
-/** Testlerde oynanan bulmaca: `/play` şimdilik bunu gösterir (Q19'a kadar). */
+/** Testlerin sahte yayın stoğu; bkz. `tests/fixtures/content/README.md`. */
+const TEST_CONTENT_DIR = "tests/fixtures/content/puzzles";
+
+/** Testlerin sabitlediği yayın günü; bu güne ait içerik yayına açıktır. */
+export const TEST_DAY_KEY = "2026-09-20";
+
+/** Testlerde oynanan bulmaca; test içeriğinin `toPuzzle` sonrası birebir karşılığı. */
 export const puzzle: Puzzle = standardPuzzle;
 
 // Bilinçli dörtlüler (kelime metinleri). Gruplar: RENKLER, MEYVELER, GEZEGENLER, ŞEHİRLER.
@@ -42,6 +53,10 @@ export const YANLISLAR = [
  */
 export function registerFlowHooks(): void {
   beforeEach(() => {
+    // Günlük yayın katmanı gerçek saat yerine sabit günü, gerçek stok yerine test içeriğini okur.
+    vi.stubEnv("QUADRO_CONTENT_DIR", TEST_CONTENT_DIR);
+    vi.stubEnv("QUADRO_TODAY", TEST_DAY_KEY);
+
     // Rol sorgularında her öğe için görünürlük hesabı (getComputedStyle) atlanır; jsdom'da pahalıdır.
     // Oyun ekranında gizli etkileşimli öğe olmadığından sorgu sonuçları değişmez.
     configure({ defaultHidden: true });
@@ -55,6 +70,7 @@ export function registerFlowHooks(): void {
   afterEach(() => {
     cleanup();
     vi.unstubAllGlobals();
+    vi.unstubAllEnvs();
     vi.useRealTimers();
   });
 }

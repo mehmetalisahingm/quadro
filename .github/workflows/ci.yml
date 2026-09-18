@@ -49,6 +49,11 @@ jobs:
       - name: Üretim derlemesi (next build)
         run: npm run build
 
+      # Q19 kabul ölçütü: gelecek gün dosyaları ve editoryal kayıtlar istemci paketinde
+      # bulunmuyor. Kaynak düzeyindeki karşılığı `npm run test` içinde koşar.
+      - name: İstemci paketi içerik denetimi
+        run: npm run check:bundle
+
       # npm 10'un Arborist'i bu yükseltilmiş dependency graph üzerinde no-save Playwright
       # eklerken edgesOut hatasına düşüyor. Uygulamanın lockfile sözleşmesi npm 10'da kalır;
       # yalnız geçici CI aracı kurulumu için npm 11 kullanılır.
@@ -65,9 +70,13 @@ jobs:
       - name: Chromium ve sistem bağımlılıkları
         run: npx playwright install --with-deps chromium
 
+      # Sunucu, testlerin oynadığı sahte yayın stoğuna ve sabit güne sabitlenir; yoksa
+      # regresyon takvime bağlı olur ve içeriği olmayan bir günde düşer (Q19).
       - name: Gerçek tarayıcı regresyonu (Chromium)
         env:
           QUADRO_BASE_URL: http://127.0.0.1:3000
+          QUADRO_CONTENT_DIR: tests/fixtures/content/puzzles
+          QUADRO_TODAY: "2026-09-20"
         run: |
           npm run start -- -H 127.0.0.1 -p 3000 > /tmp/quadro-next.log 2>&1 &
           SERVER_PID=$!

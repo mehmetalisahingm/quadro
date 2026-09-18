@@ -30,7 +30,7 @@ bilinçlidir: editoryal alanlar oyuncuya gönderilmez, `toPuzzle()` ile soyulur.
 | `id` | `string` | Bulmacanın kalıcı kimliği, ör. `q-005`. |
 | `date` | `string` | `YYYY-MM-DD`, Europe/Istanbul yayın günü. Takvimde var olan bir gün olmalı. |
 | `language` | `"tr"` | İçerik dili. |
-| `status` | `string` | Yayın durumu. Bilinen değerler: `draft`, `published`. |
+| `status` | `string` | Yayın durumu. Sözlük: `draft`, `published`. Yalnız `published` içerik oyuncuya sunulur, bkz. [`DAILY_PUBLISHING.md`](DAILY_PUBLISHING.md). |
 | `author` | `string` | Taslağı yazan kişinin kullanıcı adı. |
 | `reviewer` | `string` | İsteğe bağlı kör denemeyi yapan kişinin kullanıcı adı. |
 | `groups` | 4 × `PuzzleGroup` | Dört gizli grup. |
@@ -63,7 +63,7 @@ gruba veya kelimeye ait sorunlarda `groupIndex` ile `wordIndex` de doldurulur.
 | `date-invalid` | error | `date` takvimde var olan bir gün olmalı (ör. `2026-02-30` geçersiz). |
 | `language` | error | `language` `"tr"` olmalı. |
 | `status` / `author` / `reviewer` | error | İçerik dosyalarında bu alanlar boş olamaz. |
-| `status-unknown` | warning | `status` bilinen değerlerden biri değil. Sözlük Q19 ile kesinleşecek. |
+| `status-unknown` | warning | `status` sözlükteki değerlerden biri değil (`draft`, `published`). Sözlük Q19 ile kesinleşti; bilinmeyen bir durum yayın kapısında `published` sayılmaz. |
 
 ### Gruplar
 
