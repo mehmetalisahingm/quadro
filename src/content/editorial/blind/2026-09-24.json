@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "q-005",
+  "date": "2026-09-24",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    { "id": "q005-w11", "text": "NÖBET" },
+    { "id": "q005-w06", "text": "SAKARYA" },
+    { "id": "q005-w15", "text": "SUMAK" },
+    { "id": "q005-w02", "text": "MİDYE" },
+    { "id": "q005-w09", "text": "ORUÇ" },
+    { "id": "q005-w13", "text": "KİMYON" },
+    { "id": "q005-w04", "text": "KALKAN" },
+    { "id": "q005-w08", "text": "ARAS" },
+    { "id": "q005-w16", "text": "NANE" },
+    { "id": "q005-w01", "text": "AHTAPOT" },
+    { "id": "q005-w12", "text": "NABIZ" },
+    { "id": "q005-w05", "text": "DİCLE" },
+    { "id": "q005-w14", "text": "KEKİK" },
+    { "id": "q005-w03", "text": "İSTAKOZ" },
+    { "id": "q005-w10", "text": "YAS" },
+    { "id": "q005-w07", "text": "MERİÇ" }
+  ]
+}
