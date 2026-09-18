@@ -10,6 +10,9 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    // Doğrulayıcı, scripts/validate-content.mjs tarafından Node'un yerel TypeScript
+    // desteğiyle çalıştırılır; Node göreli içe aktarımlarda açık .ts uzantısı ister.
+    "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,

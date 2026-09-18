@@ -42,6 +42,10 @@ jobs:
       - name: Testler (birim + jsdom akış regresyonları)
         run: npm run test
 
+      # Q18 doğrulayıcısı: bulmaca şeması, kimlikler, Türkçe tekrarlar ve kör tahtalar.
+      - name: İçerik doğrulaması (bulmaca şeması)
+        run: npm run validate:content
+
       - name: Üretim derlemesi (next build)
         run: npm run build
 

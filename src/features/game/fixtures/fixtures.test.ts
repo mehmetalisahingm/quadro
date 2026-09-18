@@ -5,8 +5,6 @@ import prototip21 from "@/content/puzzles/2026-09-21.json";
 import prototip22 from "@/content/puzzles/2026-09-22.json";
 import prototip23 from "@/content/puzzles/2026-09-23.json";
 import prototip24 from "@/content/puzzles/2026-09-24.json";
-import korTahta23 from "@/content/editorial/blind/2026-09-23.json";
-import korTahta24 from "@/content/editorial/blind/2026-09-24.json";
 import {
   GAME_CONSTANTS,
   normalizeTr,
@@ -24,82 +22,7 @@ import {
   type SampleScenarioId,
   type TutorialPuzzle,
 } from "@/features/game/fixtures";
-
-type UnknownRecord = Record<string, unknown>;
-
-const isRecord = (value: unknown): value is UnknownRecord =>
-  typeof value === "object" && value !== null && !Array.isArray(value);
-
-const isFilledString = (value: unknown): value is string =>
-  typeof value === "string" && value.trim().length > 0;
-
-/**
- * Değerin `Puzzle` sözleşmesine yapısal olarak uyup uymadığını denetler ve sorunları listeler.
- * Yalnız bu testler içindir; kapsamlı içerik doğrulayıcısı Q18'de yazılır.
- */
-function puzzleProblems(value: unknown, groupCount: number = GAME_CONSTANTS.groupCount): string[] {
-  if (!isRecord(value)) return ["bulmaca nesne değil"];
-
-  const problems: string[] = [];
-  if (!isFilledString(value.id)) problems.push("id boş");
-  if (value.language !== "tr") problems.push("language 'tr' değil");
-  if (!Array.isArray(value.groups) || value.groups.length !== groupCount) {
-    return [...problems, `grup sayısı ${groupCount} değil`];
-  }
-
-  const groupIds = new Set<string>();
-  const wordIds = new Set<string>();
-  const texts = new Set<string>();
-  const difficulties = new Set<unknown>();
-
-  value.groups.forEach((group: unknown, index) => {
-    if (!isRecord(group)) {
-      problems.push(`grup ${index} nesne değil`);
-      return;
-    }
-    if (!isFilledString(group.id) || groupIds.has(group.id)) problems.push(`grup ${index} id geçersiz`);
-    else groupIds.add(group.id);
-    if (!isFilledString(group.title)) problems.push(`grup ${index} başlığı boş`);
-    if (!isFilledString(group.explanation)) problems.push(`grup ${index} açıklaması boş`);
-    if (typeof group.difficulty !== "number" || ![1, 2, 3, 4].includes(group.difficulty)) {
-      problems.push(`grup ${index} zorluğu geçersiz`);
-    }
-    difficulties.add(group.difficulty);
-
-    if (!Array.isArray(group.words) || group.words.length !== GAME_CONSTANTS.groupSize) {
-      problems.push(`grup ${index} dört kelime içermiyor`);
-      return;
-    }
-    group.words.forEach((word: unknown) => {
-      if (!isRecord(word) || !isFilledString(word.id) || !isFilledString(word.text)) {
-        problems.push(`grup ${index} içinde geçersiz kelime`);
-        return;
-      }
-      if (wordIds.has(word.id)) problems.push(`yinelenen kelime kimliği: ${word.id}`);
-      wordIds.add(word.id);
-      const normalized = normalizeTr(word.text);
-      if (texts.has(normalized)) problems.push(`yinelenen kelime: ${word.text}`);
-      texts.add(normalized);
-    });
-  });
-
-  if (difficulties.size !== groupCount) problems.push("zorluk değerleri birer kez kullanılmamış");
-  return problems;
-}
-
-/** Günlük bulmacaya özgü alanlar: şema, revizyon ve tarih. */
-function dailyFieldProblems(value: unknown): string[] {
-  if (!isRecord(value)) return ["bulmaca nesne değil"];
-  const problems: string[] = [];
-  if (value.schemaVersion !== 1) problems.push("schemaVersion 1 değil");
-  if (typeof value.revision !== "number" || !Number.isInteger(value.revision) || value.revision < 1) {
-    problems.push("revision pozitif tam sayı değil");
-  }
-  if (typeof value.date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value.date)) {
-    problems.push("date YYYY-MM-DD değil");
-  }
-  return problems;
-}
+import { validatePuzzle } from "@/features/game/validator";
 
 const wordsOf = (puzzle: Puzzle | TutorialPuzzle) =>
   puzzle.groups.flatMap((group) => group.words.map((word) => word));
@@ -109,8 +32,8 @@ describe("örnek bulmacalar", () => {
     ["standardPuzzle", standardPuzzle],
     ["longWordsPuzzle", longWordsPuzzle],
   ] as const)("%s sözleşmeye uyar: 4 grup, 16 benzersiz kelime, 1–4 zorluk", (_, puzzle) => {
-    expect(puzzleProblems(puzzle)).toEqual([]);
-    expect(dailyFieldProblems(puzzle)).toEqual([]);
+    // Kural tanımları Q18 doğrulayıcısındadır; burada yalnız örneklerin uyduğu doğrulanır.
+    expect(validatePuzzle(puzzle)).toEqual([]);
     expect(new Set(wordsOf(puzzle).map((word) => word.id)).size).toBe(GAME_CONSTANTS.wordCount);
   });
 
@@ -128,7 +51,9 @@ describe("örnek bulmacalar", () => {
   });
 
   it("öğretici iki gruplu ayrı bir veri türüdür ve Puzzle yerine geçmez", () => {
-    expect(puzzleProblems(tutorialPuzzle, 2)).toEqual([]);
+    expect(validatePuzzle(tutorialPuzzle, { groupCount: 2, requireDailyFields: false })).toEqual(
+      [],
+    );
     expect(wordsOf(tutorialPuzzle)).toHaveLength(8);
     expectTypeOf<TutorialPuzzle>().not.toMatchTypeOf<Puzzle>();
     expectTypeOf<TutorialPuzzle["groups"]>().toHaveProperty("length").toEqualTypeOf<2>();
@@ -144,44 +69,6 @@ describe("örnek bulmacalar", () => {
       .flatMap(wordsOf)
       .filter((word) => dailyTexts.has(normalizeTr(word.text)));
     expect(overlaps).toEqual([]);
-  });
-});
-
-describe("mevcut günlük prototipler (src/content/puzzles)", () => {
-  it.each([
-    ["2026-09-20", prototip20],
-    ["2026-09-21", prototip21],
-    ["2026-09-22", prototip22],
-    ["2026-09-23", prototip23],
-    ["2026-09-24", prototip24],
-  ] as const)("%s Puzzle şekline uyar", (date, puzzle) => {
-    expect(puzzleProblems(puzzle)).toEqual([]);
-    expect(dailyFieldProblems(puzzle)).toEqual([]);
-    expect(puzzle.date).toBe(date);
-  });
-
-  it.each([
-    ["2026-09-23", prototip23, korTahta23],
-    ["2026-09-24", prototip24, korTahta24],
-  ] as const)("%s kör tahtası bulmacayla aynı 16 kelimeyi grup bilgisi olmadan taşır", (_, puzzle, korTahta) => {
-    const beklenen = puzzle.groups
-      .flatMap((group) => group.words.map((word) => `${word.id}:${word.text}`))
-      .sort();
-    const korTahtada = korTahta.words.map((word) => `${word.id}:${word.text}`).sort();
-
-    expect(korTahtada).toEqual(beklenen);
-    expect(korTahta.id).toBe(puzzle.id);
-    expect(korTahta.date).toBe(puzzle.date);
-
-    // Kör tahta cevap ipucu taşımamalı: grup, başlık, zorluk veya açıklama alanı olmamalı.
-    const alanlar = Object.keys(korTahta);
-    expect(alanlar).not.toContain("groups");
-    expect(alanlar).not.toContain("difficulty");
-    for (const word of korTahta.words) expect(Object.keys(word).sort()).toEqual(["id", "text"]);
-
-    // Sıra karıştırılmış olmalı; kanonik sırayla birebir aynı olmamalı.
-    const kanonikSira = puzzle.groups.flatMap((group) => group.words.map((word) => word.id));
-    expect(korTahta.words.map((word) => word.id)).not.toEqual(kanonikSira);
   });
 });
 
