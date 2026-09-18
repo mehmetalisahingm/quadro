@@ -12,6 +12,8 @@ Quadro'nun günlük bulmacası 16 Türkçe kelimeyi dört adet dörtlü gruba ay
 | `src/content/editorial/blind/YYYY-MM-DD.json` | Aynı 16 kelimenin karıştırılmış, grup bilgisi olmayan kör deneme tahtası | İsteyen deneme yapana verilir. |
 | `src/content/editorial/YYYY-MM-DD.md` | Cevap anahtarı, açıklama, hedeflenen şaşırtma ve kalite notu | Yalnız içerik ekibine aittir. |
 
+Bu dosyaların şeması ve makine ile denetlenen kuralları [`CONTENT_SCHEMA.md`](CONTENT_SCHEMA.md) içindedir; `npm run validate:content` komutu tüm içeriği bu kurallara göre denetler ve CI'da hatada durur.
+
 Repo public olduğundan bu ayrım bir güvenlik sınırı değildir. Amaç, isteyen kişinin denemeden önce cevap anahtarını açmamasını sağlayan net bir iş akışıdır. Kör deneme için yalnız `blind` dosyası paylaşılır; deneme notu tutulursa cevap anahtarı sonrasında açılır.
 
 Kanonik JSON, `docs/CONTRACTS.md` içindeki `Puzzle` tipine uyar: dört grup, her grupta dört `PuzzleWord`, benzersiz kelime kimlikleri, dil, tarih, şema ve revizyon bilgisi bulunur. `date`, `Europe/Istanbul` günlük yayın günüdür.
@@ -68,7 +70,8 @@ Bir bulmaca kör denemede açılamazsa bu tek başına kalite sorunu değildir; 
 - [ ] Açıklama, oyuncunun görmediği bir özel bilgiyi sonradan zorla dayatmıyor.
 - [ ] Kategori başlığı cevapları açıklarken kelimelerle aynı anlamı taşıyor.
 - [ ] Tüm kelimeler 320 px kartta okunabilir.
-- [ ] Şema ve yapısal validator kontrolleri geçiyor.
+- [ ] Şema ve yapısal validator kontrolleri geçiyor (`npm run validate:content` temiz).
+- [ ] Alternatif tam çözüm taraması elle yapıldı; doğrulayıcı bu kuralı denetlemez, bkz. [`CONTENT_SCHEMA.md`](CONTENT_SCHEMA.md).
 
 ## Prototipler
 
