@@ -1,9 +1,6 @@
-import { useMemo, useSyncExternalStore } from "react";
-
 import type { GameController, Puzzle } from "@/features/game/contracts";
 import { standardPuzzle } from "@/features/game/fixtures";
-
-import { createEngineController } from "./engineController";
+import { usePersistentGame } from "@/features/game/state";
 
 export type LiveGame = {
   puzzle: Puzzle;
@@ -18,26 +15,12 @@ export type LiveGame = {
  * tahtayı tek başına çizen çağrılar içindir, günlük akışta kullanılmaz. Seçim,
  * gönderim, hata hakkı, tekrar ve terminal durumlar her iki durumda da tamamen
  * gerçek motor tarafından üretilir.
+ *
+ * İlerleme kaydı Q20 ile durum katmanındadır (`src/features/game/state/`): tahta
+ * açılırken günün kaydı okunur, her değişimde geri yazılır. Bu kanca yalnız ince
+ * bir sarmalayıcıdır; kayıt kuralları ve geri yükleme ayrıntısı burada değil,
+ * orada durur.
  */
 export function useGame(puzzle: Puzzle = standardPuzzle): LiveGame {
-  const source = useMemo(() => createEngineController({ puzzle }), [puzzle]);
-
-  const snapshot = useSyncExternalStore(
-    source.subscribe,
-    () => source.snapshot,
-    () => source.snapshot,
-  );
-
-  const controller = useMemo<GameController>(
-    () => ({
-      snapshot,
-      toggleWord: source.toggleWord,
-      clearSelection: source.clearSelection,
-      shuffle: source.shuffle,
-      submitSelection: source.submitSelection,
-    }),
-    [snapshot, source],
-  );
-
-  return { puzzle, controller };
+  return usePersistentGame(puzzle);
 }
