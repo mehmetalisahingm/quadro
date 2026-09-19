@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import type { WordId } from "@/features/game/contracts";
+import type { GameSnapshot, WordId } from "@/features/game/contracts";
 import { createSeededRandom } from "@/features/game/engine";
 import { standardPuzzle } from "@/features/game/fixtures";
 
@@ -92,5 +92,39 @@ describe("Q16 gerçek motor controller entegrasyonu", () => {
     unsubscribe();
     controller.clearSelection();
     expect(listener).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("Q20 kaydedilmiş durumun uygulanması", () => {
+  it("kaydedilmiş durumu uygular ve aboneleri bilgilendirir", () => {
+    const controller = createEngineController({
+      puzzle: standardPuzzle,
+      random: createSeededRandom(20),
+    });
+    const listener = vi.fn();
+    controller.subscribe(listener);
+
+    const [ilkGrup] = standardPuzzle.groups;
+    const kayit: GameSnapshot = {
+      ...controller.snapshot,
+      selectedWordIds: ilkGrup.words.slice(0, 2).map((word) => word.id),
+      mistakesRemaining: 2,
+    };
+
+    expect(controller.restore(kayit)).toBe(true);
+    expect(controller.snapshot).toBe(kayit);
+    expect(listener).toHaveBeenCalledTimes(1);
+  });
+
+  it("başka bir bulmacanın durumunu uygulamaz", () => {
+    const controller = createEngineController({
+      puzzle: standardPuzzle,
+      random: createSeededRandom(21),
+    });
+    const tazeDurum = controller.snapshot;
+
+    expect(controller.restore({ ...tazeDurum, puzzleId: "ornek-999" })).toBe(false);
+    expect(controller.restore({ ...tazeDurum, puzzleRevision: 99 })).toBe(false);
+    expect(controller.snapshot).toBe(tazeDurum);
   });
 });

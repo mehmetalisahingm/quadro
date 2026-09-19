@@ -31,6 +31,15 @@ export type EngineControllerOptions = {
 export type EngineGameController = GameController & {
   readonly puzzle: Puzzle;
   subscribe: (listener: () => void) => () => void;
+  /**
+   * Kaydedilmiş bir durumu tahtaya uygular (Q20) ve uygulanıp uygulanmadığını döndürür.
+   *
+   * Durum olduğu gibi kabul edilir; motor kuralları yeniden çalıştırılmaz. Kaydın
+   * bugünkü bulmacaya uygunluğu kalıcılık katmanında denetlenir, bu yüzden buradaki
+   * tek denetim bulmaca kimliği ve revizyonudur: başka bir bulmacanın durumu sessizce
+   * reddedilir, tahta taze kalır.
+   */
+  restore: (snapshot: GameSnapshot) => boolean;
 };
 
 export function createEngineController({
@@ -65,6 +74,12 @@ export function createEngineController({
     subscribe(listener) {
       listeners.add(listener);
       return () => listeners.delete(listener);
+    },
+
+    restore(next: GameSnapshot): boolean {
+      if (next.puzzleId !== puzzle.id || next.puzzleRevision !== puzzle.revision) return false;
+      commit(next);
+      return true;
     },
 
     toggleWord(wordId: WordId) {

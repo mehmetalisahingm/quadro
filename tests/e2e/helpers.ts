@@ -57,6 +57,10 @@ export function registerFlowHooks(): void {
     vi.stubEnv("QUADRO_CONTENT_DIR", TEST_CONTENT_DIR);
     vi.stubEnv("QUADRO_TODAY", TEST_DAY_KEY);
 
+    // Q20 ilerleme kaydı localStorage'da durur ve jsdom penceresi dosya boyunca aynıdır;
+    // temizlenmezse bir testte oynanan oyun sonrakinde geri yüklenir.
+    window.localStorage.clear();
+
     // Rol sorgularında her öğe için görünürlük hesabı (getComputedStyle) atlanır; jsdom'da pahalıdır.
     // Oyun ekranında gizli etkileşimli öğe olmadığından sorgu sonuçları değişmez.
     configure({ defaultHidden: true });
@@ -69,6 +73,7 @@ export function registerFlowHooks(): void {
 
   afterEach(() => {
     cleanup();
+    window.localStorage.clear();
     vi.unstubAllGlobals();
     vi.unstubAllEnvs();
     vi.useRealTimers();
