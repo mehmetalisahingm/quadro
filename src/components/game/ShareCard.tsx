@@ -9,6 +9,8 @@ import {
   type WordId,
 } from "@/features/game/contracts";
 
+import { formatDuration } from "./presentation";
+
 export type ShareCardProps = {
   puzzle: Puzzle;
   snapshot: GameSnapshot;
@@ -33,7 +35,14 @@ export function buildShareText(puzzle: Puzzle, snapshot: GameSnapshot): string {
   );
   const score = `${snapshot.solvedGroupIds.length}/${GAME_CONSTANTS.groupCount}`;
 
-  return [`Quadro ${puzzle.date} ${score}`, ...rows].join("\n");
+  // Süre sonuç ekranıyla aynı kaynaktan ve aynı biçimlendiriciden geçer:
+  // tek kaynak `snapshot.activeSeconds`, tek biçimlendirici `formatDuration`
+  // (`presentation.ts`). Sonuç ekranı da aynı fonksiyonu `getResultStats`
+  // üzerinden kullanır, bu yüzden iki yerde gösterilen değer birebir aynıdır.
+  // Süre spoiler değildir: kelime, kategori ya da cevap bilgisi taşımaz.
+  const duration = formatDuration(snapshot.activeSeconds);
+
+  return [`Quadro ${puzzle.date} ${score} · ${duration}`, ...rows].join("\n");
 }
 
 export function ShareCard({ puzzle, snapshot }: ShareCardProps) {

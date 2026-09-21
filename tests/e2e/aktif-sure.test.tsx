@@ -228,9 +228,11 @@ describe("aktif süre · oyun bittiğinde", () => {
     // Sonuç ekranı ayrı bir hesap yapmaz; kaydedilen `activeSeconds`ı biçimler.
     expect(statValue(bolge, "Süre")).toBe(`${dakika}:${kalan}`);
 
-    // Paylaşım metni aynı durumdan üretilir ve süreyi ayrıca hesaplamaz;
-    // spoiler kuralı gereği süre paylaşım satırlarına hiç girmez.
-    expect(sharePreview()).not.toContain(`${dakika}:${kalan}`);
+    // Paylaşım metni de aynı durumdan, aynı biçimlendiriciden geçer: başlık
+    // satırının süresi sonuç ekranında yazanla birebir aynıdır.
+    const [baslik = ""] = sharePreview().split("\n");
+    expect(baslik).toBe(`Quadro ${puzzle.date} 4/4 · ${dakika}:${kalan}`);
+    expect(baslik).toContain(statValue(bolge, "Süre"));
   });
 });
 

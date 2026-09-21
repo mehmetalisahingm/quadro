@@ -130,7 +130,7 @@ describe("kazanma", () => {
 
     const preview = sharePreview();
     const [header, ...rows] = preview.split("\n");
-    expect(header).toBe(`Quadro ${puzzle.date} 4/4`);
+    expect(header).toBe(`Quadro ${puzzle.date} 4/4 · ${statValue(result, "Süre")}`);
     expect(rows).toEqual(["🟩🟩🟩🟩", "🟨🟨🟨🟨", "🟦🟦🟦🟦", "🟪🟪🟪🟪"]);
     expect(leakedAnswers(preview)).toEqual([]);
 
@@ -173,7 +173,7 @@ describe("kaybetme", () => {
 
     const preview = sharePreview();
     const [header, ...rows] = preview.split("\n");
-    expect(header).toBe(`Quadro ${puzzle.date} 0/4`);
+    expect(header).toBe(`Quadro ${puzzle.date} 0/4 · ${statValue(result, "Süre")}`);
     expect(rows).toHaveLength(4);
     expect(leakedAnswers(preview)).toEqual([]);
   });
