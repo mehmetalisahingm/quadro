@@ -108,7 +108,13 @@ Hak düşüren gönderim hakkı sıfıra indirirse durum `lost` olur; dördünc�
 
 - `activeSeconds` yalnız görünür ve aktif oyun ekranında ilerler. Ana sayfa, öğretici ve arka plandaki sekme süreye eklenmez.
 - Süre baskın bir yarış unsuru değildir; sonuçta ikincil bilgi olarak gösterilir.
-- Gönderimler süreyi değiştirmez. Süre ölçümünün ayrıntısı Q21 (#21) kapsamındadır.
+- Gönderimler süreyi değiştirmez.
+- Süre **duvar saati farkı değildir**: oyunun açılışı ile bitişi arasındaki süre değil, ekranın önde ve oyunun sürdüğü anların toplamıdır. Sayaç üç koşul birlikte sağlanınca işler: kayıt devralındı, oyun ekranı görünür ve `status` `playing`.
+- Sekme gizlenince, sayfa terk edilince veya oyun ekranı kapanınca oturum kapanır ve o ana kadar geçen süre toplama eklenir. Arada geçen "görünmez" süre hiç ölçülmez.
+- Yenilemede süre kayıttaki değerden sürer: ne sıfırlanır ne de iki kez sayılır. Yeniden odaklanma sayacı yeniden başlatmaz.
+- `won`/`lost` olunca sayaç durur ve süre sabitlenir. Arayüz ve paylaşım tek kaynağı okur: `snapshot.activeSeconds`. Ayrı bir sayaç ya da ikinci bir hesap yoktur.
+- Cihaz saati geri alınırsa (NTP düzeltmesi, uykudan dönüş) süre duraklar ama geri gitmez. Devralınan süre 24 saatle sınırlıdır.
+- Uygulaması: `src/features/game/state/` (sayaç `activeTimer.ts`, koşullar `gameStore.ts`, sekme yaşam döngüsü `useActiveTimer.ts`). Kayıtla etkileşimi `docs/PERSISTENCE.md` içinde.
 
 ## 7. Kimlikler ve Türkçe normalizasyon
 

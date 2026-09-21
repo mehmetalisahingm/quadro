@@ -64,7 +64,14 @@ export function registerFlowHooks(): void {
     // Rol sorgularında her öğe için görünürlük hesabı (getComputedStyle) atlanır; jsdom'da pahalıdır.
     // Oyun ekranında gizli etkileşimli öğe olmadığından sorgu sonuçları değişmez.
     configure({ defaultHidden: true });
-    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    // Zaman tamamen elde: geri bildirim geçişi (`setTimeout`), aktif süre sayacının
+    // saniyelik vuruşu (`setInterval`) ve sayacın okuduğu an (`Date`) sahte saatten
+    // gelir. Sayaç (Q21) gerçek `setInterval` ile çalışsaydı testler gerçek saate
+    // bağlı olur ve vuruş `act()` dışında React durumu güncelleyebilirdi.
+    vi.useFakeTimers({
+      toFake: ["setTimeout", "clearTimeout", "setInterval", "clearInterval", "Date"],
+      now: new Date(`${TEST_DAY_KEY}T09:00:00.000Z`),
+    });
     vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
     // Testing Library her kullanıcı eyleminden sonra setTimeout(0) bekler ve sahte saati yalnız
     // global `jest` üzerinden ilerletir. Vitest saatini ona tanıtmazsak eylemler asılı kalır.
@@ -192,8 +199,8 @@ export function resultRegion(title: string): HTMLElement {
   return screen.getByRole("region", { name: title });
 }
 
-/** Sonuç istatistiğinin değeri (Bulunan, Hata). */
-export function statValue(region: HTMLElement, label: "Bulunan" | "Hata"): string {
+/** Sonuç istatistiğinin değeri (Bulunan, Hata, Süre). */
+export function statValue(region: HTMLElement, label: "Bulunan" | "Hata" | "Süre"): string {
   return within(region).getByText(label, { selector: "dt" }).nextElementSibling?.textContent ?? "";
 }
 

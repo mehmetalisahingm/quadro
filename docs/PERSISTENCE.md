@@ -76,11 +76,35 @@ ikinci kez işlenmesi engellenir. Motor tarafında terminal oyunda gönderim zat
 - Durum React state'inde değil, `useSyncExternalStore` ile okunan mağazadadır;
   kayıt bir dış sistem olarak mağazanın yaşam döngüsüne bağlıdır.
 
+## Aktif süre (Q21)
+
+`activeSeconds` kaydın sıradan bir alanıdır ama yazma sıklığını o belirler:
+oyun sürerken sayaç **saniyede bir** güncel değeri duruma yazar, dolayısıyla
+kayıt da saniyede bir tazelenir. Sekme beklenmedik biçimde kapanırsa en çok bir
+saniye kaybedilir.
+
+Süre bir duvar saati farkı değildir; kuralları `docs/GAME_RULES.md` §3'te. Kayıt
+açısından önemli olan iki nokta:
+
+- **Devralma sayacın tabanını belirler.** `GameStore.hydrate` kaydı uyguladıktan
+  sonra sayaç kayıttaki süreden yeniden kurulur ve oturum ancak o andan itibaren
+  işler. Yenilemede süre ne sıfırlanır ne de oyunun kapalı geçtiği zaman eklenir.
+- **Süre duruma eklenmez, üzerine yazılır.** Sayaç her akıtmada toplamı baştan
+  hesaplar, bu yüzden akıtma sıklığı sonucu değiştirmez ve üst üste gelen
+  görünürlük olayları süreyi iki kez saymaz.
+
+Makuliyet sınırı sayaç tarafındadır (`MAX_ACTIVE_SECONDS`, 24 saat): elle
+kurcalanmış uçuk bir değer devralınırken kırpılır. Kayıt katmanının kuralı
+değişmedi — `record.ts` `activeSeconds` için yalnız "sonlu ve negatif olmayan
+sayı" ister.
+
 ## Testler
 
 - `src/lib/persistence/*.test.ts` — depo, biçim ve uyumluluk kuralları,
   bellekteki sahte depoyla.
-- `src/features/game/state/*.test.ts` — devralma sırası, kaydetme ve bitmiş
-  oyunun korunması; React'siz.
+- `src/features/game/state/*.test.ts` — devralma sırası, kaydetme, bitmiş
+  oyunun korunması ve aktif süre sayacı; React'siz, kontrollü saatle.
 - `tests/e2e/kayit-devam.test.tsx` — gerçek `/play` akışı: yenileme sonrası
   devam, bozuk kayıt, başka bulmacanın kaydı ve bitmiş oyun.
+- `tests/e2e/aktif-sure.test.tsx` — gerçek `/play` akışında görünürlük, odak,
+  yenileme ve terminal durumların süreye etkisi.

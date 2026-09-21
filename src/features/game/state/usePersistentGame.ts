@@ -23,6 +23,7 @@ import type { SnapshotStorage } from "@/lib/persistence";
 
 import { createGameStore } from "./gameStore";
 import type { GameRestoreState } from "./persistentGame";
+import { useActiveTimer } from "./useActiveTimer";
 
 /** Kancanın döndürdüğü canlı oyun. */
 export type PersistentGame = {
@@ -66,6 +67,11 @@ export function usePersistentGame(
   useEffect(() => {
     store.hydrate();
   }, [store]);
+
+  // Aktif süre (Q21): sayaç yalnız bu kanca kurulduğu sürece, yani oyun ekranı
+  // DOM'dayken ve sekme görünürken işler. Ana sayfa ve öğretici bu kancayı hiç
+  // kurmadığı için süre orada kendiliğinden durur.
+  useActiveTimer(store, state.snapshot.status);
 
   const controller = useMemo<GameController>(
     () => ({

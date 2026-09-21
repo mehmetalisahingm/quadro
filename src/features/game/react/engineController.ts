@@ -40,6 +40,19 @@ export type EngineGameController = GameController & {
    * reddedilir, tahta taze kalır.
    */
   restore: (snapshot: GameSnapshot) => boolean;
+  /**
+   * Aktif süreyi (saniye) tahtaya yazar (Q21).
+   *
+   * Süre bir oyun kuralı değildir: motor onu üretmez, yalnız durumun parçası
+   * olarak taşır. Ne zaman işlediğine durum katmanı karar verir
+   * (`src/features/game/state/`), buradaki iş yalnız değeri tek doğruluk
+   * kaynağına — motorun snapshot'ına — koymaktır. Böylece arayüz, kayıt ve
+   * paylaşım ayrı bir sayaca değil aynı `snapshot.activeSeconds`a bakar.
+   *
+   * Değer normalize edilir (sonlu, negatif olmayan tam sayı) ve değişmediyse
+   * durum nesnesi korunur; gereksiz bildirim ve render olmaz.
+   */
+  setActiveSeconds: (seconds: number) => void;
 };
 
 export function createEngineController({
@@ -80,6 +93,12 @@ export function createEngineController({
       if (next.puzzleId !== puzzle.id || next.puzzleRevision !== puzzle.revision) return false;
       commit(next);
       return true;
+    },
+
+    setActiveSeconds(seconds: number) {
+      const safe = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0;
+      if (snapshot.activeSeconds === safe) return;
+      commit({ ...snapshot, activeSeconds: safe });
     },
 
     toggleWord(wordId: WordId) {
