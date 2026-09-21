@@ -1,0 +1,118 @@
+# Quadro kod sahipliği
+#
+# Bu dosya "hangi dosya kimin alanı" sorusunun makine tarafından okunabilir
+# halidir. Kaynağı uydurma değil: sahiplik `CONTRIBUTING.md` §"Ortak dosyalar"
+# ve `docs/TASKS.json` içindeki her görevin `owner` + `files` alanlarından
+# çıkarılmıştır. Sözlü karşılığı `docs/UTKU.md` ve `docs/MEHMET.md`.
+#
+# Ne işe yarar: bir PR bir kişinin alanına dokunduğunda GitHub o kişiyi
+# otomatik olarak reviewer atar. Branch protection'da "Require review from
+# Code Owners" açıksa onay da zorunlu olur (bkz. `docs/REPO_KURULUMU.md`).
+#
+# EŞLEŞME KURALI: GitHub'da **son eşleşen satır kazanır.** Bu yüzden sıra
+# genelden özele doğrudur: en üstte herkesi kapsayan taban, altta gittikçe
+# daralan kurallar. Yeni kural eklerken daha genel bir kuralın ÜSTÜNE değil,
+# ALTINA yazın; yoksa sessizce etkisiz kalır.
+#
+# Bir satırda iki sahip yazılıysa GitHub **ikisinden birinin** onayını yeterli
+# sayar, ikisini birden istemez.
+
+# ---------------------------------------------------------------------------
+# Taban: sahibi ayrıca belirtilmemiş her dosya ortaktır
+# ---------------------------------------------------------------------------
+# Kök dokümanlar (README.md, PROJE_PLANI.md, CONTRIBUTING.md) ve buraya sonradan
+# eklenen her yeni yol bu satıra düşer: sahipsiz dosya kalmaz.
+*                               @Utkuuzun14 @mehmetalisahingm
+
+# ---------------------------------------------------------------------------
+# Utku — motor, kurallar ve altyapı
+# ---------------------------------------------------------------------------
+# Motorun tamamı Utku'nundur; `fixtures/` ve `react/` dahil (CONTRIBUTING:
+# "src/features/game/ … : Utku"). Sınırda kalan klasör bırakılmadı.
+/src/features/                  @Utkuuzun14
+/src/lib/                       @Utkuuzun14
+/scripts/                       @Utkuuzun14
+/tests/                         @Utkuuzun14
+
+# CI, issue şablonları ve PR şablonu. CODEOWNERS'ın kendisi hariç (en altta).
+/.github/                       @Utkuuzun14
+
+# Kök yapılandırma ve derleme ayarları. CONTRIBUTING: "Utku koordine eder;
+# UI bağımlılıkları Mehmet'le birlikte belirlenir" — yani paket eklerken
+# haberleşme kuralı geçerli, dosyanın sahibi Utku.
+/package.json                   @Utkuuzun14
+/package-lock.json              @Utkuuzun14
+/tsconfig.json                  @Utkuuzun14
+/tsconfig.playwright.json       @Utkuuzun14
+/next.config.mjs                @Utkuuzun14
+/next-env.d.ts                  @Utkuuzun14
+/eslint.config.mjs              @Utkuuzun14
+/vitest.config.mts              @Utkuuzun14
+/playwright.config.mjs          @Utkuuzun14
+
+# ---------------------------------------------------------------------------
+# Mehmet — arayüz, tasarım ve görsel kimlik
+# ---------------------------------------------------------------------------
+/src/components/                @mehmetalisahingm
+/src/styles/                    @mehmetalisahingm
+
+# `src/app/` kökü arayüzdür: sayfalar (`page.tsx`), `layout.tsx`, `globals.css`
+# ve görsel kimlik dosyaları (`icon.svg`, `apple-icon.tsx`, `opengraph-image.tsx`,
+# `twitter-image.tsx`, `manifest.ts` — Q37 Mehmet'te). API ve `play/` aşağıda
+# ayrıca daraltılır.
+/src/app/                       @mehmetalisahingm
+
+# ---------------------------------------------------------------------------
+# Ortak alanlar — iki taraf da düzenli olarak dokunuyor
+# ---------------------------------------------------------------------------
+# Oyun sayfası: motoru bağlayan taraf Utku (Q16, Q19, Q21), ekran durumları
+# Mehmet (Q24). İkisi de sahip.
+/src/app/play/                  @Utkuuzun14 @mehmetalisahingm
+
+# İçerik: bulmacayı yazan kişi düzenler, şema ve doğrulama Utku'da (Q18),
+# yazım ve editoryal kayıt Mehmet'te (Q06, Q26). İkisi de sahip.
+/src/content/                   @Utkuuzun14 @mehmetalisahingm
+
+# Doküman tabanı: görev listeleri (TASKS.json, GOREVLER.md, UTKU.md, MEHMET.md,
+# ISSUE_INDEX.json) ve kalite kayıtları ortaktır. Sahibi belli olanlar altta.
+/docs/                          @Utkuuzun14 @mehmetalisahingm
+/docs/qa/                       @Utkuuzun14 @mehmetalisahingm
+
+# Uygulama sabitleri gerçekten karışık: marka renkleri (`BRAND_COLORS`), başlık,
+# slogan ve kullanıcıya görünen açıklamalar Mehmet'in alanı; oyun kuralı
+# sabitlerinin yeniden dışa aktarımı Utku'nun. `/src/lib/` kuralını ezer.
+/src/lib/config.ts              @Utkuuzun14 @mehmetalisahingm
+/src/lib/config.test.ts         @Utkuuzun14 @mehmetalisahingm
+
+# ---------------------------------------------------------------------------
+# Sahibi belli dokümanlar (yukarıdaki /docs/ tabanını ezer)
+# ---------------------------------------------------------------------------
+# Sözleşme ve kurallar: başlıklarında "Sahip: Utku" yazar.
+/docs/CONTRACTS.md              @Utkuuzun14
+/docs/GAME_RULES.md             @Utkuuzun14
+# Utku'nun altyapı görevlerinin belgeleri: Q18, Q19, Q20, Q01.
+/docs/CONTENT_SCHEMA.md         @Utkuuzun14
+/docs/DAILY_PUBLISHING.md       @Utkuuzun14
+/docs/PERSISTENCE.md            @Utkuuzun14
+/docs/REPO_KURULUMU.md          @Utkuuzun14
+
+# Tasarım ve içerik rehberi: `docs/DESIGN_SYSTEM.md` başlığında "Sahip: Mehmet".
+/docs/DESIGN_SYSTEM.md          @mehmetalisahingm
+/docs/PUZZLE_GUIDE.md           @mehmetalisahingm
+/docs/design/                   @mehmetalisahingm
+/docs/research/                 @mehmetalisahingm
+
+# ---------------------------------------------------------------------------
+# API: sayfalardan sonra gelmeli, yoksa /src/app/ kuralı bunu da ezer
+# ---------------------------------------------------------------------------
+# Dizin şu an boş (git izlenen dosya yok); kural bilinçli olarak önden yazıldı.
+# `docs/TASKS.json` `src/app/api/puzzle/` yolunu Utku'ya veriyor ve bu satır
+# olmasa ilk route dosyası `/src/app/` kuralıyla Mehmet'e düşerdi.
+/src/app/api/                   @Utkuuzun14
+
+# ---------------------------------------------------------------------------
+# Sahipliğin kendisi: en son satır, en özel kural
+# ---------------------------------------------------------------------------
+# Kod sahipliğini kimse tek taraflı değiştirmesin diye bu dosya ortaktır ve
+# /.github/ kuralının altındadır.
+/.github/CODEOWNERS             @Utkuuzun14 @mehmetalisahingm
