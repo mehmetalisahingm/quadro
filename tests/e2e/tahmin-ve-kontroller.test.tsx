@@ -176,7 +176,7 @@ describe("paylaşım", () => {
 
     const preview = sharePreview();
     const [header, ...rows] = preview.split("\n");
-    expect(header).toBe(`Quadro ${puzzle.date} 4/4`);
+    expect(header).toBe(`Quadro ${puzzle.date} 4/4 · ${statValue(result, "Süre")}`);
     expect(rows).toEqual(["🟦🟦🟦🟪", "🟦🟨🟪🟨", "🟨🟨🟨🟨", "🟪🟪🟪🟪", "🟩🟩🟩🟩", "🟦🟦🟦🟦"]);
     expect(leakedAnswers(preview)).toEqual([]);
 
