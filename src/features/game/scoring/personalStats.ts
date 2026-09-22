@@ -16,6 +16,11 @@ export type DailyGameResult = {
   outcome: Exclude<GameStatus, "playing">;
   /** O oyunda kullanılan hata hakkı (0–4). */
   mistakes: number;
+  /**
+   * Kazanç kendi Türkiye yayın günü içinde tamamlandı mı?
+   * Yalnız bu kazançlar günlük seriyi ilerletir.
+   */
+  streakEligible: boolean;
 };
 
 /** Arayüzün doğrudan gösterebileceği kişisel istatistik özeti. */
@@ -71,7 +76,10 @@ export function publicationDayOrdinal(dayKey: string): number | null {
 }
 
 /** Terminal oyun durumunu günlük istatistik sonucuna çevirir. */
-export function resultFromSnapshot(snapshot: GameSnapshot): DailyGameResult | null {
+export function resultFromSnapshot(
+  snapshot: GameSnapshot,
+  streakEligible: boolean = snapshot.status === "won",
+): DailyGameResult | null {
   if (snapshot.status === "playing") return null;
   if (publicationDayOrdinal(snapshot.dayKey) === null) return null;
 
@@ -86,6 +94,7 @@ export function resultFromSnapshot(snapshot: GameSnapshot): DailyGameResult | nu
     puzzleRevision: snapshot.puzzleRevision,
     outcome: snapshot.status,
     mistakes,
+    streakEligible: snapshot.status === "won" && streakEligible,
   };
 }
 
@@ -95,10 +104,11 @@ export function resultFromSnapshot(snapshot: GameSnapshot): DailyGameResult | nu
  * Aynı yayın günü birden çok kez verilirse ilk sonuç esas alınır. Kalıcı depo
  * zaten bunu engeller; saf hesaplayıcı da tekrar girdisine karşı deterministiktir.
  *
- * Seri takvim günlerine göre hesaplanır: kayıp seriyi sıfırlar, iki sonuç
- * arasında bir gün bile boşluk varsa yeni kazanma serisi başlar. Bugünün henüz
- * oynanmamış olması seriyi erkenden sıfırlamaz; boşluk ancak daha sonraki bir
- * sonuç kaydedildiğinde kesinleşir.
+ * Seri takvim günlerine göre hesaplanır: yalnız kendi yayın gününde tamamlanan
+ * kazançlar seriyi ilerletir. Kayıp veya gece yarısından sonra tamamlanan eski
+ * gün kazancı seriyi sıfırlar; iki sonuç arasında bir gün bile boşluk varsa yeni
+ * kazanma serisi başlar. Bugünün henüz oynanmamış olması seriyi erkenden
+ * sıfırlamaz; boşluk ancak daha sonraki bir sonuç kaydedildiğinde kesinleşir.
  */
 export function calculatePersonalStats(results: readonly DailyGameResult[]): PersonalStats {
   const byDay = new Map<string, { result: DailyGameResult; ordinal: number }>();
@@ -122,8 +132,9 @@ export function calculatePersonalStats(results: readonly DailyGameResult[]): Per
   for (const { result, ordinal } of ordered) {
     mistakes += result.mistakes;
 
-    if (result.outcome === "won") {
-      won += 1;
+    if (result.outcome === "won") won += 1;
+
+    if (result.outcome === "won" && result.streakEligible) {
       currentStreak =
         previousWon && previousOrdinal !== null && ordinal === previousOrdinal + 1
           ? currentStreak + 1
