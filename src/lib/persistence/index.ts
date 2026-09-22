@@ -15,4 +15,5 @@
 export * from "./compatibility";
 export * from "./record";
 export * from "./snapshotStore";
+export * from "./statsStore";
 export * from "./storage";
