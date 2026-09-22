@@ -113,6 +113,75 @@
   color: var(--q-color-ink);
 }
 
+.nextPuzzle {
+  width: fit-content;
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2px 10px;
+  align-items: baseline;
+  color: var(--q-color-ink-subtle);
+  font-family: var(--q-font-mono);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.nextPuzzle strong {
+  color: var(--q-color-ink);
+  font-size: 13px;
+}
+
+.nextPuzzle > span:last-child {
+  grid-column: 1 / -1;
+}
+
+.nextPuzzleKicker,
+.previousKicker {
+  color: var(--q-color-ink-subtle);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.previousGame {
+  margin-top: 18px;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+  border: 1px solid var(--q-color-border);
+  border-radius: var(--q-radius-md);
+  background: var(--q-color-surface-raised);
+}
+
+.previousGame > div {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.previousGame strong {
+  color: var(--q-color-ink);
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.previousGame > div > span:last-child {
+  color: var(--q-color-ink-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.previousAction {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-bottom: 1px solid currentColor;
+  color: var(--q-color-ink);
+  font-weight: var(--q-font-weight-semibold);
+  text-decoration: none;
+}
+
 .motif {
   display: none;
   border: 1px solid var(--q-color-border);
@@ -168,6 +237,10 @@
   .secondaryAction:hover {
     transform: translateY(-1px);
   }
+
+  .previousAction:hover {
+    opacity: 0.72;
+  }
 }
 
 @media (min-width: 480px) {
@@ -183,6 +256,11 @@
   .primaryAction,
   .secondaryAction {
     min-width: 220px;
+  }
+
+  .previousGame {
+    grid-template-columns: minmax(0, 1fr) max-content;
+    align-items: center;
   }
 }
 
@@ -226,6 +304,15 @@
   .primaryAction,
   .secondaryAction {
     width: 100%;
+  }
+
+  .nextPuzzle {
+    width: 100%;
+  }
+
+  .previousAction {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 

@@ -1,14 +1,19 @@
 import Link from "next/link";
 
+import type { HomePlayerState } from "./homeState";
 import styles from "./HomeHero.module.css";
-
-export type HomePlayerState = "new" | "in-progress" | "completed";
 
 export type HomeHeroProps = {
   state: HomePlayerState;
-  puzzleNumber: number;
+  puzzleNumber: number | null;
   dateLabel: string;
   progressLabel?: string;
+  nextPuzzleLabel: string;
+  previousGame?: {
+    dateLabel: string;
+    progressLabel: string;
+    href: string;
+  };
 };
 
 type StateCopy = {
@@ -56,6 +61,8 @@ export function HomeHero({
   puzzleNumber,
   dateLabel,
   progressLabel,
+  nextPuzzleLabel,
+  previousGame,
 }: HomeHeroProps) {
   const copy = copyByState[state];
 
@@ -76,8 +83,8 @@ export function HomeHero({
         <p className={styles.description}>{copy.description}</p>
 
         <div className={styles.meta} aria-label="Günün bulmacası">
-          <span>#{puzzleNumber}</span>
-          <span aria-hidden="true">•</span>
+          {puzzleNumber === null ? null : <span>#{puzzleNumber}</span>}
+          {puzzleNumber === null ? null : <span aria-hidden="true">•</span>}
           <span>{dateLabel}</span>
         </div>
 
@@ -98,6 +105,25 @@ export function HomeHero({
             </Link>
           ) : null}
         </div>
+
+        <div className={styles.nextPuzzle} aria-label="Yeni bulmaca zamanı">
+          <span className={styles.nextPuzzleKicker}>YENİ BULMACA</span>
+          <strong>{nextPuzzleLabel}</strong>
+          <span>Türkiye saatiyle 00.00</span>
+        </div>
+
+        {previousGame ? (
+          <aside className={styles.previousGame} aria-label="Yarım kalan önceki oyun">
+            <div>
+              <span className={styles.previousKicker}>YARIM KALAN OYUN</span>
+              <strong>{previousGame.dateLabel}</strong>
+              <span>{previousGame.progressLabel}</span>
+            </div>
+            <Link className={styles.previousAction} href={previousGame.href}>
+              Önceki oyuna devam et
+            </Link>
+          </aside>
+        ) : null}
       </div>
 
       <div className={styles.motif} aria-hidden="true">

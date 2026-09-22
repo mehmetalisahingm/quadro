@@ -55,7 +55,7 @@ function answerLabels(result: HTMLElement): Record<string, string> {
 
 describe("ana sayfa → /play", () => {
   it("yeni kullanıcı ana sayfadan bugünün bulmacasına gider; /play gerçek motorun tahtasını açar", async () => {
-    render(<HomePage />);
+    render(await HomePage());
     const start = screen.getByRole("link", { name: "Bugünün bulmacasını çöz" });
     expect(start.getAttribute("href")).toBe("/play");
     cleanup();
