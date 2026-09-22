@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { defaultSnapshotStorage } from "@/lib/persistence";
+import { defaultSnapshotStorage } from "@/lib/persistence/storage";
 
 import { HomeHero } from "./HomeHero";
 import {
