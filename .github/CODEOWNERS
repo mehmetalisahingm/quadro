@@ -3,11 +3,15 @@
 # Bu dosya "hangi dosya kimin alanı" sorusunun makine tarafından okunabilir
 # halidir. Kaynağı uydurma değil: sahiplik `CONTRIBUTING.md` §"Ortak dosyalar"
 # ve `docs/TASKS.json` içindeki her görevin `owner` + `files` alanlarından
-# çıkarılmıştır. Sözlü karşılığı `docs/UTKU.md` ve `docs/MEHMET.md`.
+# çıkarılmıştır.
+#
+# Kod sahipliği ve review kuralları `CONTRIBUTING.md` ile bu dosyada tanımlıdır;
+# çelişki halinde bu ikisi esastır. `docs/UTKU.md` ve `docs/MEHMET.md` içindeki
+# eski "review zorunlu değildir" ifadeleri güncelliğini yitirmiştir.
 #
 # Ne işe yarar: bir PR bir kişinin alanına dokunduğunda GitHub o kişiyi
 # otomatik olarak reviewer atar. Branch protection'da "Require review from
-# Code Owners" açıksa onay da zorunlu olur (bkz. `docs/REPO_KURULUMU.md`).
+# Code Owners" açıksa onay da merge koşulu olur (bkz. `docs/REPO_KURULUMU.md`).
 #
 # EŞLEŞME KURALI: GitHub'da **son eşleşen satır kazanır.** Bu yüzden sıra
 # genelden özele doğrudur: en üstte herkesi kapsayan taban, altta gittikçe
@@ -20,35 +24,44 @@
 # ---------------------------------------------------------------------------
 # Taban: sahibi ayrıca belirtilmemiş her dosya ortaktır
 # ---------------------------------------------------------------------------
-# Kök dokümanlar (README.md, PROJE_PLANI.md, CONTRIBUTING.md) ve buraya sonradan
-# eklenen her yeni yol bu satıra düşer: sahipsiz dosya kalmaz.
+# Kök dokümanlar (PROJE_PLANI.md, CONTRIBUTING.md), `.nvmrc`, `.gitignore` ve
+# buraya sonradan eklenen her yeni yol bu satıra düşer: sahipsiz dosya kalmaz.
 *                               @Utkuuzun14 @mehmetalisahingm
+
+# ---------------------------------------------------------------------------
+# Ortak: kök yapılandırma ve CI
+# ---------------------------------------------------------------------------
+# Derleme, lint, test ve CI ayarları iki tarafın da işini kilitler; bu yüzden
+# taban kuralla aynı şekilde ortaktır ve burada açıkça yazılıdır. Paket ekleme
+# ve çıkarmayı Utku koordine eder, UI bağımlılıkları Mehmet'le birlikte
+# belirlenir (CONTRIBUTING.md §"Ortak dosyalar").
+/package.json                   @Utkuuzun14 @mehmetalisahingm
+/package-lock.json              @Utkuuzun14 @mehmetalisahingm
+/tsconfig.json                  @Utkuuzun14 @mehmetalisahingm
+/tsconfig.playwright.json       @Utkuuzun14 @mehmetalisahingm
+/next.config.mjs                @Utkuuzun14 @mehmetalisahingm
+/eslint.config.mjs              @Utkuuzun14 @mehmetalisahingm
+/vitest.config.mts              @Utkuuzun14 @mehmetalisahingm
+/playwright.config.mjs          @Utkuuzun14 @mehmetalisahingm
+/.github/workflows/             @Utkuuzun14 @mehmetalisahingm
 
 # ---------------------------------------------------------------------------
 # Utku — motor, kurallar ve altyapı
 # ---------------------------------------------------------------------------
-# Motorun tamamı Utku'nundur; `fixtures/` ve `react/` dahil (CONTRIBUTING:
-# "src/features/game/ … : Utku"). Sınırda kalan klasör bırakılmadı.
+# `/src/features/` tek satırda kapsanıyor: engine/, state/, validator/,
+# contracts.ts ve sınırda duran fixtures/ ile react/ dahil. Sınır klasörlerin
+# dayanağı `docs/TASKS.json`: fixtures/ → Q03 (utku), react/ → Q03, Q16, Q21
+# (utku). Sahipsiz ya da tahminle atanmış klasör bırakılmadı.
 /src/features/                  @Utkuuzun14
+
+# `/src/lib/` günlük yayın (daily/, Q19) ve kalıcılık (persistence/, Q20, Q22)
+# katmanlarını kapsar. `config.ts` karışık olduğu için aşağıda ortağa çekiliyor.
 /src/lib/                       @Utkuuzun14
+
+# İçerik doğrulayıcı ve paket denetimi betikleri (Q18, Q33); regresyon ve e2e
+# paketleri (Q17, Q36).
 /scripts/                       @Utkuuzun14
 /tests/                         @Utkuuzun14
-
-# CI, issue şablonları ve PR şablonu. CODEOWNERS'ın kendisi hariç (en altta).
-/.github/                       @Utkuuzun14
-
-# Kök yapılandırma ve derleme ayarları. CONTRIBUTING: "Utku koordine eder;
-# UI bağımlılıkları Mehmet'le birlikte belirlenir" — yani paket eklerken
-# haberleşme kuralı geçerli, dosyanın sahibi Utku.
-/package.json                   @Utkuuzun14
-/package-lock.json              @Utkuuzun14
-/tsconfig.json                  @Utkuuzun14
-/tsconfig.playwright.json       @Utkuuzun14
-/next.config.mjs                @Utkuuzun14
-/next-env.d.ts                  @Utkuuzun14
-/eslint.config.mjs              @Utkuuzun14
-/vitest.config.mts              @Utkuuzun14
-/playwright.config.mjs          @Utkuuzun14
 
 # ---------------------------------------------------------------------------
 # Mehmet — arayüz, tasarım ve görsel kimlik
@@ -61,6 +74,9 @@
 # `twitter-image.tsx`, `manifest.ts` — Q37 Mehmet'te). API ve `play/` aşağıda
 # ayrıca daraltılır.
 /src/app/                       @mehmetalisahingm
+
+# Kök README'yi Mehmet yazıyor (Q41).
+/README.md                      @mehmetalisahingm
 
 # ---------------------------------------------------------------------------
 # Ortak alanlar — iki taraf da düzenli olarak dokunuyor
@@ -76,6 +92,8 @@
 # Doküman tabanı: görev listeleri (TASKS.json, GOREVLER.md, UTKU.md, MEHMET.md,
 # ISSUE_INDEX.json) ve kalite kayıtları ortaktır. Sahibi belli olanlar altta.
 /docs/                          @Utkuuzun14 @mehmetalisahingm
+# `design/` ve `research/` Mehmet'te olduğu için `qa/` de ona aitmiş gibi
+# görünebiliyor; değil: Q32/Q35/Q37/Q39 Mehmet'te, Q33 Utku'da.
 /docs/qa/                       @Utkuuzun14 @mehmetalisahingm
 
 # Uygulama sabitleri gerçekten karışık: marka renkleri (`BRAND_COLORS`), başlık,
@@ -105,14 +123,13 @@
 # ---------------------------------------------------------------------------
 # API: sayfalardan sonra gelmeli, yoksa /src/app/ kuralı bunu da ezer
 # ---------------------------------------------------------------------------
-# Dizin şu an boş (git izlenen dosya yok); kural bilinçli olarak önden yazıldı.
-# `docs/TASKS.json` `src/app/api/puzzle/` yolunu Utku'ya veriyor ve bu satır
-# olmasa ilk route dosyası `/src/app/` kuralıyla Mehmet'e düşerdi.
+# Dizinin şu an git tarafından izlenen dosyası yok; kural bilinçli olarak önden
+# yazıldı. `docs/TASKS.json` `src/app/api/puzzle/` yolunu Utku'ya (Q19) veriyor
+# ve bu satır olmasa ilk route dosyası `/src/app/` kuralıyla Mehmet'e düşerdi.
 /src/app/api/                   @Utkuuzun14
 
 # ---------------------------------------------------------------------------
 # Sahipliğin kendisi: en son satır, en özel kural
 # ---------------------------------------------------------------------------
-# Kod sahipliğini kimse tek taraflı değiştirmesin diye bu dosya ortaktır ve
-# /.github/ kuralının altındadır.
+# Kod sahipliğini kimse tek taraflı değiştirmesin diye bu dosya ortaktır.
 /.github/CODEOWNERS             @Utkuuzun14 @mehmetalisahingm

@@ -2,7 +2,7 @@
 
 GitHub: [@mehmetalisahingm](https://github.com/mehmetalisahingm) · **B — tasarım ve arayüz**
 
-Ana sorumluluğunda 21 issue bulunur. Her teslimin doğrulamasını sen yaparsın; kendi alanında @Utkuuzun14 review'u zorunlu değildir, onun dosyalarına dokunan PR ise onayını bekler ([kod sahipliği](../CONTRIBUTING.md#kod-sahipliği-ve-review)). Bulmaca görevlerinde istersen cevapları görmeden kör deneme yapabilirsin.
+Ana sorumluluğunda 21 issue bulunur. Her teslimin doğrulamasını sen yaparsın; @Utkuuzun14 review'u zorunlu değildir. Bulmaca görevlerinde istersen cevapları görmeden kör deneme yapabilirsin.
 
 [GitHub'da açık görevlerim](https://github.com/mehmetalisahingm/quadro/issues?q=is%3Aissue%20is%3Aopen%20assignee%3Amehmetalisahingm)
 
@@ -13,7 +13,7 @@ Ana sorumluluğunda 21 issue bulunur. Her teslimin doğrulamasını sen yaparsı
 ## Teslim düzeni
 
 - Issue bağımlılıklarını kontrol et; tek amaçlı bir `codex/...` dalı aç.
-- Kabul ölçütlerini ve ilgili doğrulamayı tamamlayıp PR aç; kendi kanıtını ekle. Kendi alanındaki PR için review isteği zorunlu değildir; karşı tarafın alanına dokunan PR onayını bekler.
+- Kabul ölçütlerini ve ilgili doğrulamayı tamamlayıp PR aç; kendi kanıtını ekle. Review isteği zorunlu değildir.
 - Ortak dosyalara etkisi olan değişiklikleri önce diğer kişiyle netleştir.
 - Sonuç tamamlanmadıysa issue açık kalsın; kalan işi ve kanıtı yaz.
 
