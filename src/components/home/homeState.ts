@@ -1,10 +1,7 @@
 import type { GameSnapshot } from "@/features/game/contracts";
-import {
-  LAST_DAY_KEY,
-  parseStoredRecord,
-  snapshotStorageKey,
-  type SnapshotStorage,
-} from "@/lib/persistence";
+import { parseStoredRecord } from "@/lib/persistence/record";
+import { LAST_DAY_KEY, snapshotStorageKey } from "@/lib/persistence/snapshotStore";
+import type { SnapshotStorage } from "@/lib/persistence/storage";
 
 export type HomePlayerState = "new" | "in-progress" | "completed";
 
