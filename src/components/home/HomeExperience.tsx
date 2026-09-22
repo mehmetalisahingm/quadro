@@ -52,18 +52,20 @@ export function HomeExperience({
   const [player, setPlayer] = useState<HomeStateSnapshot>({ state: "new" });
   const [countdown, setCountdown] = useState(initialCountdownLabel);
   const reloadRequested = useRef(false);
+  const { dayKey, puzzleId, puzzleRevision } = today;
 
   useEffect(() => {
     const storage = defaultSnapshotStorage();
+    const identity: HomePuzzleIdentity = { dayKey, puzzleId, puzzleRevision };
 
     const sync = () => {
-      setPlayer(resolveHomeState(storage, today));
+      setPlayer(resolveHomeState(storage, identity));
     };
 
     sync();
     window.addEventListener("storage", sync);
     return () => window.removeEventListener("storage", sync);
-  }, [today.dayKey, today.puzzleId, today.puzzleRevision]);
+  }, [dayKey, puzzleId, puzzleRevision]);
 
   useEffect(() => {
     const target = Date.parse(nextRolloverAt);
