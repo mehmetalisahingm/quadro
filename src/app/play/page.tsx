@@ -8,11 +8,12 @@ import {
   formatDayLabel,
   loadDailyPuzzle,
   puzzleNumberFromId,
+  resolvePublicationDay,
   type DailyPuzzleState,
 } from "@/lib/daily";
 
 type PlayPageProps = {
-  searchParams: Promise<{ mode?: string }>;
+  searchParams: Promise<{ mode?: string; day?: string; view?: string }>;
 };
 
 export async function generateMetadata({ searchParams }: PlayPageProps): Promise<Metadata> {
@@ -28,6 +29,25 @@ export async function generateMetadata({ searchParams }: PlayPageProps): Promise
         title: "Bugünün bulmacası",
         description: PLAY_DESCRIPTION,
       };
+}
+
+function previousCalendarDay(dayKey: string): string {
+  const [year, month, day] = dayKey.split("-").map(Number);
+  const at = Date.UTC(year ?? 0, (month ?? 1) - 1, day ?? 1) - 86_400_000;
+  return new Date(at).toISOString().slice(0, 10);
+}
+
+/**
+ * İlk sürüm arşiv sunmaz. Q23 gece yarısında yarım kalan oyunu kaybetmemek için
+ * yalnız bir önceki yayın gününe dönüşe izin verir; daha eski veya gelecek bir
+ * gün istenirse bugünün bulmacası açılır.
+ */
+export function resolvePlayableDay(currentDay: string, requestedDay?: string): string {
+  const requested = requestedDay?.trim();
+  if (requested !== undefined && requested === previousCalendarDay(currentDay)) {
+    return requested;
+  }
+  return currentDay;
 }
 
 /**
@@ -47,17 +67,19 @@ function dailyKicker(state: DailyPuzzleState): string {
 /**
  * Günlük oyun sayfası.
  *
- * Günün bulmacası burada, sunucuda çözülür: yayın günü Europe/Istanbul saatine göre
- * belirlenir ve yalnız o günün içerik dosyası okunur (Q19). Bulmaca istemciye bir
- * prop olarak iner; içerik dosyaları modül grafiğine hiç girmez, dolayısıyla gelecek
- * günler istemci paketinde bulunmaz.
+ * Varsayılan yayın günü Europe/Istanbul saatine göre belirlenir. Q23 kapsamında
+ * ana sayfa, gece yarısından sonra yalnız dünden kalan açık oyun için
+ * `?day=YYYY-MM-DD` ekleyebilir; sunucu bu parametreyi bir önceki yayın günüyle
+ * sınırlar. Böylece yarım oyun devam ederken genel bir arşiv açılmaz.
  *
  * Öğretici kipi günlük içerikten bağımsızdır ve yayın stoğuna hiç bakmaz.
  */
 export default async function PlayPage({ searchParams }: PlayPageProps) {
-  const { mode } = await searchParams;
+  const { mode, day } = await searchParams;
   const tutorialMode = mode === "tutorial";
-  const daily = tutorialMode ? null : await loadDailyPuzzle();
+  const currentDay = resolvePublicationDay();
+  const dayKey = resolvePlayableDay(currentDay, day);
+  const daily = tutorialMode ? null : await loadDailyPuzzle({ dayKey });
 
   return (
     <main className="q-play-page">
