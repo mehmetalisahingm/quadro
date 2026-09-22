@@ -151,7 +151,7 @@ export function saveSnapshot(
 
     // Q22: terminal sonuç aynı depodaki günlük istatistik defterine en fazla
     // bir kez işlenir. Kimlik snapshot'ın yayın günüdür; yazma saati değildir.
-    if (snapshot.status !== "playing") recordTerminalResult(snapshot, storage);
+    if (snapshot.status !== "playing") recordTerminalResult(snapshot, storage, now);
 
     return { status: "saved" };
   } catch {
