@@ -106,7 +106,7 @@ Sunucuya gönderilmez ve başka cihazla otomatik birleşmez. Terminal günlük
 sonuçlar ayrı bir küçük defterde tutulur:
 
 ```
-quadro:stats:v1
+quadro:stats:v2
 ```
 
 Defter hesaplanmış toplamları değil, her yayın günü için tek terminal sonucu
@@ -124,16 +124,19 @@ Seri kuralı yayın gününe göredir:
   seri başlatır.
 - Bugünün henüz oynanmamış olması seriyi erkenden sıfırlamaz; boşluk ancak daha
   sonraki bir sonuç kaydedildiğinde kesinleşir.
-- Oyun gece yarısından sonra bitirilse bile sonuç **bitiş saatine değil
-  snapshot'ın `dayKey` değerine** yazılır. Örneğin 20 Eylül bulmacası 21 Eylül
-  00:30'da tamamlanırsa 20 Eylül sonucu olarak sayılır.
+- Terminal sonuç her zaman snapshot'ın kendi `dayKey` gününe yazılır; böylece
+  oynanan/kazanılan toplamları doğru bulmacaya aittir.
+- **Seri yalnız kazanma kendi Türkiye yayın günü içinde tamamlandıysa ilerler.**
+  Örneğin 20 Eylül bulmacası 21 Eylül 00:30'da kazanılırsa oyun kazanılmış
+  sayılır fakat 20 Eylül seriye eklenmez; sonraki zamanında kazanılan gün yeni
+  seriyi 1'den başlatır.
 
 Ortalama hata, tamamlanan oyunlarda kullanılan hata hakkıdır:
 `4 - mistakesRemaining`. Kaybedilen oyun motor gereği dört hata olarak girer.
 Oynanmamış veya yarım bırakılmış oyunlar kişisel istatistiğe girmez.
 
 İstatistik defteri bozuk JSON, yanlış şema, geçersiz tarih veya yinelenen gün
-içerirse yalnız `quadro:stats:v1` silinir ve boş istatistikle güvenli biçimde
+içerirse yalnız `quadro:stats:v2` silinir ve boş istatistikle güvenli biçimde
 devam edilir. Günlük oyun snapshot'ına dokunulmaz. Aynı terminal snapshot daha
 sonra yeniden kaydedilirse o günün sonucu temiz deftere tekrar eklenebilir.
 
