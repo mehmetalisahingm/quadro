@@ -4,8 +4,9 @@ Quadro oyuncunun günlük oturumunu tarayıcıda saklar: sayfa yenilense, sekme
 kapatılıp açılsa da oyun aynı durumdan ve **aynı kart sırasından** sürer. Kayıt
 `localStorage` üzerindedir; hesap, sunucu veya çerez kullanılmaz.
 
-Kod: `src/lib/persistence/` (saf kurallar) ve `src/features/game/state/`
-(motor + React bağı). Kaynak görev: Q20 / #20.
+Kod: `src/lib/persistence/` (saf kurallar), `src/features/game/state/`
+(motor + React bağı) ve `src/features/game/scoring/` (kişisel istatistik hesabı).
+Kaynak görevler: Q20 / #20, Q21 / #21 ve Q22 / #22.
 
 ## Ne kaydedilir
 
@@ -98,10 +99,50 @@ kurcalanmış uçuk bir değer devralınırken kırpılır. Kayıt katmanının 
 değişmedi — `record.ts` `activeSeconds` için yalnız "sonlu ve negatif olmayan
 sayı" ister.
 
+## Kişisel istatistikler (Q22)
+
+İstatistikler de hesap gerektirmeden **bu tarayıcıya / bu cihaza** aittir.
+Sunucuya gönderilmez ve başka cihazla otomatik birleşmez. Terminal günlük
+sonuçlar ayrı bir küçük defterde tutulur:
+
+```
+quadro:stats:v1
+```
+
+Defter hesaplanmış toplamları değil, her yayın günü için tek terminal sonucu
+saklar. `played`, `won`, `lost`, kazanma oranı, güncel seri, en uzun seri ve
+ortalama hata her okumada `src/features/game/scoring/` içindeki saf hesaptan
+yeniden üretilir. Aynı `dayKey` ikinci kez yazılmaz; bitmiş oyun yeniden açılsa,
+snapshot yeniden kaydedilse veya aynı bitiş tekrar işlense istatistik **bir kez**
+değişir.
+
+Seri kuralı yayın gününe göredir:
+
+- Kazanılan ardışık Türkiye yayın günleri seriyi büyütür.
+- Kayıp güncel seriyi sıfırlar.
+- İki kaydedilmiş sonuç arasında bir yayın günü atlanmışsa sonraki kazanç yeni
+  seri başlatır.
+- Bugünün henüz oynanmamış olması seriyi erkenden sıfırlamaz; boşluk ancak daha
+  sonraki bir sonuç kaydedildiğinde kesinleşir.
+- Oyun gece yarısından sonra bitirilse bile sonuç **bitiş saatine değil
+  snapshot'ın `dayKey` değerine** yazılır. Örneğin 20 Eylül bulmacası 21 Eylül
+  00:30'da tamamlanırsa 20 Eylül sonucu olarak sayılır.
+
+Ortalama hata, tamamlanan oyunlarda kullanılan hata hakkıdır:
+`4 - mistakesRemaining`. Kaybedilen oyun motor gereği dört hata olarak girer.
+Oynanmamış veya yarım bırakılmış oyunlar kişisel istatistiğe girmez.
+
+İstatistik defteri bozuk JSON, yanlış şema, geçersiz tarih veya yinelenen gün
+içerirse yalnız `quadro:stats:v1` silinir ve boş istatistikle güvenli biçimde
+devam edilir. Günlük oyun snapshot'ına dokunulmaz. Aynı terminal snapshot daha
+sonra yeniden kaydedilirse o günün sonucu temiz deftere tekrar eklenebilir.
+
 ## Testler
 
-- `src/lib/persistence/*.test.ts` — depo, biçim ve uyumluluk kuralları,
-  bellekteki sahte depoyla.
+- `src/lib/persistence/*.test.ts` — depo, biçim, uyumluluk ve istatistik
+  kuralları; bellekteki sahte depoyla.
+- `src/features/game/scoring/*.test.ts` — seri, gün atlama, kayıp ve ortalama
+  hata hesabı.
 - `src/features/game/state/*.test.ts` — devralma sırası, kaydetme, bitmiş
   oyunun korunması ve aktif süre sayacı; React'siz, kontrollü saatle.
 - `tests/e2e/kayit-devam.test.tsx` — gerçek `/play` akışı: yenileme sonrası
