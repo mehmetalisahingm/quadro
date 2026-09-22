@@ -20,6 +20,7 @@ import type { GameSnapshot, Puzzle } from "@/features/game/contracts";
 
 import { checkCompatibility, type IncompatibleReason } from "./compatibility";
 import { parseStoredRecord, serializeRecord, type ParseFailureReason } from "./record";
+import { recordTerminalResult } from "./statsStore";
 import { defaultSnapshotStorage, type SnapshotStorage } from "./storage";
 
 /** Kayıt anahtarlarının ortak öneki; şema sürümü anahtarın içindedir. */
@@ -147,6 +148,11 @@ export function saveSnapshot(
 
     storage.setItem(key, serializeRecord(snapshot, now.toISOString()));
     pruneOtherDays(storage, snapshot.dayKey);
+
+    // Q22: terminal sonuç aynı depodaki günlük istatistik defterine en fazla
+    // bir kez işlenir. Kimlik snapshot'ın yayın günüdür; yazma saati değildir.
+    if (snapshot.status !== "playing") recordTerminalResult(snapshot, storage);
+
     return { status: "saved" };
   } catch {
     return { status: "failed" };
