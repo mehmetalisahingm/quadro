@@ -10,13 +10,13 @@ export function feedbackMessage(outcome: SubmitOutcome | null): string {
 
   switch (outcome.verdict) {
     case "correct":
-      return `${outcome.solvedGroup.title} grubunu buldun.`;
+      return `Doğru — ${outcome.solvedGroup.title} grubunu buldun.`;
     case "one-away":
-      return "Bir kelime uzaktasın.";
+      return "Çok yakın — bir kelime uzaktasın.";
     case "wrong":
-      return "Bu dört kelime aynı grupta değil.";
+      return "Yanlış — bu dört kelime aynı grupta değil.";
     case "repeated":
-      return "Bu dörtlüyü daha önce denedin.";
+      return "Tekrar — bu dörtlüyü daha önce denedin.";
     case "invalid":
       if (outcome.reason === "selection-count") return "Gruplamak için dört kelime seç.";
       if (outcome.reason === "game-ended") return "Bu oyun sona erdi.";
