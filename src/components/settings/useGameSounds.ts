@@ -18,6 +18,7 @@ export type GameSounds = {
 
 export function useGameSounds(): GameSounds {
   const [enabled, setEnabled] = useState(false);
+  const enabledRef = useRef(false);
   const engineRef = useRef<GameSoundEngine | null>(null);
 
   const getEngine = useCallback(() => {
@@ -26,7 +27,9 @@ export function useGameSounds(): GameSounds {
   }, []);
 
   useEffect(() => {
-    setEnabled(readSoundPreference(window.localStorage));
+    const storedPreference = readSoundPreference(window.localStorage);
+    enabledRef.current = storedPreference;
+    setEnabled(storedPreference);
   }, []);
 
   const setEnabledByUser = useCallback(
@@ -38,6 +41,7 @@ export function useGameSounds(): GameSounds {
       }
 
       writeSoundPreference(window.localStorage, nextEnabled);
+      enabledRef.current = nextEnabled;
       setEnabled(nextEnabled);
 
       if (nextEnabled) {
@@ -50,10 +54,10 @@ export function useGameSounds(): GameSounds {
 
   const play = useCallback(
     (cue: GameSoundCue) => {
-      if (!enabled) return;
+      if (!enabledRef.current) return;
       void getEngine().play(cue);
     },
-    [enabled, getEngine],
+    [getEngine],
   );
 
   return { enabled, setEnabledByUser, play };
