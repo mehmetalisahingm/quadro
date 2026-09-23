@@ -140,11 +140,6 @@ export function TutorialExperience() {
                   onClick={() => toggleWord(wordId)}
                 >
                   {word.text}
-                  {selected ? (
-                    <span className={styles.selectedMark} aria-hidden="true">
-                      ✓
-                    </span>
-                  ) : null}
                 </button>
               );
             })}
