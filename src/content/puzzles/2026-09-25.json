@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-006",
+  "date": "2026-09-25",
+  "language": "tr",
+  "status": "draft",
+  "author": "mehmetalisahingm",
+  "reviewer": "Utkuuzun14",
+  "groups": [
+    {
+      "id": "q006-g1",
+      "title": "BAKLİYATLAR",
+      "words": [
+        { "id": "q006-w01", "text": "MERCİMEK" },
+        { "id": "q006-w02", "text": "NOHUT" },
+        { "id": "q006-w03", "text": "FASULYE" },
+        { "id": "q006-w04", "text": "BEZELYE" }
+      ],
+      "difficulty": 1,
+      "explanation": "Mercimek, nohut, fasulye ve bezelye yaygın bakliyat adlarıdır."
+    },
+    {
+      "id": "q006-g2",
+      "title": "MUTFAK GEREÇLERİ",
+      "words": [
+        { "id": "q006-w05", "text": "TENCERE" },
+        { "id": "q006-w06", "text": "TAVA" },
+        { "id": "q006-w07", "text": "KEVGİR" },
+        { "id": "q006-w08", "text": "RENDE" }
+      ],
+      "difficulty": 2,
+      "explanation": "Tencere, tava, kevgir ve rende mutfakta kullanılan temel araçlardır."
+    },
+    {
+      "id": "q006-g3",
+      "title": "YAKMAKLA KURULAN İFADELER",
+      "words": [
+        { "id": "q006-w09", "text": "ATEŞ" },
+        { "id": "q006-w10", "text": "IŞIK" },
+        { "id": "q006-w11", "text": "SİGARA" },
+        { "id": "q006-w12", "text": "MUM" }
+      ],
+      "difficulty": 3,
+      "explanation": "Ateş yakmak, ışık yakmak, sigara yakmak ve mum yakmak doğal Türkçe kullanımlardır."
+    },
+    {
+      "id": "q006-g4",
+      "title": "SONUNA ALTI GELENLER",
+      "words": [
+        { "id": "q006-w13", "text": "YER" },
+        { "id": "q006-w14", "text": "SU" },
+        { "id": "q006-w15", "text": "GÖZ" },
+        { "id": "q006-w16", "text": "KOLTUK" }
+      ],
+      "difficulty": 4,
+      "explanation": "Yeraltı, su altı, göz altı ve koltuk altı ifadeleri 'altı' ile kurulur."
+    }
+  ]
+}
