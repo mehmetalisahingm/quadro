@@ -168,8 +168,7 @@
     0 7px 18px rgb(32 36 45 / 0.14);
 }
 
-.q-word-tile[aria-pressed="true"]::after {
-  content: "✓";
+.q-word-tile-selected-mark {
   position: absolute;
   right: 4px;
   bottom: 3px;
