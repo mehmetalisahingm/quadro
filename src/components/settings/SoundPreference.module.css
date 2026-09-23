@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   margin-top: 4px;
   padding: 8px 10px;
   border: 1px solid var(--q-color-border);
@@ -11,13 +12,16 @@
 }
 
 .copy {
+  min-width: 0;
   color: var(--q-color-ink-muted);
   font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
 .toggle {
-  min-height: 34px;
-  padding: 0 11px;
+  min-height: var(--q-touch-target);
+  min-width: var(--q-touch-target);
+  padding: 0 13px;
   border: 1px solid var(--q-color-border-strong);
   border-radius: 999px;
   background: var(--q-color-surface);
@@ -26,6 +30,7 @@
   font-family: var(--q-font-mono);
   font-size: 11px;
   font-weight: var(--q-font-weight-semibold);
+  white-space: nowrap;
 }
 
 .toggle[aria-pressed="true"] {
@@ -35,6 +40,20 @@
 }
 
 .toggle:focus-visible {
-  outline: 2px solid var(--q-color-ink);
-  outline-offset: 2px;
+  outline: 3px solid var(--q-color-focus);
+  outline-offset: 3px;
+  box-shadow: var(--q-shadow-focus);
+}
+
+@media (max-width: 359px) {
+  .toggle {
+    flex: 1 1 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  .toggle[aria-pressed="true"] {
+    outline: 2px solid ButtonText;
+    outline-offset: -4px;
+  }
 }
