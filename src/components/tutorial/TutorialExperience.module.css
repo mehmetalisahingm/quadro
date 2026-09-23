@@ -9,7 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
 }
 
 .badge {
@@ -22,6 +23,9 @@
 
 .exitLink,
 .skipLink {
+  min-height: var(--q-touch-target);
+  display: inline-flex;
+  align-items: center;
   color: var(--q-color-ink-muted);
   font-size: 13px;
   font-weight: var(--q-font-weight-medium);
@@ -40,6 +44,7 @@
   font-size: clamp(28px, 8vw, 42px);
   line-height: 1.02;
   letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
 }
 
 .intro p {
@@ -47,6 +52,7 @@
   color: var(--q-color-ink-muted);
   font-size: 15px;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .safeNote {
@@ -82,6 +88,11 @@
   color: var(--q-group-green-ink);
 }
 
+.solvedGroup strong,
+.solvedGroup span {
+  overflow-wrap: anywhere;
+}
+
 .solvedGroup strong {
   font-size: 14px;
 }
@@ -99,6 +110,7 @@
 }
 
 .tile {
+  position: relative;
   min-width: 0;
   min-height: 68px;
   padding: 8px 4px;
@@ -124,6 +136,23 @@
   border-color: var(--q-color-ink);
   background: var(--q-color-ink);
   color: var(--q-color-surface);
+  box-shadow: inset 0 0 0 2px var(--q-color-surface);
+}
+
+.tile[aria-pressed="true"]::after {
+  content: "✓";
+  position: absolute;
+  right: 4px;
+  bottom: 3px;
+  width: 14px;
+  height: 14px;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 9px;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .tile:focus-visible,
@@ -134,6 +163,7 @@
 .playLink:focus-visible {
   outline: 3px solid var(--q-color-focus);
   outline-offset: 3px;
+  box-shadow: var(--q-shadow-focus);
 }
 
 .selection {
@@ -155,6 +185,7 @@
   font-size: 14px;
   font-weight: var(--q-font-weight-medium);
   line-height: 1.4;
+  overflow-wrap: anywhere;
   text-align: center;
 }
 
@@ -178,6 +209,7 @@
 .secondaryButton,
 .playLink {
   min-height: 48px;
+  min-width: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -185,6 +217,8 @@
   padding: 12px 14px;
   font: inherit;
   font-weight: var(--q-font-weight-semibold);
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .primaryButton,
@@ -214,6 +248,7 @@
 .skipLink {
   justify-self: center;
   margin-top: -2px;
+  text-align: center;
 }
 
 .complete {
@@ -250,6 +285,7 @@
   margin: 0;
   color: var(--q-color-ink-muted);
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .playLink {
@@ -276,9 +312,22 @@
   }
 }
 
+@media (max-width: 359px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tile {
     transition: none;
     transform: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .tile[aria-pressed="true"] {
+    outline: 3px solid Highlight;
+    outline-offset: -5px;
   }
 }
