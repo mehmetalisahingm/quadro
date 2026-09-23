@@ -88,6 +88,11 @@
   text-align: center;
 }
 
+.q-solved-group[data-entering="true"] {
+  animation: q-group-merge 420ms var(--q-ease-spring) both;
+  transform-origin: center;
+}
+
 .q-solved-group[data-difficulty="1"] {
   background: var(--q-group-yellow);
   color: var(--q-group-yellow-ink);
@@ -155,6 +160,20 @@
   box-shadow: 0 7px 18px rgb(32 36 45 / 0.14);
 }
 
+.q-word-tile[data-animation="wrong"] {
+  animation: q-tile-shake 320ms var(--q-ease-standard) both;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--q-color-danger) 48%, transparent),
+    var(--q-shadow-card);
+}
+
+.q-word-tile[data-animation="one-away"] {
+  animation: q-tile-near 360ms var(--q-ease-spring) both;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--q-color-warning) 52%, transparent),
+    var(--q-shadow-card);
+}
+
 .q-word-tile:disabled {
   cursor: default;
   opacity: 0.72;
@@ -172,10 +191,12 @@
 
 .q-game-feedback[data-verdict="correct"] {
   color: var(--q-color-success);
+  animation: q-feedback-pop 300ms var(--q-ease-spring) both;
 }
 
 .q-game-feedback[data-verdict="one-away"] {
   color: var(--q-color-warning);
+  animation: q-feedback-pop 260ms var(--q-ease-spring) both;
 }
 
 .q-game-feedback[data-verdict="wrong"] {
@@ -218,6 +239,61 @@
   border-color: var(--q-color-ink);
   background: var(--q-color-ink);
   color: var(--q-color-surface);
+}
+
+@keyframes q-tile-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  22% {
+    transform: translateX(-5px);
+  }
+  44% {
+    transform: translateX(4px);
+  }
+  66% {
+    transform: translateX(-3px);
+  }
+  82% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes q-tile-near {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  45% {
+    transform: translateY(-3px) scale(1.025);
+  }
+}
+
+@keyframes q-group-merge {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  58% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes q-feedback-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -268,5 +344,12 @@
   .q-word-tile,
   .q-game-control {
     transform: none !important;
+  }
+
+  .q-word-tile[data-animation],
+  .q-solved-group[data-entering="true"],
+  .q-game-feedback[data-verdict="correct"],
+  .q-game-feedback[data-verdict="one-away"] {
+    animation: none !important;
   }
 }
