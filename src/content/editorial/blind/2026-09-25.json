@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "q-006",
+  "date": "2026-09-25",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    { "id": "q006-w14", "text": "SU" },
+    { "id": "q006-w12", "text": "MUM" },
+    { "id": "q006-w03", "text": "FASULYE" },
+    { "id": "q006-w06", "text": "TAVA" },
+    { "id": "q006-w02", "text": "NOHUT" },
+    { "id": "q006-w05", "text": "TENCERE" },
+    { "id": "q006-w09", "text": "ATEŞ" },
+    { "id": "q006-w11", "text": "SİGARA" },
+    { "id": "q006-w08", "text": "RENDE" },
+    { "id": "q006-w07", "text": "KEVGİR" },
+    { "id": "q006-w04", "text": "BEZELYE" },
+    { "id": "q006-w15", "text": "GÖZ" },
+    { "id": "q006-w01", "text": "MERCİMEK" },
+    { "id": "q006-w16", "text": "KOLTUK" },
+    { "id": "q006-w13", "text": "YER" },
+    { "id": "q006-w10", "text": "IŞIK" }
+  ]
+}
