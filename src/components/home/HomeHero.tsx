@@ -106,6 +106,8 @@ export function HomeHero({
           ) : null}
         </div>
 
+        <p><Link className={styles.previousAction} href="/stats">İstatistiklerin →</Link></p>
+
         <div className={styles.nextPuzzle} aria-label="Yeni bulmaca zamanı">
           <span className={styles.nextPuzzleKicker}>YENİ BULMACA</span>
           <strong>{nextPuzzleLabel}</strong>
