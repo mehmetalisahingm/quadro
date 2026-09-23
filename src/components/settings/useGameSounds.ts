@@ -20,37 +20,40 @@ export function useGameSounds(): GameSounds {
   const [enabled, setEnabled] = useState(false);
   const engineRef = useRef<GameSoundEngine | null>(null);
 
-  const engine = () => {
+  const getEngine = useCallback(() => {
     engineRef.current ??= createGameSoundEngine();
     return engineRef.current;
-  };
+  }, []);
 
   useEffect(() => {
     setEnabled(readSoundPreference(window.localStorage));
   }, []);
 
-  const setEnabledByUser = useCallback(async (nextEnabled: boolean) => {
-    if (nextEnabled) {
-      // AudioContext ilk kez doğrudan kullanıcı tıklaması içinde açılır/resume edilir.
-      // Bu, iOS Safari ve Chromium autoplay kurallarıyla uyumludur.
-      await engine().unlock();
-    }
+  const setEnabledByUser = useCallback(
+    async (nextEnabled: boolean) => {
+      if (nextEnabled) {
+        // AudioContext ilk kez doğrudan kullanıcı tıklaması içinde açılır/resume edilir.
+        // Bu, iOS Safari ve Chromium autoplay kurallarıyla uyumludur.
+        await getEngine().unlock();
+      }
 
-    writeSoundPreference(window.localStorage, nextEnabled);
-    setEnabled(nextEnabled);
+      writeSoundPreference(window.localStorage, nextEnabled);
+      setEnabled(nextEnabled);
 
-    if (nextEnabled) {
-      // Kullanıcı ayarı açtığını anında doğrular; aynı tıklamada yalnız bir önizleme çalar.
-      await engine().play("select");
-    }
-  }, []);
+      if (nextEnabled) {
+        // Kullanıcı ayarı açtığını anında doğrular; aynı tıklamada yalnız bir önizleme çalar.
+        await getEngine().play("select");
+      }
+    },
+    [getEngine],
+  );
 
   const play = useCallback(
     (cue: GameSoundCue) => {
       if (!enabled) return;
-      void engine().play(cue);
+      void getEngine().play(cue);
     },
-    [enabled],
+    [enabled, getEngine],
   );
 
   return { enabled, setEnabledByUser, play };
