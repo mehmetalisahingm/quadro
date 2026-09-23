@@ -95,7 +95,7 @@ export function TutorialExperience() {
 
       <div className={styles.intro}>
         <h1 id="tutorial-title">Bağlantıyı bulmayı dene</h1>
-        <p>
+        <p id="tutorial-instructions">
           Bu örnekte yalnız iki grup var. Dört bağlantılı kelimeyi seç ve kontrol et.
         </p>
         <p className={styles.safeNote}>
@@ -124,6 +124,7 @@ export function TutorialExperience() {
           <div
             className={styles.board}
             aria-label={`${remainingWordIds.length} kelimelik öğretici tahtası`}
+            aria-describedby="tutorial-instructions"
           >
             {remainingWordIds.map((wordId) => {
               const word = tutorialWordById.get(wordId);
