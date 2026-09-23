@@ -32,12 +32,12 @@ const baseSnapshot: GameSnapshot = {
 };
 
 describe("game presentation helpers", () => {
-  it("tüm gönderim sonuçlarını renkten bağımsız, açık kullanıcı metnine çevirir", () => {
+  it("tüm gönderim sonuçlarını kullanıcı metnine çevirir", () => {
     const cases: Array<[SubmitOutcome, string]> = [
-      [{ verdict: "correct", solvedGroup }, "Doğru — Örnek Grup grubunu buldun."],
-      [{ verdict: "one-away" }, "Çok yakın — bir kelime uzaktasın."],
-      [{ verdict: "wrong" }, "Yanlış — bu dört kelime aynı grupta değil."],
-      [{ verdict: "repeated" }, "Tekrar — bu dörtlüyü daha önce denedin."],
+      [{ verdict: "correct", solvedGroup }, "Örnek Grup grubunu buldun."],
+      [{ verdict: "one-away" }, "Bir kelime uzaktasın."],
+      [{ verdict: "wrong" }, "Bu dört kelime aynı grupta değil."],
+      [{ verdict: "repeated" }, "Bu dörtlüyü daha önce denedin."],
       [
         { verdict: "invalid", reason: "selection-count" },
         "Gruplamak için dört kelime seç.",
