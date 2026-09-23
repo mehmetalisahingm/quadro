@@ -3,6 +3,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import {
+  gameTransitionDuration,
+  tileAnimationVerdict,
+  type TileAnimationVerdict,
+} from "@/animations/gameTransitions";
+import {
   GAME_CONSTANTS,
   type Puzzle,
   type SubmitOutcome,
@@ -11,6 +16,7 @@ import {
 import { standardPuzzle } from "@/features/game/fixtures";
 import { usePersistentGame } from "@/features/game/state";
 
+import motionStyles from "./GameAnimations.module.css";
 import { GameResult } from "./GameResult";
 import { GameLoading } from "./GameLoading";
 import { RecoveryNotice } from "./RecoveryNotice";
@@ -29,11 +35,27 @@ export type GameBoardProps = {
   puzzle?: Puzzle;
 };
 
+type AnimatedAttempt = {
+  wordIds: WordId[];
+  verdict: TileAnimationVerdict;
+};
+
+function prefersReducedMotion(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+}
+
 export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   const { puzzle, controller, restore } = usePersistentGame(dailyPuzzle ?? standardPuzzle);
   const { snapshot } = controller;
   const [feedback, setFeedback] = useState<SubmitOutcome | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [animatedAttempt, setAnimatedAttempt] = useState<AnimatedAttempt | null>(null);
+  const [enteringGroupId, setEnteringGroupId] = useState<string | null>(null);
+  const [terminalRevealPending, setTerminalRevealPending] = useState(false);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(
@@ -43,14 +65,18 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     [],
   );
 
+  const isPlaying = snapshot.status === "playing";
+  const showResult = !isPlaying && !terminalRevealPending;
+  const showGameSurface = !showResult;
+
   useEffect(() => {
-    if (snapshot.status === "playing") return;
+    if (!showResult) return;
 
     const frame = requestAnimationFrame(() => {
       document.getElementById("game-result-title")?.focus({ preventScroll: true });
     });
     return () => cancelAnimationFrame(frame);
-  }, [snapshot.status]);
+  }, [showResult]);
 
   const wordById = useMemo(
     () =>
@@ -67,11 +93,17 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     [puzzle],
   );
 
-  const isPlaying = snapshot.status === "playing";
   const canSubmit =
     isPlaying &&
     !isTransitioning &&
     snapshot.selectedWordIds.length === GAME_CONSTANTS.groupSize;
+
+  const feedbackAnimationClass =
+    feedback?.verdict === "correct"
+      ? motionStyles.feedbackCorrect
+      : feedback?.verdict === "one-away"
+        ? motionStyles.feedbackOneAway
+        : "";
 
   const clearTransientFeedback = () => {
     if (feedback) setFeedback(null);
@@ -95,31 +127,57 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     controller.shuffle();
   };
 
+  const finishVisualTransition = () => {
+    setIsTransitioning(false);
+    setAnimatedAttempt(null);
+    setEnteringGroupId(null);
+    setTerminalRevealPending(false);
+    transitionTimer.current = null;
+  };
+
   const submitCurrentSelection = () => {
     if (!canSubmit) return;
 
+    const submittedWordIds = [...snapshot.selectedWordIds];
     setIsTransitioning(true);
+
     const result = controller.submitSelection();
+    const tileVerdict = tileAnimationVerdict(result.outcome);
+    const terminal = result.snapshot.status !== "playing";
+
     setFeedback(result.outcome);
+    setAnimatedAttempt(
+      tileVerdict ? { wordIds: submittedWordIds, verdict: tileVerdict } : null,
+    );
+    setEnteringGroupId(
+      result.outcome.verdict === "correct" ? result.outcome.solvedGroup.id : null,
+    );
+    setTerminalRevealPending(terminal);
 
     if (transitionTimer.current) clearTimeout(transitionTimer.current);
 
-    if (result.snapshot.status !== "playing") {
-      setIsTransitioning(false);
-      transitionTimer.current = null;
+    const duration = gameTransitionDuration(
+      result.outcome,
+      result.snapshot.status,
+      prefersReducedMotion(),
+    );
+
+    if (duration === 0) {
+      finishVisualTransition();
       return;
     }
 
-    transitionTimer.current = setTimeout(() => {
-      setIsTransitioning(false);
-      transitionTimer.current = null;
-    }, 260);
+    transitionTimer.current = setTimeout(finishVisualTransition, duration);
   };
 
   if (restore.status === "pending") return <GameLoading />;
 
   return (
-    <section className="q-game-shell" aria-labelledby="game-board-title">
+    <section
+      className="q-game-shell"
+      aria-labelledby="game-board-title"
+      data-transitioning={isTransitioning ? "true" : undefined}
+    >
       <RecoveryNotice restore={restore} />
       <div className="q-game-intro">
         <h1 id="game-board-title" className="q-game-title">
@@ -130,12 +188,20 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
         </p>
       </div>
 
-      {isPlaying ? (
+      {showGameSurface ? (
         <>
           <div className="q-game-status-row">
-            <span>Dört kelime seç</span>
+            <span>
+              {isPlaying
+                ? "Dört kelime seç"
+                : snapshot.status === "won"
+                  ? "Son grup bulundu"
+                  : "Son tahmin işlendi"}
+            </span>
             <span className="q-game-selection-count" aria-live="polite" aria-atomic="true">
-              {snapshot.selectedWordIds.length}/{GAME_CONSTANTS.groupSize} seçili
+              {isPlaying
+                ? `${snapshot.selectedWordIds.length}/${GAME_CONSTANTS.groupSize} seçili`
+                : "Sonuç hazırlanıyor"}
             </span>
           </div>
 
@@ -148,35 +214,48 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
             <div className="q-solved-list" aria-label="Bulduğun gruplar">
               {snapshot.solvedGroupIds.map((groupId) => {
                 const group = groupById.get(groupId);
-                return group ? <SolvedGroup key={groupId} group={group} /> : null;
+                return group ? (
+                  <SolvedGroup
+                    key={groupId}
+                    group={group}
+                    entering={groupId === enteringGroupId}
+                  />
+                ) : null;
+              })}
+            </div>
+          ) : null}
+
+          {snapshot.remainingWordOrder.length > 0 ? (
+            <div
+              className="q-game-board"
+              aria-label={`${snapshot.remainingWordOrder.length} çözülmemiş kelimelik oyun tahtası`}
+              aria-describedby="game-board-instructions"
+            >
+              {snapshot.remainingWordOrder.map((wordId) => {
+                const word = wordById.get(wordId);
+                if (!word) return null;
+
+                const animation = animatedAttempt?.wordIds.includes(wordId)
+                  ? animatedAttempt.verdict
+                  : null;
+
+                return (
+                  <WordTile
+                    key={wordId}
+                    id={wordId}
+                    text={word.text}
+                    selected={snapshot.selectedWordIds.includes(wordId)}
+                    disabled={isTransitioning || !isPlaying}
+                    animation={animation}
+                    onToggle={toggleWord}
+                  />
+                );
               })}
             </div>
           ) : null}
 
           <div
-            className="q-game-board"
-            aria-label={`${snapshot.remainingWordOrder.length} çözülmemiş kelimelik oyun tahtası`}
-            aria-describedby="game-board-instructions"
-          >
-            {snapshot.remainingWordOrder.map((wordId) => {
-              const word = wordById.get(wordId);
-              if (!word) return null;
-
-              return (
-                <WordTile
-                  key={wordId}
-                  id={wordId}
-                  text={word.text}
-                  selected={snapshot.selectedWordIds.includes(wordId)}
-                  disabled={isTransitioning}
-                  onToggle={toggleWord}
-                />
-              );
-            })}
-          </div>
-
-          <div
-            className="q-game-feedback"
+            className={`q-game-feedback${feedbackAnimationClass ? ` ${feedbackAnimationClass}` : ""}`}
             data-verdict={feedback?.verdict ?? "idle"}
             role="status"
             aria-live="polite"
@@ -185,35 +264,39 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
             {feedbackMessage(feedback)}
           </div>
 
-          <div className="q-game-controls" aria-label="Oyun kontrolleri">
-            <button
-              type="button"
-              className="q-game-control"
-              onClick={shuffle}
-              disabled={isTransitioning || snapshot.remainingWordOrder.length < 2}
-            >
-              Karıştır
-            </button>
-            <button
-              type="button"
-              className="q-game-control"
-              onClick={clearSelection}
-              disabled={isTransitioning || snapshot.selectedWordIds.length === 0}
-            >
-              Temizle
-            </button>
-            <button
-              type="button"
-              className="q-game-control q-game-submit"
-              onClick={submitCurrentSelection}
-              disabled={!canSubmit}
-            >
-              {isTransitioning ? "Kontrol ediliyor…" : "Grupla"}
-            </button>
-          </div>
+          {isPlaying ? (
+            <div className="q-game-controls" aria-label="Oyun kontrolleri">
+              <button
+                type="button"
+                className="q-game-control"
+                onClick={shuffle}
+                disabled={isTransitioning || snapshot.remainingWordOrder.length < 2}
+              >
+                Karıştır
+              </button>
+              <button
+                type="button"
+                className="q-game-control"
+                onClick={clearSelection}
+                disabled={isTransitioning || snapshot.selectedWordIds.length === 0}
+              >
+                Temizle
+              </button>
+              <button
+                type="button"
+                className="q-game-control q-game-submit"
+                onClick={submitCurrentSelection}
+                disabled={!canSubmit}
+              >
+                {isTransitioning ? "Kontrol ediliyor…" : "Grupla"}
+              </button>
+            </div>
+          ) : null}
         </>
       ) : (
-        <GameResult puzzle={puzzle} snapshot={snapshot} />
+        <div className={motionStyles.resultEntering}>
+          <GameResult puzzle={puzzle} snapshot={snapshot} />
+        </div>
       )}
     </section>
   );
