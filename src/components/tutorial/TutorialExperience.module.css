@@ -139,8 +139,7 @@
   box-shadow: inset 0 0 0 2px var(--q-color-surface);
 }
 
-.tile[aria-pressed="true"]::after {
-  content: "✓";
+.selectedMark {
   position: absolute;
   right: 4px;
   bottom: 3px;
