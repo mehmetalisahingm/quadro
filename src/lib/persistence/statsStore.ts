@@ -19,7 +19,7 @@ import {
 
 import { defaultSnapshotStorage, type SnapshotStorage } from "./storage";
 
-export const STATS_SCHEMA_VERSION = 1;
+export const STATS_SCHEMA_VERSION = 2;
 export const STATS_STORAGE_KEY = `quadro:stats:v${STATS_SCHEMA_VERSION}`;
 
 type StoredStatsRecord = {
@@ -47,7 +47,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 function toDailyResult(value: unknown): DailyGameResult | null {
   if (!isRecord(value)) return null;
 
-  const { dayKey, puzzleId, puzzleRevision, outcome, mistakes } = value;
+  const { dayKey, puzzleId, puzzleRevision, outcome, mistakes, streakEligible } = value;
   if (typeof dayKey !== "string" || publicationDayOrdinal(dayKey) === null) return null;
   if (typeof puzzleId !== "string" || puzzleId.length === 0) return null;
   if (
@@ -66,8 +66,9 @@ function toDailyResult(value: unknown): DailyGameResult | null {
   ) {
     return null;
   }
+  if (typeof streakEligible !== "boolean") return null;
 
-  return { dayKey, puzzleId, puzzleRevision, outcome, mistakes };
+  return { dayKey, puzzleId, puzzleRevision, outcome, mistakes, streakEligible };
 }
 
 function parseStats(raw: string): DailyGameResult[] | null {
@@ -139,13 +140,36 @@ export function loadPersonalStats(
  *
  * Kimlik yayın günüdür. Aynı gün terminal snapshot tekrar kaydedilse, sayfa
  * yenilense veya bitmiş oyun yeniden açılsa bile ikinci kayıt oluşmaz.
+ *
+ * Kazanma serisi için bitiş anı ayrıca önemlidir: snapshot kendi Türkiye yayın
+ * günü geçtikten sonra tamamlanmışsa sonuç oynanmış/kazanılmış olarak kaydolur
+ * fakat seriyi ilerletmez.
  */
+const ISTANBUL_TIME_ZONE = "Europe/Istanbul";
+const istanbulDayFormatter = new Intl.DateTimeFormat("en-CA", {
+  timeZone: ISTANBUL_TIME_ZONE,
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+/** Verilen anın Türkiye yayın günü. */
+function completionDayKey(now: Date): string {
+  const parts = istanbulDayFormatter.formatToParts(now);
+  const part = (type: Intl.DateTimeFormatPartTypes): string =>
+    parts.find((candidate) => candidate.type === type)?.value ?? "";
+  return `${part("year")}-${part("month")}-${part("day")}`;
+}
+
 export function recordTerminalResult(
   snapshot: GameSnapshot,
   storage: SnapshotStorage = defaultSnapshotStorage(),
+  now: Date = new Date(),
 ): RecordTerminalResult {
   const loaded = loadPersonalStats(storage);
-  const result = resultFromSnapshot(snapshot);
+  const streakEligible =
+    snapshot.status === "won" && completionDayKey(now) === snapshot.dayKey;
+  const result = resultFromSnapshot(snapshot, streakEligible);
   if (result === null) return { status: "ignored", stats: loaded.stats };
 
   if (loaded.results.some((entry) => entry.dayKey === result.dayKey)) {

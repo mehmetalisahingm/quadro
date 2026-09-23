@@ -17,6 +17,7 @@ function result(
     puzzleRevision: 1,
     outcome,
     mistakes,
+    streakEligible: outcome === "won",
   };
 }
 
@@ -86,6 +87,19 @@ describe("kişisel istatistik · hesap", () => {
 
     expect(stats.currentStreak).toBe(3);
     expect(stats.longestStreak).toBe(3);
+  });
+
+  it("gece yarısından sonra tamamlanan kazanç oynanmış sayılır ama seriye girmez", () => {
+    const lateWin = { ...result("2026-09-21", "won", 1), streakEligible: false };
+    const stats = calculatePersonalStats([
+      result("2026-09-20", "won", 0),
+      lateWin,
+    ]);
+
+    expect(stats.played).toBe(2);
+    expect(stats.won).toBe(2);
+    expect(stats.currentStreak).toBe(0);
+    expect(stats.longestStreak).toBe(1);
   });
 
   it("aynı günün tekrarlanan sonucunu ikinci kez saymaz", () => {
