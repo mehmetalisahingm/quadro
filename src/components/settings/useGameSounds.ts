@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useSyncExternalStore } from "react";
 
 import {
   createGameSoundEngine,
@@ -10,6 +10,35 @@ import {
   type GameSoundEngine,
 } from "./gameSound";
 
+const SOUND_PREFERENCE_EVENT = "quadro:sound-preference-change";
+
+function subscribeToPreference(onChange: () => void): () => void {
+  if (typeof window === "undefined") return () => undefined;
+
+  const handleChange = () => onChange();
+  window.addEventListener("storage", handleChange);
+  window.addEventListener(SOUND_PREFERENCE_EVENT, handleChange);
+
+  return () => {
+    window.removeEventListener("storage", handleChange);
+    window.removeEventListener(SOUND_PREFERENCE_EVENT, handleChange);
+  };
+}
+
+function clientPreferenceSnapshot(): boolean {
+  if (typeof window === "undefined") return false;
+  return readSoundPreference(window.localStorage);
+}
+
+function serverPreferenceSnapshot(): boolean {
+  return false;
+}
+
+function notifyPreferenceChanged(): void {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new Event(SOUND_PREFERENCE_EVENT));
+}
+
 export type GameSounds = {
   enabled: boolean;
   setEnabledByUser: (enabled: boolean) => Promise<void>;
@@ -17,19 +46,16 @@ export type GameSounds = {
 };
 
 export function useGameSounds(): GameSounds {
-  const [enabled, setEnabled] = useState(false);
-  const enabledRef = useRef(false);
   const engineRef = useRef<GameSoundEngine | null>(null);
+  const enabled = useSyncExternalStore(
+    subscribeToPreference,
+    clientPreferenceSnapshot,
+    serverPreferenceSnapshot,
+  );
 
   const getEngine = useCallback(() => {
     engineRef.current ??= createGameSoundEngine();
     return engineRef.current;
-  }, []);
-
-  useEffect(() => {
-    const storedPreference = readSoundPreference(window.localStorage);
-    enabledRef.current = storedPreference;
-    setEnabled(storedPreference);
   }, []);
 
   const setEnabledByUser = useCallback(
@@ -41,8 +67,7 @@ export function useGameSounds(): GameSounds {
       }
 
       writeSoundPreference(window.localStorage, nextEnabled);
-      enabledRef.current = nextEnabled;
-      setEnabled(nextEnabled);
+      notifyPreferenceChanged();
 
       if (nextEnabled) {
         // Kullanıcı ayarı açtığını anında doğrular; aynı tıklamada yalnız bir önizleme çalar.
@@ -54,7 +79,8 @@ export function useGameSounds(): GameSounds {
 
   const play = useCallback(
     (cue: GameSoundCue) => {
-      if (!enabledRef.current) return;
+      // Gecikmiş final cue'ları dahil her çağrı en güncel tercihi yeniden okur.
+      if (!clientPreferenceSnapshot()) return;
       void getEngine().play(cue);
     },
     [getEngine],
