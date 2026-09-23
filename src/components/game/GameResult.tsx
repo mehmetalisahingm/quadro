@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { GameSnapshot, Puzzle } from "@/features/game/contracts";
 
 import { getResultStats } from "./presentation";
@@ -66,6 +67,7 @@ export function GameResult({ puzzle, snapshot }: GameResultProps) {
       </div>
 
       <ShareCard puzzle={puzzle} snapshot={snapshot} />
+      <p><Link href="/stats">Tüm istatistiklerin →</Link></p>
     </section>
   );
 }

@@ -198,7 +198,7 @@ describe("ilerleme kaydı · bozuk ve uyumsuz kayıt", () => {
 });
 
 describe("ilerleme kaydı · sunucu ve hidrasyon", () => {
-  it("kayıt varken bile sunucu çıktısı taze tahtadır ve hidrasyon uyuşmazlığı olmaz", async () => {
+  it("kayıt okunana kadar yükleme görünür ve hidrasyon uyuşmazlığı olmaz", async () => {
     // Önce bir oyun oynanıp kaydedilir, sonra sayfa sıfırdan "sunucuda" çizilir.
     const user = await openPlayPage();
     await guess(user, RENKLER);
@@ -207,8 +207,9 @@ describe("ilerleme kaydı · sunucu ve hidrasyon", () => {
 
     const page = await PlayPage({ searchParams: Promise.resolve({}) });
     const sunucuHtml = renderToString(page);
-    // Sunucu kaydı göremez: çıktı 16 kartlı taze tahtadır.
-    expect(sunucuHtml).toContain("16 çözülmemiş kelimelik oyun tahtası");
+    // Sunucu kaydı göremez: okunana kadar etkin bir taze tahta gösterilmez.
+    expect(sunucuHtml).toContain('aria-label="Bulmaca yükleniyor"');
+    expect(sunucuHtml).not.toContain("16 çözülmemiş kelimelik oyun tahtası");
 
     const container = document.createElement("div");
     container.innerHTML = sunucuHtml;

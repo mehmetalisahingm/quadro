@@ -8,9 +8,12 @@ import {
   type SubmitOutcome,
   type WordId,
 } from "@/features/game/contracts";
-import { useGame } from "@/features/game/react/useGame";
+import { standardPuzzle } from "@/features/game/fixtures";
+import { usePersistentGame } from "@/features/game/state";
 
 import { GameResult } from "./GameResult";
+import { GameLoading } from "./GameLoading";
+import { RecoveryNotice } from "./RecoveryNotice";
 import { MistakeMeter } from "./MistakeMeter";
 import { feedbackMessage } from "./presentation";
 import { SolvedGroup } from "./SolvedGroup";
@@ -27,7 +30,7 @@ export type GameBoardProps = {
 };
 
 export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
-  const { puzzle, controller } = useGame(dailyPuzzle);
+  const { puzzle, controller, restore } = usePersistentGame(dailyPuzzle ?? standardPuzzle);
   const { snapshot } = controller;
   const [feedback, setFeedback] = useState<SubmitOutcome | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -113,8 +116,11 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     }, 260);
   };
 
+  if (restore.status === "pending") return <GameLoading />;
+
   return (
     <section className="q-game-shell" aria-labelledby="game-board-title">
+      <RecoveryNotice restore={restore} />
       <div className="q-game-intro">
         <h1 id="game-board-title" className="q-game-title">
           Gizli bağları bul

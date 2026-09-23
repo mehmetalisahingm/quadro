@@ -42,7 +42,7 @@ function previousCalendarDay(dayKey: string): string {
  * yalnız bir önceki yayın gününe dönüşe izin verir; daha eski veya gelecek bir
  * gün istenirse bugünün bulmacası açılır.
  */
-export function resolvePlayableDay(currentDay: string, requestedDay?: string): string {
+function resolvePlayableDay(currentDay: string, requestedDay?: string): string {
   const requested = requestedDay?.trim();
   if (requested !== undefined && requested === previousCalendarDay(currentDay)) {
     return requested;
