@@ -39,6 +39,11 @@ export function WordTile({
       onClick={() => onToggle(id)}
     >
       {text}
+      {selected ? (
+        <span className="q-word-tile-selected-mark" aria-hidden="true">
+          ✓
+        </span>
+      ) : null}
     </button>
   );
 }
