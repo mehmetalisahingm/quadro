@@ -1,0 +1,108 @@
+.tileWrong {
+  animation: tileShake 320ms var(--q-ease-standard) both;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--q-color-danger) 48%, transparent),
+    var(--q-shadow-card);
+}
+
+.tileOneAway {
+  animation: tileNear 360ms var(--q-ease-spring) both;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--q-color-warning) 52%, transparent),
+    var(--q-shadow-card);
+}
+
+.groupEntering {
+  animation: groupMerge 420ms var(--q-ease-spring) both;
+  transform-origin: center;
+}
+
+.feedbackCorrect {
+  animation: feedbackPop 300ms var(--q-ease-spring) both;
+}
+
+.feedbackOneAway {
+  animation: feedbackPop 260ms var(--q-ease-spring) both;
+}
+
+.resultEntering {
+  animation: resultEnter 420ms var(--q-ease-spring) both;
+}
+
+@keyframes tileShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  22% {
+    transform: translateX(-5px);
+  }
+  44% {
+    transform: translateX(4px);
+  }
+  66% {
+    transform: translateX(-3px);
+  }
+  82% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes tileNear {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  45% {
+    transform: translateY(-3px) scale(1.025);
+  }
+}
+
+@keyframes groupMerge {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  58% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes feedbackPop {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes resultEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tileWrong,
+  .tileOneAway,
+  .groupEntering,
+  .feedbackCorrect,
+  .feedbackOneAway,
+  .resultEntering {
+    animation: none !important;
+    transform: none !important;
+  }
+}
