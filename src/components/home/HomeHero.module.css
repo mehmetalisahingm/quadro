@@ -44,6 +44,7 @@
   font-size: clamp(32px, 7vw, 56px);
   line-height: 0.98;
   letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
 }
 
 .description {
@@ -52,10 +53,12 @@
   color: var(--q-color-ink-muted);
   font-size: clamp(16px, 2.7vw, 19px);
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .meta {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
   margin-top: 18px;
@@ -67,6 +70,7 @@
 
 .progress {
   width: fit-content;
+  max-width: 100%;
   margin: 14px 0 0;
   padding: 8px 12px;
   border: 1px solid var(--q-color-border);
@@ -75,6 +79,7 @@
   color: var(--q-color-ink-muted);
   font-size: 14px;
   line-height: 20px;
+  overflow-wrap: anywhere;
 }
 
 .actions {
@@ -86,6 +91,7 @@
 .primaryAction,
 .secondaryAction {
   min-height: 52px;
+  min-width: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -94,6 +100,8 @@
   text-decoration: none;
   font-weight: var(--q-font-weight-semibold);
   line-height: 20px;
+  overflow-wrap: anywhere;
+  text-align: center;
   transition:
     transform var(--q-motion-fast) var(--q-ease-spring),
     box-shadow var(--q-motion-fast) var(--q-ease-standard),
@@ -115,6 +123,7 @@
 
 .nextPuzzle {
   width: fit-content;
+  max-width: 100%;
   margin-top: 18px;
   display: grid;
   grid-template-columns: auto auto;
@@ -127,8 +136,10 @@
 }
 
 .nextPuzzle strong {
+  min-width: 0;
   color: var(--q-color-ink);
   font-size: 13px;
+  overflow-wrap: anywhere;
 }
 
 .nextPuzzle > span:last-child {
@@ -162,23 +173,27 @@
   color: var(--q-color-ink);
   font-size: 15px;
   line-height: 20px;
+  overflow-wrap: anywhere;
 }
 
 .previousGame > div > span:last-child {
   color: var(--q-color-ink-muted);
   font-size: 13px;
   line-height: 18px;
+  overflow-wrap: anywhere;
 }
 
 .previousAction {
-  min-height: 42px;
+  min-height: var(--q-touch-target);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
+  max-width: 100%;
   border-bottom: 1px solid currentColor;
   color: var(--q-color-ink);
   font-weight: var(--q-font-weight-semibold);
+  overflow-wrap: anywhere;
   text-decoration: none;
 }
 
@@ -308,6 +323,7 @@
 
   .nextPuzzle {
     width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .previousAction {

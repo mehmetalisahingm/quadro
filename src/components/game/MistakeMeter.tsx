@@ -10,7 +10,9 @@ export function MistakeMeter({ remaining, total = 4 }: MistakeMeterProps) {
 
   return (
     <div className="q-mistake-meter">
-      <span className="q-mistake-label" aria-hidden="true">Hata hakkı</span>
+      <span className="q-mistake-label" aria-hidden="true">
+        Hata hakkı: <strong>{safeRemaining}</strong>
+      </span>
       <span className="q-mistake-dots" aria-hidden="true">
         {Array.from({ length: safeTotal }, (_, index) => (
           <span

@@ -26,6 +26,7 @@
   font-size: clamp(24px, 6vw, 34px);
   line-height: 1.05;
   letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
 }
 
 .q-result-copy {
@@ -33,6 +34,7 @@
   color: var(--q-color-ink-muted);
   font-size: 14px;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .q-result-stats {
@@ -43,7 +45,8 @@
 }
 
 .q-result-stats > div {
-  padding: 10px;
+  min-width: 0;
+  padding: 10px 6px;
   border: 1px solid var(--q-color-border);
   border-radius: var(--q-radius-sm);
   text-align: center;
@@ -52,6 +55,7 @@
 .q-result-stats dt {
   color: var(--q-color-ink-subtle);
   font-size: 11px;
+  overflow-wrap: anywhere;
 }
 
 .q-result-stats dd {
@@ -67,6 +71,7 @@
 }
 
 .q-result-group {
+  min-width: 0;
   padding: 12px;
   border-radius: var(--q-radius-sm);
 }
@@ -95,11 +100,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 4px 12px;
   font-size: 13px;
 }
 
+.q-result-group-topline strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .q-result-group-topline span {
+  flex: 0 0 auto;
   font-family: var(--q-font-mono);
   font-size: 10px;
   opacity: 0.75;
@@ -108,12 +120,12 @@
 .q-result-group-words,
 .q-result-group-explanation {
   margin: 5px 0 0;
+  overflow-wrap: anywhere;
 }
 
 .q-result-group-words {
   font-size: 12px;
   font-weight: var(--q-font-weight-semibold);
-  overflow-wrap: anywhere;
 }
 
 .q-result-group-explanation {
@@ -123,6 +135,7 @@
 }
 
 .q-share-card {
+  min-width: 0;
   display: grid;
   gap: 12px;
   padding-top: 4px;
@@ -131,12 +144,14 @@
 .q-share-title {
   margin: 0;
   font-size: 18px;
+  overflow-wrap: anywhere;
 }
 
 .q-share-description {
   margin: 3px 0 0;
   color: var(--q-color-ink-muted);
   font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
 .q-share-preview {
@@ -150,12 +165,17 @@
   font-size: 14px;
   line-height: 1.35;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .q-share-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
+}
+
+.q-share-actions > * {
+  min-width: 0;
 }
 
 .q-share-primary {
@@ -169,9 +189,11 @@
   margin: 0;
   color: var(--q-color-ink-muted);
   font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
 .q-share-fallback {
+  min-width: 0;
   display: grid;
   gap: 6px;
   color: var(--q-color-ink-muted);
@@ -188,6 +210,16 @@
   color: var(--q-color-ink);
   font-family: var(--q-font-mono);
   font-size: 13px;
+}
+
+@media (max-width: 359px) {
+  .q-result {
+    padding: 14px;
+  }
+
+  .q-share-actions {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 640px) {
