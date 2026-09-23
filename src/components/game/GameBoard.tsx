@@ -16,6 +16,7 @@ import {
 import { standardPuzzle } from "@/features/game/fixtures";
 import { usePersistentGame } from "@/features/game/state";
 
+import motionStyles from "./GameAnimations.module.css";
 import { GameResult } from "./GameResult";
 import { GameLoading } from "./GameLoading";
 import { RecoveryNotice } from "./RecoveryNotice";
@@ -97,6 +98,13 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     !isTransitioning &&
     snapshot.selectedWordIds.length === GAME_CONSTANTS.groupSize;
 
+  const feedbackAnimationClass =
+    feedback?.verdict === "correct"
+      ? motionStyles.feedbackCorrect
+      : feedback?.verdict === "one-away"
+        ? motionStyles.feedbackOneAway
+        : "";
+
   const clearTransientFeedback = () => {
     if (feedback) setFeedback(null);
   };
@@ -165,7 +173,11 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   if (restore.status === "pending") return <GameLoading />;
 
   return (
-    <section className="q-game-shell" aria-labelledby="game-board-title">
+    <section
+      className="q-game-shell"
+      aria-labelledby="game-board-title"
+      data-transitioning={isTransitioning ? "true" : undefined}
+    >
       <RecoveryNotice restore={restore} />
       <div className="q-game-intro">
         <h1 id="game-board-title" className="q-game-title">
@@ -243,7 +255,7 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
           ) : null}
 
           <div
-            className="q-game-feedback"
+            className={`q-game-feedback${feedbackAnimationClass ? ` ${feedbackAnimationClass}` : ""}`}
             data-verdict={feedback?.verdict ?? "idle"}
             role="status"
             aria-live="polite"
@@ -282,7 +294,7 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
           ) : null}
         </>
       ) : (
-        <div className="q-game-result-transition">
+        <div className={motionStyles.resultEntering}>
           <GameResult puzzle={puzzle} snapshot={snapshot} />
         </div>
       )}
