@@ -58,8 +58,11 @@ export function writeSoundPreference(
   }
 }
 
+type AudioContextConstructor = new () => AudioContext;
+
 type BrowserWindow = Window & {
-  webkitAudioContext?: typeof AudioContext;
+  AudioContext?: AudioContextConstructor;
+  webkitAudioContext?: AudioContextConstructor;
 };
 
 export function createBrowserAudioContext(): AudioContext | null {
@@ -85,8 +88,9 @@ export function createGameSoundEngine(
   };
 
   const ensureRunning = async (audioContext: AudioContext): Promise<boolean> => {
-    if (audioContext.state === "running") return true;
-    if (audioContext.state !== "suspended") return false;
+    const initialState = audioContext.state;
+    if (initialState === "running") return true;
+    if (initialState !== "suspended") return false;
     try {
       await audioContext.resume();
       return audioContext.state === "running";
