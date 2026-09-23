@@ -15,6 +15,8 @@ import {
 } from "@/features/game/contracts";
 import { standardPuzzle } from "@/features/game/fixtures";
 import { usePersistentGame } from "@/features/game/state";
+import { SoundPreference } from "@/components/settings/SoundPreference";
+import { useGameSounds } from "@/components/settings/useGameSounds";
 
 import motionStyles from "./GameAnimations.module.css";
 import { GameResult } from "./GameResult";
@@ -51,12 +53,14 @@ function prefersReducedMotion(): boolean {
 export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   const { puzzle, controller, restore } = usePersistentGame(dailyPuzzle ?? standardPuzzle);
   const { snapshot } = controller;
+  const sounds = useGameSounds();
   const [feedback, setFeedback] = useState<SubmitOutcome | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [animatedAttempt, setAnimatedAttempt] = useState<AnimatedAttempt | null>(null);
   const [enteringGroupId, setEnteringGroupId] = useState<string | null>(null);
   const [terminalRevealPending, setTerminalRevealPending] = useState(false);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const terminalSoundPending = useRef(false);
 
   useEffect(
     () => () => {
@@ -111,8 +115,14 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
 
   const toggleWord = (wordId: WordId) => {
     if (!isPlaying || isTransitioning) return;
+
+    const selectionWillChange =
+      snapshot.selectedWordIds.includes(wordId) ||
+      snapshot.selectedWordIds.length < GAME_CONSTANTS.groupSize;
+
     clearTransientFeedback();
     controller.toggleWord(wordId);
+    if (selectionWillChange) sounds.play("select");
   };
 
   const clearSelection = () => {
@@ -128,6 +138,11 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   };
 
   const finishVisualTransition = () => {
+    if (terminalSoundPending.current) {
+      terminalSoundPending.current = false;
+      sounds.play("finish");
+    }
+
     setIsTransitioning(false);
     setAnimatedAttempt(null);
     setEnteringGroupId(null);
@@ -144,6 +159,11 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     const result = controller.submitSelection();
     const tileVerdict = tileAnimationVerdict(result.outcome);
     const terminal = result.snapshot.status !== "playing";
+
+    if (result.outcome.verdict === "wrong") sounds.play("wrong");
+    if (result.outcome.verdict === "one-away") sounds.play("one-away");
+    if (result.outcome.verdict === "correct") sounds.play("correct");
+    terminalSoundPending.current = terminal;
 
     setFeedback(result.outcome);
     setAnimatedAttempt(
@@ -186,6 +206,9 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
         <p id="game-board-instructions" className="q-game-description">
           Birbiriyle bağlantılı dört kelimeyi seç. Dört doğru grup bulduğunda oyun tamamlanır.
         </p>
+        {isPlaying ? (
+          <SoundPreference enabled={sounds.enabled} onChange={sounds.setEnabledByUser} />
+        ) : null}
       </div>
 
       {showGameSurface ? (
