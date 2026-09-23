@@ -1,7 +1,9 @@
 "use client";
 
-import type { WordId } from "@/features/game/contracts";
 import type { TileAnimationVerdict } from "@/animations/gameTransitions";
+import type { WordId } from "@/features/game/contracts";
+
+import motionStyles from "./GameAnimations.module.css";
 
 export type WordTileProps = {
   id: WordId;
@@ -20,10 +22,17 @@ export function WordTile({
   animation = null,
   onToggle,
 }: WordTileProps) {
+  const animationClass =
+    animation === "wrong"
+      ? motionStyles.tileWrong
+      : animation === "one-away"
+        ? motionStyles.tileOneAway
+        : "";
+
   return (
     <button
       type="button"
-      className="q-word-tile"
+      className={`q-word-tile${animationClass ? ` ${animationClass}` : ""}`}
       aria-pressed={selected}
       disabled={disabled}
       data-animation={animation ?? undefined}
