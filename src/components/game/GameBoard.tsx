@@ -57,18 +57,16 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   const [enteringGroupId, setEnteringGroupId] = useState<string | null>(null);
   const [terminalRevealPending, setTerminalRevealPending] = useState(false);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const transitionGuard = useRef(false);
 
   useEffect(
     () => () => {
       if (transitionTimer.current) clearTimeout(transitionTimer.current);
-      transitionGuard.current = false;
     },
     [],
   );
 
   const isPlaying = snapshot.status === "playing";
-  const showResult = !isPlaying && !terminalRevealPending && !transitionGuard.current;
+  const showResult = !isPlaying && !terminalRevealPending;
   const showGameSurface = !showResult;
 
   useEffect(() => {
@@ -130,7 +128,6 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   };
 
   const finishVisualTransition = () => {
-    transitionGuard.current = false;
     setIsTransitioning(false);
     setAnimatedAttempt(null);
     setEnteringGroupId(null);
@@ -142,7 +139,6 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     if (!canSubmit) return;
 
     const submittedWordIds = [...snapshot.selectedWordIds];
-    transitionGuard.current = true;
     setIsTransitioning(true);
 
     const result = controller.submitSelection();
@@ -158,7 +154,6 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     );
     setTerminalRevealPending(terminal);
 
-    if (!terminal) transitionGuard.current = false;
     if (transitionTimer.current) clearTimeout(transitionTimer.current);
 
     const duration = gameTransitionDuration(
