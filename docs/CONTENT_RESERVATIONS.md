@@ -23,7 +23,7 @@ Not: `PUZZLE_GUIDE.md` içindeki "Mehmet 1–15, Utku 16–30" ilk plandır. `q-
 
 | Durum | Fiiller |
 | --- | --- |
-| Utku'ya ayrıldı (Q27) | DÖKMEK, BASMAK, SÜRMEK, GEÇMEK, VURMAK, ÇALMAK, SİLMEK |
+| Utku'ya ayrıldı (Q27) | DÖKMEK (kullanıldı: `q-018`), BASMAK, SÜRMEK, GEÇMEK, VURMAK, ÇALMAK, SİLMEK |
 | Mehmet'e ayrıldı | SAYMAK, SARMAK, DÖNMEK, ARAMAK, BULMAK, DÜŞMEK, SOKMAK, YIKMAK, ÇEVİRMEK ve bu listede adı geçmeyen diğer boş kalıplar |
 | Kullanıldı, ikisi de yeniden kullanmaz | ATMAK, BIRAKMAK, BOZMAK, ÇEKMEK, ÇIKMAK, ÇÖZMEK, KAÇIRMAK, KALMAK, KAPATMAK, KAYBETMEK, KESMEK, KIRMAK, KOYMAK, KURMAK, TAKMAK, TUTMAK, VERMEK, YAKMAK |
 
@@ -61,7 +61,7 @@ Az kullanılmış ve tercih edilebilir alanlar: organ, para birimi, dans, burç,
 | Kişi | Numara/tarih aralığı | Ayrılan fiil kalıpları | Kaçınılacak temalar | Durum |
 | --- | --- | --- | --- | --- |
 | Mehmet | `q-001`…`q-017` (2026-09-20 → 2026-10-06) | SAYMAK, SARMAK, DÖNMEK, ARAMAK, BULMAK, DÜŞMEK, SOKMAK, YIKMAK, ÇEVİRMEK + diğer boş kalıplar | Yiyecek/mutfak, coğrafya/yer adı, hayvan/bitki, "başına ___ gelenler" | Tamamlandı (`q-001`…`q-017` `main`'de) |
-| Utku | `q-018`…`q-032` (2026-10-07 → 2026-10-21) | DÖKMEK, BASMAK, SÜRMEK, GEÇMEK, VURMAK, ÇALMAK, SİLMEK | Yiyecek/mutfak, coğrafya/yer adı, hayvan/bitki, "başına ___ gelenler" | Rezerve |
+| Utku | `q-018`…`q-032` (2026-10-07 → 2026-10-21) | DÖKMEK (kullanıldı: `q-018`), BASMAK, SÜRMEK, GEÇMEK, VURMAK, ÇALMAK, SİLMEK | Yiyecek/mutfak, coğrafya/yer adı, hayvan/bitki, "başına ___ gelenler" | Üretiliyor (`q-018` eklendi: organ, para birimi, dans; 1/15) |
 
 Durum değerleri: **rezerve** (ayrıldı, üretim başlamadı) · **üretiliyor** (taslak dalda) · **tamamlandı** (`main`'e merge edildi).
 

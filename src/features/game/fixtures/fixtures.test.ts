@@ -5,6 +5,7 @@ import prototip21 from "@/content/puzzles/2026-09-21.json";
 import prototip22 from "@/content/puzzles/2026-09-22.json";
 import prototip23 from "@/content/puzzles/2026-09-23.json";
 import prototip24 from "@/content/puzzles/2026-09-24.json";
+import prototip1007 from "@/content/puzzles/2026-10-07.json";
 import {
   GAME_CONSTANTS,
   normalizeTr,
@@ -61,7 +62,7 @@ describe("örnek bulmacalar", () => {
 
   it("örnekler günlük bulmacaların kelimelerini kullanmaz (cevap ifşası yok)", () => {
     const dailyTexts = new Set(
-      [prototip20, prototip21, prototip22, prototip23, prototip24].flatMap((puzzle) =>
+      [prototip20, prototip21, prototip22, prototip23, prototip24, prototip1007].flatMap((puzzle) =>
         puzzle.groups.flatMap((group) => group.words.map((word) => normalizeTr(word.text))),
       ),
     );
