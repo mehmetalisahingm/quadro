@@ -4,6 +4,8 @@ Sürüm: 0.1 · Durum: Faz 0 prototip rehberi · Yazar: Mehmet · İsteğe bağl
 
 Quadro'nun günlük bulmacası 16 Türkçe kelimeyi dört adet dörtlü gruba ayırır. Oyuncu çözümü gördüğünde bağlantıyı savunmak için uzun bir açıklamaya ihtiyaç duymamalı; doğru cevap “bunu nasıl göremedim?” hissi vermeli. Bulmaca, bilmediği bir özel bilgi yüzünden değil, kelimeleri farklı açılardan düşündüğü için zorlaşır.
 
+> **Yeni bulmaca üretmeden önce [`CONTENT_RESERVATIONS.md`](CONTENT_RESERVATIONS.md)'ye bakın.** Numara/tarih aralıkları, ayrılan fiil kalıpları ve doygun temalar orada tutulur.
+
 ## İçerik dosyaları
 
 | Yol | İçerik | Oyuncuya gönderilir mi? |
@@ -91,7 +93,7 @@ Tamamlanan kör denemeler ilgili editorial dosyasında "Bağımsız kör deneme"
 
 Bir kelime değiştiğinde `revision` artırılır ve kör deneme önerilir. Yayımlanmış bir puzzle normal akışta değiştirilmez; zorunlu düzeltmede yeni revizyon, gerekçe ve kayıt uyumluluğu yazılır.
 
-İlk 30 günlük stoğun taslakları iki kişiye bölünür. Mehmet 1–15, Utku 16–30 aralığının yazarıdır; diğer kişi isterse yazarın içeriğini kör dener. Bu dosyadaki ilk üç prototip, üretim sürecinin ve veri biçiminin örneğidir.
+İlk 30 günlük stoğun taslakları iki kişiye bölünür. Mehmet 1–15, Utku 16–30 aralığının yazarıdır (güncel aralıklar için [`CONTENT_RESERVATIONS.md`](CONTENT_RESERVATIONS.md) esastır); diğer kişi isterse yazarın içeriğini kör dener. Bu dosyadaki ilk üç prototip, üretim sürecinin ve veri biçiminin örneğidir.
 
 ## Kaynak ve yapay zekâ kullanımı
 
