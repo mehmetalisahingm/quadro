@@ -21,7 +21,7 @@ Başlamadan önce issue'nun bağımlılıklarını ve dosya sınırlarını kont
 - Motor, kurallar ve altyapı: `src/features/` (motor, durum, doğrulayıcı, sözleşme, fixtures ve react bağlayıcıları), `src/lib/` (günlük yayın, kalıcılık), `src/app/api/`, `scripts/`, `tests/`: Utku.
 - Arayüz, tasarım ve görsel kimlik: `src/components/`, `src/styles/`, API dışındaki `src/app/` sayfaları ve `layout.tsx`, `README.md`: Mehmet.
 - Ortak alanlar: `src/app/play/`, `src/content/`, `docs/`, `src/lib/config.ts`, `.github/` ve kök yapılandırma (`package.json`, kilit dosyası, `tsconfig*.json`, `eslint.config.mjs`, `vitest.config.mts`, `playwright.config.mjs`, `next.config.mjs`). Paket ekleme ve çıkarmayı Utku koordine eder; UI bağımlılıkları Mehmet'le birlikte belirlenir.
-- Bulmacalar: yazan kişi düzenler; diğer kişi isterse cevapları görmeden bağımsız bir kör deneme yapabilir. Günlük yayın takvimini Utku koordine eder.
+- Bulmacalar: yazan kişi düzenler; diğer kişi isterse cevapları görmeden bağımsız bir kör deneme yapabilir. Günlük yayın takvimini Utku koordine eder. Yeni bulmaca üretmeden önce [`docs/CONTENT_RESERVATIONS.md`](docs/CONTENT_RESERVATIONS.md)'ye bakın.
 
 Ortak sözleşme değişikliğinde TypeScript tipleri, `docs/CONTRACTS.md`, örnek adaptör ve etkilenen tüketiciler birlikte güncellenir.
 
