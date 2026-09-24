@@ -50,7 +50,7 @@ Aşağıdaki alanları ikisi de yeni bulmacalarda kullanmaz.
 | Alan | Kullanım | Durum |
 | --- | --- | --- |
 | Yiyecek/mutfak | 11 grup | Tükendi |
-| Coğrafya/yer adı | 7 grup | Doygun |
+| Coğrafya/yer adı | 4 günlük bulmaca grubu (`q-004` semtler, `q-005` akarsular, `q-009` denizler, `q-012` iller) + 2 fixture grubu (şehirler, il adları) | Doygun |
 | Hayvan/bitki | 6 grup | Doygun |
 | Dil oyunu: "başına ___ gelenler" | 7 kez (KARA, AK, ÖN, GÖK, BAŞ, ANA, GÜN) | Tükendi |
 
