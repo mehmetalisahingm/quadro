@@ -34,6 +34,21 @@ export const metadata: Metadata = {
   },
   description: APP_TAGLINE,
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-icon",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
   formatDetection: {
     telephone: false,
   },
