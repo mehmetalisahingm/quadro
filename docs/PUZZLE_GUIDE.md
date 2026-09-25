@@ -86,8 +86,9 @@ Bir bulmaca kör denemede açılamazsa bu tek başına kalite sorunu değildir; 
 | `q-005` / 24 Eylül 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Deniz canlıları, akarsular, `TUTMAK` kalıbı ve baharatlar |
 | `q-018` / 7 Ekim 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Vücut organları, `DÖKMEK` kalıbı, para birimleri ve danslar (Q27 ilk aday) |
 | `q-019` / 8 Ekim 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Burçlar, metaller, `BASMAK` kalıbı ve müzik türleri (Q27 ikinci aday) |
+| `q-020` / 9 Ekim 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Esnaf meslekleri, `ÇALMAK` kalıbı, tiyatro terimleri ve uzay cisimleri (Q27 üçüncü aday) |
 
-Hepsi taslaktır. Yazarın kendi kalite kontrolü tamamlanmadan günlük stoğa alınmaz; diğer kişinin kör deneme ve itiraz kaydı isteğe bağlıdır. İlk üç prototipin yazarı Mehmet, kör deneyeni Utku'dur; `q-004` ile `q-005` Utku'nun ilk iki prototipidir; `q-018` ile `q-019` Utku'nun Q27 aralığındaki ilk adaylarıdır. Bu dördünün kör denemesi Mehmet'e açıktır.
+Hepsi taslaktır. Yazarın kendi kalite kontrolü tamamlanmadan günlük stoğa alınmaz; diğer kişinin kör deneme ve itiraz kaydı isteğe bağlıdır. İlk üç prototipin yazarı Mehmet, kör deneyeni Utku'dur; `q-004` ile `q-005` Utku'nun ilk iki prototipidir; `q-018`, `q-019` ve `q-020` Utku'nun Q27 aralığındaki ilk adaylarıdır. Bu beşinin kör denemesi Mehmet'e açıktır.
 
 Tamamlanan kör denemeler ilgili editorial dosyasında "Bağımsız kör deneme" başlığı altında kayıtlıdır. `q-001` denendi ve notlar [`../src/content/editorial/2026-09-20.md`](../src/content/editorial/2026-09-20.md) içindedir; `q-002` ile `q-003` için kör deneme henüz yapılmamıştır.
 
