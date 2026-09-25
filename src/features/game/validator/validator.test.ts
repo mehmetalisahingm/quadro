@@ -10,6 +10,7 @@ import prototip1008 from "@/content/puzzles/2026-10-08.json";
 import prototip1009 from "@/content/puzzles/2026-10-09.json";
 import prototip1010 from "@/content/puzzles/2026-10-10.json";
 import prototip1011 from "@/content/puzzles/2026-10-11.json";
+import prototip1012 from "@/content/puzzles/2026-10-12.json";
 import korTahta20 from "@/content/editorial/blind/2026-09-20.json";
 import korTahta21 from "@/content/editorial/blind/2026-09-21.json";
 import korTahta22 from "@/content/editorial/blind/2026-09-22.json";
@@ -20,6 +21,7 @@ import korTahta1008 from "@/content/editorial/blind/2026-10-08.json";
 import korTahta1009 from "@/content/editorial/blind/2026-10-09.json";
 import korTahta1010 from "@/content/editorial/blind/2026-10-10.json";
 import korTahta1011 from "@/content/editorial/blind/2026-10-11.json";
+import korTahta1012 from "@/content/editorial/blind/2026-10-12.json";
 import {
   ISSUE_CODES,
   MAX_COMFORTABLE_WORD_LENGTH,
@@ -75,6 +77,7 @@ const prototipler = [
   ["2026-10-09", prototip1009, korTahta1009],
   ["2026-10-10", prototip1010, korTahta1010],
   ["2026-10-11", prototip1011, korTahta1011],
+  ["2026-10-12", prototip1012, korTahta1012],
 ] as const;
 
 describe("validatePuzzle — geçerli içerik", () => {

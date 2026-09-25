@@ -89,8 +89,9 @@ Bir bulmaca kör denemede açılamazsa bu tek başına kalite sorunu değildir; 
 | `q-020` / 9 Ekim 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Esnaf meslekleri, `ÇALMAK` kalıbı, tiyatro terimleri ve uzay cisimleri (Q27 üçüncü aday) |
 | `q-021` / 10 Ekim 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Giyim aksesuarları, `SÜRMEK` kalıbı (deyim anlamı), değerli taşlar ve duygular (Q27 dördüncü aday) |
 | `q-022` / 11 Ekim 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Denizcilik terimleri, `GEÇMEK` kalıbı, mimari öğeler ve geleneksel el sanatları (Q27 beşinci aday) |
+| `q-023` / 12 Ekim 2026 | Utku | Mehmet (henüz yapılmadı) | 1–4 | Rüzgârlar, `VURMAK` kalıbı, opera ses türleri ve matematik işlemleri (Q27 altıncı aday) |
 
-Hepsi taslaktır. Yazarın kendi kalite kontrolü tamamlanmadan günlük stoğa alınmaz; diğer kişinin kör deneme ve itiraz kaydı isteğe bağlıdır. İlk üç prototipin yazarı Mehmet, kör deneyeni Utku'dur; `q-004` ile `q-005` Utku'nun ilk iki prototipidir; `q-018`, `q-019`, `q-020`, `q-021` ve `q-022` Utku'nun Q27 aralığındaki ilk adaylarıdır. Bu yedisinin kör denemesi Mehmet'e açıktır.
+Hepsi taslaktır. Yazarın kendi kalite kontrolü tamamlanmadan günlük stoğa alınmaz; diğer kişinin kör deneme ve itiraz kaydı isteğe bağlıdır. İlk üç prototipin yazarı Mehmet, kör deneyeni Utku'dur; `q-004` ile `q-005` Utku'nun ilk iki prototipidir; `q-018`, `q-019`, `q-020`, `q-021`, `q-022` ve `q-023` Utku'nun Q27 aralığındaki ilk adaylarıdır. Bu sekizinin kör denemesi Mehmet'e açıktır.
 
 Tamamlanan kör denemeler ilgili editorial dosyasında "Bağımsız kör deneme" başlığı altında kayıtlıdır. `q-001` denendi ve notlar [`../src/content/editorial/2026-09-20.md`](../src/content/editorial/2026-09-20.md) içindedir; `q-002` ile `q-003` için kör deneme henüz yapılmamıştır.
 
