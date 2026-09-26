@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-025",
+  "date": "2026-10-14",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q025-g1",
+      "title": "YATAK TAKIMINDAKİLER",
+      "words": [
+        {
+          "id": "q025-w01",
+          "text": "YASTIK"
+        },
+        {
+          "id": "q025-w02",
+          "text": "ÇARŞAF"
+        },
+        {
+          "id": "q025-w03",
+          "text": "YORGAN"
+        },
+        {
+          "id": "q025-w04",
+          "text": "NEVRESİM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Yastık, çarşaf, yorgan ve nevresim yatak hazırlarken kullanılan eşyalardır."
+    },
+    {
+      "id": "q025-g2",
+      "title": "SATRANÇ TAŞLARI",
+      "words": [
+        {
+          "id": "q025-w05",
+          "text": "ŞAH"
+        },
+        {
+          "id": "q025-w06",
+          "text": "VEZİR"
+        },
+        {
+          "id": "q025-w07",
+          "text": "KALE"
+        },
+        {
+          "id": "q025-w08",
+          "text": "PİYON"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Şah, vezir, kale ve piyon satranç taşlarının adlarıdır."
+    },
+    {
+      "id": "q025-g3",
+      "title": "___ KÂĞIDI",
+      "words": [
+        {
+          "id": "q025-w09",
+          "text": "DUVAR"
+        },
+        {
+          "id": "q025-w10",
+          "text": "KARBON"
+        },
+        {
+          "id": "q025-w11",
+          "text": "ZIMPARA"
+        },
+        {
+          "id": "q025-w12",
+          "text": "AMBALAJ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Duvar kâğıdı, karbon kâğıdı, zımpara kâğıdı ve ambalaj kâğıdı aynı tamlama düzenini kullanır."
+    },
+    {
+      "id": "q025-g4",
+      "title": "SON HARFİ SİLİNCE SAYI ADI",
+      "words": [
+        {
+          "id": "q025-w13",
+          "text": "BİRA"
+        },
+        {
+          "id": "q025-w14",
+          "text": "ALTIN"
+        },
+        {
+          "id": "q025-w15",
+          "text": "YEDİK"
+        },
+        {
+          "id": "q025-w16",
+          "text": "BİNE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Yalnız son harf silinir: BİRA → BİR, ALTIN → ALTI, YEDİK → YEDİ, BİNE → BİN. YEDİK çekimli fiildir; BİNE, bin sayısının yönelme hâlidir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-024",
+  "date": "2026-10-13",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q024-g1",
+      "title": "TAMİR ÇANTASINDAKİ EL ALETLERİ",
+      "words": [
+        {
+          "id": "q024-w01",
+          "text": "ÇEKİÇ"
+        },
+        {
+          "id": "q024-w02",
+          "text": "PENSE"
+        },
+        {
+          "id": "q024-w03",
+          "text": "TORNAVİDA"
+        },
+        {
+          "id": "q024-w04",
+          "text": "ANAHTAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Çekiç, pense, tornavida ve somun sıkmaya yarayan anahtar, elle kullanılan tamir aletleridir."
+    },
+    {
+      "id": "q024-g2",
+      "title": "BASILI YAYIN TÜRLERİ",
+      "words": [
+        {
+          "id": "q024-w05",
+          "text": "DERGİ"
+        },
+        {
+          "id": "q024-w06",
+          "text": "GAZETE"
+        },
+        {
+          "id": "q024-w07",
+          "text": "ANSİKLOPEDİ"
+        },
+        {
+          "id": "q024-w08",
+          "text": "BROŞÜR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Dergi, gazete, ansiklopedi ve broşür basılı yayın türleridir; aynı sıklıkta yayımlanmaları gerekmez."
+    },
+    {
+      "id": "q024-g3",
+      "title": "___ KODU",
+      "words": [
+        {
+          "id": "q024-w09",
+          "text": "POSTA"
+        },
+        {
+          "id": "q024-w10",
+          "text": "KAYNAK"
+        },
+        {
+          "id": "q024-w11",
+          "text": "HATA"
+        },
+        {
+          "id": "q024-w12",
+          "text": "QR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Posta kodu, kaynak kodu, hata kodu ve QR kodu: her kartın ardından kodu gelir. QR, karekodlarda görülen harflerdir."
+    },
+    {
+      "id": "q024-g4",
+      "title": "___ TAŞI",
+      "words": [
+        {
+          "id": "q024-w13",
+          "text": "SABIR"
+        },
+        {
+          "id": "q024-w14",
+          "text": "MİHENK"
+        },
+        {
+          "id": "q024-w15",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "q024-w16",
+          "text": "YAPI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Sabır taşı, mihenk taşı, köşe taşı ve yapı taşı yerleşik ifadelerdir. Mihenk taşı mecazen bir şeyi değerlendirmede kullanılan ölçüttür."
+    }
+  ]
+}

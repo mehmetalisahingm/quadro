@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-030",
+  "date": "2026-10-19",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q030-g1",
+      "title": "MASAÜSTÜ BİLGİSAYAR DONANIMI",
+      "words": [
+        {
+          "id": "q030-w01",
+          "text": "KLAVYE"
+        },
+        {
+          "id": "q030-w02",
+          "text": "FARE"
+        },
+        {
+          "id": "q030-w03",
+          "text": "MONİTÖR"
+        },
+        {
+          "id": "q030-w04",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Klavye, fare, monitör ve kasa masaüstü bilgisayar kurulumunun fiziksel parçalarıdır."
+    },
+    {
+      "id": "q030-g2",
+      "title": "RESİMDE KULLANILAN BOYALAR",
+      "words": [
+        {
+          "id": "q030-w05",
+          "text": "YAĞLIBOYA"
+        },
+        {
+          "id": "q030-w06",
+          "text": "SULUBOYA"
+        },
+        {
+          "id": "q030-w07",
+          "text": "GUAJ"
+        },
+        {
+          "id": "q030-w08",
+          "text": "PASTEL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Yağlıboya, suluboya, guaj ve pastel resim yapımında kullanılan boya türleridir."
+    },
+    {
+      "id": "q030-g3",
+      "title": "SESİ NİTELEYEN SÖZCÜKLER",
+      "words": [
+        {
+          "id": "q030-w09",
+          "text": "TİZ"
+        },
+        {
+          "id": "q030-w10",
+          "text": "PES"
+        },
+        {
+          "id": "q030-w11",
+          "text": "GÜR"
+        },
+        {
+          "id": "q030-w12",
+          "text": "KISIK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Tiz, pes, gür ve kısık bir sesin nasıl duyulduğunu anlatır. Tiz/pes perdeyi, gür/kısık sesin gücünü veya çıkışını niteler."
+    },
+    {
+      "id": "q030-g4",
+      "title": "___ GÖREVLİSİ",
+      "words": [
+        {
+          "id": "q030-w13",
+          "text": "GÜVENLİK"
+        },
+        {
+          "id": "q030-w14",
+          "text": "GİŞE"
+        },
+        {
+          "id": "q030-w15",
+          "text": "ARAŞTIRMA"
+        },
+        {
+          "id": "q030-w16",
+          "text": "SANDIK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Güvenlik görevlisi, gişe görevlisi, araştırma görevlisi ve sandık görevlisi aynı sözcükle tamamlanır."
+    }
+  ]
+}

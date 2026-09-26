@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-027",
+  "date": "2026-10-16",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q027-g1",
+      "title": "DİKİŞ KUTUSUNDAKİLER",
+      "words": [
+        {
+          "id": "q027-w01",
+          "text": "İĞNE"
+        },
+        {
+          "id": "q027-w02",
+          "text": "İPLİK"
+        },
+        {
+          "id": "q027-w03",
+          "text": "MAKAS"
+        },
+        {
+          "id": "q027-w04",
+          "text": "YÜKSÜK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İğne, iplik, makas ve parmağı koruyan yüksük dikiş kutusunda bulunabilir."
+    },
+    {
+      "id": "q027-g2",
+      "title": "NOKTALAMA İŞARETLERİ",
+      "words": [
+        {
+          "id": "q027-w05",
+          "text": "VİRGÜL"
+        },
+        {
+          "id": "q027-w06",
+          "text": "TIRNAK"
+        },
+        {
+          "id": "q027-w07",
+          "text": "KESME"
+        },
+        {
+          "id": "q027-w08",
+          "text": "İKİ NOKTA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Virgül, tırnak, kesme ve iki nokta yazıda kullanılan noktalama işaretleridir."
+    },
+    {
+      "id": "q027-g3",
+      "title": "IŞIKLA İLGİLİ YÜZEY NİTELİKLERİ",
+      "words": [
+        {
+          "id": "q027-w09",
+          "text": "SAYDAM"
+        },
+        {
+          "id": "q027-w10",
+          "text": "OPAK"
+        },
+        {
+          "id": "q027-w11",
+          "text": "PARLAK"
+        },
+        {
+          "id": "q027-w12",
+          "text": "MAT"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Saydam ve opak ışık geçirmeyi; parlak ve mat yüzeyin ışığı yansıtma görünümünü anlatır."
+    },
+    {
+      "id": "q027-g4",
+      "title": "___ DIŞI",
+      "words": [
+        {
+          "id": "q027-w13",
+          "text": "KAYIT"
+        },
+        {
+          "id": "q027-w14",
+          "text": "KONU"
+        },
+        {
+          "id": "q027-w15",
+          "text": "DEVRE"
+        },
+        {
+          "id": "q027-w16",
+          "text": "OLAĞAN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Kayıt dışı, konu dışı, devre dışı ve olağan dışı ifadelerinde karttan sonra dışı gelir."
+    }
+  ]
+}

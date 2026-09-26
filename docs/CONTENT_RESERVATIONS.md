@@ -4,7 +4,7 @@ Bu dosya, Utku ve Mehmet'in paralel bulmaca üretirken aynı numarayı, tarihi, 
 
 **Yeni bir bulmacaya başlamadan önce herkes bu dosyaya bakar.** Bulmaca yazım kuralları [`PUZZLE_GUIDE.md`](PUZZLE_GUIDE.md), şema kuralları [`CONTENT_SCHEMA.md`](CONTENT_SCHEMA.md) içindedir; numara, tarih, kalıp ve tema sahipliğinde esas olan bu dosyadır.
 
-Havuzun bugünkü durumu: `main` üzerinde 17 günlük bulmaca (`q-001`…`q-017`) ve motor testleri için 3 örnek fixture (`ornek-001`, `ornek-uzun-001`, `ogretici-001`) var. 18 fiil kalıbı ve "başına ___ gelenler" mekaniği kullanıldı.
+Q27 son paketinin tabanı olan `b4706bb` üzerinde 23 günlük bulmaca (`q-001`…`q-023`) var. Bu dalda dokuz yeni adayla havuz 32 taslağa çıkar; Q27 aralığındaki 15 adayın dosyaları tamamlanır. Bu sayı yayın onayı veya `main`'e birleşme anlamına gelmez. Motor testleri için 3 örnek fixture ayrıca bulunur.
 
 ## Numara/tarih aralığı
 
@@ -65,7 +65,26 @@ Az kullanılmış ve tercih edilebilir alanlar: organ, para birimi, dans, burç,
 
 Durum değerleri: **rezerve** (ayrıldı, üretim başlamadı) · **üretiliyor** (taslak dalda) · **tamamlandı** (`main`'e merge edildi).
 
+## Q27 son dokuz aday — üretim rezervasyonu
+
+Mehmet'in talebiyle Codex, Utku'nun Q27 paketindeki `q-024`…`q-032` adaylarını hazırlıyor. Mevcut altı aday değiştirilmiyor; insan yazarlığı veya yapılmış kör deneme beyan edilmiyor. Yeni fiil rezervasyonu alınmıyor.
+
+| Aday | Tarih | Ayrılan bağlantılar |
+| --- | --- | --- |
+| q-024 | 2026-10-13 | Tamir çantası, yayın türleri, sonuna kodu ve taşı gelenler |
+| q-025 | 2026-10-14 | Yatak takımı, satranç, sonuna kâğıdı gelenler, son harfi silince sayı olanlar |
+| q-026 | 2026-10-15 | Banyo eşyaları, fotoğraf ayarları, bilgisayar eylemleri, sonuna hakkı gelenler |
+| q-027 | 2026-10-16 | Dikiş kutusu, noktalama, ışıkla ilgili sözcükler, sonuna dışı gelenler |
+| q-028 | 2026-10-17 | İnşaat makineleri, edebî türler, sonuna sınavı ve çekimi gelenler |
+| q-029 | 2026-10-18 | Çanta türleri, gazete bölümleri, ekrandaki hareketler, harfleri aynı olan sözcükler |
+| q-030 | 2026-10-19 | Masaüstü bilgisayar donanımı, resim boyaları, ses nitelikleri, sonuna görevlisi gelenler |
+| q-031 | 2026-10-20 | Bağlantı elemanları, kitap bölümleri, zaman zarfları, sonuna payı gelenler |
+| q-032 | 2026-10-21 | Yol işaretleri, belge türleri, oyun kâğıdı renkleri, aynı hecenin tekrarı |
+
+Son dokuz adayın dosyaları bu dalda hazırdır. İlk altı aday `main` üzerinde; kalan dokuzun teslimi ve doğrulama kanıtları [Q27 tamamlayıcı paket](qa/Q27_REMAINING_NINE.md) kaydındadır. Birleşme ve insan yayın kararı henüz tamamlanmış sayılmaz.
+
 ## Kullanım kuralı
+
 
 1. Üretime başlamadan herkes bu dosyaya bakar.
 2. Yeni bir numara, fiil kalıbı veya tema alan kişi bunu önce bu dosyaya işler, sonra üretir. Durum sütunu iş ilerledikçe güncellenir.

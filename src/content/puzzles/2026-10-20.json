@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-031",
+  "date": "2026-10-20",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q031-g1",
+      "title": "PARÇALARI BİRLEŞTİREN ELEMANLAR",
+      "words": [
+        {
+          "id": "q031-w01",
+          "text": "VİDA"
+        },
+        {
+          "id": "q031-w02",
+          "text": "SOMUN"
+        },
+        {
+          "id": "q031-w03",
+          "text": "CIVATA"
+        },
+        {
+          "id": "q031-w04",
+          "text": "PERÇİN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Vida, somun, cıvata ve perçin parçaların birbirine bağlanmasında kullanılan elemanlardır."
+    },
+    {
+      "id": "q031-g2",
+      "title": "KİTABIN YARDIMCI BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "q031-w05",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "q031-w06",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "q031-w07",
+          "text": "DİZİN"
+        },
+        {
+          "id": "q031-w08",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Önsöz, içindekiler, dizin ve kaynakça bir kitapta ana metne eşlik eden bölümlerdir; her kitapta hepsi bulunmayabilir."
+    },
+    {
+      "id": "q031-g3",
+      "title": "ZAMAN BİLDİREN ZARFLAR",
+      "words": [
+        {
+          "id": "q031-w09",
+          "text": "DEMİN"
+        },
+        {
+          "id": "q031-w10",
+          "text": "ŞİMDİ"
+        },
+        {
+          "id": "q031-w11",
+          "text": "SONRA"
+        },
+        {
+          "id": "q031-w12",
+          "text": "HENÜZ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Demin, şimdi, sonra ve henüz bir eylemi zamana göre konumlandırır. Henüz, beklenen bir durumun o ana kadar gerçekleşmediğini de anlatabilir."
+    },
+    {
+      "id": "q031-g4",
+      "title": "___ PAYI",
+      "words": [
+        {
+          "id": "q031-w13",
+          "text": "HATA"
+        },
+        {
+          "id": "q031-w14",
+          "text": "KÂR"
+        },
+        {
+          "id": "q031-w15",
+          "text": "ARSA"
+        },
+        {
+          "id": "q031-w16",
+          "text": "YIPRANMA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Hata payı, kâr payı, arsa payı ve yıpranma payı aynı sözcükle tamamlanan ifadelerdir."
+    }
+  ]
+}

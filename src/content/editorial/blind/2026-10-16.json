@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-027",
+  "date": "2026-10-16",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q027-w10",
+      "text": "OPAK"
+    },
+    {
+      "id": "q027-w12",
+      "text": "MAT"
+    },
+    {
+      "id": "q027-w03",
+      "text": "MAKAS"
+    },
+    {
+      "id": "q027-w06",
+      "text": "TIRNAK"
+    },
+    {
+      "id": "q027-w02",
+      "text": "İPLİK"
+    },
+    {
+      "id": "q027-w08",
+      "text": "İKİ NOKTA"
+    },
+    {
+      "id": "q027-w07",
+      "text": "KESME"
+    },
+    {
+      "id": "q027-w16",
+      "text": "OLAĞAN"
+    },
+    {
+      "id": "q027-w04",
+      "text": "YÜKSÜK"
+    },
+    {
+      "id": "q027-w15",
+      "text": "DEVRE"
+    },
+    {
+      "id": "q027-w13",
+      "text": "KAYIT"
+    },
+    {
+      "id": "q027-w14",
+      "text": "KONU"
+    },
+    {
+      "id": "q027-w11",
+      "text": "PARLAK"
+    },
+    {
+      "id": "q027-w09",
+      "text": "SAYDAM"
+    },
+    {
+      "id": "q027-w05",
+      "text": "VİRGÜL"
+    },
+    {
+      "id": "q027-w01",
+      "text": "İĞNE"
+    }
+  ]
+}

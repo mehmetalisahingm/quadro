@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-024",
+  "date": "2026-10-13",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q024-w03",
+      "text": "TORNAVİDA"
+    },
+    {
+      "id": "q024-w07",
+      "text": "ANSİKLOPEDİ"
+    },
+    {
+      "id": "q024-w01",
+      "text": "ÇEKİÇ"
+    },
+    {
+      "id": "q024-w10",
+      "text": "KAYNAK"
+    },
+    {
+      "id": "q024-w11",
+      "text": "HATA"
+    },
+    {
+      "id": "q024-w09",
+      "text": "POSTA"
+    },
+    {
+      "id": "q024-w02",
+      "text": "PENSE"
+    },
+    {
+      "id": "q024-w13",
+      "text": "SABIR"
+    },
+    {
+      "id": "q024-w15",
+      "text": "KÖŞE"
+    },
+    {
+      "id": "q024-w06",
+      "text": "GAZETE"
+    },
+    {
+      "id": "q024-w05",
+      "text": "DERGİ"
+    },
+    {
+      "id": "q024-w16",
+      "text": "YAPI"
+    },
+    {
+      "id": "q024-w12",
+      "text": "QR"
+    },
+    {
+      "id": "q024-w04",
+      "text": "ANAHTAR"
+    },
+    {
+      "id": "q024-w14",
+      "text": "MİHENK"
+    },
+    {
+      "id": "q024-w08",
+      "text": "BROŞÜR"
+    }
+  ]
+}
