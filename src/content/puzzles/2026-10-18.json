@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-029",
+  "date": "2026-10-18",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q029-g1",
+      "title": "EŞYA TAŞIMAYA YARAYANLAR",
+      "words": [
+        {
+          "id": "q029-w01",
+          "text": "BAVUL"
+        },
+        {
+          "id": "q029-w02",
+          "text": "VALİZ"
+        },
+        {
+          "id": "q029-w03",
+          "text": "HEYBE"
+        },
+        {
+          "id": "q029-w04",
+          "text": "PORTFÖY"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bavul, valiz, heybe ve portföy eşya taşımaya yarar. Portföy burada belge taşınan el çantası anlamındadır."
+    },
+    {
+      "id": "q029-g2",
+      "title": "GAZETE SAYFASINDAKİLER",
+      "words": [
+        {
+          "id": "q029-w05",
+          "text": "MANŞET"
+        },
+        {
+          "id": "q029-w06",
+          "text": "SÜRMANŞET"
+        },
+        {
+          "id": "q029-w07",
+          "text": "KÖŞE YAZISI"
+        },
+        {
+          "id": "q029-w08",
+          "text": "İLAN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Manşet ana haberi öne çıkarır; sürmanşet gazete adının üzerindedir. Köşe yazısı ve ilan da gazete sayfasında yer alabilir."
+    },
+    {
+      "id": "q029-g3",
+      "title": "DOKUNMATİK EKRAN EYLEMLERİ",
+      "words": [
+        {
+          "id": "q029-w09",
+          "text": "KAYDIR"
+        },
+        {
+          "id": "q029-w10",
+          "text": "DOKUN"
+        },
+        {
+          "id": "q029-w11",
+          "text": "YAKINLAŞTIR"
+        },
+        {
+          "id": "q029-w12",
+          "text": "DÖNDÜR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Kaydır, dokun, yakınlaştır ve döndür dokunmatik ekrandaki hareketleri tarif eden komutlardır."
+    },
+    {
+      "id": "q029-g4",
+      "title": "AYNI BEŞ HARFİN FARKLI DİZİLİŞLERİ",
+      "words": [
+        {
+          "id": "q029-w13",
+          "text": "KALEM"
+        },
+        {
+          "id": "q029-w14",
+          "text": "KELAM"
+        },
+        {
+          "id": "q029-w15",
+          "text": "EMLAK"
+        },
+        {
+          "id": "q029-w16",
+          "text": "KEMAL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Dördünde de A, E, K, L, M harfleri birer kez bulunur. Kelam söz, kemal olgunluk anlamına da gelir; kişi adı bilgisi gerekmez."
+    }
+  ]
+}

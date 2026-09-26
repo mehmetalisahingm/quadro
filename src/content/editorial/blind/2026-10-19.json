@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-030",
+  "date": "2026-10-19",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q030-w03",
+      "text": "MONİTÖR"
+    },
+    {
+      "id": "q030-w05",
+      "text": "YAĞLIBOYA"
+    },
+    {
+      "id": "q030-w07",
+      "text": "GUAJ"
+    },
+    {
+      "id": "q030-w08",
+      "text": "PASTEL"
+    },
+    {
+      "id": "q030-w13",
+      "text": "GÜVENLİK"
+    },
+    {
+      "id": "q030-w09",
+      "text": "TİZ"
+    },
+    {
+      "id": "q030-w01",
+      "text": "KLAVYE"
+    },
+    {
+      "id": "q030-w11",
+      "text": "GÜR"
+    },
+    {
+      "id": "q030-w12",
+      "text": "KISIK"
+    },
+    {
+      "id": "q030-w14",
+      "text": "GİŞE"
+    },
+    {
+      "id": "q030-w02",
+      "text": "FARE"
+    },
+    {
+      "id": "q030-w15",
+      "text": "ARAŞTIRMA"
+    },
+    {
+      "id": "q030-w06",
+      "text": "SULUBOYA"
+    },
+    {
+      "id": "q030-w04",
+      "text": "KASA"
+    },
+    {
+      "id": "q030-w16",
+      "text": "SANDIK"
+    },
+    {
+      "id": "q030-w10",
+      "text": "PES"
+    }
+  ]
+}

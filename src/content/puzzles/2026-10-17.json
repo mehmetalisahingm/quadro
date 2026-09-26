@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-028",
+  "date": "2026-10-17",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q028-g1",
+      "title": "İNŞAATTA KULLANILAN İŞ MAKİNELERİ",
+      "words": [
+        {
+          "id": "q028-w01",
+          "text": "VİNÇ"
+        },
+        {
+          "id": "q028-w02",
+          "text": "DOZER"
+        },
+        {
+          "id": "q028-w03",
+          "text": "KEPÇE"
+        },
+        {
+          "id": "q028-w04",
+          "text": "SİLİNDİR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Vinç yük kaldırır, dozer iter, kepçe kazı ve yükleme yapar, silindir zemini sıkıştırır. Burada kepçe ve silindirin makine anlamları hedeflenir."
+    },
+    {
+      "id": "q028-g2",
+      "title": "EDEBÎ TÜRLER",
+      "words": [
+        {
+          "id": "q028-w05",
+          "text": "ROMAN"
+        },
+        {
+          "id": "q028-w06",
+          "text": "ÖYKÜ"
+        },
+        {
+          "id": "q028-w07",
+          "text": "ŞİİR"
+        },
+        {
+          "id": "q028-w08",
+          "text": "DENEME"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Roman, öykü, şiir ve deneme edebî türlerdir. Deneme burada bir şeyi sınama eylemi değildir."
+    },
+    {
+      "id": "q028-g3",
+      "title": "___ SINAVI",
+      "words": [
+        {
+          "id": "q028-w09",
+          "text": "EHLİYET"
+        },
+        {
+          "id": "q028-w10",
+          "text": "YETERLİK"
+        },
+        {
+          "id": "q028-w11",
+          "text": "BÜTÜNLEME"
+        },
+        {
+          "id": "q028-w12",
+          "text": "GİRİŞ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ehliyet sınavı, yeterlik sınavı, bütünleme sınavı ve giriş sınavı yaygın tamlamalardır."
+    },
+    {
+      "id": "q028-g4",
+      "title": "___ ÇEKİMİ",
+      "words": [
+        {
+          "id": "q028-w13",
+          "text": "DİŞ"
+        },
+        {
+          "id": "q028-w14",
+          "text": "FİLM"
+        },
+        {
+          "id": "q028-w15",
+          "text": "KURA"
+        },
+        {
+          "id": "q028-w16",
+          "text": "YER"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Diş çekimi, film çekimi, kura çekimi ve yer çekimi: çekim sözcüğü dört farklı anlamda aynı tamlamayı tamamlar."
+    }
+  ]
+}

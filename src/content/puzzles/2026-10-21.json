@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-032",
+  "date": "2026-10-21",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q032-g1",
+      "title": "BELGE TÜRLERİ",
+      "words": [
+        {
+          "id": "q032-w01",
+          "text": "DİPLOMA"
+        },
+        {
+          "id": "q032-w02",
+          "text": "SERTİFİKA"
+        },
+        {
+          "id": "q032-w03",
+          "text": "PASAPORT"
+        },
+        {
+          "id": "q032-w04",
+          "text": "RUHSAT"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Diploma, sertifika, pasaport ve ruhsat farklı amaçlarla düzenlenen belge türleridir."
+    },
+    {
+      "id": "q032-g2",
+      "title": "OYUN KÂĞIDI SEMBOLLERİ",
+      "words": [
+        {
+          "id": "q032-w05",
+          "text": "KUPA"
+        },
+        {
+          "id": "q032-w06",
+          "text": "KARO"
+        },
+        {
+          "id": "q032-w07",
+          "text": "SİNEK"
+        },
+        {
+          "id": "q032-w08",
+          "text": "MAÇA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Standart oyun kâğıtlarındaki dört takımın adları kupa, karo, sinek ve maçadır. Burada renk sözcüğü kırmızı/siyah anlamında kullanılmaz."
+    },
+    {
+      "id": "q032-g3",
+      "title": "TRAFİK LEVHALARINDAKİ TALİMATLAR",
+      "words": [
+        {
+          "id": "q032-w09",
+          "text": "DUR"
+        },
+        {
+          "id": "q032-w10",
+          "text": "YOL VER"
+        },
+        {
+          "id": "q032-w11",
+          "text": "GİRİLMEZ"
+        },
+        {
+          "id": "q032-w12",
+          "text": "PARK YAPILMAZ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Dur, yol ver, girilmez ve park yapılmaz trafik levhalarında görülen talimatlardır."
+    },
+    {
+      "id": "q032-g4",
+      "title": "AYNI HECENİN İKİ KEZ YAZILMASI",
+      "words": [
+        {
+          "id": "q032-w13",
+          "text": "BABA"
+        },
+        {
+          "id": "q032-w14",
+          "text": "DEDE"
+        },
+        {
+          "id": "q032-w15",
+          "text": "MAMA"
+        },
+        {
+          "id": "q032-w16",
+          "text": "CİCİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "BA-BA, DE-DE, MA-MA ve Cİ-Cİ: her sözcük aynı iki harfli hecenin iki tekrarından oluşur."
+    }
+  ]
+}

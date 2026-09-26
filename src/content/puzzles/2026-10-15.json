@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-026",
+  "date": "2026-10-15",
+  "language": "tr",
+  "status": "draft",
+  "author": "Codex (mehmetalisahingm talebiyle; Q27)",
+  "reviewer": "optional-blind-trial",
+  "groups": [
+    {
+      "id": "q026-g1",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "q026-w01",
+          "text": "HAVLU"
+        },
+        {
+          "id": "q026-w02",
+          "text": "SABUN"
+        },
+        {
+          "id": "q026-w03",
+          "text": "LİF"
+        },
+        {
+          "id": "q026-w04",
+          "text": "BORNOZ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Havlu, sabun, lif ve bornoz yıkanırken veya sonrasında kullanılan eşyalardır."
+    },
+    {
+      "id": "q026-g2",
+      "title": "FOTOĞRAF ÇEKİMİ TERİMLERİ",
+      "words": [
+        {
+          "id": "q026-w05",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "q026-w06",
+          "text": "ENSTANTANE"
+        },
+        {
+          "id": "q026-w07",
+          "text": "ISO"
+        },
+        {
+          "id": "q026-w08",
+          "text": "POZLAMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Diyafram açıklığı, enstantane süresi ve ISO ayarı fotoğrafın pozlamasıyla ilgilidir. Burada diyaframın fotoğraf makinesindeki anlamı kullanılır."
+    },
+    {
+      "id": "q026-g3",
+      "title": "DOSYA DÜZENLERKEN VERİLEN KOMUTLAR",
+      "words": [
+        {
+          "id": "q026-w09",
+          "text": "KOPYALA"
+        },
+        {
+          "id": "q026-w10",
+          "text": "YAPIŞTIR"
+        },
+        {
+          "id": "q026-w11",
+          "text": "KAYDET"
+        },
+        {
+          "id": "q026-w12",
+          "text": "GERİ AL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Kopyala, yapıştır, kaydet ve geri al bilgisayarda bir dosyayı düzenlerken kullanılan komutlardır."
+    },
+    {
+      "id": "q026-g4",
+      "title": "___ HAKKI",
+      "words": [
+        {
+          "id": "q026-w13",
+          "text": "TELİF"
+        },
+        {
+          "id": "q026-w14",
+          "text": "MİRAS"
+        },
+        {
+          "id": "q026-w15",
+          "text": "VETO"
+        },
+        {
+          "id": "q026-w16",
+          "text": "CEVAP"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Telif hakkı, miras hakkı, veto hakkı ve cevap hakkı: aynı sözcük dört kartı tamamlar."
+    }
+  ]
+}

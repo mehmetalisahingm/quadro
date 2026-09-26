@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-028",
+  "date": "2026-10-17",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q028-w03",
+      "text": "KEPÇE"
+    },
+    {
+      "id": "q028-w02",
+      "text": "DOZER"
+    },
+    {
+      "id": "q028-w15",
+      "text": "KURA"
+    },
+    {
+      "id": "q028-w06",
+      "text": "ÖYKÜ"
+    },
+    {
+      "id": "q028-w01",
+      "text": "VİNÇ"
+    },
+    {
+      "id": "q028-w08",
+      "text": "DENEME"
+    },
+    {
+      "id": "q028-w13",
+      "text": "DİŞ"
+    },
+    {
+      "id": "q028-w10",
+      "text": "YETERLİK"
+    },
+    {
+      "id": "q028-w07",
+      "text": "ŞİİR"
+    },
+    {
+      "id": "q028-w14",
+      "text": "FİLM"
+    },
+    {
+      "id": "q028-w09",
+      "text": "EHLİYET"
+    },
+    {
+      "id": "q028-w16",
+      "text": "YER"
+    },
+    {
+      "id": "q028-w05",
+      "text": "ROMAN"
+    },
+    {
+      "id": "q028-w12",
+      "text": "GİRİŞ"
+    },
+    {
+      "id": "q028-w11",
+      "text": "BÜTÜNLEME"
+    },
+    {
+      "id": "q028-w04",
+      "text": "SİLİNDİR"
+    }
+  ]
+}

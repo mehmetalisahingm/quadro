@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-032",
+  "date": "2026-10-21",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q032-w03",
+      "text": "PASAPORT"
+    },
+    {
+      "id": "q032-w05",
+      "text": "KUPA"
+    },
+    {
+      "id": "q032-w09",
+      "text": "DUR"
+    },
+    {
+      "id": "q032-w11",
+      "text": "GİRİLMEZ"
+    },
+    {
+      "id": "q032-w02",
+      "text": "SERTİFİKA"
+    },
+    {
+      "id": "q032-w13",
+      "text": "BABA"
+    },
+    {
+      "id": "q032-w04",
+      "text": "RUHSAT"
+    },
+    {
+      "id": "q032-w10",
+      "text": "YOL VER"
+    },
+    {
+      "id": "q032-w01",
+      "text": "DİPLOMA"
+    },
+    {
+      "id": "q032-w15",
+      "text": "MAMA"
+    },
+    {
+      "id": "q032-w14",
+      "text": "DEDE"
+    },
+    {
+      "id": "q032-w12",
+      "text": "PARK YAPILMAZ"
+    },
+    {
+      "id": "q032-w07",
+      "text": "SİNEK"
+    },
+    {
+      "id": "q032-w06",
+      "text": "KARO"
+    },
+    {
+      "id": "q032-w08",
+      "text": "MAÇA"
+    },
+    {
+      "id": "q032-w16",
+      "text": "CİCİ"
+    }
+  ]
+}

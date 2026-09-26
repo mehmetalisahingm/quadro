@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-029",
+  "date": "2026-10-18",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q029-w02",
+      "text": "VALİZ"
+    },
+    {
+      "id": "q029-w06",
+      "text": "SÜRMANŞET"
+    },
+    {
+      "id": "q029-w04",
+      "text": "PORTFÖY"
+    },
+    {
+      "id": "q029-w08",
+      "text": "İLAN"
+    },
+    {
+      "id": "q029-w05",
+      "text": "MANŞET"
+    },
+    {
+      "id": "q029-w10",
+      "text": "DOKUN"
+    },
+    {
+      "id": "q029-w15",
+      "text": "EMLAK"
+    },
+    {
+      "id": "q029-w16",
+      "text": "KEMAL"
+    },
+    {
+      "id": "q029-w14",
+      "text": "KELAM"
+    },
+    {
+      "id": "q029-w09",
+      "text": "KAYDIR"
+    },
+    {
+      "id": "q029-w13",
+      "text": "KALEM"
+    },
+    {
+      "id": "q029-w11",
+      "text": "YAKINLAŞTIR"
+    },
+    {
+      "id": "q029-w12",
+      "text": "DÖNDÜR"
+    },
+    {
+      "id": "q029-w01",
+      "text": "BAVUL"
+    },
+    {
+      "id": "q029-w03",
+      "text": "HEYBE"
+    },
+    {
+      "id": "q029-w07",
+      "text": "KÖŞE YAZISI"
+    }
+  ]
+}

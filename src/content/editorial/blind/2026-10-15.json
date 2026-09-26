@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-026",
+  "date": "2026-10-15",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q026-w05",
+      "text": "DİYAFRAM"
+    },
+    {
+      "id": "q026-w08",
+      "text": "POZLAMA"
+    },
+    {
+      "id": "q026-w11",
+      "text": "KAYDET"
+    },
+    {
+      "id": "q026-w07",
+      "text": "ISO"
+    },
+    {
+      "id": "q026-w03",
+      "text": "LİF"
+    },
+    {
+      "id": "q026-w15",
+      "text": "VETO"
+    },
+    {
+      "id": "q026-w12",
+      "text": "GERİ AL"
+    },
+    {
+      "id": "q026-w16",
+      "text": "CEVAP"
+    },
+    {
+      "id": "q026-w01",
+      "text": "HAVLU"
+    },
+    {
+      "id": "q026-w10",
+      "text": "YAPIŞTIR"
+    },
+    {
+      "id": "q026-w09",
+      "text": "KOPYALA"
+    },
+    {
+      "id": "q026-w02",
+      "text": "SABUN"
+    },
+    {
+      "id": "q026-w04",
+      "text": "BORNOZ"
+    },
+    {
+      "id": "q026-w06",
+      "text": "ENSTANTANE"
+    },
+    {
+      "id": "q026-w13",
+      "text": "TELİF"
+    },
+    {
+      "id": "q026-w14",
+      "text": "MİRAS"
+    }
+  ]
+}
