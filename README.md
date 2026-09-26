@@ -2,93 +2,98 @@
 
 Türkçe günlük gruplama bulmacası: **16 kelime, 4 gizli bağ, 4 hata hakkı.**
 
-Quadro geçici proje adıdır. Nihai oyun adı henüz seçilmedi.
+> `Quadro` mevcut proje adıdır; yayın öncesinde isim değişirse metadata ve kullanıcı yüzeyleri birlikte güncellenir.
+
+## Nasıl oynanır?
+
+Her gün ekranda 16 kelime görünür. Birbiriyle aynı gizli bağı paylaşan dört kelimeyi seçip **Grupla** düğmesine basarsın. Amaç dört grubun tamamını bulmaktır; toplam dört hata hakkın vardır.
+
+- Kartları seçebilir, seçimi temizleyebilir ve kalan kartları karıştırabilirsin.
+- Oyun ilerlemesi tarayıcıda saklanır; sayfayı yenilediğinde devam edebilirsin.
+- Sonuç ekranı spoiler vermeyen renkli paylaşım metni üretir.
+- Ses tercihi isteğe bağlıdır ve varsayılan olarak kapalıdır.
 
 ## Projenin durumu
 
-Ürün planı ve geliştirme görevleri hazırlandı. Uygulama geliştirmesi Faz 0 ile başlayacak; bu ilk yükleme planlama, iş bölümü ve repo çalışma düzenini içerir.
+Çekirdek ürün akışı tamamlandı:
 
-## Nereden başlayacağız?
+`Ana sayfa → günlük bulmaca → kazanma/kaybetme → sonuç/paylaşım → istatistik`
 
-| Kişi | Ana sorumluluk | Başlangıç |
-| --- | --- | --- |
-| Mehmet — [@mehmetalisahingm](https://github.com/mehmetalisahingm) | Ana sayfa, tasarım sistemi, oyun/sonuç arayüzü, mobil deneyim | [Mehmet'in görevleri](docs/MEHMET.md) |
-| Utku — [@Utkuuzun14](https://github.com/Utkuuzun14) | Oyun motoru, ortak sözleşme, günlük yayın, kayıt/istatistik, CI ve entegrasyon | [Utku'nun görevleri](docs/UTKU.md) |
+Repo şu anda **yayın öncesi kalite ve kabul** aşamasındadır. Güncel görev durumu için GitHub issue'ları kaynak kabul edilir; README tek başına release onayı anlamına gelmez.
 
-İçerik üretimi iki kişiye bölünür. İsteyen kişi diğerinin yazdığı bulmacayı cevapları görmeden deneyebilir ve geri bildirim bırakabilir. İlk 30 günün 1–15 taslakları Mehmet'e, 16–30 taslakları Utku'ya aittir; bu sayı nihai günlük atamadır, ilk prototipler yazarın kalite kontrolünden geçerse stoğa dahil edilir.
+Yayın öncesi kalan ana kapılar:
 
-## Plan ve takip
+- iki yazarın içeriklerinin karşılıklı kör kalite review'larının tamamlanması,
+- 20–30 gerçek katılımcılı ürün pilotu,
+- gerçek cihaz/Safari görsel kabulü,
+- 30 onaylı günlük yayın takvimi,
+- preview/production deployment ve rollback doğrulaması,
+- ortak yayın kararı.
 
-- [Ana proje planı](PROJE_PLANI.md)
-- [Tüm görevler ve bağımlılıklar](docs/GOREVLER.md)
-- [GitHub issue'ları](https://github.com/mehmetalisahingm/quadro/issues)
-- [Fazlar / milestones](https://github.com/mehmetalisahingm/quadro/milestones)
-- [Çalışma kuralları](CONTRIBUTING.md)
-- [Görev tanımlarının kaynak verisi](docs/TASKS.json)
+## Teknik durum
 
-Görev ilerlemesinin güncel kaynağı GitHub issue durumudur. Belgelerdeki listeler başlangıç planını gösterir.
+- **Next.js 16.3.5** (App Router)
+- **React 19.1.1**
+- **TypeScript 5.7.3**
+- Node.js ≥ 20.9; repoda `.nvmrc` = 22
+- npm + `package-lock.json`
+- Vitest birim/jsdom testleri
+- Playwright ile Chromium + WebKit tarayıcı regresyonu
+- Günlük içerik şeması ve istemci bundle sızıntı denetimi
 
-## İlk çalışan teslim
+CI her PR'da lint, typecheck, test, içerik doğrulama, production build, bundle denetimi ve tarayıcı regresyonunu çalıştırır.
 
-`Ana sayfa → bir gerçek bulmaca → kazanma/kaybetme → paylaşım`
-
-Bu akış gerçek motorla birleşmeden kapsamlı son animasyonlara geçilmez. Günlük içerik üretimi ise geliştirmeyle aynı anda başlar.
-
-## Çalışmaya katılma
-
-1. Repo davetini kabul et ve depoyu klonla.
-2. Kendi görev sayfandaki başlangıç issue'sunu aç; bağımlılıkları kontrol et.
-3. `main` üzerinden kısa ömürlü bir `codex/...` dalı aç.
-4. Issue kabul ölçütlerini karşılayıp PR aç; kendi doğrulama kanıtını ekle. Review zorunlu değildir.
+## Yerel geliştirme
 
 ```sh
 git clone https://github.com/mehmetalisahingm/quadro.git
 cd quadro
-git switch -c codex/gorev-adi
+npm ci
+npm run dev
 ```
 
-## Geliştirme
-
-### Gereksinimler
-
-- **Node.js ≥ 20.9** (repoda `.nvmrc` = 22; `nvm use` ile eşitleyebilirsin)
-- **npm** (tek paket yöneticisi; kilit dosyası `package-lock.json`)
-- Stack: **Next.js 15 (App Router) + TypeScript**
-
-### Kurulum ve çalıştırma
-
-```sh
-npm ci          # temiz kurulum (CI ile aynı)
-npm run dev     # geliştirme sunucusu → http://localhost:3000
-```
+Yerel uygulama varsayılan olarak `http://localhost:3000` adresinde açılır.
 
 ### Komutlar
 
 | Komut | Açıklama |
 | --- | --- |
 | `npm run dev` | Geliştirme sunucusu |
-| `npm run build` | Üretim derlemesi |
-| `npm run start` | Üretim sunucusu (önce `build`) |
-| `npm run lint` | ESLint CLI (`eslint`, kurallar `.eslintrc.json`) |
-| `npm run typecheck` | TypeScript tip denetimi (`tsc --noEmit`) |
-| `npm run test` | Testler (Vitest) |
-| `npm run validate:content` | Bulmaca içeriğinin resmi doğrulaması ([`CONTENT_SCHEMA.md`](docs/CONTENT_SCHEMA.md)) |
-| `npm run check:bundle` | İstemci paketinde günlük içerik var mı? (önce `build`; [`DAILY_PUBLISHING.md`](docs/DAILY_PUBLISHING.md)) |
-| `npm run check` | lint + typecheck + test + validate:content + build + check:bundle (CI ile aynı sıra) |
+| `npm run build` | Production derlemesi |
+| `npm run start` | Production sunucusu; önce build gerekir |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript tip denetimi |
+| `npm run test` | Vitest testleri |
+| `npm run validate:content` | Bulmaca içerik şeması doğrulaması |
+| `npm run check:bundle` | Günlük/gelecek içerik istemci paketine sızıyor mu kontrolü |
+| `npm run test:browser` | Playwright Chromium + WebKit regresyonu |
+| `npm run check` | lint + typecheck + test + içerik + build + bundle |
 
-CI, her `push` ve `pull_request` üzerinde bu kontrolleri (`npm ci` → lint → typecheck → test → build) çalıştırır: [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+## Ekip ve sorumluluk
 
-### Klasör sahipliği
-
-Sahiplik [`.github/CODEOWNERS`](.github/CODEOWNERS) ve [`CONTRIBUTING.md`](CONTRIBUTING.md) ile aynıdır.
-
-| Yol | Sahip |
+| Kişi | Ana sorumluluk |
 | --- | --- |
-| `src/app/` | Mehmet |
-| `src/components/`, `src/styles/`, `src/animations/`, `public/` | Mehmet |
-| `src/features/game/`, `src/app/api/puzzle/` | Utku |
-| `src/lib/persistence/`, `src/lib/daily/`, `src/lib/analytics/`, `src/lib/monitoring/` | Utku |
-| `package.json`, `package-lock.json`, `.github/workflows/` | Utku |
-| `src/content/`, `docs/` | Mehmet + Utku |
+| Mehmet — [@mehmetalisahingm](https://github.com/mehmetalisahingm) | Ürün/tasarım, ana sayfa ve oyun arayüzü, mobil/görsel kabul, pilot |
+| Utku — [@Utkuuzun14](https://github.com/Utkuuzun14) | Oyun motoru, günlük yayın, kalıcılık/istatistik, CI, performans ve deployment |
 
-> Q01 yalnızca temel iskeleti kurar. `src/app/` içindeki başlangıç kabuğu Mehmet'in ana sayfa görevlerinde (Q05, Q11) geliştirilecektir.
+İçerik stoğu iki yazara bölünmüştür. Yayın stoğuna girecek her bulmaca diğer kişi tarafından bağımsız kalite kontrolünden geçer; yazar kendi içeriğini tek başına yayın için onaylamaz.
+
+## Plan, kalite ve yayın belgeleri
+
+- [Ana proje planı](PROJE_PLANI.md)
+- [Tüm görevler ve bağımlılıklar](docs/GOREVLER.md)
+- [GitHub issue'ları](https://github.com/mehmetalisahingm/quadro/issues)
+- [Çalışma kuralları](CONTRIBUTING.md)
+- [İçerik rezervasyonları](docs/CONTENT_RESERVATIONS.md)
+- [Yayın kontrol listesi](docs/RELEASE_CHECKLIST.md)
+- [Deployment runbook](docs/DEPLOYMENT.md) — Q40 hazırlık branch'i main'e alındığında aktif olur
+- [Pilot planı](docs/research/Q35_PILOT_PLAN.md)
+
+## Yayın ilkeleri
+
+- Gelecek bulmaca cevapları istemci paketine sızdırılmaz.
+- Paylaşım metni cevap/kelime spoiler'ı taşımaz.
+- Kritik hata veya gerçek cihaz kabulü eksikken production release kararı verilmez.
+- Gerçek pilot, gerçek cihaz testi ve iki kişilik yayın onayı otomasyonla taklit edilmez.
+
+Güncel release kararı ve bilinen sınırlar `docs/RELEASE_CHECKLIST.md` dosyasında tutulur.
