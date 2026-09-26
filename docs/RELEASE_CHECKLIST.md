@@ -18,6 +18,17 @@ Bu dosya Q41 için yayın kararı iskeletidir. Bağımlılıklar tamamlanmadan y
 - [ ] Q39 — gerçek cihaz ve son görsel yayın kabulü tamamlandı.
 - [ ] Q40 — preview/production dağıtımı ve rollback prosedürü tamamlandı.
 
+## Şimdiden hazır olan otomatik kanıt
+
+Bunlar release kararının yerine geçmez; final commit üzerinde tekrar doğrulanır.
+
+- Chromium + WebKit Playwright regresyonu CI'da çalışıyor.
+- Birim/jsdom testleri, lint ve TypeScript kontrolü CI kapısında.
+- Production `next build` CI'da doğrulanıyor.
+- İçerik şeması tüm bulmaca dosyaları için doğrulanıyor.
+- Gelecek günlük içeriklerin istemci bundle'ına sızmaması otomatik denetleniyor.
+- Otomatik WebKit kanıtı **gerçek iPhone/Safari kabulü sayılmaz**.
+
 ## İçerik kabulü
 
 - [ ] Yayın takviminde 30 benzersiz gün var.
@@ -80,7 +91,9 @@ Metin ilkeleri:
 
 | Konu | Etki | Geçici çözüm | Takip issue'su | Yayını engelliyor mu? |
 | --- | --- | --- | --- | --- |
-| — | — | — | — | — |
+| Gerçek cihaz kanıtı henüz tamamlanmadı | Safari/iOS ve hedef cihaz davranışı son kez doğrulanmadı | Q39 cihaz matrisi uygulanacak | Q33 / Q36 / Q39 | Evet, final release öncesi |
+| İçerik kör review'ları tamamlanmadı | 30 günlük yayın stoğu henüz karşılıklı onaylı değil | Q28/Q29 tamamlanacak | Q28 / Q29 | Evet |
+| Gerçek pilot yapılmadı | İlk kullanıcı davranışı henüz gerçek katılımcılarla ölçülmedi | En az 20 gerçek katılımcı | Q35 | Evet |
 
 ## Geri bildirim yolu
 
