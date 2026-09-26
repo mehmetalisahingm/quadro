@@ -67,12 +67,13 @@ jobs:
       - name: Playwright test tip denetimi
         run: npm run typecheck:browser
 
-      - name: Chromium ve sistem bağımlılıkları
-        run: npx playwright install --with-deps chromium
+      - name: Chromium, WebKit ve sistem bağımlılıkları
+        run: npx playwright install --with-deps chromium webkit
 
       # Sunucu, testlerin oynadığı sahte yayın stoğuna ve sabit güne sabitlenir; yoksa
       # regresyon takvime bağlı olur ve içeriği olmayan bir günde düşer (Q19).
-      - name: Gerçek tarayıcı regresyonu (Chromium)
+      # WebKit projesi otomatik motor kanıtıdır; gerçek iPhone/Safari kabulünün yerine geçmez.
+      - name: Gerçek tarayıcı regresyonu (Chromium + WebKit)
         env:
           QUADRO_BASE_URL: http://127.0.0.1:3000
           QUADRO_CONTENT_DIR: tests/fixtures/content/puzzles
