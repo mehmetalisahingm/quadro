@@ -38,6 +38,12 @@ export default defineConfig({
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
+    {
+      // Otomatik WebKit kanıtı gerçek iPhone/Safari kabulünün yerine geçmez.
+      // Q36 yalnız motor farklarını CI'da yakalamak için iki tarayıcı ailesini koşar.
+      name: "webkit",
+      use: { ...devices["Desktop Safari"] },
+    },
   ],
   webServer: externalBaseURL
     ? undefined
