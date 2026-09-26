@@ -8,6 +8,7 @@ import {
   type Puzzle,
   type WordId,
 } from "@/features/game/contracts";
+import { trackBrowserEvent } from "@/lib/analytics";
 
 import { formatDuration } from "./presentation";
 
@@ -50,7 +51,17 @@ export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
   const [status, setStatus] = useState("");
   const [showFallback, setShowFallback] = useState(false);
 
-  const copy = async () => {
+  const trackAttempt = (method: "native-share" | "clipboard" | "share-fallback") => {
+    trackBrowserEvent("share_attempt", {
+      puzzleId: puzzle.id,
+      revision: puzzle.revision,
+      method,
+    });
+  };
+
+  const copy = async (recordAttempt = true) => {
+    if (recordAttempt) trackAttempt("clipboard");
+
     try {
       if (!navigator.clipboard?.writeText) throw new Error("clipboard-unavailable");
       await navigator.clipboard.writeText(shareText);
@@ -64,10 +75,12 @@ export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
 
   const share = async () => {
     if (!navigator.share) {
-      await copy();
+      trackAttempt("share-fallback");
+      await copy(false);
       return;
     }
 
+    trackAttempt("native-share");
     try {
       await navigator.share({ title: "Quadro", text: shareText });
       setShowFallback(false);
@@ -96,7 +109,7 @@ export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
         <button type="button" className="q-game-control q-share-primary" onClick={share}>
           Paylaş
         </button>
-        <button type="button" className="q-game-control" onClick={copy}>
+        <button type="button" className="q-game-control" onClick={() => void copy()}>
           Kopyala
         </button>
       </div>

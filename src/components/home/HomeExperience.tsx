@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
+import { trackBrowserEvent } from "@/lib/analytics";
 import { defaultSnapshotStorage } from "@/lib/persistence/storage";
 
 import { HomeHero } from "./HomeHero";
@@ -52,6 +53,7 @@ export function HomeExperience({
   const [player, setPlayer] = useState<HomeStateSnapshot>({ state: "new" });
   const [countdown, setCountdown] = useState(initialCountdownLabel);
   const reloadRequested = useRef(false);
+  const homeViewTracked = useRef(false);
   const { dayKey, puzzleId, puzzleRevision } = today;
 
   useEffect(() => {
@@ -59,7 +61,17 @@ export function HomeExperience({
     const identity: HomePuzzleIdentity = { dayKey, puzzleId, puzzleRevision };
 
     const sync = () => {
-      setPlayer(resolveHomeState(storage, identity));
+      const resolved = resolveHomeState(storage, identity);
+      setPlayer(resolved);
+
+      if (!homeViewTracked.current) {
+        homeViewTracked.current = true;
+        trackBrowserEvent("home_view", {
+          state: resolved.state,
+          dayKey,
+          puzzleAvailable: puzzleId !== null,
+        });
+      }
     };
 
     sync();

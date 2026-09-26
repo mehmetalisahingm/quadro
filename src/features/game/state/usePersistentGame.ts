@@ -16,9 +16,14 @@
  *   sonra gelen durum değişimi sıradan bir güncellemedir, uyuşmazlık değil.
  */
 
-import { useEffect, useMemo, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 
-import type { GameController, Puzzle } from "@/features/game/contracts";
+import {
+  GAME_CONSTANTS,
+  type GameController,
+  type Puzzle,
+} from "@/features/game/contracts";
+import { trackBrowserEvent, trackBrowserEventOnce } from "@/lib/analytics";
 import type { SnapshotStorage } from "@/lib/persistence";
 
 import { createGameStore } from "./gameStore";
@@ -63,10 +68,37 @@ export function usePersistentGame(
 
   // Sunucu ve hidrasyon aynı durumu okur: devralma yalnız etki içinde olur.
   const state = useSyncExternalStore(store.subscribe, store.getState, store.getState);
+  const trackedGameStart = useRef<string | null>(null);
 
   useEffect(() => {
     store.hydrate();
   }, [store]);
+
+  useEffect(() => {
+    const identity = `${puzzle.id}:${puzzle.revision}`;
+    if (
+      trackedGameStart.current === identity ||
+      state.restore.status === "pending" ||
+      state.snapshot.status !== "playing"
+    ) {
+      return;
+    }
+
+    trackedGameStart.current = identity;
+    trackBrowserEvent("game_start", {
+      puzzleId: puzzle.id,
+      revision: puzzle.revision,
+      dayKey: state.snapshot.dayKey,
+      resumed: state.snapshot.attempts.length > 0,
+    });
+  }, [
+    puzzle.id,
+    puzzle.revision,
+    state.restore.status,
+    state.snapshot.attempts.length,
+    state.snapshot.dayKey,
+    state.snapshot.status,
+  ]);
 
   // Aktif süre (Q21): sayaç yalnız bu kanca kurulduğu sürece, yani oyun ekranı
   // DOM'dayken ve sekme görünürken işler. Ana sayfa ve öğretici bu kancayı hiç
@@ -79,7 +111,39 @@ export function usePersistentGame(
       toggleWord: store.toggleWord,
       clearSelection: store.clearSelection,
       shuffle: store.shuffle,
-      submitSelection: store.submitSelection,
+      submitSelection: () => {
+        const before = store.getState().snapshot;
+        const result = store.submitSelection();
+        const verdict = result.outcome.verdict;
+        const accepted = verdict === "correct" || verdict === "one-away" || verdict === "wrong";
+
+        if (before.attempts.length === 0 && accepted) {
+          trackBrowserEvent("first_attempt", {
+            puzzleId: result.snapshot.puzzleId,
+            revision: result.snapshot.puzzleRevision,
+            verdict,
+            mistakesRemaining: result.snapshot.mistakesRemaining,
+          });
+        }
+
+        if (result.snapshot.status !== "playing") {
+          trackBrowserEventOnce(
+            `finish:${result.snapshot.puzzleId}:${result.snapshot.puzzleRevision}`,
+            "game_finish",
+            {
+              puzzleId: result.snapshot.puzzleId,
+              revision: result.snapshot.puzzleRevision,
+              dayKey: result.snapshot.dayKey,
+              status: result.snapshot.status,
+              attemptCount: result.snapshot.attempts.length,
+              mistakesUsed: GAME_CONSTANTS.maxMistakes - result.snapshot.mistakesRemaining,
+              activeSeconds: result.snapshot.activeSeconds,
+            },
+          );
+        }
+
+        return result;
+      },
     }),
     [state.snapshot, store],
   );

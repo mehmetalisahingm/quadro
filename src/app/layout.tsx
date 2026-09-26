@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
+import { AnalyticsRuntime } from "@/lib/analytics/AnalyticsRuntime";
 import {
   APP_NAME,
   APP_TAGLINE,
@@ -87,7 +88,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body>{children}</body>
+      <body>
+        <AnalyticsRuntime />
+        {children}
+      </body>
     </html>
   );
 }
