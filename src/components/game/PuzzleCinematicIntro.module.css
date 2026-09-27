@@ -1,0 +1,321 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  animation: cinematicIn 340ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.overlay::before,
+.overlay::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  pointer-events: none;
+}
+
+.overlay::before {
+  z-index: -2;
+  background:
+    radial-gradient(circle at 50% 44%, rgb(255 255 255 / 0.18), transparent 32%),
+    radial-gradient(circle at 18% 18%, rgb(255 255 255 / 0.12), transparent 26%),
+    radial-gradient(circle at 82% 76%, rgb(255 255 255 / 0.08), transparent 28%);
+  animation: atmosphereDrift 5s ease-in-out infinite alternate;
+}
+
+.overlay::after {
+  z-index: 6;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 48%, rgb(5 10 20 / 0.2) 100%),
+    repeating-radial-gradient(circle at 0 0, rgb(255 255 255 / 0.018) 0 1px, transparent 1px 3px);
+  mix-blend-mode: soft-light;
+  opacity: 0.85;
+}
+
+.overlay[data-theme="ocean"] {
+  background:
+    radial-gradient(circle at 78% 18%, rgb(255 224 135 / 0.52), transparent 19%),
+    linear-gradient(180deg, #5dc8f4 0%, #2b9fd3 38%, #086794 68%, #064468 100%);
+}
+
+.overlay[data-theme="meadow"] {
+  background:
+    radial-gradient(circle at 76% 16%, rgb(255 232 143 / 0.68), transparent 18%),
+    linear-gradient(180deg, #8ed8f7 0%, #ccefff 48%, #73ba66 49%, #286c42 100%);
+}
+
+.overlay[data-theme="sky"] {
+  background:
+    radial-gradient(circle at 78% 20%, rgb(255 236 165 / 0.8), transparent 17%),
+    linear-gradient(180deg, #4ca8ee 0%, #8dd5ff 48%, #dff4ff 100%);
+}
+
+.overlay[data-theme="sunrise"] {
+  background:
+    radial-gradient(circle at 50% 64%, rgb(255 207 109 / 0.66), transparent 27%),
+    linear-gradient(180deg, #292a61 0%, #68446e 28%, #dc745e 58%, #ffbd77 82%, #f7d6a1 100%);
+}
+
+.overlay[data-theme="city"] {
+  background:
+    radial-gradient(circle at 68% 14%, rgb(255 186 122 / 0.24), transparent 25%),
+    linear-gradient(180deg, #151c38 0%, #304468 42%, #66556b 66%, #1d2435 100%);
+}
+
+.exiting {
+  animation: cinematicOut 520ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.sceneFrame {
+  position: relative;
+  width: min(1100px, 112vw);
+  aspect-ratio: 16 / 10;
+  transform: translateY(1.5vh) scale(1.02);
+  filter: saturate(1.08) contrast(1.02) drop-shadow(0 32px 58px rgb(0 0 0 / 0.2));
+}
+
+.lottie {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.lottie :global(svg) {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+.lightSweep {
+  position: absolute;
+  z-index: 3;
+  top: -28%;
+  left: -26%;
+  width: 44%;
+  height: 156%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.22), transparent);
+  filter: blur(24px);
+  transform: rotate(14deg);
+  animation: lightSweep 2.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.brand {
+  position: absolute;
+  z-index: 9;
+  top: clamp(18px, 4vw, 42px);
+  left: clamp(18px, 5vw, 58px);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  border: 1px solid rgb(255 255 255 / 0.24);
+  border-radius: 999px;
+  background: rgb(7 14 27 / 0.18);
+  color: white;
+  font-family: var(--q-font-mono);
+  font-size: 11px;
+  font-weight: var(--q-font-weight-bold);
+  letter-spacing: 0.13em;
+  backdrop-filter: blur(14px) saturate(1.25);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18);
+}
+
+.brandDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 15px currentColor;
+}
+
+.copy {
+  position: absolute;
+  z-index: 9;
+  left: clamp(20px, 7vw, 86px);
+  bottom: clamp(54px, 11vh, 112px);
+  max-width: min(620px, 78vw);
+  color: white;
+  text-shadow: 0 4px 30px rgb(0 0 0 / 0.22);
+  animation: copyRise 720ms 120ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-family: var(--q-font-mono);
+  font-size: clamp(10px, 2vw, 13px);
+  font-weight: var(--q-font-weight-bold);
+  letter-spacing: 0.19em;
+  opacity: 0.78;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(34px, 8vw, 78px);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  font-size: clamp(12px, 2.2vw, 16px);
+  font-weight: var(--q-font-weight-medium);
+  letter-spacing: 0.035em;
+  opacity: 0.82;
+}
+
+.progressTrack {
+  position: absolute;
+  z-index: 10;
+  right: clamp(20px, 5vw, 58px);
+  bottom: clamp(22px, 4vw, 44px);
+  left: clamp(20px, 5vw, 58px);
+  height: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.18);
+}
+
+.progressBar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgb(255 255 255 / 0.5), white);
+  box-shadow: 0 0 16px rgb(255 255 255 / 0.55);
+  transform-origin: left center;
+  animation: progress var(--q-cinematic-duration, 2350ms) linear both;
+}
+
+.fallbackOrb {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: min(58vw, 520px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 255 255 / 0.22), transparent 68%);
+  filter: blur(7px);
+  transform: translate(-50%, -50%);
+  animation: orbPulse 2.1s ease-in-out infinite alternate;
+}
+
+@keyframes cinematicIn {
+  from {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cinematicOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  62% {
+    opacity: 0.34;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.055);
+    filter: blur(9px);
+  }
+}
+
+@keyframes atmosphereDrift {
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5%, 1%, 0) scale(1.045);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-35vw) rotate(14deg);
+  }
+  24% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(150vw) rotate(14deg);
+  }
+}
+
+@keyframes copyRise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes orbPulse {
+  from {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.82);
+  }
+  to {
+    opacity: 0.82;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@media (max-width: 560px) {
+  .sceneFrame {
+    width: 148vw;
+    transform: translateY(-1vh) translateX(-1vw) scale(1.02);
+  }
+
+  .copy {
+    bottom: 74px;
+    max-width: 88vw;
+  }
+
+  .title {
+    max-width: 86vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .overlay::before,
+  .sceneFrame,
+  .lightSweep,
+  .copy,
+  .progressBar,
+  .fallbackOrb {
+    animation: none !important;
+    transition: none !important;
+  }
+}
