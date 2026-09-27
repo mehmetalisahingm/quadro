@@ -1,10 +1,30 @@
 .hero {
+  position: relative;
   width: min(100%, var(--q-content-max));
   margin: 0 auto;
   padding: clamp(24px, 6vw, 72px) 16px 32px;
   display: grid;
   gap: 32px;
   align-items: center;
+}
+
+.loginAction {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  min-height: var(--q-touch-target);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid var(--q-color-border-strong);
+  border-radius: var(--q-radius-pill);
+  background: var(--q-color-surface);
+  color: var(--q-color-ink);
+  font-size: 14px;
+  font-weight: var(--q-font-weight-semibold);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgb(32 36 45 / 0.06);
 }
 
 .copy {
@@ -253,6 +273,7 @@
     transform: translateY(-1px);
   }
 
+  .loginAction:hover,
   .previousAction:hover {
     opacity: 0.72;
   }
@@ -261,6 +282,10 @@
 @media (min-width: 480px) {
   .hero {
     padding-inline: 24px;
+  }
+
+  .loginAction {
+    right: 24px;
   }
 
   .actions {
@@ -287,6 +312,11 @@
     padding-inline: 32px;
   }
 
+  .loginAction {
+    right: 32px;
+    top: 24px;
+  }
+
   .motif {
     display: block;
   }
@@ -296,11 +326,15 @@
   .hero {
     padding-inline: 0;
   }
+
+  .loginAction {
+    right: 0;
+  }
 }
 
 @media (max-width: 479px) {
   .hero {
-    padding-top: 24px;
+    padding-top: 76px;
     gap: 20px;
   }
 
