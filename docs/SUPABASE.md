@@ -23,6 +23,8 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 Gerçek değerler repoya commit edilmez. Lokal geliştirmede `.env.local`, Vercel'de Project Settings → Environment Variables kullanılır.
 
+Yeni `sb_publishable_...` ve `sb_secret_...` anahtarları tercih edilir. Secret key server-side REST çağrısında `apikey` header'ında gönderilir; JWT olmadığı için Bearer token gibi kullanılmaz.
+
 ## Veritabanı
 
 İlk migration:
@@ -36,14 +38,19 @@ Oluşturduğu ana nesneler:
 - `analytics_events` — merkezi ürün olayları.
 - `game_results` — login olmuş kullanıcıların oyun sonuçları.
 - `record_analytics_event(...)` — visitor upsert + analytics insert işlemini atomik yapan server-only RPC.
+- `private` schema — doğrudan Data API yüzeyine çıkmaması gereken trigger yardımcıları.
 
 ## RLS / güvenlik
 
+- `public` şemasındaki bütün uygulama tablolarında RLS açıktır.
 - `visitors` ve `analytics_events` browser'dan doğrudan okunamaz/yazılamaz.
 - Bu iki tabloya yalnız server-side secret key ile çalışan `/api/analytics` yazar.
 - `profiles` yalnız authenticated kullanıcının kendi kaydını okumasına/güncellemesine izin verir.
 - `game_results` yalnız authenticated kullanıcının kendi sonuçlarını okumasına/yazmasına izin verir.
-- Secret key RLS'i bypass ettiği için yalnız server ortamında tutulur.
+- Secret key `service_role` yetkisiyle RLS'i bypass ettiği için yalnız server ortamında tutulur.
+- Auth user trigger'ı için gereken `SECURITY DEFINER` fonksiyonu exposed `public` yerine `private` şemadadır.
+- Analytics RPC `SECURITY INVOKER` çalışır ve yalnız `service_role` rolüne `EXECUTE` verilmiştir.
+- Kullanıcı metadata'sı yetkilendirme kararı için kullanılmaz; yalnız profil görünen adını ilk kez doldurmak için kullanılır.
 
 ## Analytics akışı
 
@@ -51,8 +58,13 @@ Oluşturduğu ana nesneler:
 2. Event localStorage'da tutulmaya devam eder.
 3. Browser `quadro:visitor:v1` anahtarında UUID visitor kimliği oluşturur.
 4. Event `POST /api/analytics` ile aynı origin'e gönderilir.
-5. Next.js server route secret key ile Supabase RPC çağrısı yapar.
-6. DB visitor'ın `last_seen_at` değerini günceller ve event'i kaydeder.
+5. Route event adı, event kimliği, visitor UUID'si ve payload boyutunu doğrular.
+6. Next.js server route secret key ile Supabase RPC çağrısı yapar.
+7. DB visitor'ın `last_seen_at` değerini kendi sunucu saatiyle günceller ve event'i kaydeder.
+
+Her browser event'inin `event.id` değeri DB'de `(visitor_id, client_event_id)` ikilisiyle benzersizdir. Ağ tekrarları aynı olayı ikinci kez saymaz.
+
+`occurred_at` için tarayıcı saati güvenilir kaynak kabul edilmez; merkezi DB kaydı Postgres `now()` zamanını kullanır. Browser event zamanı yalnız local analytics kaydında kalır.
 
 Merkezi analytics erişilemezse oyun akışı hata vermez.
 
@@ -60,7 +72,7 @@ Merkezi analytics erişilemezse oyun akışı hata vermez.
 
 Q43 temel analytics katmanı bilerek şunları toplamaz:
 
-- isim/e-posta (login analytics tablosunda),
+- isim/e-posta (`analytics_events` içinde),
 - IP adresini uygulama DB'sine kopyalama,
 - cevap kelimeleri,
 - seçilen kelimelerin ham listesi,
@@ -72,7 +84,9 @@ Auth kullanıcısının e-postası Supabase Auth içinde kalır; `analytics_even
 
 Quadro'nun auth katmanı **opsiyoneldir**. Sağ üstte `Giriş Yap` bağlantısı görünür; hesap oluşturmadan oyun tam olarak çalışır.
 
-Kullanılan model client-side Supabase Auth implicit flow'dur. Quadro server render sırasında kullanıcıya özel içerik üretmediği için auth session browser `localStorage` içinde tutulur. DB erişimi yine Supabase JWT + RLS ile kullanıcı satırına sınırlandırılır.
+Mevcut ürün modeli client-side Supabase Auth implicit flow'dur. Quadro şu anda server render sırasında kullanıcıya özel içerik üretmediği için auth session browser `localStorage` içinde tutulur. Supabase'in client-only uygulamalar için desteklediği bu modelde DB erişimi kullanıcı JWT'si + RLS ile kendi satırlarına sınırlandırılır.
+
+İleride Server Component/Route Handler tarafında kullanıcı oturumu okunacaksa auth katmanı `@supabase/ssr` + PKCE + cookie modeline taşınmalıdır; implicit tokenları server auth için kullanmamak gerekir.
 
 Session anahtarı:
 
@@ -108,11 +122,23 @@ Google Cloud tarafında Web OAuth client oluşturulur ve Supabase'in Google prov
 
 ### E-posta magic link
 
-Supabase Email Auth varsayılan olarak magic-link destekler. Giriş ekranı `/auth/v1/otp` çağrısıyla tek kullanımlık bağlantı gönderir. Redirect URL'nin Supabase allow-list'inde bulunması gerekir.
+Supabase Email Auth magic-link akışını destekler. Giriş ekranı `/auth/v1/otp` çağrısıyla tek kullanımlık bağlantı gönderir. Redirect URL'nin Supabase allow-list'inde bulunması gerekir.
 
 ## Hesaba sonuç taşıma — sonraki Q43 adımı
 
 Login olduğunda cihazdaki mevcut local oyun geçmişi kullanıcı hesabına bir kez merge edilecek; aynı `puzzle_id + revision` ikinci kez yazılmayacak. Ayrıca mevcut anonim `visitor_id` authenticated kullanıcıyla ilişkilendirilecek.
+
+Bu adım tamamlanmadan “cihazlar arası istatistik senkronu tamamlandı” kabul edilmez.
+
+## Doğrulama kapısı
+
+Production öncesi gerçek Supabase projesinde:
+
+1. migration uygulanır,
+2. security ve performance advisor çalıştırılır,
+3. anonim analytics event'i yazılıp tekrar gönderimde duplicate oluşmadığı SQL ile doğrulanır,
+4. Google ve e-posta login callback'i gerçek redirect URL ile test edilir,
+5. login olmayan oyun akışının değişmediği tekrar kontrol edilir.
 
 ## Vercel
 
