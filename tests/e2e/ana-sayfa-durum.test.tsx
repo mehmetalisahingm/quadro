@@ -92,7 +92,6 @@ describe("ana sayfa · Türkiye gece yarısı", () => {
   it("yeni gün geldiğinde dünkü açık oyunu kaldırmaz ve doğru bulmacaya döndürür", async () => {
     saveSnapshot(inProgressGame(), { storage: window.localStorage });
 
-    // Sunucu artık 21 Eylül'ü yayın günü sayıyor; 20 Eylül oyunu localStorage'da açık kalıyor.
     vi.stubEnv("QUADRO_TODAY", "2026-09-21");
 
     await openHome();
@@ -104,7 +103,6 @@ describe("ana sayfa · Türkiye gece yarısı", () => {
     const resume = screen.getByRole("link", { name: "Önceki oyuna devam et" });
     expect(resume.getAttribute("href")).toBe("/play?day=2026-09-20");
 
-    // Aynı bağlantının gerçek /play karşılığı dünkü içerik + dünkü snapshot'ı açar.
     cleanup();
     render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) }));
     await act(async () => undefined);
@@ -114,14 +112,12 @@ describe("ana sayfa · Türkiye gece yarısı", () => {
     expect(board().getAttribute("aria-label")).toBe("12 çözülmemiş kelimelik oyun tahtası");
   });
 
-  it("day parametresi arşive dönüşmez; yalnız bir önceki yayın gününe izin verir", async () => {
+  it("geçici arşiv modunda aralık dışı day parametresi ilk bulmacaya düşer", async () => {
     vi.stubEnv("QUADRO_TODAY", "2026-09-21");
 
     render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-19" }) }));
 
-    // 21 Eylül fixture'ı taslak olduğu için istek bugüne düşer ve oyun açılmaz;
-    // 19 Eylül'e ait bir arşiv içeriği sunulmaz.
-    expect(screen.getByText("21 EYLÜL 2026")).toBeTruthy();
+    expect(screen.getByText("#1 · 20 EYLÜL 2026")).toBeTruthy();
     expect(screen.queryByText("19 EYLÜL 2026")).toBeNull();
   });
 });

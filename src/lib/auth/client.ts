@@ -36,11 +36,15 @@ export function isSupabaseAuthConfigured(): boolean {
 }
 
 function authHeaders(publishableKey: string, accessToken?: string): HeadersInit {
-  return {
+  const headers: Record<string, string> = {
     apikey: publishableKey,
-    authorization: `Bearer ${accessToken ?? publishableKey}`,
     "content-type": "application/json",
   };
+
+  // Modern sb_publishable_* keys are API keys, not JWTs. They must never be sent
+  // as a Bearer token. Authorization is added only when we have a real user JWT.
+  if (accessToken) headers.authorization = `Bearer ${accessToken}`;
+  return headers;
 }
 
 function parseUser(value: unknown): QuadroAuthUser | null {
@@ -191,7 +195,8 @@ export async function refreshStoredSession(
 
 function callbackUrl(): string {
   if (typeof window === "undefined") return "/auth/callback";
-  return `${window.location.origin}/auth/callback`;
+  const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  return `${configuredSiteUrl || window.location.origin}/auth/callback`;
 }
 
 export function startGoogleSignIn(): void {

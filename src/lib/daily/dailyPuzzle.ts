@@ -6,14 +6,6 @@
  * (`import ... from "@/content/puzzles/..."`); statik içe aktarım tüm günleri paket
  * grafiğine sokar ve yarının cevapları bugün istemciye sızabilir. Dosya sistemi
  * okuması bu sızıntıyı yapısal olarak imkânsız kılar: bir gün, bir dosya.
- *
- * Kurallar bu dosyada tekrar edilmez; şema denetimi ve tip daraltması Q18'in resmi
- * doğrulayıcısından (`src/features/game/validator`) gelir. Buradaki tek ek kural
- * yayın kapısıdır: yalnız `status: "published"` içerik oyuncuya sunulur.
- *
- * Sonuç her zaman {@link DailyPuzzleState} ayrık birleşimidir; yükleyici hata
- * fırlatmaz. Arayüz "içerik yok" durumunu bir kaza değil, beklenen bir durum olarak
- * işler (bkz. Q24).
  */
 
 import { readFile } from "node:fs/promises";
@@ -24,76 +16,31 @@ import { parseDailyPuzzleFile, toPuzzle, type ValidationIssue } from "@/features
 
 import { isPublicationDayKey, resolvePublicationDay } from "./publicationDay";
 
-/**
- * Günlük içerik dizinini değiştiren ortam değişkeni. Yalnız sunucuda okunur;
- * testler ve önizleme dağıtımları gerçek yayın stoğu yerine kendi içeriklerini verir.
- * Göreli yol verilirse süreç çalışma dizinine göre çözümlenir.
- */
 export const CONTENT_DIR_ENV_VAR = "QUADRO_CONTENT_DIR";
-
-/** Yayın stoğunun varsayılan yeri, depo köküne göre. */
 export const DEFAULT_CONTENT_DIR = "src/content/puzzles";
-
-/**
- * Oyuncuya sunulabilecek tek yayın durumu.
- *
- * `docs/CONTENT_SCHEMA.md` sözlüğü Q19 ile kesinleşti: `draft` içerik depoda durur,
- * doğrulayıcıdan geçer ve gözden geçirilir ama yayınlanmaz; `published` içerik kendi
- * gününde sunulur. Kapı gün anahtarından bağımsızdır: tarihi gelmiş bir taslak da
- * yayına çıkmaz.
- */
 export const PUBLISHED_STATUS = "published";
 
-/**
- * Günün bulmacasının neden sunulamadığı. Arayüz için ayrı bir ekran tasarımı değil,
- * makine tarafından okunabilir bir gerekçedir; Q24 metni buna göre seçer.
- *
- * - `no-content`: o güne ait dosya yok (yayın stoğu tükenmiş ya da gün henüz gelmemiş).
- * - `not-published`: dosya var ama `status` alanı `published` değil.
- * - `invalid-content`: dosya bozuk JSON veya şemaya uymuyor.
- * - `unreadable`: dosya var görünüyor ama okunamadı (izin, G/Ç hatası).
- */
 export type DailyMissingReason = "no-content" | "not-published" | "invalid-content" | "unreadable";
 
-/**
- * Bir gün için içerik durumu.
- *
- * `loading` bu yükleyicinin ürettiği bir sonuç değildir: sunucu okuması ya başarılı
- * olur ya da gerekçeli biçimde başarısız. Birleşimde yer almasının nedeni, arayüzün
- * içeriği henüz beklediği anı (akış sırasında, istemci geçişlerinde) aynı `switch`
- * içinde ele alabilmesidir; bkz. {@link loadingState}.
- */
 export type DailyPuzzleState =
   | {
       status: "loading";
-      /** Beklenen yayın günü. */
       dayKey: string;
     }
   | {
       status: "ok";
-      /** Sunulan yayın günü. */
       dayKey: string;
-      /** Oyuncuya gidecek bulmaca; editoryal alanlar soyulmuştur. */
       puzzle: Puzzle;
-      /** İçeriğin okunduğu dosya adı; sunucu günlüğünde kaynağı belli etmek için. */
       source: string;
     }
   | {
       status: "missing";
-      /** İçeriğin arandığı yayın günü. */
       dayKey: string;
-      /** Makine tarafından okunabilir gerekçe. */
       reason: DailyMissingReason;
-      /** Sunucu günlüğü için tek cümlelik Türkçe açıklama; oyuncuya gösterilmez. */
       detail: string;
-      /** Gerekçe `invalid-content` ise doğrulayıcının bulduğu sorunlar, değilse boş. */
       issues: ValidationIssue[];
     };
 
-/**
- * Arayüzün "henüz beklemede" durumu. Sunucu bileşeni bunu üretmez; istemci tarafı
- * geçişlerde ve Q24'ün yükleme ekranında kullanılır.
- */
 export function loadingState(dayKey: string): DailyPuzzleState {
   return { status: "loading", dayKey };
 }
@@ -107,18 +54,6 @@ function missing(
   return { status: "missing", dayKey, reason, detail, issues };
 }
 
-/**
- * Günlük içerik dizinini mutlak yola çözümler.
- *
- * Dizin ortam değişkeninden gelebildiği için yol derleme anında bilinmez. Turbopack
- * böyle bir okumayı gördüğünde, hangi dosyaların gerektiğini kestiremediği için tüm
- * projeyi sunucu çıktısına kopyalar; bu hem dağıtımı şişirir hem de editoryal
- * kayıtları sunucuya taşır. Otomatik izleme bu yüzden kapatılır ve gereken dosyalar
- * `next.config.mjs` içindeki `outputFileTracingIncludes` ile adıyla bildirilir:
- * yalnız `src/content/puzzles/*.json`.
- *
- * @param override Ortam değişkeni yerine kullanılacak dizin.
- */
 export function resolveContentDir(override?: string): string {
   const configured = override ?? process.env[CONTENT_DIR_ENV_VAR];
   const directory =
@@ -131,26 +66,17 @@ export function resolveContentDir(override?: string): string {
     : resolve(/* turbopackIgnore: true */ process.cwd(), directory);
 }
 
-/** {@link loadDailyPuzzle} seçenekleri. */
 export type LoadDailyPuzzleOptions = {
-  /** Yayın gününü belirlemek için değerlendirilecek an; varsayılanı gerçek saattir. */
   now?: Date;
-  /** Gün hesabını tamamen atlayıp doğrudan bu günü yükler. */
   dayKey?: string;
-  /** Ortam değişkeni yerine kullanılacak içerik dizini. */
   contentDir?: string;
+  /**
+   * Geçici test/arşiv akışlarında doğrulanmış `draft` içeriği açar.
+   * Varsayılan false kalır; normal günlük yayın kapısı değişmez.
+   */
+  includeDrafts?: boolean;
 };
 
-/**
- * Yayın gününün bulmacasını yükler.
- *
- * Yalnız tek bir dosya okunur; dizin listelenmez, başka gün açılmaz. Gün anahtarı
- * dosya adına girdiği için önce biçimi doğrulanır: geçersiz bir anahtarla dosya
- * sistemine hiç dokunulmaz, böylece `../` gibi bir değerin yol olarak yorumlanma
- * ihtimali kalmaz.
- *
- * @returns Her zaman bir durum; asla hata fırlatmaz.
- */
 export async function loadDailyPuzzle(
   options: LoadDailyPuzzleOptions = {},
 ): Promise<DailyPuzzleState> {
@@ -203,8 +129,6 @@ export async function loadDailyPuzzle(
     );
   }
 
-  // Dosya adı ile `date` alanının aynı günü göstermesi yalnız dosya kümesinin değil tek
-  // dosyanın da kuralıdır: uyuşmazlarsa hangi günün sunulduğu belirsizleşir.
   if (parsed.file.date !== dayKey) {
     return missing(dayKey, "invalid-content", "Dosya adı ile date alanı farklı gün gösteriyor", [
       {
@@ -217,7 +141,7 @@ export async function loadDailyPuzzle(
     ]);
   }
 
-  if (parsed.file.status !== PUBLISHED_STATUS) {
+  if (!options.includeDrafts && parsed.file.status !== PUBLISHED_STATUS) {
     return missing(
       dayKey,
       "not-published",
@@ -228,10 +152,6 @@ export async function loadDailyPuzzle(
   return { status: "ok", dayKey, puzzle: toPuzzle(parsed.file), source: fileName };
 }
 
-/**
- * Bulmaca kimliğinden arayüzde gösterilen sıra numarasını çıkarır (`q-001` → 1).
- * Kimlik bu kalıba uymuyorsa `null` döner ve arayüz numarayı hiç göstermez.
- */
 export function puzzleNumberFromId(id: string): number | null {
   const match = /(\d+)\s*$/.exec(id);
   if (match === null) return null;
