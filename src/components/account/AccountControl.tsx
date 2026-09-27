@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import {
@@ -15,6 +16,7 @@ import {
 import styles from "./AccountControl.module.css";
 
 export function AccountControl() {
+  const pathname = usePathname();
   const [session, setSession] = useState<QuadroAuthSession | null>(null);
 
   useEffect(() => {
@@ -36,6 +38,8 @@ export function AccountControl() {
       window.removeEventListener("storage", sync);
     };
   }, []);
+
+  if (pathname === "/login" || pathname.startsWith("/auth/")) return null;
 
   if (!session) {
     return (
