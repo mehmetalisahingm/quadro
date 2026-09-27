@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { syncAccountData } from "@/lib/auth/accountSync";
 import {
   AUTH_SESSION_EVENT,
   displayNameForUser,
@@ -24,7 +25,9 @@ export function AccountControl() {
 
     const sync = () => {
       void refreshStoredSession(readStoredSession()).then((next) => {
-        if (active) setSession(next);
+        if (!active) return;
+        setSession(next);
+        if (next) void syncAccountData(next);
       });
     };
 
