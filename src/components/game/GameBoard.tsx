@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import {
   gameTransitionDuration,
@@ -25,6 +25,7 @@ import { GameResult } from "./GameResult";
 import { GameLoading } from "./GameLoading";
 import { MistakeMeter } from "./MistakeMeter";
 import { feedbackMessage } from "./presentation";
+import { PuzzleCinematicIntro } from "./PuzzleCinematicIntro";
 import { RecoveryNotice } from "./RecoveryNotice";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
@@ -79,6 +80,7 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   const [animatedAttempt, setAnimatedAttempt] = useState<AnimatedAttempt | null>(null);
   const [enteringGroupId, setEnteringGroupId] = useState<string | null>(null);
   const [terminalRevealPending, setTerminalRevealPending] = useState(false);
+  const [cinematicDone, setCinematicDone] = useState(false);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const terminalSoundPending = useRef(false);
 
@@ -88,6 +90,14 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     },
     [],
   );
+
+  useEffect(() => {
+    setCinematicDone(false);
+  }, [puzzle.id]);
+
+  const finishCinematic = useCallback(() => {
+    setCinematicDone(true);
+  }, []);
 
   const isPlaying = snapshot.status === "playing";
   const showResult = !isPlaying && !terminalRevealPending;
@@ -194,6 +204,15 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
       aria-labelledby="game-board-title"
       data-transitioning={isTransitioning ? "true" : undefined}
     >
+      {!cinematicDone && isPlaying ? (
+        <PuzzleCinematicIntro
+          puzzleId={puzzle.id}
+          soundEnabled={sounds.enabled}
+          playSound={sounds.play}
+          onDone={finishCinematic}
+        />
+      ) : null}
+
       <RecoveryNotice restore={restore} />
       <div className="q-game-intro">
         <h1 id="game-board-title" className="q-game-title">Gizli bağları bul</h1>
@@ -232,9 +251,10 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
 
           {snapshot.remainingWordOrder.length > 0 ? (
             <div
-              className="q-game-board"
+              className={`q-game-board${cinematicDone ? ` ${motionStyles.boardCinematicReveal}` : ""}`}
               aria-label={`${snapshot.remainingWordOrder.length} çözülmemiş kelimelik oyun tahtası`}
               aria-describedby="game-board-instructions"
+              data-cinematic-ready={cinematicDone ? "true" : undefined}
             >
               {snapshot.remainingWordOrder.map((wordId) => {
                 const word = wordById.get(wordId);
