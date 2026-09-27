@@ -160,4 +160,60 @@ create trigger on_auth_user_created
 after insert on auth.users
 for each row execute function public.handle_new_user();
 
+create or replace function public.record_analytics_event(
+  p_visitor_id uuid,
+  p_event_name text,
+  p_puzzle_id text default null,
+  p_properties jsonb default '{}'::jsonb,
+  p_occurred_at timestamptz default now()
+)
+returns uuid
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_event_id uuid;
+begin
+  if p_event_name not in (
+    'home_view',
+    'game_start',
+    'first_attempt',
+    'game_finish',
+    'share_attempt',
+    'retention_visit'
+  ) then
+    raise exception 'unsupported analytics event';
+  end if;
+
+  insert into public.visitors (visitor_id, first_seen_at, last_seen_at)
+  values (p_visitor_id, p_occurred_at, p_occurred_at)
+  on conflict (visitor_id)
+  do update set last_seen_at = greatest(public.visitors.last_seen_at, excluded.last_seen_at);
+
+  insert into public.analytics_events (
+    visitor_id,
+    event_name,
+    puzzle_id,
+    occurred_at,
+    properties
+  )
+  values (
+    p_visitor_id,
+    p_event_name,
+    p_puzzle_id,
+    p_occurred_at,
+    coalesce(p_properties, '{}'::jsonb)
+  )
+  returning id into v_event_id;
+
+  return v_event_id;
+end;
+$$;
+
+revoke all on function public.record_analytics_event(uuid, text, text, jsonb, timestamptz)
+  from public, anon, authenticated;
+grant execute on function public.record_analytics_event(uuid, text, text, jsonb, timestamptz)
+  to service_role;
+
 commit;
