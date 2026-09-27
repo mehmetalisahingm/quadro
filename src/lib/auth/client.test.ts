@@ -1,6 +1,15 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { displayNameForUser, parseImplicitAuthFragment } from "./client";
+import {
+  displayNameForUser,
+  parseImplicitAuthFragment,
+  sendMagicLink,
+} from "./client";
+
+afterEach(() => {
+  vi.unstubAllEnvs();
+  vi.unstubAllGlobals();
+});
 
 describe("parseImplicitAuthFragment", () => {
   it("parses Supabase implicit callback tokens", () => {
@@ -18,6 +27,24 @@ describe("parseImplicitAuthFragment", () => {
   it("rejects fragments without both tokens", () => {
     expect(parseImplicitAuthFragment("#access_token=only-access")).toBeNull();
     expect(parseImplicitAuthFragment("")).toBeNull();
+  });
+});
+
+describe("Supabase modern API key headers", () => {
+  it("sends sb_publishable key only as apikey for magic-link requests", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://example.supabase.co");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "sb_publishable_test");
+
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true });
+    vi.stubGlobal("fetch", fetchMock);
+
+    await sendMagicLink("mehmet@example.com");
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const init = fetchMock.mock.calls[0]?.[1] as RequestInit | undefined;
+    const headers = init?.headers as Record<string, string> | undefined;
+    expect(headers?.apikey).toBe("sb_publishable_test");
+    expect(headers?.authorization).toBeUndefined();
   });
 });
 
