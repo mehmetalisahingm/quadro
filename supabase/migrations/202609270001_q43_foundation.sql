@@ -186,10 +186,10 @@ begin
     raise exception 'unsupported analytics event';
   end if;
 
-  insert into public.visitors (visitor_id, first_seen_at, last_seen_at)
+  insert into public.visitors as visitor (visitor_id, first_seen_at, last_seen_at)
   values (p_visitor_id, p_occurred_at, p_occurred_at)
   on conflict (visitor_id)
-  do update set last_seen_at = greatest(public.visitors.last_seen_at, excluded.last_seen_at);
+  do update set last_seen_at = greatest(visitor.last_seen_at, excluded.last_seen_at);
 
   insert into public.analytics_events (
     visitor_id,
