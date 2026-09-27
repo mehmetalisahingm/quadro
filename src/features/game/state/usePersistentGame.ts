@@ -7,6 +7,7 @@ import {
 } from "@/features/game/contracts";
 import { trackBrowserEvent, trackBrowserEventOnce } from "@/lib/analytics";
 import type { SnapshotStorage } from "@/lib/persistence";
+import { persistSignedInGameResult } from "@/lib/results/remote";
 
 import { createGameStore } from "./gameStore";
 import type { GameRestoreState } from "./persistentGame";
@@ -105,12 +106,15 @@ export function usePersistentGame(
               activeSeconds: result.snapshot.activeSeconds,
             },
           );
+
+          // Adminın sınırsız-hak test oyunları gerçek oyuncu başarı metriklerini kirletmesin.
+          if (!unlimitedMistakes) persistSignedInGameResult(result.snapshot);
         }
 
         return result;
       },
     }),
-    [state.snapshot, store],
+    [state.snapshot, store, unlimitedMistakes],
   );
 
   return { puzzle, controller, restore: state.restore };
