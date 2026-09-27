@@ -68,6 +68,10 @@ export function HomeHero({
 
   return (
     <section className={styles.hero} aria-labelledby="home-hero-title">
+      <Link className={styles.loginAction} href="/login">
+        Giriş Yap
+      </Link>
+
       <div className={styles.copy}>
         <div className={styles.brandRow}>
           <span className={styles.brand}>QUADRO</span>
