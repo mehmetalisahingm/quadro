@@ -82,6 +82,7 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   const [animatedAttempt, setAnimatedAttempt] = useState<AnimatedAttempt | null>(null);
   const [enteringGroupId, setEnteringGroupId] = useState<string | null>(null);
   const [terminalRevealPending, setTerminalRevealPending] = useState(false);
+  const [cinematicRevealedPuzzleId, setCinematicRevealedPuzzleId] = useState<string | null>(null);
   const [cinematicCompletedPuzzleId, setCinematicCompletedPuzzleId] = useState<string | null>(null);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const terminalSoundPending = useRef(false);
@@ -94,7 +95,12 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   );
 
   const cinematicDone = cinematicCompletedPuzzleId === puzzle.id;
+  const cinematicBoardReady = cinematicDone || cinematicRevealedPuzzleId === puzzle.id;
+  const revealCinematic = useCallback(() => {
+    setCinematicRevealedPuzzleId(puzzle.id);
+  }, [puzzle.id]);
   const finishCinematic = useCallback(() => {
+    setCinematicRevealedPuzzleId(puzzle.id);
     setCinematicCompletedPuzzleId(puzzle.id);
   }, [puzzle.id]);
 
@@ -221,6 +227,7 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
           words={cinematicWords}
           soundEnabled={sounds.enabled}
           playSound={sounds.play}
+          onReveal={revealCinematic}
           onDone={finishCinematic}
         />
       ) : null}
@@ -263,10 +270,10 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
 
           {snapshot.remainingWordOrder.length > 0 ? (
             <div
-              className={`q-game-board${cinematicDone ? ` ${motionStyles.boardCinematicReveal}` : ""}`}
+              className={`q-game-board${cinematicBoardReady ? ` ${motionStyles.boardCinematicReveal}` : ""}`}
               aria-label={`${snapshot.remainingWordOrder.length} çözülmemiş kelimelik oyun tahtası`}
               aria-describedby="game-board-instructions"
-              data-cinematic-ready={cinematicDone ? "true" : undefined}
+              data-cinematic-ready={cinematicBoardReady ? "true" : undefined}
             >
               {snapshot.remainingWordOrder.map((wordId) => {
                 const word = wordById.get(wordId);
