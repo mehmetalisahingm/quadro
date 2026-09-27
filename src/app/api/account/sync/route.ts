@@ -17,6 +17,15 @@ type SyncResult = {
   streakEligible?: unknown;
 };
 
+type ValidatedSyncResult = {
+  dayKey: string;
+  puzzleId: string;
+  puzzleRevision: number;
+  outcome: "won" | "lost";
+  mistakes: number;
+  streakEligible: boolean;
+};
+
 type SyncBody = {
   visitorId?: unknown;
   results?: unknown;
@@ -45,7 +54,7 @@ function readBearerToken(request: Request): string | null {
   return token || null;
 }
 
-function validResult(value: unknown): value is Required<SyncResult> {
+function validResult(value: unknown): value is ValidatedSyncResult {
   if (!value || typeof value !== "object" || Array.isArray(value)) return false;
   const result = value as SyncResult;
   return (
