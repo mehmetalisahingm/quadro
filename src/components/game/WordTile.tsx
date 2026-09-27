@@ -1,6 +1,6 @@
 "use client";
 
-import { type CSSProperties, useEffect, useMemo, useState } from "react";
+import { type CSSProperties, useMemo, useState } from "react";
 
 import type { TileAnimationVerdict } from "@/animations/gameTransitions";
 import type { WordId } from "@/features/game/contracts";
@@ -50,12 +50,6 @@ export function WordTile({
   const [isEntering, setIsEntering] = useState(true);
   const introMotion = useMemo(() => introMotionFor(id), [id]);
 
-  useEffect(() => {
-    setIsEntering(true);
-    const timeout = window.setTimeout(() => setIsEntering(false), 1050);
-    return () => window.clearTimeout(timeout);
-  }, [id]);
-
   const animationClass =
     animation === "wrong"
       ? motionStyles.tileWrong
@@ -78,6 +72,7 @@ export function WordTile({
       aria-pressed={selected}
       disabled={disabled}
       data-animation={animation ?? undefined}
+      onAnimationEnd={() => setIsEntering(false)}
       onClick={() => onToggle(id)}
     >
       {text}
