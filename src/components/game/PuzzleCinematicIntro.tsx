@@ -11,8 +11,9 @@ import type { GameSoundCue } from "@/components/settings/gameSound";
 
 import styles from "./PuzzleCinematicIntro.module.css";
 
-const EXIT_MS = 460;
-const REVEAL_LEAD_MS = 820;
+const EXIT_MS = 720;
+const REVEAL_LEAD_MS = 980;
+const EXIT_LEAD_MS = 360;
 
 function prefersReducedMotion(): boolean {
   return (
@@ -29,7 +30,7 @@ function introCue(theme: PuzzleIntroTheme): GameSoundCue {
 function revealDelay(index: number): number {
   const order = [0, 5, 10, 15, 3, 6, 9, 12, 1, 4, 11, 14, 2, 7, 8, 13] as const;
   const rank = order.indexOf(index as (typeof order)[number]);
-  return Math.max(0, rank) * 26;
+  return Math.max(0, rank) * 24;
 }
 
 export type PuzzleCinematicIntroProps = {
@@ -37,6 +38,7 @@ export type PuzzleCinematicIntroProps = {
   words: readonly string[];
   soundEnabled: boolean;
   playSound: (cue: GameSoundCue) => void;
+  onReveal: () => void;
   onDone: () => void;
 };
 
@@ -45,6 +47,7 @@ export function PuzzleCinematicIntro({
   words,
   soundEnabled,
   playSound,
+  onReveal,
   onDone,
 }: PuzzleCinematicIntroProps) {
   const scene = useMemo(() => puzzleIntroScene(puzzleId), [puzzleId]);
@@ -56,24 +59,34 @@ export function PuzzleCinematicIntro({
   const [exiting, setExiting] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const soundPlayedRef = useRef(false);
+  const revealSentRef = useRef(false);
 
   useEffect(() => {
     if (process.env.NODE_ENV === "test" || prefersReducedMotion()) {
+      onReveal();
       onDone();
       return;
     }
 
     const revealAt = Math.max(900, scene.durationMs - REVEAL_LEAD_MS);
-    const revealTimer = window.setTimeout(() => setRevealing(true), revealAt);
-    const exitTimer = window.setTimeout(() => setExiting(true), scene.durationMs);
-    const doneTimer = window.setTimeout(onDone, scene.durationMs + EXIT_MS);
+    const exitAt = Math.max(revealAt + 360, scene.durationMs - EXIT_LEAD_MS);
+
+    const revealTimer = window.setTimeout(() => {
+      setRevealing(true);
+      if (!revealSentRef.current) {
+        revealSentRef.current = true;
+        onReveal();
+      }
+    }, revealAt);
+    const exitTimer = window.setTimeout(() => setExiting(true), exitAt);
+    const doneTimer = window.setTimeout(onDone, exitAt + EXIT_MS);
 
     return () => {
       window.clearTimeout(revealTimer);
       window.clearTimeout(exitTimer);
       window.clearTimeout(doneTimer);
     };
-  }, [onDone, scene.durationMs]);
+  }, [onDone, onReveal, scene.durationMs]);
 
   useEffect(() => {
     if (!soundEnabled || soundPlayedRef.current) return;
@@ -117,6 +130,7 @@ export function PuzzleCinematicIntro({
           <canvas ref={canvasRef} className={styles.canvas} />
           <div className={styles.sceneBloom} />
           <div className={styles.lightSweep} />
+          <div className={styles.softDissolve} />
 
           <div className={styles.tileGrid}>
             {tiles.map((word, index) => {
@@ -137,7 +151,7 @@ export function PuzzleCinematicIntro({
         <div className={styles.stageFooter}>
           <div className={styles.copy}>
             <p className={styles.title}>{scene.title}</p>
-            <p className={styles.subtitle}>Sahne 16 parçaya ayrılıyor · kelimeler ortaya çıkıyor</p>
+            <p className={styles.subtitle}>16 parça sahneden oyuna yumuşakça dönüşüyor</p>
           </div>
           <span className={styles.counter}>16 / 4 / 4</span>
         </div>
