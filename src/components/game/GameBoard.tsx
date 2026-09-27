@@ -7,6 +7,8 @@ import {
   tileAnimationVerdict,
   type TileAnimationVerdict,
 } from "@/animations/gameTransitions";
+import { SoundPreference } from "@/components/settings/SoundPreference";
+import { useGameSounds } from "@/components/settings/useGameSounds";
 import {
   GAME_CONSTANTS,
   type Puzzle,
@@ -15,27 +17,19 @@ import {
 } from "@/features/game/contracts";
 import { standardPuzzle } from "@/features/game/fixtures";
 import { usePersistentGame } from "@/features/game/state";
-import { SoundPreference } from "@/components/settings/SoundPreference";
-import { useGameSounds } from "@/components/settings/useGameSounds";
+import { currentUserIsAdmin } from "@/lib/auth/admin";
+import { AUTH_SESSION_EVENT, readStoredSession } from "@/lib/auth/client";
 
 import motionStyles from "./GameAnimations.module.css";
 import { GameResult } from "./GameResult";
 import { GameLoading } from "./GameLoading";
-import { RecoveryNotice } from "./RecoveryNotice";
 import { MistakeMeter } from "./MistakeMeter";
 import { feedbackMessage } from "./presentation";
+import { RecoveryNotice } from "./RecoveryNotice";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
 
-export type GameBoardProps = {
-  /**
-   * Oynanacak bulmaca. `/play` bunu Q19 günlük yayın katmanından, sunucuda okunmuş
-   * haliyle geçirir. Verilmezse Q03'ün örnek bulmacası açılır; böylece tahtayı tek
-   * başına çizen mevcut çağrılar (Storybook benzeri denemeler, eski testler)
-   * çalışmaya devam eder.
-   */
-  puzzle?: Puzzle;
-};
+export type GameBoardProps = { puzzle?: Puzzle };
 
 type AnimatedAttempt = {
   wordIds: WordId[];
@@ -51,7 +45,33 @@ function prefersReducedMotion(): boolean {
 }
 
 export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
-  const { puzzle, controller, restore } = usePersistentGame(dailyPuzzle ?? standardPuzzle);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    const syncAdmin = () => {
+      if (!readStoredSession()) {
+        if (active) setIsAdmin(false);
+        return;
+      }
+      void currentUserIsAdmin().then((admin) => {
+        if (active) setIsAdmin(admin);
+      });
+    };
+
+    syncAdmin();
+    window.addEventListener(AUTH_SESSION_EVENT, syncAdmin);
+    window.addEventListener("storage", syncAdmin);
+    return () => {
+      active = false;
+      window.removeEventListener(AUTH_SESSION_EVENT, syncAdmin);
+      window.removeEventListener("storage", syncAdmin);
+    };
+  }, []);
+
+  const { puzzle, controller, restore } = usePersistentGame(dailyPuzzle ?? standardPuzzle, {
+    unlimitedMistakes: isAdmin,
+  });
   const { snapshot } = controller;
   const sounds = useGameSounds();
   const [feedback, setFeedback] = useState<SubmitOutcome | null>(null);
@@ -75,7 +95,6 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
 
   useEffect(() => {
     if (!showResult) return;
-
     const frame = requestAnimationFrame(() => {
       document.getElementById("game-result-title")?.focus({ preventScroll: true });
     });
@@ -83,24 +102,16 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   }, [showResult]);
 
   const wordById = useMemo(
-    () =>
-      new Map(
-        puzzle.groups.flatMap((group) =>
-          group.words.map((word) => [word.id, word] as const),
-        ),
-      ),
+    () => new Map(puzzle.groups.flatMap((group) => group.words.map((word) => [word.id, word] as const))),
     [puzzle],
   );
-
   const groupById = useMemo(
     () => new Map(puzzle.groups.map((group) => [group.id, group] as const)),
     [puzzle],
   );
 
   const canSubmit =
-    isPlaying &&
-    !isTransitioning &&
-    snapshot.selectedWordIds.length === GAME_CONSTANTS.groupSize;
+    isPlaying && !isTransitioning && snapshot.selectedWordIds.length === GAME_CONSTANTS.groupSize;
 
   const feedbackAnimationClass =
     feedback?.verdict === "correct"
@@ -115,11 +126,9 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
 
   const toggleWord = (wordId: WordId) => {
     if (!isPlaying || isTransitioning) return;
-
     const selectionWillChange =
       snapshot.selectedWordIds.includes(wordId) ||
       snapshot.selectedWordIds.length < GAME_CONSTANTS.groupSize;
-
     clearTransientFeedback();
     controller.toggleWord(wordId);
     if (selectionWillChange) sounds.play("select");
@@ -142,7 +151,6 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
       terminalSoundPending.current = false;
       sounds.play("finish");
     }
-
     setIsTransitioning(false);
     setAnimatedAttempt(null);
     setEnteringGroupId(null);
@@ -152,7 +160,6 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
 
   const submitCurrentSelection = () => {
     if (!canSubmit) return;
-
     const submittedWordIds = [...snapshot.selectedWordIds];
     setIsTransitioning(true);
 
@@ -166,27 +173,16 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     terminalSoundPending.current = terminal;
 
     setFeedback(result.outcome);
-    setAnimatedAttempt(
-      tileVerdict ? { wordIds: submittedWordIds, verdict: tileVerdict } : null,
-    );
-    setEnteringGroupId(
-      result.outcome.verdict === "correct" ? result.outcome.solvedGroup.id : null,
-    );
+    setAnimatedAttempt(tileVerdict ? { wordIds: submittedWordIds, verdict: tileVerdict } : null);
+    setEnteringGroupId(result.outcome.verdict === "correct" ? result.outcome.solvedGroup.id : null);
     setTerminalRevealPending(terminal);
 
     if (transitionTimer.current) clearTimeout(transitionTimer.current);
-
-    const duration = gameTransitionDuration(
-      result.outcome,
-      result.snapshot.status,
-      prefersReducedMotion(),
-    );
-
+    const duration = gameTransitionDuration(result.outcome, result.snapshot.status, prefersReducedMotion());
     if (duration === 0) {
       finishVisualTransition();
       return;
     }
-
     transitionTimer.current = setTimeout(finishVisualTransition, duration);
   };
 
@@ -200,50 +196,36 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     >
       <RecoveryNotice restore={restore} />
       <div className="q-game-intro">
-        <h1 id="game-board-title" className="q-game-title">
-          Gizli bağları bul
-        </h1>
+        <h1 id="game-board-title" className="q-game-title">Gizli bağları bul</h1>
         <p id="game-board-instructions" className="q-game-description">
           Birbiriyle bağlantılı dört kelimeyi seç. Dört doğru grup bulduğunda oyun tamamlanır.
         </p>
-        {isPlaying ? (
-          <SoundPreference enabled={sounds.enabled} onChange={sounds.setEnabledByUser} />
-        ) : null}
+        {isAdmin ? <p className="q-game-description"><strong>Admin modu · sınırsız hata hakkı</strong></p> : null}
+        {isPlaying ? <SoundPreference enabled={sounds.enabled} onChange={sounds.setEnabledByUser} /> : null}
       </div>
 
       {showGameSurface ? (
         <>
           <div className="q-game-status-row">
             <span>
-              {isPlaying
-                ? "Dört kelime seç"
-                : snapshot.status === "won"
-                  ? "Son grup bulundu"
-                  : "Son tahmin işlendi"}
+              {isPlaying ? "Dört kelime seç" : snapshot.status === "won" ? "Son grup bulundu" : "Son tahmin işlendi"}
             </span>
             <span className="q-game-selection-count" aria-live="polite" aria-atomic="true">
-              {isPlaying
-                ? `${snapshot.selectedWordIds.length}/${GAME_CONSTANTS.groupSize} seçili`
-                : "Sonuç hazırlanıyor"}
+              {isPlaying ? `${snapshot.selectedWordIds.length}/${GAME_CONSTANTS.groupSize} seçili` : "Sonuç hazırlanıyor"}
             </span>
           </div>
 
           <MistakeMeter
             remaining={snapshot.mistakesRemaining}
             total={GAME_CONSTANTS.maxMistakes}
+            unlimited={isAdmin}
           />
 
           {snapshot.solvedGroupIds.length > 0 ? (
             <div className="q-solved-list" aria-label="Bulduğun gruplar">
               {snapshot.solvedGroupIds.map((groupId) => {
                 const group = groupById.get(groupId);
-                return group ? (
-                  <SolvedGroup
-                    key={groupId}
-                    group={group}
-                    entering={groupId === enteringGroupId}
-                  />
-                ) : null;
+                return group ? <SolvedGroup key={groupId} group={group} entering={groupId === enteringGroupId} /> : null;
               })}
             </div>
           ) : null}
@@ -257,11 +239,7 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
               {snapshot.remainingWordOrder.map((wordId) => {
                 const word = wordById.get(wordId);
                 if (!word) return null;
-
-                const animation = animatedAttempt?.wordIds.includes(wordId)
-                  ? animatedAttempt.verdict
-                  : null;
-
+                const animation = animatedAttempt?.wordIds.includes(wordId) ? animatedAttempt.verdict : null;
                 return (
                   <WordTile
                     key={wordId}
@@ -289,28 +267,13 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
 
           {isPlaying ? (
             <div className="q-game-controls" aria-label="Oyun kontrolleri">
-              <button
-                type="button"
-                className="q-game-control"
-                onClick={shuffle}
-                disabled={isTransitioning || snapshot.remainingWordOrder.length < 2}
-              >
+              <button type="button" className="q-game-control" onClick={shuffle} disabled={isTransitioning || snapshot.remainingWordOrder.length < 2}>
                 Karıştır
               </button>
-              <button
-                type="button"
-                className="q-game-control"
-                onClick={clearSelection}
-                disabled={isTransitioning || snapshot.selectedWordIds.length === 0}
-              >
+              <button type="button" className="q-game-control" onClick={clearSelection} disabled={isTransitioning || snapshot.selectedWordIds.length === 0}>
                 Temizle
               </button>
-              <button
-                type="button"
-                className="q-game-control q-game-submit"
-                onClick={submitCurrentSelection}
-                disabled={!canSubmit}
-              >
+              <button type="button" className="q-game-control q-game-submit" onClick={submitCurrentSelection} disabled={!canSubmit}>
                 {isTransitioning ? "Kontrol ediliyor…" : "Grupla"}
               </button>
             </div>
