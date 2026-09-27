@@ -1,9 +1,20 @@
-export type GameSoundCue = "select" | "wrong" | "one-away" | "correct" | "finish";
+export type GameSoundCue =
+  | "select"
+  | "wrong"
+  | "one-away"
+  | "correct"
+  | "finish"
+  | "intro-ocean"
+  | "intro-meadow"
+  | "intro-sky"
+  | "intro-sunrise"
+  | "intro-city";
 
 export const SOUND_STORAGE_KEY = "quadro:sound:v1";
 
 export type ToneStep = {
   frequency: number;
+  endFrequency?: number;
   offsetMs: number;
   durationMs: number;
   gain: number;
@@ -30,6 +41,32 @@ const CUES: Record<GameSoundCue, readonly ToneStep[]> = {
     { frequency: 659.25, offsetMs: 0, durationMs: 90, gain: 0.03, type: "sine" },
     { frequency: 783.99, offsetMs: 70, durationMs: 110, gain: 0.03, type: "sine" },
     { frequency: 1046.5, offsetMs: 150, durationMs: 150, gain: 0.026, type: "sine" },
+  ],
+  "intro-ocean": [
+    { frequency: 146.83, endFrequency: 110, offsetMs: 0, durationMs: 620, gain: 0.018, type: "sine" },
+    { frequency: 293.66, endFrequency: 392, offsetMs: 180, durationMs: 720, gain: 0.014, type: "sine" },
+    { frequency: 587.33, endFrequency: 783.99, offsetMs: 760, durationMs: 360, gain: 0.012, type: "sine" },
+  ],
+  "intro-meadow": [
+    { frequency: 659.25, offsetMs: 0, durationMs: 140, gain: 0.019, type: "sine" },
+    { frequency: 880, offsetMs: 210, durationMs: 160, gain: 0.016, type: "sine" },
+    { frequency: 1046.5, offsetMs: 430, durationMs: 180, gain: 0.014, type: "sine" },
+    { frequency: 1318.51, offsetMs: 690, durationMs: 210, gain: 0.011, type: "sine" },
+  ],
+  "intro-sky": [
+    { frequency: 392, endFrequency: 523.25, offsetMs: 0, durationMs: 720, gain: 0.014, type: "sine" },
+    { frequency: 587.33, endFrequency: 783.99, offsetMs: 260, durationMs: 680, gain: 0.012, type: "sine" },
+    { frequency: 987.77, offsetMs: 840, durationMs: 170, gain: 0.01, type: "sine" },
+  ],
+  "intro-sunrise": [
+    { frequency: 261.63, endFrequency: 329.63, offsetMs: 0, durationMs: 900, gain: 0.015, type: "sine" },
+    { frequency: 329.63, endFrequency: 392, offsetMs: 180, durationMs: 920, gain: 0.014, type: "sine" },
+    { frequency: 392, endFrequency: 523.25, offsetMs: 420, durationMs: 880, gain: 0.013, type: "sine" },
+  ],
+  "intro-city": [
+    { frequency: 154, endFrequency: 84, offsetMs: 0, durationMs: 500, gain: 0.018, type: "triangle" },
+    { frequency: 246.94, endFrequency: 146.83, offsetMs: 120, durationMs: 640, gain: 0.013, type: "sawtooth" },
+    { frequency: 880, endFrequency: 440, offsetMs: 620, durationMs: 260, gain: 0.01, type: "sine" },
   ],
 };
 
@@ -112,8 +149,11 @@ export function createGameSoundEngine(
 
       oscillator.type = tone.type;
       oscillator.frequency.setValueAtTime(tone.frequency, start);
+      if (tone.endFrequency && tone.endFrequency > 0) {
+        oscillator.frequency.exponentialRampToValueAtTime(tone.endFrequency, stop);
+      }
       gain.gain.setValueAtTime(0.0001, start);
-      gain.gain.exponentialRampToValueAtTime(tone.gain, start + 0.008);
+      gain.gain.exponentialRampToValueAtTime(tone.gain, start + 0.012);
       gain.gain.exponentialRampToValueAtTime(0.0001, stop);
       oscillator.connect(gain);
       gain.connect(audioContext.destination);
