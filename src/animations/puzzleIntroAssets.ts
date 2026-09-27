@@ -31,8 +31,8 @@ const SCENES: Record<PuzzleIntroTheme, Omit<PuzzleIntroScene, "theme">> = {
     durationMs: 2620,
   },
   city: {
-    eyebrow: "ŞEHİR AKIŞI",
-    title: "Hızın içinden 16 parçayı yakala",
+    eyebrow: "FORMULA RUSH",
+    title: "Tek koltuklu yarışçı 16 parçayı yarıp geçiyor",
     durationMs: 2460,
   },
 };
