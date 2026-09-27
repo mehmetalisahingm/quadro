@@ -37,6 +37,8 @@ type AnimatedAttempt = {
   verdict: TileAnimationVerdict;
 };
 
+const CINEMATIC_WORD_ORDER = [0, 5, 10, 15, 3, 6, 9, 12, 1, 4, 11, 14, 2, 7, 8, 13] as const;
+
 function prefersReducedMotion(): boolean {
   return (
     typeof window !== "undefined" &&
@@ -116,6 +118,18 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     () => new Map(puzzle.groups.map((group) => [group.id, group] as const)),
     [puzzle],
   );
+  const cinematicWords = useMemo(() => {
+    if (snapshot.remainingWordOrder.length === 16) {
+      return snapshot.remainingWordOrder
+        .map((wordId) => wordById.get(wordId)?.text)
+        .filter((word): word is string => word !== undefined);
+    }
+
+    const allWords = puzzle.groups.flatMap((group) => group.words);
+    return CINEMATIC_WORD_ORDER
+      .map((index) => allWords[index]?.text)
+      .filter((word): word is string => word !== undefined);
+  }, [puzzle, snapshot.remainingWordOrder, wordById]);
 
   const canSubmit =
     isPlaying && !isTransitioning && snapshot.selectedWordIds.length === GAME_CONSTANTS.groupSize;
@@ -204,6 +218,7 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
       {!cinematicDone && isPlaying ? (
         <PuzzleCinematicIntro
           puzzleId={puzzle.id}
+          words={cinematicWords}
           soundEnabled={sounds.enabled}
           playSound={sounds.play}
           onDone={finishCinematic}
