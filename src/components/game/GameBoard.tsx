@@ -80,7 +80,7 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
   const [animatedAttempt, setAnimatedAttempt] = useState<AnimatedAttempt | null>(null);
   const [enteringGroupId, setEnteringGroupId] = useState<string | null>(null);
   const [terminalRevealPending, setTerminalRevealPending] = useState(false);
-  const [cinematicDone, setCinematicDone] = useState(false);
+  const [cinematicCompletedPuzzleId, setCinematicCompletedPuzzleId] = useState<string | null>(null);
   const transitionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const terminalSoundPending = useRef(false);
 
@@ -91,13 +91,10 @@ export function GameBoard({ puzzle: dailyPuzzle }: GameBoardProps = {}) {
     [],
   );
 
-  useEffect(() => {
-    setCinematicDone(false);
-  }, [puzzle.id]);
-
+  const cinematicDone = cinematicCompletedPuzzleId === puzzle.id;
   const finishCinematic = useCallback(() => {
-    setCinematicDone(true);
-  }, []);
+    setCinematicCompletedPuzzleId(puzzle.id);
+  }, [puzzle.id]);
 
   const isPlaying = snapshot.status === "playing";
   const showResult = !isPlaying && !terminalRevealPending;
