@@ -6,7 +6,6 @@ import { FormEvent, useState } from "react";
 import {
   isSupabaseAuthConfigured,
   sendMagicLink,
-  startGoogleSignIn,
 } from "@/lib/auth/client";
 
 import styles from "./login.module.css";
@@ -44,29 +43,9 @@ export default function LoginPage() {
           Oynamak için hesap şart değil.
         </h1>
         <p className={styles.description}>
-          İstersen giriş yapıp sonuçlarını ve serini hesabına bağlayabilirsin. Hesap açmadan da günlük
-          bulmacayı aynen oynamaya devam edebilirsin.
+          İstersen e-posta ile giriş yapıp sonuçlarını ve serini hesabına bağlayabilirsin. Hesap
+          açmadan da bulmacaları aynen oynamaya devam edebilirsin.
         </p>
-
-        <button
-          className={styles.googleButton}
-          type="button"
-          disabled={!configured}
-          onClick={() => {
-            setError(null);
-            try {
-              startGoogleSignIn();
-            } catch (caught) {
-              setError(caught instanceof Error ? caught.message : "Google girişi başlatılamadı.");
-            }
-          }}
-        >
-          Google ile devam et
-        </button>
-
-        <div className={styles.divider} aria-hidden="true">
-          veya
-        </div>
 
         <form className={styles.form} onSubmit={submitEmail}>
           <label className={styles.label} htmlFor="login-email">
@@ -88,6 +67,8 @@ export default function LoginPage() {
             {sending ? "Gönderiliyor…" : "E-posta ile giriş bağlantısı gönder"}
           </button>
         </form>
+
+        <p className={styles.note}>Google ile giriş, OAuth sağlayıcısı bağlandıktan sonra açılacak.</p>
 
         {!configured ? (
           <p className={styles.note}>
