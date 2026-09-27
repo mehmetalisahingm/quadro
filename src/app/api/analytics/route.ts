@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 const UUID_V4_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const EVENT_ID_PATTERN = /^[A-Za-z0-9:_-]{1,128}$/;
 
 const EVENT_NAMES = new Set([
   "home_view",
@@ -41,6 +42,11 @@ function configuredSupabase(): { url: string; secretKey: string } | null {
 }
 
 export async function POST(request: Request) {
+  const contentType = request.headers.get("content-type") ?? "";
+  if (!contentType.toLowerCase().startsWith("application/json")) {
+    return NextResponse.json({ error: "unsupported_media_type" }, { status: 415 });
+  }
+
   const contentLength = Number(request.headers.get("content-length") ?? "0");
   if (Number.isFinite(contentLength) && contentLength > MAX_BODY_BYTES) {
     return NextResponse.json({ error: "payload_too_large" }, { status: 413 });
@@ -60,6 +66,10 @@ export async function POST(request: Request) {
 
   if (!event || typeof event !== "object") {
     return NextResponse.json({ error: "invalid_event" }, { status: 400 });
+  }
+
+  if (typeof event.id !== "string" || !EVENT_ID_PATTERN.test(event.id)) {
+    return NextResponse.json({ error: "invalid_event_id" }, { status: 400 });
   }
 
   if (typeof event.name !== "string" || !EVENT_NAMES.has(event.name)) {
@@ -95,11 +105,11 @@ export async function POST(request: Request) {
     },
     cache: "no-store",
     body: JSON.stringify({
+      p_client_event_id: event.id,
       p_visitor_id: visitorId,
       p_event_name: event.name,
       p_puzzle_id: resolvePuzzleId(properties),
       p_properties: properties,
-      p_occurred_at: occurredAt.toISOString(),
     }),
   });
 
