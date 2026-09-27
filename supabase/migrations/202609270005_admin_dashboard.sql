@@ -2,40 +2,37 @@ begin;
 
 create or replace function public.admin_dashboard_snapshot(p_limit integer default 50)
 returns jsonb
-language plpgsql
+language sql
+stable
 security definer
 set search_path = ''
 as $$
-declare
-  safe_limit integer := least(greatest(coalesce(p_limit, 50), 1), 100);
-  result jsonb;
-begin
   select jsonb_build_object(
     'totals', jsonb_build_object(
       'visitors', (select count(*) from public.visitors),
       'todayVisitors', (
-        select count(distinct visitor_id)
-        from public.analytics_events
-        where occurred_at >= (date_trunc('day', now() at time zone 'Europe/Istanbul') at time zone 'Europe/Istanbul')
+        select count(distinct e.visitor_id)
+        from public.analytics_events e
+        where e.occurred_at >= (date_trunc('day', now() at time zone 'Europe/Istanbul') at time zone 'Europe/Istanbul')
       ),
       'authenticatedUsers', (select count(*) from auth.users),
-      'gameStarts', (select count(*) from public.analytics_events where event_name = 'game_start'),
-      'gameFinishes', (select count(*) from public.analytics_events where event_name = 'game_finish'),
-      'shares', (select count(*) from public.analytics_events where event_name = 'share_attempt'),
-      'wins', (select count(*) from public.game_results where result = 'won'),
-      'losses', (select count(*) from public.game_results where result = 'lost')
+      'gameStarts', (select count(*) from public.analytics_events e where e.event_name = 'game_start'),
+      'gameFinishes', (select count(*) from public.analytics_events e where e.event_name = 'game_finish'),
+      'shares', (select count(*) from public.analytics_events e where e.event_name = 'share_attempt'),
+      'wins', (select count(*) from public.game_results r where r.result = 'won'),
+      'losses', (select count(*) from public.game_results r where r.result = 'lost')
     ),
     'puzzles', coalesce((
       select jsonb_agg(
         jsonb_build_object(
-          'puzzleId', puzzle_id,
-          'starts', starts,
-          'finishes', finishes,
-          'anonymousOrUnlinkedFinishes', greatest(finishes - recorded_results, 0),
-          'wins', wins,
-          'losses', losses
+          'puzzleId', puzzle_counts.puzzle_id,
+          'starts', puzzle_counts.starts,
+          'finishes', puzzle_counts.finishes,
+          'anonymousOrUnlinkedFinishes', greatest(puzzle_counts.finishes - puzzle_counts.recorded_results, 0),
+          'wins', puzzle_counts.wins,
+          'losses', puzzle_counts.losses
         )
-        order by puzzle_id
+        order by puzzle_counts.puzzle_id
       )
       from (
         select
@@ -46,11 +43,11 @@ begin
           coalesce((select count(*) from public.game_results r where r.puzzle_id = ids.puzzle_id and r.result = 'won'), 0) as wins,
           coalesce((select count(*) from public.game_results r where r.puzzle_id = ids.puzzle_id and r.result = 'lost'), 0) as losses
         from (
-          select distinct puzzle_id
+          select distinct puzzle_ids.puzzle_id
           from (
-            select puzzle_id from public.analytics_events where puzzle_id is not null
+            select e.puzzle_id from public.analytics_events e where e.puzzle_id is not null
             union
-            select puzzle_id from public.game_results
+            select r.puzzle_id from public.game_results r
           ) puzzle_ids
         ) ids
       ) puzzle_counts
@@ -87,13 +84,10 @@ begin
         join auth.users u on u.id = gr.user_id
         left join public.profiles p on p.user_id = gr.user_id
         order by gr.played_at desc
-        limit safe_limit
+        limit least(greatest(coalesce(p_limit, 50), 1), 100)
       ) recent
     ), '[]'::jsonb)
-  ) into result;
-
-  return result;
-end;
+  );
 $$;
 
 revoke all on function public.admin_dashboard_snapshot(integer) from public, anon, authenticated;
