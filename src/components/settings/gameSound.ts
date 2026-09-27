@@ -64,9 +64,9 @@ const CUES: Record<GameSoundCue, readonly ToneStep[]> = {
     { frequency: 392, endFrequency: 523.25, offsetMs: 420, durationMs: 880, gain: 0.013, type: "sine" },
   ],
   "intro-city": [
-    { frequency: 154, endFrequency: 84, offsetMs: 0, durationMs: 500, gain: 0.018, type: "triangle" },
-    { frequency: 246.94, endFrequency: 146.83, offsetMs: 120, durationMs: 640, gain: 0.013, type: "sawtooth" },
-    { frequency: 880, endFrequency: 440, offsetMs: 620, durationMs: 260, gain: 0.01, type: "sine" },
+    { frequency: 92, endFrequency: 245, offsetMs: 0, durationMs: 760, gain: 0.018, type: "sawtooth" },
+    { frequency: 184, endFrequency: 490, offsetMs: 40, durationMs: 720, gain: 0.012, type: "square" },
+    { frequency: 760, endFrequency: 240, offsetMs: 610, durationMs: 330, gain: 0.01, type: "sine" },
   ],
 };
 
@@ -114,6 +114,60 @@ export type GameSoundEngine = {
   play: (cue: GameSoundCue) => Promise<void>;
 };
 
+function playFormulaPass(audioContext: AudioContext, baseTime: number): boolean {
+  if (
+    typeof audioContext.createBiquadFilter !== "function" ||
+    typeof audioContext.createStereoPanner !== "function"
+  ) {
+    return false;
+  }
+
+  const duration = 1.04;
+  const filter = audioContext.createBiquadFilter();
+  const panner = audioContext.createStereoPanner();
+  const master = audioContext.createGain();
+
+  filter.type = "lowpass";
+  filter.Q.setValueAtTime(1.4, baseTime);
+  filter.frequency.setValueAtTime(820, baseTime);
+  filter.frequency.exponentialRampToValueAtTime(3800, baseTime + 0.47);
+  filter.frequency.exponentialRampToValueAtTime(1150, baseTime + duration);
+
+  panner.pan.setValueAtTime(-0.92, baseTime);
+  panner.pan.linearRampToValueAtTime(0.94, baseTime + duration);
+
+  master.gain.setValueAtTime(0.0001, baseTime);
+  master.gain.exponentialRampToValueAtTime(0.065, baseTime + 0.11);
+  master.gain.setValueAtTime(0.065, baseTime + 0.42);
+  master.gain.exponentialRampToValueAtTime(0.0001, baseTime + duration);
+
+  filter.connect(master);
+  master.connect(panner);
+  panner.connect(audioContext.destination);
+
+  const layers = [
+    { type: "sawtooth" as OscillatorType, start: 92, peak: 520, end: 210, gain: 0.7 },
+    { type: "square" as OscillatorType, start: 184, peak: 980, end: 390, gain: 0.2 },
+    { type: "triangle" as OscillatorType, start: 61, peak: 178, end: 88, gain: 0.34 },
+  ];
+
+  for (const layer of layers) {
+    const oscillator = audioContext.createOscillator();
+    const layerGain = audioContext.createGain();
+    oscillator.type = layer.type;
+    oscillator.frequency.setValueAtTime(layer.start, baseTime);
+    oscillator.frequency.exponentialRampToValueAtTime(layer.peak, baseTime + 0.52);
+    oscillator.frequency.exponentialRampToValueAtTime(layer.end, baseTime + duration);
+    layerGain.gain.setValueAtTime(layer.gain, baseTime);
+    oscillator.connect(layerGain);
+    layerGain.connect(filter);
+    oscillator.start(baseTime);
+    oscillator.stop(baseTime + duration + 0.02);
+  }
+
+  return true;
+}
+
 export function createGameSoundEngine(
   createContext: () => AudioContext | null = createBrowserAudioContext,
 ): GameSoundEngine {
@@ -141,6 +195,8 @@ export function createGameSoundEngine(
     if (!audioContext || !(await ensureRunning(audioContext))) return;
 
     const baseTime = audioContext.currentTime;
+    if (cue === "intro-city" && playFormulaPass(audioContext, baseTime)) return;
+
     for (const tone of cuePlan(cue)) {
       const start = baseTime + tone.offsetMs / 1000;
       const stop = start + tone.durationMs / 1000;
