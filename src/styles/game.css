@@ -134,6 +134,8 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 6px;
+  overflow: clip;
+  overflow-clip-margin: 8px;
 }
 
 .q-word-tile {
