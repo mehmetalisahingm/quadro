@@ -2,6 +2,7 @@
 
 import { type CSSProperties, useEffect, useMemo, useRef, useState } from "react";
 
+import { startCinematicCanvas } from "@/animations/cinematicCanvas";
 import {
   puzzleIntroScene,
   type PuzzleIntroTheme,
@@ -10,63 +11,8 @@ import type { GameSoundCue } from "@/components/settings/gameSound";
 
 import styles from "./PuzzleCinematicIntro.module.css";
 
-const LOTTIE_CDN = "https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.13.0/lottie_svg.min.js";
-const EXIT_MS = 520;
-
-type LottieAnimationItem = {
-  destroy: () => void;
-};
-
-type LottieApi = {
-  loadAnimation: (options: {
-    container: Element;
-    renderer: "svg";
-    loop: boolean;
-    autoplay: boolean;
-    animationData: Record<string, unknown>;
-    rendererSettings?: {
-      preserveAspectRatio?: string;
-      progressiveLoad?: boolean;
-    };
-  }) => LottieAnimationItem;
-};
-
-type LottieWindow = Window & {
-  lottie?: LottieApi;
-};
-
-let loaderPromise: Promise<LottieApi | null> | null = null;
-
-function loadLottieRuntime(): Promise<LottieApi | null> {
-  if (typeof window === "undefined") return Promise.resolve(null);
-  const lottieWindow = window as LottieWindow;
-  if (lottieWindow.lottie) return Promise.resolve(lottieWindow.lottie);
-  if (loaderPromise) return loaderPromise;
-
-  loaderPromise = new Promise((resolve) => {
-    const finish = () => resolve((window as LottieWindow).lottie ?? null);
-    const existing = document.querySelector<HTMLScriptElement>("script[data-quadro-lottie]");
-
-    if (existing) {
-      existing.addEventListener("load", finish, { once: true });
-      existing.addEventListener("error", () => resolve(null), { once: true });
-      window.setTimeout(finish, 2200);
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = LOTTIE_CDN;
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    script.dataset.quadroLottie = "true";
-    script.addEventListener("load", finish, { once: true });
-    script.addEventListener("error", () => resolve(null), { once: true });
-    document.head.appendChild(script);
-    window.setTimeout(finish, 2200);
-  });
-
-  return loaderPromise;
-}
+const EXIT_MS = 460;
+const REVEAL_LEAD_MS = 820;
 
 function prefersReducedMotion(): boolean {
   return (
@@ -80,8 +26,15 @@ function introCue(theme: PuzzleIntroTheme): GameSoundCue {
   return `intro-${theme}` as GameSoundCue;
 }
 
+function revealDelay(index: number): number {
+  const order = [0, 5, 10, 15, 3, 6, 9, 12, 1, 4, 11, 14, 2, 7, 8, 13] as const;
+  const rank = order.indexOf(index as (typeof order)[number]);
+  return Math.max(0, rank) * 26;
+}
+
 export type PuzzleCinematicIntroProps = {
   puzzleId: string;
+  words: readonly string[];
   soundEnabled: boolean;
   playSound: (cue: GameSoundCue) => void;
   onDone: () => void;
@@ -89,14 +42,19 @@ export type PuzzleCinematicIntroProps = {
 
 export function PuzzleCinematicIntro({
   puzzleId,
+  words,
   soundEnabled,
   playSound,
   onDone,
 }: PuzzleCinematicIntroProps) {
   const scene = useMemo(() => puzzleIntroScene(puzzleId), [puzzleId]);
+  const tiles = useMemo(
+    () => Array.from({ length: 16 }, (_, index) => words[index] ?? "QUADRO"),
+    [words],
+  );
+  const [revealing, setRevealing] = useState(false);
   const [exiting, setExiting] = useState(false);
-  const lottieContainerRef = useRef<HTMLDivElement | null>(null);
-  const animationRef = useRef<LottieAnimationItem | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const soundPlayedRef = useRef(false);
 
   useEffect(() => {
@@ -105,10 +63,13 @@ export function PuzzleCinematicIntro({
       return;
     }
 
+    const revealAt = Math.max(900, scene.durationMs - REVEAL_LEAD_MS);
+    const revealTimer = window.setTimeout(() => setRevealing(true), revealAt);
     const exitTimer = window.setTimeout(() => setExiting(true), scene.durationMs);
     const doneTimer = window.setTimeout(onDone, scene.durationMs + EXIT_MS);
 
     return () => {
+      window.clearTimeout(revealTimer);
       window.clearTimeout(exitTimer);
       window.clearTimeout(doneTimer);
     };
@@ -121,64 +82,69 @@ export function PuzzleCinematicIntro({
   }, [playSound, scene.theme, soundEnabled]);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "test") return;
-    let cancelled = false;
-
-    void loadLottieRuntime().then((lottie) => {
-      if (cancelled || !lottie || !lottieContainerRef.current) return;
-      animationRef.current?.destroy();
-      animationRef.current = lottie.loadAnimation({
-        container: lottieContainerRef.current,
-        renderer: "svg",
-        loop: false,
-        autoplay: true,
-        animationData: scene.animationData,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice",
-          progressiveLoad: true,
-        },
-      });
-    });
-
-    return () => {
-      cancelled = true;
-      animationRef.current?.destroy();
-      animationRef.current = null;
-    };
-  }, [scene]);
+    const canvas = canvasRef.current;
+    if (!canvas || process.env.NODE_ENV === "test" || prefersReducedMotion()) return undefined;
+    return startCinematicCanvas(canvas, scene.theme, puzzleId);
+  }, [puzzleId, scene.theme]);
 
   if (process.env.NODE_ENV === "test") return null;
 
-  const style = {
+  const overlayStyle = {
     "--q-cinematic-duration": `${scene.durationMs}ms`,
   } as CSSProperties;
 
   return (
     <div
-      className={`${styles.overlay}${exiting ? ` ${styles.exiting}` : ""}`}
+      className={`${styles.overlay}${revealing ? ` ${styles.revealing}` : ""}${exiting ? ` ${styles.exiting}` : ""}`}
       data-theme={scene.theme}
-      style={style}
+      style={overlayStyle}
       aria-hidden="true"
     >
-      <div className={styles.fallbackOrb} />
-      <div className={styles.sceneFrame}>
-        <div ref={lottieContainerRef} className={styles.lottie} />
-        <div className={styles.lightSweep} />
-      </div>
+      <div className={styles.backdropGlow} />
 
-      <div className={styles.brand}>
-        <span className={styles.brandDot} />
-        QUADRO // #{puzzleId.replace(/\D/g, "") || "01"}
-      </div>
+      <div className={styles.stage}>
+        <div className={styles.stageHeader}>
+          <div className={styles.brand}>
+            <span className={styles.brandDot} />
+            <span>QUADRO</span>
+            <span className={styles.brandDivider}>/</span>
+            <span>#{puzzleId.replace(/\D/g, "") || "01"}</span>
+          </div>
+          <span className={styles.themeLabel}>{scene.eyebrow}</span>
+        </div>
 
-      <div className={styles.copy}>
-        <p className={styles.eyebrow}>{scene.eyebrow}</p>
-        <p className={styles.title}>{scene.title}</p>
-        <p className={styles.subtitle}>16 kelime hazırlanıyor · bağlantıları yakala</p>
-      </div>
+        <div className={styles.mosaic}>
+          <canvas ref={canvasRef} className={styles.canvas} />
+          <div className={styles.sceneBloom} />
+          <div className={styles.lightSweep} />
 
-      <div className={styles.progressTrack}>
-        <span className={styles.progressBar} />
+          <div className={styles.tileGrid}>
+            {tiles.map((word, index) => {
+              const tileStyle = {
+                "--q-tile-delay": `${revealDelay(index)}ms`,
+              } as CSSProperties;
+              return (
+                <div key={`${puzzleId}:${index}`} className={styles.tile} style={tileStyle}>
+                  <span className={styles.tileSheen} />
+                  <span className={styles.tileNumber}>{String(index + 1).padStart(2, "0")}</span>
+                  <span className={styles.tileWord}>{word}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className={styles.stageFooter}>
+          <div className={styles.copy}>
+            <p className={styles.title}>{scene.title}</p>
+            <p className={styles.subtitle}>Sahne 16 parçaya ayrılıyor · kelimeler ortaya çıkıyor</p>
+          </div>
+          <span className={styles.counter}>16 / 4 / 4</span>
+        </div>
+
+        <div className={styles.progressTrack}>
+          <span className={styles.progressBar} />
+        </div>
       </div>
     </div>
   );
