@@ -68,16 +68,51 @@ Q43 temel analytics katmanı bilerek şunları toplamaz:
 
 Auth kullanıcısının e-postası Supabase Auth içinde kalır; `analytics_events` içine kopyalanmaz.
 
-## Auth — sonraki adım
+## Auth
 
-Auth katmanı için Next.js SSR cookie akışı kullanılacak. Sağ üstte `Giriş Yap` bağlantısı bulunacak; oyun login olmadan tam çalışacak.
+Quadro'nun auth katmanı **opsiyoneldir**. Sağ üstte `Giriş Yap` bağlantısı görünür; hesap oluşturmadan oyun tam olarak çalışır.
 
-İlk sağlayıcılar:
+Kullanılan model client-side Supabase Auth implicit flow'dur. Quadro server render sırasında kullanıcıya özel içerik üretmediği için auth session browser `localStorage` içinde tutulur. DB erişimi yine Supabase JWT + RLS ile kullanıcı satırına sınırlandırılır.
+
+Session anahtarı:
+
+`quadro:auth:v1`
+
+Desteklenen girişler:
 
 1. Google OAuth
-2. E-posta magic-link / OTP
+2. E-posta magic link
 
-Login olduğunda cihazdaki mevcut local oyun geçmişi kullanıcı hesabına bir kez merge edilecek; aynı `puzzle_id + revision` ikinci kez yazılmayacak.
+Callback yolu:
+
+`/auth/callback`
+
+Callback access/refresh token çiftini URL fragment'ından alır, `/auth/v1/user` ile kullanıcıyı doğrular ve ardından URL'den token fragment'ını temizler.
+
+Access token sona yaklaşınca refresh token ile `/auth/v1/token?grant_type=refresh_token` çağrısı yapılır. Çıkışta uzak Supabase oturumu kapatılmaya çalışılır ve yerel session her durumda temizlenir.
+
+### Supabase URL Configuration
+
+Supabase Dashboard → Authentication → URL Configuration:
+
+- Site URL lokal geliştirmede `http://localhost:3000`
+- Allowed Redirect URLs içine `http://localhost:3000/auth/callback`
+- Production deploy sonrası `https://<production-domain>/auth/callback`
+- Vercel preview ile auth test edilecekse gerekli preview pattern'i ayrıca allow-list'e eklenir.
+
+### Google sağlayıcısı
+
+Google login için Supabase Dashboard → Authentication → Providers → Google etkinleştirilir.
+
+Google Cloud tarafında Web OAuth client oluşturulur ve Supabase'in Google provider ekranında gösterdiği callback URL Google `Authorized redirect URIs` listesine eklenir. Google Client ID ve Client Secret yalnız Supabase provider ayarına girilir; Quadro reposuna veya `NEXT_PUBLIC_*` değişkenlerine konmaz.
+
+### E-posta magic link
+
+Supabase Email Auth varsayılan olarak magic-link destekler. Giriş ekranı `/auth/v1/otp` çağrısıyla tek kullanımlık bağlantı gönderir. Redirect URL'nin Supabase allow-list'inde bulunması gerekir.
+
+## Hesaba sonuç taşıma — sonraki Q43 adımı
+
+Login olduğunda cihazdaki mevcut local oyun geçmişi kullanıcı hesabına bir kez merge edilecek; aynı `puzzle_id + revision` ikinci kez yazılmayacak. Ayrıca mevcut anonim `visitor_id` authenticated kullanıcıyla ilişkilendirilecek.
 
 ## Vercel
 

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
+import { AccountControl } from "@/components/account/AccountControl";
 import { AnalyticsRuntime } from "@/lib/analytics/AnalyticsRuntime";
 import {
   APP_NAME,
@@ -90,6 +91,7 @@ export default function RootLayout({
     <html lang="tr">
       <body>
         <AnalyticsRuntime />
+        <AccountControl />
         {children}
       </body>
     </html>
