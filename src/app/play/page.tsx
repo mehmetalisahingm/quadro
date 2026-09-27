@@ -29,7 +29,7 @@ export async function generateMetadata({ searchParams }: PlayPageProps): Promise
         description: TUTORIAL_DESCRIPTION,
       }
     : {
-        title: "Quadro bulmacaları",
+        title: "Bugünün bulmacası",
         description: PLAY_DESCRIPTION,
       };
 }
@@ -63,7 +63,7 @@ function dailyKicker(state: DailyPuzzleState): string {
   if (state.status !== "ok") return dayLabel;
 
   const number = puzzleNumberFromId(state.puzzle.id);
-  return number === null ? dayLabel : `#${number} / 30 · ${dayLabel}`;
+  return number === null ? dayLabel : `#${number} · ${dayLabel}`;
 }
 
 export default async function PlayPage({ searchParams }: PlayPageProps) {
