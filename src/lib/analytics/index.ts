@@ -1,3 +1,5 @@
+import { forwardAnalyticsEvent } from "./remote";
+
 export const ANALYTICS_STORAGE_KEY = "quadro:analytics:v1";
 export const ANALYTICS_DEDUPE_KEY = "quadro:analytics:dedupe:v1";
 export const ANALYTICS_COHORT_KEY = "quadro:analytics:cohort:v1";
@@ -165,6 +167,7 @@ function dispatchBrowserEvent(event: AnalyticsEvent): void {
   if (typeof window === "undefined" || typeof window.dispatchEvent !== "function") return;
   try {
     window.dispatchEvent(new CustomEvent(ANALYTICS_BROWSER_EVENT, { detail: event }));
+    forwardAnalyticsEvent(event);
   } catch {
     // Ölçüm hiçbir zaman ürün akışını bozmamalı.
   }
