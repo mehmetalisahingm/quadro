@@ -13,7 +13,7 @@ export default function AuthCallbackPage() {
     const authError = params.get("error_description") ?? params.get("error");
     if (authError) {
       window.history.replaceState({}, "", window.location.pathname);
-      setError(authError);
+      void Promise.resolve().then(() => setError(authError));
       return;
     }
 
