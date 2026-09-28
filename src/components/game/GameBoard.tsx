@@ -32,7 +32,7 @@ import { GameResult } from "./GameResult";
 import { GameLoading } from "./GameLoading";
 import { MistakeMeter } from "./MistakeMeter";
 import { feedbackMessage } from "./presentation";
-import { PuzzleCinematicIntro } from "./PuzzleCinematicIntro";
+import { CardShuffleIntro } from "./CardShuffleIntro";
 import { RecoveryNotice } from "./RecoveryNotice";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
@@ -246,7 +246,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       data-difficulty={difficulty}
     >
       {!cinematicDone && isPlaying ? (
-        <PuzzleCinematicIntro
+        <CardShuffleIntro
           puzzleId={puzzle.id}
           words={cinematicWords}
           soundEnabled={sounds.enabled}
