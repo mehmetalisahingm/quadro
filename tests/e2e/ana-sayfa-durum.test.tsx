@@ -14,6 +14,8 @@ import { saveSnapshot } from "@/lib/persistence";
 
 import {
   board,
+  createUser,
+  enterGame,
   puzzle,
   registerFlowHooks,
 } from "./helpers";
@@ -106,6 +108,9 @@ describe("ana sayfa · Türkiye gece yarısı", () => {
     cleanup();
     render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) }));
     await act(async () => undefined);
+    // Eski kayıtta mod tercihi yoksa kitapçık açılır; seçim ilerlemeyi sıfırlamaz.
+    expect(screen.getByRole("button", { name: "Bağlantıları bul" })).toBeTruthy();
+    await enterGame(createUser());
 
     expect(screen.getByText("#1 · 20 EYLÜL 2026")).toBeTruthy();
     expect(screen.getByRole("article", { name: "Çözülen grup: RENKLER" })).toBeTruthy();

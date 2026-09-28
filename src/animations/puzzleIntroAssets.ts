@@ -13,27 +13,27 @@ const SCENES: Record<PuzzleIntroTheme, Omit<PuzzleIntroScene, "theme">> = {
   ocean: {
     eyebrow: "OKYANUS AKIŞI",
     title: "Dalgaların içinden bağlantıları bul",
-    durationMs: 2580,
+    durationMs: 2850,
   },
   meadow: {
     eyebrow: "CANLANAN BAHÇE",
     title: "Parçalar çiçek gibi açılıyor",
-    durationMs: 2580,
+    durationMs: 2850,
   },
   sky: {
     eyebrow: "AÇIK GÖKYÜZÜ",
     title: "Bulutların arasından tablo beliriyor",
-    durationMs: 2520,
+    durationMs: 2850,
   },
   sunrise: {
     eyebrow: "İLK IŞIK",
     title: "Gün doğarken bağlantılar ortaya çıkıyor",
-    durationMs: 2620,
+    durationMs: 2850,
   },
   city: {
     eyebrow: "FORMULA RUSH",
     title: "Tek koltuklu yarışçı 16 parçayı yarıp geçiyor",
-    durationMs: 2460,
+    durationMs: 2850,
   },
 };
 

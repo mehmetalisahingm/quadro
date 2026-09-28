@@ -159,7 +159,7 @@ describe("oyun kontrolleri", () => {
     expect(screen.queryByText(/^(Grupla|Kontrol ediliyor…)$/, { selector: "button" })).toBeNull();
     expect(screen.queryByText(/seçili$/)).toBeNull();
     expect(feedbackText()).toBe("");
-    expect(buttonTexts()).toEqual(["Paylaş", "Kopyala"]);
+    expect(buttonTexts()).toEqual(["Kural kitapçığı ↗", "Paylaş", "Kopyala"]);
   });
 });
 

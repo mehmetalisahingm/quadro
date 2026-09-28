@@ -767,6 +767,7 @@ export function startCinematicCanvas(
   canvas: HTMLCanvasElement,
   theme: PuzzleIntroTheme,
   seedText: string,
+  onFrame?: (source: HTMLCanvasElement) => void,
 ): () => void {
   const context = canvas.getContext("2d", { alpha: false });
   if (!context) return () => undefined;
@@ -793,9 +794,9 @@ export function startCinematicCanvas(
   const draw = (timestamp: number) => {
     if (stopped) return;
     if (startedAt === 0) startedAt = timestamp;
-    resize();
     context.setTransform(dpr, 0, 0, dpr, 0, 0);
     renderTheme(context, theme, width, height, (timestamp - startedAt) / 1000, state);
+    onFrame?.(canvas);
     frame = window.requestAnimationFrame(draw);
   };
 

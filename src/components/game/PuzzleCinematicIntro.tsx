@@ -1,36 +1,13 @@
 "use client";
 
-import { type CSSProperties, useEffect, useMemo, useRef, useState } from "react";
-
+import { type CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { startCinematicCanvas } from "@/animations/cinematicCanvas";
-import {
-  puzzleIntroScene,
-  type PuzzleIntroTheme,
-} from "@/animations/puzzleIntroAssets";
+import { puzzleIntroScene, type PuzzleIntroTheme } from "@/animations/puzzleIntroAssets";
 import type { GameSoundCue } from "@/components/settings/gameSound";
-
 import styles from "./PuzzleCinematicIntro.module.css";
-
-const EXIT_MS = 720;
-const REVEAL_LEAD_MS = 980;
-const EXIT_LEAD_MS = 360;
-
-function prefersReducedMotion(): boolean {
-  return (
-    typeof window !== "undefined" &&
-    typeof window.matchMedia === "function" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
-}
 
 function introCue(theme: PuzzleIntroTheme): GameSoundCue {
   return `intro-${theme}` as GameSoundCue;
-}
-
-function revealDelay(index: number): number {
-  const order = [0, 5, 10, 15, 3, 6, 9, 12, 1, 4, 11, 14, 2, 7, 8, 13] as const;
-  const rank = order.indexOf(index as (typeof order)[number]);
-  return Math.max(0, rank) * 24;
 }
 
 export type PuzzleCinematicIntroProps = {
@@ -43,122 +20,127 @@ export type PuzzleCinematicIntroProps = {
 };
 
 export function PuzzleCinematicIntro({
-  puzzleId,
-  words,
-  soundEnabled,
-  playSound,
-  onReveal,
-  onDone,
+  puzzleId, words, soundEnabled, playSound, onReveal, onDone,
 }: PuzzleCinematicIntroProps) {
   const scene = useMemo(() => puzzleIntroScene(puzzleId), [puzzleId]);
-  const tiles = useMemo(
-    () => Array.from({ length: 16 }, (_, index) => words[index] ?? "QUADRO"),
-    [words],
-  );
+  const tiles = useMemo(() => Array.from({ length: 16 }, (_, index) => words[index] ?? "QUADRO"), [words]);
   const [revealing, setRevealing] = useState(false);
   const [exiting, setExiting] = useState(false);
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const mosaicRef = useRef<HTMLDivElement>(null);
+  const fragmentsRef = useRef<(HTMLCanvasElement | null)[]>([]);
   const soundPlayedRef = useRef(false);
   const revealSentRef = useRef(false);
+  const doneSentRef = useRef(false);
+  const callbacksRef = useRef({ onReveal, onDone });
+
+  useEffect(() => { callbacksRef.current = { onReveal, onDone }; }, [onReveal, onDone]);
+
+  const reveal = useCallback(() => {
+    if (revealSentRef.current) return;
+    revealSentRef.current = true;
+    callbacksRef.current.onReveal();
+  }, []);
+
+  const finish = useCallback(() => {
+    if (doneSentRef.current) return;
+    doneSentRef.current = true;
+    reveal();
+    callbacksRef.current.onDone();
+  }, [reveal]);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "test" || prefersReducedMotion()) {
-      onReveal();
-      onDone();
+    const media = window.matchMedia?.("(prefers-reduced-motion: reduce)");
+    if (process.env.NODE_ENV === "test" || media?.matches) {
+      finish();
       return;
     }
-
-    const revealAt = Math.max(900, scene.durationMs - REVEAL_LEAD_MS);
-    const exitAt = Math.max(revealAt + 360, scene.durationMs - EXIT_LEAD_MS);
-
     const revealTimer = window.setTimeout(() => {
       setRevealing(true);
-      if (!revealSentRef.current) {
-        revealSentRef.current = true;
-        onReveal();
+      reveal();
+    }, scene.durationMs - 1580);
+    const exitTimer = window.setTimeout(() => {
+      // Land the same sixteen image fragments on the actual playing surface.
+      const mosaic = mosaicRef.current;
+      const board = mosaic?.closest(".q-game-shell")?.querySelector(".q-game-board");
+      if (mosaic && board) {
+        const source = mosaic.getBoundingClientRect();
+        const target = board.getBoundingClientRect();
+        if (source.width && source.height && target.width && target.height) {
+          mosaic.style.setProperty("--handoff-x", `${target.left - source.left}px`);
+          mosaic.style.setProperty("--handoff-y", `${target.top - source.top}px`);
+          mosaic.style.setProperty("--handoff-scale-x", `${target.width / source.width}`);
+          mosaic.style.setProperty("--handoff-scale-y", `${target.height / source.height}`);
+        }
       }
-    }, revealAt);
-    const exitTimer = window.setTimeout(() => setExiting(true), exitAt);
-    const doneTimer = window.setTimeout(onDone, exitAt + EXIT_MS);
-
+      setExiting(true);
+    }, scene.durationMs - 680);
+    const doneTimer = window.setTimeout(finish, scene.durationMs);
+    const preferenceChange = (event: MediaQueryListEvent) => { if (event.matches) finish(); };
+    media?.addEventListener?.("change", preferenceChange);
     return () => {
       window.clearTimeout(revealTimer);
       window.clearTimeout(exitTimer);
       window.clearTimeout(doneTimer);
+      media?.removeEventListener?.("change", preferenceChange);
     };
-  }, [onDone, onReveal, scene.durationMs]);
+  }, [finish, reveal, scene.durationMs]);
 
   useEffect(() => {
-    if (!soundEnabled || soundPlayedRef.current) return;
+    if (!soundEnabled || soundPlayedRef.current || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
     soundPlayedRef.current = true;
     playSound(introCue(scene.theme));
   }, [playSound, scene.theme, soundEnabled]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || process.env.NODE_ENV === "test" || prefersReducedMotion()) return undefined;
-    return startCinematicCanvas(canvas, scene.theme, puzzleId);
+    if (!canvas || process.env.NODE_ENV === "test" || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const fragments = fragmentsRef.current.map((fragment) => ({
+      canvas: fragment, context: fragment?.getContext("2d", { alpha: false }),
+    }));
+    return startCinematicCanvas(canvas, scene.theme, puzzleId, (source) => {
+      fragments.forEach(({ canvas: fragment, context }, index) => {
+        if (!fragment || !context) return;
+        const x = Math.round((index % 4) * source.width / 4);
+        const y = Math.round(Math.floor(index / 4) * source.height / 4);
+        const width = Math.round(((index % 4) + 1) * source.width / 4) - x;
+        const height = Math.round((Math.floor(index / 4) + 1) * source.height / 4) - y;
+        if (fragment.width !== width) fragment.width = width;
+        if (fragment.height !== height) fragment.height = height;
+        context.drawImage(source, x, y, width, height, 0, 0, width, height);
+      });
+    });
   }, [puzzleId, scene.theme]);
 
   if (process.env.NODE_ENV === "test") return null;
 
-  const overlayStyle = {
-    "--q-cinematic-duration": `${scene.durationMs}ms`,
-  } as CSSProperties;
-
   return (
-    <div
-      className={`${styles.overlay}${revealing ? ` ${styles.revealing}` : ""}${exiting ? ` ${styles.exiting}` : ""}`}
-      data-theme={scene.theme}
-      style={overlayStyle}
-      aria-hidden="true"
-    >
-      <div className={styles.backdropGlow} />
-
+    <div className={`${styles.overlay}${revealing ? ` ${styles.revealing}` : ""}${exiting ? ` ${styles.exiting}` : ""}`}
+      data-theme={scene.theme} style={{ "--q-cinematic-duration": `${scene.durationMs}ms` } as CSSProperties}
+      role="region" aria-label="Oyun açılışı">
+      <div className={styles.ambience} aria-hidden="true" />
       <div className={styles.stage}>
         <div className={styles.stageHeader}>
-          <div className={styles.brand}>
-            <span className={styles.brandDot} />
-            <span>QUADRO</span>
-            <span className={styles.brandDivider}>/</span>
-            <span>#{puzzleId.replace(/\D/g, "") || "01"}</span>
-          </div>
-          <span className={styles.themeLabel}>{scene.eyebrow}</span>
+          <span className={styles.brand}><i aria-hidden="true" />QUADRO<span>GÜNLÜK KEŞİF</span></span>
+          <button className={styles.skip} onClick={finish} type="button">Oyuna geç <span aria-hidden="true">↗</span></button>
         </div>
-
-        <div className={styles.mosaic}>
-          <canvas ref={canvasRef} className={styles.canvas} />
-          <div className={styles.sceneBloom} />
-          <div className={styles.lightSweep} />
-          <div className={styles.softDissolve} />
-
+        <div ref={mosaicRef} className={styles.mosaic} aria-hidden="true">
+          <canvas ref={canvasRef} className={styles.sourceCanvas} />
           <div className={styles.tileGrid}>
-            {tiles.map((word, index) => {
-              const tileStyle = {
-                "--q-tile-delay": `${revealDelay(index)}ms`,
-              } as CSSProperties;
-              return (
-                <div key={`${puzzleId}:${index}`} className={styles.tile} style={tileStyle}>
-                  <span className={styles.tileSheen} />
-                  <span className={styles.tileNumber}>{String(index + 1).padStart(2, "0")}</span>
-                  <span className={styles.tileWord}>{word}</span>
-                </div>
-              );
-            })}
+            {tiles.map((word, index) => (
+              <div key={`${puzzleId}:${index}`} className={styles.tile}
+                style={{ "--q-tile-delay": `${((index % 4) + Math.floor(index / 4)) * 22}ms` } as CSSProperties}>
+                <canvas ref={(element) => { fragmentsRef.current[index] = element; }} className={styles.fragment} />
+                <span className={styles.tileWord}>{word}</span>
+              </div>
+            ))}
           </div>
+          <div className={styles.sceneLabel}><span>{scene.eyebrow}</span><span>16 KELİME · 4 GİZLİ BAĞ</span></div>
         </div>
-
         <div className={styles.stageFooter}>
-          <div className={styles.copy}>
-            <p className={styles.title}>{scene.title}</p>
-            <p className={styles.subtitle}>16 parça sahneden oyuna yumuşakça dönüşüyor</p>
-          </div>
-          <span className={styles.counter}>16 / 4 / 4</span>
+          <p>{scene.title}</p><span className={styles.edition}>#{puzzleId.replace(/\D/g, "") || "01"}</span>
         </div>
-
-        <div className={styles.progressTrack}>
-          <span className={styles.progressBar} />
-        </div>
+        <div className={styles.progressTrack} aria-hidden="true"><span /></div>
       </div>
     </div>
   );

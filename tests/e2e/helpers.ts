@@ -92,11 +92,21 @@ export function createUser(): UserEvent {
   return userEvent.setup({ advanceTimers: (ms) => vi.advanceTimersByTime(ms) });
 }
 
-/** `/play` sayfasını (sunucu bileşeni) oyun kipinde çizer ve kullanıcıyı döndürür. */
+/** Yeni oyundaki kitapçığı ve atlanabilir açılışı kullanıcı eylemleriyle geçer. */
+export async function enterGame(user: UserEvent): Promise<void> {
+  const start = screen.queryByRole("button", { name: "Bağlantıları bul" });
+  if (start) await user.click(start);
+  const skip = screen.queryByRole("button", { name: "Oyuna geç" });
+  if (skip) await user.click(skip);
+}
+
+/** `/play` sayfasını açar; yeni oyunda kitapçık/açılıştan geçer, kayıtta doğrudan devam eder. */
 export async function openPlayPage(): Promise<UserEvent> {
   const page = await PlayPage({ searchParams: Promise.resolve({}) });
   render(page);
-  return createUser();
+  const user = createUser();
+  await enterGame(user);
+  return user;
 }
 
 /** Düğme etkileşime kapalı mı? */
@@ -158,7 +168,7 @@ export function feedbackText(): string {
   return feedback?.textContent ?? "";
 }
 
-/** Sayfadaki düğmelerin metinleri; oyun bitince yalnız paylaşım eylemleri kalmalıdır. */
+/** Sayfadaki düğmelerin metinleri; sonuçta kitapçık ve paylaşım eylemleri kalır. */
 export function buttonTexts(): string[] {
   return screen.queryAllByRole("button").map((button) => button.textContent ?? "");
 }

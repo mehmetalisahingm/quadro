@@ -9,6 +9,7 @@ import {
   grupla,
   kalanHakOlmali,
   kelimeleriSec,
+  oyunaGir,
   oyunuKazan,
   paylasimOnizlemesi,
   sonucIstatistigi,
@@ -20,6 +21,7 @@ test("ana sayfadaki bağlantı oyuncuyu bulmacaya götürür", async ({ page }) 
   await expect(page.getByRole("heading", { name: "16 kelime. 4 gizli bağ." })).toBeVisible();
   await page.getByRole("link", { name: "Bugünün bulmacasını çöz" }).click();
   await expect(page).toHaveURL(/\/play$/);
+  await oyunaGir(page);
   await expect(page.getByRole("heading", { name: "Gizli bağları bul" })).toBeVisible();
   await expect(tahtaKartlari(page)).toHaveCount(GAME_CONSTANTS.wordCount);
   await kalanHakOlmali(page, GAME_CONSTANTS.maxMistakes);
@@ -28,13 +30,16 @@ test("ana sayfadaki bağlantı oyuncuyu bulmacaya götürür", async ({ page }) 
 test("tahta sabit tohumla açılır ve yeniden yüklemede aynı kalır", async ({ page }) => {
   const beklenen = beklenenBaslangicSirasi();
   await page.goto("/play");
+  await oyunaGir(page);
   await expect(tahtaKartlari(page)).toHaveText(beklenen);
   await page.reload();
+  await expect(page.getByRole("button", { name: "Bağlantıları bul", exact: true })).toHaveCount(0);
   await expect(tahtaKartlari(page)).toHaveText(beklenen);
 });
 
 test("her doğru grup tahtadan çözülenler satırına geçer", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   let kalanKart = GAME_CONSTANTS.wordCount;
 
   for (const grup of bulmaca.groups) {
@@ -56,6 +61,7 @@ test("her doğru grup tahtadan çözülenler satırına geçer", async ({ page }
 
 test("dört grubu bulan oyuncu kazanır ve spoilersız sonucunu paylaşabilir", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   await oyunuKazan(page);
 
   await expect(page.getByRole("heading", { name: "Dört bağı da buldun." })).toBeVisible();
@@ -68,6 +74,7 @@ test("dört grubu bulan oyuncu kazanır ve spoilersız sonucunu paylaşabilir", 
 
 test("kazanılan oyunda tahta ve kontroller kaybolur", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   await oyunuKazan(page);
 
   await expect(page.getByRole("heading", { name: "Dört bağı da buldun." })).toBeVisible();

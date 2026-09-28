@@ -1,11 +1,12 @@
 import { expect, test } from "@playwright/test";
 
-import { tahtaKartlari } from "./yardimcilar";
+import { oyunaGir, tahtaKartlari } from "./yardimcilar";
 
 test.use({ viewport: { width: 320, height: 800 } });
 
 test("320px görünüm yatay taşmaz ve kart seçimi çalışır", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   await expect(page.getByRole("heading", { name: "Gizli bağları bul" })).toBeVisible();
   await expect(tahtaKartlari(page)).toHaveCount(16);
 

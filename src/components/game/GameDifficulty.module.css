@@ -1,0 +1,105 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 11px;
+  border: 1px solid var(--q-color-border);
+  border-radius: 999px;
+  background: var(--q-color-surface);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a7cbbc;
+  content: "";
+}
+
+.badge[data-difficulty="medium"]::before { background: #dfb878; }
+.badge[data-difficulty="hard"]::before { background: #b7a3cc; }
+
+.rules {
+  min-height: 40px;
+  padding: 6px 0 6px 10px;
+  border: 0;
+  background: none;
+  color: var(--q-color-ink-muted);
+  font-size: 12px;
+  cursor: pointer;
+  text-underline-offset: 4px;
+}
+
+.rules:hover { color: var(--q-color-ink); text-decoration: underline; }
+
+.hints {
+  margin-top: 18px;
+  border-top: 1px solid var(--q-color-border);
+  padding-top: 14px;
+}
+
+.hintActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.hintButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--q-color-border);
+  border-radius: 10px;
+  background: var(--q-color-surface);
+  color: var(--q-color-ink);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hintButton:hover:not(:disabled) { border-color: var(--q-color-ink-muted); }
+.hintButton:disabled { opacity: 0.45; cursor: default; }
+
+.budget, .hardNote {
+  color: var(--q-color-ink-muted);
+  font-size: 12px;
+}
+
+.hardNote { margin: 16px 0 0; text-align: center; }
+
+.hintList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hint {
+  padding: 8px 11px;
+  border: 1px solid #ddd7cb;
+  border-radius: 8px;
+  background: #f2eee6;
+  color: #5f5543;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.hint[data-solved="true"] { opacity: 0.65; text-decoration: line-through; }

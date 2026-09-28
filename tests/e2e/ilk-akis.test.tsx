@@ -126,7 +126,7 @@ describe("kazanma", () => {
       ŞEHİRLER: "Bulundu",
     });
     expect(hasBoard()).toBe(false);
-    expect(buttonTexts()).toEqual(["Paylaş", "Kopyala"]);
+    expect(buttonTexts()).toEqual(["Kural kitapçığı ↗", "Paylaş", "Kopyala"]);
 
     const preview = sharePreview();
     const [header, ...rows] = preview.split("\n");
@@ -169,7 +169,7 @@ describe("kaybetme", () => {
     }
     expect(screen.queryAllByRole("article", { name: /^Çözülen grup:/ })).toEqual([]);
     expect(hasBoard()).toBe(false);
-    expect(buttonTexts()).toEqual(["Paylaş", "Kopyala"]);
+    expect(buttonTexts()).toEqual(["Kural kitapçığı ↗", "Paylaş", "Kopyala"]);
 
     const preview = sharePreview();
     const [header, ...rows] = preview.split("\n");
