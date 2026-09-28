@@ -1,0 +1,132 @@
+.welcome {
+  --welcome-ink: #272920;
+  --welcome-muted: #6c6c60;
+  --welcome-line: #deded1;
+  --welcome-accent: #8c6c2c;
+  width: min(100%, 900px);
+  margin: 12px auto 0;
+  color: var(--welcome-ink);
+  animation: welcomeArrive 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 15px; font-family: var(--q-font-mono); font-size: 10px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase; color: var(--welcome-muted); }
+.eyebrow > span { width: 6px; height: 6px; border-radius: 50%; background: #a98640; }
+.title { margin: 0; font-size: clamp(34px, 4.7vw, 53px); line-height: 1.09; font-weight: 500; letter-spacing: -.055em; }
+.title em { font-family: Georgia, "Times New Roman", serif; font-weight: 400; color: var(--welcome-accent); letter-spacing: -.05em; }
+.numbers { display: flex; align-items: center; gap: 23px; padding-right: 12px; }
+.numbers > span:not(.numberConnector) { display: flex; flex-direction: column; }
+.numbers strong { font-family: Georgia, "Times New Roman", serif; font-size: 61px; font-weight: 400; line-height: 1; letter-spacing: -.07em; }
+.numbers small { margin-top: 9px; font-family: var(--q-font-mono); font-size: 10px; letter-spacing: .04em; color: var(--welcome-muted); }
+.numberConnector { color: #a49e87; font-size: 28px; }
+.intro { max-width: 620px; margin: 20px 0 23px; color: var(--welcome-muted); font-size: 14px; line-height: 1.8; }
+.intro strong { font-weight: 600; color: var(--welcome-ink); }
+.book { overflow: hidden; border: 1px solid var(--welcome-line); border-radius: 17px; background: #fffef9; box-shadow: 0 8px 30px -20px #5c563d30; }
+.bookHeader { display: flex; align-items: center; justify-content: space-between; padding: 17px 25px 4px; font-family: var(--q-font-mono); font-size: 9px; letter-spacing: .11em; color: var(--welcome-muted); }
+.bookPages { color: #928671; }
+.chapters { display: flex; gap: 22px; padding: 0 25px; border-bottom: 1px solid #ecebe2; }
+.chapters button { position: relative; min-height: 44px; border: 0; padding: 0; background: transparent; color: var(--welcome-muted); font-size: 12px; font-weight: 500; cursor: pointer; }
+.chapters button::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--welcome-accent); transform: scaleX(0); transition: transform 180ms ease; }
+.chapters button[aria-pressed="true"] { color: var(--welcome-ink); }
+.chapters button[aria-pressed="true"]::after { transform: scaleX(1); }
+.chapter { min-height: 200px; padding: 21px 25px 20px; }
+.chapter h2 { margin: 0 0 8px; font-size: 17px; font-weight: 600; letter-spacing: -.025em; }
+.chapter p { margin: 0; font-size: 12px; line-height: 1.75; color: var(--welcome-muted); }
+.chapter p strong { color: #555745; font-weight: 600; }
+.exampleWords { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; flex: 1; margin: 15px 0 11px; }
+.exampleWords > span { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 4px; border: 1px solid #e7e2cd; border-radius: 7px; background: #f5f0df; color: #64552e; font-size: 12px; font-weight: 650; letter-spacing: .02em; box-shadow: 0 2px 0 #e7dfc644; }
+.wordEquation { display: flex; align-items: center; gap: 17px; }
+.prefix { display: flex; align-items: center; gap: 13px; margin-top: 4px; font-family: var(--q-font-mono); font-size: 12px; font-weight: 600; color: var(--welcome-accent); }
+.prefix > span { font-size: 21px; font-weight: 400; color: #a08f6c; }
+.chapter .exampleCaption { display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 11px; color: #796c4f; }
+.captionLine { height: 1px; width: 26px; background: #d9d2bb; }
+.chapter .footnote { margin-top: 9px; color: #77766a; font-size: 10px; text-align: center; }
+.tip { display: flex; gap: 12px; margin: 17px 0 12px; padding: 12px 16px; border-radius: 7px; background: #f1f3e9; }
+.tip > span { font-size: 24px; line-height: 1.1; color: #6f795c; }
+.tip p { font-size: 12px; }
+.modeField { min-width: 0; margin: 25px 0 0; padding: 0; border: 0; }
+.modeField legend { display: flex; align-items: center; gap: 15px; width: 100%; margin-bottom: 12px; padding: 0; font-size: 13px; font-weight: 600; }
+.modeField legend span { margin-left: auto; color: var(--welcome-muted); font-family: var(--q-font-mono); font-size: 8px; font-weight: 400; letter-spacing: .07em; }
+.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.mode { position: relative; display: flex; flex-direction: column; gap: 4px; min-width: 0; padding: 15px 16px 14px; border: 1px solid var(--welcome-line); border-radius: 10px; background: #ffffff45; cursor: pointer; transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease; }
+.mode:hover { border-color: #a8ab94; }
+.mode input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.mode:has(input:focus-visible) { outline: 3px solid var(--q-color-focus); outline-offset: 3px; }
+.selectedMode { border-color: #535c41; background: #f1f2e8; box-shadow: inset 0 0 0 .5px #535c41; }
+.modeTop { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+.modeTop strong { font-size: 15px; font-weight: 600; }
+.modeBars { display: flex; align-items: flex-end; gap: 3px; height: 13px; }
+.modeBars i { width: 3px; height: 6px; border-radius: 1px; background: #d4d6c9; }
+.modeBars i:nth-child(2) { height: 9px; }
+.modeBars i:nth-child(3) { height: 12px; }
+.modeBars i[data-active="true"] { background: #657053; }
+.modeLabel { color: var(--welcome-muted); font-size: 11px; }
+.modeHint { margin-top: 6px; font-family: var(--q-font-mono); font-size: 9px; color: #657053; }
+.startRow { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 22px; }
+.startRow p { margin: 0; font-size: 11px; line-height: 1.8; color: #626456; }
+.startRow p span { font-size: 10px; color: var(--welcome-muted); }
+.start { display: inline-flex; align-items: center; justify-content: center; gap: 28px; min-height: 50px; padding: 0 24px; border: 1px solid #303729; border-radius: 9px; background: #303729; color: #fbfaf2; font-size: 13px; font-weight: 500; white-space: nowrap; cursor: pointer; box-shadow: 0 4px 12px #30372910; transition: background 180ms ease, transform 180ms ease; }
+.start:hover { background: #46503a; transform: translateY(-1px); }
+.start svg { transition: transform 180ms ease; }
+.start:hover svg { transform: translateX(3px); }
+.return { display: flex; margin: 20px 0 0 auto; }
+.rulesOnly { margin-top: 0; }
+.rulesOnly .numbers { display: none; }
+.rulesOnly .title { font-size: 38px; }
+.rulesOnly .chapter { min-height: 0; }
+
+@keyframes welcomeArrive { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 640px) {
+  .welcome { margin-top: 4px; }
+  .heading { gap: 14px; }
+  .title { font-size: 36px; }
+  .eyebrow { margin-bottom: 12px; font-size: 8px; }
+  .numbers { gap: 10px; padding-right: 0; }
+  .numbers strong { font-size: 40px; }
+  .numbers small { font-size: 8px; }
+  .numberConnector { font-size: 20px; }
+  .intro { margin: 17px 0 20px; font-size: 12px; }
+  .bookHeader { padding: 15px 17px 3px; }
+  .chapters { gap: 19px; padding: 0 17px; }
+  .chapters button { font-size: 11px; }
+  .chapter { min-height: 230px; padding: 18px 17px; }
+  .chapter h2 { font-size: 16px; }
+  .chapter p { font-size: 11px; }
+  .wordEquation { display: block; margin-top: 12px; }
+  .prefix { margin: 0; font-size: 10px; }
+  .prefix > span { font-size: 17px; }
+  .wordEquation .exampleWords { margin-top: 6px; }
+  .exampleWords { gap: 5px; }
+  .exampleWords > span { min-height: 39px; font-size: 10px; }
+  .chapter .footnote { font-size: 9px; }
+  .chapter .exampleCaption { font-size: 10px; }
+  .modeField { margin-top: 21px; }
+  .modeField legend span { font-size: 7px; }
+  .modes { gap: 7px; }
+  .mode { padding: 12px 10px; }
+  .modeTop strong { font-size: 14px; }
+  .modeLabel { font-size: 9px; }
+  .modeHint { font-size: 8px; }
+  .startRow { flex-direction: column; align-items: stretch; gap: 13px; margin-top: 16px; }
+  .startRow p { text-align: center; font-size: 10px; }
+  .start { min-height: 50px; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 32px; }
+  .numbers { display: none; }
+  .modeField legend { gap: 8px; font-size: 12px; }
+  .modeField legend span { font-size: 6px; }
+  .chapters { gap: 14px; }
+  .mode { padding: 11px 8px; }
+  .modeBars { gap: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome { animation: none; }
+  .start, .start svg, .mode, .chapters button::after { transition: none; }
+  .start:hover, .start:hover svg { transform: none; }
+}
+
+.exampleWords > span { text-transform: uppercase; }

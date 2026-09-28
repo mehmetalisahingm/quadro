@@ -1,0 +1,4 @@
+.experience { min-width: 0; }
+.ruleDialog { width: min(940px, calc(100% - 24px)); max-height: 90dvh; padding: 28px; border: 1px solid #ded7ca; border-radius: 24px; color: var(--q-color-ink); background: #f6f3ee; box-shadow: 0 32px 100px #211c2540; }
+.ruleDialog::backdrop { background: #211c2566; backdrop-filter: blur(9px); }
+@media (max-width: 480px) { .ruleDialog { padding: 18px 12px; border-radius: 18px; } }

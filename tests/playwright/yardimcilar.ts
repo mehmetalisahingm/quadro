@@ -14,6 +14,15 @@ import { DEFAULT_ENGINE_SEED } from "@/features/game/react/engineController";
 
 export const bulmaca = standardPuzzle;
 
+/** Kitapçığı kullanıcı gibi geçer; animasyon bittiğinde tahta etkileşime açılır. */
+export async function oyunaGir(page: Page): Promise<void> {
+  const basla = page.getByRole("button", { name: "Bağlantıları bul", exact: true });
+  const tahta = page.getByLabel(/oyun tahtası$/);
+  await expect(basla.or(tahta).first()).toBeVisible({ timeout: 10_000 });
+  if (await basla.isVisible()) await basla.click();
+  await expect(tahtaKartlari(page).first()).toBeEnabled({ timeout: 10_000 });
+}
+
 const [birinciGrup, ikinciGrup, ucuncuGrup, dorduncuGrup] = bulmaca.groups;
 
 export type Dortlu = [string, string, string, string];

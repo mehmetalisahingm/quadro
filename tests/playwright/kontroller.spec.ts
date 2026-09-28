@@ -11,6 +11,7 @@ import {
   karistirDugmesi,
   kelimeKarti,
   kelimeleriSec,
+  oyunaGir,
   secimSayaci,
   tahtaKartlari,
   tahtaSirasi,
@@ -20,6 +21,7 @@ import {
 
 test("Karıştır kart sırasını değiştirir ama seçimi ve hakları korur", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
 
   const [birinciGrup] = bulmaca.groups;
   const [ilkKelime, ikinciKelime] = grupKelimeleri(birinciGrup);
@@ -43,6 +45,7 @@ test("Karıştır kart sırasını değiştirir ama seçimi ve hakları korur", 
 
 test("Temizle seçimi boşaltır ve hakları etkilemez", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
 
   const secilenler = birUzaktaDortlu().slice(0, 3);
   await kelimeleriSec(page, secilenler);
@@ -61,6 +64,7 @@ test("Temizle seçimi boşaltır ve hakları etkilemez", async ({ page }) => {
 
 test("dörtten fazla kelime seçilemez", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
 
   const [birinciGrup, ikinciGrup] = bulmaca.groups;
   await kelimeleriSec(page, grupKelimeleri(birinciGrup));

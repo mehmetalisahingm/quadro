@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-import { bulmaca, oyunuKazan, paylasimMetni, spoilerMetinleri } from "./yardimcilar";
+import { bulmaca, oyunaGir, oyunuKazan, paylasimMetni, spoilerMetinleri } from "./yardimcilar";
 
 test("Kopyala spoilersız sonuç metnini tarayıcıya uygun yolla sunar", async ({
   browserName,
@@ -22,6 +22,7 @@ test("Kopyala spoilersız sonuç metnini tarayıcıya uygun yolla sunar", async 
   }
 
   await page.goto("/play");
+  await oyunaGir(page);
   await oyunuKazan(page);
 
   const beklenenMetin = await paylasimMetni(page);

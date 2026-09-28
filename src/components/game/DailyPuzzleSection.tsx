@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import type { DailyPuzzleState } from "@/lib/daily";
-import { GameBoard } from "./GameBoard";
+import { PlayExperience } from "./PlayExperience";
 import { GameLoading } from "./GameLoading";
 import { GameNotice } from "./GameNotice";
 
@@ -14,7 +14,7 @@ export function DailyPuzzleSection({ state, nextPuzzleHref }: DailyPuzzleSection
   if (state.status === "ok") {
     return (
       <>
-        <GameBoard key={`${state.puzzle.id}:${state.puzzle.revision}`} puzzle={state.puzzle} />
+        <PlayExperience key={`${state.puzzle.date}:${state.puzzle.id}:${state.puzzle.revision}`} puzzle={state.puzzle} />
         <nav aria-label="Bulmaca gezintisi" style={{ margin: "20px auto 0", textAlign: "center" }}>
           {nextPuzzleHref ? (
             <Link href={nextPuzzleHref}>Sonraki bulmaca →</Link>

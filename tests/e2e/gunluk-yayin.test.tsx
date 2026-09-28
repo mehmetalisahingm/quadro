@@ -11,7 +11,7 @@ import { describe, expect, it } from "vitest";
 
 import PlayPage from "@/app/play/page";
 
-import { TEST_DAY_KEY, puzzle, registerFlowHooks } from "./helpers";
+import { TEST_DAY_KEY, createUser, enterGame, puzzle, registerFlowHooks } from "./helpers";
 
 registerFlowHooks();
 
@@ -24,6 +24,7 @@ async function openDay(dayKey: string, mode?: string): Promise<void> {
       }),
     }),
   );
+  await enterGame(createUser());
 }
 
 const hasBoard = (): boolean =>

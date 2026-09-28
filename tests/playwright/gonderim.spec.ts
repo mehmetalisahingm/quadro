@@ -11,6 +11,7 @@ import {
   grupla,
   kalanHakOlmali,
   kelimeleriSec,
+  oyunaGir,
   oyunuKaybet,
   oyunuKazan,
   paylasimMetni,
@@ -23,6 +24,7 @@ import {
 
 test("tam üç doğru kelime çok yakın sonucu verir ve bir hak götürür", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   await kelimeleriSec(page, birUzaktaDortlu());
   await grupla(page);
 
@@ -34,6 +36,7 @@ test("tam üç doğru kelime çok yakın sonucu verir ve bir hak götürür", as
 
 test("aynı dörtlü farklı sırayla gönderilince hak eksilmez", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   const [ilkDortlu] = yanlisDortluler();
 
   await kelimeleriSec(page, ilkDortlu);
@@ -52,6 +55,7 @@ test("aynı dörtlü farklı sırayla gönderilince hak eksilmez", async ({ page
 
 test("Grupla'ya hızlı çift basış tek gönderim olarak işlenir", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   const [ilkDortlu] = yanlisDortluler();
   await kelimeleriSec(page, ilkDortlu);
 
@@ -68,6 +72,7 @@ test("Grupla'ya hızlı çift basış tek gönderim olarak işlenir", async ({ p
 
 test("dördüncü yanlışta oyun biter ve kalan cevaplar açılır", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   const dortluler = yanlisDortluler();
 
   for (let sira = 0; sira < dortluler.length; sira += 1) {
@@ -100,6 +105,7 @@ test("dördüncü yanlışta oyun biter ve kalan cevaplar açılır", async ({ p
 
 test("kaybedilen oyunda tahta ve kontroller kaybolur", async ({ page }) => {
   await page.goto("/play");
+  await oyunaGir(page);
   await oyunuKaybet(page);
 
   await expect(page.getByRole("heading", { name: "Bugünlük bu kadar." })).toBeVisible();
