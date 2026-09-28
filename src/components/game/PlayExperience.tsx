@@ -47,6 +47,7 @@ export function PlayExperience({ puzzle }: { puzzle: Puzzle }) {
   const rulesDialog = useRef<HTMLDialogElement>(null);
 
   const start = (difficulty: GameDifficulty) => {
+    window.scrollTo(0, 0);
     setChosenMode(difficulty);
     try { window.localStorage.setItem(playModeKey(puzzle), difficulty); } catch { /* Optional storage. */ }
   };

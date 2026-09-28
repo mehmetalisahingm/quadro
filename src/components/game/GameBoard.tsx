@@ -302,7 +302,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
 
           {snapshot.remainingWordOrder.length > 0 ? (
             <div
-              className={`q-game-board${cinematicBoardReady ? ` ${motionStyles.boardCinematicReveal}` : ""}`}
+              className={`q-game-board${playIntro && cinematicBoardReady ? ` ${motionStyles.boardCinematicReveal}` : ""}`}
               aria-label={`${snapshot.remainingWordOrder.length} çözülmemiş kelimelik oyun tahtası`}
               aria-describedby="game-board-instructions"
               data-cinematic-ready={cinematicBoardReady ? "true" : undefined}
