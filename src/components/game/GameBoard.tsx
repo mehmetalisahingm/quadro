@@ -248,6 +248,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       {!cinematicDone && isPlaying ? (
         <CardShuffleIntro
           puzzleId={puzzle.id}
+          dayKey={puzzle.date}
           words={cinematicWords}
           soundEnabled={sounds.enabled}
           playSound={sounds.play}
