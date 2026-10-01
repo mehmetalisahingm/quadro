@@ -33,6 +33,8 @@ import { GameLoading } from "./GameLoading";
 import { MistakeMeter } from "./MistakeMeter";
 import { feedbackMessage } from "./presentation";
 import { CardShuffleIntro } from "./CardShuffleIntro";
+import { StoryOpening } from "./StoryOpening";
+import { gameOpeningFor } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
@@ -88,6 +90,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
     unlimitedMistakes: isAdmin,
   });
   const { snapshot } = controller;
+  const opening = gameOpeningFor(puzzle.id, puzzle.date);
   const mode = getDifficultyMode(difficulty);
   const hintStore = useMemo(() => createHintStore(puzzle, difficulty), [puzzle, difficulty]);
   const hints = useSyncExternalStore(hintStore.subscribe, hintStore.getState, hintStore.getServerState);
@@ -246,7 +249,11 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       data-difficulty={difficulty}
     >
       {!cinematicDone && isPlaying ? (
-        <CardShuffleIntro
+        opening === "metro" || opening === "film" || opening === "record" ? (
+          <StoryOpening key={puzzle.id} scene={opening} words={cinematicWords}
+            onReveal={revealCinematic} onComplete={finishCinematic} />
+        ) : <CardShuffleIntro
+          variant={opening}
           puzzleId={puzzle.id}
           dayKey={puzzle.date}
           words={cinematicWords}

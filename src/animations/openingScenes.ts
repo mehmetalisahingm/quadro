@@ -1,0 +1,92 @@
+import type { Puzzle } from "@/features/game/contracts";
+import { createEngineController } from "@/features/game/react/engineController";
+import { CARD_INTROS } from "./cardIntros";
+
+export const GAME_OPENINGS = ["metro", "film", "record", ...CARD_INTROS] as const;
+export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OPENINGS[number] {
+  const timestamp = Date.parse(`${dayKey}T00:00:00Z`);
+  // Anchor the gallery's first playable day to the recovered metro scene.
+  let seed = Number.isFinite(timestamp) ? Math.floor((timestamp - Date.UTC(2026, 8, 20)) / 86400000) : 0;
+  if (!Number.isFinite(timestamp)) {
+    for (const char of puzzleId) seed = (Math.imul(seed, 31) + char.charCodeAt(0)) >>> 0;
+  }
+  return GAME_OPENINGS[((seed % GAME_OPENINGS.length) + GAME_OPENINGS.length) % GAME_OPENINGS.length] ?? "metro";
+}
+
+export const OPENING_SCENES = ["four-corners", "metro", "film", "record"] as const;
+export type OpeningScene = (typeof OPENING_SCENES)[number];
+export const OPENING_DURATION = 3000;
+
+export const OPENING_COPY: Record<OpeningScene, { name: string; kicker: string; title: string; detail: string }> = {
+  "four-corners": { name: "Dört köşe", kicker: "HER ŞEY BİRBİRİNE BAĞLI", title: "Her şey yerini bulur.", detail: "Dört köşe. On altı olasılık." },
+  metro: { name: "Sonraki durak", kicker: "QUADRO ŞEHİR HATLARI", title: "Sonraki durak: keşif.", detail: "Kapılar açılıyor. Bağlantılar seni bekliyor." },
+  film: { name: "Motor. Kayıt.", kicker: "BİR QUADRO GÖSTERİSİ", title: "Ve… başlıyoruz.", detail: "On altı kelime. Başrolde sen." },
+  record: { name: "Plak döner.", kicker: "QUADRO SES ARŞİVİ", title: "Bağlantının ritmi.", detail: "İğne iner. Kelimeler akmaya başlar." },
+};
+
+/** Calendar rotation prevents adjacent-day repeats, independently of difficulty. */
+export function openingSceneFor(puzzleId: string, dayKey: string): OpeningScene {
+  const timestamp = Date.parse(`${dayKey}T00:00:00.000Z`);
+  if (Number.isFinite(timestamp) && new Date(timestamp).toISOString().slice(0, 10) === dayKey) {
+    const day = Math.floor(timestamp / 86_400_000);
+    return OPENING_SCENES[((day % OPENING_SCENES.length) + OPENING_SCENES.length) % OPENING_SCENES.length]!;
+  }
+  let hash = 0;
+  for (const char of puzzleId) hash = (Math.imul(hash, 31) + char.charCodeAt(0)) >>> 0;
+  return OPENING_SCENES[hash % OPENING_SCENES.length]!;
+}
+
+/** Same seeded order as the fresh live board; no stores, timers or saves are started. */
+export function openingWords(puzzle: Puzzle): readonly string[] {
+  const words = new Map(puzzle.groups.flatMap((group) => group.words.map((word) => [word.id, word.text] as const)));
+  return createEngineController({ puzzle }).snapshot.remainingWordOrder.map((id) => words.get(id)!);
+}
+
+/** Pure geometry: visual routes depend only on board position, never answer groups. */
+export function openingCardFrames(
+  scene: OpeningScene,
+  index: number,
+  target: { x: number; y: number; width: number; height: number },
+  stage: { width: number; height: number },
+): Keyframe[] {
+  const { x, y, width, height } = target;
+  const move = (dx: number, dy: number, angle = 0, scale = 1) =>
+    `translate3d(${dx}px, ${dy}px, 0) rotate(${angle}deg) scale(${scale})`;
+  const cx = (stage.width - width) / 2 - x;
+  const cy = (stage.height - height) / 2 - y;
+  const rank = index % 4;
+  if (scene === "metro") {
+    const door = (index * 7) % 3;
+    const dx = stage.width * [.158, .495, .832][door]! - x - width / 2;
+    const dy = stage.height * .46 - y - height / 2;
+    return [
+      { offset: 0, opacity: 0, transform: move(dx, dy, 0, .18) },
+      { offset: .42, opacity: 0, transform: move(dx, dy, 0, .18) },
+      { offset: .53, opacity: 1, transform: move(dx, dy + 34, (rank - 1.5) * 7, .55) },
+      { offset: .70, opacity: 1, transform: move(cx + (index % 2 ? 1 : -1) * stage.width * .19, cy + (rank - 1.5) * 18, (rank - 1.5) * 9, .86) },
+      { offset: .91, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "film") {
+    const side = index % 2 ? 1 : -1;
+    return [
+      { offset: 0, opacity: 0, transform: move(cx + side * stage.width * .57, cy + (rank - 1.5) * 45, side * 24, .65) },
+      { offset: .41, opacity: 0, transform: move(cx + side * stage.width * .57, cy + (rank - 1.5) * 45, side * 24, .65) },
+      { offset: .62, opacity: 1, transform: move(cx + side * stage.width * .18, cy + (Math.floor(index / 4) - 1.5) * 48, -side * 7, .92) },
+      { offset: .90, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  // Original four-corner choreography: four packs -> central shuffle -> grid.
+  const pack = Math.floor(index / 4);
+  const sx = pack % 2 ? 1 : -1;
+  const sy = pack > 1 ? 1 : -1;
+  return [
+    { offset: 0, opacity: 0, transform: move(cx + sx * stage.width * .55, cy + sy * stage.height * .55, sx * 35) },
+    { offset: .24, opacity: 1, transform: move(cx + sx * stage.width * .3 + rank * 7, cy + sy * stage.height * .27 + rank * 5, sx * (rank - 1.5) * 9) },
+    { offset: .53, opacity: 1, transform: move(cx + sx * (rank - 1.5) * 26, cy + sy * (rank - 1.5) * 20, (rank - 1.5) * 17, 1.05) },
+    { offset: .90, opacity: 1, transform: move(0, 0) },
+    { offset: 1, opacity: 1, transform: move(0, 0) },
+  ];
+}

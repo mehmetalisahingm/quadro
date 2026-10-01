@@ -4,11 +4,11 @@ import { useCallback, useEffect, useRef } from "react";
 import type { PuzzleCinematicIntroProps } from "./PuzzleCinematicIntro";
 import styles from "./CardShuffleIntro.module.css";
 
-import { cardIntroMotion, selectCardIntro, INTRO_CAPTIONS, INTRO_DURATION, INTRO_REVEAL } from "@/animations/cardIntros";
+import { cardIntroMotion, selectCardIntro, INTRO_CAPTIONS, INTRO_DURATION, INTRO_REVEAL, type CardIntro } from "@/animations/cardIntros";
 
 /** Four visual packs use board order, never the hidden answer groups. */
-export function CardShuffleIntro({ puzzleId, dayKey, words, onReveal, onDone }: PuzzleCinematicIntroProps & { dayKey?: string }) {
-  const variant = selectCardIntro(puzzleId, dayKey);
+export function CardShuffleIntro({ puzzleId, dayKey, words, onReveal, onDone, variant: chosenVariant }: PuzzleCinematicIntroProps & { dayKey?: string; variant?: CardIntro }) {
+  const variant = chosenVariant ?? selectCardIntro(puzzleId, dayKey);
   const overlayRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const callbacks = useRef({ onReveal, onDone });
