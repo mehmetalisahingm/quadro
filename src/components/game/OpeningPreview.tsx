@@ -8,11 +8,15 @@ import { gameOpeningFor } from "@/animations/openingScenes";
 import { StoryOpening } from "./StoryOpening";
 import { BoardPrelude } from "./BoardPrelude";
 import { BaggageScene, DominoScene, ElevatorScene } from "./TravelOpeningArt";
+import { ClawScene, NewsroomScene, RedCarpetScene } from "./ShowtimeOpeningArt";
 import styles from "./OpeningPreview.module.css";
 
 const PREVIEW_WORDS = ["DEMO 01", "DEMO 02", "DEMO 03", "DEMO 04", "DEMO 05", "DEMO 06", "DEMO 07", "DEMO 08", "DEMO 09", "DEMO 10", "DEMO 11", "DEMO 12", "DEMO 13", "DEMO 14", "DEMO 15", "DEMO 16"];
-const TEST_DAYS = Array.from({ length: 13 }, (_, index) => new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10));
+const TEST_DAYS = Array.from({ length: 16 }, (_, index) => new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10));
 const NEW_SCENES = [
+  { id: "claw", title: "Şansını değil, bağını yakala.", description: "Pençe iner, kartları yakalar. Her bırakışta yeni bir olasılık yerini bulur.", button: "Pençe makinesini oynat", Art: ClawScene },
+  { id: "newsroom", title: "Son dakika: bir bağ bulundu.", description: "Yayın açılır, haber bandı akar. Kelimeler birer birer ekrana gelir.", button: "Haber stüdyosunu oynat", Art: NewsroomScene },
+  { id: "red-carpet", title: "Bu gecenin yıldızı sensin.", description: "Kırmızı halı serilir. İki yumuşak kamera ışığıyla kartlar sahneye çıkar.", button: "Kırmızı halıyı oynat", Art: RedCarpetScene },
   { id: "domino", title: "Biri başlar, hepsi bağlanır.", description: "Domino taşları sırayla devrilir. Her dokunuş yeni bir kartı açar.", button: "Dominoyu oynat", Art: DominoScene },
   { id: "elevator", title: "Bir üst katta keşif var.", description: "Üç durak, açılan pirinç kapılar. Kartlar her katta tahtaya taşınır.", button: "Asansörü oynat", Art: ElevatorScene },
   { id: "baggage", title: "Kelimelerin yolculuğu.", description: "Bavullar bantta ilerler, tarayıcıdan geçen kartlar yerini bulur.", button: "Bagaj bandını oynat", Art: BaggageScene },
@@ -56,8 +60,8 @@ export function OpeningPreview() {
           <div className={styles.description}><span>03 / SES ARŞİVİ <i>00:03</i></span><h2>Bağlantının ritmi.</h2><p>Plak döner, iğne iner. Kartlar müziğin ritmiyle tahtaya akar.</p><button type="button" onClick={(event) => play("record", event.currentTarget)}>Plağı oynat <span aria-hidden="true">↗</span></button></div>
         </article>
       </div>
-      <section className={styles.testDays} aria-label="Arka arkaya on üç test oyunu">
-        <span>13 OYUNU SIRAYLA DENE</span>
+      <section className={styles.testDays} aria-label="Arka arkaya on altı test oyunu">
+        <span>16 OYUNU SIRAYLA DENE</span>
         <div>{TEST_DAYS.map((day, index) => <Link key={day} href={`/play?day=${day}`}><small>{String(index + 1).padStart(2, "0")}</small><b>{day.slice(5)}</b><i>{gameOpeningFor(`q-${index + 1}`, day)}</i></Link>)}</div>
       </section>
       <footer className={styles.footer}><span>Her açılışta aynı oyun. Farklı bir ilk sahne.</span><button type="button" onClick={(event) => play("four-corners", event.currentTarget)}>Dört köşeyi oynat ↗</button></footer>

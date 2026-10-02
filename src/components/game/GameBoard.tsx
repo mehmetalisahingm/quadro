@@ -252,7 +252,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       {!cinematicDone && isPlaying ? (
         opening === "board-prelude" ? (
           <BoardPrelude key={puzzle.id} onReveal={revealCinematic} onComplete={finishCinematic} />
-        ) : opening === "metro" || opening === "film" || opening === "record" || opening === "domino" || opening === "elevator" || opening === "baggage" ? (
+        ) : opening === "metro" || opening === "film" || opening === "record" || opening === "domino" || opening === "elevator" || opening === "baggage" || opening === "claw" || opening === "newsroom" || opening === "red-carpet" ? (
           <StoryOpening key={puzzle.id} scene={opening} words={cinematicWords}
             onReveal={revealCinematic} onComplete={finishCinematic} />
         ) : <CardShuffleIntro

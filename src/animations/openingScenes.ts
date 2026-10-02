@@ -2,7 +2,7 @@ import type { Puzzle } from "@/features/game/contracts";
 import { createEngineController } from "@/features/game/react/engineController";
 import { CARD_INTROS } from "./cardIntros";
 
-export const GAME_OPENINGS = ["board-prelude", "domino", "elevator", "baggage", "metro", "film", "record", ...CARD_INTROS] as const;
+export const GAME_OPENINGS = ["board-prelude", "claw", "newsroom", "red-carpet", "domino", "elevator", "baggage", "metro", "film", "record", ...CARD_INTROS] as const;
 export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OPENINGS[number] {
   const timestamp = Date.parse(`${dayKey}T00:00:00Z`);
   // Start the gallery with the recovered metallic sculpture, followed by the new scenes.
@@ -13,7 +13,7 @@ export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OP
   return GAME_OPENINGS[((seed % GAME_OPENINGS.length) + GAME_OPENINGS.length) % GAME_OPENINGS.length] ?? "metro";
 }
 
-export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage"] as const;
+export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage", "claw", "newsroom", "red-carpet"] as const;
 export type OpeningScene = (typeof OPENING_SCENES)[number];
 export const OPENING_DURATION = 3000;
 
@@ -25,6 +25,9 @@ export const OPENING_COPY: Record<OpeningScene, { name: string; kicker: string; 
   domino: { name: "Domino", kicker: "KÜÇÜK BİR DOKUNUŞ", title: "Biri başlar, hepsi bağlanır.", detail: "Bir hareket. On altı olasılık." },
   elevator: { name: "Asansör", kicker: "QUADRO GRAND HOTEL", title: "Bir üst katta keşif var.", detail: "Kapılar açılıyor. Bir sonraki durak senin." },
   baggage: { name: "Bagaj bandı", kicker: "QUADRO INTERNATIONAL", title: "Kelimelerin yolculuğu.", detail: "Bagajın hazır. Bağlantıları teslim al." },
+  claw: { name: "Pençe makinesi", kicker: "QUADRO ARCADE", title: "Şansını değil, bağını yakala.", detail: "Pençe iner. Olasılıklar yerini bulur." },
+  newsroom: { name: "Haber stüdyosu", kicker: "QUADRO CANLI YAYIN", title: "Son dakika: bir bağ bulundu.", detail: "On altı kelime. Günün tek gündemi." },
+  "red-carpet": { name: "Kırmızı halı", kicker: "QUADRO GALA GECESİ", title: "Bu gecenin yıldızı sensin.", detail: "Halı serildi. Kelimeler sahnede." },
 };
 
 /** Calendar rotation prevents adjacent-day repeats, independently of difficulty. */
@@ -58,6 +61,40 @@ export function openingCardFrames(
   const cx = (stage.width - width) / 2 - x;
   const cy = (stage.height - height) / 2 - y;
   const rank = index % 4;
+  if (scene === "claw") {
+    // Four visual grabs based only on shuffled board position.
+    const grab = index % 4;
+    const dx = stage.width * [.28, .43, .58, .73][grab]! - x - width / 2;
+    const start = .18 + grab * .14;
+    return [
+      { offset: 0, opacity: 0, transform: move(dx, cy + stage.height * .13, 0, .28) },
+      { offset: start, opacity: 0, transform: move(dx, cy + stage.height * .13, 0, .28) },
+      { offset: start + .055, opacity: 1, transform: move(dx, cy - stage.height * .18, (index % 3 - 1) * 7, .48) },
+      { offset: start + .16, opacity: 1, transform: move(0, -8, 0, 1.04) },
+      { offset: start + .23, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "newsroom") {
+    const start = .23 + index * .026;
+    return [
+      { offset: 0, opacity: 0, transform: move(stage.width * .3, -35, 0, .88) },
+      { offset: start, opacity: 0, transform: move(stage.width * .3, -35, 0, .88) },
+      { offset: start + .1, opacity: 1, transform: move(-7, 0, 0, 1.02) },
+      { offset: start + .19, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "red-carpet") {
+    const start = .3 + (index % 2) * .25;
+    return [
+      { offset: 0, opacity: 0, transform: move(cx * .7, stage.height * .45, (rank - 1.5) * 6, .45) },
+      { offset: start, opacity: 0, transform: move(cx * .7, stage.height * .45, (rank - 1.5) * 6, .45) },
+      { offset: start + .15, opacity: 1, transform: move(0, -5, 0, 1.02) },
+      { offset: start + .29, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
   if (scene === "domino") {
     const start = .22 + index * .024;
     return [

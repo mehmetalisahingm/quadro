@@ -5,6 +5,7 @@ import type { Puzzle } from "@/features/game/contracts";
 import { OPENING_COPY, OPENING_DURATION, openingCardFrames, openingSceneFor, openingWords, type OpeningScene } from "@/animations/openingScenes";
 import { FilmScene, MetroScene, RecordScene } from "./OpeningSceneArt";
 import { BaggageScene, DominoScene, ElevatorScene } from "./TravelOpeningArt";
+import { ClawScene, NewsroomScene, RedCarpetScene } from "./ShowtimeOpeningArt";
 import styles from "./StoryOpening.module.css";
 
 export function PuzzleOpening({ puzzle, onComplete }: { puzzle: Puzzle; onComplete: () => void }) {
@@ -88,7 +89,7 @@ export function StoryOpening({ scene, words, onComplete, onReveal }: {
       </header>
       <div className={styles.introCopy}><span>{copy.kicker}</span><h2>{copy.title}</h2></div>
       <div ref={stageRef} className={styles.stage} aria-hidden="true">
-        {scene === "metro" ? <MetroScene /> : scene === "film" ? <FilmScene /> : scene === "record" ? <RecordScene /> : scene === "domino" ? <DominoScene /> : scene === "elevator" ? <ElevatorScene /> : scene === "baggage" ? <BaggageScene /> : <div className={styles.cornerBackdrop}><i /><span>16 / 04</span></div>}
+        {scene === "metro" ? <MetroScene /> : scene === "film" ? <FilmScene /> : scene === "record" ? <RecordScene /> : scene === "domino" ? <DominoScene /> : scene === "elevator" ? <ElevatorScene /> : scene === "baggage" ? <BaggageScene /> : scene === "claw" ? <ClawScene /> : scene === "newsroom" ? <NewsroomScene /> : scene === "red-carpet" ? <RedCarpetScene /> : <div className={styles.cornerBackdrop}><i /><span>16 / 04</span></div>}
         <div className={styles.cardGrid}>
           {Array.from({ length: 16 }, (_, index) => (
             <div key={index} className={styles.card} data-opening-card={index}>
