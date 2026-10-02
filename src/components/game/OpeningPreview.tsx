@@ -4,16 +4,20 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import type { OpeningScene } from "@/animations/openingScenes";
 import { FilmScene, MetroScene, RecordScene } from "./OpeningSceneArt";
-import { gameOpeningFor } from "@/animations/openingScenes";
+import { GAME_OPENINGS, gameOpeningFor } from "@/animations/openingScenes";
 import { StoryOpening } from "./StoryOpening";
 import { BoardPrelude } from "./BoardPrelude";
 import { BaggageScene, DominoScene, ElevatorScene } from "./TravelOpeningArt";
 import { ClawScene, NewsroomScene, RedCarpetScene } from "./ShowtimeOpeningArt";
+import { ChefScene, DetectiveScene, GameShowScene } from "./DiscoveryOpeningArt";
 import styles from "./OpeningPreview.module.css";
 
 const PREVIEW_WORDS = ["DEMO 01", "DEMO 02", "DEMO 03", "DEMO 04", "DEMO 05", "DEMO 06", "DEMO 07", "DEMO 08", "DEMO 09", "DEMO 10", "DEMO 11", "DEMO 12", "DEMO 13", "DEMO 14", "DEMO 15", "DEMO 16"];
-const TEST_DAYS = Array.from({ length: 16 }, (_, index) => new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10));
+const TEST_DAYS = Array.from({ length: GAME_OPENINGS.length }, (_, index) => new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10));
 const NEW_SCENES = [
+  { id: "chef", title: "Bir tutam merak.", description: "Şefin bıçağı ritim tutar. Kartlar karışır, son vuruşla yerlerine oturur.", button: "Şef mutfağını oynat", Art: ChefScene },
+  { id: "detective", title: "Görünenden fazlası var.", description: "Dosya açılır, büyüteç izleri tarar. Her kelime yeni bir bulguya dönüşür.", button: "Dedektif masasını oynat", Art: DetectiveScene },
+  { id: "game-show", title: "Hazırsan, başlıyoruz.", description: "Spotlar sahneyi tarar. Üç, iki, bir: kelimeler sahneye çıkar.", button: "TV yarışmasını oynat", Art: GameShowScene },
   { id: "claw", title: "Şansını değil, bağını yakala.", description: "Pençe iner, kartları yakalar. Her bırakışta yeni bir olasılık yerini bulur.", button: "Pençe makinesini oynat", Art: ClawScene },
   { id: "newsroom", title: "Son dakika: bir bağ bulundu.", description: "Yayın açılır, haber bandı akar. Kelimeler birer birer ekrana gelir.", button: "Haber stüdyosunu oynat", Art: NewsroomScene },
   { id: "red-carpet", title: "Bu gecenin yıldızı sensin.", description: "Kırmızı halı serilir. İki yumuşak kamera ışığıyla kartlar sahneye çıkar.", button: "Kırmızı halıyı oynat", Art: RedCarpetScene },
@@ -60,8 +64,8 @@ export function OpeningPreview() {
           <div className={styles.description}><span>03 / SES ARŞİVİ <i>00:03</i></span><h2>Bağlantının ritmi.</h2><p>Plak döner, iğne iner. Kartlar müziğin ritmiyle tahtaya akar.</p><button type="button" onClick={(event) => play("record", event.currentTarget)}>Plağı oynat <span aria-hidden="true">↗</span></button></div>
         </article>
       </div>
-      <section className={styles.testDays} aria-label="Arka arkaya on altı test oyunu">
-        <span>16 OYUNU SIRAYLA DENE</span>
+      <section className={styles.testDays} aria-label="Arka arkaya on dokuz test oyunu">
+        <span>19 OYUNU SIRAYLA DENE</span>
         <div>{TEST_DAYS.map((day, index) => <Link key={day} href={`/play?day=${day}`}><small>{String(index + 1).padStart(2, "0")}</small><b>{day.slice(5)}</b><i>{gameOpeningFor(`q-${index + 1}`, day)}</i></Link>)}</div>
       </section>
       <footer className={styles.footer}><span>Her açılışta aynı oyun. Farklı bir ilk sahne.</span><button type="button" onClick={(event) => play("four-corners", event.currentTarget)}>Dört köşeyi oynat ↗</button></footer>

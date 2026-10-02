@@ -2,7 +2,7 @@ import type { Puzzle } from "@/features/game/contracts";
 import { createEngineController } from "@/features/game/react/engineController";
 import { CARD_INTROS } from "./cardIntros";
 
-export const GAME_OPENINGS = ["board-prelude", "claw", "newsroom", "red-carpet", "domino", "elevator", "baggage", "metro", "film", "record", ...CARD_INTROS] as const;
+export const GAME_OPENINGS = ["board-prelude", "chef", "detective", "game-show", "claw", "newsroom", "red-carpet", "domino", "elevator", "baggage", "metro", "film", "record", ...CARD_INTROS] as const;
 export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OPENINGS[number] {
   const timestamp = Date.parse(`${dayKey}T00:00:00Z`);
   // Start the gallery with the recovered metallic sculpture, followed by the new scenes.
@@ -13,7 +13,7 @@ export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OP
   return GAME_OPENINGS[((seed % GAME_OPENINGS.length) + GAME_OPENINGS.length) % GAME_OPENINGS.length] ?? "metro";
 }
 
-export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage", "claw", "newsroom", "red-carpet"] as const;
+export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage", "claw", "newsroom", "red-carpet", "chef", "detective", "game-show"] as const;
 export type OpeningScene = (typeof OPENING_SCENES)[number];
 export const OPENING_DURATION = 3000;
 
@@ -25,6 +25,9 @@ export const OPENING_COPY: Record<OpeningScene, { name: string; kicker: string; 
   domino: { name: "Domino", kicker: "KÜÇÜK BİR DOKUNUŞ", title: "Biri başlar, hepsi bağlanır.", detail: "Bir hareket. On altı olasılık." },
   elevator: { name: "Asansör", kicker: "QUADRO GRAND HOTEL", title: "Bir üst katta keşif var.", detail: "Kapılar açılıyor. Bir sonraki durak senin." },
   baggage: { name: "Bagaj bandı", kicker: "QUADRO INTERNATIONAL", title: "Kelimelerin yolculuğu.", detail: "Bagajın hazır. Bağlantıları teslim al." },
+  chef: { name: "Şef mutfağı", kicker: "QUADRO ATELIER", title: "Bir tutam merak.", detail: "Doğra, karıştır. Bağlantının tarifi sende." },
+  detective: { name: "Dedektif masası", kicker: "QUADRO ARAŞTIRMA BÜROSU", title: "Görünenden fazlası var.", detail: "Her kelime bir bulgu. Dikkatli bak." },
+  "game-show": { name: "TV yarışması", kicker: "QUADRO SAHNESİ", title: "Hazırsan, başlıyoruz.", detail: "Işıklar açıldı. Sıra senin keşfinde." },
   claw: { name: "Pençe makinesi", kicker: "QUADRO ARCADE", title: "Şansını değil, bağını yakala.", detail: "Pençe iner. Olasılıklar yerini bulur." },
   newsroom: { name: "Haber stüdyosu", kicker: "QUADRO CANLI YAYIN", title: "Son dakika: bir bağ bulundu.", detail: "On altı kelime. Günün tek gündemi." },
   "red-carpet": { name: "Kırmızı halı", kicker: "QUADRO GALA GECESİ", title: "Bu gecenin yıldızı sensin.", detail: "Halı serildi. Kelimeler sahnede." },
@@ -61,6 +64,43 @@ export function openingCardFrames(
   const cx = (stage.width - width) / 2 - x;
   const cy = (stage.height - height) / 2 - y;
   const rank = index % 4;
+  if (scene === "chef") {
+    // Chopping beats match the decorative arm; never use solution groups.
+    const drift = (index % 2 ? 1 : -1) * width * .17;
+    return [
+      { offset: 0, opacity: 0, transform: move(cx, cy + stage.height * .25, 0, .3) },
+      { offset: .19, opacity: 0, transform: move(cx, cy + stage.height * .25, 0, .3) },
+      { offset: .26, opacity: .9, transform: move(cx * .2 + drift, 12, -3, .82) },
+      { offset: .32, opacity: 1, transform: move(cx * .15 - drift, -6, 3, .88) },
+      { offset: .39, opacity: 1, transform: move(cx * .1 + drift, 10, -2, .9) },
+      { offset: .45, opacity: 1, transform: move(-drift, -5, 2, .94) },
+      { offset: .51, opacity: 1, transform: move(drift * .5, 7, -1, .97) },
+      { offset: .58, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "detective") {
+    const row = Math.floor(index / 4);
+    const scan = row % 2 ? 3 - rank : rank;
+    const start = .12 + (row * 4 + scan) * .031;
+    return [
+      { offset: 0, opacity: 0, transform: move(0, 20, -5, .92) },
+      { offset: start, opacity: 0, transform: move(0, 20, -5, .92) },
+      { offset: start + .11, opacity: 1, transform: move(0, -3, 1, 1.02) },
+      { offset: start + .2, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "game-show") {
+    const start = .47 + index * .014;
+    return [
+      { offset: 0, opacity: 0, transform: move(cx * .25, stage.height * .3, 0, .55) },
+      { offset: start, opacity: 0, transform: move(cx * .25, stage.height * .3, 0, .55) },
+      { offset: start + .1, opacity: 1, transform: move(0, -6, 0, 1.04) },
+      { offset: start + .19, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
   if (scene === "claw") {
     // Four visual grabs based only on shuffled board position.
     const grab = index % 4;
