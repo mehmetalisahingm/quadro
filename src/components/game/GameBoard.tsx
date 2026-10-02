@@ -33,6 +33,7 @@ import { GameLoading } from "./GameLoading";
 import { MistakeMeter } from "./MistakeMeter";
 import { feedbackMessage } from "./presentation";
 import { CardShuffleIntro } from "./CardShuffleIntro";
+import { BoardPrelude } from "./BoardPrelude";
 import { StoryOpening } from "./StoryOpening";
 import { gameOpeningFor } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
@@ -249,7 +250,9 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       data-difficulty={difficulty}
     >
       {!cinematicDone && isPlaying ? (
-        opening === "metro" || opening === "film" || opening === "record" ? (
+        opening === "board-prelude" ? (
+          <BoardPrelude key={puzzle.id} onReveal={revealCinematic} onComplete={finishCinematic} />
+        ) : opening === "metro" || opening === "film" || opening === "record" || opening === "domino" || opening === "elevator" || opening === "baggage" ? (
           <StoryOpening key={puzzle.id} scene={opening} words={cinematicWords}
             onReveal={revealCinematic} onComplete={finishCinematic} />
         ) : <CardShuffleIntro

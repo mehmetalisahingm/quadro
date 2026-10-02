@@ -6,15 +6,23 @@ import type { OpeningScene } from "@/animations/openingScenes";
 import { FilmScene, MetroScene, RecordScene } from "./OpeningSceneArt";
 import { gameOpeningFor } from "@/animations/openingScenes";
 import { StoryOpening } from "./StoryOpening";
+import { BoardPrelude } from "./BoardPrelude";
+import { BaggageScene, DominoScene, ElevatorScene } from "./TravelOpeningArt";
 import styles from "./OpeningPreview.module.css";
 
 const PREVIEW_WORDS = ["DEMO 01", "DEMO 02", "DEMO 03", "DEMO 04", "DEMO 05", "DEMO 06", "DEMO 07", "DEMO 08", "DEMO 09", "DEMO 10", "DEMO 11", "DEMO 12", "DEMO 13", "DEMO 14", "DEMO 15", "DEMO 16"];
-const TEST_DAYS = Array.from({ length: 10 }, (_, index) => `2026-09-${String(20 + index).padStart(2, "0")}`);
+const TEST_DAYS = Array.from({ length: 13 }, (_, index) => new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10));
+const NEW_SCENES = [
+  { id: "domino", title: "Biri başlar, hepsi bağlanır.", description: "Domino taşları sırayla devrilir. Her dokunuş yeni bir kartı açar.", button: "Dominoyu oynat", Art: DominoScene },
+  { id: "elevator", title: "Bir üst katta keşif var.", description: "Üç durak, açılan pirinç kapılar. Kartlar her katta tahtaya taşınır.", button: "Asansörü oynat", Art: ElevatorScene },
+  { id: "baggage", title: "Kelimelerin yolculuğu.", description: "Bavullar bantta ilerler, tarayıcıdan geçen kartlar yerini bulur.", button: "Bagaj bandını oynat", Art: BaggageScene },
+] as const;
+const noop = () => {};
 
 export function OpeningPreview() {
-  const [active, setActive] = useState<OpeningScene | null>(null);
+  const [active, setActive] = useState<OpeningScene | "board-prelude" | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
-  const play = (scene: OpeningScene, button: HTMLButtonElement) => {
+  const play = (scene: OpeningScene | "board-prelude", button: HTMLButtonElement) => {
     triggerRef.current = button;
     setActive(scene);
   };
@@ -28,6 +36,14 @@ export function OpeningPreview() {
       <div className={styles.heading}><span>KÜÇÜK SAHNELER, YENİ BAŞLANGIÇLAR</span><h1>Her gün başka<br />bir <em>hikâye.</em></h1><p>Bir tren yolculuğu. Bir film seti.<br />On altı kelimenin sahneye çıkma zamanı.</p></div>
       <div className={styles.scenes}>
         <article className={styles.scene}>
+          <div className={styles.poster}><BoardPrelude poster onComplete={noop} /></div>
+          <div className={styles.description}><span>PREMIUM / 16 PARÇA <i>00:03</i></span><h2>Her parça bir bütüne ait.</h2><p>Özgün metalik plak birleşir, ışık yüzeyden geçer ve on altı karta ayrılır.</p><button type="button" onClick={(event) => play("board-prelude", event.currentTarget)}>Premium plağı oynat <span aria-hidden="true">↗</span></button></div>
+        </article>
+        {NEW_SCENES.map(({ id, title, description, button, Art }) => <article key={id} className={styles.scene}>
+          <div className={styles.poster}><Art /></div>
+          <div className={styles.description}><span>YENİ SAHNE <i>00:03</i></span><h2>{title}</h2><p>{description}</p><button type="button" onClick={(event) => play(id, event.currentTarget)}>{button} <span aria-hidden="true">↗</span></button></div>
+        </article>)}
+        <article className={styles.scene}>
           <div className={styles.poster}><MetroScene /></div>
           <div className={styles.description}><span>01 / ŞEHİR HATLARI <i>00:03</i></span><h2>Sonraki durak: keşif.</h2><p>Tren gelir, kapılar açılır. Kartlar perondan tahtaya doğru yola çıkar.</p><button type="button" onClick={(event) => play("metro", event.currentTarget)}>Metro peronunu oynat <span aria-hidden="true">↗</span></button></div>
         </article>
@@ -40,12 +56,12 @@ export function OpeningPreview() {
           <div className={styles.description}><span>03 / SES ARŞİVİ <i>00:03</i></span><h2>Bağlantının ritmi.</h2><p>Plak döner, iğne iner. Kartlar müziğin ritmiyle tahtaya akar.</p><button type="button" onClick={(event) => play("record", event.currentTarget)}>Plağı oynat <span aria-hidden="true">↗</span></button></div>
         </article>
       </div>
-      <section className={styles.testDays} aria-label="Arka arkaya on test oyunu">
-        <span>10 OYUNU SIRAYLA DENE</span>
+      <section className={styles.testDays} aria-label="Arka arkaya on üç test oyunu">
+        <span>13 OYUNU SIRAYLA DENE</span>
         <div>{TEST_DAYS.map((day, index) => <Link key={day} href={`/play?day=${day}`}><small>{String(index + 1).padStart(2, "0")}</small><b>{day.slice(5)}</b><i>{gameOpeningFor(`q-${index + 1}`, day)}</i></Link>)}</div>
       </section>
       <footer className={styles.footer}><span>Her açılışta aynı oyun. Farklı bir ilk sahne.</span><button type="button" onClick={(event) => play("four-corners", event.currentTarget)}>Dört köşeyi oynat ↗</button></footer>
-      {active ? <StoryOpening key={active} scene={active} words={PREVIEW_WORDS} onComplete={finish} /> : null}
+      {active === "board-prelude" ? <BoardPrelude onComplete={finish} /> : active ? <StoryOpening key={active} scene={active} words={PREVIEW_WORDS} onComplete={finish} /> : null}
     </main>
   );
 }

@@ -2,10 +2,10 @@ import type { Puzzle } from "@/features/game/contracts";
 import { createEngineController } from "@/features/game/react/engineController";
 import { CARD_INTROS } from "./cardIntros";
 
-export const GAME_OPENINGS = ["metro", "film", "record", ...CARD_INTROS] as const;
+export const GAME_OPENINGS = ["board-prelude", "domino", "elevator", "baggage", "metro", "film", "record", ...CARD_INTROS] as const;
 export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OPENINGS[number] {
   const timestamp = Date.parse(`${dayKey}T00:00:00Z`);
-  // Anchor the gallery's first playable day to the recovered metro scene.
+  // Start the gallery with the recovered metallic sculpture, followed by the new scenes.
   let seed = Number.isFinite(timestamp) ? Math.floor((timestamp - Date.UTC(2026, 8, 20)) / 86400000) : 0;
   if (!Number.isFinite(timestamp)) {
     for (const char of puzzleId) seed = (Math.imul(seed, 31) + char.charCodeAt(0)) >>> 0;
@@ -13,7 +13,7 @@ export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OP
   return GAME_OPENINGS[((seed % GAME_OPENINGS.length) + GAME_OPENINGS.length) % GAME_OPENINGS.length] ?? "metro";
 }
 
-export const OPENING_SCENES = ["four-corners", "metro", "film", "record"] as const;
+export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage"] as const;
 export type OpeningScene = (typeof OPENING_SCENES)[number];
 export const OPENING_DURATION = 3000;
 
@@ -22,6 +22,9 @@ export const OPENING_COPY: Record<OpeningScene, { name: string; kicker: string; 
   metro: { name: "Sonraki durak", kicker: "QUADRO ŞEHİR HATLARI", title: "Sonraki durak: keşif.", detail: "Kapılar açılıyor. Bağlantılar seni bekliyor." },
   film: { name: "Motor. Kayıt.", kicker: "BİR QUADRO GÖSTERİSİ", title: "Ve… başlıyoruz.", detail: "On altı kelime. Başrolde sen." },
   record: { name: "Plak döner.", kicker: "QUADRO SES ARŞİVİ", title: "Bağlantının ritmi.", detail: "İğne iner. Kelimeler akmaya başlar." },
+  domino: { name: "Domino", kicker: "KÜÇÜK BİR DOKUNUŞ", title: "Biri başlar, hepsi bağlanır.", detail: "Bir hareket. On altı olasılık." },
+  elevator: { name: "Asansör", kicker: "QUADRO GRAND HOTEL", title: "Bir üst katta keşif var.", detail: "Kapılar açılıyor. Bir sonraki durak senin." },
+  baggage: { name: "Bagaj bandı", kicker: "QUADRO INTERNATIONAL", title: "Kelimelerin yolculuğu.", detail: "Bagajın hazır. Bağlantıları teslim al." },
 };
 
 /** Calendar rotation prevents adjacent-day repeats, independently of difficulty. */
@@ -55,6 +58,38 @@ export function openingCardFrames(
   const cx = (stage.width - width) / 2 - x;
   const cy = (stage.height - height) / 2 - y;
   const rank = index % 4;
+  if (scene === "domino") {
+    const start = .22 + index * .024;
+    return [
+      { offset: 0, opacity: 0, transform: move(0, 28, -12, .72) },
+      { offset: start, opacity: 0, transform: move(0, 28, -12, .72) },
+      { offset: start + .12, opacity: 1, transform: move(0, -9, 2, 1.06) },
+      { offset: start + .23, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "elevator") {
+    const start = [.19, .4, .6][index % 3]!;
+    return [
+      { offset: 0, opacity: 0, transform: move(cx, cy + 20, 0, .18) },
+      { offset: start, opacity: 0, transform: move(cx, cy + 20, 0, .18) },
+      { offset: start + .09, opacity: 1, transform: move(cx * .6, cy * .6, (rank - 1.5) * 4, .6) },
+      { offset: start + .27, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "baggage") {
+    const start = .18 + index * .025;
+    const dx = stage.width * .7 - x - width / 2;
+    const dy = stage.height * .64 - y - height / 2;
+    return [
+      { offset: 0, opacity: 0, transform: move(dx - stage.width * .25, dy, 0, .5) },
+      { offset: start, opacity: 0, transform: move(dx - stage.width * .25, dy, 0, .5) },
+      { offset: start + .07, opacity: 1, transform: move(dx, dy, -4, .55) },
+      { offset: start + .28, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
   if (scene === "metro") {
     const door = (index * 7) % 3;
     const dx = stage.width * [.158, .495, .832][door]! - x - width / 2;

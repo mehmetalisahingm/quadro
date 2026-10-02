@@ -20,10 +20,10 @@ describe("daily opening scenes", () => {
     expect(OPENING_SCENES).toContain(openingSceneFor("q-abc", "2026-02-31"));
   });
 
-  it("rotates the ten-game gallery through metro, film, record and card intros", () => {
-    const openings = Array.from({ length: 10 }, (_, index) => gameOpeningFor(`q-${index + 1}`, `2026-09-${String(20 + index).padStart(2, "0")}`));
+  it("rotates the gallery through all scenes across the month boundary", () => {
+    const openings = Array.from({ length: GAME_OPENINGS.length }, (_, index) => gameOpeningFor(`q-${index + 1}`, new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10)));
     expect(openings.slice(0, GAME_OPENINGS.length)).toEqual([...GAME_OPENINGS]);
-    expect(openings).toHaveLength(10);
+    expect(openings).toHaveLength(13);
     expect(openings).toContain("record");
     expect(new Set(openings).size).toBe(GAME_OPENINGS.length);
   });
