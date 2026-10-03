@@ -2,7 +2,7 @@ import type { Puzzle } from "@/features/game/contracts";
 import { createEngineController } from "@/features/game/react/engineController";
 import { CARD_INTROS } from "./cardIntros";
 
-export const GAME_OPENINGS = ["board-prelude", "chef", "detective", "game-show", "claw", "newsroom", "red-carpet", "domino", "elevator", "baggage", "metro", "film", "record", ...CARD_INTROS] as const;
+export const GAME_OPENINGS = ["board-prelude", "sunrise", "sunset", "snow", "racing", "chef", "detective", "game-show", "claw", "newsroom", "red-carpet", "domino", "elevator", "baggage", "metro", "film", "record", ...CARD_INTROS] as const;
 export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OPENINGS[number] {
   const timestamp = Date.parse(`${dayKey}T00:00:00Z`);
   // Start the gallery with the recovered metallic sculpture, followed by the new scenes.
@@ -13,7 +13,7 @@ export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OP
   return GAME_OPENINGS[((seed % GAME_OPENINGS.length) + GAME_OPENINGS.length) % GAME_OPENINGS.length] ?? "metro";
 }
 
-export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage", "claw", "newsroom", "red-carpet", "chef", "detective", "game-show"] as const;
+export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage", "claw", "newsroom", "red-carpet", "chef", "detective", "game-show", "sunrise", "sunset", "snow", "racing"] as const;
 export type OpeningScene = (typeof OPENING_SCENES)[number];
 export const OPENING_DURATION = 3000;
 
@@ -25,6 +25,10 @@ export const OPENING_COPY: Record<OpeningScene, { name: string; kicker: string; 
   domino: { name: "Domino", kicker: "KÜÇÜK BİR DOKUNUŞ", title: "Biri başlar, hepsi bağlanır.", detail: "Bir hareket. On altı olasılık." },
   elevator: { name: "Asansör", kicker: "QUADRO GRAND HOTEL", title: "Bir üst katta keşif var.", detail: "Kapılar açılıyor. Bir sonraki durak senin." },
   baggage: { name: "Bagaj bandı", kicker: "QUADRO INTERNATIONAL", title: "Kelimelerin yolculuğu.", detail: "Bagajın hazır. Bağlantıları teslim al." },
+  sunrise: { name: "Gün doğumu", kicker: "QUADRO / SABAH", title: "Her sabah yeni bir bağ.", detail: "Işık yükselir. Olasılıklar uyanır." },
+  sunset: { name: "Gün batımı", kicker: "QUADRO / AKŞAM", title: "Günün son keşfi.", detail: "Güneş iner. Kelimeler yerini bulur." },
+  snow: { name: "Kar", kicker: "QUADRO / KIŞ", title: "Sessizlikte saklı bir bağ.", detail: "Kar usulca düşer. İzler seni bekler." },
+  racing: { name: "Araba / pist", kicker: "QUADRO GRAND PRIX", title: "Bağlantılar hız kazanıyor.", detail: "Bir son düzlük. On altı olasılık." },
   chef: { name: "Şef mutfağı", kicker: "QUADRO ATELIER", title: "Bir tutam merak.", detail: "Doğra, karıştır. Bağlantının tarifi sende." },
   detective: { name: "Dedektif masası", kicker: "QUADRO ARAŞTIRMA BÜROSU", title: "Görünenden fazlası var.", detail: "Her kelime bir bulgu. Dikkatli bak." },
   "game-show": { name: "TV yarışması", kicker: "QUADRO SAHNESİ", title: "Hazırsan, başlıyoruz.", detail: "Işıklar açıldı. Sıra senin keşfinde." },
@@ -64,6 +68,47 @@ export function openingCardFrames(
   const cx = (stage.width - width) / 2 - x;
   const cy = (stage.height - height) / 2 - y;
   const rank = index % 4;
+  if (scene === "sunrise") {
+    const start = .24 + (3 - Math.floor(index / 4)) * .055;
+    return [
+      { offset: 0, opacity: 0, transform: move(0, stage.height * .23, 0, .92) },
+      { offset: start, opacity: 0, transform: move(0, stage.height * .23, 0, .92) },
+      { offset: start + .28, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "sunset") {
+    const start = .27 + index * .018;
+    return [
+      { offset: 0, opacity: 0, transform: move(stage.width * .08, -32, -3, .94) },
+      { offset: start, opacity: 0, transform: move(stage.width * .08, -32, -3, .94) },
+      { offset: start + .25, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "snow") {
+    const start = .2 + index * .022;
+    return [
+      { offset: 0, opacity: 0, transform: move(-45, -stage.height * .2, -7, .9) },
+      { offset: start, opacity: 0, transform: move(-45, -stage.height * .2, -7, .9) },
+      { offset: start + .18, opacity: 1, transform: move(8, 2, 2, 1) },
+      { offset: start + .28, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
+  if (scene === "racing") {
+    const lane = index % 3;
+    const start = .18 + Math.floor(index / 3) * .035;
+    const laneY = stage.height * (.35 + lane * .17) - y;
+    return [
+      { offset: 0, opacity: 0, transform: move(-stage.width - x, laneY, -8, .65) },
+      { offset: start, opacity: 0, transform: move(-stage.width - x, laneY, -8, .65) },
+      { offset: start + .2, opacity: 1, transform: move(cx + (lane - 1) * width * .5, laneY - 35, -8, .82) },
+      { offset: start + .34, opacity: 1, transform: move(10, -2, 0, 1.02) },
+      { offset: start + .41, opacity: 1, transform: move(0, 0) },
+      { offset: 1, opacity: 1, transform: move(0, 0) },
+    ];
+  }
   if (scene === "chef") {
     // Chopping beats match the decorative arm; never use solution groups.
     const drift = (index % 2 ? 1 : -1) * width * .17;

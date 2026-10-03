@@ -10,11 +10,17 @@ import { BoardPrelude } from "./BoardPrelude";
 import { BaggageScene, DominoScene, ElevatorScene } from "./TravelOpeningArt";
 import { ClawScene, NewsroomScene, RedCarpetScene } from "./ShowtimeOpeningArt";
 import { ChefScene, DetectiveScene, GameShowScene } from "./DiscoveryOpeningArt";
+import { SunriseScene, SunsetScene, SnowScene, RacingScene } from "./FinalOpeningArt";
+import { FootballArt, FootballReaction, type FootballVariant } from "./FootballReaction";
 import styles from "./OpeningPreview.module.css";
 
 const PREVIEW_WORDS = ["DEMO 01", "DEMO 02", "DEMO 03", "DEMO 04", "DEMO 05", "DEMO 06", "DEMO 07", "DEMO 08", "DEMO 09", "DEMO 10", "DEMO 11", "DEMO 12", "DEMO 13", "DEMO 14", "DEMO 15", "DEMO 16"];
 const TEST_DAYS = Array.from({ length: GAME_OPENINGS.length }, (_, index) => new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10));
 const NEW_SCENES = [
+  { id: "sunrise", title: "Her sabah yeni bir bağ.", description: "Dağların ardından güneş yükselir. Kartlar sabah ışığıyla uyanır.", button: "Gün doğumunu oynat", Art: SunriseScene },
+  { id: "sunset", title: "Günün son keşfi.", description: "Güneş denize iner, yelkenli süzülür. Kartlar akşamın ritmiyle yerleşir.", button: "Gün batımını oynat", Art: SunsetScene },
+  { id: "snow", title: "Sessizlikte saklı bir bağ.", description: "Kar ormanın üzerine usulca düşer. Kartlar buzda kayar gibi yerini bulur.", button: "Kar sahnesini oynat", Art: SnowScene },
+  { id: "racing", title: "Bağlantılar hız kazanıyor.", description: "Arabalar son düzlüğe girer. Kartlar birbirini geçer, tahtaya kilitlenir.", button: "Araba yarışını oynat", Art: RacingScene },
   { id: "chef", title: "Bir tutam merak.", description: "Şefin bıçağı ritim tutar. Kartlar karışır, son vuruşla yerlerine oturur.", button: "Şef mutfağını oynat", Art: ChefScene },
   { id: "detective", title: "Görünenden fazlası var.", description: "Dosya açılır, büyüteç izleri tarar. Her kelime yeni bir bulguya dönüşür.", button: "Dedektif masasını oynat", Art: DetectiveScene },
   { id: "game-show", title: "Hazırsan, başlıyoruz.", description: "Spotlar sahneyi tarar. Üç, iki, bir: kelimeler sahneye çıkar.", button: "TV yarışmasını oynat", Art: GameShowScene },
@@ -29,6 +35,7 @@ const noop = () => {};
 
 export function OpeningPreview() {
   const [active, setActive] = useState<OpeningScene | "board-prelude" | null>(null);
+  const [reaction, setReaction] = useState<{ variant: FootballVariant; id: number } | null>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const play = (scene: OpeningScene | "board-prelude", button: HTMLButtonElement) => {
     triggerRef.current = button;
@@ -47,6 +54,14 @@ export function OpeningPreview() {
           <div className={styles.poster}><BoardPrelude poster onComplete={noop} /></div>
           <div className={styles.description}><span>PREMIUM / 16 PARÇA <i>00:03</i></span><h2>Her parça bir bütüne ait.</h2><p>Özgün metalik plak birleşir, ışık yüzeyden geçer ve on altı karta ayrılır.</p><button type="button" onClick={(event) => play("board-prelude", event.currentTarget)}>Premium plağı oynat <span aria-hidden="true">↗</span></button></div>
         </article>
+        <article className={styles.scene}>
+          <div className={styles.poster}><div className={styles.footballPoster}><FootballArt /></div></div>
+          <div className={styles.description}><span>OFSAYT / HAKEM <i>00:01</i></span><h2>Bayrak kalktı. Yeniden dene.</h2><p>Yanlış tahminde bayrak ya da düdük tepkisi. Hata mesajı görünür, oyun akışı devam eder.</p>
+            <div className={styles.reactionDemo} role="status">Bu dört kelime aynı grupta değil.{reaction && <FootballReaction key={reaction.id} variant={reaction.variant} />}</div>
+            <button type="button" onClick={() => setReaction(previous => ({ variant: "flag", id: (previous?.id ?? 0) + 1 }))}>Ofsayt bayrağını dene <span aria-hidden="true">↗</span></button>
+            <button type="button" onClick={() => setReaction(previous => ({ variant: "whistle", id: (previous?.id ?? 0) + 1 }))}>Hakem düdüğünü dene <span aria-hidden="true">↗</span></button>
+          </div>
+        </article>
         {NEW_SCENES.map(({ id, title, description, button, Art }) => <article key={id} className={styles.scene}>
           <div className={styles.poster}><Art /></div>
           <div className={styles.description}><span>YENİ SAHNE <i>00:03</i></span><h2>{title}</h2><p>{description}</p><button type="button" onClick={(event) => play(id, event.currentTarget)}>{button} <span aria-hidden="true">↗</span></button></div>
@@ -64,8 +79,8 @@ export function OpeningPreview() {
           <div className={styles.description}><span>03 / SES ARŞİVİ <i>00:03</i></span><h2>Bağlantının ritmi.</h2><p>Plak döner, iğne iner. Kartlar müziğin ritmiyle tahtaya akar.</p><button type="button" onClick={(event) => play("record", event.currentTarget)}>Plağı oynat <span aria-hidden="true">↗</span></button></div>
         </article>
       </div>
-      <section className={styles.testDays} aria-label="Arka arkaya on dokuz test oyunu">
-        <span>19 OYUNU SIRAYLA DENE</span>
+      <section className={styles.testDays} aria-label="Arka arkaya yirmi üç test oyunu">
+        <span>23 OYUNU SIRAYLA DENE</span>
         <div>{TEST_DAYS.map((day, index) => <Link key={day} href={`/play?day=${day}`}><small>{String(index + 1).padStart(2, "0")}</small><b>{day.slice(5)}</b><i>{gameOpeningFor(`q-${index + 1}`, day)}</i></Link>)}</div>
       </section>
       <footer className={styles.footer}><span>Her açılışta aynı oyun. Farklı bir ilk sahne.</span><button type="button" onClick={(event) => play("four-corners", event.currentTarget)}>Dört köşeyi oynat ↗</button></footer>

@@ -34,6 +34,7 @@ import { MistakeMeter } from "./MistakeMeter";
 import { feedbackMessage } from "./presentation";
 import { CardShuffleIntro } from "./CardShuffleIntro";
 import { BoardPrelude } from "./BoardPrelude";
+import { FootballReaction } from "./FootballReaction";
 import { StoryOpening } from "./StoryOpening";
 import { gameOpeningFor } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
@@ -252,7 +253,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       {!cinematicDone && isPlaying ? (
         opening === "board-prelude" ? (
           <BoardPrelude key={puzzle.id} onReveal={revealCinematic} onComplete={finishCinematic} />
-        ) : opening === "metro" || opening === "film" || opening === "record" || opening === "domino" || opening === "elevator" || opening === "baggage" || opening === "chef" || opening === "detective" || opening === "game-show" || opening === "claw" || opening === "newsroom" || opening === "red-carpet" ? (
+        ) : opening === "metro" || opening === "film" || opening === "record" || opening === "domino" || opening === "elevator" || opening === "baggage" || opening === "sunrise" || opening === "sunset" || opening === "snow" || opening === "racing" || opening === "chef" || opening === "detective" || opening === "game-show" || opening === "claw" || opening === "newsroom" || opening === "red-carpet" ? (
           <StoryOpening key={puzzle.id} scene={opening} words={cinematicWords}
             onReveal={revealCinematic} onComplete={finishCinematic} />
         ) : <CardShuffleIntro
@@ -345,6 +346,9 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
             aria-atomic="true"
           >
             {feedbackMessage(feedback)}
+            {snapshot.status !== "lost" && (feedback?.verdict === "wrong" || feedback?.verdict === "one-away") && (
+              <FootballReaction key={snapshot.attempts.length} variant={snapshot.attempts.length % 2 === 0 ? "whistle" : "flag"} />
+            )}
           </div>
 
           {isPlaying ? (
@@ -389,6 +393,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
         </>
       ) : (
         <div className={motionStyles.resultEntering}>
+          {snapshot.status === "lost" && feedback && <FootballReaction variant="whistle" lost />}
           <GameResult puzzle={puzzle} snapshot={snapshot} />
         </div>
       )}
