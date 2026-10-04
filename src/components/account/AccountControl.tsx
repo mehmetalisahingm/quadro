@@ -58,6 +58,7 @@ export function AccountControl() {
       <Link className={styles.accountPill} href="/stats" title={label}>
         {label}
       </Link>
+      <Link className={styles.loginLink} href="/admin">Yönetim</Link>
       <button
         className={styles.signOutButton}
         type="button"

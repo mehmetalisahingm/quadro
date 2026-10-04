@@ -38,6 +38,7 @@ import { FootballReaction } from "./FootballReaction";
 import { StoryOpening } from "./StoryOpening";
 import { gameOpeningFor } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
+import { AdminGameNavigation } from "./AdminGameNavigation";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
 
@@ -269,6 +270,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       ) : null}
 
       <RecoveryNotice restore={restore} />
+      {isAdmin ? <AdminGameNavigation key={puzzle.date} currentDay={puzzle.date} /> : null}
       <div className={difficultyStyles.toolbar}>
         <span className={difficultyStyles.badge} data-difficulty={difficulty}>{mode.label} mod</span>
         {onOpenRules ? (
