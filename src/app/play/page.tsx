@@ -4,6 +4,7 @@ import Link from "next/link";
 import { DailyPuzzleSection } from "@/components/game/DailyPuzzleSection";
 import { TutorialExperience } from "@/components/tutorial/TutorialExperience";
 import { PLAY_DESCRIPTION, TUTORIAL_DESCRIPTION } from "@/lib/config";
+import { GAME_ARCHIVE_START as TEMP_ARCHIVE_START, GAME_ARCHIVE_END as TEMP_ARCHIVE_END, archiveDayOffset } from "@/lib/gameArchive";
 import {
   formatDayLabel,
   isPublicationDayKey,
@@ -16,8 +17,6 @@ type PlayPageProps = {
   searchParams: Promise<{ mode?: string; day?: string; view?: string }>;
 };
 
-const TEMP_ARCHIVE_START = "2026-09-20";
-const TEMP_ARCHIVE_END = "2026-10-19";
 
 export async function generateMetadata({ searchParams }: PlayPageProps): Promise<Metadata> {
   const { mode } = await searchParams;
@@ -32,12 +31,6 @@ export async function generateMetadata({ searchParams }: PlayPageProps): Promise
         title: "Bugünün bulmacası",
         description: PLAY_DESCRIPTION,
       };
-}
-
-function calendarDay(dayKey: string, offset: number): string {
-  const [year, month, day] = dayKey.split("-").map(Number);
-  const at = Date.UTC(year ?? 0, (month ?? 1) - 1, day ?? 1) + offset * 86_400_000;
-  return new Date(at).toISOString().slice(0, 10);
 }
 
 function resolvePlayableDay(requestedDay?: string): string {
@@ -55,7 +48,7 @@ function resolvePlayableDay(requestedDay?: string): string {
 
 function nextPuzzleDay(dayKey: string): string | null {
   if (dayKey >= TEMP_ARCHIVE_END) return null;
-  return calendarDay(dayKey, 1);
+  return archiveDayOffset(dayKey, 1);
 }
 
 function dailyKicker(state: DailyPuzzleState): string {

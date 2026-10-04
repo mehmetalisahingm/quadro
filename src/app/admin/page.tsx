@@ -5,6 +5,7 @@ import { FormEvent, useCallback, useEffect, useState } from "react";
 
 import { claimAdmin, currentUserIsAdmin } from "@/lib/auth/admin";
 import { readStoredSession } from "@/lib/auth/client";
+import { AdminGameNavigation } from "@/components/game/AdminGameNavigation";
 
 type DashboardTotals = {
   visitors: number;
@@ -137,6 +138,8 @@ export default function AdminPage() {
               <Link href="/play">Bulmacaya dön →</Link>
             </div>
 
+            <AdminGameNavigation />
+
             {dashboard ? (
               <>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "0.75rem" }}>
@@ -201,6 +204,7 @@ export default function AdminPage() {
 
         {!checking && !isAdmin ? (
           <form onSubmit={submit} style={{ ...cardStyle, width: "min(32rem, 100%)", display: "grid", gap: "0.75rem" }}>
+            <Link href="/login">Admin hesabınla giriş yap →</Link>
             <label htmlFor="admin-code">Tek kullanımlık admin kodu</label>
             <input id="admin-code" type="password" autoComplete="off" value={code} onChange={(event) => setCode(event.target.value)} required style={{ minHeight: 44, padding: "0.75rem" }} />
             <button type="submit" style={{ minHeight: 44, fontWeight: 800 }}>Admin modunu etkinleştir</button>
