@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState, useSyncExternalStore } from "react";
 
+import { gameOpeningFor } from "@/animations/openingScenes";
 import type { Puzzle } from "@/features/game/contracts";
 import { resolveGameDifficulty, type GameDifficulty } from "@/features/game/difficulty";
 import { parseStoredRecord } from "@/lib/persistence/record";
@@ -53,7 +54,14 @@ export function PlayExperience({ puzzle }: { puzzle: Puzzle }) {
   };
 
   if (savedSession === "loading" && chosenMode === null) return <GameLoading />;
-  if (savedSession === "new" && chosenMode === null) return <GameWelcome onStart={start} />;
+  if (savedSession === "new" && chosenMode === null) {
+    const opening = gameOpeningFor(puzzle.id, puzzle.date);
+    const hasLandscape = opening === "sunrise" || opening === "sunset" || opening === "snow";
+    return <>
+      {hasLandscape && <link rel="preload" as="image" href={`/images/openings/${opening}-premium.webp`} />}
+      <GameWelcome onStart={start} />
+    </>;
+  }
 
   const difficulty = chosenMode ?? resolveGameDifficulty(savedSession);
   return (
