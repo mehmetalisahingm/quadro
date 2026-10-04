@@ -67,7 +67,7 @@ export function PlayExperience({ puzzle }: { puzzle: Puzzle }) {
   return (
     <div className={styles.experience}>
       <GameBoard puzzle={puzzle} difficulty={difficulty}
-        playIntro={chosenMode !== null && gameOpeningFor(puzzle.id, puzzle.date) !== "board-prelude"}
+        playIntro={gameOpeningFor(puzzle.id, puzzle.date) !== "board-prelude"}
         onOpenRules={() => { setRulesOpen(true); rulesDialog.current?.showModal(); }} />
       <dialog ref={rulesDialog} className={styles.ruleDialog} aria-label="Quadro kural kitapçığı"
         onClose={() => setRulesOpen(false)}

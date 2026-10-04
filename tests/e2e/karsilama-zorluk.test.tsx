@@ -2,7 +2,7 @@ import { act, cleanup, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import PlayPage from "@/app/play/page";
-import { playModeKey } from "@/components/game/PlayExperience";
+import { PlayExperience, playModeKey } from "@/components/game/PlayExperience";
 import { parseStoredRecord } from "@/lib/persistence/record";
 import { snapshotStorageKey } from "@/lib/persistence/snapshotStore";
 
@@ -22,6 +22,20 @@ import {
 registerFlowHooks();
 
 describe("karşılama → açılış → zorluk modu", () => {
+  it("kayıtlı mod sonraki bulmacanın açılış animasyonunu atlatmaz", () => {
+    const nextPuzzle = { ...puzzle, id: "saved-opening", date: "2026-09-21" };
+    localStorage.setItem(playModeKey(nextPuzzle), "easy");
+    render(<PlayExperience puzzle={nextPuzzle} />);
+    expect(screen.getByRole("region", { name: "Oyun açılışı" }).getAttribute("data-opening")).toBe("sunrise");
+    expect(screen.queryByRole("button", { name: "Bağlantıları bul" })).toBeNull();
+    expect(screen.getByRole("button", { name: "Karıştır" }).hasAttribute("disabled")).toBe(true);
+    act(() => vi.advanceTimersByTime(3300));
+    expect(screen.queryByRole("region", { name: "Oyun açılışı" })).toBeNull();
+    expect(screen.getByRole("button", { name: "Karıştır" }).hasAttribute("disabled")).toBe(false);
+    expect(screen.getByText("Kolay mod")).toBeTruthy();
+    expect(localStorage.getItem(playModeKey(nextPuzzle))).toBe("easy");
+  });
+
   it("kitapçığı önce gösterir ve okuma süresini oyun süresine eklemez", async () => {
     render(await PlayPage({ searchParams: Promise.resolve({}) }));
     const user = createUser();
