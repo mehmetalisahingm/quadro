@@ -35,7 +35,7 @@ export function TrackNavigation({ difficulty, level }: { difficulty?: GameDiffic
       <div className={styles.levels}>{Array.from({ length: TRACK_LEVEL_COUNT }, (_, i) => {
         const status = saved[index * TRACK_LEVEL_COUNT + i];
         const suffix = status === "won" ? " · Çözüldü" : status === "lost" ? " · Tamamlandı" : status === "playing" ? " · Devam et" : "";
-        return <Link key={i} href={trackHref(mode.id, i + 1)} aria-current={difficulty === mode.id && level === i + 1 ? "page" : undefined} aria-label={`${mode.label} bölüm ${i + 1}${suffix}`} title={suffix || "Yeni bölüm"}>{i + 1}{status === "won" ? " ✓" : status === "playing" ? " •" : ""}</Link>;
+        return <Link key={i} prefetch={false} href={trackHref(mode.id, i + 1)} aria-current={difficulty === mode.id && level === i + 1 ? "page" : undefined} aria-label={`${mode.label} bölüm ${i + 1}${suffix}`} title={suffix || "Yeni bölüm"}>{i + 1}{status === "won" ? " ✓" : status === "playing" ? " •" : ""}</Link>;
       })}</div>
     </section>)}</div>
   </nav>;
