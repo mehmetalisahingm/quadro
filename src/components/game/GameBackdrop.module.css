@@ -1,0 +1,24 @@
+.backdrop { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; background: #e6e5da; --opening-duration: 3000ms; }
+.motion { position: absolute; inset: -3%; animation: breathe 28s ease-in-out infinite alternate; }
+.art { position: absolute; inset: 0; }
+.art > div { border-radius: 0; border: 0; }
+.plaque { background: #f7f5ef; }
+.plaque > section { transform: scale(3.7); }
+.veil { position: absolute; inset: 0; background: linear-gradient(90deg, #f6f3ed30, #f6f3edda 28%, #f6f3edeb 50%, #f6f3edda 72%, #f6f3ed30); }
+.cards { position: absolute; inset: 8%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 5%; transform: rotate(-12deg) scale(1.12); }
+.cards i { border: 1px solid #c4b293; border-radius: 18px; background: linear-gradient(135deg, #fffaf0, #d6c2a1); box-shadow: 0 20px 55px #40332224; transform: rotate(var(--angle)); animation: floatCard 14s ease-in-out infinite alternate; animation-delay: calc(var(--i) * -.8s); }
+.cards[data-card-scene="orbit"] { border-radius: 50%; transform: rotate(24deg) scale(1.15); }
+.cards[data-card-scene="cascade"] { transform: rotate(16deg) translateY(-8%); }
+.cards[data-card-scene="cross-shuffle"] { transform: rotate(45deg) scale(1.25); }
+.cards[data-card-scene="deck-burst"] { gap: 1%; transform: rotate(-26deg) scale(.95); }
+.cards[data-card-scene="magnet-snap"] { gap: 2%; transform: rotate(0deg); }
+@keyframes breathe { from { transform: scale(1) translateX(-.5%); } to { transform: scale(1.045) translateX(.5%); } }
+@keyframes floatCard { from { translate: 0 -8px; } to { translate: 0 12px; } }
+@media (max-width: 640px) {
+  .veil { background: linear-gradient(180deg, #f6f3edb8, #f6f3eddb 32%, #f6f3ede8 75%, #f6f3edb8); }
+  .art { left: -45%; right: -45%; }
+  .plaque > section { transform: scale(3); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .backdrop *, .backdrop *::before, .backdrop *::after { animation: none !important; transition: none !important; }
+}

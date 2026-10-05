@@ -36,6 +36,7 @@ import { CardShuffleIntro } from "./CardShuffleIntro";
 import { BoardPrelude } from "./BoardPrelude";
 import { FootballReaction } from "./FootballReaction";
 import { StoryOpening } from "./StoryOpening";
+import { GameBackdrop } from "./GameBackdrop";
 import { gameOpeningFor } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
 import { trackIdentity } from "@/features/game/tracks";
@@ -256,6 +257,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       data-transitioning={isTransitioning ? "true" : undefined}
       data-difficulty={difficulty}
     >
+      <GameBackdrop key={opening} scene={opening} />
       {!cinematicDone && isPlaying ? (
         opening === "board-prelude" ? (
           <BoardPrelude key={puzzle.id} onReveal={revealCinematic} onComplete={finishCinematic} />

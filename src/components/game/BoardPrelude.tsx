@@ -163,9 +163,9 @@ export function BoardPrelude({ onComplete, onReveal, poster = false }: BoardPrel
       <div className={styles.footer}>
         <div className={styles.progress} aria-hidden="true"><span /></div>
         <p>16 kelime<span />4 gizli bağ<span />Bir keşif.</p>
-        <button ref={skipRef} tabIndex={poster ? -1 : undefined} className={styles.skip} onClick={finish} type="button">
+        {!poster && <button ref={skipRef} className={styles.skip} onClick={finish} type="button">
           Oyuna geç <span aria-hidden="true">↗</span>
-        </button>
+        </button>}
       </div>
     </section>
   );

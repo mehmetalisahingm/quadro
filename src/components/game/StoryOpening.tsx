@@ -91,7 +91,7 @@ export function StoryOpening({ scene, words, onComplete, onReveal }: {
       </header>
       <div className={styles.introCopy}><span>{copy.kicker}</span><h2>{copy.title}</h2></div>
       <div ref={stageRef} className={styles.stage} aria-hidden="true">
-        {scene === "sunrise" ? <SunriseScene /> : scene === "sunset" ? <SunsetScene /> : scene === "snow" ? <SnowScene /> : scene === "racing" ? <RacingScene /> : scene === "chef" ? <ChefScene /> : scene === "detective" ? <DetectiveScene /> : scene === "game-show" ? <GameShowScene /> : scene === "metro" ? <MetroScene /> : scene === "film" ? <FilmScene /> : scene === "record" ? <RecordScene /> : scene === "domino" ? <DominoScene /> : scene === "elevator" ? <ElevatorScene /> : scene === "baggage" ? <BaggageScene /> : scene === "claw" ? <ClawScene /> : scene === "newsroom" ? <NewsroomScene /> : scene === "red-carpet" ? <RedCarpetScene /> : <div className={styles.cornerBackdrop}><i /><span>16 / 04</span></div>}
+        <OpeningArtwork scene={scene} />
         <div className={styles.cardGrid}>
           {Array.from({ length: 16 }, (_, index) => (
             <div key={index} className={styles.card} data-opening-card={index}>
@@ -103,4 +103,9 @@ export function StoryOpening({ scene, words, onComplete, onReveal }: {
       <footer className={styles.footer}><span>{copy.detail}</span><div className={styles.progress}><i /></div><small>16 KELİME · 4 GİZLİ BAĞ</small></footer>
     </section>
   );
+}
+
+/** Shared art keeps the opening and the persistent game scenery identical. */
+export function OpeningArtwork({ scene }: { scene: OpeningScene }) {
+  return (scene === "sunrise" ? <SunriseScene /> : scene === "sunset" ? <SunsetScene /> : scene === "snow" ? <SnowScene /> : scene === "racing" ? <RacingScene /> : scene === "chef" ? <ChefScene /> : scene === "detective" ? <DetectiveScene /> : scene === "game-show" ? <GameShowScene /> : scene === "metro" ? <MetroScene /> : scene === "film" ? <FilmScene /> : scene === "record" ? <RecordScene /> : scene === "domino" ? <DominoScene /> : scene === "elevator" ? <ElevatorScene /> : scene === "baggage" ? <BaggageScene /> : scene === "claw" ? <ClawScene /> : scene === "newsroom" ? <NewsroomScene /> : scene === "red-carpet" ? <RedCarpetScene /> : <div className={styles.cornerBackdrop}><i /><span>16 / 04</span></div>);
 }

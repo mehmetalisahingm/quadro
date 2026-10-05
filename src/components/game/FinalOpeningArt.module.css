@@ -22,5 +22,11 @@
 @keyframes mistDrift { from { transform:translateX(-3%); } to { transform:translateX(4%); } }
 @keyframes snowFall { to { transform:translate(32px,560px); } }
 @keyframes raceTravel { 0%,6% { transform:translateX(var(--car-start)); } 47% { transform:translateX(var(--car-mid)); } 80%,100% { transform:translateX(var(--car-end)); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  :global([data-game-background]) .landscape { animation: cameraDrift 30s ease-in-out infinite alternate; }
+  :global([data-game-background]) .mist { animation: mistDrift 20s ease-in-out infinite alternate; }
+  :global([data-game-background]) .carRun { animation: raceTravel 18s linear infinite; }
+}
 @media(max-width:600px) { .caption>span { font-size:7px; gap:8px; }.caption small { font-size:5px; max-width:45%; text-align:right; line-height:1.7; }.caption i { width:14px; }.edition { font-size:5px; }.circuit .caption small { font-size:4px; }.trackArt { width:155%; max-width:none; left:-27%; }.sunset .landscape { background-position:82% 55%; }.sunrise .landscape { background-position:63% 55%; } }
 @media(prefers-reduced-motion:reduce) { .scene,.scene * { animation:none!important; }.snowflakes { display:none; }.sunrise .exposure { opacity:0; } }
