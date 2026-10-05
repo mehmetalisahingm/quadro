@@ -143,3 +143,13 @@
 @keyframes sleeveIn { from { transform: translateX(-80px) rotate(-18deg); opacity: 0; } 35% { opacity: 1; } to { transform: translateX(0) rotate(-8deg); opacity: 1; } }
 @keyframes armDrop { 0%, 38% { transform: rotate(22deg); } 68%, 100% { transform: rotate(5deg); } }
 @keyframes recordPulse { 0%, 34% { opacity: 0; } 50%, 80% { opacity: 1; } 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  :global([data-game-background]) .vinyl { opacity: 1; animation: ambientRecord 24s linear infinite; }
+  :global([data-game-background]) .train { animation: ambientTrain 12s ease-in-out infinite alternate; }
+  :global([data-game-background]) .spotlight { opacity: .7; animation: ambientLight 16s ease-in-out infinite alternate; }
+  :global([data-game-background]) .clapperArm { animation: clap 14s ease-in-out infinite; }
+}
+@keyframes ambientRecord { to { transform: rotate(360deg); } }
+@keyframes ambientTrain { from { transform: translateY(-1px); } to { transform: translateY(2px); } }
+@keyframes ambientLight { from { transform: rotate(-8deg); } to { transform: rotate(8deg); } }

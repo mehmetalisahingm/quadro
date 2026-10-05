@@ -27,6 +27,9 @@ a {
   padding: 20px var(--q-space-4) 48px;
 }
 
+/* Keep the fixed scene above the page canvas and below every game control. */
+.q-play-page:has([data-game-background]) { isolation: isolate; }
+
 .q-play-header {
   display: flex;
   align-items: center;
