@@ -11,6 +11,7 @@ export type GameWelcomeProps = {
   onStart: (difficulty: GameDifficulty) => void;
   initialDifficulty?: GameDifficulty;
   rulesOnly?: boolean;
+  distinctPuzzles?: boolean;
   onClose?: () => void;
 };
 
@@ -37,6 +38,7 @@ function Arrow() {
 }
 
 export function GameWelcome({
+  distinctPuzzles = false,
   onStart,
   initialDifficulty = "medium",
   rulesOnly = false,
@@ -119,7 +121,7 @@ export function GameWelcome({
       {!rulesOnly && (
         <>
           <fieldset className={styles.modeField}>
-            <legend>Kendi ritmini seç <span>AYNI BULMACA, FARKLI DESTEK</span></legend>
+            <legend>Kendi ritmini seç <span>{distinctPuzzles ? "HER MODDA 6 FARKLI BULMACA" : "KLASİK ARŞİV · DESTEK SEÇİMİ"}</span></legend>
             <div className={styles.modes}>
               {modes.map((mode) => (
                 <label key={mode.id} className={`${styles.mode} ${difficulty === mode.id ? styles.selectedMode : ""}`}>

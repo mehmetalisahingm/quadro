@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-005",
+  "date": "2026-10-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-hard-005-g1",
+      "title": "SONUNA BOYU GELENLER",
+      "words": [
+        {
+          "id": "track-hard-005-w1",
+          "text": "ÖMÜR"
+        },
+        {
+          "id": "track-hard-005-w2",
+          "text": "YOL"
+        },
+        {
+          "id": "track-hard-005-w3",
+          "text": "DALGA"
+        },
+        {
+          "id": "track-hard-005-w4",
+          "text": "BEL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Ömür boyu, yol boyu, dalga boyu, bel boyu."
+    },
+    {
+      "id": "track-hard-005-g2",
+      "title": "SONUNA DİLİ GELENLER",
+      "words": [
+        {
+          "id": "track-hard-005-w5",
+          "text": "ANA"
+        },
+        {
+          "id": "track-hard-005-w6",
+          "text": "İŞARET"
+        },
+        {
+          "id": "track-hard-005-w7",
+          "text": "BEDEN"
+        },
+        {
+          "id": "track-hard-005-w8",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Ana dili, işaret dili, beden dili, programlama dili."
+    },
+    {
+      "id": "track-hard-005-g3",
+      "title": "SONUNA ÇİZGİSİ GELENLER",
+      "words": [
+        {
+          "id": "track-hard-005-w9",
+          "text": "UFUK"
+        },
+        {
+          "id": "track-hard-005-w10",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "track-hard-005-w11",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "track-hard-005-w12",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ufuk çizgisi, ekvator çizgisi, finiş çizgisi, alın çizgisi."
+    },
+    {
+      "id": "track-hard-005-g4",
+      "title": "SONUNA NOKTASI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-005-w13",
+          "text": "ODAK"
+        },
+        {
+          "id": "track-hard-005-w14",
+          "text": "DÖNÜM"
+        },
+        {
+          "id": "track-hard-005-w15",
+          "text": "KAYNAMA"
+        },
+        {
+          "id": "track-hard-005-w16",
+          "text": "ERİME"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Odak noktası, dönüm noktası, kaynama noktası, erime noktası."
+    }
+  ]
+}

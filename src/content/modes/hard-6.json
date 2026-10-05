@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-006",
+  "date": "2026-10-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-hard-006-g1",
+      "title": "SONUNA EVİ GELENLER",
+      "words": [
+        {
+          "id": "track-hard-006-w1",
+          "text": "HUZUR"
+        },
+        {
+          "id": "track-hard-006-w2",
+          "text": "KONUK"
+        },
+        {
+          "id": "track-hard-006-w3",
+          "text": "BASIM"
+        },
+        {
+          "id": "track-hard-006-w4",
+          "text": "GÖZLEM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Huzurevi, konukevi, basımevi, gözlemevi."
+    },
+    {
+      "id": "track-hard-006-g2",
+      "title": "SONUNA BAĞI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-006-w5",
+          "text": "GÖNÜL"
+        },
+        {
+          "id": "track-hard-006-w6",
+          "text": "AYAKKABI"
+        },
+        {
+          "id": "track-hard-006-w7",
+          "text": "AKRABALIK"
+        },
+        {
+          "id": "track-hard-006-w8",
+          "text": "HİDROJEN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Gönül bağı, ayakkabı bağı, akrabalık bağı, hidrojen bağı."
+    },
+    {
+      "id": "track-hard-006-g3",
+      "title": "DÜŞMEKLE KURULAN İFADELER",
+      "words": [
+        {
+          "id": "track-hard-006-w9",
+          "text": "AKLA"
+        },
+        {
+          "id": "track-hard-006-w10",
+          "text": "PEŞİNE"
+        },
+        {
+          "id": "track-hard-006-w11",
+          "text": "DARA"
+        },
+        {
+          "id": "track-hard-006-w12",
+          "text": "YOLA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Akla düşmek, peşine düşmek, dara düşmek, yola düşmek."
+    },
+    {
+      "id": "track-hard-006-g4",
+      "title": "SONUNA DEFTERİ GELENLER",
+      "words": [
+        {
+          "id": "track-hard-006-w13",
+          "text": "HATIRA"
+        },
+        {
+          "id": "track-hard-006-w14",
+          "text": "ADRES"
+        },
+        {
+          "id": "track-hard-006-w15",
+          "text": "HESAP"
+        },
+        {
+          "id": "track-hard-006-w16",
+          "text": "SEYİR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Hatıra defteri, adres defteri, hesap defteri, seyir defteri."
+    }
+  ]
+}

@@ -61,7 +61,7 @@ describe("Q37 metadata", () => {
 
   it("oyun ve öğretici için ayrı, anlamlı metadata üretir", async () => {
     await expect(
-      generateMetadata({ searchParams: Promise.resolve({}) }),
+      generateMetadata({ searchParams: Promise.resolve({ day: "2026-09-20" }) }),
     ).resolves.toMatchObject({
       title: "Bugünün bulmacası",
       description: PLAY_DESCRIPTION,

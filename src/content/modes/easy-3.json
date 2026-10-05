@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-003",
+  "date": "2026-10-07",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-easy-003-g1",
+      "title": "HAVA OLAYLARI",
+      "words": [
+        {
+          "id": "track-easy-003-w1",
+          "text": "YAĞMUR"
+        },
+        {
+          "id": "track-easy-003-w2",
+          "text": "KAR"
+        },
+        {
+          "id": "track-easy-003-w3",
+          "text": "DOLU"
+        },
+        {
+          "id": "track-easy-003-w4",
+          "text": "KIRAĞI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YAĞMUR, KAR, DOLU, KIRAĞI aynı gruptadır: hava olayları."
+    },
+    {
+      "id": "track-easy-003-g2",
+      "title": "BİLGİSAYAR ÇEVRE BİRİMLERİ",
+      "words": [
+        {
+          "id": "track-easy-003-w5",
+          "text": "KLAVYE"
+        },
+        {
+          "id": "track-easy-003-w6",
+          "text": "FARE"
+        },
+        {
+          "id": "track-easy-003-w7",
+          "text": "MONİTÖR"
+        },
+        {
+          "id": "track-easy-003-w8",
+          "text": "YAZICI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KLAVYE, FARE, MONİTÖR, YAZICI aynı gruptadır: bilgisayar çevre birimleri."
+    },
+    {
+      "id": "track-easy-003-g3",
+      "title": "TİYATRO SAHNESİNDE",
+      "words": [
+        {
+          "id": "track-easy-003-w9",
+          "text": "PERDE"
+        },
+        {
+          "id": "track-easy-003-w10",
+          "text": "KULİS"
+        },
+        {
+          "id": "track-easy-003-w11",
+          "text": "DEKOR"
+        },
+        {
+          "id": "track-easy-003-w12",
+          "text": "KOSTÜM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PERDE, KULİS, DEKOR, KOSTÜM aynı gruptadır: tiyatro sahnesinde."
+    },
+    {
+      "id": "track-easy-003-g4",
+      "title": "NAKIŞ GEREÇLERİ",
+      "words": [
+        {
+          "id": "track-easy-003-w13",
+          "text": "İĞNE"
+        },
+        {
+          "id": "track-easy-003-w14",
+          "text": "İPLİK"
+        },
+        {
+          "id": "track-easy-003-w15",
+          "text": "KASNAK"
+        },
+        {
+          "id": "track-easy-003-w16",
+          "text": "YÜKSÜK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "İĞNE, İPLİK, KASNAK, YÜKSÜK aynı gruptadır: nakış gereçleri."
+    }
+  ]
+}

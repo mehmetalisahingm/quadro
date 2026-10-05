@@ -98,6 +98,12 @@ const gunler = readdirSync(bulmacaDizini)
     return { dosya: ad, gun: ad.replace(/\.json$/i, ""), izler: izleriCikar(ham) };
   });
 
+const modDizini = join(kok, "src", "content", "modes");
+if (existsSync(modDizini)) for (const ad of readdirSync(modDizini).filter(ad => ad.endsWith(".json"))) {
+  const ham = JSON.parse(readFileSync(join(modDizini, ad), "utf8"));
+  gunler.push({ dosya: `modes/${ad}`, gun: ham.date, izler: izleriCikar(ham) });
+}
+
 if (gunler.length === 0) {
   console.error(`Denetlenecek içerik bulunamadı: ${bulmacaDizini}`);
   process.exit(1);

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-002",
+  "date": "2026-10-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-medium-002-g1",
+      "title": "TİYATRODA ÇALIŞANLAR",
+      "words": [
+        {
+          "id": "track-medium-002-w1",
+          "text": "SUFLÖR"
+        },
+        {
+          "id": "track-medium-002-w2",
+          "text": "DRAMATURG"
+        },
+        {
+          "id": "track-medium-002-w3",
+          "text": "REJİSÖR"
+        },
+        {
+          "id": "track-medium-002-w4",
+          "text": "DEKORATÖR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SUFLÖR, DRAMATURG, REJİSÖR, DEKORATÖR aynı gruptadır: tiyatroda çalışanlar."
+    },
+    {
+      "id": "track-medium-002-g2",
+      "title": "POSTA GÖNDERİSİNDE",
+      "words": [
+        {
+          "id": "track-medium-002-w5",
+          "text": "ZARF"
+        },
+        {
+          "id": "track-medium-002-w6",
+          "text": "PUL"
+        },
+        {
+          "id": "track-medium-002-w7",
+          "text": "DAMGA"
+        },
+        {
+          "id": "track-medium-002-w8",
+          "text": "ADRES"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ZARF, PUL, DAMGA, ADRES aynı gruptadır: posta gönderisinde."
+    },
+    {
+      "id": "track-medium-002-g3",
+      "title": "MAKİNE PARÇALARI",
+      "words": [
+        {
+          "id": "track-medium-002-w9",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "track-medium-002-w10",
+          "text": "MİL"
+        },
+        {
+          "id": "track-medium-002-w11",
+          "text": "PİSTON"
+        },
+        {
+          "id": "track-medium-002-w12",
+          "text": "YATAK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DİŞLİ, MİL, PİSTON, YATAK aynı gruptadır: makine parçaları."
+    },
+    {
+      "id": "track-medium-002-g4",
+      "title": "GİYSİYİ İLİKLEYENLER",
+      "words": [
+        {
+          "id": "track-medium-002-w13",
+          "text": "DÜĞME"
+        },
+        {
+          "id": "track-medium-002-w14",
+          "text": "FERMUAR"
+        },
+        {
+          "id": "track-medium-002-w15",
+          "text": "ÇITÇIT"
+        },
+        {
+          "id": "track-medium-002-w16",
+          "text": "KOPÇA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DÜĞME, FERMUAR, ÇITÇIT, KOPÇA aynı gruptadır: giysiyi ilikleyenler."
+    }
+  ]
+}

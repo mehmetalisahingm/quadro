@@ -38,6 +38,8 @@ import { FootballReaction } from "./FootballReaction";
 import { StoryOpening } from "./StoryOpening";
 import { gameOpeningFor } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
+import { trackIdentity } from "@/features/game/tracks";
+import { trackStorage } from "@/lib/persistence/trackStorage";
 import { AdminGameNavigation } from "./AdminGameNavigation";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
@@ -65,6 +67,8 @@ function prefersReducedMotion(): boolean {
 }
 
 export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRules, playIntro = true }: GameBoardProps = {}) {
+  const track = trackIdentity((dailyPuzzle ?? standardPuzzle).id);
+  const chapterStorage = useMemo(() => dailyPuzzle && trackIdentity(dailyPuzzle.id) ? trackStorage(dailyPuzzle.id) : undefined, [dailyPuzzle]);
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
@@ -91,6 +95,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
 
   const { puzzle, controller, restore } = usePersistentGame(dailyPuzzle ?? standardPuzzle, {
     unlimitedMistakes: isAdmin,
+    storage: chapterStorage,
   });
   const { snapshot } = controller;
   const opening = gameOpeningFor(puzzle.id, puzzle.date);
@@ -270,7 +275,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       ) : null}
 
       <RecoveryNotice restore={restore} />
-      {isAdmin ? <AdminGameNavigation key={puzzle.date} currentDay={puzzle.date} /> : null}
+      {isAdmin ? <AdminGameNavigation key={puzzle.id} currentDay={puzzle.date} trackDifficulty={track?.difficulty} /> : null}
       <div className={difficultyStyles.toolbar}>
         <span className={difficultyStyles.badge} data-difficulty={difficulty}>{mode.label} mod</span>
         {onOpenRules ? (

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-003",
+  "date": "2026-10-07",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-medium-003-g1",
+      "title": "SONUNA AĞI GELENLER",
+      "words": [
+        {
+          "id": "track-medium-003-w1",
+          "text": "ÖRÜMCEK"
+        },
+        {
+          "id": "track-medium-003-w2",
+          "text": "BALIK"
+        },
+        {
+          "id": "track-medium-003-w3",
+          "text": "SİNİR"
+        },
+        {
+          "id": "track-medium-003-w4",
+          "text": "İLETİŞİM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Örümcek ağı, balık ağı, sinir ağı, iletişim ağı."
+    },
+    {
+      "id": "track-medium-003-g2",
+      "title": "SONUNA YOLU GELENLER",
+      "words": [
+        {
+          "id": "track-medium-003-w5",
+          "text": "İPEK"
+        },
+        {
+          "id": "track-medium-003-w6",
+          "text": "DEMİR"
+        },
+        {
+          "id": "track-medium-003-w7",
+          "text": "KARA"
+        },
+        {
+          "id": "track-medium-003-w8",
+          "text": "HAVA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İpek Yolu, demir yolu, kara yolu, hava yolu."
+    },
+    {
+      "id": "track-medium-003-g3",
+      "title": "MÜZİK NOTALARI",
+      "words": [
+        {
+          "id": "track-medium-003-w9",
+          "text": "DO"
+        },
+        {
+          "id": "track-medium-003-w10",
+          "text": "RE"
+        },
+        {
+          "id": "track-medium-003-w11",
+          "text": "Mİ"
+        },
+        {
+          "id": "track-medium-003-w12",
+          "text": "FA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DO, RE, Mİ, FA aynı gruptadır: müzik notaları."
+    },
+    {
+      "id": "track-medium-003-g4",
+      "title": "BARINMA YERLERİ",
+      "words": [
+        {
+          "id": "track-medium-003-w13",
+          "text": "ÇADIR"
+        },
+        {
+          "id": "track-medium-003-w14",
+          "text": "İGLO"
+        },
+        {
+          "id": "track-medium-003-w15",
+          "text": "KULÜBE"
+        },
+        {
+          "id": "track-medium-003-w16",
+          "text": "YURT"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇADIR, İGLO, KULÜBE, YURT aynı gruptadır: barınma yerleri."
+    }
+  ]
+}

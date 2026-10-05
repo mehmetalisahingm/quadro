@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-002",
+  "date": "2026-10-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-hard-002-g1",
+      "title": "TERSTEN BAŞKA BİR SÖZCÜK",
+      "words": [
+        {
+          "id": "track-hard-002-w1",
+          "text": "PAY"
+        },
+        {
+          "id": "track-hard-002-w2",
+          "text": "KAP"
+        },
+        {
+          "id": "track-hard-002-w3",
+          "text": "KOÇ"
+        },
+        {
+          "id": "track-hard-002-w4",
+          "text": "KES"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Tersleri yap, pak, çok ve sek olur."
+    },
+    {
+      "id": "track-hard-002-g2",
+      "title": "İÇİNDE MÜZİK NOTASI SAKLI",
+      "words": [
+        {
+          "id": "track-hard-002-w5",
+          "text": "MİRAS"
+        },
+        {
+          "id": "track-hard-002-w6",
+          "text": "SİMİT"
+        },
+        {
+          "id": "track-hard-002-w7",
+          "text": "DOLAP"
+        },
+        {
+          "id": "track-hard-002-w8",
+          "text": "FARE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Mİ-ras, Sİ-mit, DO-lap ve FA-re."
+    },
+    {
+      "id": "track-hard-002-g3",
+      "title": "SONUNA BAŞI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-002-w9",
+          "text": "SATIR"
+        },
+        {
+          "id": "track-hard-002-w10",
+          "text": "YIL"
+        },
+        {
+          "id": "track-hard-002-w11",
+          "text": "USTA"
+        },
+        {
+          "id": "track-hard-002-w12",
+          "text": "KÖŞE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Satır başı, yılbaşı, ustabaşı, köşe başı."
+    },
+    {
+      "id": "track-hard-002-g4",
+      "title": "SONUNA AĞZI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-002-w13",
+          "text": "ŞİŞE"
+        },
+        {
+          "id": "track-hard-002-w14",
+          "text": "MAĞARA"
+        },
+        {
+          "id": "track-hard-002-w15",
+          "text": "TÜFEK"
+        },
+        {
+          "id": "track-hard-002-w16",
+          "text": "TORBA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Şişe ağzı, mağara ağzı, tüfek ağzı, torba ağzı."
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import type { Puzzle } from "@/features/game/contracts";
 import { resolveGameDifficulty, type GameDifficulty } from "@/features/game/difficulty";
 import { parseStoredRecord } from "@/lib/persistence/record";
 import { snapshotStorageKey } from "@/lib/persistence/snapshotStore";
+import { trackIdentity } from "@/features/game/tracks";
 
 import { GameBoard } from "./GameBoard";
 import { GameLoading } from "./GameLoading";
@@ -41,6 +42,7 @@ function readSession(puzzle: Puzzle): GameDifficulty | "new" {
 }
 
 export function PlayExperience({ puzzle }: { puzzle: Puzzle }) {
+  const track = trackIdentity(puzzle.id);
   const getSession = useCallback(() => readSession(puzzle), [puzzle]);
   const savedSession = useSyncExternalStore(subscribe, getSession, serverSession);
   const [chosenMode, setChosenMode] = useState<GameDifficulty | null>(null);
@@ -53,8 +55,8 @@ export function PlayExperience({ puzzle }: { puzzle: Puzzle }) {
     try { window.localStorage.setItem(playModeKey(puzzle), difficulty); } catch { /* Optional storage. */ }
   };
 
-  if (savedSession === "loading" && chosenMode === null) return <GameLoading />;
-  if (savedSession === "new" && chosenMode === null) {
+  if (!track && savedSession === "loading" && chosenMode === null) return <GameLoading />;
+  if (!track && savedSession === "new" && chosenMode === null) {
     const opening = gameOpeningFor(puzzle.id, puzzle.date);
     const hasLandscape = opening === "sunrise" || opening === "sunset" || opening === "snow";
     return <>
@@ -63,7 +65,7 @@ export function PlayExperience({ puzzle }: { puzzle: Puzzle }) {
     </>;
   }
 
-  const difficulty = chosenMode ?? resolveGameDifficulty(savedSession);
+  const difficulty = track?.difficulty ?? chosenMode ?? resolveGameDifficulty(savedSession);
   return (
     <div className={styles.experience}>
       <GameBoard puzzle={puzzle} difficulty={difficulty}

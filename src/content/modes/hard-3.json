@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-003",
+  "date": "2026-10-07",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-hard-003-g1",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "track-hard-003-w1",
+          "text": "BABA"
+        },
+        {
+          "id": "track-hard-003-w2",
+          "text": "MAMA"
+        },
+        {
+          "id": "track-hard-003-w3",
+          "text": "CİCİ"
+        },
+        {
+          "id": "track-hard-003-w4",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel olarak öğretici veya eğitici anlamında bir sözcüktür."
+    },
+    {
+      "id": "track-hard-003-g2",
+      "title": "EKLE EŞYAYA DÖNÜŞEN ORGANLAR",
+      "words": [
+        {
+          "id": "track-hard-003-w5",
+          "text": "GÖZ"
+        },
+        {
+          "id": "track-hard-003-w6",
+          "text": "KULAK"
+        },
+        {
+          "id": "track-hard-003-w7",
+          "text": "AYAK"
+        },
+        {
+          "id": "track-hard-003-w8",
+          "text": "BAŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "-lık ekinin uyumlu biçimleriyle gözlük, kulaklık, ayaklık ve başlık oluşur."
+    },
+    {
+      "id": "track-hard-003-g3",
+      "title": "SONUNA KANADI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-003-w9",
+          "text": "UÇAK"
+        },
+        {
+          "id": "track-hard-003-w10",
+          "text": "KAPI"
+        },
+        {
+          "id": "track-hard-003-w11",
+          "text": "PARTİ"
+        },
+        {
+          "id": "track-hard-003-w12",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Uçak kanadı, kapı kanadı, parti kanadı, kelebek kanadı."
+    },
+    {
+      "id": "track-hard-003-g4",
+      "title": "SONUNA KÖKÜ GELENLER",
+      "words": [
+        {
+          "id": "track-hard-003-w13",
+          "text": "SAÇ"
+        },
+        {
+          "id": "track-hard-003-w14",
+          "text": "DİŞ"
+        },
+        {
+          "id": "track-hard-003-w15",
+          "text": "KELİME"
+        },
+        {
+          "id": "track-hard-003-w16",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Saç kökü, diş kökü, kelime kökü, denklem kökü."
+    }
+  ]
+}

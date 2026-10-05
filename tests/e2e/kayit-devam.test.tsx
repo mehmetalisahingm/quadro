@@ -205,7 +205,7 @@ describe("ilerleme kaydı · sunucu ve hidrasyon", () => {
     const kaydedilen = kayit();
     cleanup();
 
-    const page = await PlayPage({ searchParams: Promise.resolve({}) });
+    const page = await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) });
     const sunucuHtml = renderToString(page);
     // Sunucu kaydı göremez: okunana kadar etkin bir taze tahta gösterilmez.
     expect(sunucuHtml).toContain('aria-label="Bulmaca yükleniyor"');

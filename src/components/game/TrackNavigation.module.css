@@ -1,0 +1,12 @@
+.panel { width: min(960px, 100%); margin: 32px auto 20px; padding: 20px; border: 1px solid #d5d9c9; border-radius: 22px; background: #f3f5ee; color: #27473c; }
+.panel h2 { font-size: 1.25rem; margin: 0 0 8px; }
+.panel p { font-size: .85rem; line-height: 1.6; margin: 0 0 14px; }
+.tracks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.tracks section { border: 1px solid #dde0d3; border-radius: 15px; padding: 15px; background: #fffdf7; }
+.tracks section[data-active="true"] { border-color: #5a7c61; box-shadow: 0 0 0 1px #5a7c61; }
+.tracks h3 { margin: 0 0 6px; }
+.levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+.levels a { display: grid; place-items: center; min-height: 44px; border-radius: 10px; background: #eef1e5; color: inherit; font-weight: 700; text-decoration: none; }
+.levels a[aria-current="page"] { background: #274d40; color: white; }
+.levels a:focus-visible { outline: 3px solid var(--q-color-focus); outline-offset: 2px; }
+@media(max-width: 650px) { .tracks { grid-template-columns: 1fr; } .levels { grid-template-columns: repeat(6, 1fr); } .panel { padding: 14px; } }

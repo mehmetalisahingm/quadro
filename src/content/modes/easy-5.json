@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-005",
+  "date": "2026-10-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-easy-005-g1",
+      "title": "SAĞLIK MESLEKLERİ",
+      "words": [
+        {
+          "id": "track-easy-005-w1",
+          "text": "DOKTOR"
+        },
+        {
+          "id": "track-easy-005-w2",
+          "text": "HEMŞİRE"
+        },
+        {
+          "id": "track-easy-005-w3",
+          "text": "EBE"
+        },
+        {
+          "id": "track-easy-005-w4",
+          "text": "ECZACI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DOKTOR, HEMŞİRE, EBE, ECZACI aynı gruptadır: sağlık meslekleri."
+    },
+    {
+      "id": "track-easy-005-g2",
+      "title": "PARA BİRİMLERİ",
+      "words": [
+        {
+          "id": "track-easy-005-w5",
+          "text": "LİRA"
+        },
+        {
+          "id": "track-easy-005-w6",
+          "text": "EURO"
+        },
+        {
+          "id": "track-easy-005-w7",
+          "text": "DOLAR"
+        },
+        {
+          "id": "track-easy-005-w8",
+          "text": "STERLİN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "LİRA, EURO, DOLAR, STERLİN aynı gruptadır: para birimleri."
+    },
+    {
+      "id": "track-easy-005-g3",
+      "title": "ÜFLEMELİ ÇALGILAR",
+      "words": [
+        {
+          "id": "track-easy-005-w9",
+          "text": "FLÜT"
+        },
+        {
+          "id": "track-easy-005-w10",
+          "text": "KLARNET"
+        },
+        {
+          "id": "track-easy-005-w11",
+          "text": "TROMPET"
+        },
+        {
+          "id": "track-easy-005-w12",
+          "text": "SAKSAFON"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "FLÜT, KLARNET, TROMPET, SAKSAFON aynı gruptadır: üflemeli çalgılar."
+    },
+    {
+      "id": "track-easy-005-g4",
+      "title": "GÖK CİSİMLERİ",
+      "words": [
+        {
+          "id": "track-easy-005-w13",
+          "text": "GEZEGEN"
+        },
+        {
+          "id": "track-easy-005-w14",
+          "text": "UYDU"
+        },
+        {
+          "id": "track-easy-005-w15",
+          "text": "ASTEROİT"
+        },
+        {
+          "id": "track-easy-005-w16",
+          "text": "GÖKTAŞI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GEZEGEN, UYDU, ASTEROİT, GÖKTAŞI aynı gruptadır: gök cisimleri."
+    }
+  ]
+}
