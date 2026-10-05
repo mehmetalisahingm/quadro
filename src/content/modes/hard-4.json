@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-004",
+  "date": "2026-10-08",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-hard-004-g1",
+      "title": "İÇİNDE SAYI ADI SAKLI",
+      "words": [
+        {
+          "id": "track-hard-004-w1",
+          "text": "BONCUK"
+        },
+        {
+          "id": "track-hard-004-w2",
+          "text": "BİNA"
+        },
+        {
+          "id": "track-hard-004-w3",
+          "text": "YÜZÜK"
+        },
+        {
+          "id": "track-hard-004-w4",
+          "text": "ALTIN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "b-ON-cuk, BİN-a, YÜZ-ük ve ALTI-n."
+    },
+    {
+      "id": "track-hard-004-g2",
+      "title": "SONUNA HAKKI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-004-w5",
+          "text": "TELİF"
+        },
+        {
+          "id": "track-hard-004-w6",
+          "text": "MİRAS"
+        },
+        {
+          "id": "track-hard-004-w7",
+          "text": "VETO"
+        },
+        {
+          "id": "track-hard-004-w8",
+          "text": "GEÇİŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Telif hakkı, miras hakkı, veto hakkı, geçiş hakkı."
+    },
+    {
+      "id": "track-hard-004-g3",
+      "title": "SONUNA AÇIĞI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-004-w9",
+          "text": "BÜTÇE"
+        },
+        {
+          "id": "track-hard-004-w10",
+          "text": "TİCARET"
+        },
+        {
+          "id": "track-hard-004-w11",
+          "text": "GÜVENLİK"
+        },
+        {
+          "id": "track-hard-004-w12",
+          "text": "PUAN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Bütçe açığı, ticaret açığı, güvenlik açığı, puan açığı."
+    },
+    {
+      "id": "track-hard-004-g4",
+      "title": "SONUNA HESABI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-004-w13",
+          "text": "BANKA"
+        },
+        {
+          "id": "track-hard-004-w14",
+          "text": "EV"
+        },
+        {
+          "id": "track-hard-004-w15",
+          "text": "FAİZ"
+        },
+        {
+          "id": "track-hard-004-w16",
+          "text": "OLASILIK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Banka hesabı, ev hesabı, faiz hesabı, olasılık hesabı."
+    }
+  ]
+}

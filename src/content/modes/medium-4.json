@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-004",
+  "date": "2026-10-08",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-medium-004-g1",
+      "title": "SONUNA KARTI GELENLER",
+      "words": [
+        {
+          "id": "track-medium-004-w1",
+          "text": "KREDİ"
+        },
+        {
+          "id": "track-medium-004-w2",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "track-medium-004-w3",
+          "text": "HAFIZA"
+        },
+        {
+          "id": "track-medium-004-w4",
+          "text": "DAVET"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Kredi kartı, kimlik kartı, hafıza kartı, davet kartı."
+    },
+    {
+      "id": "track-medium-004-g2",
+      "title": "CAMLA ÇEVRİLEN ALANLAR",
+      "words": [
+        {
+          "id": "track-medium-004-w5",
+          "text": "FANUS"
+        },
+        {
+          "id": "track-medium-004-w6",
+          "text": "PENCERE"
+        },
+        {
+          "id": "track-medium-004-w7",
+          "text": "SERA"
+        },
+        {
+          "id": "track-medium-004-w8",
+          "text": "AKVARYUM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "FANUS, PENCERE, SERA, AKVARYUM aynı gruptadır: camla çevrilen alanlar."
+    },
+    {
+      "id": "track-medium-004-g3",
+      "title": "HACİM ÖLÇÜLERİ",
+      "words": [
+        {
+          "id": "track-medium-004-w9",
+          "text": "LİTRE"
+        },
+        {
+          "id": "track-medium-004-w10",
+          "text": "GALON"
+        },
+        {
+          "id": "track-medium-004-w11",
+          "text": "VARİL"
+        },
+        {
+          "id": "track-medium-004-w12",
+          "text": "METREKÜP"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "LİTRE, GALON, VARİL, METREKÜP aynı gruptadır: hacim ölçüleri."
+    },
+    {
+      "id": "track-medium-004-g4",
+      "title": "KONUM BİLDİREN SÖZCÜKLER",
+      "words": [
+        {
+          "id": "track-medium-004-w13",
+          "text": "SAĞ"
+        },
+        {
+          "id": "track-medium-004-w14",
+          "text": "SOL"
+        },
+        {
+          "id": "track-medium-004-w15",
+          "text": "ALT"
+        },
+        {
+          "id": "track-medium-004-w16",
+          "text": "ÜST"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SAĞ, SOL, ALT, ÜST aynı gruptadır: konum bildiren sözcükler."
+    }
+  ]
+}

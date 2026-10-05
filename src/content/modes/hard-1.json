@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-001",
+  "date": "2026-10-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-hard-001-g1",
+      "title": "TERSTEN DE AYNI OKUNANLAR",
+      "words": [
+        {
+          "id": "track-hard-001-w1",
+          "text": "KABAK"
+        },
+        {
+          "id": "track-hard-001-w2",
+          "text": "KÜÇÜK"
+        },
+        {
+          "id": "track-hard-001-w3",
+          "text": "NEDEN"
+        },
+        {
+          "id": "track-hard-001-w4",
+          "text": "RADAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Harf sırası ters çevrildiğinde dört sözcük de değişmez."
+    },
+    {
+      "id": "track-hard-001-g2",
+      "title": "İLK HARFİ SİLİNCE YENİ SÖZCÜK",
+      "words": [
+        {
+          "id": "track-hard-001-w5",
+          "text": "KULAK"
+        },
+        {
+          "id": "track-hard-001-w6",
+          "text": "KALEM"
+        },
+        {
+          "id": "track-hard-001-w7",
+          "text": "KASA"
+        },
+        {
+          "id": "track-hard-001-w8",
+          "text": "SÖZ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Ulak, alem, asa ve öz kalır."
+    },
+    {
+      "id": "track-hard-001-g3",
+      "title": "SONUNA TAŞI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-001-w9",
+          "text": "TEMEL"
+        },
+        {
+          "id": "track-hard-001-w10",
+          "text": "SABIR"
+        },
+        {
+          "id": "track-hard-001-w11",
+          "text": "MIHENK"
+        },
+        {
+          "id": "track-hard-001-w12",
+          "text": "KİLOMETRE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Temel taşı, sabır taşı, mihenk taşı, kilometre taşı."
+    },
+    {
+      "id": "track-hard-001-g4",
+      "title": "SONUNA MASASI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-001-w13",
+          "text": "PAZARLIK"
+        },
+        {
+          "id": "track-hard-001-w14",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "track-hard-001-w15",
+          "text": "AMELİYAT"
+        },
+        {
+          "id": "track-hard-001-w16",
+          "text": "BİLARDO"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Pazarlık masası, çalışma masası, ameliyat masası, bilardo masası."
+    }
+  ]
+}

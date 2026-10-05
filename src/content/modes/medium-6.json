@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-006",
+  "date": "2026-10-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-medium-006-g1",
+      "title": "SONUNA SAATİ GELENLER",
+      "words": [
+        {
+          "id": "track-medium-006-w1",
+          "text": "DUVAR"
+        },
+        {
+          "id": "track-medium-006-w2",
+          "text": "KOL"
+        },
+        {
+          "id": "track-medium-006-w3",
+          "text": "CEP"
+        },
+        {
+          "id": "track-medium-006-w4",
+          "text": "KUM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Duvar saati, kol saati, cep saati, kum saati."
+    },
+    {
+      "id": "track-medium-006-g2",
+      "title": "BANKACILIK TERİMLERİ",
+      "words": [
+        {
+          "id": "track-medium-006-w5",
+          "text": "VADE"
+        },
+        {
+          "id": "track-medium-006-w6",
+          "text": "FAİZ"
+        },
+        {
+          "id": "track-medium-006-w7",
+          "text": "KREDİ"
+        },
+        {
+          "id": "track-medium-006-w8",
+          "text": "MEVDUAT"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "VADE, FAİZ, KREDİ, MEVDUAT aynı gruptadır: bankacılık terimleri."
+    },
+    {
+      "id": "track-medium-006-g3",
+      "title": "AYAKKABININ PARÇALARI",
+      "words": [
+        {
+          "id": "track-medium-006-w9",
+          "text": "BAĞCIK"
+        },
+        {
+          "id": "track-medium-006-w10",
+          "text": "TABAN"
+        },
+        {
+          "id": "track-medium-006-w11",
+          "text": "TOPUK"
+        },
+        {
+          "id": "track-medium-006-w12",
+          "text": "DİL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BAĞCIK, TABAN, TOPUK, DİL aynı gruptadır: ayakkabının parçaları."
+    },
+    {
+      "id": "track-medium-006-g4",
+      "title": "GEMİNİN YÖNLERİ",
+      "words": [
+        {
+          "id": "track-medium-006-w13",
+          "text": "İSKELE"
+        },
+        {
+          "id": "track-medium-006-w14",
+          "text": "SANCAK"
+        },
+        {
+          "id": "track-medium-006-w15",
+          "text": "PRUVA"
+        },
+        {
+          "id": "track-medium-006-w16",
+          "text": "PUPA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "İskele sol, sancak sağ, pruva ön, pupa arka yönüdür."
+    }
+  ]
+}

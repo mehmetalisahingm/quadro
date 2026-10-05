@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-001",
+  "date": "2026-10-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-easy-001-g1",
+      "title": "KIRTASİYE GEREÇLERİ",
+      "words": [
+        {
+          "id": "track-easy-001-w1",
+          "text": "SİLGİ"
+        },
+        {
+          "id": "track-easy-001-w2",
+          "text": "CETVEL"
+        },
+        {
+          "id": "track-easy-001-w3",
+          "text": "PERGEL"
+        },
+        {
+          "id": "track-easy-001-w4",
+          "text": "KALEMTIRAŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SİLGİ, CETVEL, PERGEL, KALEMTIRAŞ aynı gruptadır: kırtasiye gereçleri."
+    },
+    {
+      "id": "track-easy-001-g2",
+      "title": "DIŞ GİYİM",
+      "words": [
+        {
+          "id": "track-easy-001-w5",
+          "text": "MONT"
+        },
+        {
+          "id": "track-easy-001-w6",
+          "text": "PARDÖSÜ"
+        },
+        {
+          "id": "track-easy-001-w7",
+          "text": "YAĞMURLUK"
+        },
+        {
+          "id": "track-easy-001-w8",
+          "text": "KABAN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "MONT, PARDÖSÜ, YAĞMURLUK, KABAN aynı gruptadır: dış giyim."
+    },
+    {
+      "id": "track-easy-001-g3",
+      "title": "AYDINLATMA ARAÇLARI",
+      "words": [
+        {
+          "id": "track-easy-001-w9",
+          "text": "AVİZE"
+        },
+        {
+          "id": "track-easy-001-w10",
+          "text": "FENER"
+        },
+        {
+          "id": "track-easy-001-w11",
+          "text": "APLİK"
+        },
+        {
+          "id": "track-easy-001-w12",
+          "text": "ABAJUR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "AVİZE, FENER, APLİK, ABAJUR aynı gruptadır: aydınlatma araçları."
+    },
+    {
+      "id": "track-easy-001-g4",
+      "title": "MARANGOZ ALETLERİ",
+      "words": [
+        {
+          "id": "track-easy-001-w13",
+          "text": "TESTERE"
+        },
+        {
+          "id": "track-easy-001-w14",
+          "text": "RENDE"
+        },
+        {
+          "id": "track-easy-001-w15",
+          "text": "KESER"
+        },
+        {
+          "id": "track-easy-001-w16",
+          "text": "MENGENE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TESTERE, RENDE, KESER, MENGENE aynı gruptadır: marangoz aletleri."
+    }
+  ]
+}

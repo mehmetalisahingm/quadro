@@ -6,6 +6,7 @@ import { FormEvent, useCallback, useEffect, useState } from "react";
 import { claimAdmin, currentUserIsAdmin } from "@/lib/auth/admin";
 import { readStoredSession } from "@/lib/auth/client";
 import { AdminGameNavigation } from "@/components/game/AdminGameNavigation";
+import { TrackNavigation } from "@/components/game/TrackNavigation";
 
 type DashboardTotals = {
   visitors: number;
@@ -139,6 +140,7 @@ export default function AdminPage() {
             </div>
 
             <AdminGameNavigation />
+            <TrackNavigation />
 
             {dashboard ? (
               <>

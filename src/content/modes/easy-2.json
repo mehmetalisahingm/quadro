@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-002",
+  "date": "2026-10-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-easy-002-g1",
+      "title": "RAYLI TAŞITLAR",
+      "words": [
+        {
+          "id": "track-easy-002-w1",
+          "text": "TRAMVAY"
+        },
+        {
+          "id": "track-easy-002-w2",
+          "text": "METRO"
+        },
+        {
+          "id": "track-easy-002-w3",
+          "text": "TREN"
+        },
+        {
+          "id": "track-easy-002-w4",
+          "text": "FÜNİKÜLER"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "TRAMVAY, METRO, TREN, FÜNİKÜLER aynı gruptadır: raylı taşıtlar."
+    },
+    {
+      "id": "track-easy-002-g2",
+      "title": "ÇOKGENLER",
+      "words": [
+        {
+          "id": "track-easy-002-w5",
+          "text": "KARE"
+        },
+        {
+          "id": "track-easy-002-w6",
+          "text": "ÜÇGEN"
+        },
+        {
+          "id": "track-easy-002-w7",
+          "text": "BEŞGEN"
+        },
+        {
+          "id": "track-easy-002-w8",
+          "text": "ALTIGEN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KARE, ÜÇGEN, BEŞGEN, ALTIGEN aynı gruptadır: çokgenler."
+    },
+    {
+      "id": "track-easy-002-g3",
+      "title": "HAFTANIN GÜNLERİ",
+      "words": [
+        {
+          "id": "track-easy-002-w9",
+          "text": "PAZARTESİ"
+        },
+        {
+          "id": "track-easy-002-w10",
+          "text": "SALI"
+        },
+        {
+          "id": "track-easy-002-w11",
+          "text": "PERŞEMBE"
+        },
+        {
+          "id": "track-easy-002-w12",
+          "text": "CUMARTESİ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PAZARTESİ, SALI, PERŞEMBE, CUMARTESİ aynı gruptadır: haftanın günleri."
+    },
+    {
+      "id": "track-easy-002-g4",
+      "title": "YÜZÜMÜZDEKİ BÖLÜMLER",
+      "words": [
+        {
+          "id": "track-easy-002-w13",
+          "text": "KAŞ"
+        },
+        {
+          "id": "track-easy-002-w14",
+          "text": "KİRPİK"
+        },
+        {
+          "id": "track-easy-002-w15",
+          "text": "DUDAK"
+        },
+        {
+          "id": "track-easy-002-w16",
+          "text": "ÇENE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KAŞ, KİRPİK, DUDAK, ÇENE aynı gruptadır: yüzümüzdeki bölümler."
+    }
+  ]
+}

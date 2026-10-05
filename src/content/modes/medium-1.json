@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-001",
+  "date": "2026-10-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-medium-001-g1",
+      "title": "KİTABIN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "track-medium-001-w1",
+          "text": "KAPAK"
+        },
+        {
+          "id": "track-medium-001-w2",
+          "text": "SIRT"
+        },
+        {
+          "id": "track-medium-001-w3",
+          "text": "SAYFA"
+        },
+        {
+          "id": "track-medium-001-w4",
+          "text": "DİPNOT"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KAPAK, SIRT, SAYFA, DİPNOT aynı gruptadır: kitabın bölümleri."
+    },
+    {
+      "id": "track-medium-001-g2",
+      "title": "FOTOĞRAF TERİMLERİ",
+      "words": [
+        {
+          "id": "track-medium-001-w5",
+          "text": "NETLİK"
+        },
+        {
+          "id": "track-medium-001-w6",
+          "text": "POZ"
+        },
+        {
+          "id": "track-medium-001-w7",
+          "text": "ODAK"
+        },
+        {
+          "id": "track-medium-001-w8",
+          "text": "KADRAJ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "NETLİK, POZ, ODAK, KADRAJ aynı gruptadır: fotoğraf terimleri."
+    },
+    {
+      "id": "track-medium-001-g3",
+      "title": "BİLGİSAYAR ARAYÜZÜNDE",
+      "words": [
+        {
+          "id": "track-medium-001-w9",
+          "text": "SEKME"
+        },
+        {
+          "id": "track-medium-001-w10",
+          "text": "PENCERE"
+        },
+        {
+          "id": "track-medium-001-w11",
+          "text": "KLASÖR"
+        },
+        {
+          "id": "track-medium-001-w12",
+          "text": "DOSYA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SEKME, PENCERE, KLASÖR, DOSYA aynı gruptadır: bilgisayar arayüzünde."
+    },
+    {
+      "id": "track-medium-001-g4",
+      "title": "SPORDA TOPA VURUŞLAR",
+      "words": [
+        {
+          "id": "track-medium-001-w13",
+          "text": "FRİKİK"
+        },
+        {
+          "id": "track-medium-001-w14",
+          "text": "PENALTI"
+        },
+        {
+          "id": "track-medium-001-w15",
+          "text": "SERVİS"
+        },
+        {
+          "id": "track-medium-001-w16",
+          "text": "SMAÇ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "FRİKİK, PENALTI, SERVİS, SMAÇ aynı gruptadır: sporda topa vuruşlar."
+    }
+  ]
+}

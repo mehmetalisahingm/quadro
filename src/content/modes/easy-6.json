@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-006",
+  "date": "2026-10-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-easy-006-g1",
+      "title": "RENK ADLARI",
+      "words": [
+        {
+          "id": "track-easy-006-w1",
+          "text": "LACİVERT"
+        },
+        {
+          "id": "track-easy-006-w2",
+          "text": "TURKUAZ"
+        },
+        {
+          "id": "track-easy-006-w3",
+          "text": "EFLATUN"
+        },
+        {
+          "id": "track-easy-006-w4",
+          "text": "BORDO"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "LACİVERT, TURKUAZ, EFLATUN, BORDO aynı gruptadır: renk adları."
+    },
+    {
+      "id": "track-easy-006-g2",
+      "title": "YAPI MALZEMELERİ",
+      "words": [
+        {
+          "id": "track-easy-006-w5",
+          "text": "CAM"
+        },
+        {
+          "id": "track-easy-006-w6",
+          "text": "AHŞAP"
+        },
+        {
+          "id": "track-easy-006-w7",
+          "text": "BETON"
+        },
+        {
+          "id": "track-easy-006-w8",
+          "text": "ÇELİK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "CAM, AHŞAP, BETON, ÇELİK aynı gruptadır: yapı malzemeleri."
+    },
+    {
+      "id": "track-easy-006-g3",
+      "title": "TAKIMLA OYNANAN TOP SPORLARI",
+      "words": [
+        {
+          "id": "track-easy-006-w9",
+          "text": "FUTBOL"
+        },
+        {
+          "id": "track-easy-006-w10",
+          "text": "BASKETBOL"
+        },
+        {
+          "id": "track-easy-006-w11",
+          "text": "VOLEYBOL"
+        },
+        {
+          "id": "track-easy-006-w12",
+          "text": "HENTBOL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "FUTBOL, BASKETBOL, VOLEYBOL, HENTBOL aynı gruptadır: takımla oynanan top sporları."
+    },
+    {
+      "id": "track-easy-006-g4",
+      "title": "ÖLÇÜM ARAÇLARI",
+      "words": [
+        {
+          "id": "track-easy-006-w13",
+          "text": "TERMOMETRE"
+        },
+        {
+          "id": "track-easy-006-w14",
+          "text": "TERAZİ"
+        },
+        {
+          "id": "track-easy-006-w15",
+          "text": "KRONOMETRE"
+        },
+        {
+          "id": "track-easy-006-w16",
+          "text": "ŞERİTMETRE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TERMOMETRE, TERAZİ, KRONOMETRE, ŞERİTMETRE aynı gruptadır: ölçüm araçları."
+    }
+  ]
+}

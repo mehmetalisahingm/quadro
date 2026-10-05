@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-005",
+  "date": "2026-10-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "track-medium-005-g1",
+      "title": "ORGAN ADINDAN NESNE PARÇASINA",
+      "words": [
+        {
+          "id": "track-medium-005-w1",
+          "text": "KOL"
+        },
+        {
+          "id": "track-medium-005-w2",
+          "text": "AYAK"
+        },
+        {
+          "id": "track-medium-005-w3",
+          "text": "GÖZ"
+        },
+        {
+          "id": "track-medium-005-w4",
+          "text": "DİŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Koltuğun kolu, masanın ayağı, çekmecenin gözü, tarağın dişi."
+    },
+    {
+      "id": "track-medium-005-g2",
+      "title": "GAZETEDE YER ALANLAR",
+      "words": [
+        {
+          "id": "track-medium-005-w5",
+          "text": "MANŞET"
+        },
+        {
+          "id": "track-medium-005-w6",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "track-medium-005-w7",
+          "text": "SÜTUN"
+        },
+        {
+          "id": "track-medium-005-w8",
+          "text": "İLAN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "MANŞET, KÖŞE, SÜTUN, İLAN aynı gruptadır: gazetede yer alanlar."
+    },
+    {
+      "id": "track-medium-005-g3",
+      "title": "MATBAA TERİMLERİ",
+      "words": [
+        {
+          "id": "track-medium-005-w9",
+          "text": "BASKI"
+        },
+        {
+          "id": "track-medium-005-w10",
+          "text": "CİLT"
+        },
+        {
+          "id": "track-medium-005-w11",
+          "text": "FORMA"
+        },
+        {
+          "id": "track-medium-005-w12",
+          "text": "PUNTO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BASKI, CİLT, FORMA, PUNTO aynı gruptadır: matbaa terimleri."
+    },
+    {
+      "id": "track-medium-005-g4",
+      "title": "SERAMİK ATÖLYESİNDE",
+      "words": [
+        {
+          "id": "track-medium-005-w13",
+          "text": "ÇARK"
+        },
+        {
+          "id": "track-medium-005-w14",
+          "text": "FIRIN"
+        },
+        {
+          "id": "track-medium-005-w15",
+          "text": "SIR"
+        },
+        {
+          "id": "track-medium-005-w16",
+          "text": "KİL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇARK, FIRIN, SIR, KİL aynı gruptadır: seramik atölyesinde."
+    }
+  ]
+}

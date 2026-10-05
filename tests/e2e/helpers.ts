@@ -102,7 +102,7 @@ export async function enterGame(user: UserEvent): Promise<void> {
 
 /** `/play` sayfasını açar; yeni oyunda kitapçık/açılıştan geçer, kayıtta doğrudan devam eder. */
 export async function openPlayPage(): Promise<UserEvent> {
-  const page = await PlayPage({ searchParams: Promise.resolve({}) });
+  const page = await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) });
   render(page);
   const user = createUser();
   await enterGame(user);

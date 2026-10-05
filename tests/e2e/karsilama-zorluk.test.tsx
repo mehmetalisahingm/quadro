@@ -37,7 +37,7 @@ describe("karşılama → açılış → zorluk modu", () => {
   });
 
   it("kitapçığı önce gösterir ve okuma süresini oyun süresine eklemez", async () => {
-    render(await PlayPage({ searchParams: Promise.resolve({}) }));
+    render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) }));
     const user = createUser();
     const key = snapshotStorageKey(puzzle.date);
 
@@ -58,7 +58,7 @@ describe("karşılama → açılış → zorluk modu", () => {
   });
 
   it("Kolay seçimini ve kullanılan ipucunu yenilemede korur", async () => {
-    render(await PlayPage({ searchParams: Promise.resolve({}) }));
+    render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) }));
     const user = createUser();
     await user.click(screen.getByRole("radio", { name: /Kolay/ }));
     await enterGame(user);
@@ -81,7 +81,7 @@ describe("karşılama → açılış → zorluk modu", () => {
   });
 
   it("Zor modda kategori ve yakınlık yardımı göstermez; hata kuralı aynı kalır", async () => {
-    render(await PlayPage({ searchParams: Promise.resolve({}) }));
+    render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) }));
     const user = createUser();
     await user.click(screen.getByRole("radio", { name: /Zor/ }));
     await enterGame(user);
