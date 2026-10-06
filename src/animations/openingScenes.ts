@@ -40,6 +40,12 @@ export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OP
 
 export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage", "claw", "newsroom", "red-carpet", "chef", "detective", "game-show", "sunrise", "sunset", "snow", "racing"] as const;
 export type OpeningScene = (typeof OPENING_SCENES)[number];
+export type StoryOpeningScene = Exclude<OpeningScene, "four-corners">;
+
+export function isStoryOpening(scene: typeof GAME_OPENINGS[number]): scene is StoryOpeningScene {
+  return scene !== "four-corners" && (OPENING_SCENES as readonly string[]).includes(scene);
+}
+
 export const OPENING_DURATION = 3000;
 
 export const OPENING_COPY: Record<OpeningScene, { name: string; kicker: string; title: string; detail: string }> = {
