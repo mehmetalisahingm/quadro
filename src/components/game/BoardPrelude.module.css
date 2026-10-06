@@ -221,9 +221,10 @@
 .skip span { font-size: 17px; }
 
 @keyframes prelude {
-  0% { opacity: 0; }
-  6%, 92% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-8px); }
+  0% { opacity: 0; visibility: visible; pointer-events: auto; }
+  6%, 92% { opacity: 1; transform: translateY(0); visibility: visible; pointer-events: auto; }
+  99% { visibility: visible; pointer-events: auto; }
+  100% { opacity: 0; transform: translateY(-8px); visibility: hidden; pointer-events: none; }
 }
 
 @keyframes sculpture {
