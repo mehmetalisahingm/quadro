@@ -11,11 +11,15 @@ export function SiteEntrance({ children }: { children: ReactNode }) {
   const [complete, setComplete] = useState(false);
   const isGameEntry = pathname === "/" || pathname === "/play";
 
-  // Keep gameplay unmounted until the opening ends so its clock cannot run behind it.
-  // Layout state survives in-app navigation; a refresh always starts a new opening.
-  if (isGameEntry && !complete) {
-    return <BoardPrelude onComplete={() => setComplete(true)} />;
-  }
-
-  return children;
+  // Keep the real page mounted underneath the opening. This makes the entry
+  // fail-safe: if hydration or the handoff timer ever fails, CSS still hides
+  // the overlay and the user is never trapped on the opening screen.
+  return (
+    <>
+      {children}
+      {isGameEntry && !complete ? (
+        <BoardPrelude onComplete={() => setComplete(true)} />
+      ) : null}
+    </>
+  );
 }
