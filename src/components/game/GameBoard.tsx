@@ -37,7 +37,7 @@ import { BoardPrelude } from "./BoardPrelude";
 import { FootballReaction } from "./FootballReaction";
 import { StoryOpening } from "./StoryOpening";
 import { GameBackdrop } from "./GameBackdrop";
-import { gameOpeningFor } from "@/animations/openingScenes";
+import { gameOpeningFor, OPENING_SCENES } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
 import { trackIdentity } from "@/features/game/tracks";
 import { trackStorage } from "@/lib/persistence/trackStorage";
@@ -261,7 +261,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       {!cinematicDone && isPlaying ? (
         opening === "board-prelude" ? (
           <BoardPrelude key={puzzle.id} onReveal={revealCinematic} onComplete={finishCinematic} />
-        ) : opening === "metro" || opening === "film" || opening === "record" || opening === "domino" || opening === "elevator" || opening === "baggage" || opening === "sunrise" || opening === "sunset" || opening === "snow" || opening === "racing" || opening === "chef" || opening === "detective" || opening === "game-show" || opening === "claw" || opening === "newsroom" || opening === "red-carpet" ? (
+        ) : opening !== "four-corners" && (OPENING_SCENES as readonly string[]).includes(opening) ? (
           <StoryOpening key={puzzle.id} scene={opening} words={cinematicWords}
             onReveal={revealCinematic} onComplete={finishCinematic} />
         ) : <CardShuffleIntro
