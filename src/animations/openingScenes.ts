@@ -3,14 +3,39 @@ import { createEngineController } from "@/features/game/react/engineController";
 import { CARD_INTROS } from "./cardIntros";
 
 export const GAME_OPENINGS = ["board-prelude", "sunrise", "sunset", "snow", "racing", "chef", "detective", "game-show", "claw", "newsroom", "red-carpet", "domino", "elevator", "baggage", "metro", "film", "record", ...CARD_INTROS] as const;
-export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OPENINGS[number] {
-  const timestamp = Date.parse(`${dayKey}T00:00:00Z`);
-  // Start the gallery with the recovered metallic sculpture, followed by the new scenes.
-  let seed = Number.isFinite(timestamp) ? Math.floor((timestamp - Date.UTC(2026, 8, 20)) / 86400000) : 0;
-  if (!Number.isFinite(timestamp)) {
-    for (const char of puzzleId) seed = (Math.imul(seed, 31) + char.charCodeAt(0)) >>> 0;
+
+const TRACK_ORDER = { easy: 0, medium: 1, hard: 2 } as const;
+
+function numberedPuzzleOrdinal(puzzleId: string): number | null {
+  const daily = /^q-(\d{3})$/.exec(puzzleId);
+  if (daily) return Math.max(0, Number(daily[1]) - 1);
+
+  const track = /^track-(easy|medium|hard)-(\d{3})$/.exec(puzzleId);
+  if (track) {
+    const difficulty = track[1] as keyof typeof TRACK_ORDER;
+    const level = Math.max(1, Number(track[2]));
+    // Keep chapter puzzles distinct even when easy/medium/hard share the same day key.
+    return 30 + TRACK_ORDER[difficulty] * 6 + (level - 1);
   }
-  return GAME_OPENINGS[((seed % GAME_OPENINGS.length) + GAME_OPENINGS.length) % GAME_OPENINGS.length] ?? "metro";
+
+  return null;
+}
+
+export function gameOpeningFor(puzzleId: string, dayKey: string): typeof GAME_OPENINGS[number] {
+  const numbered = numberedPuzzleOrdinal(puzzleId);
+  if (numbered !== null) {
+    return GAME_OPENINGS[numbered % GAME_OPENINGS.length] ?? "metro";
+  }
+
+  // Fallback for custom/test puzzles: both identity and day participate.
+  // The same puzzle/day is stable, but different puzzles on the same day are no longer forced
+  // to reuse one animation.
+  let seed = 2166136261;
+  for (const char of `${dayKey}:${puzzleId}`) {
+    seed ^= char.charCodeAt(0);
+    seed = Math.imul(seed, 16777619) >>> 0;
+  }
+  return GAME_OPENINGS[seed % GAME_OPENINGS.length] ?? "metro";
 }
 
 export const OPENING_SCENES = ["four-corners", "metro", "film", "record", "domino", "elevator", "baggage", "claw", "newsroom", "red-carpet", "chef", "detective", "game-show", "sunrise", "sunset", "snow", "racing"] as const;
