@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { HomeExperience } from "@/components/home/HomeExperience";
 import { formatCountdown } from "@/components/home/homeState";
 import {
@@ -37,6 +38,8 @@ function nextPublicationBoundary(now: Date): Date {
 }
 
 export default async function HomePage() {
+  // The publication day must come from the request, never the deployment date.
+  await connection();
   const now = new Date();
   const dayKey = resolvePublicationDay({ now });
   const daily = await loadDailyPuzzle({ dayKey });

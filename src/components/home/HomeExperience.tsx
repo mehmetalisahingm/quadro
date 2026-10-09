@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { trackBrowserEvent } from "@/lib/analytics";
 import { defaultSnapshotStorage } from "@/lib/persistence/storage";
@@ -50,9 +51,10 @@ export function HomeExperience({
   nextRolloverAt,
   initialCountdownLabel,
 }: HomeExperienceProps) {
+  const router = useRouter();
   const [player, setPlayer] = useState<HomeStateSnapshot>({ state: "new" });
   const [countdown, setCountdown] = useState(initialCountdownLabel);
-  const reloadRequested = useRef(false);
+  const refreshedBoundaries = useRef(new Set<number>());
   const homeViewTracked = useRef(false);
   const { dayKey, puzzleId, puzzleRevision } = today;
 
@@ -88,12 +90,11 @@ export function HomeExperience({
       if (now >= target) {
         setCountdown("Yeni gün hazır");
 
-        // Sunucu yeni Europe/Istanbul yayın gününü ve yeni puzzle kimliğini
-        // yeniden çözsün. Bir kez istenir; eski açık oyun localStorage'da
-        // kaldığı için reload sonrası "dünün oyunu" kartına dönüşür.
-        if (!reloadRequested.current) {
-          reloadRequested.current = true;
-          window.location.reload();
+        // Refresh server data without restarting the entrance or losing focus.
+        // Stale responses and clock skew must not cause a refresh loop.
+        if (!refreshedBoundaries.current.has(target)) {
+          refreshedBoundaries.current.add(target);
+          router.refresh();
         }
         return;
       }
@@ -104,7 +105,7 @@ export function HomeExperience({
     tick();
     const interval = window.setInterval(tick, 30_000);
     return () => window.clearInterval(interval);
-  }, [nextRolloverAt]);
+  }, [nextRolloverAt, router]);
 
   const previous = useMemo(() => {
     if (player.previousGame === undefined) return undefined;

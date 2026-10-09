@@ -257,3 +257,7 @@ describe("aktif süre · süre işlemeyen ekranlar", () => {
     expect(kayitliSure()).toBeNull();
   });
 });
+
+vi.mock("next/server", () => ({ connection: async () => undefined }));
+const homeRouter = { refresh: vi.fn() };
+vi.mock("next/navigation", () => ({ useRouter: () => homeRouter }));
