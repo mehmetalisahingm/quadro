@@ -1,5 +1,5 @@
 import { cleanup, render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import HomePage from "@/app/page";
 import gunlukBulmaca20 from "@/content/puzzles/2026-09-20.json";
@@ -178,3 +178,7 @@ describe("kaybetme", () => {
     expect(leakedAnswers(preview)).toEqual([]);
   });
 });
+
+vi.mock("next/server", () => ({ connection: async () => undefined }));
+const homeRouter = { refresh: vi.fn() };
+vi.mock("next/navigation", () => ({ useRouter: () => homeRouter }));

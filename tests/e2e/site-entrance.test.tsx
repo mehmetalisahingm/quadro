@@ -14,7 +14,8 @@ describe("site entry plaque", () => {
     localStorage.setItem("quadro:auth:v1", "existing-session");
     const first = render(<SiteEntrance><h1>Oyun</h1></SiteEntrance>);
     expect(screen.getByRole("region", { name: "Oyun açılışı" }).getAttribute("data-opening")).toBe("board-prelude");
-    expect(screen.queryByRole("heading", { name: "Oyun" })).toBeNull();
+    // The page remains mounted beneath the fail-safe intro (PR #135).
+    expect(screen.getByRole("heading", { name: "Oyun" })).toBeTruthy();
     await createUser().click(screen.getByRole("button", { name: "Oyuna geç" }));
     expect(screen.getByRole("heading", { name: "Oyun" })).toBeTruthy();
     expect(localStorage.getItem("quadro:play-mode:v1:existing")).toBe("easy");

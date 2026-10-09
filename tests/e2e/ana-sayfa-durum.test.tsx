@@ -126,3 +126,7 @@ describe("ana sayfa · Türkiye gece yarısı", () => {
     expect(screen.queryByText("19 EYLÜL 2026")).toBeNull();
   });
 });
+
+vi.mock("next/server", () => ({ connection: async () => undefined }));
+const homeRouter = { refresh: vi.fn() };
+vi.mock("next/navigation", () => ({ useRouter: () => homeRouter }));
