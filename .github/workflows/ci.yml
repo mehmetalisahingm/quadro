@@ -46,6 +46,11 @@ jobs:
       - name: İçerik doğrulaması (bulmaca şeması)
         run: npm run validate:content
 
+      # Raporlama altyapısının tutarlılığı test edilir; yayın tarihi/insan onayı
+      # kararlaştırılmadan 30 günlük stok zorunluluğu CI'ı yanlışlıkla engellemez.
+      - name: Q38 yayın stoğu denetleyici testleri
+        run: node --test scripts/release-stock.test.mjs
+
       - name: Üretim derlemesi (next build)
         run: npm run build
 
