@@ -20,7 +20,7 @@ import {
 } from "./yardimcilar";
 
 test("Karıştır kart sırasını değiştirir ama seçimi ve hakları korur", async ({ page }) => {
-  await page.goto("/play");
+  await page.goto("/play?day=2026-09-20");
   await oyunaGir(page);
 
   const [birinciGrup] = bulmaca.groups;
@@ -44,7 +44,7 @@ test("Karıştır kart sırasını değiştirir ama seçimi ve hakları korur", 
 });
 
 test("Temizle seçimi boşaltır ve hakları etkilemez", async ({ page }) => {
-  await page.goto("/play");
+  await page.goto("/play?day=2026-09-20");
   await oyunaGir(page);
 
   const secilenler = birUzaktaDortlu().slice(0, 3);
@@ -63,7 +63,7 @@ test("Temizle seçimi boşaltır ve hakları etkilemez", async ({ page }) => {
 });
 
 test("dörtten fazla kelime seçilemez", async ({ page }) => {
-  await page.goto("/play");
+  await page.goto("/play?day=2026-09-20");
   await oyunaGir(page);
 
   const [birinciGrup, ikinciGrup] = bulmaca.groups;
