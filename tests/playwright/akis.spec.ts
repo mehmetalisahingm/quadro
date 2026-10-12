@@ -29,7 +29,7 @@ test("ana sayfadaki bağlantı oyuncuyu bulmacaya götürür", async ({ page }) 
 
 test("tahta sabit tohumla açılır ve yeniden yüklemede aynı kalır", async ({ page }) => {
   const beklenen = beklenenBaslangicSirasi();
-  await page.goto("/play");
+  await page.goto("/play?day=2026-09-20");
   await oyunaGir(page);
   await expect(tahtaKartlari(page)).toHaveText(beklenen);
   await page.reload();
@@ -38,7 +38,7 @@ test("tahta sabit tohumla açılır ve yeniden yüklemede aynı kalır", async (
 });
 
 test("her doğru grup tahtadan çözülenler satırına geçer", async ({ page }) => {
-  await page.goto("/play");
+  await page.goto("/play?day=2026-09-20");
   await oyunaGir(page);
   let kalanKart = GAME_CONSTANTS.wordCount;
 
@@ -60,7 +60,7 @@ test("her doğru grup tahtadan çözülenler satırına geçer", async ({ page }
 });
 
 test("dört grubu bulan oyuncu kazanır ve spoilersız sonucunu paylaşabilir", async ({ page }) => {
-  await page.goto("/play");
+  await page.goto("/play?day=2026-09-20");
   await oyunaGir(page);
   await oyunuKazan(page);
 
@@ -73,7 +73,7 @@ test("dört grubu bulan oyuncu kazanır ve spoilersız sonucunu paylaşabilir", 
 });
 
 test("kazanılan oyunda tahta ve kontroller kaybolur", async ({ page }) => {
-  await page.goto("/play");
+  await page.goto("/play?day=2026-09-20");
   await oyunaGir(page);
   await oyunuKazan(page);
 

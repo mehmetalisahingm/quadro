@@ -21,7 +21,7 @@ test("Kopyala spoilersız sonuç metnini tarayıcıya uygun yolla sunar", async 
     });
   }
 
-  await page.goto("/play");
+  await page.goto("/play?day=2026-09-20");
   await oyunaGir(page);
   await oyunuKazan(page);
 
