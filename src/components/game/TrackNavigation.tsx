@@ -29,7 +29,7 @@ export function TrackNavigation({ difficulty, level }: { difficulty?: GameDiffic
   const saved = useSyncExternalStore(subscribe, progress, empty).split(",");
   return <nav className={styles.panel} aria-label="Zorluk modları ve bölümler">
     <h2>Üç mod. Farklı bulmacalar.</h2>
-    <p>Her modda 6 özgün bölüm. Bir moda geçince diğerindeki ilerlemen korunur.</p>
+    <p>Her modda {TRACK_LEVEL_COUNT} özgün bölüm. Bir moda geçince diğerindeki ilerlemen korunur.</p>
     <div className={styles.tracks}>{TRACKS.map((mode, index) => <section key={mode.id} data-active={difficulty === mode.id}>
       <h3>{mode.label}</h3><p>{mode.description}</p>
       <div className={styles.levels}>{Array.from({ length: TRACK_LEVEL_COUNT }, (_, i) => {
