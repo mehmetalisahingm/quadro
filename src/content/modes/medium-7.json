@@ -10,27 +10,27 @@
   "groups": [
     {
       "id": "track-medium-007-g1",
-      "title": "SONUNA YOLU GELENLER",
+      "title": "SONUNA ODASI GELENLER",
       "words": [
         {
           "id": "track-medium-007-w1",
-          "text": "DEMİR"
+          "text": "OTURMA"
         },
         {
           "id": "track-medium-007-w2",
-          "text": "DENİZ"
+          "text": "YATAK"
         },
         {
           "id": "track-medium-007-w3",
-          "text": "HAVA"
+          "text": "ÇALIŞMA"
         },
         {
           "id": "track-medium-007-w4",
-          "text": "KARA"
+          "text": "TOPLANTI"
         }
       ],
       "difficulty": 1,
-      "explanation": "Demir yolu, deniz yolu, hava yolu ve kara yolu."
+      "explanation": "Oturma odası, yatak odası, çalışma odası ve toplantı odası."
     },
     {
       "id": "track-medium-007-g2",
