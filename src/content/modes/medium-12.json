@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-012",
+  "date": "2026-10-16",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-medium-012-g1",
+      "title": "SONUNA ÇANTASI GELENLER",
+      "words": [
+        {
+          "id": "track-medium-012-w1",
+          "text": "SIRT"
+        },
+        {
+          "id": "track-medium-012-w2",
+          "text": "OMUZ"
+        },
+        {
+          "id": "track-medium-012-w3",
+          "text": "OKUL"
+        },
+        {
+          "id": "track-medium-012-w4",
+          "text": "SPOR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Sırt çantası, omuz çantası, okul çantası ve spor çantası."
+    },
+    {
+      "id": "track-medium-012-g2",
+      "title": "PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "track-medium-012-w5",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "track-medium-012-w6",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "track-medium-012-w7",
+          "text": "FIRINLAMA"
+        },
+        {
+          "id": "track-medium-012-w8",
+          "text": "KIZARTMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Yiyecekleri farklı yollarla pişirme yöntemleridir."
+    },
+    {
+      "id": "track-medium-012-g3",
+      "title": "MÜZİK TÜRLERİ",
+      "words": [
+        {
+          "id": "track-medium-012-w9",
+          "text": "CAZ"
+        },
+        {
+          "id": "track-medium-012-w10",
+          "text": "BLUES"
+        },
+        {
+          "id": "track-medium-012-w11",
+          "text": "REGGAE"
+        },
+        {
+          "id": "track-medium-012-w12",
+          "text": "FUNK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Farklı müzik türleridir."
+    },
+    {
+      "id": "track-medium-012-g4",
+      "title": "EKONOMİ KAVRAMLARI",
+      "words": [
+        {
+          "id": "track-medium-012-w13",
+          "text": "ENFLASYON"
+        },
+        {
+          "id": "track-medium-012-w14",
+          "text": "İHRACAT"
+        },
+        {
+          "id": "track-medium-012-w15",
+          "text": "İTHALAT"
+        },
+        {
+          "id": "track-medium-012-w16",
+          "text": "DÖVİZ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Ekonomide kullanılan temel kavramlardır."
+    }
+  ]
+}
