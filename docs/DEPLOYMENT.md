@@ -10,10 +10,28 @@ Hedef barındırma: Vercel.
 - Node: repository `.nvmrc` / `package.json` ile uyumlu sürüm
 - Build: `npm run build`
 - Install: `npm ci`
-- Runtime secret: şu an yok
-- Uygulama tarafından zorunlu ortam değişkeni: şu an yok
+- Supabase bağlantısı opsiyoneldir; hesap ve merkezi analytics için `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY` ve `NEXT_PUBLIC_SITE_URL` yapılandırılmalıdır (bkz. [SUPABASE](SUPABASE.md)). Bu değerlerin Vercel ortamlarında gerçekten ayarlı olduğu burada doğrulanmış değildir.
+- Supabase kullanılmazsa anonim oyun yerel kayıtla çalışabilmelidir; giriş ve merkezi analytics kabulü için gerçek bağlantı şarttır.
+- Secret anahtarlar yalnızca sunucuda tutulur ve repoya yazılmaz.
 
-Vercel hesabında `quadro` projesi oluşturulduğunda proje kimliği/URL bu belgeye eklenir. Kimlik, token veya gizli değerler repoya yazılmaz.
+## Canlı Vercel envanteri — 12 Ekim 2026
+
+Bu kayıt **deploy keşfi ve hedef tanımıdır, yayın kabulü veya manuel smoke kanıtı değildir.**
+
+| Alan | Doğrulanan değer |
+| --- | --- |
+| Vercel proje adı | `quadro` |
+| Proje ID | `prj_u8tJCbgoxNg8RAZyXYqx8JYO9kFN` |
+| Mevcut production adresi | https://quadro-teal.vercel.app |
+| Projeye bağlı doğrulanmış domain | `quadro-teal.vercel.app` |
+| Son READY production deployment | `dpl_DhLFcHL95tkYyNRKeNiXcUXNcH99` |
+| Bu deployment'ın commit'i | `e15d1b023c5b86e7ba907cbe60d68581fb877d05` (main, #137) |
+| Önceki READY rollback adayı | `dpl_7VmuXv2s3Xh7zsW17ZcwdVNhMvQW` |
+| Rollback adayının commit'i | `d04cb7f4d35e35e6d6c189e261119b9d27b85ca1` (#136) |
+| `playquadro.com` | **Vercel projesine henüz ekli değil**; satın alındığı da doğrulanmadı |
+| Q40 production/preview smoke ve rollback tatbikatı | **BEKLİYOR** |
+
+**Not:** Hazır bir production deployment bulunması, Q35/Q38/Q39/Q40/Q41 release kapılarının geçtiği anlamına gelmez. Yeni kodu production'a otomatik promote etmeyin; GitHub CI, görsel ve gerçek cihaz kabulü önce tamamlanmalıdır.
 
 ## Preview akışı
 
@@ -31,7 +49,7 @@ Vercel hesabında `quadro` projesi oluşturulduğunda proje kimliği/URL bu belg
 
 ## Production gate
 
-Production yalnız şu koşullarda promote/deploy edilir:
+Yeni **resmî yayın adayı / promote** yalnız şu koşullarda kabul edilir; mevcut production URL'nin varlığı bu kapıları atlamaz:
 
 - Q33 production performans kabulü tamamlandı.
 - Q36 regresyon ve gerçek Safari/iOS kontrolü tamamlandı.
@@ -69,9 +87,10 @@ Kritik regresyonda yeni kod üzerinde acil düzeltme beklenmez; önce Vercel'de 
 | --- | --- |
 | Deployment prosedürü | Hazır |
 | Secret/env sözleşmesi | Hazır; uygulama için zorunlu env yok |
-| Vercel `quadro` projesi | Bekliyor |
-| Preview URL + commit smoke | Bekliyor |
-| Production URL + commit smoke | Q33/Q36/Q38 sonrası |
-| Rollback hedefi doğrulaması | İlk production deployment sonrası |
+| Vercel `quadro` projesi | **Var**, ID ve domain bu sayfada kayıtlı |
+| Preview URL + commit smoke | **Bekliyor** (sadece production deployment incelendi) |
+| Production URL + commit smoke | **Bekliyor**, `READY` smoke sonucu değildir |
+| Rollback hedefi | Önceki `READY` deployment ID'si belirlendi; **tatbikat yapılmadı** |
+| Alan adı `playquadro.com` | Bağlantı ve DNS doğrulaması bekliyor |
 
 Q40, gerçek preview/production URL ve smoke kanıtları kaydedilmeden kapatılmaz.
