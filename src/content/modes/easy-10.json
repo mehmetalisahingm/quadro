@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-010",
+  "date": "2026-10-14",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-easy-010-g1",
+      "title": "BAHARATLAR",
+      "words": [
+        {
+          "id": "track-easy-010-w1",
+          "text": "KİMYON"
+        },
+        {
+          "id": "track-easy-010-w2",
+          "text": "ZERDEÇAL"
+        },
+        {
+          "id": "track-easy-010-w3",
+          "text": "KARANFİL"
+        },
+        {
+          "id": "track-easy-010-w4",
+          "text": "ZENCEFİL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KİMYON, ZERDEÇAL, KARANFİL, ZENCEFİL aynı gruptadır: baharatlar."
+    },
+    {
+      "id": "track-easy-010-g2",
+      "title": "OTURMA ODASI MOBİLYALARI",
+      "words": [
+        {
+          "id": "track-easy-010-w5",
+          "text": "KANEPE"
+        },
+        {
+          "id": "track-easy-010-w6",
+          "text": "BERJER"
+        },
+        {
+          "id": "track-easy-010-w7",
+          "text": "KONSOL"
+        },
+        {
+          "id": "track-easy-010-w8",
+          "text": "VİTRİN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KANEPE, BERJER, KONSOL, VİTRİN aynı gruptadır: oturma odası mobilyaları."
+    },
+    {
+      "id": "track-easy-010-g3",
+      "title": "DENİZ BALIKLARI",
+      "words": [
+        {
+          "id": "track-easy-010-w9",
+          "text": "HAMSİ"
+        },
+        {
+          "id": "track-easy-010-w10",
+          "text": "PALAMUT"
+        },
+        {
+          "id": "track-easy-010-w11",
+          "text": "LÜFER"
+        },
+        {
+          "id": "track-easy-010-w12",
+          "text": "İSTAVRİT"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HAMSİ, PALAMUT, LÜFER, İSTAVRİT aynı gruptadır: deniz balıkları."
+    },
+    {
+      "id": "track-easy-010-g4",
+      "title": "YAZ MEYVELERİ",
+      "words": [
+        {
+          "id": "track-easy-010-w13",
+          "text": "KARPUZ"
+        },
+        {
+          "id": "track-easy-010-w14",
+          "text": "KAVUN"
+        },
+        {
+          "id": "track-easy-010-w15",
+          "text": "ŞEFTALİ"
+        },
+        {
+          "id": "track-easy-010-w16",
+          "text": "KAYISI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KARPUZ, KAVUN, ŞEFTALİ, KAYISI aynı gruptadır: yaz meyveleri."
+    }
+  ]
+}
