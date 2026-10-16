@@ -6,7 +6,7 @@ import { parseDailyPuzzleFile } from "@/features/game/validator";
 
 const signature = (words: { text: string }[]) => words.map(w => w.text.toLocaleUpperCase("tr-TR")).sort().join("|");
 describe("separate difficulty content", () => {
-  it("validates 18 different boards, no repeated groups, and matching blind boards", async () => {
+  it("validates 36 different boards, no repeated groups, and matching blind boards", async () => {
     const boards = new Set<string>();
     const groups = new Set<string>();
     for (const filename of readdirSync("src/content/puzzles")) {
@@ -35,7 +35,7 @@ describe("separate difficulty content", () => {
   });
   it("rejects invalid chapter numbers and path traversal", async () => {
     expect(await loadModePuzzle("easy", 0)).toBeNull();
-    expect(await loadModePuzzle("easy", 7)).toBeNull();
+    expect(await loadModePuzzle("easy", TRACK_LEVEL_COUNT + 1)).toBeNull();
     expect(await loadModePuzzle("hard", 1.5)).toBeNull();
     // @ts-expect-error untrusted route input
     expect(await loadModePuzzle("../puzzles", 1)).toBeNull();
