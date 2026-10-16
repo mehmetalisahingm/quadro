@@ -82,27 +82,27 @@
     },
     {
       "id": "track-easy-010-g4",
-      "title": "YAZ MEYVELERİ",
+      "title": "KIŞ SEBZELERİ",
       "words": [
         {
           "id": "track-easy-010-w13",
-          "text": "KARPUZ"
+          "text": "KEREVİZ"
         },
         {
           "id": "track-easy-010-w14",
-          "text": "KAVUN"
+          "text": "PIRASA"
         },
         {
           "id": "track-easy-010-w15",
-          "text": "ŞEFTALİ"
+          "text": "PAZI"
         },
         {
           "id": "track-easy-010-w16",
-          "text": "KAYISI"
+          "text": "KARNABAHAR"
         }
       ],
       "difficulty": 4,
-      "explanation": "KARPUZ, KAVUN, ŞEFTALİ, KAYISI aynı gruptadır: yaz meyveleri."
+      "explanation": "KEREVİZ, PIRASA, PAZI ve KARNABAHAR kış mevsiminde yetişen sebzelerdir."
     }
   ]
 }
