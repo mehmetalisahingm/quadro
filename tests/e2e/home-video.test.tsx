@@ -1,5 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it } from "vitest";
+
+afterEach(() => cleanup());
 import { HomeHero } from "@/components/home/HomeHero";
 
 const base = { puzzleNumber: 1, dateLabel: "16 EKİM 2026", nextPuzzleLabel: "1 saat" };

@@ -10,27 +10,27 @@
   "groups": [
     {
       "id": "q040-g1",
-      "title": "TAHILLAR",
+      "title": "BAHAR ÇİÇEKLERİ",
       "words": [
         {
           "id": "q040-w01",
-          "text": "BUĞDAY"
+          "text": "ÇİĞDEM"
         },
         {
           "id": "q040-w02",
-          "text": "ARPA"
+          "text": "SÜMBÜL"
         },
         {
           "id": "q040-w03",
-          "text": "ÇAVDAR"
+          "text": "MENEKŞE"
         },
         {
           "id": "q040-w04",
-          "text": "YULAF"
+          "text": "FREZYA"
         }
       ],
       "difficulty": 1,
-      "explanation": "TAHILLAR: BUĞDAY, ARPA, ÇAVDAR, YULAF aynı bağlantıda buluşur."
+      "explanation": "BAHAR ÇİÇEKLERİ: ÇİĞDEM, SÜMBÜL, MENEKŞE, FREZYA aynı bağlantıda buluşur."
     },
     {
       "id": "q040-g2",

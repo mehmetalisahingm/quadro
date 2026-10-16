@@ -34,27 +34,27 @@
     },
     {
       "id": "q044-g2",
-      "title": "KİTAP TÜRLERİ",
+      "title": "YAZI TÜRLERİ",
       "words": [
         {
           "id": "q044-w05",
-          "text": "ROMAN"
+          "text": "ANI"
         },
         {
           "id": "q044-w06",
-          "text": "ÖYKÜ"
+          "text": "GÜNLÜK"
         },
         {
           "id": "q044-w07",
-          "text": "DENEME"
+          "text": "BİYOGRAFİ"
         },
         {
           "id": "q044-w08",
-          "text": "ŞİİR"
+          "text": "MAKALE"
         }
       ],
       "difficulty": 2,
-      "explanation": "KİTAP TÜRLERİ: ROMAN, ÖYKÜ, DENEME, ŞİİR aynı bağlantıda buluşur."
+      "explanation": "YAZI TÜRLERİ: ANI, GÜNLÜK, BİYOGRAFİ, MAKALE aynı bağlantıda buluşur."
     },
     {
       "id": "q044-g3",

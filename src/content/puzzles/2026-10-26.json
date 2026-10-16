@@ -10,27 +10,27 @@
   "groups": [
     {
       "id": "q037-g1",
-      "title": "ÖLÇÜ BİRİMLERİ",
+      "title": "BASINÇ BİRİMLERİ",
       "words": [
         {
           "id": "q037-w01",
-          "text": "METRE"
+          "text": "PASKAL"
         },
         {
           "id": "q037-w02",
-          "text": "LİTRE"
+          "text": "BAR"
         },
         {
           "id": "q037-w03",
-          "text": "GRAM"
+          "text": "ATMOSFER"
         },
         {
           "id": "q037-w04",
-          "text": "SANİYE"
+          "text": "MMHG"
         }
       ],
       "difficulty": 1,
-      "explanation": "ÖLÇÜ BİRİMLERİ: METRE, LİTRE, GRAM, SANİYE aynı bağlantıda buluşur."
+      "explanation": "BASINÇ BİRİMLERİ: PASKAL, BAR, ATMOSFER, MMHG aynı bağlantıda buluşur."
     },
     {
       "id": "q037-g2",

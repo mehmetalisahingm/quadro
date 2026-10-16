@@ -29,4 +29,4 @@ Tarih: 16 Ekim 2026. Durum: **Taslak; insan editoryal onayı bekleniyor.**
 
 ## Güvenlik kapısı
 
-Yeni dosyalar status=\`draft\` kalır. Günlük yayın loader'ı draft dosyaları standart günlük yayında reddeder. \`published\` işaretini insan onayını kayıt altına aldıktan sonra değiştirin. 14 günlük **onaylı** stok hedefi #38 kapsamında henüz sağlanmış değildir.
+Yeni dosyalar status=`draft` kalır. Günlük yayın loader'ı draft dosyaları standart günlük yayında reddeder. `published` işaretini insan onayını kayıt altına aldıktan sonra değiştirin. 14 günlük **onaylı** stok hedefi #38 kapsamında henüz sağlanmış değildir.

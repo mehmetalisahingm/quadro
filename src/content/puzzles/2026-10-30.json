@@ -34,27 +34,27 @@
     },
     {
       "id": "q041-g2",
-      "title": "MÜZİK NOTALARI",
+      "title": "MÜZİKTE ARALIKLAR",
       "words": [
         {
           "id": "q041-w05",
-          "text": "DO"
+          "text": "PRİMA"
         },
         {
           "id": "q041-w06",
-          "text": "RE"
+          "text": "SEKUNDA"
         },
         {
           "id": "q041-w07",
-          "text": "Mİ"
+          "text": "TERSİYA"
         },
         {
           "id": "q041-w08",
-          "text": "FA"
+          "text": "KUARTA"
         }
       ],
       "difficulty": 2,
-      "explanation": "MÜZİK NOTALARI: DO, RE, Mİ, FA aynı bağlantıda buluşur."
+      "explanation": "MÜZİKTE ARALIKLAR: PRİMA, SEKUNDA, TERSİYA, KUARTA aynı bağlantıda buluşur."
     },
     {
       "id": "q041-g3",
@@ -82,27 +82,27 @@
     },
     {
       "id": "q041-g4",
-      "title": "SONUNA HARİTASI GELENLER",
+      "title": "SONUNA MERKEZİ GELENLER",
       "words": [
         {
           "id": "q041-w13",
-          "text": "DÜNYA"
+          "text": "SAĞLIK"
         },
         {
           "id": "q041-w14",
-          "text": "HAZİNE"
+          "text": "ALIŞVERİŞ"
         },
         {
           "id": "q041-w15",
-          "text": "YOL"
+          "text": "KÜLTÜR"
         },
         {
           "id": "q041-w16",
-          "text": "ZİHİN"
+          "text": "ARAŞTIRMA"
         }
       ],
       "difficulty": 4,
-      "explanation": "SONUNA HARİTASI GELENLER: DÜNYA, HAZİNE, YOL, ZİHİN aynı bağlantıda buluşur."
+      "explanation": "SONUNA MERKEZİ GELENLER: SAĞLIK, ALIŞVERİŞ, KÜLTÜR, ARAŞTIRMA aynı bağlantıda buluşur."
     }
   ]
 }
