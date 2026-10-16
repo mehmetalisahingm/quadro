@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-009",
+  "date": "2026-10-13",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-medium-009-g1",
+      "title": "SONUNA KAPISI GELENLER",
+      "words": [
+        {
+          "id": "track-medium-009-w1",
+          "text": "BAHÇE"
+        },
+        {
+          "id": "track-medium-009-w2",
+          "text": "KALE"
+        },
+        {
+          "id": "track-medium-009-w3",
+          "text": "ODA"
+        },
+        {
+          "id": "track-medium-009-w4",
+          "text": "GARAJ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bahçe kapısı, kale kapısı, oda kapısı ve garaj kapısı."
+    },
+    {
+      "id": "track-medium-009-g2",
+      "title": "BİLİMSEL ARAŞTIRMA",
+      "words": [
+        {
+          "id": "track-medium-009-w5",
+          "text": "HİPOTEZ"
+        },
+        {
+          "id": "track-medium-009-w6",
+          "text": "GÖZLEM"
+        },
+        {
+          "id": "track-medium-009-w7",
+          "text": "DENEY"
+        },
+        {
+          "id": "track-medium-009-w8",
+          "text": "VERİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bilimsel araştırmada kullanılan temel kavramlardır."
+    },
+    {
+      "id": "track-medium-009-g3",
+      "title": "BASKI VE YAYINCILIK",
+      "words": [
+        {
+          "id": "track-medium-009-w9",
+          "text": "TİRAJ"
+        },
+        {
+          "id": "track-medium-009-w10",
+          "text": "MATBAA"
+        },
+        {
+          "id": "track-medium-009-w11",
+          "text": "MÜREKKEP"
+        },
+        {
+          "id": "track-medium-009-w12",
+          "text": "SAYFA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Basılı yayınların üretimiyle ilgili terimlerdir."
+    },
+    {
+      "id": "track-medium-009-g4",
+      "title": "COĞRAFİ YER ŞEKİLLERİ",
+      "words": [
+        {
+          "id": "track-medium-009-w13",
+          "text": "BOĞAZ"
+        },
+        {
+          "id": "track-medium-009-w14",
+          "text": "KÖRFEZ"
+        },
+        {
+          "id": "track-medium-009-w15",
+          "text": "YARIMADA"
+        },
+        {
+          "id": "track-medium-009-w16",
+          "text": "DELTA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Coğrafyada görülen farklı kıyı ve yer şekilleridir."
+    }
+  ]
+}
