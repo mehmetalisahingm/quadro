@@ -2,6 +2,7 @@
 
 import { useId, useState } from "react";
 import type { GameDifficulty } from "@/features/game/difficulty";
+import { TRACK_LEVEL_COUNT } from "@/features/game/tracks";
 
 import styles from "./GameWelcome.module.css";
 
@@ -121,7 +122,7 @@ export function GameWelcome({
       {!rulesOnly && (
         <>
           <fieldset className={styles.modeField}>
-            <legend>Kendi ritmini seç <span>{distinctPuzzles ? "HER MODDA 6 FARKLI BULMACA" : "KLASİK ARŞİV · DESTEK SEÇİMİ"}</span></legend>
+            <legend>Kendi ritmini seç <span>{distinctPuzzles ? `HER MODDA ${TRACK_LEVEL_COUNT} FARKLI BULMACA` : "KLASİK ARŞİV · DESTEK SEÇİMİ"}</span></legend>
             <div className={styles.modes}>
               {modes.map((mode) => (
                 <label key={mode.id} className={`${styles.mode} ${difficulty === mode.id ? styles.selectedMode : ""}`}>
