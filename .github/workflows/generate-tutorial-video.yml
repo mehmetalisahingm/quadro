@@ -48,5 +48,9 @@ jobs:
           git add public/videos/quadro-oynanis.mp4
           if ! git diff --cached --quiet; then
             git commit -m 'chore(video): embed actual recorded gameplay tutorial'
+            # The PR branch can advance while the browser records. Rebase the
+            # new asset onto that head, rather than force-pushing older code.
+            git fetch origin feat/quadro-gameplay-video-and-daily-stock-20261016
+            git rebase origin/feat/quadro-gameplay-video-and-daily-stock-20261016
             git push origin HEAD:feat/quadro-gameplay-video-and-daily-stock-20261016
           fi
