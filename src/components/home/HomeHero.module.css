@@ -339,3 +339,70 @@
     transform: none !important;
   }
 }
+
+.videoPanel {
+  min-width: 0;
+  display: grid;
+  gap: 10px;
+  align-self: center;
+  padding: 14px;
+  border: 1px solid var(--q-color-border);
+  border-radius: var(--q-radius-lg);
+  background: var(--q-color-surface);
+  box-shadow: var(--q-shadow-card);
+}
+
+.videoHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px 14px;
+}
+
+.videoHeader strong {
+  color: var(--q-color-ink);
+  font-size: 16px;
+}
+
+.videoHeader span {
+  color: var(--q-color-ink-muted);
+  font-size: 12px;
+}
+
+.video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--q-radius-md);
+  background: #12161e;
+}
+
+.videoDescription {
+  margin: 0;
+  color: var(--q-color-ink-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.videoTutorialLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  font-size: 13px;
+  font-weight: var(--q-font-weight-semibold);
+  color: var(--q-color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.videoTutorialLink:focus-visible {
+  outline: 3px solid var(--q-color-focus);
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .videoPanel { padding: 18px; }
+}
