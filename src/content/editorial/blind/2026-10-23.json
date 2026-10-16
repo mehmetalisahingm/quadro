@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-034",
+  "date": "2026-10-23",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q034-w01",
+      "text": "AÇI"
+    },
+    {
+      "id": "q034-w06",
+      "text": "FLAŞ"
+    },
+    {
+      "id": "q034-w11",
+      "text": "ÇÖREK"
+    },
+    {
+      "id": "q034-w16",
+      "text": "İLK YARDIM"
+    },
+    {
+      "id": "q034-w04",
+      "text": "KÖŞEGEN"
+    },
+    {
+      "id": "q034-w07",
+      "text": "OBJEKTİF"
+    },
+    {
+      "id": "q034-w10",
+      "text": "AÇMA"
+    },
+    {
+      "id": "q034-w13",
+      "text": "POSTA"
+    },
+    {
+      "id": "q034-w02",
+      "text": "KÖŞE"
+    },
+    {
+      "id": "q034-w05",
+      "text": "TRİPOD"
+    },
+    {
+      "id": "q034-w12",
+      "text": "SİMİT"
+    },
+    {
+      "id": "q034-w15",
+      "text": "SİGORTA"
+    },
+    {
+      "id": "q034-w03",
+      "text": "KENAR"
+    },
+    {
+      "id": "q034-w08",
+      "text": "FİLTRE"
+    },
+    {
+      "id": "q034-w09",
+      "text": "POĞAÇA"
+    },
+    {
+      "id": "q034-w14",
+      "text": "MÜCEVHER"
+    }
+  ]
+}

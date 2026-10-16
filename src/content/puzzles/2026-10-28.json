@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-039",
+  "date": "2026-10-28",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q039-g1",
+      "title": "ÇATI MALZEMELERİ",
+      "words": [
+        {
+          "id": "q039-w01",
+          "text": "KİREMİT"
+        },
+        {
+          "id": "q039-w02",
+          "text": "ARDUVAZ"
+        },
+        {
+          "id": "q039-w03",
+          "text": "SHINGLE"
+        },
+        {
+          "id": "q039-w04",
+          "text": "TRAPEZ SAC"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÇATI MALZEMELERİ: KİREMİT, ARDUVAZ, SHINGLE, TRAPEZ SAC aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q039-g2",
+      "title": "KÜTÜPHANE İŞLEMLERİ",
+      "words": [
+        {
+          "id": "q039-w05",
+          "text": "ÖDÜNÇ"
+        },
+        {
+          "id": "q039-w06",
+          "text": "İADE"
+        },
+        {
+          "id": "q039-w07",
+          "text": "KATALOG"
+        },
+        {
+          "id": "q039-w08",
+          "text": "REZERVASYON"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KÜTÜPHANE İŞLEMLERİ: ÖDÜNÇ, İADE, KATALOG, REZERVASYON aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q039-g3",
+      "title": "GÖRME ARAÇLARI",
+      "words": [
+        {
+          "id": "q039-w09",
+          "text": "DÜRBÜN"
+        },
+        {
+          "id": "q039-w10",
+          "text": "TELESKOP"
+        },
+        {
+          "id": "q039-w11",
+          "text": "MİKROSKOP"
+        },
+        {
+          "id": "q039-w12",
+          "text": "BÜYÜTEÇ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GÖRME ARAÇLARI: DÜRBÜN, TELESKOP, MİKROSKOP, BÜYÜTEÇ aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q039-g4",
+      "title": "SONUNA BANKASI GELENLER",
+      "words": [
+        {
+          "id": "q039-w13",
+          "text": "KAN"
+        },
+        {
+          "id": "q039-w14",
+          "text": "VERİ"
+        },
+        {
+          "id": "q039-w15",
+          "text": "TOHUM"
+        },
+        {
+          "id": "q039-w16",
+          "text": "YEMEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA BANKASI GELENLER: KAN, VERİ, TOHUM, YEMEK aynı bağlantıda buluşur."
+    }
+  ]
+}

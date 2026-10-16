@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-045",
+  "date": "2026-11-03",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q045-g1",
+      "title": "BİLGİSAYAR BİRİMLERİ",
+      "words": [
+        {
+          "id": "q045-w01",
+          "text": "İŞLEMCİ"
+        },
+        {
+          "id": "q045-w02",
+          "text": "RAM"
+        },
+        {
+          "id": "q045-w03",
+          "text": "ANAKART"
+        },
+        {
+          "id": "q045-w04",
+          "text": "EKRAN KARTI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "BİLGİSAYAR BİRİMLERİ: İŞLEMCİ, RAM, ANAKART, EKRAN KARTI aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q045-g2",
+      "title": "BİTKİ ÇOĞALTMA",
+      "words": [
+        {
+          "id": "q045-w05",
+          "text": "ÇELİK"
+        },
+        {
+          "id": "q045-w06",
+          "text": "TOHUM"
+        },
+        {
+          "id": "q045-w07",
+          "text": "SOĞAN"
+        },
+        {
+          "id": "q045-w08",
+          "text": "YUMRU"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BİTKİ ÇOĞALTMA: ÇELİK, TOHUM, SOĞAN, YUMRU aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q045-g3",
+      "title": "MUTFAKTA PİŞİRME",
+      "words": [
+        {
+          "id": "q045-w09",
+          "text": "KAVURMA"
+        },
+        {
+          "id": "q045-w10",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "q045-w11",
+          "text": "SOTELEME"
+        },
+        {
+          "id": "q045-w12",
+          "text": "BUĞULAMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "MUTFAKTA PİŞİRME: KAVURMA, HAŞLAMA, SOTELEME, BUĞULAMA aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q045-g4",
+      "title": "SONUNA TAHTASI GELENLER",
+      "words": [
+        {
+          "id": "q045-w13",
+          "text": "KESME"
+        },
+        {
+          "id": "q045-w14",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "q045-w15",
+          "text": "ÜTÜ"
+        },
+        {
+          "id": "q045-w16",
+          "text": "YAZI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA TAHTASI GELENLER: KESME, SATRANÇ, ÜTÜ, YAZI aynı bağlantıda buluşur."
+    }
+  ]
+}

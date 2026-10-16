@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-043",
+  "date": "2026-11-01",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q043-w01",
+      "text": "VAN"
+    },
+    {
+      "id": "q043-w06",
+      "text": "PARAMEDİK"
+    },
+    {
+      "id": "q043-w11",
+      "text": "GİDON"
+    },
+    {
+      "id": "q043-w16",
+      "text": "PİRİNÇ"
+    },
+    {
+      "id": "q043-w04",
+      "text": "EĞİRDİR"
+    },
+    {
+      "id": "q043-w07",
+      "text": "EBE"
+    },
+    {
+      "id": "q043-w10",
+      "text": "ZİNCİR"
+    },
+    {
+      "id": "q043-w13",
+      "text": "YULAF"
+    },
+    {
+      "id": "q043-w02",
+      "text": "TUZ"
+    },
+    {
+      "id": "q043-w05",
+      "text": "HEMŞİRE"
+    },
+    {
+      "id": "q043-w12",
+      "text": "SELE"
+    },
+    {
+      "id": "q043-w15",
+      "text": "HİNDİSTAN CEVİZİ"
+    },
+    {
+      "id": "q043-w03",
+      "text": "BEYŞEHİR"
+    },
+    {
+      "id": "q043-w08",
+      "text": "ECZACI"
+    },
+    {
+      "id": "q043-w09",
+      "text": "PEDAL"
+    },
+    {
+      "id": "q043-w14",
+      "text": "SOYA"
+    }
+  ]
+}

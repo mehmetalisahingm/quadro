@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-033",
+  "date": "2026-10-22",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q033-w01",
+      "text": "DOLMA KALEM"
+    },
+    {
+      "id": "q033-w06",
+      "text": "TİPİ"
+    },
+    {
+      "id": "q033-w11",
+      "text": "GİRESUN"
+    },
+    {
+      "id": "q033-w16",
+      "text": "İKAMET"
+    },
+    {
+      "id": "q033-w04",
+      "text": "FOSFORLU KALEM"
+    },
+    {
+      "id": "q033-w07",
+      "text": "FIRTINA"
+    },
+    {
+      "id": "q033-w10",
+      "text": "ORDU"
+    },
+    {
+      "id": "q033-w13",
+      "text": "KİMLİK"
+    },
+    {
+      "id": "q033-w02",
+      "text": "TÜKENMEZ KALEM"
+    },
+    {
+      "id": "q033-w05",
+      "text": "HORTUM"
+    },
+    {
+      "id": "q033-w12",
+      "text": "TRABZON"
+    },
+    {
+      "id": "q033-w15",
+      "text": "MEZUNİYET"
+    },
+    {
+      "id": "q033-w03",
+      "text": "KURŞUN KALEM"
+    },
+    {
+      "id": "q033-w08",
+      "text": "SAĞANAK"
+    },
+    {
+      "id": "q033-w09",
+      "text": "SAMSUN"
+    },
+    {
+      "id": "q033-w14",
+      "text": "TAPU"
+    }
+  ]
+}

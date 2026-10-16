@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-034",
+  "date": "2026-10-23",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q034-g1",
+      "title": "GEOMETRİ KAVRAMLARI",
+      "words": [
+        {
+          "id": "q034-w01",
+          "text": "AÇI"
+        },
+        {
+          "id": "q034-w02",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "q034-w03",
+          "text": "KENAR"
+        },
+        {
+          "id": "q034-w04",
+          "text": "KÖŞEGEN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GEOMETRİ KAVRAMLARI: AÇI, KÖŞE, KENAR, KÖŞEGEN aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q034-g2",
+      "title": "FOTOĞRAF DONANIMI",
+      "words": [
+        {
+          "id": "q034-w05",
+          "text": "TRİPOD"
+        },
+        {
+          "id": "q034-w06",
+          "text": "FLAŞ"
+        },
+        {
+          "id": "q034-w07",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "q034-w08",
+          "text": "FİLTRE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "FOTOĞRAF DONANIMI: TRİPOD, FLAŞ, OBJEKTİF, FİLTRE aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q034-g3",
+      "title": "HAMUR İŞLERİ",
+      "words": [
+        {
+          "id": "q034-w09",
+          "text": "POĞAÇA"
+        },
+        {
+          "id": "q034-w10",
+          "text": "AÇMA"
+        },
+        {
+          "id": "q034-w11",
+          "text": "ÇÖREK"
+        },
+        {
+          "id": "q034-w12",
+          "text": "SİMİT"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HAMUR İŞLERİ: POĞAÇA, AÇMA, ÇÖREK, SİMİT aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q034-g4",
+      "title": "SONUNA KUTUSU GELENLER",
+      "words": [
+        {
+          "id": "q034-w13",
+          "text": "POSTA"
+        },
+        {
+          "id": "q034-w14",
+          "text": "MÜCEVHER"
+        },
+        {
+          "id": "q034-w15",
+          "text": "SİGORTA"
+        },
+        {
+          "id": "q034-w16",
+          "text": "İLK YARDIM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA KUTUSU GELENLER: POSTA, MÜCEVHER, SİGORTA, İLK YARDIM aynı bağlantıda buluşur."
+    }
+  ]
+}

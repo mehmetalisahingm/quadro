@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-035",
+  "date": "2026-10-24",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q035-w01",
+      "text": "ANTRE"
+    },
+    {
+      "id": "q035-w06",
+      "text": "KARANFİL"
+    },
+    {
+      "id": "q035-w11",
+      "text": "RAY"
+    },
+    {
+      "id": "q035-w16",
+      "text": "RESİM"
+    },
+    {
+      "id": "q035-w04",
+      "text": "KİLER"
+    },
+    {
+      "id": "q035-w07",
+      "text": "BEGONYA"
+    },
+    {
+      "id": "q035-w10",
+      "text": "LOKOMOTİF"
+    },
+    {
+      "id": "q035-w13",
+      "text": "NOT"
+    },
+    {
+      "id": "q035-w02",
+      "text": "BALKON"
+    },
+    {
+      "id": "q035-w05",
+      "text": "ORKİDE"
+    },
+    {
+      "id": "q035-w12",
+      "text": "PERON"
+    },
+    {
+      "id": "q035-w15",
+      "text": "ADRES"
+    },
+    {
+      "id": "q035-w03",
+      "text": "KORİDOR"
+    },
+    {
+      "id": "q035-w08",
+      "text": "AÇELYA"
+    },
+    {
+      "id": "q035-w09",
+      "text": "VAGON"
+    },
+    {
+      "id": "q035-w14",
+      "text": "HATIRA"
+    }
+  ]
+}

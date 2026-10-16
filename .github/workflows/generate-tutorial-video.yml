@@ -1,0 +1,56 @@
+name: Generate actual Quadro tutorial video
+
+on:
+  push:
+    branches:
+      - feat/quadro-gameplay-video-and-daily-stock-20261016
+    paths:
+      - scripts/record-tutorial-video.mjs
+      - .github/workflows/generate-tutorial-video.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm install --global npm@11.19.1
+      - run: npm install --no-save --package-lock=false --ignore-scripts @playwright/test@1.63.0
+      - run: npx playwright install --with-deps chromium
+      - name: Record isolated two-group real tutorial
+        run: |
+          if ! command -v ffmpeg >/dev/null; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
+          npm run start -- -H 127.0.0.1 -p 3000 >/tmp/quadro-demo.log 2>&1 &
+          PID=$!
+          trap 'kill "$PID" 2>/dev/null || true' EXIT
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/play?mode=tutorial >/dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/record-tutorial-video.mjs
+          test -s public/videos/quadro-oynanis.mp4
+      - name: Commit verified gameplay MP4 to current feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/videos/quadro-oynanis.mp4
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(video): embed actual recorded gameplay tutorial'
+            # The PR branch can advance while the browser records. Rebase the
+            # new asset onto that head, rather than force-pushing older code.
+            git fetch origin feat/quadro-gameplay-video-and-daily-stock-20261016
+            git rebase origin/feat/quadro-gameplay-video-and-daily-stock-20261016
+            git push origin HEAD:feat/quadro-gameplay-video-and-daily-stock-20261016
+          fi

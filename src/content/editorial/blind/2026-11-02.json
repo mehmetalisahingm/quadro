@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-044",
+  "date": "2026-11-02",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q044-w01",
+      "text": "TERAZİ"
+    },
+    {
+      "id": "q044-w06",
+      "text": "GÜNLÜK"
+    },
+    {
+      "id": "q044-w11",
+      "text": "TUĞLA"
+    },
+    {
+      "id": "q044-w16",
+      "text": "BAHÇE"
+    },
+    {
+      "id": "q044-w04",
+      "text": "TERMOMETRE"
+    },
+    {
+      "id": "q044-w07",
+      "text": "BİYOGRAFİ"
+    },
+    {
+      "id": "q044-w10",
+      "text": "KUM"
+    },
+    {
+      "id": "q044-w13",
+      "text": "OKUL"
+    },
+    {
+      "id": "q044-w02",
+      "text": "ÖLÇÜ KAŞIĞI"
+    },
+    {
+      "id": "q044-w05",
+      "text": "ANI"
+    },
+    {
+      "id": "q044-w12",
+      "text": "MICIR"
+    },
+    {
+      "id": "q044-w15",
+      "text": "APARTMAN"
+    },
+    {
+      "id": "q044-w03",
+      "text": "ÖLÇÜ KABI"
+    },
+    {
+      "id": "q044-w08",
+      "text": "MAKALE"
+    },
+    {
+      "id": "q044-w09",
+      "text": "ÇİMENTO"
+    },
+    {
+      "id": "q044-w14",
+      "text": "HASTANE"
+    }
+  ]
+}

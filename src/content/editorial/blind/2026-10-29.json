@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-040",
+  "date": "2026-10-29",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q040-w01",
+      "text": "ÇİĞDEM"
+    },
+    {
+      "id": "q040-w06",
+      "text": "MATARA"
+    },
+    {
+      "id": "q040-w11",
+      "text": "MP3"
+    },
+    {
+      "id": "q040-w16",
+      "text": "SAĞLIK"
+    },
+    {
+      "id": "q040-w04",
+      "text": "FREZYA"
+    },
+    {
+      "id": "q040-w07",
+      "text": "YAĞMURLUK"
+    },
+    {
+      "id": "q040-w10",
+      "text": "JPEG"
+    },
+    {
+      "id": "q040-w13",
+      "text": "ÇAY"
+    },
+    {
+      "id": "q040-w02",
+      "text": "SÜMBÜL"
+    },
+    {
+      "id": "q040-w05",
+      "text": "PUSULA"
+    },
+    {
+      "id": "q040-w12",
+      "text": "ZIP"
+    },
+    {
+      "id": "q040-w15",
+      "text": "MADEN"
+    },
+    {
+      "id": "q040-w03",
+      "text": "MENEKŞE"
+    },
+    {
+      "id": "q040-w08",
+      "text": "BASTON"
+    },
+    {
+      "id": "q040-w09",
+      "text": "PDF"
+    },
+    {
+      "id": "q040-w14",
+      "text": "KAMP"
+    }
+  ]
+}

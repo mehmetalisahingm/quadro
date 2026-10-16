@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-048",
+  "date": "2026-11-06",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q048-w01",
+      "text": "LALE"
+    },
+    {
+      "id": "q048-w06",
+      "text": "TÜNEL"
+    },
+    {
+      "id": "q048-w11",
+      "text": "FRAGMAN"
+    },
+    {
+      "id": "q048-w16",
+      "text": "ŞEKER"
+    },
+    {
+      "id": "q048-w04",
+      "text": "KASIMPATI"
+    },
+    {
+      "id": "q048-w07",
+      "text": "KAVŞAK"
+    },
+    {
+      "id": "q048-w10",
+      "text": "KURGU"
+    },
+    {
+      "id": "q048-w13",
+      "text": "ÇAMAŞIR"
+    },
+    {
+      "id": "q048-w02",
+      "text": "NİLÜFER"
+    },
+    {
+      "id": "q048-w05",
+      "text": "VİYADÜK"
+    },
+    {
+      "id": "q048-w12",
+      "text": "SEANS"
+    },
+    {
+      "id": "q048-w15",
+      "text": "KAHVE"
+    },
+    {
+      "id": "q048-w03",
+      "text": "ZAMBAK"
+    },
+    {
+      "id": "q048-w08",
+      "text": "KÖPRÜ"
+    },
+    {
+      "id": "q048-w09",
+      "text": "SENARYO"
+    },
+    {
+      "id": "q048-w14",
+      "text": "BULAŞIK"
+    }
+  ]
+}

@@ -128,6 +128,32 @@ export function HomeHero({
         ) : null}
       </div>
 
+      {state === "new" ? (
+        <aside className={styles.videoPanel} aria-label="Quadro nasıl oynanır videosu">
+          <div className={styles.videoHeader}>
+            <strong>Nasıl oynanır?</strong>
+            <span>Gerçek oynanış · kısa anlatım</span>
+          </div>
+          <video
+            className={styles.video}
+            controls
+            muted
+            playsInline
+            preload="metadata"
+            aria-label="Quadro öğreticisinde dört kelime seçilerek iki grubun çözüldüğü oynanış videosu"
+          >
+            <source src="/videos/quadro-oynanis.mp4" type="video/mp4" />
+            Tarayıcın video oynatmayı desteklemiyor.
+          </video>
+          <p className={styles.videoDescription}>
+            Bağlantılı dört kelimeyi seç, kontrol et ve aynı yöntemi tüm gruplarda uygula.
+            Video günlük bulmacanın cevabını göstermez.
+          </p>
+          <Link className={styles.videoTutorialLink} href="/play?mode=tutorial">
+            Videodan sonra kendin dene →
+          </Link>
+        </aside>
+      ) : (
       <div className={styles.motif} aria-hidden="true">
         <div className={styles.motifHeader}>
           <span>4×4</span>
@@ -140,6 +166,7 @@ export function HomeHero({
         </div>
         <p className={styles.motifCaption}>Bağlantıları gör. Grupları kur.</p>
       </div>
+      )}
     </section>
   );
 }
