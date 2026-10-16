@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-009",
+  "date": "2026-10-13",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-easy-009-g1",
+      "title": "BAKLAGİLLER",
+      "words": [
+        {
+          "id": "track-easy-009-w1",
+          "text": "NOHUT"
+        },
+        {
+          "id": "track-easy-009-w2",
+          "text": "MERCİMEK"
+        },
+        {
+          "id": "track-easy-009-w3",
+          "text": "FASULYE"
+        },
+        {
+          "id": "track-easy-009-w4",
+          "text": "BEZELYE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "NOHUT, MERCİMEK, FASULYE, BEZELYE aynı gruptadır: baklagiller."
+    },
+    {
+      "id": "track-easy-009-g2",
+      "title": "GELENEKSEL MÜZİK ALETLERİ",
+      "words": [
+        {
+          "id": "track-easy-009-w5",
+          "text": "KANUN"
+        },
+        {
+          "id": "track-easy-009-w6",
+          "text": "UD"
+        },
+        {
+          "id": "track-easy-009-w7",
+          "text": "NEY"
+        },
+        {
+          "id": "track-easy-009-w8",
+          "text": "BAĞLAMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KANUN, UD, NEY, BAĞLAMA aynı gruptadır: geleneksel müzik aletleri."
+    },
+    {
+      "id": "track-easy-009-g3",
+      "title": "KIŞ AKSESUARLARI",
+      "words": [
+        {
+          "id": "track-easy-009-w9",
+          "text": "ATKI"
+        },
+        {
+          "id": "track-easy-009-w10",
+          "text": "BERE"
+        },
+        {
+          "id": "track-easy-009-w11",
+          "text": "ELDİVEN"
+        },
+        {
+          "id": "track-easy-009-w12",
+          "text": "BOYUNLUK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ATKI, BERE, ELDİVEN, BOYUNLUK aynı gruptadır: kış aksesuarları."
+    },
+    {
+      "id": "track-easy-009-g4",
+      "title": "DOĞAL AFETLER",
+      "words": [
+        {
+          "id": "track-easy-009-w13",
+          "text": "DEPREM"
+        },
+        {
+          "id": "track-easy-009-w14",
+          "text": "HEYELAN"
+        },
+        {
+          "id": "track-easy-009-w15",
+          "text": "ÇIĞ"
+        },
+        {
+          "id": "track-easy-009-w16",
+          "text": "SEL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DEPREM, HEYELAN, ÇIĞ, SEL aynı gruptadır: doğal afetler."
+    }
+  ]
+}
