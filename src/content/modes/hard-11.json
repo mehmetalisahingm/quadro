@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-011",
+  "date": "2026-10-15",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-hard-011-g1",
+      "title": "GÜN İLE BAŞLAYANLAR",
+      "words": [
+        {
+          "id": "track-hard-011-w1",
+          "text": "DOĞUMU"
+        },
+        {
+          "id": "track-hard-011-w2",
+          "text": "BATIMI"
+        },
+        {
+          "id": "track-hard-011-w3",
+          "text": "IŞIĞI"
+        },
+        {
+          "id": "track-hard-011-w4",
+          "text": "YÜZÜ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Gün doğumu, gün batımı, gün ışığı, gün yüzü."
+    },
+    {
+      "id": "track-hard-011-g2",
+      "title": "SONUNA HARİTASI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-011-w5",
+          "text": "YOL"
+        },
+        {
+          "id": "track-hard-011-w6",
+          "text": "DÜNYA"
+        },
+        {
+          "id": "track-hard-011-w7",
+          "text": "HAZİNE"
+        },
+        {
+          "id": "track-hard-011-w8",
+          "text": "ZİHİN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Yol haritası, dünya haritası, hazine haritası, zihin haritası."
+    },
+    {
+      "id": "track-hard-011-g3",
+      "title": "ALMAKLA KURULAN İFADELER",
+      "words": [
+        {
+          "id": "track-hard-011-w9",
+          "text": "NEFES"
+        },
+        {
+          "id": "track-hard-011-w10",
+          "text": "ÖRNEK"
+        },
+        {
+          "id": "track-hard-011-w11",
+          "text": "KARAR"
+        },
+        {
+          "id": "track-hard-011-w12",
+          "text": "HABER"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Nefes almak, örnek almak, karar almak, haber almak."
+    },
+    {
+      "id": "track-hard-011-g4",
+      "title": "ÇIKMAKLA KURULAN İFADELER",
+      "words": [
+        {
+          "id": "track-hard-011-w13",
+          "text": "YOLA"
+        },
+        {
+          "id": "track-hard-011-w14",
+          "text": "SAHNEYE"
+        },
+        {
+          "id": "track-hard-011-w15",
+          "text": "ORTAYA"
+        },
+        {
+          "id": "track-hard-011-w16",
+          "text": "KARŞISINA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Yola çıkmak, sahneye çıkmak, ortaya çıkmak, karşısına çıkmak."
+    }
+  ]
+}
