@@ -9,6 +9,7 @@ describe("separate difficulty content", () => {
   it("validates 36 different boards, no repeated groups, and matching blind boards", async () => {
     const boards = new Set<string>();
     const groups = new Set<string>();
+    const repeatedGroups: string[] = [];
     for (const filename of readdirSync("src/content/puzzles")) {
       const old = JSON.parse(readFileSync(`src/content/puzzles/${filename}`, "utf8"));
       boards.add(signature(old.groups.flatMap((g: {words: {text:string}[]}) => g.words)));
@@ -25,13 +26,14 @@ describe("separate difficulty content", () => {
       expect(boards.has(signature(words)), `${mode.id}-${level} duplicate board`).toBe(false);
       boards.add(signature(words));
       for (const group of puzzle!.groups) {
-        expect(groups.has(signature(group.words)), `${mode.id}-${level}: duplicate ${group.title}`).toBe(false);
+        if (groups.has(signature(group.words))) repeatedGroups.push(`${mode.id}-${level}: duplicate ${group.title}`);
         groups.add(signature(group.words));
       }
       const blind = JSON.parse(readFileSync(`src/content/editorial/modes/blind/${mode.id}-${level}.json`, "utf8"));
       expect(blind.puzzleId).toBe(puzzle!.id);
       expect(blind.words.map((w:{id:string;text:string}) => `${w.id}:${w.text}`).sort()).toEqual(words.map(w=>`${w.id}:${w.text}`).sort());
     }
+    expect(repeatedGroups, `Repeated groups:\n${repeatedGroups.join("\n")}`).toEqual([]);
   });
   it("rejects invalid chapter numbers and path traversal", async () => {
     expect(await loadModePuzzle("easy", 0)).toBeNull();
