@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-042",
+  "date": "2026-10-31",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q042-w01",
+      "text": "DENİZANASI"
+    },
+    {
+      "id": "q042-w06",
+      "text": "MERDANE"
+    },
+    {
+      "id": "q042-w11",
+      "text": "VİETNAM"
+    },
+    {
+      "id": "q042-w16",
+      "text": "DİLEKÇE"
+    },
+    {
+      "id": "q042-w04",
+      "text": "DENİZYILDIZI"
+    },
+    {
+      "id": "q042-w07",
+      "text": "HAMUR KAZIYICI"
+    },
+    {
+      "id": "q042-w10",
+      "text": "NEPAL"
+    },
+    {
+      "id": "q042-w13",
+      "text": "EL"
+    },
+    {
+      "id": "q042-w02",
+      "text": "YENGEÇ"
+    },
+    {
+      "id": "q042-w05",
+      "text": "MAYA"
+    },
+    {
+      "id": "q042-w12",
+      "text": "TAYLAND"
+    },
+    {
+      "id": "q042-w15",
+      "text": "DUVAR"
+    },
+    {
+      "id": "q042-w03",
+      "text": "MİDYE"
+    },
+    {
+      "id": "q042-w08",
+      "text": "KALIP"
+    },
+    {
+      "id": "q042-w09",
+      "text": "JAPONYA"
+    },
+    {
+      "id": "q042-w14",
+      "text": "BAŞLIK"
+    }
+  ]
+}

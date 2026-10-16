@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-044",
+  "date": "2026-11-02",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q044-g1",
+      "title": "MUTFAKTA ÖLÇÜM",
+      "words": [
+        {
+          "id": "q044-w01",
+          "text": "TERAZİ"
+        },
+        {
+          "id": "q044-w02",
+          "text": "ÖLÇÜ KAŞIĞI"
+        },
+        {
+          "id": "q044-w03",
+          "text": "ÖLÇÜ KABI"
+        },
+        {
+          "id": "q044-w04",
+          "text": "TERMOMETRE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "MUTFAKTA ÖLÇÜM: TERAZİ, ÖLÇÜ KAŞIĞI, ÖLÇÜ KABI, TERMOMETRE aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q044-g2",
+      "title": "KİTAP TÜRLERİ",
+      "words": [
+        {
+          "id": "q044-w05",
+          "text": "ROMAN"
+        },
+        {
+          "id": "q044-w06",
+          "text": "ÖYKÜ"
+        },
+        {
+          "id": "q044-w07",
+          "text": "DENEME"
+        },
+        {
+          "id": "q044-w08",
+          "text": "ŞİİR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KİTAP TÜRLERİ: ROMAN, ÖYKÜ, DENEME, ŞİİR aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q044-g3",
+      "title": "İNŞAAT MALZEMELERİ",
+      "words": [
+        {
+          "id": "q044-w09",
+          "text": "ÇİMENTO"
+        },
+        {
+          "id": "q044-w10",
+          "text": "KUM"
+        },
+        {
+          "id": "q044-w11",
+          "text": "TUĞLA"
+        },
+        {
+          "id": "q044-w12",
+          "text": "MICIR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "İNŞAAT MALZEMELERİ: ÇİMENTO, KUM, TUĞLA, MICIR aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q044-g4",
+      "title": "SONUNA KAPISI GELENLER",
+      "words": [
+        {
+          "id": "q044-w13",
+          "text": "OKUL"
+        },
+        {
+          "id": "q044-w14",
+          "text": "HASTANE"
+        },
+        {
+          "id": "q044-w15",
+          "text": "APARTMAN"
+        },
+        {
+          "id": "q044-w16",
+          "text": "BAHÇE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA KAPISI GELENLER: OKUL, HASTANE, APARTMAN, BAHÇE aynı bağlantıda buluşur."
+    }
+  ]
+}

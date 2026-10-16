@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-033",
+  "date": "2026-10-22",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q033-g1",
+      "title": "YAZI KALEMLERİ",
+      "words": [
+        {
+          "id": "q033-w01",
+          "text": "DOLMA KALEM"
+        },
+        {
+          "id": "q033-w02",
+          "text": "TÜKENMEZ KALEM"
+        },
+        {
+          "id": "q033-w03",
+          "text": "KURŞUN KALEM"
+        },
+        {
+          "id": "q033-w04",
+          "text": "FOSFORLU KALEM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YAZI KALEMLERİ: DOLMA KALEM, TÜKENMEZ KALEM, KURŞUN KALEM, FOSFORLU KALEM aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q033-g2",
+      "title": "ŞİDDETLİ HAVA OLAYLARI",
+      "words": [
+        {
+          "id": "q033-w05",
+          "text": "HORTUM"
+        },
+        {
+          "id": "q033-w06",
+          "text": "TİPİ"
+        },
+        {
+          "id": "q033-w07",
+          "text": "FIRTINA"
+        },
+        {
+          "id": "q033-w08",
+          "text": "SAĞANAK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ŞİDDETLİ HAVA OLAYLARI: HORTUM, TİPİ, FIRTINA, SAĞANAK aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q033-g3",
+      "title": "KARADENİZ İLLERİ",
+      "words": [
+        {
+          "id": "q033-w09",
+          "text": "SAMSUN"
+        },
+        {
+          "id": "q033-w10",
+          "text": "ORDU"
+        },
+        {
+          "id": "q033-w11",
+          "text": "GİRESUN"
+        },
+        {
+          "id": "q033-w12",
+          "text": "TRABZON"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KARADENİZ İLLERİ: SAMSUN, ORDU, GİRESUN, TRABZON aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q033-g4",
+      "title": "SONUNA BELGESİ GELENLER",
+      "words": [
+        {
+          "id": "q033-w13",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "q033-w14",
+          "text": "TAPU"
+        },
+        {
+          "id": "q033-w15",
+          "text": "MEZUNİYET"
+        },
+        {
+          "id": "q033-w16",
+          "text": "İKAMET"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA BELGESİ GELENLER: KİMLİK, TAPU, MEZUNİYET, İKAMET aynı bağlantıda buluşur."
+    }
+  ]
+}

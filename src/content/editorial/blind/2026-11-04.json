@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-046",
+  "date": "2026-11-04",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q046-w01",
+      "text": "ERGUVA"
+    },
+    {
+      "id": "q046-w06",
+      "text": "KANYON"
+    },
+    {
+      "id": "q046-w11",
+      "text": "CAPPUCCINO"
+    },
+    {
+      "id": "q046-w16",
+      "text": "DEMİR YOLU"
+    },
+    {
+      "id": "q046-w04",
+      "text": "AKASYA"
+    },
+    {
+      "id": "q046-w07",
+      "text": "YAYLA"
+    },
+    {
+      "id": "q046-w10",
+      "text": "LATTE"
+    },
+    {
+      "id": "q046-w13",
+      "text": "TELEFON"
+    },
+    {
+      "id": "q046-w02",
+      "text": "MANOLYA"
+    },
+    {
+      "id": "q046-w05",
+      "text": "VADİ"
+    },
+    {
+      "id": "q046-w12",
+      "text": "AMERICANO"
+    },
+    {
+      "id": "q046-w15",
+      "text": "CEPHE"
+    },
+    {
+      "id": "q046-w03",
+      "text": "JAKARANDA"
+    },
+    {
+      "id": "q046-w08",
+      "text": "PLATO"
+    },
+    {
+      "id": "q046-w09",
+      "text": "ESPRESSO"
+    },
+    {
+      "id": "q046-w14",
+      "text": "ÜRETİM"
+    }
+  ]
+}

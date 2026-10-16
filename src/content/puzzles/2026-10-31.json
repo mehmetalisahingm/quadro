@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-042",
+  "date": "2026-10-31",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q042-g1",
+      "title": "DENİZ CANLILARI",
+      "words": [
+        {
+          "id": "q042-w01",
+          "text": "DENİZANASI"
+        },
+        {
+          "id": "q042-w02",
+          "text": "YENGEÇ"
+        },
+        {
+          "id": "q042-w03",
+          "text": "MİDYE"
+        },
+        {
+          "id": "q042-w04",
+          "text": "DENİZYILDIZI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DENİZ CANLILARI: DENİZANASI, YENGEÇ, MİDYE, DENİZYILDIZI aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q042-g2",
+      "title": "FIRINCILIK GEREÇLERİ",
+      "words": [
+        {
+          "id": "q042-w05",
+          "text": "MAYA"
+        },
+        {
+          "id": "q042-w06",
+          "text": "MERDANE"
+        },
+        {
+          "id": "q042-w07",
+          "text": "HAMUR KAZIYICI"
+        },
+        {
+          "id": "q042-w08",
+          "text": "KALIP"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "FIRINCILIK GEREÇLERİ: MAYA, MERDANE, HAMUR KAZIYICI, KALIP aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q042-g3",
+      "title": "ASYA ÜLKELERİ",
+      "words": [
+        {
+          "id": "q042-w09",
+          "text": "JAPONYA"
+        },
+        {
+          "id": "q042-w10",
+          "text": "NEPAL"
+        },
+        {
+          "id": "q042-w11",
+          "text": "VİETNAM"
+        },
+        {
+          "id": "q042-w12",
+          "text": "TAYLAND"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ASYA ÜLKELERİ: JAPONYA, NEPAL, VİETNAM, TAYLAND aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q042-g4",
+      "title": "SONUNA YAZISI GELENLER",
+      "words": [
+        {
+          "id": "q042-w13",
+          "text": "EL"
+        },
+        {
+          "id": "q042-w14",
+          "text": "BAŞLIK"
+        },
+        {
+          "id": "q042-w15",
+          "text": "DUVAR"
+        },
+        {
+          "id": "q042-w16",
+          "text": "DİLEKÇE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA YAZISI GELENLER: EL, BAŞLIK, DUVAR, DİLEKÇE aynı bağlantıda buluşur."
+    }
+  ]
+}

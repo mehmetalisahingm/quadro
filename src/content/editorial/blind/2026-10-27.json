@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-038",
+  "date": "2026-10-27",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q038-w01",
+      "text": "KİRPİ"
+    },
+    {
+      "id": "q038-w06",
+      "text": "PASİFİK"
+    },
+    {
+      "id": "q038-w11",
+      "text": "KOORDİNAT"
+    },
+    {
+      "id": "q038-w16",
+      "text": "HAYVAN"
+    },
+    {
+      "id": "q038-w04",
+      "text": "VAŞAK"
+    },
+    {
+      "id": "q038-w07",
+      "text": "HİNT"
+    },
+    {
+      "id": "q038-w10",
+      "text": "LEJANT"
+    },
+    {
+      "id": "q038-w13",
+      "text": "ÇAY"
+    },
+    {
+      "id": "q038-w02",
+      "text": "TİLKİ"
+    },
+    {
+      "id": "q038-w05",
+      "text": "ATLANTİK"
+    },
+    {
+      "id": "q038-w12",
+      "text": "PUSULA"
+    },
+    {
+      "id": "q038-w15",
+      "text": "ÇOCUK"
+    },
+    {
+      "id": "q038-w03",
+      "text": "PORSUK"
+    },
+    {
+      "id": "q038-w08",
+      "text": "ARKTİK"
+    },
+    {
+      "id": "q038-w09",
+      "text": "ÖLÇEK"
+    },
+    {
+      "id": "q038-w14",
+      "text": "SEBZE"
+    }
+  ]
+}

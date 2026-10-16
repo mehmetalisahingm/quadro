@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-038",
+  "date": "2026-10-27",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q038-g1",
+      "title": "KARADA YAŞAYAN MEMELİLER",
+      "words": [
+        {
+          "id": "q038-w01",
+          "text": "KİRPİ"
+        },
+        {
+          "id": "q038-w02",
+          "text": "TİLKİ"
+        },
+        {
+          "id": "q038-w03",
+          "text": "PORSUK"
+        },
+        {
+          "id": "q038-w04",
+          "text": "VAŞAK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KARADA YAŞAYAN MEMELİLER: KİRPİ, TİLKİ, PORSUK, VAŞAK aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q038-g2",
+      "title": "OKYANUSLAR",
+      "words": [
+        {
+          "id": "q038-w05",
+          "text": "ATLANTİK"
+        },
+        {
+          "id": "q038-w06",
+          "text": "PASİFİK"
+        },
+        {
+          "id": "q038-w07",
+          "text": "HİNT"
+        },
+        {
+          "id": "q038-w08",
+          "text": "ARKTİK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OKYANUSLAR: ATLANTİK, PASİFİK, HİNT, ARKTİK aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q038-g3",
+      "title": "HARİTA ELEMANLARI",
+      "words": [
+        {
+          "id": "q038-w09",
+          "text": "ÖLÇEK"
+        },
+        {
+          "id": "q038-w10",
+          "text": "LEJANT"
+        },
+        {
+          "id": "q038-w11",
+          "text": "KOORDİNAT"
+        },
+        {
+          "id": "q038-w12",
+          "text": "PUSULA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HARİTA ELEMANLARI: ÖLÇEK, LEJANT, KOORDİNAT, PUSULA aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q038-g4",
+      "title": "SONUNA BAHÇESİ GELENLER",
+      "words": [
+        {
+          "id": "q038-w13",
+          "text": "ÇAY"
+        },
+        {
+          "id": "q038-w14",
+          "text": "SEBZE"
+        },
+        {
+          "id": "q038-w15",
+          "text": "ÇOCUK"
+        },
+        {
+          "id": "q038-w16",
+          "text": "HAYVAN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA BAHÇESİ GELENLER: ÇAY, SEBZE, ÇOCUK, HAYVAN aynı bağlantıda buluşur."
+    }
+  ]
+}

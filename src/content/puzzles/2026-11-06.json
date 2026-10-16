@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-048",
+  "date": "2026-11-06",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q048-g1",
+      "title": "BAHÇE ÇİÇEKLERİ",
+      "words": [
+        {
+          "id": "q048-w01",
+          "text": "LALE"
+        },
+        {
+          "id": "q048-w02",
+          "text": "NİLÜFER"
+        },
+        {
+          "id": "q048-w03",
+          "text": "ZAMBAK"
+        },
+        {
+          "id": "q048-w04",
+          "text": "KASIMPATI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "BAHÇE ÇİÇEKLERİ: LALE, NİLÜFER, ZAMBAK, KASIMPATI aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q048-g2",
+      "title": "ULAŞIM YAPILARI",
+      "words": [
+        {
+          "id": "q048-w05",
+          "text": "VİYADÜK"
+        },
+        {
+          "id": "q048-w06",
+          "text": "TÜNEL"
+        },
+        {
+          "id": "q048-w07",
+          "text": "KAVŞAK"
+        },
+        {
+          "id": "q048-w08",
+          "text": "KÖPRÜ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ULAŞIM YAPILARI: VİYADÜK, TÜNEL, KAVŞAK, KÖPRÜ aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q048-g3",
+      "title": "SİNEMA TERİMLERİ",
+      "words": [
+        {
+          "id": "q048-w09",
+          "text": "SENARYO"
+        },
+        {
+          "id": "q048-w10",
+          "text": "KURGU"
+        },
+        {
+          "id": "q048-w11",
+          "text": "FRAGMAN"
+        },
+        {
+          "id": "q048-w12",
+          "text": "SEANS"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SİNEMA TERİMLERİ: SENARYO, KURGU, FRAGMAN, SEANS aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q048-g4",
+      "title": "SONUNA MAKİNESİ GELENLER",
+      "words": [
+        {
+          "id": "q048-w13",
+          "text": "ÇAMAŞIR"
+        },
+        {
+          "id": "q048-w14",
+          "text": "BULAŞIK"
+        },
+        {
+          "id": "q048-w15",
+          "text": "KAHVE"
+        },
+        {
+          "id": "q048-w16",
+          "text": "ŞEKER"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA MAKİNESİ GELENLER: ÇAMAŞIR, BULAŞIK, KAHVE, ŞEKER aynı bağlantıda buluşur."
+    }
+  ]
+}

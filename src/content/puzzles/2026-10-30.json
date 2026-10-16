@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-041",
+  "date": "2026-10-30",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q041-g1",
+      "title": "KÖPRÜ ÇEŞİTLERİ",
+      "words": [
+        {
+          "id": "q041-w01",
+          "text": "ASMA"
+        },
+        {
+          "id": "q041-w02",
+          "text": "KEMER"
+        },
+        {
+          "id": "q041-w03",
+          "text": "KİRİŞLİ"
+        },
+        {
+          "id": "q041-w04",
+          "text": "ASKILI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KÖPRÜ ÇEŞİTLERİ: ASMA, KEMER, KİRİŞLİ, ASKILI aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q041-g2",
+      "title": "MÜZİK NOTALARI",
+      "words": [
+        {
+          "id": "q041-w05",
+          "text": "DO"
+        },
+        {
+          "id": "q041-w06",
+          "text": "RE"
+        },
+        {
+          "id": "q041-w07",
+          "text": "Mİ"
+        },
+        {
+          "id": "q041-w08",
+          "text": "FA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "MÜZİK NOTALARI: DO, RE, Mİ, FA aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q041-g3",
+      "title": "ARICILIK ÜRÜNLERİ",
+      "words": [
+        {
+          "id": "q041-w09",
+          "text": "BAL"
+        },
+        {
+          "id": "q041-w10",
+          "text": "POLEN"
+        },
+        {
+          "id": "q041-w11",
+          "text": "PROPOLİS"
+        },
+        {
+          "id": "q041-w12",
+          "text": "ARI SÜTÜ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ARICILIK ÜRÜNLERİ: BAL, POLEN, PROPOLİS, ARI SÜTÜ aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q041-g4",
+      "title": "SONUNA HARİTASI GELENLER",
+      "words": [
+        {
+          "id": "q041-w13",
+          "text": "DÜNYA"
+        },
+        {
+          "id": "q041-w14",
+          "text": "HAZİNE"
+        },
+        {
+          "id": "q041-w15",
+          "text": "YOL"
+        },
+        {
+          "id": "q041-w16",
+          "text": "ZİHİN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA HARİTASI GELENLER: DÜNYA, HAZİNE, YOL, ZİHİN aynı bağlantıda buluşur."
+    }
+  ]
+}

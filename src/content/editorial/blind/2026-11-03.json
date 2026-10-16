@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-045",
+  "date": "2026-11-03",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q045-w01",
+      "text": "İŞLEMCİ"
+    },
+    {
+      "id": "q045-w06",
+      "text": "TOHUM"
+    },
+    {
+      "id": "q045-w11",
+      "text": "SOTELEME"
+    },
+    {
+      "id": "q045-w16",
+      "text": "YAZI"
+    },
+    {
+      "id": "q045-w04",
+      "text": "EKRAN KARTI"
+    },
+    {
+      "id": "q045-w07",
+      "text": "SOĞAN"
+    },
+    {
+      "id": "q045-w10",
+      "text": "HAŞLAMA"
+    },
+    {
+      "id": "q045-w13",
+      "text": "KESME"
+    },
+    {
+      "id": "q045-w02",
+      "text": "RAM"
+    },
+    {
+      "id": "q045-w05",
+      "text": "ÇELİK"
+    },
+    {
+      "id": "q045-w12",
+      "text": "BUĞULAMA"
+    },
+    {
+      "id": "q045-w15",
+      "text": "ÜTÜ"
+    },
+    {
+      "id": "q045-w03",
+      "text": "ANAKART"
+    },
+    {
+      "id": "q045-w08",
+      "text": "YUMRU"
+    },
+    {
+      "id": "q045-w09",
+      "text": "KAVURMA"
+    },
+    {
+      "id": "q045-w14",
+      "text": "SATRANÇ"
+    }
+  ]
+}

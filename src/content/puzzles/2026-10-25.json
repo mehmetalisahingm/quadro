@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-036",
+  "date": "2026-10-25",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q036-g1",
+      "title": "YER ALTI KAYNAKLARI",
+      "words": [
+        {
+          "id": "q036-w01",
+          "text": "KÖMÜR"
+        },
+        {
+          "id": "q036-w02",
+          "text": "PETROL"
+        },
+        {
+          "id": "q036-w03",
+          "text": "DOĞALGAZ"
+        },
+        {
+          "id": "q036-w04",
+          "text": "BOR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YER ALTI KAYNAKLARI: KÖMÜR, PETROL, DOĞALGAZ, BOR aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q036-g2",
+      "title": "SAHNE SANATLARI",
+      "words": [
+        {
+          "id": "q036-w05",
+          "text": "OPERA"
+        },
+        {
+          "id": "q036-w06",
+          "text": "BALE"
+        },
+        {
+          "id": "q036-w07",
+          "text": "TİYATRO"
+        },
+        {
+          "id": "q036-w08",
+          "text": "PANDOMİM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SAHNE SANATLARI: OPERA, BALE, TİYATRO, PANDOMİM aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q036-g3",
+      "title": "BANYO GEREÇLERİ",
+      "words": [
+        {
+          "id": "q036-w09",
+          "text": "LİF"
+        },
+        {
+          "id": "q036-w10",
+          "text": "DUŞ JELİ"
+        },
+        {
+          "id": "q036-w11",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "q036-w12",
+          "text": "HAVLU"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BANYO GEREÇLERİ: LİF, DUŞ JELİ, ŞAMPUAN, HAVLU aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q036-g4",
+      "title": "SONUNA SAATİ GELENLER",
+      "words": [
+        {
+          "id": "q036-w13",
+          "text": "DUVAR"
+        },
+        {
+          "id": "q036-w14",
+          "text": "KOL"
+        },
+        {
+          "id": "q036-w15",
+          "text": "MASA"
+        },
+        {
+          "id": "q036-w16",
+          "text": "KUM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA SAATİ GELENLER: DUVAR, KOL, MASA, KUM aynı bağlantıda buluşur."
+    }
+  ]
+}

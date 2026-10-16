@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-047",
+  "date": "2026-11-05",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q047-w01",
+      "text": "KALEMTRAŞ"
+    },
+    {
+      "id": "q047-w06",
+      "text": "MERCEK"
+    },
+    {
+      "id": "q047-w11",
+      "text": "YELKEN"
+    },
+    {
+      "id": "q047-w16",
+      "text": "ÜYE"
+    },
+    {
+      "id": "q047-w04",
+      "text": "GÖNYE"
+    },
+    {
+      "id": "q047-w07",
+      "text": "KULE"
+    },
+    {
+      "id": "q047-w10",
+      "text": "SÖRF"
+    },
+    {
+      "id": "q047-w13",
+      "text": "BANKA"
+    },
+    {
+      "id": "q047-w02",
+      "text": "SİLGİ"
+    },
+    {
+      "id": "q047-w05",
+      "text": "LAMBA"
+    },
+    {
+      "id": "q047-w12",
+      "text": "KANO"
+    },
+    {
+      "id": "q047-w15",
+      "text": "ÖĞRENCİ"
+    },
+    {
+      "id": "q047-w03",
+      "text": "CETVEL"
+    },
+    {
+      "id": "q047-w08",
+      "text": "REFLEKTÖR"
+    },
+    {
+      "id": "q047-w09",
+      "text": "YÜZME"
+    },
+    {
+      "id": "q047-w14",
+      "text": "ULAŞIM"
+    }
+  ]
+}

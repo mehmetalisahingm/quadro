@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-036",
+  "date": "2026-10-25",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q036-w01",
+      "text": "KÖMÜR"
+    },
+    {
+      "id": "q036-w06",
+      "text": "BALE"
+    },
+    {
+      "id": "q036-w11",
+      "text": "ŞAMPUAN"
+    },
+    {
+      "id": "q036-w16",
+      "text": "KUM"
+    },
+    {
+      "id": "q036-w04",
+      "text": "BOR"
+    },
+    {
+      "id": "q036-w07",
+      "text": "TİYATRO"
+    },
+    {
+      "id": "q036-w10",
+      "text": "DUŞ JELİ"
+    },
+    {
+      "id": "q036-w13",
+      "text": "DUVAR"
+    },
+    {
+      "id": "q036-w02",
+      "text": "PETROL"
+    },
+    {
+      "id": "q036-w05",
+      "text": "OPERA"
+    },
+    {
+      "id": "q036-w12",
+      "text": "HAVLU"
+    },
+    {
+      "id": "q036-w15",
+      "text": "MASA"
+    },
+    {
+      "id": "q036-w03",
+      "text": "DOĞALGAZ"
+    },
+    {
+      "id": "q036-w08",
+      "text": "PANDOMİM"
+    },
+    {
+      "id": "q036-w09",
+      "text": "LİF"
+    },
+    {
+      "id": "q036-w14",
+      "text": "KOL"
+    }
+  ]
+}

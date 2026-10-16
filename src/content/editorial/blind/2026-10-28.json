@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "q-039",
+  "date": "2026-10-28",
+  "language": "tr",
+  "purpose": "optional-blind-trial",
+  "words": [
+    {
+      "id": "q039-w01",
+      "text": "KİREMİT"
+    },
+    {
+      "id": "q039-w06",
+      "text": "İADE"
+    },
+    {
+      "id": "q039-w11",
+      "text": "MİKROSKOP"
+    },
+    {
+      "id": "q039-w16",
+      "text": "YEMEK"
+    },
+    {
+      "id": "q039-w04",
+      "text": "TRAPEZ SAC"
+    },
+    {
+      "id": "q039-w07",
+      "text": "KATALOG"
+    },
+    {
+      "id": "q039-w10",
+      "text": "TELESKOP"
+    },
+    {
+      "id": "q039-w13",
+      "text": "KAN"
+    },
+    {
+      "id": "q039-w02",
+      "text": "ARDUVAZ"
+    },
+    {
+      "id": "q039-w05",
+      "text": "ÖDÜNÇ"
+    },
+    {
+      "id": "q039-w12",
+      "text": "BÜYÜTEÇ"
+    },
+    {
+      "id": "q039-w15",
+      "text": "TOHUM"
+    },
+    {
+      "id": "q039-w03",
+      "text": "SHINGLE"
+    },
+    {
+      "id": "q039-w08",
+      "text": "REZERVASYON"
+    },
+    {
+      "id": "q039-w09",
+      "text": "DÜRBÜN"
+    },
+    {
+      "id": "q039-w14",
+      "text": "VERİ"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-047",
+  "date": "2026-11-05",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q047-g1",
+      "title": "OKUL EŞYALARI",
+      "words": [
+        {
+          "id": "q047-w01",
+          "text": "KALEMTRAŞ"
+        },
+        {
+          "id": "q047-w02",
+          "text": "SİLGİ"
+        },
+        {
+          "id": "q047-w03",
+          "text": "CETVEL"
+        },
+        {
+          "id": "q047-w04",
+          "text": "GÖNYE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OKUL EŞYALARI: KALEMTRAŞ, SİLGİ, CETVEL, GÖNYE aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q047-g2",
+      "title": "DENİZ FENERİ BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "q047-w05",
+          "text": "LAMBA"
+        },
+        {
+          "id": "q047-w06",
+          "text": "MERCEK"
+        },
+        {
+          "id": "q047-w07",
+          "text": "KULE"
+        },
+        {
+          "id": "q047-w08",
+          "text": "REFLEKTÖR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DENİZ FENERİ BÖLÜMLERİ: LAMBA, MERCEK, KULE, REFLEKTÖR aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q047-g3",
+      "title": "YAZ SPORLARI",
+      "words": [
+        {
+          "id": "q047-w09",
+          "text": "YÜZME"
+        },
+        {
+          "id": "q047-w10",
+          "text": "SÖRF"
+        },
+        {
+          "id": "q047-w11",
+          "text": "YELKEN"
+        },
+        {
+          "id": "q047-w12",
+          "text": "KANO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "YAZ SPORLARI: YÜZME, SÖRF, YELKEN, KANO aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q047-g4",
+      "title": "SONUNA KARTI GELENLER",
+      "words": [
+        {
+          "id": "q047-w13",
+          "text": "BANKA"
+        },
+        {
+          "id": "q047-w14",
+          "text": "ULAŞIM"
+        },
+        {
+          "id": "q047-w15",
+          "text": "ÖĞRENCİ"
+        },
+        {
+          "id": "q047-w16",
+          "text": "ÜYE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA KARTI GELENLER: BANKA, ULAŞIM, ÖĞRENCİ, ÜYE aynı bağlantıda buluşur."
+    }
+  ]
+}

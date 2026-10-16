@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-037",
+  "date": "2026-10-26",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q037-g1",
+      "title": "ÖLÇÜ BİRİMLERİ",
+      "words": [
+        {
+          "id": "q037-w01",
+          "text": "METRE"
+        },
+        {
+          "id": "q037-w02",
+          "text": "LİTRE"
+        },
+        {
+          "id": "q037-w03",
+          "text": "GRAM"
+        },
+        {
+          "id": "q037-w04",
+          "text": "SANİYE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÖLÇÜ BİRİMLERİ: METRE, LİTRE, GRAM, SANİYE aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q037-g2",
+      "title": "BÜRO MALZEMELERİ",
+      "words": [
+        {
+          "id": "q037-w05",
+          "text": "ATAŞ"
+        },
+        {
+          "id": "q037-w06",
+          "text": "ZIMBA"
+        },
+        {
+          "id": "q037-w07",
+          "text": "DELGEÇ"
+        },
+        {
+          "id": "q037-w08",
+          "text": "DOSYA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BÜRO MALZEMELERİ: ATAŞ, ZIMBA, DELGEÇ, DOSYA aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q037-g3",
+      "title": "ÇÖL BİTKİLERİ",
+      "words": [
+        {
+          "id": "q037-w09",
+          "text": "KAKTÜS"
+        },
+        {
+          "id": "q037-w10",
+          "text": "AGAVE"
+        },
+        {
+          "id": "q037-w11",
+          "text": "YUKKA"
+        },
+        {
+          "id": "q037-w12",
+          "text": "ALOE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇÖL BİTKİLERİ: KAKTÜS, AGAVE, YUKKA, ALOE aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q037-g4",
+      "title": "SONUNA TOPU GELENLER",
+      "words": [
+        {
+          "id": "q037-w13",
+          "text": "FUTBOL"
+        },
+        {
+          "id": "q037-w14",
+          "text": "BASKETBOL"
+        },
+        {
+          "id": "q037-w15",
+          "text": "VOLEYBOL"
+        },
+        {
+          "id": "q037-w16",
+          "text": "TENİS"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA TOPU GELENLER: FUTBOL, BASKETBOL, VOLEYBOL, TENİS aynı bağlantıda buluşur."
+    }
+  ]
+}

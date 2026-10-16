@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-043",
+  "date": "2026-11-01",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q043-g1",
+      "title": "DOĞAL GÖLLER",
+      "words": [
+        {
+          "id": "q043-w01",
+          "text": "VAN"
+        },
+        {
+          "id": "q043-w02",
+          "text": "TUZ"
+        },
+        {
+          "id": "q043-w03",
+          "text": "BEYŞEHİR"
+        },
+        {
+          "id": "q043-w04",
+          "text": "EĞİRDİR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DOĞAL GÖLLER: VAN, TUZ, BEYŞEHİR, EĞİRDİR aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q043-g2",
+      "title": "SAĞLIK ÇALIŞANLARI",
+      "words": [
+        {
+          "id": "q043-w05",
+          "text": "HEMŞİRE"
+        },
+        {
+          "id": "q043-w06",
+          "text": "PARAMEDİK"
+        },
+        {
+          "id": "q043-w07",
+          "text": "EBE"
+        },
+        {
+          "id": "q043-w08",
+          "text": "ECZACI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SAĞLIK ÇALIŞANLARI: HEMŞİRE, PARAMEDİK, EBE, ECZACI aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q043-g3",
+      "title": "BİSİKLET PARÇALARI",
+      "words": [
+        {
+          "id": "q043-w09",
+          "text": "PEDAL"
+        },
+        {
+          "id": "q043-w10",
+          "text": "ZİNCİR"
+        },
+        {
+          "id": "q043-w11",
+          "text": "GİDON"
+        },
+        {
+          "id": "q043-w12",
+          "text": "SELE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BİSİKLET PARÇALARI: PEDAL, ZİNCİR, GİDON, SELE aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q043-g4",
+      "title": "SONUNA SÜTÜ GELENLER",
+      "words": [
+        {
+          "id": "q043-w13",
+          "text": "YULAF"
+        },
+        {
+          "id": "q043-w14",
+          "text": "SOYA"
+        },
+        {
+          "id": "q043-w15",
+          "text": "HİNDİSTAN CEVİZİ"
+        },
+        {
+          "id": "q043-w16",
+          "text": "PİRİNÇ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA SÜTÜ GELENLER: YULAF, SOYA, HİNDİSTAN CEVİZİ, PİRİNÇ aynı bağlantıda buluşur."
+    }
+  ]
+}

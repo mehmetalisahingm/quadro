@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "q-040",
+  "date": "2026-10-29",
+  "language": "tr",
+  "status": "draft",
+  "author": "ChatGPT (Quadro Q38 aday üretimi)",
+  "reviewer": "review-pending",
+  "groups": [
+    {
+      "id": "q040-g1",
+      "title": "TAHILLAR",
+      "words": [
+        {
+          "id": "q040-w01",
+          "text": "BUĞDAY"
+        },
+        {
+          "id": "q040-w02",
+          "text": "ARPA"
+        },
+        {
+          "id": "q040-w03",
+          "text": "ÇAVDAR"
+        },
+        {
+          "id": "q040-w04",
+          "text": "YULAF"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "TAHILLAR: BUĞDAY, ARPA, ÇAVDAR, YULAF aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q040-g2",
+      "title": "DOĞA YÜRÜYÜŞÜ MALZEMELERİ",
+      "words": [
+        {
+          "id": "q040-w05",
+          "text": "PUSULA"
+        },
+        {
+          "id": "q040-w06",
+          "text": "MATARA"
+        },
+        {
+          "id": "q040-w07",
+          "text": "YAĞMURLUK"
+        },
+        {
+          "id": "q040-w08",
+          "text": "BASTON"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DOĞA YÜRÜYÜŞÜ MALZEMELERİ: PUSULA, MATARA, YAĞMURLUK, BASTON aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q040-g3",
+      "title": "DİJİTAL DOSYA TÜRLERİ",
+      "words": [
+        {
+          "id": "q040-w09",
+          "text": "PDF"
+        },
+        {
+          "id": "q040-w10",
+          "text": "JPEG"
+        },
+        {
+          "id": "q040-w11",
+          "text": "MP3"
+        },
+        {
+          "id": "q040-w12",
+          "text": "ZIP"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DİJİTAL DOSYA TÜRLERİ: PDF, JPEG, MP3, ZIP aynı bağlantıda buluşur."
+    },
+    {
+      "id": "q040-g4",
+      "title": "SONUNA OCAĞI GELENLER",
+      "words": [
+        {
+          "id": "q040-w13",
+          "text": "ÇAY"
+        },
+        {
+          "id": "q040-w14",
+          "text": "KAMP"
+        },
+        {
+          "id": "q040-w15",
+          "text": "MADEN"
+        },
+        {
+          "id": "q040-w16",
+          "text": "SAĞLIK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SONUNA OCAĞI GELENLER: ÇAY, KAMP, MADEN, SAĞLIK aynı bağlantıda buluşur."
+    }
+  ]
+}
