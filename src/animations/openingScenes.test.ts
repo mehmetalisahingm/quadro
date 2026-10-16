@@ -21,7 +21,7 @@ describe("daily opening scenes", () => {
   });
 
   it("rotates the gallery through all scenes across the month boundary", () => {
-    const openings = Array.from({ length: GAME_OPENINGS.length }, (_, index) => gameOpeningFor(`q-${index + 1}`, new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10)));
+    const openings = Array.from({ length: GAME_OPENINGS.length }, (_, index) => gameOpeningFor(`q-${String(index + 1).padStart(3, "0")}`, new Date(Date.UTC(2026, 8, 20 + index)).toISOString().slice(0, 10)));
     expect(openings.slice(0, GAME_OPENINGS.length)).toEqual([...GAME_OPENINGS]);
     expect(openings).toHaveLength(23);
     expect(openings).toContain("record");

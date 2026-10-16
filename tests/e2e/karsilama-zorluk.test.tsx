@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import PlayPage from "@/app/play/page";
 import { PlayExperience, playModeKey } from "@/components/game/PlayExperience";
+import { gameOpeningFor } from "@/animations/openingScenes";
 import { parseStoredRecord } from "@/lib/persistence/record";
 import { snapshotStorageKey } from "@/lib/persistence/snapshotStore";
 
@@ -26,7 +27,7 @@ describe("karşılama → açılış → zorluk modu", () => {
     const nextPuzzle = { ...puzzle, id: "saved-opening", date: "2026-09-21" };
     localStorage.setItem(playModeKey(nextPuzzle), "easy");
     render(<PlayExperience puzzle={nextPuzzle} />);
-    expect(screen.getByRole("region", { name: "Oyun açılışı" }).getAttribute("data-opening")).toBe("sunrise");
+    expect(screen.getByRole("region", { name: "Oyun açılışı" }).getAttribute("data-opening")).toBe(gameOpeningFor(nextPuzzle.id, nextPuzzle.date));
     expect(screen.queryByRole("button", { name: "Bağlantıları bul" })).toBeNull();
     expect(screen.getByRole("button", { name: "Karıştır" }).hasAttribute("disabled")).toBe(true);
     act(() => vi.advanceTimersByTime(3300));
