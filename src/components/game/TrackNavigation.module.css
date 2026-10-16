@@ -9,4 +9,4 @@
 .levels a { display: grid; place-items: center; min-height: 44px; border-radius: 10px; background: #eef1e5; color: inherit; font-weight: 700; text-decoration: none; }
 .levels a[aria-current="page"] { background: #274d40; color: white; }
 .levels a:focus-visible { outline: 3px solid var(--q-color-focus); outline-offset: 2px; }
-@media(max-width: 650px) { .tracks { grid-template-columns: 1fr; } .levels { grid-template-columns: repeat(6, 1fr); } .panel { padding: 14px; } }
+@media(max-width: 650px) { .tracks { grid-template-columns: 1fr; } .levels { grid-template-columns: repeat(4, minmax(0, 1fr)); } .panel { padding: 14px; } }
