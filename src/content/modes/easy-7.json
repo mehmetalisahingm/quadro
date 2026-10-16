@@ -10,27 +10,27 @@
   "groups": [
     {
       "id": "track-easy-007-g1",
-      "title": "KAHVALTILIKLAR",
+      "title": "ARICILIK EKİPMANLARI",
       "words": [
         {
           "id": "track-easy-007-w1",
-          "text": "PEYNİR"
+          "text": "KOVAN"
         },
         {
           "id": "track-easy-007-w2",
-          "text": "ZEYTİN"
+          "text": "KÖRÜK"
         },
         {
           "id": "track-easy-007-w3",
-          "text": "BAL"
+          "text": "ÇERÇEVE"
         },
         {
           "id": "track-easy-007-w4",
-          "text": "REÇEL"
+          "text": "ARICI MASKESİ"
         }
       ],
       "difficulty": 1,
-      "explanation": "PEYNİR, ZEYTİN, BAL, REÇEL aynı gruptadır: kahvaltılıklar."
+      "explanation": "KOVAN, KÖRÜK, ÇERÇEVE, ARICI MASKESİ arıcılıkta kullanılan ekipmanlardır."
     },
     {
       "id": "track-easy-007-g2",
