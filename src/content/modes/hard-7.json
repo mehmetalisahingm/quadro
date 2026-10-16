@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-007",
+  "date": "2026-10-11",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-hard-007-g1",
+      "title": "SONUNA TAŞI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-007-w1",
+          "text": "YÜZÜK"
+        },
+        {
+          "id": "track-hard-007-w2",
+          "text": "MEZAR"
+        },
+        {
+          "id": "track-hard-007-w3",
+          "text": "KİLOMETRE"
+        },
+        {
+          "id": "track-hard-007-w4",
+          "text": "SATRANÇ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Yüzük taşı, mezar taşı, kilometre taşı, satranç taşı."
+    },
+    {
+      "id": "track-hard-007-g2",
+      "title": "SONUNA AĞACI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-007-w5",
+          "text": "SOY"
+        },
+        {
+          "id": "track-hard-007-w6",
+          "text": "HAYAT"
+        },
+        {
+          "id": "track-hard-007-w7",
+          "text": "KARAR"
+        },
+        {
+          "id": "track-hard-007-w8",
+          "text": "PARA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Soy ağacı, hayat ağacı, karar ağacı, para ağacı."
+    },
+    {
+      "id": "track-hard-007-g3",
+      "title": "SONUNA NOKTASI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-007-w9",
+          "text": "BULUŞMA"
+        },
+        {
+          "id": "track-hard-007-w10",
+          "text": "BAŞLANGIÇ"
+        },
+        {
+          "id": "track-hard-007-w11",
+          "text": "DÖNÜM"
+        },
+        {
+          "id": "track-hard-007-w12",
+          "text": "KIRILMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Buluşma noktası, başlangıç noktası, dönüm noktası, kırılma noktası."
+    },
+    {
+      "id": "track-hard-007-g4",
+      "title": "BAŞ İLE BAŞLAYAN İFADELER",
+      "words": [
+        {
+          "id": "track-hard-007-w13",
+          "text": "DÖNDÜRÜCÜ"
+        },
+        {
+          "id": "track-hard-007-w14",
+          "text": "BELASI"
+        },
+        {
+          "id": "track-hard-007-w15",
+          "text": "TACI"
+        },
+        {
+          "id": "track-hard-007-w16",
+          "text": "SAĞLIĞI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Baş döndürücü, baş belası, baş tacı, başsağlığı."
+    }
+  ]
+}
