@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-009",
+  "date": "2026-10-13",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-hard-009-g1",
+      "title": "SONUNA IŞIĞI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-009-w1",
+          "text": "AY"
+        },
+        {
+          "id": "track-hard-009-w2",
+          "text": "GÜN"
+        },
+        {
+          "id": "track-hard-009-w3",
+          "text": "TRAFİK"
+        },
+        {
+          "id": "track-hard-009-w4",
+          "text": "SAHNE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Ay ışığı, gün ışığı, trafik ışığı, sahne ışığı."
+    },
+    {
+      "id": "track-hard-009-g2",
+      "title": "YÜZ İLE BAŞLAYAN İFADELER",
+      "words": [
+        {
+          "id": "track-hard-009-w5",
+          "text": "KARASI"
+        },
+        {
+          "id": "track-hard-009-w6",
+          "text": "AKI"
+        },
+        {
+          "id": "track-hard-009-w7",
+          "text": "ÖLÇÜMÜ"
+        },
+        {
+          "id": "track-hard-009-w8",
+          "text": "HATLARI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Yüz karası, yüz akı, yüz ölçümü, yüz hatları."
+    },
+    {
+      "id": "track-hard-009-g3",
+      "title": "SONUNA PERDESİ GELENLER",
+      "words": [
+        {
+          "id": "track-hard-009-w9",
+          "text": "SİS"
+        },
+        {
+          "id": "track-hard-009-w10",
+          "text": "DEMİR"
+        },
+        {
+          "id": "track-hard-009-w11",
+          "text": "DUMAN"
+        },
+        {
+          "id": "track-hard-009-w12",
+          "text": "KARARTMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Sis perdesi, demir perdesi, duman perdesi, karartma perdesi."
+    },
+    {
+      "id": "track-hard-009-g4",
+      "title": "ÇEKMEKLE KURULAN İFADELER",
+      "words": [
+        {
+          "id": "track-hard-009-w13",
+          "text": "REST"
+        },
+        {
+          "id": "track-hard-009-w14",
+          "text": "FOTOĞRAF"
+        },
+        {
+          "id": "track-hard-009-w15",
+          "text": "KURA"
+        },
+        {
+          "id": "track-hard-009-w16",
+          "text": "DİKKAT"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Rest çekmek, fotoğraf çekmek, kura çekmek, dikkat çekmek."
+    }
+  ]
+}
