@@ -1,6 +1,6 @@
 import { resolveGameDifficulty, type GameDifficulty } from "./difficulty";
 
-export const TRACK_LEVEL_COUNT = 6;
+export const TRACK_LEVEL_COUNT = 12;
 export const TRACKS = [
   { id: "easy", label: "Kolay", description: "Günlük nesneler ve doğrudan kategoriler." },
   { id: "medium", label: "Orta", description: "Çift anlamlar ve ortak kullanımlar." },
