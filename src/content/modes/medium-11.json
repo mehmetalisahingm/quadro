@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-011",
+  "date": "2026-10-15",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-medium-011-g1",
+      "title": "SONUNA OYUNU GELENLER",
+      "words": [
+        {
+          "id": "track-medium-011-w1",
+          "text": "AKIL"
+        },
+        {
+          "id": "track-medium-011-w2",
+          "text": "KUTU"
+        },
+        {
+          "id": "track-medium-011-w3",
+          "text": "SÖZ"
+        },
+        {
+          "id": "track-medium-011-w4",
+          "text": "BİLGİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Akıl oyunu, kutu oyunu, söz oyunu ve bilgi oyunu."
+    },
+    {
+      "id": "track-medium-011-g2",
+      "title": "MÜZİK ÜRETİMİ",
+      "words": [
+        {
+          "id": "track-medium-011-w5",
+          "text": "BESTE"
+        },
+        {
+          "id": "track-medium-011-w6",
+          "text": "ARANJE"
+        },
+        {
+          "id": "track-medium-011-w7",
+          "text": "MİKS"
+        },
+        {
+          "id": "track-medium-011-w8",
+          "text": "MASTERİNG"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Müzik üretiminin farklı aşama ve işlemleridir."
+    },
+    {
+      "id": "track-medium-011-g3",
+      "title": "BİTKİ YETİŞTİRME İŞLEMLERİ",
+      "words": [
+        {
+          "id": "track-medium-011-w9",
+          "text": "ÇİMLENDİRME"
+        },
+        {
+          "id": "track-medium-011-w10",
+          "text": "AŞILAMA"
+        },
+        {
+          "id": "track-medium-011-w11",
+          "text": "BUDAMA"
+        },
+        {
+          "id": "track-medium-011-w12",
+          "text": "FİDELEME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Bitki yetiştiriciliğinde yapılan uygulamalardır."
+    },
+    {
+      "id": "track-medium-011-g4",
+      "title": "İSTATİSTİK TERİMLERİ",
+      "words": [
+        {
+          "id": "track-medium-011-w13",
+          "text": "ORTALAMA"
+        },
+        {
+          "id": "track-medium-011-w14",
+          "text": "MEDYAN"
+        },
+        {
+          "id": "track-medium-011-w15",
+          "text": "VARYANS"
+        },
+        {
+          "id": "track-medium-011-w16",
+          "text": "ÖRNEKLEM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "İstatistikte kullanılan ölçü ve kavramlardır."
+    }
+  ]
+}

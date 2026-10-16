@@ -8,10 +8,10 @@
  * Taranan yerler:
  *
  * - `.next/static/**` — her tarayıcıya giden, derleme anında sabitlenmiş paketler.
- *   Burada **hiçbir** günün içeriği bulunmamalıdır: günün bulmacası istemciye istek
+ *   Burada **hiçbir** günlük bulmacanın içeriği bulunmamalıdır: bulmaca istemciye istek
  *   anında, sunucu bileşeninin ürettiği veriyle iner; derleme çıktısına girmez.
- * - `.next/server/app/**` altındaki önceden çizilmiş `.html` ve `.rsc` dosyaları —
- *   yalnız derleme anındaki yayın gününün içeriği bulunabilir; başka bir günün
+ * - Numaralı mod bulmacalarının tekil kelimeleri arayüzde çakışabileceğinden,\n *   modlar için güçlü kimlikler ve aynı gruptaki iki kelime aranır.\n * - `.next/server/app/**` altındaki önceden çizilmiş `.html` ve `.rsc` dosyaları —
+ *   yalnız günlük yayın için derleme anındaki yayın gününün içeriği bulunabilir; başka bir günün
  *   içeriği burada görünüyorsa o gün zamanından önce yayılmış demektir.
  *
  * Aranan izler her içerik dosyasının bulmaca kimliği, grup başlıkları, çözüm
@@ -101,7 +101,7 @@ const gunler = readdirSync(bulmacaDizini)
 const modDizini = join(kok, "src", "content", "modes");
 if (existsSync(modDizini)) for (const ad of readdirSync(modDizini).filter(ad => ad.endsWith(".json"))) {
   const ham = JSON.parse(readFileSync(join(modDizini, ad), "utf8"));
-  gunler.push({ dosya: `modes/${ad}`, gun: ham.date, izler: izleriCikar(ham) });
+  gunler.push({ dosya: `modes/${ad}`, gun: ham.date, izler: izleriCikar(ham), mod: true, kimlik: ham.id, gruplar: ham.groups });
 }
 
 if (gunler.length === 0) {
@@ -132,12 +132,29 @@ const bugun = new Intl.DateTimeFormat("en-CA", {
 
 const bulgular = [];
 
+// Daily puzzles remain strictly embargoed: even one word in a browser bundle fails.
+// Public difficulty chapters are already playable by URL, so a single ordinary
+// word such as "REST" or "SAHNE" in the UI is not evidence of a chapter leak.
+// Their unique IDs, group titles, full explanations, or two words from one
+// answer group still count as a leak. Client import-graph checks remain strict.
 for (const dosya of statikDosyalar) {
   const icerik = readFileSync(dosya, "utf8");
-  for (const { dosya: kaynak, izler } of gunler) {
-    for (const iz of izler) {
-      if (izGeciyorMu(icerik, iz)) {
-        bulgular.push({ paket: yol(dosya), kaynak, iz });
+  for (const giris of gunler) {
+    const { dosya: kaynak, izler, mod, kimlik, gruplar } = giris;
+    if (!mod) {
+      for (const iz of izler) {
+        if (izGeciyorMu(icerik, iz)) bulgular.push({ paket: yol(dosya), kaynak, iz });
+      }
+      continue;
+    }
+    const belirginIzler = [kimlik, ...gruplar.flatMap(grup => [grup.title, grup.explanation])];
+    for (const iz of belirginIzler) {
+      if (izGeciyorMu(icerik, iz)) bulgular.push({ paket: yol(dosya), kaynak, iz });
+    }
+    for (const grup of gruplar) {
+      const eslesen = grup.words.map(kelime => kelime.text).filter(iz => izGeciyorMu(icerik, iz));
+      if (eslesen.length >= 2) {
+        bulgular.push({ paket: yol(dosya), kaynak, iz: `aynı gruptan ${eslesen.join(" + ")}` });
       }
     }
   }
@@ -145,8 +162,9 @@ for (const dosya of statikDosyalar) {
 
 for (const dosya of onCizilmisler) {
   const icerik = readFileSync(dosya, "utf8");
-  for (const { dosya: kaynak, gun, izler } of gunler) {
-    if (gun === bugun) continue;
+  for (const { dosya: kaynak, gun, izler, mod } of gunler) {
+    // Unlike daily embargoed puzzles, numbered difficulty chapters are public.
+    if (mod || gun === bugun) continue;
     for (const iz of izler) {
       if (izGeciyorMu(icerik, iz)) {
         bulgular.push({ paket: yol(dosya), kaynak, iz });
@@ -156,7 +174,7 @@ for (const dosya of onCizilmisler) {
 }
 
 if (bulgular.length > 0) {
-  console.error("Günlük içerik istemciye giden pakette bulundu:\n");
+  console.error("Bulmaca içerik sızıntısı istemci paketinde tespit edildi:\n");
   for (const bulgu of bulgular) {
     console.error(`  ${bulgu.paket} · ${bulgu.kaynak} · "${bulgu.iz}"`);
   }

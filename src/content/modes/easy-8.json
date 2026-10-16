@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-008",
+  "date": "2026-10-12",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-easy-008-g1",
+      "title": "MUTFAK ARAÇLARI",
+      "words": [
+        {
+          "id": "track-easy-008-w1",
+          "text": "TENCERE"
+        },
+        {
+          "id": "track-easy-008-w2",
+          "text": "TAVA"
+        },
+        {
+          "id": "track-easy-008-w3",
+          "text": "TEPSİ"
+        },
+        {
+          "id": "track-easy-008-w4",
+          "text": "SÜZGEÇ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "TENCERE, TAVA, TEPSİ, SÜZGEÇ aynı gruptadır: mutfak araçları."
+    },
+    {
+      "id": "track-easy-008-g2",
+      "title": "KÜÇÜK ÖTÜCÜ KUŞLAR",
+      "words": [
+        {
+          "id": "track-easy-008-w5",
+          "text": "SERÇE"
+        },
+        {
+          "id": "track-easy-008-w6",
+          "text": "SAKA"
+        },
+        {
+          "id": "track-easy-008-w7",
+          "text": "İSPİNOZ"
+        },
+        {
+          "id": "track-easy-008-w8",
+          "text": "BÜLBÜL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SERÇE, SAKA, İSPİNOZ, BÜLBÜL aynı gruptadır: küçük ötücü kuşlar."
+    },
+    {
+      "id": "track-easy-008-g3",
+      "title": "DENİZ TAŞITLARI",
+      "words": [
+        {
+          "id": "track-easy-008-w9",
+          "text": "FERİBOT"
+        },
+        {
+          "id": "track-easy-008-w10",
+          "text": "VAPUR"
+        },
+        {
+          "id": "track-easy-008-w11",
+          "text": "YELKENLİ"
+        },
+        {
+          "id": "track-easy-008-w12",
+          "text": "TEKNE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "FERİBOT, VAPUR, YELKENLİ, TEKNE aynı gruptadır: deniz taşıtları."
+    },
+    {
+      "id": "track-easy-008-g4",
+      "title": "NOT ALMA GEREÇLERİ",
+      "words": [
+        {
+          "id": "track-easy-008-w13",
+          "text": "DEFTER"
+        },
+        {
+          "id": "track-easy-008-w14",
+          "text": "BLOKNOT"
+        },
+        {
+          "id": "track-easy-008-w15",
+          "text": "AJANDA"
+        },
+        {
+          "id": "track-easy-008-w16",
+          "text": "NOT KAĞIDI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DEFTER, BLOKNOT, AJANDA, NOT KAĞIDI aynı gruptadır: not alma gereçleri."
+    }
+  ]
+}

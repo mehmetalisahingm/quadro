@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-007",
+  "date": "2026-10-11",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-medium-007-g1",
+      "title": "SONUNA ODASI GELENLER",
+      "words": [
+        {
+          "id": "track-medium-007-w1",
+          "text": "OTURMA"
+        },
+        {
+          "id": "track-medium-007-w2",
+          "text": "YATAK"
+        },
+        {
+          "id": "track-medium-007-w3",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "track-medium-007-w4",
+          "text": "TOPLANTI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Oturma odası, yatak odası, çalışma odası ve toplantı odası."
+    },
+    {
+      "id": "track-medium-007-g2",
+      "title": "FOTOĞRAF AYARLARI",
+      "words": [
+        {
+          "id": "track-medium-007-w5",
+          "text": "ENSTANTANE"
+        },
+        {
+          "id": "track-medium-007-w6",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "track-medium-007-w7",
+          "text": "ISO"
+        },
+        {
+          "id": "track-medium-007-w8",
+          "text": "ODAK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Fotoğrafta ışık ve netlik ayarlarında kullanılan kavramlardır."
+    },
+    {
+      "id": "track-medium-007-g3",
+      "title": "KUMAŞ TÜRLERİ",
+      "words": [
+        {
+          "id": "track-medium-007-w9",
+          "text": "SATEN"
+        },
+        {
+          "id": "track-medium-007-w10",
+          "text": "KADİFE"
+        },
+        {
+          "id": "track-medium-007-w11",
+          "text": "GABARDİN"
+        },
+        {
+          "id": "track-medium-007-w12",
+          "text": "JAKAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Farklı dokuma ve kumaş türleridir."
+    },
+    {
+      "id": "track-medium-007-g4",
+      "title": "KİTAP BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "track-medium-007-w13",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "track-medium-007-w14",
+          "text": "DİPNOT"
+        },
+        {
+          "id": "track-medium-007-w15",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "track-medium-007-w16",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Bir kitabın veya akademik yayının bölümleridir."
+    }
+  ]
+}

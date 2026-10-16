@@ -2,6 +2,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import PlayPage from "@/app/play/page";
 import { loadModePuzzle } from "@/lib/daily/modePuzzle";
+import { TRACK_LEVEL_COUNT } from "@/features/game/tracks";
 import { AdminGameNavigation } from "@/components/game/AdminGameNavigation";
 import { createUser, enterGame, guess, registerFlowHooks } from "./helpers";
 
@@ -10,9 +11,9 @@ vi.mock("next/navigation", () => ({ useRouter: () => ({ push }), notFound: () =>
 registerFlowHooks();
 
 describe("farklı zorluk parkurları", () => {
-  it("üç mod ve 18 bölüm sunar, seçilen moda gider", async () => {
+  it("üç mod ve 36 bölüm sunar, seçilen moda gider", async () => {
     render(await PlayPage({ searchParams: Promise.resolve({}) }));
-    expect(screen.getAllByRole("link", { name: /bölüm \d/i })).toHaveLength(18);
+    expect(screen.getAllByRole("link", { name: /bölüm \d/i })).toHaveLength(3 * TRACK_LEVEL_COUNT);
     const user = createUser();
     await user.click(screen.getByRole("radio", { name: /Zor/ }));
     await user.click(screen.getByRole("button", { name: "Bağlantıları bul" }));
@@ -38,18 +39,18 @@ describe("farklı zorluk parkurları", () => {
     expect(screen.getByText(easy.groups[0].title)).toBeTruthy();
   });
 
-  it("geçersiz modu/bölümü reddeder ve altıncı bölümde modu bitirir", async () => {
-    for (const query of [{ difficulty: "oops" }, { difficulty: "easy", level: "7" }]) {
+  it("geçersiz modu/bölümü reddeder ve son bölümde modu bitirir", async () => {
+    for (const query of [{ difficulty: "oops" }, { difficulty: "easy", level: String(TRACK_LEVEL_COUNT + 1) }]) {
       await expect(PlayPage({ searchParams: Promise.resolve(query) })).rejects.toThrow("404");
     }
-    render(await PlayPage({ searchParams: Promise.resolve({ difficulty: "medium", level: "6" }) }));
+    render(await PlayPage({ searchParams: Promise.resolve({ difficulty: "medium", level: String(TRACK_LEVEL_COUNT) }) }));
     expect(screen.queryByRole("link", { name: "Sonraki bulmaca →" })).toBeNull();
     expect(screen.getByRole("link", { name: /Bu modun son/ }).getAttribute("href")).toBe("/play");
   });
 
   it("admin bölüm atlama bağlantısını seçilen modda tutar", () => {
     render(<AdminGameNavigation currentDay="2026-10-06" trackDifficulty="hard" />);
-    expect(screen.getAllByRole("option")).toHaveLength(6);
+    expect(screen.getAllByRole("option")).toHaveLength(TRACK_LEVEL_COUNT);
     expect(screen.getByRole("link", { name: "Bölümü atla →" }).getAttribute("href")).toBe("/play?difficulty=hard&level=3");
   });
 });

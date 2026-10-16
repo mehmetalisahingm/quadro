@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-010",
+  "date": "2026-10-14",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-hard-010-g1",
+      "title": "ATMAKLA KURULAN İFADELER",
+      "words": [
+        {
+          "id": "track-hard-010-w1",
+          "text": "İMZA"
+        },
+        {
+          "id": "track-hard-010-w2",
+          "text": "ADIM"
+        },
+        {
+          "id": "track-hard-010-w3",
+          "text": "KAHKAHA"
+        },
+        {
+          "id": "track-hard-010-w4",
+          "text": "ÇALIM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İmza atmak, adım atmak, kahkaha atmak, çalım atmak."
+    },
+    {
+      "id": "track-hard-010-g2",
+      "title": "ÖN İLE BAŞLAYANLAR",
+      "words": [
+        {
+          "id": "track-hard-010-w5",
+          "text": "YARGI"
+        },
+        {
+          "id": "track-hard-010-w6",
+          "text": "SÖZ"
+        },
+        {
+          "id": "track-hard-010-w7",
+          "text": "LİSANS"
+        },
+        {
+          "id": "track-hard-010-w8",
+          "text": "ÖDEMELİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Önyargı, ön söz, ön lisans, ön ödemeli."
+    },
+    {
+      "id": "track-hard-010-g3",
+      "title": "SONUNA DALGASI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-010-w9",
+          "text": "SES"
+        },
+        {
+          "id": "track-hard-010-w10",
+          "text": "RADYO"
+        },
+        {
+          "id": "track-hard-010-w11",
+          "text": "IŞIK"
+        },
+        {
+          "id": "track-hard-010-w12",
+          "text": "ŞOK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ses dalgası, radyo dalgası, ışık dalgası, şok dalgası."
+    },
+    {
+      "id": "track-hard-010-g4",
+      "title": "EL İLE BAŞLAYANLAR",
+      "words": [
+        {
+          "id": "track-hard-010-w13",
+          "text": "YAZISI"
+        },
+        {
+          "id": "track-hard-010-w14",
+          "text": "EMEĞİ"
+        },
+        {
+          "id": "track-hard-010-w15",
+          "text": "ÇANTASI"
+        },
+        {
+          "id": "track-hard-010-w16",
+          "text": "FENERİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "El yazısı, el emeği, el çantası, el feneri."
+    }
+  ]
+}

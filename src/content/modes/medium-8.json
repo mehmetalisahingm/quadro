@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-008",
+  "date": "2026-10-12",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-medium-008-g1",
+      "title": "SONUNA ANAHTARI GELENLER",
+      "words": [
+        {
+          "id": "track-medium-008-w1",
+          "text": "EV"
+        },
+        {
+          "id": "track-medium-008-w2",
+          "text": "ARABA"
+        },
+        {
+          "id": "track-medium-008-w3",
+          "text": "DOLAP"
+        },
+        {
+          "id": "track-medium-008-w4",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Ev anahtarı, araba anahtarı, dolap anahtarı ve kasa anahtarı."
+    },
+    {
+      "id": "track-medium-008-g2",
+      "title": "MÜZİKTE ZAMAN",
+      "words": [
+        {
+          "id": "track-medium-008-w5",
+          "text": "TEMPO"
+        },
+        {
+          "id": "track-medium-008-w6",
+          "text": "RİTİM"
+        },
+        {
+          "id": "track-medium-008-w7",
+          "text": "ÖLÇÜ"
+        },
+        {
+          "id": "track-medium-008-w8",
+          "text": "VURUŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Müzikte süre, vurgu ve düzeni ifade eden kavramlardır."
+    },
+    {
+      "id": "track-medium-008-g3",
+      "title": "TİYATRO TERİMLERİ",
+      "words": [
+        {
+          "id": "track-medium-008-w9",
+          "text": "PERDE"
+        },
+        {
+          "id": "track-medium-008-w10",
+          "text": "KULİS"
+        },
+        {
+          "id": "track-medium-008-w11",
+          "text": "REPLİK"
+        },
+        {
+          "id": "track-medium-008-w12",
+          "text": "DEKOR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Tiyatro ve sahneleme terimleridir."
+    },
+    {
+      "id": "track-medium-008-g4",
+      "title": "DENİZCİLİK DONANIMI",
+      "words": [
+        {
+          "id": "track-medium-008-w13",
+          "text": "HALAT"
+        },
+        {
+          "id": "track-medium-008-w14",
+          "text": "ÇIPA"
+        },
+        {
+          "id": "track-medium-008-w15",
+          "text": "DÜMEN"
+        },
+        {
+          "id": "track-medium-008-w16",
+          "text": "YELKEN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Bir teknede bulunan denizcilik donanımıdır."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-011",
+  "date": "2026-10-15",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-easy-011-g1",
+      "title": "HASTANE BİRİMLERİ",
+      "words": [
+        {
+          "id": "track-easy-011-w1",
+          "text": "ACİL"
+        },
+        {
+          "id": "track-easy-011-w2",
+          "text": "POLİKLİNİK"
+        },
+        {
+          "id": "track-easy-011-w3",
+          "text": "SERVİS"
+        },
+        {
+          "id": "track-easy-011-w4",
+          "text": "LABORATUVAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ACİL, POLİKLİNİK, SERVİS, LABORATUVAR aynı gruptadır: hastane birimleri."
+    },
+    {
+      "id": "track-easy-011-g2",
+      "title": "DOĞAL TEKSTİL LİFLERİ",
+      "words": [
+        {
+          "id": "track-easy-011-w5",
+          "text": "PAMUK"
+        },
+        {
+          "id": "track-easy-011-w6",
+          "text": "KETEN"
+        },
+        {
+          "id": "track-easy-011-w7",
+          "text": "YÜN"
+        },
+        {
+          "id": "track-easy-011-w8",
+          "text": "İPEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PAMUK, KETEN, YÜN, İPEK aynı gruptadır: doğal tekstil lifleri."
+    },
+    {
+      "id": "track-easy-011-g3",
+      "title": "BİTKİ BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "track-easy-011-w9",
+          "text": "KÖK"
+        },
+        {
+          "id": "track-easy-011-w10",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "track-easy-011-w11",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "track-easy-011-w12",
+          "text": "TOMURCUK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KÖK, GÖVDE, YAPRAK, TOMURCUK aynı gruptadır: bitki bölümleri."
+    },
+    {
+      "id": "track-easy-011-g4",
+      "title": "KAYAÇ TÜRLERİ",
+      "words": [
+        {
+          "id": "track-easy-011-w13",
+          "text": "MERMER"
+        },
+        {
+          "id": "track-easy-011-w14",
+          "text": "GRANİT"
+        },
+        {
+          "id": "track-easy-011-w15",
+          "text": "BAZALT"
+        },
+        {
+          "id": "track-easy-011-w16",
+          "text": "KİREÇTAŞI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "MERMER, GRANİT, BAZALT, KİREÇTAŞI aynı gruptadır: kayaç türleri."
+    }
+  ]
+}

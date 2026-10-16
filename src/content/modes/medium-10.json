@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-medium-010",
+  "date": "2026-10-14",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-medium-010-g1",
+      "title": "SONUNA SÜTÜ GELENLER",
+      "words": [
+        {
+          "id": "track-medium-010-w1",
+          "text": "İNEK"
+        },
+        {
+          "id": "track-medium-010-w2",
+          "text": "KEÇİ"
+        },
+        {
+          "id": "track-medium-010-w3",
+          "text": "KOYUN"
+        },
+        {
+          "id": "track-medium-010-w4",
+          "text": "BADEM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İnek sütü, keçi sütü, koyun sütü ve badem sütü."
+    },
+    {
+      "id": "track-medium-010-g2",
+      "title": "PROGRAMLAMA KAVRAMLARI",
+      "words": [
+        {
+          "id": "track-medium-010-w5",
+          "text": "DÖNGÜ"
+        },
+        {
+          "id": "track-medium-010-w6",
+          "text": "DEĞİŞKEN"
+        },
+        {
+          "id": "track-medium-010-w7",
+          "text": "KOŞUL"
+        },
+        {
+          "id": "track-medium-010-w8",
+          "text": "FONKSİYON"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Programlamadaki temel yapı ve kavramlardır."
+    },
+    {
+      "id": "track-medium-010-g3",
+      "title": "TARİH ARAŞTIRMASI",
+      "words": [
+        {
+          "id": "track-medium-010-w9",
+          "text": "KAYNAK"
+        },
+        {
+          "id": "track-medium-010-w10",
+          "text": "BELGE"
+        },
+        {
+          "id": "track-medium-010-w11",
+          "text": "KRONOLOJİ"
+        },
+        {
+          "id": "track-medium-010-w12",
+          "text": "ARŞİV"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Tarih araştırmasında kullanılan kaynak ve yöntem kavramlarıdır."
+    },
+    {
+      "id": "track-medium-010-g4",
+      "title": "MİMARİ ÖĞELER",
+      "words": [
+        {
+          "id": "track-medium-010-w13",
+          "text": "SÜTUN"
+        },
+        {
+          "id": "track-medium-010-w14",
+          "text": "KEMER"
+        },
+        {
+          "id": "track-medium-010-w15",
+          "text": "TONOZ"
+        },
+        {
+          "id": "track-medium-010-w16",
+          "text": "KUBBE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Yapı ve mimarlıkta kullanılan mimari öğelerdir."
+    }
+  ]
+}

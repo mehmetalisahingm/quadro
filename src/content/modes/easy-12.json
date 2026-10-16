@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-012",
+  "date": "2026-10-16",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-easy-012-g1",
+      "title": "GÖK CİSİMLERİ",
+      "words": [
+        {
+          "id": "track-easy-012-w1",
+          "text": "YILDIZ"
+        },
+        {
+          "id": "track-easy-012-w2",
+          "text": "GEZEGEN"
+        },
+        {
+          "id": "track-easy-012-w3",
+          "text": "UYDU"
+        },
+        {
+          "id": "track-easy-012-w4",
+          "text": "GÖKTAŞI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YILDIZ, GEZEGEN, UYDU, GÖKTAŞI aynı gruptadır: gök cisimleri."
+    },
+    {
+      "id": "track-easy-012-g2",
+      "title": "YAZILI İLETİŞİM YOLLARI",
+      "words": [
+        {
+          "id": "track-easy-012-w5",
+          "text": "MEKTUP"
+        },
+        {
+          "id": "track-easy-012-w6",
+          "text": "E-POSTA"
+        },
+        {
+          "id": "track-easy-012-w7",
+          "text": "MESAJ"
+        },
+        {
+          "id": "track-easy-012-w8",
+          "text": "TELGRAF"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "MEKTUP, E-POSTA, MESAJ, TELGRAF aynı gruptadır: yazılı iletişim yolları."
+    },
+    {
+      "id": "track-easy-012-g3",
+      "title": "AĞIZ VE DİŞ BAKIMI",
+      "words": [
+        {
+          "id": "track-easy-012-w9",
+          "text": "DİŞ FIRÇASI"
+        },
+        {
+          "id": "track-easy-012-w10",
+          "text": "DİŞ MACUNU"
+        },
+        {
+          "id": "track-easy-012-w11",
+          "text": "DİŞ İPİ"
+        },
+        {
+          "id": "track-easy-012-w12",
+          "text": "AĞIZ GARGARASI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DİŞ FIRÇASI, DİŞ MACUNU, DİŞ İPİ, AĞIZ GARGARASI aynı gruptadır: ağız ve diş bakımı."
+    },
+    {
+      "id": "track-easy-012-g4",
+      "title": "KAMP MALZEMELERİ",
+      "words": [
+        {
+          "id": "track-easy-012-w13",
+          "text": "ÇADIR"
+        },
+        {
+          "id": "track-easy-012-w14",
+          "text": "MAT"
+        },
+        {
+          "id": "track-easy-012-w15",
+          "text": "UYKU TULUMU"
+        },
+        {
+          "id": "track-easy-012-w16",
+          "text": "KAMP OCAĞI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇADIR, MAT, UYKU TULUMU, KAMP OCAĞI aynı gruptadır: kamp malzemeleri."
+    }
+  ]
+}

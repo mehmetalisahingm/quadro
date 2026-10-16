@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-easy-007",
+  "date": "2026-10-11",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-easy-007-g1",
+      "title": "ARICILIK EKİPMANLARI",
+      "words": [
+        {
+          "id": "track-easy-007-w1",
+          "text": "KOVAN"
+        },
+        {
+          "id": "track-easy-007-w2",
+          "text": "KÖRÜK"
+        },
+        {
+          "id": "track-easy-007-w3",
+          "text": "ÇERÇEVE"
+        },
+        {
+          "id": "track-easy-007-w4",
+          "text": "ARICI MASKESİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KOVAN, KÖRÜK, ÇERÇEVE, ARICI MASKESİ arıcılıkta kullanılan ekipmanlardır."
+    },
+    {
+      "id": "track-easy-007-g2",
+      "title": "DİKİŞ MALZEMELERİ",
+      "words": [
+        {
+          "id": "track-easy-007-w5",
+          "text": "İĞNE"
+        },
+        {
+          "id": "track-easy-007-w6",
+          "text": "İPLİK"
+        },
+        {
+          "id": "track-easy-007-w7",
+          "text": "MAKARA"
+        },
+        {
+          "id": "track-easy-007-w8",
+          "text": "YÜKSÜK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İĞNE, İPLİK, MAKARA, YÜKSÜK aynı gruptadır: dikiş malzemeleri."
+    },
+    {
+      "id": "track-easy-007-g3",
+      "title": "BAHÇE ALETLERİ",
+      "words": [
+        {
+          "id": "track-easy-007-w9",
+          "text": "TIRMIK"
+        },
+        {
+          "id": "track-easy-007-w10",
+          "text": "ÇAPA"
+        },
+        {
+          "id": "track-easy-007-w11",
+          "text": "KÜREK"
+        },
+        {
+          "id": "track-easy-007-w12",
+          "text": "BUDAMA MAKASI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "TIRMIK, ÇAPA, KÜREK, BUDAMA MAKASI aynı gruptadır: bahçe aletleri."
+    },
+    {
+      "id": "track-easy-007-g4",
+      "title": "HAVA OLAYLARI",
+      "words": [
+        {
+          "id": "track-easy-007-w13",
+          "text": "SİS"
+        },
+        {
+          "id": "track-easy-007-w14",
+          "text": "KIRAĞI"
+        },
+        {
+          "id": "track-easy-007-w15",
+          "text": "DOLU"
+        },
+        {
+          "id": "track-easy-007-w16",
+          "text": "ÇİSE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SİS, KIRAĞI, DOLU, ÇİSE aynı gruptadır: hava olayları."
+    }
+  ]
+}
