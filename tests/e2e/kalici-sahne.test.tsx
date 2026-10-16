@@ -2,7 +2,7 @@ import { act, cleanup, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { GameBackdrop } from "@/components/game/GameBackdrop";
 import { GameBoard } from "@/components/game/GameBoard";
-import { GAME_OPENINGS } from "@/animations/openingScenes";
+import { GAME_OPENINGS, gameOpeningFor } from "@/animations/openingScenes";
 import { createUser, guess, puzzle, registerFlowHooks, RENKLER } from "./helpers";
 
 registerFlowHooks();
@@ -20,13 +20,14 @@ describe("kalıcı oyun sahnesi", () => {
   });
   it("açılış bitince ve tahminden sonra aynı arka planı korur", async () => {
     const { container } = render(<GameBoard puzzle={{ ...puzzle, date: "2026-09-21" }} />);
-    const background = container.querySelector("[data-game-background=sunrise]");
+    const opening = gameOpeningFor(puzzle.id, "2026-09-21");
+    const background = container.querySelector(`[data-game-background="${opening}"]`);
     expect(background).not.toBeNull();
     act(() => vi.advanceTimersByTime(3400));
     expect(screen.queryByRole("region", { name: "Oyun açılışı" })).toBeNull();
     const user = createUser();
     await guess(user, RENKLER);
-    expect(container.querySelector("[data-game-background=sunrise]")).toBe(background);
+    expect(container.querySelector(`[data-game-background="${opening}"]`)).toBe(background);
     expect(screen.getByText("RENKLER")).toBeTruthy();
   });
 });
