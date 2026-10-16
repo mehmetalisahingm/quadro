@@ -25,3 +25,11 @@ Bu kayıt production Supabase projesi oluşturulmadan önce repo tarafında kapa
 - Login kullanıcısı yalnız kendi `profiles` / `game_results` satırlarına erişebilmeli.
 
 Bu maddeler gerçek proje üzerinde doğrulanmadan Q43 tamamen kapanmış sayılmaz.
+
+## 12 Ekim 2026 — Remote analytics input hardening
+
+- API artık yalnız tanımlanmış analytics olaylarının **tam ve doğru alan kümesini** kabul eder. İstenmeyen `wordIds`, e-posta, cevap veya diğer özel alanlar 400 ile reddedilir; sunucu secret'ı browser'a gitmez.
+- Eksik `content-length` durumunda bile 8 KiB üzerindeki JSON body akışta reddedilir. Null JSON da 400 döndürür.
+- Network RPC koparsa kontrollü 502 döner; uygulamada ölçüm çağrıları oyun akışını durdurmaz.
+- Tarayıcıda bozulmuş `visitor_id` yerine UUID v4 yeniden üretilir.
+- Bu çalışma canlı production ortamında OAuth/magic link veya 20 kişilik pilot onayı **değildir**. Değişiklikler PR CI ve gerçek ortam smoke ile ayrıca doğrulanmalıdır.
