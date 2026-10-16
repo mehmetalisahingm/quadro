@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-hard-012",
+  "date": "2026-10-16",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-hard-012-g1",
+      "title": "SONUNA ÇİZGİSİ GELENLER",
+      "words": [
+        {
+          "id": "track-hard-012-w1",
+          "text": "SINIR"
+        },
+        {
+          "id": "track-hard-012-w2",
+          "text": "UFUK"
+        },
+        {
+          "id": "track-hard-012-w3",
+          "text": "BAŞLANGIÇ"
+        },
+        {
+          "id": "track-hard-012-w4",
+          "text": "BİTİŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Sınır çizgisi, ufuk çizgisi, başlangıç çizgisi, bitiş çizgisi."
+    },
+    {
+      "id": "track-hard-012-g2",
+      "title": "AÇIK İLE BAŞLAYANLAR",
+      "words": [
+        {
+          "id": "track-hard-012-w5",
+          "text": "HAVA"
+        },
+        {
+          "id": "track-hard-012-w6",
+          "text": "KAPI"
+        },
+        {
+          "id": "track-hard-012-w7",
+          "text": "DENİZ"
+        },
+        {
+          "id": "track-hard-012-w8",
+          "text": "OTURUM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Açık hava, açık kapı, açık deniz, açık oturum."
+    },
+    {
+      "id": "track-hard-012-g3",
+      "title": "SONUNA MASASI GELENLER",
+      "words": [
+        {
+          "id": "track-hard-012-w9",
+          "text": "YEMEK"
+        },
+        {
+          "id": "track-hard-012-w10",
+          "text": "TOPLANTI"
+        },
+        {
+          "id": "track-hard-012-w11",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "track-hard-012-w12",
+          "text": "AMELİYAT"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Yemek masası, toplantı masası, çalışma masası, ameliyat masası."
+    },
+    {
+      "id": "track-hard-012-g4",
+      "title": "KÖR İLE BAŞLAYANLAR",
+      "words": [
+        {
+          "id": "track-hard-012-w13",
+          "text": "NOKTA"
+        },
+        {
+          "id": "track-hard-012-w14",
+          "text": "DÜĞÜM"
+        },
+        {
+          "id": "track-hard-012-w15",
+          "text": "KUYU"
+        },
+        {
+          "id": "track-hard-012-w16",
+          "text": "UÇUŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Kör nokta, kör düğüm, kör kuyu, kör uçuş."
+    }
+  ]
+}
