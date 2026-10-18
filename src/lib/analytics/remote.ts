@@ -3,6 +3,7 @@
 import type { AnalyticsEvent } from "./index";
 
 export const VISITOR_ID_STORAGE_KEY = "quadro:visitor:v1";
+const UUID_V4_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 function makeVisitorId(): string | null {
   if (typeof crypto === "undefined") return null;
@@ -27,7 +28,9 @@ export function getOrCreateVisitorId(): string | null {
 
   try {
     const existing = window.localStorage.getItem(VISITOR_ID_STORAGE_KEY);
-    if (existing) return existing;
+    if (existing && UUID_V4_PATTERN.test(existing)) return existing;
+    // A malformed persisted visitor id makes every remote request fail with 400.
+    // Repair it with a fresh random UUID rather than keeping analytics broken.
 
     const created = makeVisitorId();
     if (!created) return null;
