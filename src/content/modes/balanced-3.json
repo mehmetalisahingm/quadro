@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-003",
+  "date": "2026-10-07",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-003-g1",
+      "title": "KAMP MALZEMELERİ",
+      "words": [
+        {
+          "id": "track-balanced-003-w1",
+          "text": "ÇADIR"
+        },
+        {
+          "id": "track-balanced-003-w2",
+          "text": "MATARA"
+        },
+        {
+          "id": "track-balanced-003-w3",
+          "text": "UYKU TULUMU"
+        },
+        {
+          "id": "track-balanced-003-w4",
+          "text": "KAMP OCAĞI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"kamp malzemeleri\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-003-g2",
+      "title": "TEMEL YAPI MALZEMELERİ",
+      "words": [
+        {
+          "id": "track-balanced-003-w5",
+          "text": "TUĞLA"
+        },
+        {
+          "id": "track-balanced-003-w6",
+          "text": "ÇİMENTO"
+        },
+        {
+          "id": "track-balanced-003-w7",
+          "text": "KİREMİT"
+        },
+        {
+          "id": "track-balanced-003-w8",
+          "text": "KUM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"temel yapı malzemeleri\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-003-g3",
+      "title": "SONUNA DEFTERİ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-003-w9",
+          "text": "NOT"
+        },
+        {
+          "id": "track-balanced-003-w10",
+          "text": "HATIRA"
+        },
+        {
+          "id": "track-balanced-003-w11",
+          "text": "ÖDEV"
+        },
+        {
+          "id": "track-balanced-003-w12",
+          "text": "RESİM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"DEFTERİ\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-003-g4",
+      "title": "BAŞINA SU GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-003-w13",
+          "text": "BASKINI"
+        },
+        {
+          "id": "track-balanced-003-w14",
+          "text": "DEPOSU"
+        },
+        {
+          "id": "track-balanced-003-w15",
+          "text": "SAYACI"
+        },
+        {
+          "id": "track-balanced-003-w16",
+          "text": "KAYNAĞI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"SU\" getirilebilir."
+    }
+  ]
+}

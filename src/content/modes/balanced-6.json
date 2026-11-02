@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-006",
+  "date": "2026-10-10",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-006-g1",
+      "title": "KÜTÜPHANEDE BULUNAN YAYINLAR",
+      "words": [
+        {
+          "id": "track-balanced-006-w1",
+          "text": "KİTAP"
+        },
+        {
+          "id": "track-balanced-006-w2",
+          "text": "DERGİ"
+        },
+        {
+          "id": "track-balanced-006-w3",
+          "text": "ANSİKLOPEDİ"
+        },
+        {
+          "id": "track-balanced-006-w4",
+          "text": "GAZETE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"kütüphanede bulunan yayınlar\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-006-g2",
+      "title": "TOPLU TAŞIMA UNSURLARI",
+      "words": [
+        {
+          "id": "track-balanced-006-w5",
+          "text": "DURAK"
+        },
+        {
+          "id": "track-balanced-006-w6",
+          "text": "BİLET"
+        },
+        {
+          "id": "track-balanced-006-w7",
+          "text": "AKBİL"
+        },
+        {
+          "id": "track-balanced-006-w8",
+          "text": "TURNİKE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"toplu taşıma unsurları\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-006-g3",
+      "title": "BAŞINA KAR GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-006-w9",
+          "text": "TANESİ"
+        },
+        {
+          "id": "track-balanced-006-w10",
+          "text": "FIRTINASI"
+        },
+        {
+          "id": "track-balanced-006-w11",
+          "text": "KÜRESİ"
+        },
+        {
+          "id": "track-balanced-006-w12",
+          "text": "LASTİĞİ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin başına \"KAR\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-006-g4",
+      "title": "SONUNA ÇANTASI GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-006-w13",
+          "text": "OKUL"
+        },
+        {
+          "id": "track-balanced-006-w14",
+          "text": "SPOR"
+        },
+        {
+          "id": "track-balanced-006-w15",
+          "text": "BEBEK"
+        },
+        {
+          "id": "track-balanced-006-w16",
+          "text": "LAPTOP"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin sonuna \"ÇANTASI\" getirilebilir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-010",
+  "date": "2026-10-14",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-010-g1",
+      "title": "OKUL DERSLERİ",
+      "words": [
+        {
+          "id": "track-balanced-010-w1",
+          "text": "FİZİK"
+        },
+        {
+          "id": "track-balanced-010-w2",
+          "text": "KİMYA"
+        },
+        {
+          "id": "track-balanced-010-w3",
+          "text": "TARİH"
+        },
+        {
+          "id": "track-balanced-010-w4",
+          "text": "BİYOLOJİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"okul dersleri\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-010-g2",
+      "title": "EV MOBİLYALARI",
+      "words": [
+        {
+          "id": "track-balanced-010-w5",
+          "text": "KOLTUK"
+        },
+        {
+          "id": "track-balanced-010-w6",
+          "text": "KANEPE"
+        },
+        {
+          "id": "track-balanced-010-w7",
+          "text": "TABURE"
+        },
+        {
+          "id": "track-balanced-010-w8",
+          "text": "SEHPA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"ev mobilyaları\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-010-g3",
+      "title": "SONUNA YOLU GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-010-w9",
+          "text": "DEMİR"
+        },
+        {
+          "id": "track-balanced-010-w10",
+          "text": "HAVA"
+        },
+        {
+          "id": "track-balanced-010-w11",
+          "text": "DENİZ"
+        },
+        {
+          "id": "track-balanced-010-w12",
+          "text": "KARA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"YOLU\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-010-g4",
+      "title": "BAŞINA BAŞ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-010-w13",
+          "text": "KENT"
+        },
+        {
+          "id": "track-balanced-010-w14",
+          "text": "VURU"
+        },
+        {
+          "id": "track-balanced-010-w15",
+          "text": "AĞRISI"
+        },
+        {
+          "id": "track-balanced-010-w16",
+          "text": "PARMAK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"BAŞ\" getirilebilir."
+    }
+  ]
+}

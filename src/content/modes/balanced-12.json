@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-012",
+  "date": "2026-10-16",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-012-g1",
+      "title": "KIŞ SPORLARI",
+      "words": [
+        {
+          "id": "track-balanced-012-w1",
+          "text": "KAYAK"
+        },
+        {
+          "id": "track-balanced-012-w2",
+          "text": "BUZ PATENİ"
+        },
+        {
+          "id": "track-balanced-012-w3",
+          "text": "KIZAK"
+        },
+        {
+          "id": "track-balanced-012-w4",
+          "text": "SNOWBOARD"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"kış sporları\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-012-g2",
+      "title": "BAHÇE BAKIM ARAÇLARI",
+      "words": [
+        {
+          "id": "track-balanced-012-w5",
+          "text": "TIRMIK"
+        },
+        {
+          "id": "track-balanced-012-w6",
+          "text": "ÇAPA"
+        },
+        {
+          "id": "track-balanced-012-w7",
+          "text": "KÜREK"
+        },
+        {
+          "id": "track-balanced-012-w8",
+          "text": "HORTUM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"bahçe bakım araçları\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-012-g3",
+      "title": "SONUNA MERKEZİ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-012-w9",
+          "text": "SAĞLIK"
+        },
+        {
+          "id": "track-balanced-012-w10",
+          "text": "KÜLTÜR"
+        },
+        {
+          "id": "track-balanced-012-w11",
+          "text": "ALIŞVERİŞ"
+        },
+        {
+          "id": "track-balanced-012-w12",
+          "text": "ARAŞTIRMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"MERKEZİ\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-012-g4",
+      "title": "BAŞINA YÜKSEK GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-012-w13",
+          "text": "SES"
+        },
+        {
+          "id": "track-balanced-012-w14",
+          "text": "LİSANS"
+        },
+        {
+          "id": "track-balanced-012-w15",
+          "text": "BASINÇ"
+        },
+        {
+          "id": "track-balanced-012-w16",
+          "text": "GERİLİM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"YÜKSEK\" getirilebilir."
+    }
+  ]
+}

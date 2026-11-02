@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-009",
+  "date": "2026-10-13",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-009-g1",
+      "title": "FIRINDA PİŞİRİLEN HAMUR İŞLERİ",
+      "words": [
+        {
+          "id": "track-balanced-009-w1",
+          "text": "BÖREK"
+        },
+        {
+          "id": "track-balanced-009-w2",
+          "text": "SİMİT"
+        },
+        {
+          "id": "track-balanced-009-w3",
+          "text": "POĞAÇA"
+        },
+        {
+          "id": "track-balanced-009-w4",
+          "text": "AÇMA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"fırında pişirilen hamur işleri\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-009-g2",
+      "title": "KİŞİSEL BELGELER",
+      "words": [
+        {
+          "id": "track-balanced-009-w5",
+          "text": "PASAPORT"
+        },
+        {
+          "id": "track-balanced-009-w6",
+          "text": "EHLİYET"
+        },
+        {
+          "id": "track-balanced-009-w7",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "track-balanced-009-w8",
+          "text": "DİPLOMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"kişisel belgeler\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-009-g3",
+      "title": "SONUNA SAATİ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-009-w9",
+          "text": "DUVAR"
+        },
+        {
+          "id": "track-balanced-009-w10",
+          "text": "KOL"
+        },
+        {
+          "id": "track-balanced-009-w11",
+          "text": "MASA"
+        },
+        {
+          "id": "track-balanced-009-w12",
+          "text": "KUM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"SAATİ\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-009-g4",
+      "title": "BAŞINA YARIM GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-009-w13",
+          "text": "ADA"
+        },
+        {
+          "id": "track-balanced-009-w14",
+          "text": "AY"
+        },
+        {
+          "id": "track-balanced-009-w15",
+          "text": "EKMEK"
+        },
+        {
+          "id": "track-balanced-009-w16",
+          "text": "SAAT"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"YARIM\" getirilebilir."
+    }
+  ]
+}
