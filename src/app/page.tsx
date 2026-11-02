@@ -1,9 +1,9 @@
 import { connection } from "next/server";
 import { HomeExperience } from "@/components/home/HomeExperience";
+import { loadPlayableDaily } from "@/lib/daily/playableDaily";
 import { formatCountdown } from "@/components/home/homeState";
 import {
   formatDayLabel,
-  loadDailyPuzzle,
   publicationDayOf,
   puzzleNumberFromId,
   resolvePublicationDay,
@@ -42,7 +42,7 @@ export default async function HomePage() {
   await connection();
   const now = new Date();
   const dayKey = resolvePublicationDay({ now });
-  const daily = await loadDailyPuzzle({ dayKey });
+  const daily = await loadPlayableDaily({ dayKey });
   const boundary = nextPublicationBoundary(now);
 
   const puzzle =
@@ -50,7 +50,7 @@ export default async function HomePage() {
       ? {
           puzzleId: daily.puzzle.id,
           puzzleRevision: daily.puzzle.revision,
-          puzzleNumber: puzzleNumberFromId(daily.puzzle.id),
+          puzzleNumber: daily.source.startsWith("reserve:") ? null : puzzleNumberFromId(daily.puzzle.id),
         }
       : {
           puzzleId: null,

@@ -5,16 +5,17 @@ import { DifficultyLobby } from "@/components/game/DifficultyLobby";
 import { PlayExperience } from "@/components/game/PlayExperience";
 import { TrackNavigation } from "@/components/game/TrackNavigation";
 import { loadModePuzzle } from "@/lib/daily/modePuzzle";
+import { loadPlayableDaily } from "@/lib/daily/playableDaily";
 import { TRACKS, TRACK_LEVEL_COUNT, trackHref } from "@/features/game/tracks";
 
 import { DailyPuzzleSection } from "@/components/game/DailyPuzzleSection";
 import { TutorialExperience } from "@/components/tutorial/TutorialExperience";
 import { PLAY_DESCRIPTION, TUTORIAL_DESCRIPTION } from "@/lib/config";
-import { GAME_ARCHIVE_START as TEMP_ARCHIVE_START, GAME_ARCHIVE_END as TEMP_ARCHIVE_END, archiveDayOffset } from "@/lib/gameArchive";
+import { GAME_ARCHIVE_END as TEMP_ARCHIVE_END, archiveDayOffset } from "@/lib/gameArchive";
 import {
   formatDayLabel,
   isPublicationDayKey,
-  loadDailyPuzzle,
+  resolvePublicationDay,
   puzzleNumberFromId,
   type DailyPuzzleState,
 } from "@/lib/daily";
@@ -28,9 +29,9 @@ export async function generateMetadata({ searchParams }: PlayPageProps): Promise
   const { mode, difficulty, level, day } = await searchParams;
   const tutorialMode = mode === "tutorial";
   const track = TRACKS.find(item => item.id === difficulty);
-  if (!tutorialMode && !day) return {
-    title: track ? `${track.label} · Bölüm ${level ?? 1}` : "Kolay, Orta, Zor",
-    description: "Üç zorluk modu, her modda altı farklı bulmaca. 16 kelimenin gizli bağlarını keşfet.",
+  if (!tutorialMode && !day && mode !== "daily") return {
+    title: track ? `${track.label} · Bölüm ${level ?? 1}` : "Kolay, Orta, Zor, Ultra Zor",
+    description: `Dört zorluk modu, her modda ${TRACK_LEVEL_COUNT} farklı bulmaca. 16 kelimenin gizli bağlarını keşfet.`,
   };
 
   return tutorialMode
@@ -47,14 +48,11 @@ export async function generateMetadata({ searchParams }: PlayPageProps): Promise
 function resolvePlayableDay(requestedDay?: string): string {
   const requested = requestedDay?.trim();
   if (
-    requested &&
-    isPublicationDayKey(requested) &&
-    requested >= TEMP_ARCHIVE_START &&
-    requested <= TEMP_ARCHIVE_END
+    requested && isPublicationDayKey(requested)
   ) {
     return requested;
   }
-  return TEMP_ARCHIVE_START;
+  return resolvePublicationDay();
 }
 
 function nextPuzzleDay(dayKey: string): string | null {
@@ -65,6 +63,7 @@ function nextPuzzleDay(dayKey: string): string | null {
 function dailyKicker(state: DailyPuzzleState): string {
   const dayLabel = formatDayLabel(state.dayKey);
   if (state.status !== "ok") return dayLabel;
+  if (state.source.startsWith("reserve:")) return `Günlük seçki · ${dayLabel}`;
 
   const number = puzzleNumberFromId(state.puzzle.id);
   return number === null ? dayLabel : `#${number} · ${dayLabel}`;
@@ -72,7 +71,9 @@ function dailyKicker(state: DailyPuzzleState): string {
 
 export default async function PlayPage({ searchParams }: PlayPageProps) {
   const { mode, day, difficulty, level: requestedLevel } = await searchParams;
-  if (mode !== "tutorial" && (difficulty !== undefined || day === undefined)) {
+  if (mode !== "tutorial" && day !== undefined &&
+    (!isPublicationDayKey(day) || day > resolvePublicationDay())) notFound();
+  if (mode !== "tutorial" && mode !== "daily" && (difficulty !== undefined || day === undefined)) {
     if (difficulty === undefined) return <main className="q-play-page"><DifficultyLobby /></main>;
     const track = TRACKS.find((item) => item.id === difficulty);
     const level = requestedLevel === undefined ? 1 : Number(requestedLevel);
@@ -92,8 +93,8 @@ export default async function PlayPage({ searchParams }: PlayPageProps) {
   const dayKey = resolvePlayableDay(day);
   const daily = tutorialMode
     ? null
-    : await loadDailyPuzzle({ dayKey, includeDrafts: true });
-  const nextDay = tutorialMode ? null : nextPuzzleDay(dayKey);
+    : await loadPlayableDaily({ dayKey });
+  const nextDay = tutorialMode || mode === "daily" ? null : nextPuzzleDay(dayKey);
 
   return (
     <main className="q-play-page">
@@ -112,6 +113,7 @@ export default async function PlayPage({ searchParams }: PlayPageProps) {
         <DailyPuzzleSection
           state={daily}
           nextPuzzleHref={nextDay ? `/play?day=${nextDay}` : null}
+          dailyMode={mode === "daily"}
         />
       )}
     </main>

@@ -7,13 +7,14 @@
  */
 
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import PlayPage from "@/app/play/page";
 
 import { TEST_DAY_KEY, createUser, enterGame, puzzle, registerFlowHooks } from "./helpers";
 
 registerFlowHooks();
+beforeEach(() => vi.stubEnv("QUADRO_TODAY", "2026-09-23"));
 
 async function openDay(dayKey: string, mode?: string): Promise<void> {
   render(
@@ -34,6 +35,10 @@ const notice = (): HTMLElement | null =>
   screen.queryByRole("region", { name: /Bugün için bulmaca yok|Bugünün bulmacası açılamadı/ });
 
 describe("geçici 30-bulmaca akışı · sayfa davranışı", () => {
+  it("gelecek günlerin yayımlanmış cevaplarını önceden açmaz", async () => {
+    await expect(PlayPage({ searchParams: Promise.resolve({ day: "2026-09-24" }) }))
+      .rejects.toMatchObject({ digest: "NEXT_HTTP_ERROR_FALLBACK;404" });
+  });
   it("ilk bulmacayı gerçek içerikle açar", async () => {
     await openDay(TEST_DAY_KEY);
 
@@ -46,20 +51,18 @@ describe("geçici 30-bulmaca akışı · sayfa davranışı", () => {
     }
   });
 
-  it("aralık dışı day parametresini güvenli biçimde ilk bulmacaya düşürür", async () => {
+  it("stoğu olmayan eski gün için başka bir günün cevabını göstermez", async () => {
     await openDay("2026-09-19");
 
-    expect(hasBoard()).toBe(true);
-    expect(screen.getByText("#1 · 20 EYLÜL 2026")).toBeTruthy();
-    expect(screen.queryByText("19 EYLÜL 2026")).toBeNull();
+    expect(hasBoard()).toBe(false);
+    expect(notice()?.dataset.reason).toBe("no-content");
   });
 
-  it("geçici akışta taslak durumundaki doğrulanmış sonraki bulmacayı açar", async () => {
+  it("taslak günlük bulmacayı oyuncuya yayınlamaz", async () => {
     await openDay("2026-09-21");
 
-    expect(hasBoard()).toBe(true);
-    expect(notice()).toBeNull();
-    expect(screen.getByText(/21 EYLÜL 2026/)).toBeTruthy();
+    expect(hasBoard()).toBe(false);
+    expect(notice()?.dataset.reason).toBe("not-published");
   });
 
   it("şeması bozuk içerik includeDrafts ile bile açılmaz", async () => {

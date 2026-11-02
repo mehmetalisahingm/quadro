@@ -57,7 +57,7 @@ describe("ana sayfa → /play", () => {
   it("yeni kullanıcı ana sayfadan bugünün bulmacasına gider; /play gerçek motorun tahtasını açar", async () => {
     render(await HomePage());
     const start = screen.getByRole("link", { name: "Bugünün bulmacasını çöz" });
-    expect(start.getAttribute("href")).toBe("/play");
+    expect(start.getAttribute("href")).toBe("/play?mode=daily");
     cleanup();
 
     await openPlayPage();
