@@ -58,27 +58,27 @@
     },
     {
       "id": "track-balanced-009-g3",
-      "title": "SONUNA SAATİ GELENLER",
+      "title": "SONUNA FENERİ GELENLER",
       "words": [
         {
           "id": "track-balanced-009-w9",
-          "text": "DUVAR"
+          "text": "CEP"
         },
         {
           "id": "track-balanced-009-w10",
-          "text": "KOL"
+          "text": "EL"
         },
         {
           "id": "track-balanced-009-w11",
-          "text": "MASA"
+          "text": "KAFA"
         },
         {
           "id": "track-balanced-009-w12",
-          "text": "KUM"
+          "text": "DENİZ"
         }
       ],
       "difficulty": 3,
-      "explanation": "Her kelimenin sonuna \"SAATİ\" getirilebilir."
+      "explanation": "Cep feneri, el feneri, kafa feneri, deniz feneri."
     },
     {
       "id": "track-balanced-009-g4",

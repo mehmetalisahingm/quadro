@@ -10,27 +10,27 @@
   "groups": [
     {
       "id": "track-balanced-001-g1",
-      "title": "AYAKKABI ÇEŞİTLERİ",
+      "title": "RESİM YAPMA MALZEMELERİ",
       "words": [
         {
           "id": "track-balanced-001-w1",
-          "text": "BOT"
+          "text": "FIRÇA"
         },
         {
           "id": "track-balanced-001-w2",
-          "text": "TERLİK"
+          "text": "TUVAL"
         },
         {
           "id": "track-balanced-001-w3",
-          "text": "ÇİZME"
+          "text": "BOYA"
         },
         {
           "id": "track-balanced-001-w4",
-          "text": "SANDALET"
+          "text": "PALET"
         }
       ],
       "difficulty": 1,
-      "explanation": "Bu dört sözcük \"ayakkabı çeşitleri\" başlığı altında birleşir."
+      "explanation": "Fırça, tuval, boya ve palet bir resim yaparken kullanılır."
     },
     {
       "id": "track-balanced-001-g2",

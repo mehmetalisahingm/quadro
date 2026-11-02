@@ -58,27 +58,27 @@
     },
     {
       "id": "track-balanced-010-g3",
-      "title": "SONUNA YOLU GELENLER",
+      "title": "SONUNA KAPISI GELENLER",
       "words": [
         {
           "id": "track-balanced-010-w9",
-          "text": "DEMİR"
+          "text": "GİRİŞ"
         },
         {
           "id": "track-balanced-010-w10",
-          "text": "HAVA"
+          "text": "ÇIKIŞ"
         },
         {
           "id": "track-balanced-010-w11",
-          "text": "DENİZ"
+          "text": "BAHÇE"
         },
         {
           "id": "track-balanced-010-w12",
-          "text": "KARA"
+          "text": "ODA"
         }
       ],
       "difficulty": 3,
-      "explanation": "Her kelimenin sonuna \"YOLU\" getirilebilir."
+      "explanation": "Giriş kapısı, çıkış kapısı, bahçe kapısı, oda kapısı."
     },
     {
       "id": "track-balanced-010-g4",
