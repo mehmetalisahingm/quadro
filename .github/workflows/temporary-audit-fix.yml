@@ -19,7 +19,7 @@ jobs:
       - name: Use supported npm 11 to avoid npm 10 Arborist lockfile failure
         run: npm install --global npm@11.19.1
       - name: Refresh all fixable audit advisories in lockfile
-        run: npm audit fix --package-lock-only --ignore-scripts
+        run: npm install --package-lock-only --ignore-scripts
       - name: Save generated lockfile updates
         run: |
           git config user.name "github-actions[bot]"
