@@ -32,6 +32,9 @@ jobs:
       - name: Bağımlılık güvenlik denetimi
         run: npm run audit:ci
 
+      - name: Yayın kabul kontrolünün negatif testleri
+        run: node --test scripts/verify-live.test.mjs
+
       - name: Lint (ESLint CLI)
         run: npm run lint
 

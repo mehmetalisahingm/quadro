@@ -66,7 +66,28 @@ export async function POST(request: Request) {
 
   let body: IncomingBody;
   try {
-    body = (await request.json()) as IncomingBody;
+    const reader = request.body?.getReader();
+    if (!reader) return NextResponse.json({ error: "invalid_json" }, { status: 400 });
+    const decoder = new TextDecoder();
+    let bytes = 0;
+    let text = "";
+    try {
+      while (true) {
+        const chunk = await reader.read();
+        if (chunk.done) break;
+        bytes += chunk.value.byteLength;
+        if (bytes > MAX_BODY_BYTES) {
+          void reader.cancel().catch(() => undefined);
+          return NextResponse.json({ error: "payload_too_large" }, { status: 413 });
+        }
+        text += decoder.decode(chunk.value, { stream: true });
+      }
+      const value: unknown = JSON.parse(text + decoder.decode());
+      if (!value || typeof value !== "object" || Array.isArray(value)) {
+        return NextResponse.json({ error: "invalid_json" }, { status: 400 });
+      }
+      body = value as IncomingBody;
+    } finally { reader.releaseLock(); }
   } catch {
     return NextResponse.json({ error: "invalid_json" }, { status: 400 });
   }
@@ -123,7 +144,9 @@ export async function POST(request: Request) {
     return new NextResponse(null, { status: 204 });
   }
 
-  const response = await fetch(`${supabase.url}/rest/v1/rpc/record_analytics_event`, {
+  let response: Response;
+  try {
+    response = await fetch(`${supabase.url}/rest/v1/rpc/record_analytics_event`, {
     method: "POST",
     headers: {
       apikey: supabase.secretKey,
@@ -137,7 +160,10 @@ export async function POST(request: Request) {
       p_puzzle_id: resolvePuzzleId(properties),
       p_properties: properties,
     }),
-  });
+    });
+  } catch {
+    return NextResponse.json({ error: "analytics_unavailable" }, { status: 502 });
+  }
 
   if (!response.ok) {
     console.error("[analytics] Supabase RPC failed", {

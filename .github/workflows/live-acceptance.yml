@@ -1,0 +1,23 @@
+name: Live release acceptance
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Canonical public HTTPS origin to verify
+        required: true
+        default: https://quadro-teal.vercel.app
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version-file: .nvmrc
+      - name: Verify public pages, auth configuration, daily game and guest isolation
+        env:
+          QUADRO_LIVE_URL: ${{ inputs.base_url }}
+        run: node scripts/verify-live.mjs
