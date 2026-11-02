@@ -14,9 +14,33 @@ function request(body: unknown, contentType = "application/json") {
 
 afterEach(() => {
   vi.unstubAllEnvs();
+  vi.unstubAllGlobals();
 });
 
 describe("POST /api/analytics", () => {
+  it.each([null, [], "text", 1])("rejects non-object JSON without throwing: %j", async value => {
+    expect((await POST(request(value))).status).toBe(400);
+  });
+
+  it.each([undefined, "1"])("limits streamed UTF-8 bytes even with missing or false content length: %s", async contentLength => {
+    const headers: Record<string, string> = { "content-type": "application/json" };
+    if (contentLength) headers["content-length"] = contentLength;
+    const incoming = new Request("https://example.test/api/analytics", {
+      method: "POST", headers, body: JSON.stringify({ text: "ş".repeat(5000) }),
+    });
+    expect((await POST(incoming)).status).toBe(413);
+  });
+
+  it("returns a controlled response on database network failure", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://database.example.test");
+    vi.stubEnv("SUPABASE_SECRET_KEY", "test-key");
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("private network detail")));
+    const response = await POST(request({ visitorId: VALID_VISITOR, event: {
+      id: "evt-offline", name: "home_view", at: new Date().toISOString(), properties: {},
+    } }));
+    expect(response.status).toBe(502);
+    expect(await response.text()).not.toContain("private network detail");
+  });
   it("rejects unsupported media types", async () => {
     const response = await POST(request({}, "text/plain"));
     expect(response.status).toBe(415);
