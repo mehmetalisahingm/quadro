@@ -41,7 +41,25 @@ type RecentResult = {
   playedAt: string;
 };
 
+type AnonymousBrowser = {
+  browser: string;
+  puzzleId: string;
+  stage: string;
+  solvedGroups: number;
+  attemptCount: number;
+  lastSeenAt: string;
+};
+
+type AnalyticsOverview = {
+  uniquePlayers: number;
+  last7DayVisitors: number;
+  eventsToday: number;
+  recentBrowsers: AnonymousBrowser[];
+  daily: { day: string; visitors: number; starts: number; finishes: number }[];
+};
+
 type DashboardSnapshot = {
+  overview?: AnalyticsOverview | null;
   totals: DashboardTotals;
   puzzles: PuzzleMetric[];
   recentResults: RecentResult[];
@@ -161,6 +179,32 @@ export default function AdminPage() {
                     </article>
                   ))}
                 </div>
+
+                {dashboard.overview ? (
+                  <section style={{ ...cardStyle, display: "grid", gap: "1rem" }}>
+                    <h2 style={{ margin: 0 }}>Ziyaretçi ve anonim oyuncu analizi</h2>
+                    <p style={{ margin: 0, opacity: 0.75 }}>Tekil sayılar tarayıcı kimliğidir, gerçek insan sayısı değildir. Kod içindeki test trafiği ayrıca ayıklanmamış olabilir.</p>
+                    <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+                      <span><strong>Oyuncu tarayıcıları:</strong> {dashboard.overview.uniquePlayers}</span>
+                      <span><strong>Son 7 gün ziyaretçileri:</strong> {dashboard.overview.last7DayVisitors}</span>
+                      <span><strong>Bugün toplam kayıt:</strong> {dashboard.overview.eventsToday}</span>
+                    </div>
+                    <div style={{ overflowX: "auto" }}>
+                      <table style={{ width: "100%", minWidth: 420 }}>
+                        <thead><tr><th align="left">Gün</th><th>Tekil tarayıcı</th><th>Başlangıç</th><th>Bitiş</th></tr></thead>
+                        <tbody>{dashboard.overview.daily.map((d) => <tr key={d.day}><td>{d.day}</td><td align="center">{d.visitors}</td><td align="center">{d.starts}</td><td align="center">{d.finishes}</td></tr>)}</tbody>
+                      </table>
+                    </div>
+                    <h3 style={{ marginBottom: 0 }}>Son 30 günde tarayıcı bazlı bölüm ilerlemesi</h3>
+                    <p style={{ margin: 0, opacity: 0.75 }}>Anonim kod kişiyi tanımlamaz. Kayıtsız oyuncularda bölüm, deneme ve bulunan grup sayısı yeni sürümden itibaren ölçülür; geçmişteki kısmi ilerleme geriye dönük üretilemez.</p>
+                    <div style={{ overflowX: "auto" }}>
+                      <table style={{ width: "100%", minWidth: 690 }}>
+                        <thead><tr><th align="left">Tarayıcı kodu</th><th align="left">Bulmaca</th><th>İlerleme</th><th>Deneme</th><th align="left">Durum</th><th align="left">Son etkinlik</th></tr></thead>
+                        <tbody>{dashboard.overview.recentBrowsers.map((b, i) => <tr key={`${b.browser}:${b.puzzleId}:${i}`}><td>{b.browser}</td><td>{b.puzzleId}</td><td align="center">{b.solvedGroups}/4 grup</td><td align="center">{b.attemptCount}</td><td>{b.stage}</td><td>{new Date(b.lastSeenAt).toLocaleString("tr-TR")}</td></tr>)}</tbody>
+                      </table>
+                    </div>
+                  </section>
+                ) : <p>Gelişmiş anonim ilerleme raporu henüz etkin değil.</p>}
 
                 <section style={{ ...cardStyle, overflowX: "auto" }}>
                   <h2 style={{ marginTop: 0 }}>Bulmaca performansı</h2>

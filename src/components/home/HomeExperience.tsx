@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { trackBrowserEvent } from "@/lib/analytics";
+import { trackBrowserEventOnce } from "@/lib/analytics";
 import { defaultSnapshotStorage } from "@/lib/persistence/storage";
 
 import { HomeHero } from "./HomeHero";
@@ -68,7 +68,7 @@ export function HomeExperience({
 
       if (!homeViewTracked.current) {
         homeViewTracked.current = true;
-        trackBrowserEvent("home_view", {
+        trackBrowserEventOnce(`home:${dayKey}`, "home_view", {
           state: resolved.state,
           dayKey,
           puzzleAvailable: puzzleId !== null,
