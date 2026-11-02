@@ -1,7 +1,7 @@
 .panel { width: min(960px, 100%); margin: 32px auto 20px; padding: 20px; border: 1px solid #d5d9c9; border-radius: 22px; background: #f3f5ee; color: #27473c; }
 .panel h2 { font-size: 1.25rem; margin: 0 0 8px; }
 .panel p { font-size: .85rem; line-height: 1.6; margin: 0 0 14px; }
-.tracks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.tracks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .tracks section { border: 1px solid #dde0d3; border-radius: 15px; padding: 15px; background: #fffdf7; }
 .tracks section[data-active="true"] { border-color: #5a7c61; box-shadow: 0 0 0 1px #5a7c61; }
 .tracks h3 { margin: 0 0 6px; }

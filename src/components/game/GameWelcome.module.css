@@ -47,7 +47,7 @@
 .modeField { min-width: 0; margin: 25px 0 0; padding: 0; border: 0; }
 .modeField legend { display: flex; align-items: center; gap: 15px; width: 100%; margin-bottom: 12px; padding: 0; font-size: 13px; font-weight: 600; }
 .modeField legend span { margin-left: auto; color: var(--welcome-muted); font-family: var(--q-font-mono); font-size: 8px; font-weight: 400; letter-spacing: .07em; }
-.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.modes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .mode { position: relative; display: flex; flex-direction: column; gap: 4px; min-width: 0; padding: 15px 16px 14px; border: 1px solid var(--welcome-line); border-radius: 10px; background: #ffffff45; cursor: pointer; transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease; }
 .mode:hover { border-color: #a8ab94; }
 .mode input { position: absolute; width: 1px; height: 1px; opacity: 0; }
@@ -59,6 +59,7 @@
 .modeBars i { width: 3px; height: 6px; border-radius: 1px; background: #d4d6c9; }
 .modeBars i:nth-child(2) { height: 9px; }
 .modeBars i:nth-child(3) { height: 12px; }
+.modeBars i:nth-child(4) { height: 13px; }
 .modeBars i[data-active="true"] { background: #657053; }
 .modeLabel { color: var(--welcome-muted); font-size: 11px; }
 .modeHint { margin-top: 6px; font-family: var(--q-font-mono); font-size: 9px; color: #657053; }
@@ -103,7 +104,7 @@
   .chapter .exampleCaption { font-size: 10px; }
   .modeField { margin-top: 21px; }
   .modeField legend span { font-size: 7px; }
-  .modes { gap: 7px; }
+  .modes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
   .mode { padding: 12px 10px; }
   .modeTop strong { font-size: 14px; }
   .modeLabel { font-size: 9px; }

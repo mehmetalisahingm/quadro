@@ -1,16 +1,14 @@
 # Ayrı zorluk parkurları
 
-Her modda altı yeni bölüm bulunur (18 tahta, 72 grup). Kolay doğrudan sınıflama,
-orta ortak kullanım ve ifadeler, zor harf oyunları ve örtük bağlantılar içerir.
-`track-{easy|medium|hard}-{001..006}` kimlikleri klasik q serisinden bağımsızdır.
-Klasik 30 bölüm korunur. Hiçbir yeni tahta veya dört kelimelik grup klasik
-arşivdekilerle ya da diğer yeni gruplarla aynı değildir; tekil sözcükler tekrar edebilir.
+Her modda 12 farklı bölüm bulunur: Kolay, Orta, Zor, Ultra Zor (toplam 48).
 
-Her bölümün kaydı ayrı bir yerel depolama alanındadır. Parkur seçiminde bitirilen
-bölümler işaretlenir. Klasik günlük istatistik ekranı günlük arşive aittir;
-parkur kayıtları günlük istatistik defterine karıştırılmaz.
+- Zor: yeni ve dengeli `track-balanced-*` bulmacaları.
+- Ultra Zor: eski Zor `track-hard-*` bulmacaları.
 
-İçerik öz denetimden geçirilmiştir; bağımsız insan kör çözüm oturumu yapılmamıştır.
-`blind/` tahtaları bu amaçla hazırlanmıştır. Otomatik testler şema, 16 benzersiz
-kelime, grup/tahta tekrarı ve kör tahtadaki kimlik-metin eşleşmesini doğrular.
-Bu kontroller insan çözümünde güçlük ve tek çözüm garantisi değildir.
+Eski Zor içerikleri, kimlikleri ve revizyonları değişmediği için oyuncuların
+kayıtları Ultra Zor parkurunda korunur. Yeni Zor içeriklerinin kayıtları
+ayrı kimlikler altında tutulur. Günlük takvim etkilenmez.
+
+Yeni bulmacalar için kör tahtalar eklendi. Yapısal testler tekrarları ve
+şemayı doğrular. Bağımsız insan kör testi ve editoryal onay halen bekliyor;
+otomatik testler tek çözüm veya adillik garantisi vermez.

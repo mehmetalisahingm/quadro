@@ -28,7 +28,7 @@ const serverSession = () => "loading" as const;
 function readSession(puzzle: Puzzle): GameDifficulty | "new" {
   try {
     const savedMode = window.localStorage.getItem(playModeKey(puzzle));
-    if (savedMode === "easy" || savedMode === "medium" || savedMode === "hard") return savedMode;
+    if (savedMode === "easy" || savedMode === "medium" || savedMode === "hard" || savedMode === "ultra") return savedMode;
     const savedGame = window.localStorage.getItem(snapshotStorageKey(puzzle.date));
     if (savedGame) {
       const parsed = parseStoredRecord(savedGame);

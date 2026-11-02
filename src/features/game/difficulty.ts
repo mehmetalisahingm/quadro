@@ -1,6 +1,6 @@
 import type { Puzzle, SubmitOutcome } from "./contracts";
 
-export type GameDifficulty = "easy" | "medium" | "hard";
+export type GameDifficulty = "easy" | "medium" | "hard" | "ultra";
 
 export const DIFFICULTY_MODES = [
   {
@@ -20,14 +20,21 @@ export const DIFFICULTY_MODES = [
   {
     id: "hard",
     label: "Zor",
-    description: "İpucu ve çok yaklaştın bildirimi olmadan çöz.",
+    description: "Anlaşılır ama düşündüren bağlantılar; ipucu yok.",
+    hintLimit: 0,
+    showOneAway: false,
+  },
+  {
+    id: "ultra",
+    label: "Ultra Zor",
+    description: "En çetin sözcük bağlantıları; ipucu yok.",
     hintLimit: 0,
     showOneAway: false,
   },
 ] as const;
 
 export function resolveGameDifficulty(value: unknown): GameDifficulty {
-  return value === "easy" || value === "hard" ? value : "medium";
+  return value === "easy" || value === "hard" || value === "ultra" ? value : "medium";
 }
 
 export function getDifficultyMode(difficulty: GameDifficulty) {
@@ -39,7 +46,7 @@ export function difficultyFeedback(
   outcome: SubmitOutcome,
   difficulty: GameDifficulty,
 ): SubmitOutcome {
-  return difficulty === "hard" && outcome.verdict === "one-away"
+  return (difficulty === "hard" || difficulty === "ultra") && outcome.verdict === "one-away"
     ? { verdict: "wrong" }
     : outcome;
 }

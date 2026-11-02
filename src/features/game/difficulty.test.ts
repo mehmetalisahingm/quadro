@@ -25,11 +25,13 @@ describe("difficulty assistance", () => {
     }
     expect(resolveGameDifficulty("easy")).toBe("easy");
     expect(resolveGameDifficulty("hard")).toBe("hard");
+    expect(resolveGameDifficulty("ultra")).toBe("ultra");
   });
 
   it("hides one-away feedback only in hard mode without changing the engine outcome", () => {
     const outcome = { verdict: "one-away" } as const;
     expect(difficultyFeedback(outcome, "hard")).toEqual({ verdict: "wrong" });
+    expect(difficultyFeedback(outcome, "ultra")).toEqual({ verdict: "wrong" });
     expect(difficultyFeedback(outcome, "medium")).toBe(outcome);
     expect(difficultyFeedback(outcome, "easy")).toBe(outcome);
     expect(outcome.verdict).toBe("one-away");
