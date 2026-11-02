@@ -61,3 +61,42 @@ describe("POST /api/analytics", () => {
     expect(response.status).toBe(204);
   });
 });
+
+describe("anonymous progress analytics privacy checks", () => {
+  it("rejects answer and identity fields before writing", async () => {
+    const response = await POST(request({
+      visitorId: VALID_VISITOR,
+      event: {
+        id: "evt-p1", name: "game_progress", at: new Date().toISOString(),
+        properties: { puzzleId: "track-easy-001", revision: 1, dayKey: "2026-11-02", solvedGroups: 1,
+          attemptCount: 2, mistakesRemaining: 3, activeSeconds: 14, selectedWordIds: ["secret"] },
+      },
+    }));
+    expect(response.status).toBe(400);
+  });
+
+  it("rejects impossible progress numbers", async () => {
+    const response = await POST(request({
+      visitorId: VALID_VISITOR,
+      event: {
+        id: "evt-p2", name: "game_progress", at: new Date().toISOString(),
+        properties: { puzzleId: "track-easy-001", revision: 1, dayKey: "2026-11-02", solvedGroups: 5,
+          attemptCount: 1, mistakesRemaining: 4, activeSeconds: 14 },
+      },
+    }));
+    expect(response.status).toBe(400);
+  });
+
+  it("switches off all remote collection with the environment kill switch", async () => {
+    vi.stubEnv("QUADRO_ANALYTICS_DISABLED", "1");
+    const response = await POST(request({
+      visitorId: VALID_VISITOR,
+      event: {
+        id: "evt-p3", name: "game_progress", at: new Date().toISOString(),
+        properties: { puzzleId: "track-easy-001", revision: 1, dayKey: "2026-11-02", solvedGroups: 1,
+          attemptCount: 1, mistakesRemaining: 4, activeSeconds: 14 },
+      },
+    }));
+    expect(response.status).toBe(204);
+  });
+});
