@@ -92,6 +92,24 @@ export function usePersistentGame(
           });
         }
 
+        // Each accepted move gives the admin a coarse progress snapshot, never answers.
+        // Dedupe prevents retries or remounts from counting the same move twice.
+        if (accepted && !unlimitedMistakes) {
+          trackBrowserEventOnce(
+            `progress:${result.snapshot.puzzleId}:${result.snapshot.puzzleRevision}:${result.snapshot.attempts.length}`,
+            "game_progress",
+            {
+              puzzleId: result.snapshot.puzzleId,
+              revision: result.snapshot.puzzleRevision,
+              dayKey: result.snapshot.dayKey,
+              solvedGroups: result.snapshot.solvedGroupIds.length,
+              attemptCount: result.snapshot.attempts.length,
+              mistakesRemaining: result.snapshot.mistakesRemaining,
+              activeSeconds: result.snapshot.activeSeconds,
+            },
+          );
+        }
+
         if (result.snapshot.status !== "playing") {
           trackBrowserEventOnce(
             `finish:${result.snapshot.puzzleId}:${result.snapshot.puzzleRevision}`,

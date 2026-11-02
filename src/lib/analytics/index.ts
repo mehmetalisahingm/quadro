@@ -20,6 +20,15 @@ export type AnalyticsEventProperties = {
     dayKey: string;
     resumed: boolean;
   };
+  game_progress: {
+    puzzleId: string;
+    revision: number;
+    dayKey: string;
+    solvedGroups: number;
+    attemptCount: number;
+    mistakesRemaining: number;
+    activeSeconds: number;
+  };
   first_attempt: {
     puzzleId: string;
     revision: number;

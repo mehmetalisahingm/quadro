@@ -7,6 +7,7 @@ const EVENT_ID_PATTERN = /^[A-Za-z0-9:_-]{1,128}$/;
 const EVENT_NAMES = new Set([
   "home_view",
   "game_start",
+  "game_progress",
   "first_attempt",
   "game_finish",
   "share_attempt",
@@ -14,6 +15,17 @@ const EVENT_NAMES = new Set([
 ]);
 
 const MAX_BODY_BYTES = 8 * 1024;
+
+// Only coarse analytics fields are accepted: never store chosen words, answer keys, or raw user content.
+const FIELDS: Record<string, readonly string[]> = {
+  home_view: ["state", "dayKey", "puzzleAvailable"],
+  game_start: ["puzzleId", "revision", "dayKey", "resumed"],
+  game_progress: ["puzzleId", "revision", "dayKey", "solvedGroups", "attemptCount", "mistakesRemaining", "activeSeconds"],
+  first_attempt: ["puzzleId", "revision", "verdict", "mistakesRemaining"],
+  game_finish: ["puzzleId", "revision", "dayKey", "status", "attemptCount", "mistakesUsed", "activeSeconds"],
+  share_attempt: ["puzzleId", "revision", "method"],
+  retention_visit: ["cohortDay", "activeDay", "dayOffset", "milestone"],
+};
 
 export const runtime = "nodejs";
 
@@ -86,11 +98,25 @@ export async function POST(request: Request) {
       ? (event.properties as Record<string, unknown>)
       : {};
 
+  if (Object.keys(properties).some((key) => !FIELDS[event.name as string]?.includes(key))) {
+    return NextResponse.json({ error: "unsupported_event_properties" }, { status: 400 });
+  }
+  if (event.name === "game_progress" && (
+    !Number.isInteger(properties.solvedGroups) || Number(properties.solvedGroups) < 0 || Number(properties.solvedGroups) > 4 ||
+    !Number.isInteger(properties.attemptCount) || Number(properties.attemptCount) < 1 || Number(properties.attemptCount) > 50 ||
+    !Number.isInteger(properties.mistakesRemaining) || Number(properties.mistakesRemaining) < 0 || Number(properties.mistakesRemaining) > 4 ||
+    !Number.isInteger(properties.activeSeconds) || Number(properties.activeSeconds) < 0 || Number(properties.activeSeconds) > 86400
+  )) {
+    return NextResponse.json({ error: "invalid_progress" }, { status: 400 });
+  }
   const serializedProperties = JSON.stringify(properties);
   if (serializedProperties.length > 4_096) {
     return NextResponse.json({ error: "properties_too_large" }, { status: 413 });
   }
 
+  if (process.env.QUADRO_ANALYTICS_DISABLED === "1") {
+    return new NextResponse(null, { status: 204 });
+  }
   const supabase = configuredSupabase();
   if (!supabase) {
     // Local development and CI may intentionally run without a Supabase project.

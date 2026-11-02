@@ -58,7 +58,16 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "dashboard_unavailable" }, { status: 502 });
   }
 
-  return NextResponse.json(await dashboard.json(), {
+  const snapshot = await dashboard.json();
+  // Only authenticated admins may retrieve per-browser pseudonymous activity.
+  const activity = await fetch(`${supabase.url}/rest/v1/rpc/admin_analytics_overview`, {
+    method: "POST",
+    headers: { apikey: supabase.secretKey, "content-type": "application/json" },
+    body: JSON.stringify({ p_limit: 50 }),
+    cache: "no-store",
+  });
+  const overview = activity.ok ? await activity.json() : null;
+  return NextResponse.json({ ...snapshot, overview }, {
     headers: { "cache-control": "no-store" },
   });
 }
