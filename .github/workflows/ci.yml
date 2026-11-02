@@ -29,6 +29,9 @@ jobs:
       - name: Bağımlılıklar (kilit dosyasıyla temiz kurulum)
         run: npm ci
 
+      - name: Bağımlılık güvenlik denetimi
+        run: npm run audit:ci
+
       - name: Lint (ESLint CLI)
         run: npm run lint
 
@@ -100,9 +103,6 @@ jobs:
           fi
 
           npm run test:browser
-
-      - name: Bağımlılık güvenlik denetimi
-        run: npm run audit:ci
 
       - name: Playwright raporu ve izleri
         if: ${{ !cancelled() }}
