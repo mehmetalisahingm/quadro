@@ -46,20 +46,18 @@ describe("geçici 30-bulmaca akışı · sayfa davranışı", () => {
     }
   });
 
-  it("aralık dışı day parametresini güvenli biçimde ilk bulmacaya düşürür", async () => {
+  it("stoğu olmayan eski gün için başka bir günün cevabını göstermez", async () => {
     await openDay("2026-09-19");
 
-    expect(hasBoard()).toBe(true);
-    expect(screen.getByText("#1 · 20 EYLÜL 2026")).toBeTruthy();
-    expect(screen.queryByText("19 EYLÜL 2026")).toBeNull();
+    expect(hasBoard()).toBe(false);
+    expect(notice()?.dataset.reason).toBe("no-content");
   });
 
-  it("geçici akışta taslak durumundaki doğrulanmış sonraki bulmacayı açar", async () => {
+  it("taslak günlük bulmacayı oyuncuya yayınlamaz", async () => {
     await openDay("2026-09-21");
 
-    expect(hasBoard()).toBe(true);
-    expect(notice()).toBeNull();
-    expect(screen.getByText(/21 EYLÜL 2026/)).toBeTruthy();
+    expect(hasBoard()).toBe(false);
+    expect(notice()?.dataset.reason).toBe("not-published");
   });
 
   it("şeması bozuk içerik includeDrafts ile bile açılmaz", async () => {

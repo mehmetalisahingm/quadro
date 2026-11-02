@@ -32,7 +32,7 @@ const copyByState: Record<HomePlayerState, StateCopy> = {
     title: "16 kelime. 4 gizli bağ.",
     description: "Dört kelimenin ortak noktasını bul, dört grubu tamamla.",
     primaryLabel: "Bugünün bulmacasını çöz",
-    primaryHref: "/play",
+    primaryHref: "/play?mode=daily",
     secondaryLabel: "Kısa örneği dene",
     secondaryHref: "/play?mode=tutorial",
   },
@@ -41,7 +41,7 @@ const copyByState: Record<HomePlayerState, StateCopy> = {
     title: "Bulmacan seni bekliyor.",
     description: "Bugünkü bulmacaya kaldığın yerden devam et.",
     primaryLabel: "Kaldığın yerden devam et",
-    primaryHref: "/play",
+    primaryHref: "/play?mode=daily",
     secondaryLabel: "Nasıl oynanır?",
     secondaryHref: "/play?mode=tutorial",
   },
@@ -50,7 +50,7 @@ const copyByState: Record<HomePlayerState, StateCopy> = {
     title: "Bugünün bağlantıları tamamlandı.",
     description: "Sonucuna göz at; yeni günlük bulmaca yarın seni bekliyor.",
     primaryLabel: "Sonucunu gör",
-    primaryHref: "/play?view=result",
+    primaryHref: "/play?mode=daily&view=result",
   },
 };
 
@@ -107,6 +107,7 @@ export function HomeHero({
         </div>
 
         <p><Link className={styles.previousAction} href="/stats">İstatistiklerin →</Link></p>
+        <p><Link className={styles.previousAction} href="/play">Bölümler · Kolay, Orta, Zor, Ultra Zor →</Link></p>
 
         <div className={styles.nextPuzzle} aria-label="Yeni bulmaca zamanı">
           <span className={styles.nextPuzzleKicker}>YENİ BULMACA</span>

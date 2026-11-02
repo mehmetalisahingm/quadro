@@ -1,0 +1,24 @@
+name: Daily publication health
+on:
+  schedule:
+    - cron: '10 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check production after Istanbul midnight
+        shell: bash
+        run: |
+          curl --fail --retry 3 --retry-delay 10 --max-time 30 https://quadro-teal.vercel.app/api/health -o health.json
+          node --input-type=module <<'JS'
+          import { readFileSync, appendFileSync } from 'node:fs';
+          const result = JSON.parse(readFileSync('health.json', 'utf8'));
+          const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+          if (!result.playable || result.dayKey !== today) throw new Error('Daily puzzle is unavailable or stale');
+          if (result.editorialStockLow) console.log('::warning::Approved daily stock below 14 days. Reserve selections keep the game playable; replenish editorial stock.');
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY, `Daily health: ${result.dayKey}; playable: ${result.playable}; source: ${result.selection}; published stock: ${result.publishedDays}/14\n`);
+          JS

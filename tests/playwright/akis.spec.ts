@@ -20,7 +20,7 @@ test("ana sayfadaki bağlantı oyuncuyu bulmacaya götürür", async ({ page }) 
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "16 kelime. 4 gizli bağ." })).toBeVisible();
   await page.getByRole("link", { name: "Bugünün bulmacasını çöz" }).click();
-  await expect(page).toHaveURL(/\/play$/);
+  await expect(page).toHaveURL(/\/play\?mode=daily$/);
   await oyunaGir(page);
   await expect(page.getByRole("heading", { name: "Gizli bağları bul" })).toBeVisible();
   await expect(tahtaKartlari(page)).toHaveCount(GAME_CONSTANTS.wordCount);

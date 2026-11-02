@@ -61,7 +61,7 @@ describe("ana sayfa · geri dönen kullanıcı", () => {
     await openHome();
 
     expect(screen.getByRole("link", { name: "Bugünün bulmacasını çöz" }).getAttribute("href"))
-      .toBe("/play");
+      .toBe("/play?mode=daily");
     expect(screen.getByLabelText("Günün bulmacası").textContent).toContain("#1");
     expect(screen.getByLabelText("Yeni bulmaca zamanı").textContent).toContain(
       "Türkiye saatiyle 00.00",
@@ -75,7 +75,7 @@ describe("ana sayfa · geri dönen kullanıcı", () => {
     await openHome();
 
     const devam = screen.getByRole("link", { name: "Kaldığın yerden devam et" });
-    expect(devam.getAttribute("href")).toBe("/play");
+    expect(devam.getAttribute("href")).toBe("/play?mode=daily");
     expect(screen.getByText("1/4 grup bulundu · 4 hata hakkı")).toBeTruthy();
   });
 
@@ -85,7 +85,7 @@ describe("ana sayfa · geri dönen kullanıcı", () => {
     await openHome();
 
     const result = screen.getByRole("link", { name: "Sonucunu gör" });
-    expect(result.getAttribute("href")).toBe("/play?view=result");
+    expect(result.getAttribute("href")).toBe("/play?mode=daily&view=result");
     expect(screen.getByText("4/4 grup bulundu · 0 hata")).toBeTruthy();
   });
 });
@@ -117,13 +117,12 @@ describe("ana sayfa · Türkiye gece yarısı", () => {
     expect(board().getAttribute("aria-label")).toBe("12 çözülmemiş kelimelik oyun tahtası");
   });
 
-  it("geçici arşiv modunda aralık dışı day parametresi ilk bulmacaya düşer", async () => {
+  it("eksik eski gün yerine farklı bir günlük bulmacayı sessizce açmaz", async () => {
     vi.stubEnv("QUADRO_TODAY", "2026-09-21");
 
     render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-19" }) }));
 
-    expect(screen.getByText("#1 · 20 EYLÜL 2026")).toBeTruthy();
-    expect(screen.queryByText("19 EYLÜL 2026")).toBeNull();
+    expect(screen.getByRole("region", { name: "Bugün için bulmaca yok" }).getAttribute("data-reason")).toBe("no-content");
   });
 });
 
