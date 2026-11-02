@@ -7,13 +7,14 @@
  */
 
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import PlayPage from "@/app/play/page";
 
 import { TEST_DAY_KEY, createUser, enterGame, puzzle, registerFlowHooks } from "./helpers";
 
 registerFlowHooks();
+beforeEach(() => vi.stubEnv("QUADRO_TODAY", "2026-09-23"));
 
 async function openDay(dayKey: string, mode?: string): Promise<void> {
   render(
@@ -34,6 +35,10 @@ const notice = (): HTMLElement | null =>
   screen.queryByRole("region", { name: /Bugün için bulmaca yok|Bugünün bulmacası açılamadı/ });
 
 describe("geçici 30-bulmaca akışı · sayfa davranışı", () => {
+  it("gelecek günlerin yayımlanmış cevaplarını önceden açmaz", async () => {
+    await expect(PlayPage({ searchParams: Promise.resolve({ day: "2026-09-24" }) }))
+      .rejects.toMatchObject({ digest: "NEXT_HTTP_ERROR_FALLBACK;404" });
+  });
   it("ilk bulmacayı gerçek içerikle açar", async () => {
     await openDay(TEST_DAY_KEY);
 

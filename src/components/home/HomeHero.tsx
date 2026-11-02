@@ -158,7 +158,7 @@ export function HomeHero({
       <div className={styles.motif} aria-hidden="true">
         <div className={styles.motifHeader}>
           <span>4×4</span>
-          <span>HER GÜN YENİ</span>
+          <span>HER GÜN BİR KEŞİF</span>
         </div>
         <div className={styles.grid}>
           {motifCells.map((cell) => (

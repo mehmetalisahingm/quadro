@@ -7,6 +7,7 @@ import { claimAdmin, currentUserIsAdmin } from "@/lib/auth/admin";
 import { readStoredSession } from "@/lib/auth/client";
 import { AdminGameNavigation } from "@/components/game/AdminGameNavigation";
 import { TrackNavigation } from "@/components/game/TrackNavigation";
+import { PublicationStatus } from "@/components/game/PublicationStatus";
 
 type DashboardTotals = {
   visitors: number;
@@ -158,6 +159,7 @@ export default function AdminPage() {
             </div>
 
             <AdminGameNavigation />
+            <PublicationStatus />
             <TrackNavigation />
 
             {dashboard ? (

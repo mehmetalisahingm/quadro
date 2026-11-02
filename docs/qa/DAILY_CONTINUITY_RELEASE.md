@@ -15,6 +15,8 @@ Ana sayfanın günlük başla/devam/sonuç düğmeleri `/play?mode=daily` kullan
 8. GitHub `Daily publication health` her Türkiye gece yarısından 10 dakika sonra çalışır.
    Oyun açılamazsa veya tarih eskiyse başarısız olur. Onaylı stok 14 günün altındaysa
    iş özeti ve uyarı üretir. Bildirim tercihi GitHub hesabının workflow ayarına bağlıdır.
+9. Yönetim panelinde günlük seçim kaynağı ve 14 günlük stok uyarısı gösterilir.
+   Gelecek tarihli oyunlar açılmaz; önceden yayımlanmış stok cevapları tarihten önce sunulmaz.
 
 ## Sürdürülmesi gereken işler
 

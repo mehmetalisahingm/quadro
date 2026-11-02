@@ -71,6 +71,8 @@ function dailyKicker(state: DailyPuzzleState): string {
 
 export default async function PlayPage({ searchParams }: PlayPageProps) {
   const { mode, day, difficulty, level: requestedLevel } = await searchParams;
+  if (mode !== "tutorial" && day !== undefined &&
+    (!isPublicationDayKey(day) || day > resolvePublicationDay())) notFound();
   if (mode !== "tutorial" && mode !== "daily" && (difficulty !== undefined || day === undefined)) {
     if (difficulty === undefined) return <main className="q-play-page"><DifficultyLobby /></main>;
     const track = TRACKS.find((item) => item.id === difficulty);
