@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-008",
+  "date": "2026-10-12",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-008-g1",
+      "title": "SÜTLÜ TATLILAR",
+      "words": [
+        {
+          "id": "track-balanced-008-w1",
+          "text": "SÜTLAÇ"
+        },
+        {
+          "id": "track-balanced-008-w2",
+          "text": "KEŞKÜL"
+        },
+        {
+          "id": "track-balanced-008-w3",
+          "text": "KAZANDİBİ"
+        },
+        {
+          "id": "track-balanced-008-w4",
+          "text": "MUHALLEBİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"sütlü tatlılar\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-008-g2",
+      "title": "SES ÜRETEN CİHAZLAR",
+      "words": [
+        {
+          "id": "track-balanced-008-w5",
+          "text": "RADYO"
+        },
+        {
+          "id": "track-balanced-008-w6",
+          "text": "HOPARLÖR"
+        },
+        {
+          "id": "track-balanced-008-w7",
+          "text": "ZİL"
+        },
+        {
+          "id": "track-balanced-008-w8",
+          "text": "SİREN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"ses üreten cihazlar\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-008-g3",
+      "title": "SONUNA BAHÇESİ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-008-w9",
+          "text": "ÇOCUK"
+        },
+        {
+          "id": "track-balanced-008-w10",
+          "text": "HAYVAN"
+        },
+        {
+          "id": "track-balanced-008-w11",
+          "text": "GÜL"
+        },
+        {
+          "id": "track-balanced-008-w12",
+          "text": "SEBZE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"BAHÇESİ\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-008-g4",
+      "title": "BAŞINA GÖZ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-008-w13",
+          "text": "KAPAĞI"
+        },
+        {
+          "id": "track-balanced-008-w14",
+          "text": "DAMLASI"
+        },
+        {
+          "id": "track-balanced-008-w15",
+          "text": "NURU"
+        },
+        {
+          "id": "track-balanced-008-w16",
+          "text": "ARDI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"GÖZ\" getirilebilir."
+    }
+  ]
+}

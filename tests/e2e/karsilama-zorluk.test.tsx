@@ -44,7 +44,7 @@ describe("karşılama → açılış → zorluk modu", () => {
 
     expect(hasBoard()).toBe(false);
     expect(screen.getByText("Karadeniz · kara kedi · karabiber · kara kutu")).toBeTruthy();
-    expect(screen.getAllByRole("radio")).toHaveLength(3);
+    expect(screen.getAllByRole("radio")).toHaveLength(4);
     expect(screen.getByRole("radio", { name: /Orta/ }).getAttribute("checked")).not.toBeNull();
     act(() => vi.advanceTimersByTime(12_000));
     expect(localStorage.getItem(key)).toBeNull();
@@ -84,7 +84,7 @@ describe("karşılama → açılış → zorluk modu", () => {
   it("Zor modda kategori ve yakınlık yardımı göstermez; hata kuralı aynı kalır", async () => {
     render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) }));
     const user = createUser();
-    await user.click(screen.getByRole("radio", { name: /Zor/ }));
+    await user.click(screen.getByRole("radio", { name: /^Zor/ }));
     await enterGame(user);
 
     expect(screen.getByText("Zor mod")).toBeTruthy();

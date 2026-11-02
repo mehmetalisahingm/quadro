@@ -19,7 +19,8 @@ export type GameWelcomeProps = {
 const modes = [
   { id: "easy", name: "Kolay", label: "Biraz rehberlik", hint: "4 kategori ipucu", level: 1 },
   { id: "medium", name: "Orta", label: "Tam kararında", hint: "1 kategori ipucu", level: 2 },
-  { id: "hard", name: "Zor", label: "Sezgilerine güven", hint: "İpucu yok", level: 3 },
+  { id: "hard", name: "Zor", label: "Dengeli meydan okuma", hint: "İpucu yok", level: 3 },
+  { id: "ultra", name: "Ultra Zor", label: "Kelime ustalarına", hint: "İpucu yok", level: 4 },
 ] as const;
 
 const chapters = [
@@ -112,7 +113,7 @@ export function GameWelcome({
             <>
               <h2>İlk aklına gelen bağ, tek bağ olmayabilir.</h2>
               <p>Bir kelime birkaç gruba uyuyor gibi görünebilir. Acele etme; seçtiğin <strong>dört kelimeyi birlikte</strong> düşün. Her kelime yalnızca bir gruba aittir.</p>
-              <div className={styles.tip}><span aria-hidden="true">↳</span><p><strong>“Bir kelime uzaktasın”</strong> görürsen seçtiğin dört kelimenin üçü aynı gruptadır. Bu yardım Kolay ve Orta modda görünür; Zor modda görünmez.</p></div>
+              <div className={styles.tip}><span aria-hidden="true">↳</span><p><strong>“Bir kelime uzaktasın”</strong> görürsen seçtiğin dört kelimenin üçü aynı gruptadır. Bu yardım Kolay ve Orta modda görünür; Zor ve Ultra Zor modlarında görünmez.</p></div>
               <p className={styles.footnote}>Karıştırmak ve seçimi temizlemek hata hakkını azaltmaz. Yanlış bir gruplama 1 hata sayılır.</p>
             </>
           )}
@@ -127,7 +128,7 @@ export function GameWelcome({
               {modes.map((mode) => (
                 <label key={mode.id} className={`${styles.mode} ${difficulty === mode.id ? styles.selectedMode : ""}`}>
                   <input type="radio" name={`${id}-difficulty`} value={mode.id} checked={difficulty === mode.id} onChange={() => setDifficulty(mode.id)} />
-                  <span className={styles.modeTop}><strong>{mode.name}</strong><span className={styles.modeBars} aria-hidden="true">{[1, 2, 3].map((bar) => <i key={bar} data-active={bar <= mode.level} />)}</span></span>
+                  <span className={styles.modeTop}><strong>{mode.name}</strong><span className={styles.modeBars} aria-hidden="true">{[1, 2, 3, 4].map((bar) => <i key={bar} data-active={bar <= mode.level} />)}</span></span>
                   <span className={styles.modeLabel}>{mode.label}</span>
                   <span className={styles.modeHint}>{mode.hint}</span>
                 </label>
@@ -135,7 +136,7 @@ export function GameWelcome({
             </div>
           </fieldset>
           <div className={styles.startRow}>
-            <p>{difficulty === "hard" ? "Yakınlık uyarısı kapalı. Her bağ senin keşfin." : "Bir kelime uzaktaysan sana haber veririz."}<br /><span>Her modda 4 hata hakkı. Süre sınırı yok.</span></p>
+            <p>{difficulty === "hard" || difficulty === "ultra" ? "Yakınlık uyarısı kapalı. Her bağ senin keşfin." : "Bir kelime uzaktaysan sana haber veririz."}<br /><span>Her modda 4 hata hakkı. Süre sınırı yok.</span></p>
             <button className={styles.start} type="button" onClick={() => onStart(difficulty)}>Bağlantıları bul <Arrow /></button>
           </div>
         </>

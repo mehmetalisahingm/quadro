@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-011",
+  "date": "2026-10-15",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-011-g1",
+      "title": "FOTOĞRAFÇILIK EKİPMANLARI",
+      "words": [
+        {
+          "id": "track-balanced-011-w1",
+          "text": "TRİPOD"
+        },
+        {
+          "id": "track-balanced-011-w2",
+          "text": "FLAŞ"
+        },
+        {
+          "id": "track-balanced-011-w3",
+          "text": "LENS"
+        },
+        {
+          "id": "track-balanced-011-w4",
+          "text": "FİLTRE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"fotoğrafçılık ekipmanları\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-011-g2",
+      "title": "MÜZİKTE TEMEL KAVRAMLAR",
+      "words": [
+        {
+          "id": "track-balanced-011-w5",
+          "text": "NOTA"
+        },
+        {
+          "id": "track-balanced-011-w6",
+          "text": "RİTİM"
+        },
+        {
+          "id": "track-balanced-011-w7",
+          "text": "MELODİ"
+        },
+        {
+          "id": "track-balanced-011-w8",
+          "text": "TEMPO"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Nota, ritim, melodi ve tempo müziğin temel kavramlarıdır."
+    },
+    {
+      "id": "track-balanced-011-g3",
+      "title": "SONUNA BİLETİ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-011-w9",
+          "text": "UÇAK"
+        },
+        {
+          "id": "track-balanced-011-w10",
+          "text": "TREN"
+        },
+        {
+          "id": "track-balanced-011-w11",
+          "text": "OTOBÜS"
+        },
+        {
+          "id": "track-balanced-011-w12",
+          "text": "SİNEMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"BİLETİ\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-011-g4",
+      "title": "BAŞINA SES GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-011-w13",
+          "text": "KAYDI"
+        },
+        {
+          "id": "track-balanced-011-w14",
+          "text": "SİSTEMİ"
+        },
+        {
+          "id": "track-balanced-011-w15",
+          "text": "DALGASI"
+        },
+        {
+          "id": "track-balanced-011-w16",
+          "text": "TONU"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"SES\" getirilebilir."
+    }
+  ]
+}

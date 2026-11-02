@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-001",
+  "date": "2026-10-05",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-001-g1",
+      "title": "RESİM YAPMA MALZEMELERİ",
+      "words": [
+        {
+          "id": "track-balanced-001-w1",
+          "text": "FIRÇA"
+        },
+        {
+          "id": "track-balanced-001-w2",
+          "text": "TUVAL"
+        },
+        {
+          "id": "track-balanced-001-w3",
+          "text": "BOYA"
+        },
+        {
+          "id": "track-balanced-001-w4",
+          "text": "PALET"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Fırça, tuval, boya ve palet bir resim yaparken kullanılır."
+    },
+    {
+      "id": "track-balanced-001-g2",
+      "title": "MUTFAKTA KESME ARAÇLARI",
+      "words": [
+        {
+          "id": "track-balanced-001-w5",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "track-balanced-001-w6",
+          "text": "SATIR"
+        },
+        {
+          "id": "track-balanced-001-w7",
+          "text": "SOYACAK"
+        },
+        {
+          "id": "track-balanced-001-w8",
+          "text": "RENDE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"mutfakta kesme araçları\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-001-g3",
+      "title": "SONUNA KARTI GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-001-w9",
+          "text": "KREDİ"
+        },
+        {
+          "id": "track-balanced-001-w10",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "track-balanced-001-w11",
+          "text": "OYUN"
+        },
+        {
+          "id": "track-balanced-001-w12",
+          "text": "HAFIZA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"KARTI\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-001-g4",
+      "title": "BAŞINA YER GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-001-w13",
+          "text": "ALTI"
+        },
+        {
+          "id": "track-balanced-001-w14",
+          "text": "ÜSTÜ"
+        },
+        {
+          "id": "track-balanced-001-w15",
+          "text": "YÜZÜ"
+        },
+        {
+          "id": "track-balanced-001-w16",
+          "text": "ÇEKİMİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"YER\" getirilebilir."
+    }
+  ]
+}

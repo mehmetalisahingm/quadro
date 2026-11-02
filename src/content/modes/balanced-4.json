@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-004",
+  "date": "2026-10-08",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-004-g1",
+      "title": "KİŞİSEL BAKIM ÜRÜNLERİ",
+      "words": [
+        {
+          "id": "track-balanced-004-w1",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "track-balanced-004-w2",
+          "text": "SABUN"
+        },
+        {
+          "id": "track-balanced-004-w3",
+          "text": "DEODORANT"
+        },
+        {
+          "id": "track-balanced-004-w4",
+          "text": "PARFÜM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"kişisel bakım ürünleri\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-004-g2",
+      "title": "YOL VE GEÇİŞ TÜRLERİ",
+      "words": [
+        {
+          "id": "track-balanced-004-w5",
+          "text": "OTOYOL"
+        },
+        {
+          "id": "track-balanced-004-w6",
+          "text": "PATİKA"
+        },
+        {
+          "id": "track-balanced-004-w7",
+          "text": "BULVAR"
+        },
+        {
+          "id": "track-balanced-004-w8",
+          "text": "SOKAK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"yol ve geçiş türleri\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-004-g3",
+      "title": "SONUNA FİLMİ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-004-w9",
+          "text": "KORKU"
+        },
+        {
+          "id": "track-balanced-004-w10",
+          "text": "BELGESEL"
+        },
+        {
+          "id": "track-balanced-004-w11",
+          "text": "ANİMASYON"
+        },
+        {
+          "id": "track-balanced-004-w12",
+          "text": "MACERA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"FİLMİ\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-004-g4",
+      "title": "BAŞINA İŞ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-004-w13",
+          "text": "YERİ"
+        },
+        {
+          "id": "track-balanced-004-w14",
+          "text": "BİRLİĞİ"
+        },
+        {
+          "id": "track-balanced-004-w15",
+          "text": "BÖLÜMÜ"
+        },
+        {
+          "id": "track-balanced-004-w16",
+          "text": "GÜCÜ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"İŞ\" getirilebilir."
+    }
+  ]
+}

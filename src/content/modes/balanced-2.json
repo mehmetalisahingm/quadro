@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-002",
+  "date": "2026-10-06",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-002-g1",
+      "title": "DENİZDE KULLANILAN TAŞITLAR",
+      "words": [
+        {
+          "id": "track-balanced-002-w1",
+          "text": "VAPUR"
+        },
+        {
+          "id": "track-balanced-002-w2",
+          "text": "FERİBOT"
+        },
+        {
+          "id": "track-balanced-002-w3",
+          "text": "KANO"
+        },
+        {
+          "id": "track-balanced-002-w4",
+          "text": "YAT"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"denizde kullanılan taşıtlar\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-002-g2",
+      "title": "MAKARNA ÇEŞİTLERİ",
+      "words": [
+        {
+          "id": "track-balanced-002-w5",
+          "text": "SPAGETTİ"
+        },
+        {
+          "id": "track-balanced-002-w6",
+          "text": "BURGU"
+        },
+        {
+          "id": "track-balanced-002-w7",
+          "text": "KALEM"
+        },
+        {
+          "id": "track-balanced-002-w8",
+          "text": "ERİŞTE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"makarna çeşitleri\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-002-g3",
+      "title": "SONUNA ODASI GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-002-w9",
+          "text": "YATAK"
+        },
+        {
+          "id": "track-balanced-002-w10",
+          "text": "OTURMA"
+        },
+        {
+          "id": "track-balanced-002-w11",
+          "text": "ÇOCUK"
+        },
+        {
+          "id": "track-balanced-002-w12",
+          "text": "MİSAFİR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin sonuna \"ODASI\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-002-g4",
+      "title": "BAŞINA GÜNEŞ GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-002-w13",
+          "text": "GÖZLÜĞÜ"
+        },
+        {
+          "id": "track-balanced-002-w14",
+          "text": "KREMİ"
+        },
+        {
+          "id": "track-balanced-002-w15",
+          "text": "SAATİ"
+        },
+        {
+          "id": "track-balanced-002-w16",
+          "text": "PANELİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"GÜNEŞ\" getirilebilir."
+    }
+  ]
+}

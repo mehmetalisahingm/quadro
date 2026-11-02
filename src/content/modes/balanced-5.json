@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-005",
+  "date": "2026-10-09",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-005-g1",
+      "title": "HAVA OLAYLARI",
+      "words": [
+        {
+          "id": "track-balanced-005-w1",
+          "text": "DOLU"
+        },
+        {
+          "id": "track-balanced-005-w2",
+          "text": "SİS"
+        },
+        {
+          "id": "track-balanced-005-w3",
+          "text": "ÇİĞ"
+        },
+        {
+          "id": "track-balanced-005-w4",
+          "text": "KIRAĞI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"hava olayları\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-005-g2",
+      "title": "DOĞAL SU YOLLARI VE GÖLLER",
+      "words": [
+        {
+          "id": "track-balanced-005-w5",
+          "text": "DERE"
+        },
+        {
+          "id": "track-balanced-005-w6",
+          "text": "ÇAY"
+        },
+        {
+          "id": "track-balanced-005-w7",
+          "text": "GÖL"
+        },
+        {
+          "id": "track-balanced-005-w8",
+          "text": "NEHİR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"doğal su yolları ve göller\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-005-g3",
+      "title": "BAŞINA EL GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-005-w9",
+          "text": "FENERİ"
+        },
+        {
+          "id": "track-balanced-005-w10",
+          "text": "BİLEĞİ"
+        },
+        {
+          "id": "track-balanced-005-w11",
+          "text": "BİRLİĞİ"
+        },
+        {
+          "id": "track-balanced-005-w12",
+          "text": "ARABASI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin başına \"EL\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-005-g4",
+      "title": "SONUNA HATTI GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-005-w13",
+          "text": "TELEFON"
+        },
+        {
+          "id": "track-balanced-005-w14",
+          "text": "CEPHE"
+        },
+        {
+          "id": "track-balanced-005-w15",
+          "text": "ÜRETİM"
+        },
+        {
+          "id": "track-balanced-005-w16",
+          "text": "SINIR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin sonuna \"HATTI\" getirilebilir."
+    }
+  ]
+}

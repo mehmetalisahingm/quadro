@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "track-balanced-007",
+  "date": "2026-10-11",
+  "language": "tr",
+  "status": "published",
+  "author": "ChatGPT",
+  "reviewer": "Editoryal kör kontrol bekliyor",
+  "groups": [
+    {
+      "id": "track-balanced-007-g1",
+      "title": "BİTKİNİN ANA BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "track-balanced-007-w1",
+          "text": "KÖK"
+        },
+        {
+          "id": "track-balanced-007-w2",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "track-balanced-007-w3",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "track-balanced-007-w4",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Bu dört sözcük \"bitkinin ana bölümleri\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-007-g2",
+      "title": "ŞEHİRDE KARŞILAŞILAN YERLER",
+      "words": [
+        {
+          "id": "track-balanced-007-w5",
+          "text": "MEYDAN"
+        },
+        {
+          "id": "track-balanced-007-w6",
+          "text": "PARK"
+        },
+        {
+          "id": "track-balanced-007-w7",
+          "text": "CADDE"
+        },
+        {
+          "id": "track-balanced-007-w8",
+          "text": "PASAJ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Bu dört sözcük \"şehirde karşılaşılan yerler\" başlığı altında birleşir."
+    },
+    {
+      "id": "track-balanced-007-g3",
+      "title": "BAŞINA SINAV GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-007-w9",
+          "text": "SORUSU"
+        },
+        {
+          "id": "track-balanced-007-w10",
+          "text": "SONUCU"
+        },
+        {
+          "id": "track-balanced-007-w11",
+          "text": "SALONU"
+        },
+        {
+          "id": "track-balanced-007-w12",
+          "text": "TAKVİMİ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Her kelimenin başına \"SINAV\" getirilebilir."
+    },
+    {
+      "id": "track-balanced-007-g4",
+      "title": "BAŞINA ANA GELENLER",
+      "words": [
+        {
+          "id": "track-balanced-007-w13",
+          "text": "DİL"
+        },
+        {
+          "id": "track-balanced-007-w14",
+          "text": "FİKİR"
+        },
+        {
+          "id": "track-balanced-007-w15",
+          "text": "YOL"
+        },
+        {
+          "id": "track-balanced-007-w16",
+          "text": "AKIM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Her kelimenin başına \"ANA\" getirilebilir."
+    }
+  ]
+}

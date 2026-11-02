@@ -11,11 +11,11 @@ vi.mock("next/navigation", () => ({ useRouter: () => ({ push }), notFound: () =>
 registerFlowHooks();
 
 describe("farklı zorluk parkurları", () => {
-  it("üç mod ve 36 bölüm sunar, seçilen moda gider", async () => {
+  it("dört mod ve 48 bölüm sunar, seçilen moda gider", async () => {
     render(await PlayPage({ searchParams: Promise.resolve({}) }));
-    expect(screen.getAllByRole("link", { name: /bölüm \d/i })).toHaveLength(3 * TRACK_LEVEL_COUNT);
+    expect(screen.getAllByRole("link", { name: /bölüm \d/i })).toHaveLength(4 * TRACK_LEVEL_COUNT);
     const user = createUser();
-    await user.click(screen.getByRole("radio", { name: /Zor/ }));
+    await user.click(screen.getByRole("radio", { name: /^Zor/ }));
     await user.click(screen.getByRole("button", { name: "Bağlantıları bul" }));
     expect(push).toHaveBeenLastCalledWith("/play?difficulty=hard&level=1");
   });
