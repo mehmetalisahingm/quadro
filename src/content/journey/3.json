@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-003",
+  "date": "2026-11-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-003-g1",
+      "title": "MUTFAKTA YEMEK PİŞİRİRKEN",
+      "words": [
+        {
+          "id": "journey-003-w1",
+          "text": "TENCERE"
+        },
+        {
+          "id": "journey-003-w2",
+          "text": "TAVA"
+        },
+        {
+          "id": "journey-003-w3",
+          "text": "KEVGİR"
+        },
+        {
+          "id": "journey-003-w4",
+          "text": "KEPÇE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "TENCERE, TAVA, KEVGİR, KEPÇE: mutfakta yemek pişirirken."
+    },
+    {
+      "id": "journey-003-g2",
+      "title": "DENİZ HAYVANLARI",
+      "words": [
+        {
+          "id": "journey-003-w5",
+          "text": "YUNUS"
+        },
+        {
+          "id": "journey-003-w6",
+          "text": "KÖPEK BALIĞI"
+        },
+        {
+          "id": "journey-003-w7",
+          "text": "AHTAPOT"
+        },
+        {
+          "id": "journey-003-w8",
+          "text": "DENİZATI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YUNUS, KÖPEK BALIĞI, AHTAPOT, DENİZATI: deniz hayvanları."
+    },
+    {
+      "id": "journey-003-g3",
+      "title": "MEVSİMLER",
+      "words": [
+        {
+          "id": "journey-003-w9",
+          "text": "İLKBAHAR"
+        },
+        {
+          "id": "journey-003-w10",
+          "text": "YAZ"
+        },
+        {
+          "id": "journey-003-w11",
+          "text": "SONBAHAR"
+        },
+        {
+          "id": "journey-003-w12",
+          "text": "KIŞ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "İLKBAHAR, YAZ, SONBAHAR, KIŞ: mevsimler."
+    },
+    {
+      "id": "journey-003-g4",
+      "title": "AYAK GİYİMİ",
+      "words": [
+        {
+          "id": "journey-003-w13",
+          "text": "BOT"
+        },
+        {
+          "id": "journey-003-w14",
+          "text": "TERLİK"
+        },
+        {
+          "id": "journey-003-w15",
+          "text": "SPOR AYAKKABI"
+        },
+        {
+          "id": "journey-003-w16",
+          "text": "ÇİZME"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "BOT, TERLİK, SPOR AYAKKABI, ÇİZME: ayak giyimi."
+    }
+  ]
+}

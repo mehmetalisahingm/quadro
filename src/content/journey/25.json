@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-025",
+  "date": "2026-11-27",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-025-g1",
+      "title": "TERSTEN AYNI OKUNUR",
+      "words": [
+        {
+          "id": "journey-025-w1",
+          "text": "KABAK"
+        },
+        {
+          "id": "journey-025-w2",
+          "text": "KÜÇÜK"
+        },
+        {
+          "id": "journey-025-w3",
+          "text": "NEDEN"
+        },
+        {
+          "id": "journey-025-w4",
+          "text": "RADAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KABAK, KÜÇÜK, NEDEN, RADAR: tersten aynı okunur."
+    },
+    {
+      "id": "journey-025-g2",
+      "title": "SONUNA EVİ GELİR",
+      "words": [
+        {
+          "id": "journey-025-w5",
+          "text": "HUZUR"
+        },
+        {
+          "id": "journey-025-w6",
+          "text": "KONUK"
+        },
+        {
+          "id": "journey-025-w7",
+          "text": "BASIM"
+        },
+        {
+          "id": "journey-025-w8",
+          "text": "GÖZLEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HUZUR, KONUK, BASIM, GÖZLEM: sonuna evi gelir."
+    },
+    {
+      "id": "journey-025-g3",
+      "title": "SONUNA BAĞI GELİR",
+      "words": [
+        {
+          "id": "journey-025-w9",
+          "text": "GÖNÜL"
+        },
+        {
+          "id": "journey-025-w10",
+          "text": "AYAKKABI"
+        },
+        {
+          "id": "journey-025-w11",
+          "text": "AKRABALIK"
+        },
+        {
+          "id": "journey-025-w12",
+          "text": "HİDROJEN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GÖNÜL, AYAKKABI, AKRABALIK, HİDROJEN: sonuna bağı gelir."
+    },
+    {
+      "id": "journey-025-g4",
+      "title": "DÜŞMEKLE İFADE KURAR",
+      "words": [
+        {
+          "id": "journey-025-w13",
+          "text": "AKLA"
+        },
+        {
+          "id": "journey-025-w14",
+          "text": "PEŞİNE"
+        },
+        {
+          "id": "journey-025-w15",
+          "text": "DARA"
+        },
+        {
+          "id": "journey-025-w16",
+          "text": "YOLA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "AKLA, PEŞİNE, DARA, YOLA: düşmekle ifade kurar."
+    }
+  ]
+}

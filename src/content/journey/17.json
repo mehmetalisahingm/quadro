@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-017",
+  "date": "2026-11-19",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-017-g1",
+      "title": "HEM ORGAN HEM NESNE PARÇASI",
+      "words": [
+        {
+          "id": "journey-017-w1",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-017-w2",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-017-w3",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-017-w4",
+          "text": "DİŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Koltuğun kolu, masanın ayağı, çekmecenin gözü, tarağın dişi."
+    },
+    {
+      "id": "journey-017-g2",
+      "title": "TRAFİKTE YOL GÖSTERENLER",
+      "words": [
+        {
+          "id": "journey-017-w5",
+          "text": "LEVHA"
+        },
+        {
+          "id": "journey-017-w6",
+          "text": "ŞERİT"
+        },
+        {
+          "id": "journey-017-w7",
+          "text": "OK"
+        },
+        {
+          "id": "journey-017-w8",
+          "text": "SİNYAL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "LEVHA, ŞERİT, OK, SİNYAL: trafikte yol gösterenler."
+    },
+    {
+      "id": "journey-017-g3",
+      "title": "MÜZİKTE ESER BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-017-w9",
+          "text": "GİRİŞ"
+        },
+        {
+          "id": "journey-017-w10",
+          "text": "NAKARAT"
+        },
+        {
+          "id": "journey-017-w11",
+          "text": "KITA"
+        },
+        {
+          "id": "journey-017-w12",
+          "text": "KODA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GİRİŞ, NAKARAT, KITA, KODA: müzikte eser bölümleri."
+    },
+    {
+      "id": "journey-017-g4",
+      "title": "BİR ÖYKÜNÜN UNSURLARI",
+      "words": [
+        {
+          "id": "journey-017-w13",
+          "text": "KİŞİ"
+        },
+        {
+          "id": "journey-017-w14",
+          "text": "OLAY"
+        },
+        {
+          "id": "journey-017-w15",
+          "text": "YER"
+        },
+        {
+          "id": "journey-017-w16",
+          "text": "ZAMAN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KİŞİ, OLAY, YER, ZAMAN: bir öykünün unsurları."
+    }
+  ]
+}

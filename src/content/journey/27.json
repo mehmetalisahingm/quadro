@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-027",
+  "date": "2026-11-29",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-027-g1",
+      "title": "İÇİNDE MÜZİK NOTASI SAKLI",
+      "words": [
+        {
+          "id": "journey-027-w1",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-027-w2",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-027-w3",
+          "text": "DOLAP"
+        },
+        {
+          "id": "journey-027-w4",
+          "text": "FARE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Mİ-ras, Sİ-mit, DO-lap, FA-re."
+    },
+    {
+      "id": "journey-027-g2",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-027-w5",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-027-w6",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-027-w7",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-027-w8",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-027-g3",
+      "title": "SONUNA HAKKI GELİR",
+      "words": [
+        {
+          "id": "journey-027-w9",
+          "text": "YAYIN"
+        },
+        {
+          "id": "journey-027-w10",
+          "text": "SEÇME"
+        },
+        {
+          "id": "journey-027-w11",
+          "text": "GEÇİŞ"
+        },
+        {
+          "id": "journey-027-w12",
+          "text": "VETO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "YAYIN, SEÇME, GEÇİŞ, VETO: sonuna hakkı gelir."
+    },
+    {
+      "id": "journey-027-g4",
+      "title": "SONUNA ÇARKI GELİR",
+      "words": [
+        {
+          "id": "journey-027-w13",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "journey-027-w14",
+          "text": "SU"
+        },
+        {
+          "id": "journey-027-w15",
+          "text": "ŞANS"
+        },
+        {
+          "id": "journey-027-w16",
+          "text": "FELEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DİŞLİ, SU, ŞANS, FELEK: sonuna çarkı gelir."
+    }
+  ]
+}

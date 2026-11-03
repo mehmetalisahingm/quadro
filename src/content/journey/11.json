@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-011",
+  "date": "2026-11-13",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-011-g1",
+      "title": "DİKİŞ KUTUSUNDA",
+      "words": [
+        {
+          "id": "journey-011-w1",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-011-w2",
+          "text": "İPLİK"
+        },
+        {
+          "id": "journey-011-w3",
+          "text": "YÜKSÜK"
+        },
+        {
+          "id": "journey-011-w4",
+          "text": "TOPLU İĞNE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İĞNE, İPLİK, YÜKSÜK, TOPLU İĞNE: dikiş kutusunda."
+    },
+    {
+      "id": "journey-011-g2",
+      "title": "HAVALİMANINDA",
+      "words": [
+        {
+          "id": "journey-011-w5",
+          "text": "TERMİNAL"
+        },
+        {
+          "id": "journey-011-w6",
+          "text": "PASAPORT"
+        },
+        {
+          "id": "journey-011-w7",
+          "text": "BİNİŞ KARTI"
+        },
+        {
+          "id": "journey-011-w8",
+          "text": "BAGAJ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "TERMİNAL, PASAPORT, BİNİŞ KARTI, BAGAJ: havalimanında."
+    },
+    {
+      "id": "journey-011-g3",
+      "title": "ORMAN AĞAÇLARI",
+      "words": [
+        {
+          "id": "journey-011-w9",
+          "text": "ÇAM"
+        },
+        {
+          "id": "journey-011-w10",
+          "text": "MEŞE"
+        },
+        {
+          "id": "journey-011-w11",
+          "text": "KAYIN"
+        },
+        {
+          "id": "journey-011-w12",
+          "text": "KÖKNAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇAM, MEŞE, KAYIN, KÖKNAR: orman ağaçları."
+    },
+    {
+      "id": "journey-011-g4",
+      "title": "KAYIT STÜDYOSUNDA",
+      "words": [
+        {
+          "id": "journey-011-w13",
+          "text": "MİKROFON"
+        },
+        {
+          "id": "journey-011-w14",
+          "text": "KULAKLIK"
+        },
+        {
+          "id": "journey-011-w15",
+          "text": "MİKSER"
+        },
+        {
+          "id": "journey-011-w16",
+          "text": "SES KARTI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "MİKROFON, KULAKLIK, MİKSER, SES KARTI: kayıt stüdyosunda."
+    }
+  ]
+}

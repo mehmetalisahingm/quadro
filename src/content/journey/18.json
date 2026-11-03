@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-018",
+  "date": "2026-11-20",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-018-g1",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-018-w1",
+          "text": "SABIR"
+        },
+        {
+          "id": "journey-018-w2",
+          "text": "TEMEL"
+        },
+        {
+          "id": "journey-018-w3",
+          "text": "MIHENK"
+        },
+        {
+          "id": "journey-018-w4",
+          "text": "BÖBREK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SABIR, TEMEL, MIHENK, BÖBREK: sonuna taşı gelir."
+    },
+    {
+      "id": "journey-018-g2",
+      "title": "SONUNA ANAHTARI GELİR",
+      "words": [
+        {
+          "id": "journey-018-w5",
+          "text": "CEVAP"
+        },
+        {
+          "id": "journey-018-w6",
+          "text": "İNGİLİZ"
+        },
+        {
+          "id": "journey-018-w7",
+          "text": "FA"
+        },
+        {
+          "id": "journey-018-w8",
+          "text": "SOL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "CEVAP, İNGİLİZ, FA, SOL: sonuna anahtarı gelir."
+    },
+    {
+      "id": "journey-018-g3",
+      "title": "MAHKEMEDE",
+      "words": [
+        {
+          "id": "journey-018-w9",
+          "text": "HÂKİM"
+        },
+        {
+          "id": "journey-018-w10",
+          "text": "SAVCI"
+        },
+        {
+          "id": "journey-018-w11",
+          "text": "TANIK"
+        },
+        {
+          "id": "journey-018-w12",
+          "text": "SANIK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HÂKİM, SAVCI, TANIK, SANIK: mahkemede."
+    },
+    {
+      "id": "journey-018-g4",
+      "title": "KUMAŞ ÇEŞİTLERİ",
+      "words": [
+        {
+          "id": "journey-018-w13",
+          "text": "KADİFE"
+        },
+        {
+          "id": "journey-018-w14",
+          "text": "SATEN"
+        },
+        {
+          "id": "journey-018-w15",
+          "text": "KETEN"
+        },
+        {
+          "id": "journey-018-w16",
+          "text": "DENİM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KADİFE, SATEN, KETEN, DENİM: kumaş çeşitleri."
+    }
+  ]
+}

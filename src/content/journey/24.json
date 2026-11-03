@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-024",
+  "date": "2026-11-26",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-024-g1",
+      "title": "SONUNA AÇIĞI GELİR",
+      "words": [
+        {
+          "id": "journey-024-w1",
+          "text": "BÜTÇE"
+        },
+        {
+          "id": "journey-024-w2",
+          "text": "TİCARET"
+        },
+        {
+          "id": "journey-024-w3",
+          "text": "GÜVENLİK"
+        },
+        {
+          "id": "journey-024-w4",
+          "text": "PUAN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "BÜTÇE, TİCARET, GÜVENLİK, PUAN: sonuna açığı gelir."
+    },
+    {
+      "id": "journey-024-g2",
+      "title": "SONUNA HESABI GELİR",
+      "words": [
+        {
+          "id": "journey-024-w5",
+          "text": "BANKA"
+        },
+        {
+          "id": "journey-024-w6",
+          "text": "EV"
+        },
+        {
+          "id": "journey-024-w7",
+          "text": "FAİZ"
+        },
+        {
+          "id": "journey-024-w8",
+          "text": "OLASILIK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BANKA, EV, FAİZ, OLASILIK: sonuna hesabı gelir."
+    },
+    {
+      "id": "journey-024-g3",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-024-w9",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-024-w10",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-024-w11",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-024-w12",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    },
+    {
+      "id": "journey-024-g4",
+      "title": "GÖK KÜRESİNDEKİ TERİMLER",
+      "words": [
+        {
+          "id": "journey-024-w13",
+          "text": "ZENİT"
+        },
+        {
+          "id": "journey-024-w14",
+          "text": "NADİR"
+        },
+        {
+          "id": "journey-024-w15",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-024-w16",
+          "text": "MERİDYEN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ZENİT, NADİR, UFUK, MERİDYEN: gök küresindeki terimler."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-023",
+  "date": "2026-11-25",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-023-g1",
+      "title": "SONUNA NOKTASI GELİR",
+      "words": [
+        {
+          "id": "journey-023-w1",
+          "text": "ODAK"
+        },
+        {
+          "id": "journey-023-w2",
+          "text": "DÖNÜM"
+        },
+        {
+          "id": "journey-023-w3",
+          "text": "KAYNAMA"
+        },
+        {
+          "id": "journey-023-w4",
+          "text": "DONMA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ODAK, DÖNÜM, KAYNAMA, DONMA: sonuna noktası gelir."
+    },
+    {
+      "id": "journey-023-g2",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-023-w5",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-023-w6",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-023-w7",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-023-w8",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    },
+    {
+      "id": "journey-023-g3",
+      "title": "MÜZİKTE HIZ TERİMLERİ",
+      "words": [
+        {
+          "id": "journey-023-w9",
+          "text": "ADAGİO"
+        },
+        {
+          "id": "journey-023-w10",
+          "text": "ANDANTE"
+        },
+        {
+          "id": "journey-023-w11",
+          "text": "ALLEGRO"
+        },
+        {
+          "id": "journey-023-w12",
+          "text": "PRESTO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ADAGİO, ANDANTE, ALLEGRO, PRESTO: müzikte hız terimleri."
+    },
+    {
+      "id": "journey-023-g4",
+      "title": "DENİZCİ DÜĞÜMLERİ",
+      "words": [
+        {
+          "id": "journey-023-w13",
+          "text": "İZBARÇO"
+        },
+        {
+          "id": "journey-023-w14",
+          "text": "CAMADAN"
+        },
+        {
+          "id": "journey-023-w15",
+          "text": "KAZIK"
+        },
+        {
+          "id": "journey-023-w16",
+          "text": "SEKİZLİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "İZBARÇO, CAMADAN, KAZIK, SEKİZLİ: denizci düğümleri."
+    }
+  ]
+}

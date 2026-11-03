@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-012",
+  "date": "2026-11-14",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-012-g1",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-012-w1",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-012-w2",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-012-w3",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-012-w4",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    },
+    {
+      "id": "journey-012-g2",
+      "title": "BALIKÇI DONANIMI",
+      "words": [
+        {
+          "id": "journey-012-w5",
+          "text": "OLTA"
+        },
+        {
+          "id": "journey-012-w6",
+          "text": "MİSİNA"
+        },
+        {
+          "id": "journey-012-w7",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-012-w8",
+          "text": "YEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OLTA, MİSİNA, İĞNE, YEM: balıkçı donanımı."
+    },
+    {
+      "id": "journey-012-g3",
+      "title": "YEMEK PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "journey-012-w9",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "journey-012-w10",
+          "text": "KIZARTMA"
+        },
+        {
+          "id": "journey-012-w11",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "journey-012-w12",
+          "text": "IZGARA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HAŞLAMA, KIZARTMA, BUĞULAMA, IZGARA: yemek pişirme yöntemleri."
+    },
+    {
+      "id": "journey-012-g4",
+      "title": "MÜZEDE",
+      "words": [
+        {
+          "id": "journey-012-w13",
+          "text": "ESER"
+        },
+        {
+          "id": "journey-012-w14",
+          "text": "KOLEKSİYON"
+        },
+        {
+          "id": "journey-012-w15",
+          "text": "SERGİ"
+        },
+        {
+          "id": "journey-012-w16",
+          "text": "KÜRATÖR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ESER, KOLEKSİYON, SERGİ, KÜRATÖR: müzede."
+    }
+  ]
+}

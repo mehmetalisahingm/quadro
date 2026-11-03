@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-006",
+  "date": "2026-11-08",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-006-g1",
+      "title": "NARENCİYELER",
+      "words": [
+        {
+          "id": "journey-006-w1",
+          "text": "PORTAKAL"
+        },
+        {
+          "id": "journey-006-w2",
+          "text": "MANDALİNA"
+        },
+        {
+          "id": "journey-006-w3",
+          "text": "LİMON"
+        },
+        {
+          "id": "journey-006-w4",
+          "text": "GREYFURT"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "PORTAKAL, MANDALİNA, LİMON, GREYFURT: narenciyeler."
+    },
+    {
+      "id": "journey-006-g2",
+      "title": "YAZI YAZMA GEREÇLERİ",
+      "words": [
+        {
+          "id": "journey-006-w5",
+          "text": "TÜKENMEZ KALEM"
+        },
+        {
+          "id": "journey-006-w6",
+          "text": "DOLMA KALEM"
+        },
+        {
+          "id": "journey-006-w7",
+          "text": "KURŞUN KALEM"
+        },
+        {
+          "id": "journey-006-w8",
+          "text": "KEÇELİ KALEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "TÜKENMEZ KALEM, DOLMA KALEM, KURŞUN KALEM, KEÇELİ KALEM: yazı yazma gereçleri."
+    },
+    {
+      "id": "journey-006-g3",
+      "title": "YATAKTA BULUNANLAR",
+      "words": [
+        {
+          "id": "journey-006-w9",
+          "text": "YASTIK"
+        },
+        {
+          "id": "journey-006-w10",
+          "text": "YORGAN"
+        },
+        {
+          "id": "journey-006-w11",
+          "text": "ÇARŞAF"
+        },
+        {
+          "id": "journey-006-w12",
+          "text": "NEVRESİM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "YASTIK, YORGAN, ÇARŞAF, NEVRESİM: yatakta bulunanlar."
+    },
+    {
+      "id": "journey-006-g4",
+      "title": "KÜREKLE İLERLEYEN ARAÇLAR",
+      "words": [
+        {
+          "id": "journey-006-w13",
+          "text": "KANO"
+        },
+        {
+          "id": "journey-006-w14",
+          "text": "KAYIK"
+        },
+        {
+          "id": "journey-006-w15",
+          "text": "GONDOL"
+        },
+        {
+          "id": "journey-006-w16",
+          "text": "RAFTİNG BOTU"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KANO, KAYIK, GONDOL, RAFTİNG BOTU: kürekle ilerleyen araçlar."
+    }
+  ]
+}

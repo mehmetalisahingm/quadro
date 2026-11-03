@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-015",
+  "date": "2026-11-17",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-015-g1",
+      "title": "SONUNA KARTI GELİR",
+      "words": [
+        {
+          "id": "journey-015-w1",
+          "text": "KREDİ"
+        },
+        {
+          "id": "journey-015-w2",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "journey-015-w3",
+          "text": "HAFIZA"
+        },
+        {
+          "id": "journey-015-w4",
+          "text": "TEBRİK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KREDİ, KİMLİK, HAFIZA, TEBRİK: sonuna kartı gelir."
+    },
+    {
+      "id": "journey-015-g2",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-015-w5",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-015-w6",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-015-w7",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-015-w8",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    },
+    {
+      "id": "journey-015-g3",
+      "title": "SAHNE AYDINLATMASINDA",
+      "words": [
+        {
+          "id": "journey-015-w9",
+          "text": "SPOT"
+        },
+        {
+          "id": "journey-015-w10",
+          "text": "PROJEKTÖR"
+        },
+        {
+          "id": "journey-015-w11",
+          "text": "REFLEKTÖR"
+        },
+        {
+          "id": "journey-015-w12",
+          "text": "IŞIK MASASI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SPOT, PROJEKTÖR, REFLEKTÖR, IŞIK MASASI: sahne aydınlatmasında."
+    },
+    {
+      "id": "journey-015-g4",
+      "title": "YAZILI ANLATIM TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-015-w13",
+          "text": "ROMAN"
+        },
+        {
+          "id": "journey-015-w14",
+          "text": "ÖYKÜ"
+        },
+        {
+          "id": "journey-015-w15",
+          "text": "DENEME"
+        },
+        {
+          "id": "journey-015-w16",
+          "text": "MAKALE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ROMAN, ÖYKÜ, DENEME, MAKALE: yazılı anlatım türleri."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-021",
+  "date": "2026-11-23",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-021-g1",
+      "title": "BAŞINA KARA GELİR",
+      "words": [
+        {
+          "id": "journey-021-w1",
+          "text": "DENİZ"
+        },
+        {
+          "id": "journey-021-w2",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-021-w3",
+          "text": "BİBER"
+        },
+        {
+          "id": "journey-021-w4",
+          "text": "KUTU"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DENİZ, KEDİ, BİBER, KUTU: başına kara gelir."
+    },
+    {
+      "id": "journey-021-g2",
+      "title": "SONUNA DİLİ GELİR",
+      "words": [
+        {
+          "id": "journey-021-w5",
+          "text": "ANA"
+        },
+        {
+          "id": "journey-021-w6",
+          "text": "BEDEN"
+        },
+        {
+          "id": "journey-021-w7",
+          "text": "İŞARET"
+        },
+        {
+          "id": "journey-021-w8",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ANA, BEDEN, İŞARET, PROGRAMLAMA: sonuna dili gelir."
+    },
+    {
+      "id": "journey-021-g3",
+      "title": "FİLM ÇEKİMİNDE",
+      "words": [
+        {
+          "id": "journey-021-w9",
+          "text": "KLAKET"
+        },
+        {
+          "id": "journey-021-w10",
+          "text": "SENARYO"
+        },
+        {
+          "id": "journey-021-w11",
+          "text": "KURGU"
+        },
+        {
+          "id": "journey-021-w12",
+          "text": "DUBLAJ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KLAKET, SENARYO, KURGU, DUBLAJ: film çekiminde."
+    },
+    {
+      "id": "journey-021-g4",
+      "title": "SICAKLIK ÖLÇEKLERİ",
+      "words": [
+        {
+          "id": "journey-021-w13",
+          "text": "CELSİUS"
+        },
+        {
+          "id": "journey-021-w14",
+          "text": "FAHRENHEİT"
+        },
+        {
+          "id": "journey-021-w15",
+          "text": "KELVİN"
+        },
+        {
+          "id": "journey-021-w16",
+          "text": "RÉAUMUR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "CELSİUS, FAHRENHEİT, KELVİN, RÉAUMUR: sıcaklık ölçekleri."
+    }
+  ]
+}
