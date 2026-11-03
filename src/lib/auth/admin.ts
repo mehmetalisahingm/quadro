@@ -14,6 +14,7 @@ async function adminRpc<T>(name: string, body: Record<string, unknown>): Promise
   if (!config || !session) throw new Error("Önce hesabına giriş yapmalısın.");
 
   const response = await fetch(`${config.url}/rest/v1/rpc/${name}`, {
+    signal: AbortSignal.timeout(8000),
     method: "POST",
     headers: {
       apikey: config.publishableKey,
