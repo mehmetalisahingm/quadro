@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-014",
+  "date": "2026-11-16",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-014-g1",
+      "title": "GEMİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-014-w1",
+          "text": "GÜVERTE"
+        },
+        {
+          "id": "journey-014-w2",
+          "text": "KAMARA"
+        },
+        {
+          "id": "journey-014-w3",
+          "text": "DÜMEN"
+        },
+        {
+          "id": "journey-014-w4",
+          "text": "BACA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GÜVERTE, KAMARA, DÜMEN, BACA: geminin bölümleri."
+    },
+    {
+      "id": "journey-014-g2",
+      "title": "İŞİTMEYLE İLGİLİ TERİMLER",
+      "words": [
+        {
+          "id": "journey-014-w5",
+          "text": "SES"
+        },
+        {
+          "id": "journey-014-w6",
+          "text": "TON"
+        },
+        {
+          "id": "journey-014-w7",
+          "text": "TINI"
+        },
+        {
+          "id": "journey-014-w8",
+          "text": "RİTİM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SES, TON, TINI, RİTİM: işitmeyle ilgili terimler."
+    },
+    {
+      "id": "journey-014-g3",
+      "title": "BANKADA İŞLEMLER",
+      "words": [
+        {
+          "id": "journey-014-w9",
+          "text": "HAVALE"
+        },
+        {
+          "id": "journey-014-w10",
+          "text": "EFT"
+        },
+        {
+          "id": "journey-014-w11",
+          "text": "VİRMAN"
+        },
+        {
+          "id": "journey-014-w12",
+          "text": "PARA ÇEKME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HAVALE, EFT, VİRMAN, PARA ÇEKME: bankada işlemler."
+    },
+    {
+      "id": "journey-014-g4",
+      "title": "TAKIM ELBİSEYLE",
+      "words": [
+        {
+          "id": "journey-014-w13",
+          "text": "CEKET"
+        },
+        {
+          "id": "journey-014-w14",
+          "text": "PANTOLON"
+        },
+        {
+          "id": "journey-014-w15",
+          "text": "KRAVAT"
+        },
+        {
+          "id": "journey-014-w16",
+          "text": "YELEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "CEKET, PANTOLON, KRAVAT, YELEK: takım elbiseyle."
+    }
+  ]
+}

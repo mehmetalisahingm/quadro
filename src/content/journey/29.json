@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-029",
+  "date": "2026-12-01",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-029-g1",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-029-w1",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-029-w2",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-029-w3",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-029-w4",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    },
+    {
+      "id": "journey-029-g2",
+      "title": "SONUNA YUVASI GELİR",
+      "words": [
+        {
+          "id": "journey-029-w5",
+          "text": "KUŞ"
+        },
+        {
+          "id": "journey-029-w6",
+          "text": "AİLE"
+        },
+        {
+          "id": "journey-029-w7",
+          "text": "ARI"
+        },
+        {
+          "id": "journey-029-w8",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KUŞ, AİLE, ARI, ÇOCUK: sonuna yuvası gelir."
+    },
+    {
+      "id": "journey-029-g3",
+      "title": "SONUNA KÖPRÜSÜ GELİR",
+      "words": [
+        {
+          "id": "journey-029-w9",
+          "text": "ASMA"
+        },
+        {
+          "id": "journey-029-w10",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-029-w11",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-029-w12",
+          "text": "GÖNÜL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ASMA, BURUN, DİŞ, GÖNÜL: sonuna köprüsü gelir."
+    },
+    {
+      "id": "journey-029-g4",
+      "title": "SONUNA TABLOSU GELİR",
+      "words": [
+        {
+          "id": "journey-029-w13",
+          "text": "ÇARPIM"
+        },
+        {
+          "id": "journey-029-w14",
+          "text": "PERİYODİK"
+        },
+        {
+          "id": "journey-029-w15",
+          "text": "PUAN"
+        },
+        {
+          "id": "journey-029-w16",
+          "text": "GELİR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇARPIM, PERİYODİK, PUAN, GELİR: sonuna tablosu gelir."
+    }
+  ]
+}

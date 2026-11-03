@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-009",
+  "date": "2026-11-11",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-009-g1",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-009-w1",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-009-w2",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-009-w3",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-009-w4",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    },
+    {
+      "id": "journey-009-g2",
+      "title": "BERBER MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-009-w5",
+          "text": "TARAK"
+        },
+        {
+          "id": "journey-009-w6",
+          "text": "USTURA"
+        },
+        {
+          "id": "journey-009-w7",
+          "text": "SAÇ MAKASI"
+        },
+        {
+          "id": "journey-009-w8",
+          "text": "TIRAŞ FIRÇASI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "TARAK, USTURA, SAÇ MAKASI, TIRAŞ FIRÇASI: berber malzemeleri."
+    },
+    {
+      "id": "journey-009-g3",
+      "title": "KÜTÜPHANEDE",
+      "words": [
+        {
+          "id": "journey-009-w9",
+          "text": "RAF"
+        },
+        {
+          "id": "journey-009-w10",
+          "text": "KATALOG"
+        },
+        {
+          "id": "journey-009-w11",
+          "text": "ÖDÜNÇ KARTI"
+        },
+        {
+          "id": "journey-009-w12",
+          "text": "OKUMA SALONU"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "RAF, KATALOG, ÖDÜNÇ KARTI, OKUMA SALONU: kütüphanede."
+    },
+    {
+      "id": "journey-009-g4",
+      "title": "YÜZME HAVUZUNDA",
+      "words": [
+        {
+          "id": "journey-009-w13",
+          "text": "KULVAR"
+        },
+        {
+          "id": "journey-009-w14",
+          "text": "TRAMPLEN"
+        },
+        {
+          "id": "journey-009-w15",
+          "text": "BONE"
+        },
+        {
+          "id": "journey-009-w16",
+          "text": "YÜZÜCÜ GÖZLÜĞÜ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KULVAR, TRAMPLEN, BONE, YÜZÜCÜ GÖZLÜĞÜ: yüzme havuzunda."
+    }
+  ]
+}

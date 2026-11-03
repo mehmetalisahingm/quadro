@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-020",
+  "date": "2026-11-22",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-020-g1",
+      "title": "SONUNA BAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-020-w1",
+          "text": "YIL"
+        },
+        {
+          "id": "journey-020-w2",
+          "text": "SATIR"
+        },
+        {
+          "id": "journey-020-w3",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "journey-020-w4",
+          "text": "USTA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YIL, SATIR, KÖŞE, USTA: sonuna başı gelir."
+    },
+    {
+      "id": "journey-020-g2",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-020-w5",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-020-w6",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-020-w7",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-020-w8",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    },
+    {
+      "id": "journey-020-g3",
+      "title": "GEMİNİN YÖNLERİ",
+      "words": [
+        {
+          "id": "journey-020-w9",
+          "text": "PRUVA"
+        },
+        {
+          "id": "journey-020-w10",
+          "text": "PUPA"
+        },
+        {
+          "id": "journey-020-w11",
+          "text": "İSKELE"
+        },
+        {
+          "id": "journey-020-w12",
+          "text": "SANCAK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PRUVA, PUPA, İSKELE, SANCAK: geminin yönleri."
+    },
+    {
+      "id": "journey-020-g4",
+      "title": "MATBAADA",
+      "words": [
+        {
+          "id": "journey-020-w13",
+          "text": "PUNTO"
+        },
+        {
+          "id": "journey-020-w14",
+          "text": "FORMA"
+        },
+        {
+          "id": "journey-020-w15",
+          "text": "CİLT"
+        },
+        {
+          "id": "journey-020-w16",
+          "text": "BASKI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "PUNTO, FORMA, CİLT, BASKI: matbaada."
+    }
+  ]
+}

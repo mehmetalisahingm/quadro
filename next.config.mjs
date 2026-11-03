@@ -9,6 +9,7 @@ const nextConfig = {
   // tahtalar sunucuya da gitmez. İçeriğin istemci paketine sızmadığı ayrıca
   // `npm run check:bundle` ile denetlenir.
   outputFileTracingIncludes: {
+    "/journey/step": ["./src/content/journey/*.json"],
     "/api/health": ["./src/content/puzzles/*.json", "./src/content/modes/*.json"],
     "/": ["./src/content/puzzles/*.json", "./src/content/modes/*.json"],
     "/play": ["./src/content/puzzles/*.json", "./src/content/modes/*.json"],

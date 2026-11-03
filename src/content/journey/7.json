@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-007",
+  "date": "2026-11-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-007-g1",
+      "title": "TELLİ ÇALGILAR",
+      "words": [
+        {
+          "id": "journey-007-w1",
+          "text": "BAĞLAMA"
+        },
+        {
+          "id": "journey-007-w2",
+          "text": "UD"
+        },
+        {
+          "id": "journey-007-w3",
+          "text": "KANUN"
+        },
+        {
+          "id": "journey-007-w4",
+          "text": "ARP"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "BAĞLAMA, UD, KANUN, ARP: telli çalgılar."
+    },
+    {
+      "id": "journey-007-g2",
+      "title": "KURU YEMİŞLER",
+      "words": [
+        {
+          "id": "journey-007-w5",
+          "text": "FINDIK"
+        },
+        {
+          "id": "journey-007-w6",
+          "text": "BADEM"
+        },
+        {
+          "id": "journey-007-w7",
+          "text": "CEVİZ"
+        },
+        {
+          "id": "journey-007-w8",
+          "text": "ANTEP FISTIĞI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "FINDIK, BADEM, CEVİZ, ANTEP FISTIĞI: kuru yemişler."
+    },
+    {
+      "id": "journey-007-g3",
+      "title": "BİLGİSAYAR DONANIMI",
+      "words": [
+        {
+          "id": "journey-007-w9",
+          "text": "EKRAN KARTI"
+        },
+        {
+          "id": "journey-007-w10",
+          "text": "İŞLEMCİ"
+        },
+        {
+          "id": "journey-007-w11",
+          "text": "ANAKART"
+        },
+        {
+          "id": "journey-007-w12",
+          "text": "SABİT DİSK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "EKRAN KARTI, İŞLEMCİ, ANAKART, SABİT DİSK: bilgisayar donanımı."
+    },
+    {
+      "id": "journey-007-g4",
+      "title": "AÇIK HAVA SPORLARI",
+      "words": [
+        {
+          "id": "journey-007-w13",
+          "text": "KAYAK"
+        },
+        {
+          "id": "journey-007-w14",
+          "text": "SÖRF"
+        },
+        {
+          "id": "journey-007-w15",
+          "text": "DAĞCILIK"
+        },
+        {
+          "id": "journey-007-w16",
+          "text": "YAMAÇ PARAŞÜTÜ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KAYAK, SÖRF, DAĞCILIK, YAMAÇ PARAŞÜTÜ: açık hava sporları."
+    }
+  ]
+}

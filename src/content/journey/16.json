@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-016",
+  "date": "2026-11-18",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-016-g1",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-016-w1",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-016-w2",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-016-w3",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-016-w4",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-016-g2",
+      "title": "GAZETEDE",
+      "words": [
+        {
+          "id": "journey-016-w5",
+          "text": "MANŞET"
+        },
+        {
+          "id": "journey-016-w6",
+          "text": "HABER"
+        },
+        {
+          "id": "journey-016-w7",
+          "text": "KÖŞE YAZISI"
+        },
+        {
+          "id": "journey-016-w8",
+          "text": "KARİKATÜR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "MANŞET, HABER, KÖŞE YAZISI, KARİKATÜR: gazetede."
+    },
+    {
+      "id": "journey-016-g3",
+      "title": "KUŞ BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-016-w9",
+          "text": "GAGA"
+        },
+        {
+          "id": "journey-016-w10",
+          "text": "KANAT"
+        },
+        {
+          "id": "journey-016-w11",
+          "text": "TÜY"
+        },
+        {
+          "id": "journey-016-w12",
+          "text": "PENÇE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GAGA, KANAT, TÜY, PENÇE: kuş bölümleri."
+    },
+    {
+      "id": "journey-016-g4",
+      "title": "İNŞAAT MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-016-w13",
+          "text": "TUĞLA"
+        },
+        {
+          "id": "journey-016-w14",
+          "text": "ÇİMENTO"
+        },
+        {
+          "id": "journey-016-w15",
+          "text": "KUM"
+        },
+        {
+          "id": "journey-016-w16",
+          "text": "KİREÇ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TUĞLA, ÇİMENTO, KUM, KİREÇ: inşaat malzemeleri."
+    }
+  ]
+}

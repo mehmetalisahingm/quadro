@@ -5,13 +5,14 @@ import { useId, useState } from "react";
 import { GAME_ARCHIVE_DAYS } from "@/lib/gameArchive";
 import { TRACK_LEVEL_COUNT, trackDay, trackHref } from "@/features/game/tracks";
 import type { GameDifficulty } from "@/features/game/difficulty";
+import { JOURNEY_LENGTH, journeyDay, journeyHref } from "@/features/game/journey";
 import styles from "./AdminGameNavigation.module.css";
 
 /** Mount only after the existing server-backed admin check succeeds. */
-export function AdminGameNavigation({ currentDay, trackDifficulty }: { currentDay?: string; trackDifficulty?: GameDifficulty }) {
+export function AdminGameNavigation({ currentDay, trackDifficulty, journeyLevel }: { currentDay?: string; trackDifficulty?: GameDifficulty; journeyLevel?: number }) {
   const id = useId();
-  const days = trackDifficulty ? Array.from({ length: TRACK_LEVEL_COUNT }, (_, i) => trackDay(i + 1)) : GAME_ARCHIVE_DAYS;
-  const href = (day: string) => trackDifficulty ? trackHref(trackDifficulty, days.indexOf(day) + 1) : `/play?day=${day}`;
+  const days = journeyLevel ? Array.from({ length: JOURNEY_LENGTH }, (_, i) => journeyDay(i + 1)) : trackDifficulty ? Array.from({ length: TRACK_LEVEL_COUNT }, (_, i) => trackDay(i + 1)) : GAME_ARCHIVE_DAYS;
+  const href = (day: string) => journeyLevel ? journeyHref(days.indexOf(day) + 1) : trackDifficulty ? trackHref(trackDifficulty, days.indexOf(day) + 1) : `/play?day=${day}`;
   const [selectedDay, setSelectedDay] = useState(currentDay ?? days[0]!);
   const index = currentDay ? days.indexOf(currentDay) : -1;
   const previous = index > 0 ? days[index - 1] : null;

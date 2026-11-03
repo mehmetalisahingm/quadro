@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-026",
+  "date": "2026-11-28",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-026-g1",
+      "title": "İLK HARFİ SİLİNCE YENİ SÖZCÜK",
+      "words": [
+        {
+          "id": "journey-026-w1",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-026-w2",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-026-w3",
+          "text": "KASA"
+        },
+        {
+          "id": "journey-026-w4",
+          "text": "SÖZ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Ulak, alem, asa ve öz kalır."
+    },
+    {
+      "id": "journey-026-g2",
+      "title": "SONUNA GÖZÜ GELİR",
+      "words": [
+        {
+          "id": "journey-026-w5",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-026-w6",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-026-w7",
+          "text": "ÖKÜZ"
+        },
+        {
+          "id": "journey-026-w8",
+          "text": "KUŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İĞNE, BALIK, ÖKÜZ, KUŞ: sonuna gözü gelir."
+    },
+    {
+      "id": "journey-026-g3",
+      "title": "SONUNA AĞZI GELİR",
+      "words": [
+        {
+          "id": "journey-026-w9",
+          "text": "ŞİŞE"
+        },
+        {
+          "id": "journey-026-w10",
+          "text": "MAĞARA"
+        },
+        {
+          "id": "journey-026-w11",
+          "text": "TÜFEK"
+        },
+        {
+          "id": "journey-026-w12",
+          "text": "TORBA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ŞİŞE, MAĞARA, TÜFEK, TORBA: sonuna ağzı gelir."
+    },
+    {
+      "id": "journey-026-g4",
+      "title": "KÂĞIT KATLAMA BİÇİMLERİ",
+      "words": [
+        {
+          "id": "journey-026-w13",
+          "text": "AKORDEON"
+        },
+        {
+          "id": "journey-026-w14",
+          "text": "ZİKZAK"
+        },
+        {
+          "id": "journey-026-w15",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-026-w16",
+          "text": "PENCERE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "AKORDEON, ZİKZAK, KAPI, PENCERE: kâğıt katlama biçimleri."
+    }
+  ]
+}

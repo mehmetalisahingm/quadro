@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-001",
+  "date": "2026-11-03",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-001-g1",
+      "title": "MEYVELER",
+      "words": [
+        {
+          "id": "journey-001-w1",
+          "text": "MUZ"
+        },
+        {
+          "id": "journey-001-w2",
+          "text": "ÇİLEK"
+        },
+        {
+          "id": "journey-001-w3",
+          "text": "ELMA"
+        },
+        {
+          "id": "journey-001-w4",
+          "text": "ARMUT"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "MUZ, ÇİLEK, ELMA, ARMUT: meyveler."
+    },
+    {
+      "id": "journey-001-g2",
+      "title": "TEMEL RENK ADLARI",
+      "words": [
+        {
+          "id": "journey-001-w5",
+          "text": "KIRMIZI"
+        },
+        {
+          "id": "journey-001-w6",
+          "text": "MAVİ"
+        },
+        {
+          "id": "journey-001-w7",
+          "text": "YEŞİL"
+        },
+        {
+          "id": "journey-001-w8",
+          "text": "SARI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KIRMIZI, MAVİ, YEŞİL, SARI: temel renk adları."
+    },
+    {
+      "id": "journey-001-g3",
+      "title": "EVCİL HAYVANLAR",
+      "words": [
+        {
+          "id": "journey-001-w9",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-001-w10",
+          "text": "KÖPEK"
+        },
+        {
+          "id": "journey-001-w11",
+          "text": "HAMSTER"
+        },
+        {
+          "id": "journey-001-w12",
+          "text": "MUHABBET KUŞU"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KEDİ, KÖPEK, HAMSTER, MUHABBET KUŞU: evcil hayvanlar."
+    },
+    {
+      "id": "journey-001-g4",
+      "title": "MÜZİK ALETLERİ",
+      "words": [
+        {
+          "id": "journey-001-w13",
+          "text": "KEMAN"
+        },
+        {
+          "id": "journey-001-w14",
+          "text": "PİYANO"
+        },
+        {
+          "id": "journey-001-w15",
+          "text": "DAVUL"
+        },
+        {
+          "id": "journey-001-w16",
+          "text": "GİTAR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KEMAN, PİYANO, DAVUL, GİTAR: müzik aletleri."
+    }
+  ]
+}

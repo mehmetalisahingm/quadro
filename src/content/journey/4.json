@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-004",
+  "date": "2026-11-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-004-g1",
+      "title": "ÇİÇEKLER",
+      "words": [
+        {
+          "id": "journey-004-w1",
+          "text": "LALE"
+        },
+        {
+          "id": "journey-004-w2",
+          "text": "PAPATYA"
+        },
+        {
+          "id": "journey-004-w3",
+          "text": "MENEKŞE"
+        },
+        {
+          "id": "journey-004-w4",
+          "text": "KARANFİL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "LALE, PAPATYA, MENEKŞE, KARANFİL: çiçekler."
+    },
+    {
+      "id": "journey-004-g2",
+      "title": "TOPLU TAŞIMA ARAÇLARI",
+      "words": [
+        {
+          "id": "journey-004-w5",
+          "text": "OTOBÜS"
+        },
+        {
+          "id": "journey-004-w6",
+          "text": "METRO"
+        },
+        {
+          "id": "journey-004-w7",
+          "text": "TRAMVAY"
+        },
+        {
+          "id": "journey-004-w8",
+          "text": "VAPUR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OTOBÜS, METRO, TRAMVAY, VAPUR: toplu taşıma araçları."
+    },
+    {
+      "id": "journey-004-g3",
+      "title": "GEOMETRİK ŞEKİLLER",
+      "words": [
+        {
+          "id": "journey-004-w9",
+          "text": "DAİRE"
+        },
+        {
+          "id": "journey-004-w10",
+          "text": "KARE"
+        },
+        {
+          "id": "journey-004-w11",
+          "text": "ÜÇGEN"
+        },
+        {
+          "id": "journey-004-w12",
+          "text": "DİKDÖRTGEN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DAİRE, KARE, ÜÇGEN, DİKDÖRTGEN: geometrik şekiller."
+    },
+    {
+      "id": "journey-004-g4",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "journey-004-w13",
+          "text": "SABUN"
+        },
+        {
+          "id": "journey-004-w14",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "journey-004-w15",
+          "text": "HAVLU"
+        },
+        {
+          "id": "journey-004-w16",
+          "text": "LİF"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SABUN, ŞAMPUAN, HAVLU, LİF: banyoda kullanılanlar."
+    }
+  ]
+}

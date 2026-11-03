@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-019",
+  "date": "2026-11-21",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-019-g1",
+      "title": "SONUNA MASASI GELİR",
+      "words": [
+        {
+          "id": "journey-019-w1",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "journey-019-w2",
+          "text": "AMELİYAT"
+        },
+        {
+          "id": "journey-019-w3",
+          "text": "YEMEK"
+        },
+        {
+          "id": "journey-019-w4",
+          "text": "BİLARDO"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÇALIŞMA, AMELİYAT, YEMEK, BİLARDO: sonuna masası gelir."
+    },
+    {
+      "id": "journey-019-g2",
+      "title": "KAMERADA AYARLAR",
+      "words": [
+        {
+          "id": "journey-019-w5",
+          "text": "POZLAMA"
+        },
+        {
+          "id": "journey-019-w6",
+          "text": "BEYAZ AYARI"
+        },
+        {
+          "id": "journey-019-w7",
+          "text": "ISO"
+        },
+        {
+          "id": "journey-019-w8",
+          "text": "ENSTANTANE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "POZLAMA, BEYAZ AYARI, ISO, ENSTANTANE: kamerada ayarlar."
+    },
+    {
+      "id": "journey-019-g3",
+      "title": "BAHÇE BAKIMINDA",
+      "words": [
+        {
+          "id": "journey-019-w9",
+          "text": "BUDAMA"
+        },
+        {
+          "id": "journey-019-w10",
+          "text": "SULAMA"
+        },
+        {
+          "id": "journey-019-w11",
+          "text": "ÇAPALAMA"
+        },
+        {
+          "id": "journey-019-w12",
+          "text": "GÜBRELEME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BUDAMA, SULAMA, ÇAPALAMA, GÜBRELEME: bahçe bakımında."
+    },
+    {
+      "id": "journey-019-g4",
+      "title": "ÇEMBERDE VE DAİREDE",
+      "words": [
+        {
+          "id": "journey-019-w13",
+          "text": "ÇAP"
+        },
+        {
+          "id": "journey-019-w14",
+          "text": "YARIÇAP"
+        },
+        {
+          "id": "journey-019-w15",
+          "text": "KİRİŞ"
+        },
+        {
+          "id": "journey-019-w16",
+          "text": "TEĞET"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇAP, YARIÇAP, KİRİŞ, TEĞET: çemberde ve dairede."
+    }
+  ]
+}

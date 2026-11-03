@@ -22,6 +22,9 @@ const daily = await (await read("/play?mode=daily")).text();
 if (!daily.includes("q-play-header")) throw new Error("Daily game page is incomplete");
 await read("/play");
 await read("/animations");
+const journey = await (await read("/journey")).text();
+if (!journey.includes("30 adımlık keşif haritası")) throw new Error("Journey map is incomplete");
+await read("/journey/step?level=1");
 const login = await (await read("/login")).text();
 const mailButton = [...login.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/g)]
   .find(match => match[2].includes("giriş bağlantısı gönder"));

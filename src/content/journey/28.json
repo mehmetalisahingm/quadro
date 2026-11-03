@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-028",
+  "date": "2026-11-30",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-028-g1",
+      "title": "TERSTEN BAŞKA KELİME",
+      "words": [
+        {
+          "id": "journey-028-w1",
+          "text": "PAY"
+        },
+        {
+          "id": "journey-028-w2",
+          "text": "KAP"
+        },
+        {
+          "id": "journey-028-w3",
+          "text": "KOÇ"
+        },
+        {
+          "id": "journey-028-w4",
+          "text": "KES"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Yap, pak, çok ve sek."
+    },
+    {
+      "id": "journey-028-g2",
+      "title": "İÇİNDE SAYI ADI SAKLI",
+      "words": [
+        {
+          "id": "journey-028-w5",
+          "text": "BONCUK"
+        },
+        {
+          "id": "journey-028-w6",
+          "text": "BİNA"
+        },
+        {
+          "id": "journey-028-w7",
+          "text": "YÜZÜK"
+        },
+        {
+          "id": "journey-028-w8",
+          "text": "ALTIN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "b-ON-cuk, BİN-a, YÜZ-ük, ALTI-n."
+    },
+    {
+      "id": "journey-028-g3",
+      "title": "SONUNA DÜĞMESİ GELİR",
+      "words": [
+        {
+          "id": "journey-028-w9",
+          "text": "GÖMLEK"
+        },
+        {
+          "id": "journey-028-w10",
+          "text": "ASANSÖR"
+        },
+        {
+          "id": "journey-028-w11",
+          "text": "BAŞLAT"
+        },
+        {
+          "id": "journey-028-w12",
+          "text": "ACİL DURDURMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GÖMLEK, ASANSÖR, BAŞLAT, ACİL DURDURMA: sonuna düğmesi gelir."
+    },
+    {
+      "id": "journey-028-g4",
+      "title": "SONUNA PERDESİ GELİR",
+      "words": [
+        {
+          "id": "journey-028-w13",
+          "text": "SAHNE"
+        },
+        {
+          "id": "journey-028-w14",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-028-w15",
+          "text": "SİS"
+        },
+        {
+          "id": "journey-028-w16",
+          "text": "DUŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SAHNE, GÖZ, SİS, DUŞ: sonuna perdesi gelir."
+    }
+  ]
+}

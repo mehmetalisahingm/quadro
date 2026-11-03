@@ -104,6 +104,15 @@ if (existsSync(modDizini)) for (const ad of readdirSync(modDizini).filter(ad => 
   gunler.push({ dosya: `modes/${ad}`, gun: ham.date, izler: izleriCikar(ham), mod: true, kimlik: ham.id, gruplar: ham.groups });
 }
 
+// Lesson text may intentionally name a category; unique IDs and explanations
+// detect campaign answer imports without flagging the existing tutorial words.
+const journeyDirectory = join(kok, "src", "content", "journey");
+if (existsSync(journeyDirectory)) for (const filename of readdirSync(journeyDirectory).filter(name => name.endsWith(".json"))) {
+  const puzzle = JSON.parse(readFileSync(join(journeyDirectory, filename), "utf8"));
+  gunler.push({ dosya: `journey/${filename}`, gun: puzzle.date,
+    izler: [puzzle.id, ...puzzle.groups.flatMap(group => [group.id, group.explanation, ...group.words.map(word => word.id)])] });
+}
+
 if (gunler.length === 0) {
   console.error(`Denetlenecek içerik bulunamadı: ${bulmacaDizini}`);
   process.exit(1);

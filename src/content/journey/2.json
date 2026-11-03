@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-002",
+  "date": "2026-11-04",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-002-g1",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        {
+          "id": "journey-002-w1",
+          "text": "PEYNİR"
+        },
+        {
+          "id": "journey-002-w2",
+          "text": "ZEYTİN"
+        },
+        {
+          "id": "journey-002-w3",
+          "text": "REÇEL"
+        },
+        {
+          "id": "journey-002-w4",
+          "text": "BAL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "PEYNİR, ZEYTİN, REÇEL, BAL: kahvaltılıklar."
+    },
+    {
+      "id": "journey-002-g2",
+      "title": "OKUL ÇANTASINDA",
+      "words": [
+        {
+          "id": "journey-002-w5",
+          "text": "DEFTER"
+        },
+        {
+          "id": "journey-002-w6",
+          "text": "KİTAP"
+        },
+        {
+          "id": "journey-002-w7",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-002-w8",
+          "text": "SİLGİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DEFTER, KİTAP, KALEM, SİLGİ: okul çantasında."
+    },
+    {
+      "id": "journey-002-g3",
+      "title": "KIŞLIK GİYSİLER",
+      "words": [
+        {
+          "id": "journey-002-w9",
+          "text": "ATKI"
+        },
+        {
+          "id": "journey-002-w10",
+          "text": "BERE"
+        },
+        {
+          "id": "journey-002-w11",
+          "text": "ELDİVEN"
+        },
+        {
+          "id": "journey-002-w12",
+          "text": "KAZAK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ATKI, BERE, ELDİVEN, KAZAK: kışlık giysiler."
+    },
+    {
+      "id": "journey-002-g4",
+      "title": "HAVA TAŞITLARI",
+      "words": [
+        {
+          "id": "journey-002-w13",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-002-w14",
+          "text": "HELİKOPTER"
+        },
+        {
+          "id": "journey-002-w15",
+          "text": "PLANÖR"
+        },
+        {
+          "id": "journey-002-w16",
+          "text": "ZEPLİN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "UÇAK, HELİKOPTER, PLANÖR, ZEPLİN: hava taşıtları."
+    }
+  ]
+}

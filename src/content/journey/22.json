@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-022",
+  "date": "2026-11-24",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-022-g1",
+      "title": "SONUNA AĞI GELİR",
+      "words": [
+        {
+          "id": "journey-022-w1",
+          "text": "ÖRÜMCEK"
+        },
+        {
+          "id": "journey-022-w2",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-022-w3",
+          "text": "İLETİŞİM"
+        },
+        {
+          "id": "journey-022-w4",
+          "text": "SİNİR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÖRÜMCEK, BALIK, İLETİŞİM, SİNİR: sonuna ağı gelir."
+    },
+    {
+      "id": "journey-022-g2",
+      "title": "SONUNA BOYU GELİR",
+      "words": [
+        {
+          "id": "journey-022-w5",
+          "text": "ÖMÜR"
+        },
+        {
+          "id": "journey-022-w6",
+          "text": "YOL"
+        },
+        {
+          "id": "journey-022-w7",
+          "text": "DALGA"
+        },
+        {
+          "id": "journey-022-w8",
+          "text": "DİZ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÖMÜR, YOL, DALGA, DİZ: sonuna boyu gelir."
+    },
+    {
+      "id": "journey-022-g3",
+      "title": "BİR ŞİİRDE",
+      "words": [
+        {
+          "id": "journey-022-w9",
+          "text": "DİZE"
+        },
+        {
+          "id": "journey-022-w10",
+          "text": "BENT"
+        },
+        {
+          "id": "journey-022-w11",
+          "text": "UYAK"
+        },
+        {
+          "id": "journey-022-w12",
+          "text": "ÖLÇÜ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DİZE, BENT, UYAK, ÖLÇÜ: bir şiirde."
+    },
+    {
+      "id": "journey-022-g4",
+      "title": "HUKUKTA HAKLAR",
+      "words": [
+        {
+          "id": "journey-022-w13",
+          "text": "TELİF"
+        },
+        {
+          "id": "journey-022-w14",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-022-w15",
+          "text": "VETO"
+        },
+        {
+          "id": "journey-022-w16",
+          "text": "GEÇİŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TELİF, MİRAS, VETO, GEÇİŞ: hukukta haklar."
+    }
+  ]
+}

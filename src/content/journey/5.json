@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-005",
+  "date": "2026-11-07",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-005-g1",
+      "title": "DUYU ORGANLARI",
+      "words": [
+        {
+          "id": "journey-005-w1",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-005-w2",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-005-w3",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-005-w4",
+          "text": "DİL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GÖZ, KULAK, BURUN, DİL: duyu organları."
+    },
+    {
+      "id": "journey-005-g2",
+      "title": "ÇATAL BIÇAK TAKIMINDA",
+      "words": [
+        {
+          "id": "journey-005-w5",
+          "text": "ÇATAL"
+        },
+        {
+          "id": "journey-005-w6",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "journey-005-w7",
+          "text": "KAŞIK"
+        },
+        {
+          "id": "journey-005-w8",
+          "text": "TATLI KAŞIĞI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÇATAL, BIÇAK, KAŞIK, TATLI KAŞIĞI: çatal bıçak takımında."
+    },
+    {
+      "id": "journey-005-g3",
+      "title": "YAĞIŞ TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-005-w9",
+          "text": "YAĞMUR"
+        },
+        {
+          "id": "journey-005-w10",
+          "text": "KAR"
+        },
+        {
+          "id": "journey-005-w11",
+          "text": "DOLU"
+        },
+        {
+          "id": "journey-005-w12",
+          "text": "ÇİSENTİ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "YAĞMUR, KAR, DOLU, ÇİSENTİ: yağış türleri."
+    },
+    {
+      "id": "journey-005-g4",
+      "title": "BİRİNCİ AİLE ÜYELERİ",
+      "words": [
+        {
+          "id": "journey-005-w13",
+          "text": "ANNE"
+        },
+        {
+          "id": "journey-005-w14",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-005-w15",
+          "text": "KARDEŞ"
+        },
+        {
+          "id": "journey-005-w16",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ANNE, BABA, KARDEŞ, ÇOCUK: birinci aile üyeleri."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-030",
+  "date": "2026-12-02",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-030-g1",
+      "title": "EKLE EŞYAYA DÖNÜŞEN ORGAN",
+      "words": [
+        {
+          "id": "journey-030-w1",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-030-w2",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-030-w3",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-030-w4",
+          "text": "BAŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "-lık ekinin uyumlu biçimleriyle gözlük, kulaklık, ayaklık, başlık."
+    },
+    {
+      "id": "journey-030-g2",
+      "title": "SONUNA KOLU GELİR",
+      "words": [
+        {
+          "id": "journey-030-w5",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-030-w6",
+          "text": "NEHİR"
+        },
+        {
+          "id": "journey-030-w7",
+          "text": "EMNİYET"
+        },
+        {
+          "id": "journey-030-w8",
+          "text": "DİREKSİYON"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KAPI, NEHİR, EMNİYET, DİREKSİYON: sonuna kolu gelir."
+    },
+    {
+      "id": "journey-030-g3",
+      "title": "SONUNA YOLU GELİR",
+      "words": [
+        {
+          "id": "journey-030-w9",
+          "text": "İPEK"
+        },
+        {
+          "id": "journey-030-w10",
+          "text": "DEMİR"
+        },
+        {
+          "id": "journey-030-w11",
+          "text": "KARA"
+        },
+        {
+          "id": "journey-030-w12",
+          "text": "SAMAN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "İPEK, DEMİR, KARA, SAMAN: sonuna yolu gelir."
+    },
+    {
+      "id": "journey-030-g4",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-030-w13",
+          "text": "KİLOMETRE"
+        },
+        {
+          "id": "journey-030-w14",
+          "text": "DEĞİRMEN"
+        },
+        {
+          "id": "journey-030-w15",
+          "text": "DÖŞEME"
+        },
+        {
+          "id": "journey-030-w16",
+          "text": "AKİK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KİLOMETRE, DEĞİRMEN, DÖŞEME, AKİK: sonuna taşı gelir."
+    }
+  ]
+}
