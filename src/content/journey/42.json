@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-042",
+  "date": "2026-12-14",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-042-g1",
+      "title": "MÜZEDE",
+      "words": [
+        {
+          "id": "journey-042-w1",
+          "text": "ESER"
+        },
+        {
+          "id": "journey-042-w2",
+          "text": "KOLEKSİYON"
+        },
+        {
+          "id": "journey-042-w3",
+          "text": "SERGİ"
+        },
+        {
+          "id": "journey-042-w4",
+          "text": "KÜRATÖR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ESER, KOLEKSİYON, SERGİ, KÜRATÖR: müzede."
+    },
+    {
+      "id": "journey-042-g2",
+      "title": "SONUNA NOKTASI GELİR",
+      "words": [
+        {
+          "id": "journey-042-w5",
+          "text": "ODAK"
+        },
+        {
+          "id": "journey-042-w6",
+          "text": "DÖNÜM"
+        },
+        {
+          "id": "journey-042-w7",
+          "text": "KAYNAMA"
+        },
+        {
+          "id": "journey-042-w8",
+          "text": "DONMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ODAK, DÖNÜM, KAYNAMA, DONMA: sonuna noktası gelir."
+    },
+    {
+      "id": "journey-042-g3",
+      "title": "EVCİL HAYVANLAR",
+      "words": [
+        {
+          "id": "journey-042-w9",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-042-w10",
+          "text": "KÖPEK"
+        },
+        {
+          "id": "journey-042-w11",
+          "text": "HAMSTER"
+        },
+        {
+          "id": "journey-042-w12",
+          "text": "MUHABBET KUŞU"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KEDİ, KÖPEK, HAMSTER, MUHABBET KUŞU: evcil hayvanlar."
+    },
+    {
+      "id": "journey-042-g4",
+      "title": "KAYIT STÜDYOSUNDA",
+      "words": [
+        {
+          "id": "journey-042-w13",
+          "text": "MİKROFON"
+        },
+        {
+          "id": "journey-042-w14",
+          "text": "KULAKLIK"
+        },
+        {
+          "id": "journey-042-w15",
+          "text": "MİKSER"
+        },
+        {
+          "id": "journey-042-w16",
+          "text": "SES KARTI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "MİKROFON, KULAKLIK, MİKSER, SES KARTI: kayıt stüdyosunda."
+    }
+  ]
+}

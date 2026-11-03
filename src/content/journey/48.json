@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-048",
+  "date": "2026-12-20",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-048-g1",
+      "title": "MÜZİKTE HIZ TERİMLERİ",
+      "words": [
+        {
+          "id": "journey-048-w1",
+          "text": "ADAGİO"
+        },
+        {
+          "id": "journey-048-w2",
+          "text": "ANDANTE"
+        },
+        {
+          "id": "journey-048-w3",
+          "text": "ALLEGRO"
+        },
+        {
+          "id": "journey-048-w4",
+          "text": "PRESTO"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ADAGİO, ANDANTE, ALLEGRO, PRESTO: müzikte hız terimleri."
+    },
+    {
+      "id": "journey-048-g2",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        {
+          "id": "journey-048-w5",
+          "text": "PEYNİR"
+        },
+        {
+          "id": "journey-048-w6",
+          "text": "ZEYTİN"
+        },
+        {
+          "id": "journey-048-w7",
+          "text": "REÇEL"
+        },
+        {
+          "id": "journey-048-w8",
+          "text": "BAL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PEYNİR, ZEYTİN, REÇEL, BAL: kahvaltılıklar."
+    },
+    {
+      "id": "journey-048-g3",
+      "title": "BALIKÇI DONANIMI",
+      "words": [
+        {
+          "id": "journey-048-w9",
+          "text": "OLTA"
+        },
+        {
+          "id": "journey-048-w10",
+          "text": "MİSİNA"
+        },
+        {
+          "id": "journey-048-w11",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-048-w12",
+          "text": "YEM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "OLTA, MİSİNA, İĞNE, YEM: balıkçı donanımı."
+    },
+    {
+      "id": "journey-048-g4",
+      "title": "BİR ŞİİRDE",
+      "words": [
+        {
+          "id": "journey-048-w13",
+          "text": "DİZE"
+        },
+        {
+          "id": "journey-048-w14",
+          "text": "BENT"
+        },
+        {
+          "id": "journey-048-w15",
+          "text": "UYAK"
+        },
+        {
+          "id": "journey-048-w16",
+          "text": "ÖLÇÜ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DİZE, BENT, UYAK, ÖLÇÜ: bir şiirde."
+    }
+  ]
+}

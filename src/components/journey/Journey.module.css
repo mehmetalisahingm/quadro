@@ -35,3 +35,15 @@
 .celebration i { position: absolute; left: 50%; top: 30%; width: 6px; height: 11px; border-radius: 2px; background: hsl(var(--hue) 65% 55%); opacity: 0; animation: confetti 1.4s cubic-bezier(.15,.7,.4,1) both; animation-delay: var(--delay); }
 @keyframes confetti { 0% { opacity: 0; transform: rotate(var(--angle)) translateY(0) rotate(0); } 15% { opacity: 1; } 70% { opacity: .8; } 100% { opacity: 0; transform: rotate(var(--angle)) translateY(var(--distance)) rotate(240deg); } }
 @media(prefers-reduced-motion:reduce) { .celebration { display: none; } }
+.map { height: 5520px; }
+.atlasWorlds { position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none; border-radius:inherit; }
+.atlasZone { height:20%; background-repeat:no-repeat; }
+.atlasEmblem { display:grid; place-items:center; margin:auto; width:56px; height:56px; border:1px solid #fbe6abbb; border-radius:50%; color:#fff1c1; background:#192a35a6; font:30px Georgia,serif; box-shadow:0 0 24px #efc77d55, inset 0 0 20px #e6b36135; animation: atlasGlow 4s ease-in-out infinite alternate; }
+@keyframes atlasGlow { to { box-shadow:0 0 35px #efc77daa,inset 0 0 25px #e6b36166; } }
+@media(prefers-reduced-motion:reduce) { .atlasEmblem { animation:none; } }
+.atlasZone { background-size: cover; background-position: center; }
+.atlasZone:nth-child(1) { background-image: linear-gradient(#101a3422,#19213933),url('/images/journey/atlas-1.webp'); }
+.atlasZone:nth-child(2) { background-image: linear-gradient(#101a3422,#19213933),url('/images/journey/atlas-2.webp'); }
+.atlasZone:nth-child(3) { background-image: linear-gradient(#101a3422,#19213933),url('/images/journey/atlas-3.webp'); }
+.atlasZone:nth-child(4) { background-image: linear-gradient(#101a3422,#19213933),url('/images/journey/atlas-4.webp'); }
+.atlasZone:nth-child(5) { background-image: linear-gradient(#101a3422,#19213933),url('/images/journey/atlas-5.webp'); }

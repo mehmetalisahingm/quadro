@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-047",
+  "date": "2026-12-19",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-047-g1",
+      "title": "İÇİNDE MÜZİK NOTASI SAKLI",
+      "words": [
+        {
+          "id": "journey-047-w1",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-047-w2",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-047-w3",
+          "text": "DOLAP"
+        },
+        {
+          "id": "journey-047-w4",
+          "text": "FARE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Mİ-ras, Sİ-mit, DO-lap, FA-re."
+    },
+    {
+      "id": "journey-047-g2",
+      "title": "YAĞIŞ TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-047-w5",
+          "text": "YAĞMUR"
+        },
+        {
+          "id": "journey-047-w6",
+          "text": "KAR"
+        },
+        {
+          "id": "journey-047-w7",
+          "text": "DOLU"
+        },
+        {
+          "id": "journey-047-w8",
+          "text": "ÇİSENTİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YAĞMUR, KAR, DOLU, ÇİSENTİ: yağış türleri."
+    },
+    {
+      "id": "journey-047-g3",
+      "title": "YAZILI ANLATIM TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-047-w9",
+          "text": "ROMAN"
+        },
+        {
+          "id": "journey-047-w10",
+          "text": "ÖYKÜ"
+        },
+        {
+          "id": "journey-047-w11",
+          "text": "DENEME"
+        },
+        {
+          "id": "journey-047-w12",
+          "text": "MAKALE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ROMAN, ÖYKÜ, DENEME, MAKALE: yazılı anlatım türleri."
+    },
+    {
+      "id": "journey-047-g4",
+      "title": "İLK HARFİ SİLİNCE YENİ SÖZCÜK",
+      "words": [
+        {
+          "id": "journey-047-w13",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-047-w14",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-047-w15",
+          "text": "KASA"
+        },
+        {
+          "id": "journey-047-w16",
+          "text": "SÖZ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Ulak, alem, asa ve öz kalır."
+    }
+  ]
+}

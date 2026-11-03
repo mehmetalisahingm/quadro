@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-044",
+  "date": "2026-12-16",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-044-g1",
+      "title": "BİRİNCİ AİLE ÜYELERİ",
+      "words": [
+        {
+          "id": "journey-044-w1",
+          "text": "ANNE"
+        },
+        {
+          "id": "journey-044-w2",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-044-w3",
+          "text": "KARDEŞ"
+        },
+        {
+          "id": "journey-044-w4",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ANNE, BABA, KARDEŞ, ÇOCUK: birinci aile üyeleri."
+    },
+    {
+      "id": "journey-044-g2",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-044-w5",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-044-w6",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-044-w7",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-044-w8",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-044-g3",
+      "title": "SONUNA GÖZÜ GELİR",
+      "words": [
+        {
+          "id": "journey-044-w9",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-044-w10",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-044-w11",
+          "text": "ÖKÜZ"
+        },
+        {
+          "id": "journey-044-w12",
+          "text": "KUŞ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "İĞNE, BALIK, ÖKÜZ, KUŞ: sonuna gözü gelir."
+    },
+    {
+      "id": "journey-044-g4",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "journey-044-w13",
+          "text": "SABUN"
+        },
+        {
+          "id": "journey-044-w14",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "journey-044-w15",
+          "text": "HAVLU"
+        },
+        {
+          "id": "journey-044-w16",
+          "text": "LİF"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SABUN, ŞAMPUAN, HAVLU, LİF: banyoda kullanılanlar."
+    }
+  ]
+}

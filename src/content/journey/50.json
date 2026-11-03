@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-050",
+  "date": "2026-12-22",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-050-g1",
+      "title": "KUŞ BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-050-w1",
+          "text": "GAGA"
+        },
+        {
+          "id": "journey-050-w2",
+          "text": "KANAT"
+        },
+        {
+          "id": "journey-050-w3",
+          "text": "TÜY"
+        },
+        {
+          "id": "journey-050-w4",
+          "text": "PENÇE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GAGA, KANAT, TÜY, PENÇE: kuş bölümleri."
+    },
+    {
+      "id": "journey-050-g2",
+      "title": "KÂĞIT KATLAMA BİÇİMLERİ",
+      "words": [
+        {
+          "id": "journey-050-w5",
+          "text": "AKORDEON"
+        },
+        {
+          "id": "journey-050-w6",
+          "text": "ZİKZAK"
+        },
+        {
+          "id": "journey-050-w7",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-050-w8",
+          "text": "PENCERE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "AKORDEON, ZİKZAK, KAPI, PENCERE: kâğıt katlama biçimleri."
+    },
+    {
+      "id": "journey-050-g3",
+      "title": "ÇATAL BIÇAK TAKIMINDA",
+      "words": [
+        {
+          "id": "journey-050-w9",
+          "text": "ÇATAL"
+        },
+        {
+          "id": "journey-050-w10",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "journey-050-w11",
+          "text": "KAŞIK"
+        },
+        {
+          "id": "journey-050-w12",
+          "text": "TATLI KAŞIĞI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇATAL, BIÇAK, KAŞIK, TATLI KAŞIĞI: çatal bıçak takımında."
+    },
+    {
+      "id": "journey-050-g4",
+      "title": "SAHNE AYDINLATMASINDA",
+      "words": [
+        {
+          "id": "journey-050-w13",
+          "text": "SPOT"
+        },
+        {
+          "id": "journey-050-w14",
+          "text": "PROJEKTÖR"
+        },
+        {
+          "id": "journey-050-w15",
+          "text": "REFLEKTÖR"
+        },
+        {
+          "id": "journey-050-w16",
+          "text": "IŞIK MASASI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SPOT, PROJEKTÖR, REFLEKTÖR, IŞIK MASASI: sahne aydınlatmasında."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-041",
+  "date": "2026-12-13",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-041-g1",
+      "title": "GAZETEDE",
+      "words": [
+        {
+          "id": "journey-041-w1",
+          "text": "MANŞET"
+        },
+        {
+          "id": "journey-041-w2",
+          "text": "HABER"
+        },
+        {
+          "id": "journey-041-w3",
+          "text": "KÖŞE YAZISI"
+        },
+        {
+          "id": "journey-041-w4",
+          "text": "KARİKATÜR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "MANŞET, HABER, KÖŞE YAZISI, KARİKATÜR: gazetede."
+    },
+    {
+      "id": "journey-041-g2",
+      "title": "SONUNA AĞZI GELİR",
+      "words": [
+        {
+          "id": "journey-041-w5",
+          "text": "ŞİŞE"
+        },
+        {
+          "id": "journey-041-w6",
+          "text": "MAĞARA"
+        },
+        {
+          "id": "journey-041-w7",
+          "text": "TÜFEK"
+        },
+        {
+          "id": "journey-041-w8",
+          "text": "TORBA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ŞİŞE, MAĞARA, TÜFEK, TORBA: sonuna ağzı gelir."
+    },
+    {
+      "id": "journey-041-g3",
+      "title": "DUYU ORGANLARI",
+      "words": [
+        {
+          "id": "journey-041-w9",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-041-w10",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-041-w11",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-041-w12",
+          "text": "DİL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GÖZ, KULAK, BURUN, DİL: duyu organları."
+    },
+    {
+      "id": "journey-041-g4",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-041-w13",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-041-w14",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-041-w15",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-041-w16",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    }
+  ]
+}

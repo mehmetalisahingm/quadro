@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-032",
+  "date": "2026-12-04",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-032-g1",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-032-w1",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-032-w2",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-032-w3",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-032-w4",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-032-g2",
+      "title": "SONUNA GÖZÜ GELİR",
+      "words": [
+        {
+          "id": "journey-032-w5",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-032-w6",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-032-w7",
+          "text": "ÖKÜZ"
+        },
+        {
+          "id": "journey-032-w8",
+          "text": "KUŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İĞNE, BALIK, ÖKÜZ, KUŞ: sonuna gözü gelir."
+    },
+    {
+      "id": "journey-032-g3",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "journey-032-w9",
+          "text": "SABUN"
+        },
+        {
+          "id": "journey-032-w10",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "journey-032-w11",
+          "text": "HAVLU"
+        },
+        {
+          "id": "journey-032-w12",
+          "text": "LİF"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SABUN, ŞAMPUAN, HAVLU, LİF: banyoda kullanılanlar."
+    },
+    {
+      "id": "journey-032-g4",
+      "title": "SONUNA KARTI GELİR",
+      "words": [
+        {
+          "id": "journey-032-w13",
+          "text": "KREDİ"
+        },
+        {
+          "id": "journey-032-w14",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "journey-032-w15",
+          "text": "HAFIZA"
+        },
+        {
+          "id": "journey-032-w16",
+          "text": "TEBRİK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KREDİ, KİMLİK, HAFIZA, TEBRİK: sonuna kartı gelir."
+    }
+  ]
+}

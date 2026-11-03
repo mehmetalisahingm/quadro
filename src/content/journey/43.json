@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-043",
+  "date": "2026-12-15",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-043-g1",
+      "title": "BERBER MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-043-w1",
+          "text": "TARAK"
+        },
+        {
+          "id": "journey-043-w2",
+          "text": "USTURA"
+        },
+        {
+          "id": "journey-043-w3",
+          "text": "SAÇ MAKASI"
+        },
+        {
+          "id": "journey-043-w4",
+          "text": "TIRAŞ FIRÇASI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "TARAK, USTURA, SAÇ MAKASI, TIRAŞ FIRÇASI: berber malzemeleri."
+    },
+    {
+      "id": "journey-043-g2",
+      "title": "BAHÇE BAKIMINDA",
+      "words": [
+        {
+          "id": "journey-043-w5",
+          "text": "BUDAMA"
+        },
+        {
+          "id": "journey-043-w6",
+          "text": "SULAMA"
+        },
+        {
+          "id": "journey-043-w7",
+          "text": "ÇAPALAMA"
+        },
+        {
+          "id": "journey-043-w8",
+          "text": "GÜBRELEME"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BUDAMA, SULAMA, ÇAPALAMA, GÜBRELEME: bahçe bakımında."
+    },
+    {
+      "id": "journey-043-g3",
+      "title": "SONUNA TABLOSU GELİR",
+      "words": [
+        {
+          "id": "journey-043-w9",
+          "text": "ÇARPIM"
+        },
+        {
+          "id": "journey-043-w10",
+          "text": "PERİYODİK"
+        },
+        {
+          "id": "journey-043-w11",
+          "text": "PUAN"
+        },
+        {
+          "id": "journey-043-w12",
+          "text": "GELİR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇARPIM, PERİYODİK, PUAN, GELİR: sonuna tablosu gelir."
+    },
+    {
+      "id": "journey-043-g4",
+      "title": "KARA MEMELİLERİ",
+      "words": [
+        {
+          "id": "journey-043-w13",
+          "text": "GEYİK"
+        },
+        {
+          "id": "journey-043-w14",
+          "text": "TİLKİ"
+        },
+        {
+          "id": "journey-043-w15",
+          "text": "KURT"
+        },
+        {
+          "id": "journey-043-w16",
+          "text": "AYI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GEYİK, TİLKİ, KURT, AYI: kara memelileri."
+    }
+  ]
+}

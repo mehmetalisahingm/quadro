@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-038",
+  "date": "2026-12-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-038-g1",
+      "title": "KÂĞIT KATLAMA BİÇİMLERİ",
+      "words": [
+        {
+          "id": "journey-038-w1",
+          "text": "AKORDEON"
+        },
+        {
+          "id": "journey-038-w2",
+          "text": "ZİKZAK"
+        },
+        {
+          "id": "journey-038-w3",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-038-w4",
+          "text": "PENCERE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "AKORDEON, ZİKZAK, KAPI, PENCERE: kâğıt katlama biçimleri."
+    },
+    {
+      "id": "journey-038-g2",
+      "title": "ÇATAL BIÇAK TAKIMINDA",
+      "words": [
+        {
+          "id": "journey-038-w5",
+          "text": "ÇATAL"
+        },
+        {
+          "id": "journey-038-w6",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "journey-038-w7",
+          "text": "KAŞIK"
+        },
+        {
+          "id": "journey-038-w8",
+          "text": "TATLI KAŞIĞI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÇATAL, BIÇAK, KAŞIK, TATLI KAŞIĞI: çatal bıçak takımında."
+    },
+    {
+      "id": "journey-038-g3",
+      "title": "SAHNE AYDINLATMASINDA",
+      "words": [
+        {
+          "id": "journey-038-w9",
+          "text": "SPOT"
+        },
+        {
+          "id": "journey-038-w10",
+          "text": "PROJEKTÖR"
+        },
+        {
+          "id": "journey-038-w11",
+          "text": "REFLEKTÖR"
+        },
+        {
+          "id": "journey-038-w12",
+          "text": "IŞIK MASASI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SPOT, PROJEKTÖR, REFLEKTÖR, IŞIK MASASI: sahne aydınlatmasında."
+    },
+    {
+      "id": "journey-038-g4",
+      "title": "DÜŞMEKLE İFADE KURAR",
+      "words": [
+        {
+          "id": "journey-038-w13",
+          "text": "AKLA"
+        },
+        {
+          "id": "journey-038-w14",
+          "text": "PEŞİNE"
+        },
+        {
+          "id": "journey-038-w15",
+          "text": "DARA"
+        },
+        {
+          "id": "journey-038-w16",
+          "text": "YOLA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "AKLA, PEŞİNE, DARA, YOLA: düşmekle ifade kurar."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-034",
+  "date": "2026-12-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-034-g1",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-034-w1",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-034-w2",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-034-w3",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-034-w4",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    },
+    {
+      "id": "journey-034-g2",
+      "title": "KAMERADA AYARLAR",
+      "words": [
+        {
+          "id": "journey-034-w5",
+          "text": "POZLAMA"
+        },
+        {
+          "id": "journey-034-w6",
+          "text": "BEYAZ AYARI"
+        },
+        {
+          "id": "journey-034-w7",
+          "text": "ISO"
+        },
+        {
+          "id": "journey-034-w8",
+          "text": "ENSTANTANE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "POZLAMA, BEYAZ AYARI, ISO, ENSTANTANE: kamerada ayarlar."
+    },
+    {
+      "id": "journey-034-g3",
+      "title": "SONUNA KÖPRÜSÜ GELİR",
+      "words": [
+        {
+          "id": "journey-034-w9",
+          "text": "ASMA"
+        },
+        {
+          "id": "journey-034-w10",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-034-w11",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-034-w12",
+          "text": "GÖNÜL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ASMA, BURUN, DİŞ, GÖNÜL: sonuna köprüsü gelir."
+    },
+    {
+      "id": "journey-034-g4",
+      "title": "FIRINDA YAPILAN HAMUR İŞLERİ",
+      "words": [
+        {
+          "id": "journey-034-w13",
+          "text": "POĞAÇA"
+        },
+        {
+          "id": "journey-034-w14",
+          "text": "AÇMA"
+        },
+        {
+          "id": "journey-034-w15",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-034-w16",
+          "text": "BÖREK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "POĞAÇA, AÇMA, SİMİT, BÖREK: fırında yapılan hamur işleri."
+    }
+  ]
+}
