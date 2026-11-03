@@ -47,3 +47,41 @@
 .atlasZone:nth-child(3) { background-image: linear-gradient(#101a3422,#19213933),url('/images/journey/atlas-3.webp'); }
 .atlasZone:nth-child(4) { background-image: linear-gradient(#101a3422,#19213933),url('/images/journey/atlas-4.webp'); }
 .atlasZone:nth-child(5) { background-image: linear-gradient(#101a3422,#19213933),url('/images/journey/atlas-5.webp'); }
+/* The journey is an atlas of connections, with tactile numbered tiles. */
+.mapPage { background: #eae6dd; color: #222d30; }
+.mapHeader { background: #eae6ddec; padding-bottom: 20px; }
+.mapHeader h1 { font-size: clamp(25px, 4vw, 40px); }
+.map { background: #1b252c; overflow:hidden; }
+.atlasWorlds { background:#19232b; }
+.atlasZone { position:absolute; width:100%; height:24%; background-position:center; background-size:cover; mask-image:linear-gradient(transparent, #000 12%, #000 88%, transparent); }
+.atlasZone:nth-child(1) { top:-2%; }
+.atlasZone:nth-child(2) { top:18%; }
+.atlasZone:nth-child(3) { top:38%; }
+.atlasZone:nth-child(4) { top:58%; }
+.atlasZone:nth-child(5) { top:78%; }
+.sky { opacity:.22; }
+.roadShadow { stroke:#101e2880; stroke-width:15; transform:translateY(3px); }
+.roadBase { stroke:#f4dfaf88; stroke-width:5; }
+.roadDone { stroke-width:7; }
+.roadDots { stroke:#f5e7caaa; stroke-width:2; stroke-dasharray:2 16; }
+.node { width:68px; }
+.medallion { width:68px; height:68px; border-radius:18px; border:1px solid #e7dcbb99; background:linear-gradient(145deg,#28363fe8,#17252bea); color:#e3d8bd; box-shadow:0 8px 22px #0a11166b,inset 0 1px 0 #ffffff45; font:400 23px Georgia,serif; backdrop-filter:blur(8px); }
+.node[data-state="current"] .medallion { background:linear-gradient(145deg,#f3dfa9,#ba8844); color:#3d2f1e; border-color:#fff2ce; box-shadow:0 8px 24px #111c1d77,inset 0 1px 0 #fff7db; }
+.node[data-state="current"]::before { inset:-8px -5px; border-radius:23px; }
+.node[data-state="won"] .medallion { background:linear-gradient(145deg,#678475,#324b42); border-color:#e2ddbd; box-shadow:0 8px 22px #111c1d77,inset 0 1px 0 #ffffff55; }
+.world { width:28%; padding:10px 7px; border:1px solid #f5e7c84d; border-radius:12px; background:#101c25a8; backdrop-filter:blur(6px); }
+.world strong { font-size:clamp(14px,2vw,20px); margin-top:5px; }
+.world small { line-height:1.3; }
+.atlasEmblem { width:32px; height:32px; border:0; box-shadow:none; background:transparent; font-size:24px; }
+.startFlag { color:#f5e8cc; text-shadow:0 2px 8px #000; }
+@media(max-width:600px) { .node { width:56px; }.medallion { width:56px; height:56px; border-radius:15px; font-size:21px; }.node[data-state="current"]::before { inset:-7px -5px; border-radius:20px; }.world { width:23%; padding:8px 4px; }.world strong { font-size:13px; }.world small { font-size:8px; } }
+.atlasZone:nth-child(3) { background-image:linear-gradient(#121c2630,#121c2630),url('/images/journey/scene-city.webp'); }
+.atlasZone:nth-child(4) { background-image:linear-gradient(#121c2630,#121c2630),url('/images/journey/scene-library.webp'); }
+.atlasZone:nth-child(5) { background-image:linear-gradient(#121c2630,#121c2630),url('/images/journey/scene-desk.webp'); }
+.atlasZone:nth-child(1) { background-image:linear-gradient(#121c2630,#121c2630),url('/images/journey/scene-stars.webp'); }
+.atlasZone:nth-child(2) { background-image:linear-gradient(#121c2630,#121c2630),url('/images/journey/scene-observatory.webp'); }
+.atlasZone:nth-child(1) { background-position: 22% center; }
+.atlasZone:nth-child(2) { background-position: 82% center; }
+.atlasZone:nth-child(3) { background-position: 76% center; }
+.atlasZone:nth-child(4) { background-position: 15% center; }
+.atlasZone:nth-child(5) { background-position: 15% center; }
