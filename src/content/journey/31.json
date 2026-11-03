@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-031",
+  "date": "2026-12-03",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-031-g1",
+      "title": "BAHÇE BAKIMINDA",
+      "words": [
+        {
+          "id": "journey-031-w1",
+          "text": "BUDAMA"
+        },
+        {
+          "id": "journey-031-w2",
+          "text": "SULAMA"
+        },
+        {
+          "id": "journey-031-w3",
+          "text": "ÇAPALAMA"
+        },
+        {
+          "id": "journey-031-w4",
+          "text": "GÜBRELEME"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "BUDAMA, SULAMA, ÇAPALAMA, GÜBRELEME: bahçe bakımında."
+    },
+    {
+      "id": "journey-031-g2",
+      "title": "SONUNA TABLOSU GELİR",
+      "words": [
+        {
+          "id": "journey-031-w5",
+          "text": "ÇARPIM"
+        },
+        {
+          "id": "journey-031-w6",
+          "text": "PERİYODİK"
+        },
+        {
+          "id": "journey-031-w7",
+          "text": "PUAN"
+        },
+        {
+          "id": "journey-031-w8",
+          "text": "GELİR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÇARPIM, PERİYODİK, PUAN, GELİR: sonuna tablosu gelir."
+    },
+    {
+      "id": "journey-031-g3",
+      "title": "KARA MEMELİLERİ",
+      "words": [
+        {
+          "id": "journey-031-w9",
+          "text": "GEYİK"
+        },
+        {
+          "id": "journey-031-w10",
+          "text": "TİLKİ"
+        },
+        {
+          "id": "journey-031-w11",
+          "text": "KURT"
+        },
+        {
+          "id": "journey-031-w12",
+          "text": "AYI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GEYİK, TİLKİ, KURT, AYI: kara memelileri."
+    },
+    {
+      "id": "journey-031-g4",
+      "title": "MAHKEMEDE",
+      "words": [
+        {
+          "id": "journey-031-w13",
+          "text": "HÂKİM"
+        },
+        {
+          "id": "journey-031-w14",
+          "text": "SAVCI"
+        },
+        {
+          "id": "journey-031-w15",
+          "text": "TANIK"
+        },
+        {
+          "id": "journey-031-w16",
+          "text": "SANIK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HÂKİM, SAVCI, TANIK, SANIK: mahkemede."
+    }
+  ]
+}

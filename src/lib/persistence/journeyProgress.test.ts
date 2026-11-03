@@ -40,4 +40,14 @@ describe("journey unlocking and isolated progress", () => {
     expect(readJourneyProgress(storage)).toMatchObject({ unlocked: 1, complete: 0 });
     expect(readJourneyProgress(storage).stars[0]).toBe(0);
   });
+  it("opens step 31 when existing 30-step progress is complete", async () => {
+    const storage = createMemoryStorage();
+    for (let step = 1; step <= 30; step++) {
+      const puzzle = (await loadJourneyPuzzle(step))!;
+      const store = createGameStore({ puzzle, storage: journeyStorage(puzzle.id, storage) });
+      store.hydrate();
+      puzzle.groups.forEach(group => { group.words.forEach(word => store.toggleWord(word.id)); store.submitSelection(); });
+    }
+    expect(readJourneyProgress(storage)).toMatchObject({ complete: 30, unlocked: 31 });
+  });
 });

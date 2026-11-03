@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-040",
+  "date": "2026-12-12",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-040-g1",
+      "title": "ÇEMBERDE VE DAİREDE",
+      "words": [
+        {
+          "id": "journey-040-w1",
+          "text": "ÇAP"
+        },
+        {
+          "id": "journey-040-w2",
+          "text": "YARIÇAP"
+        },
+        {
+          "id": "journey-040-w3",
+          "text": "KİRİŞ"
+        },
+        {
+          "id": "journey-040-w4",
+          "text": "TEĞET"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÇAP, YARIÇAP, KİRİŞ, TEĞET: çemberde ve dairede."
+    },
+    {
+      "id": "journey-040-g2",
+      "title": "EKLE EŞYAYA DÖNÜŞEN ORGAN",
+      "words": [
+        {
+          "id": "journey-040-w5",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-040-w6",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-040-w7",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-040-w8",
+          "text": "BAŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "-lık ekinin uyumlu biçimleriyle gözlük, kulaklık, ayaklık, başlık."
+    },
+    {
+      "id": "journey-040-g3",
+      "title": "İÇECEK KAPLARI",
+      "words": [
+        {
+          "id": "journey-040-w9",
+          "text": "BARDAK"
+        },
+        {
+          "id": "journey-040-w10",
+          "text": "FİNCAN"
+        },
+        {
+          "id": "journey-040-w11",
+          "text": "KUPA"
+        },
+        {
+          "id": "journey-040-w12",
+          "text": "MATARA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BARDAK, FİNCAN, KUPA, MATARA: içecek kapları."
+    },
+    {
+      "id": "journey-040-g4",
+      "title": "KUMAŞ ÇEŞİTLERİ",
+      "words": [
+        {
+          "id": "journey-040-w13",
+          "text": "KADİFE"
+        },
+        {
+          "id": "journey-040-w14",
+          "text": "SATEN"
+        },
+        {
+          "id": "journey-040-w15",
+          "text": "KETEN"
+        },
+        {
+          "id": "journey-040-w16",
+          "text": "DENİM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KADİFE, SATEN, KETEN, DENİM: kumaş çeşitleri."
+    }
+  ]
+}

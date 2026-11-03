@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-039",
+  "date": "2026-12-11",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-039-g1",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-039-w1",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-039-w2",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-039-w3",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-039-w4",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    },
+    {
+      "id": "journey-039-g2",
+      "title": "MÜZİK ALETLERİ",
+      "words": [
+        {
+          "id": "journey-039-w5",
+          "text": "KEMAN"
+        },
+        {
+          "id": "journey-039-w6",
+          "text": "PİYANO"
+        },
+        {
+          "id": "journey-039-w7",
+          "text": "DAVUL"
+        },
+        {
+          "id": "journey-039-w8",
+          "text": "GİTAR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KEMAN, PİYANO, DAVUL, GİTAR: müzik aletleri."
+    },
+    {
+      "id": "journey-039-g3",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-039-w9",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-039-w10",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-039-w11",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-039-w12",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    },
+    {
+      "id": "journey-039-g4",
+      "title": "SONUNA BOYU GELİR",
+      "words": [
+        {
+          "id": "journey-039-w13",
+          "text": "ÖMÜR"
+        },
+        {
+          "id": "journey-039-w14",
+          "text": "YOL"
+        },
+        {
+          "id": "journey-039-w15",
+          "text": "DALGA"
+        },
+        {
+          "id": "journey-039-w16",
+          "text": "DİZ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÖMÜR, YOL, DALGA, DİZ: sonuna boyu gelir."
+    }
+  ]
+}

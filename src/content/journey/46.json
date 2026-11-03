@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-046",
+  "date": "2026-12-18",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-046-g1",
+      "title": "SONUNA YOLU GELİR",
+      "words": [
+        {
+          "id": "journey-046-w1",
+          "text": "İPEK"
+        },
+        {
+          "id": "journey-046-w2",
+          "text": "DEMİR"
+        },
+        {
+          "id": "journey-046-w3",
+          "text": "KARA"
+        },
+        {
+          "id": "journey-046-w4",
+          "text": "SAMAN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İPEK, DEMİR, KARA, SAMAN: sonuna yolu gelir."
+    },
+    {
+      "id": "journey-046-g2",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-046-w5",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-046-w6",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-046-w7",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-046-w8",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    },
+    {
+      "id": "journey-046-g3",
+      "title": "KAMERADA AYARLAR",
+      "words": [
+        {
+          "id": "journey-046-w9",
+          "text": "POZLAMA"
+        },
+        {
+          "id": "journey-046-w10",
+          "text": "BEYAZ AYARI"
+        },
+        {
+          "id": "journey-046-w11",
+          "text": "ISO"
+        },
+        {
+          "id": "journey-046-w12",
+          "text": "ENSTANTANE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "POZLAMA, BEYAZ AYARI, ISO, ENSTANTANE: kamerada ayarlar."
+    },
+    {
+      "id": "journey-046-g4",
+      "title": "SONUNA KÖPRÜSÜ GELİR",
+      "words": [
+        {
+          "id": "journey-046-w13",
+          "text": "ASMA"
+        },
+        {
+          "id": "journey-046-w14",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-046-w15",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-046-w16",
+          "text": "GÖNÜL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ASMA, BURUN, DİŞ, GÖNÜL: sonuna köprüsü gelir."
+    }
+  ]
+}

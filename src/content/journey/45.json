@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-045",
+  "date": "2026-12-17",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-045-g1",
+      "title": "OKUL ÇANTASINDA",
+      "words": [
+        {
+          "id": "journey-045-w1",
+          "text": "DEFTER"
+        },
+        {
+          "id": "journey-045-w2",
+          "text": "KİTAP"
+        },
+        {
+          "id": "journey-045-w3",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-045-w4",
+          "text": "SİLGİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DEFTER, KİTAP, KALEM, SİLGİ: okul çantasında."
+    },
+    {
+      "id": "journey-045-g2",
+      "title": "YEMEK PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "journey-045-w5",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "journey-045-w6",
+          "text": "KIZARTMA"
+        },
+        {
+          "id": "journey-045-w7",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "journey-045-w8",
+          "text": "IZGARA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HAŞLAMA, KIZARTMA, BUĞULAMA, IZGARA: yemek pişirme yöntemleri."
+    },
+    {
+      "id": "journey-045-g3",
+      "title": "HUKUKTA HAKLAR",
+      "words": [
+        {
+          "id": "journey-045-w9",
+          "text": "TELİF"
+        },
+        {
+          "id": "journey-045-w10",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-045-w11",
+          "text": "VETO"
+        },
+        {
+          "id": "journey-045-w12",
+          "text": "GEÇİŞ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "TELİF, MİRAS, VETO, GEÇİŞ: hukukta haklar."
+    },
+    {
+      "id": "journey-045-g4",
+      "title": "TEMEL RENK ADLARI",
+      "words": [
+        {
+          "id": "journey-045-w13",
+          "text": "KIRMIZI"
+        },
+        {
+          "id": "journey-045-w14",
+          "text": "MAVİ"
+        },
+        {
+          "id": "journey-045-w15",
+          "text": "YEŞİL"
+        },
+        {
+          "id": "journey-045-w16",
+          "text": "SARI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KIRMIZI, MAVİ, YEŞİL, SARI: temel renk adları."
+    }
+  ]
+}

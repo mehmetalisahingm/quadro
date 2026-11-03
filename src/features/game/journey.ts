@@ -1,13 +1,12 @@
 import type { GameDifficulty } from "./difficulty";
 
-export const JOURNEY_LENGTH = 30;
+export const JOURNEY_LENGTH = 50;
 export const JOURNEY_WORLDS = [
-  { title: "İlk İzler", subtitle: "Dört kelime, tek bağ", symbol: "✿" },
-  { title: "Merak Ormanı", subtitle: "Tanıdık dünyalar", symbol: "♧" },
-  { title: "Anlam Kıyısı", subtitle: "Sözcüklerin ötesi", symbol: "◒" },
-  { title: "Çağrışım Tepeleri", subtitle: "İkinci anlamı keşfet", symbol: "◇" },
-  { title: "Gizli Bağlar", subtitle: "Görünmeyen kelime", symbol: "✧" },
-  { title: "Ustalık Göğü", subtitle: "Bütün resmi gör", symbol: "♛" },
+  { title: "Keşif Masası", subtitle: "İlk ipuçlarını topla", symbol: "✧" },
+  { title: "Gizli Kütüphane", subtitle: "Sözcüklerin izinde", symbol: "❧" },
+  { title: "Kelimeler Şehri", subtitle: "Bağlar sokaklarda", symbol: "◇" },
+  { title: "Gece Gözlemevi", subtitle: "İşaretleri takip et", symbol: "☾" },
+  { title: "Yıldız Atlası", subtitle: "Bütünü keşfet", symbol: "✦" },
 ] as const;
 export const JOURNEY_LESSONS = [
   "İlk grubu birlikte bulalım: tahtadaki dört meyveyi seç ve Grupla’ya bas. Sonra aynı aileden diğer dörtlüleri ara.",
@@ -39,7 +38,27 @@ export const JOURNEY_LESSONS = [
   "Gizli bir sözcük veya ortak bir ifade, çok farklı anlamları bir araya getirebilir.",
   "Harf oyunu düşündüğünde, kuralın dört kelimeye de aynı biçimde uygulandığını kontrol et.",
   "Bir çağrışım tek başına yetmez. Dört kelimeyi kapsayan en açık açıklamayı ara.",
-  "Son keşif: öğrendiğin tüm yolları kullan. Kaybedersen tekrar dene; yolculuğun burada silinmez.",
+  "Öğrendiğin yolları birlikte kullan; şimdi atlasın daha derinlerine ilerliyorsun.",
+  "Her kelimeyi dört kişilik bir ailenin üyesi gibi düşün; bağın hepsine uyduğundan emin ol.",
+  "Tanıdık bir sözcük başka bir bağlamda farklı bir grubun parçası olabilir.",
+  "Önce kesin bildiğin bağı çöz, sonra kalan kelimeler arasındaki olasılıkları karşılaştır.",
+  "Dört sözcüğün ortak tamamlayıcısını ararken her ifadeyi tek tek kontrol et.",
+  "Bir tahmin tutmazsa başka bir açı dene; ilerlemen keşif yolunda korunur.",
+  "Her kelimeyi dört kişilik bir ailenin üyesi gibi düşün; bağın hepsine uyduğundan emin ol.",
+  "Tanıdık bir sözcük başka bir bağlamda farklı bir grubun parçası olabilir.",
+  "Önce kesin bildiğin bağı çöz, sonra kalan kelimeler arasındaki olasılıkları karşılaştır.",
+  "Dört sözcüğün ortak tamamlayıcısını ararken her ifadeyi tek tek kontrol et.",
+  "Bir tahmin tutmazsa başka bir açı dene; ilerlemen keşif yolunda korunur.",
+  "Her kelimeyi dört kişilik bir ailenin üyesi gibi düşün; bağın hepsine uyduğundan emin ol.",
+  "Tanıdık bir sözcük başka bir bağlamda farklı bir grubun parçası olabilir.",
+  "Önce kesin bildiğin bağı çöz, sonra kalan kelimeler arasındaki olasılıkları karşılaştır.",
+  "Dört sözcüğün ortak tamamlayıcısını ararken her ifadeyi tek tek kontrol et.",
+  "Bir tahmin tutmazsa başka bir açı dene; ilerlemen keşif yolunda korunur.",
+  "Her kelimeyi dört kişilik bir ailenin üyesi gibi düşün; bağın hepsine uyduğundan emin ol.",
+  "Tanıdık bir sözcük başka bir bağlamda farklı bir grubun parçası olabilir.",
+  "Önce kesin bildiğin bağı çöz, sonra kalan kelimeler arasındaki olasılıkları karşılaştır.",
+  "Dört sözcüğün ortak tamamlayıcısını ararken her ifadeyi tek tek kontrol et.",
+  "Bir tahmin tutmazsa başka bir açı dene; ilerlemen keşif yolunda korunur.",
 ] as const;
 export function journeyDifficulty(step: number): GameDifficulty {
   return step <= 8 ? "easy" : step <= 16 ? "medium" : step <= 24 ? "hard" : "ultra";

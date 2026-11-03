@@ -28,7 +28,7 @@ export function JourneyStage({ puzzle, step }: { puzzle: Puzzle; step: number })
     window.addEventListener("storage", sync);
     return () => { active = false; window.removeEventListener(AUTH_SESSION_EVENT, sync); window.removeEventListener("storage", sync); };
   }, []);
-  const world = JOURNEY_WORLDS[Math.floor((step - 1) / 5)]!;
+  const world = JOURNEY_WORLDS[Math.floor((step - 1) / 10)]!;
   const difficulty = journeyDifficulty(step);
   const status = progress.states[step - 1];
   if (!raw) return <p role="status">Yolculuğun yükleniyor…</p>;
@@ -53,7 +53,7 @@ export function JourneyStage({ puzzle, step }: { puzzle: Puzzle; step: number })
     {status === "won" && <section className={styles.finish} aria-label="Adım tamamlandı">
       <div className={styles.celebration} aria-hidden="true">{Array.from({ length: 20 }, (_, i) => <i key={i} style={{ "--angle": `${i * 18}deg`, "--distance": `${90 + i % 4 * 25}px`, "--delay": `${i % 5 * 45}ms`, "--hue": `${35 + i % 4 * 45}` } as CSSProperties} />)}</div>
       <div className={styles.winStars} aria-label={`${progress.stars[step - 1]} yıldız`}>{"★".repeat(progress.stars[step - 1] ?? 0)}</div>
-      <h2>{step === JOURNEY_LENGTH ? "30 keşif. Artık bağları görüyorsun." : "Yeni bir yol açıldı."}</h2>
+      <h2>{step === JOURNEY_LENGTH ? "50 keşif. Artık bağları görüyorsun." : "Yeni bir yol açıldı."}</h2>
       <p>{step === JOURNEY_LENGTH ? "Keşif Yolu tamamlandı. Şimdi günlük oyunda öğrendiklerini kullan." : `${step + 1}. adım seni bekliyor.`}</p>
       <Link className={styles.primary} href={step < JOURNEY_LENGTH ? journeyHref(step + 1) : "/play?mode=daily"}>{step < JOURNEY_LENGTH ? "Sonraki adımı keşfet →" : "Günlük bulmacaya geç →"}</Link>
       <Link href="/journey">Haritayı gör</Link>

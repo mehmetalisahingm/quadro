@@ -1,6 +1,6 @@
 # Keşif Yolu — 30 adım
 
-30 farklı tahta, 120 grup, 480 kelime kartı. Mevcut günlük ve zorluk parkurlarıyla
+50 farklı tahta. İlk 30 adım 120 grup içerir; sonraki 20 adım mevcut grupların farklı birleşimleridir. Mevcut günlük ve zorluk parkurlarıyla
 aynı tam tahta kullanılmaz. Öğretim amacıyla tanıdık kelimeler ve bazı bağlantılar
 başka tahtalarda tekrar edebilir. 1–8 kolay, 9–16 orta, 17–24 zor, 25–30 ultra
 destek düzeyi kullanır. Kategori isimleriyle başlayıp ortak kullanım, tamamlanan
@@ -18,3 +18,5 @@ hata hakkı için 3, 2 için 2, 1 için 1'dir. Günlük seriye veya günlük kay
 Kilitler bir öğrenim akışı sağlar; istemci kaydı değiştirilebilir ve ticari/güvenlik
 sınırı değildir. Sunucu tarafından doğrulanmış admin, önizleme için adım atlayabilir.
 Kampanyanın sabit tarihleri yalnız kayıt kimliğidir; günlük yayın tarihi değildir.
+
+31–50. adımlarda önceki adımlardaki bağlantılar yeni tahtalar halinde yeniden bir araya getirilmiştir. Tahta kombinasyonları farklıdır; bağımsız insan kör çözümü henüz yapılmamıştır.

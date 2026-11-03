@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-033",
+  "date": "2026-12-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-033-g1",
+      "title": "YEMEK PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "journey-033-w1",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "journey-033-w2",
+          "text": "KIZARTMA"
+        },
+        {
+          "id": "journey-033-w3",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "journey-033-w4",
+          "text": "IZGARA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HAŞLAMA, KIZARTMA, BUĞULAMA, IZGARA: yemek pişirme yöntemleri."
+    },
+    {
+      "id": "journey-033-g2",
+      "title": "HUKUKTA HAKLAR",
+      "words": [
+        {
+          "id": "journey-033-w5",
+          "text": "TELİF"
+        },
+        {
+          "id": "journey-033-w6",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-033-w7",
+          "text": "VETO"
+        },
+        {
+          "id": "journey-033-w8",
+          "text": "GEÇİŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "TELİF, MİRAS, VETO, GEÇİŞ: hukukta haklar."
+    },
+    {
+      "id": "journey-033-g3",
+      "title": "TEMEL RENK ADLARI",
+      "words": [
+        {
+          "id": "journey-033-w9",
+          "text": "KIRMIZI"
+        },
+        {
+          "id": "journey-033-w10",
+          "text": "MAVİ"
+        },
+        {
+          "id": "journey-033-w11",
+          "text": "YEŞİL"
+        },
+        {
+          "id": "journey-033-w12",
+          "text": "SARI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KIRMIZI, MAVİ, YEŞİL, SARI: temel renk adları."
+    },
+    {
+      "id": "journey-033-g4",
+      "title": "ORMAN AĞAÇLARI",
+      "words": [
+        {
+          "id": "journey-033-w13",
+          "text": "ÇAM"
+        },
+        {
+          "id": "journey-033-w14",
+          "text": "MEŞE"
+        },
+        {
+          "id": "journey-033-w15",
+          "text": "KAYIN"
+        },
+        {
+          "id": "journey-033-w16",
+          "text": "KÖKNAR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇAM, MEŞE, KAYIN, KÖKNAR: orman ağaçları."
+    }
+  ]
+}

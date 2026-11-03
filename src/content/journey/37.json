@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-037",
+  "date": "2026-12-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-037-g1",
+      "title": "SONUNA KOLU GELİR",
+      "words": [
+        {
+          "id": "journey-037-w1",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-037-w2",
+          "text": "NEHİR"
+        },
+        {
+          "id": "journey-037-w3",
+          "text": "EMNİYET"
+        },
+        {
+          "id": "journey-037-w4",
+          "text": "DİREKSİYON"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KAPI, NEHİR, EMNİYET, DİREKSİYON: sonuna kolu gelir."
+    },
+    {
+      "id": "journey-037-g2",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-037-w5",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-037-w6",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-037-w7",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-037-w8",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    },
+    {
+      "id": "journey-037-g3",
+      "title": "SONUNA MASASI GELİR",
+      "words": [
+        {
+          "id": "journey-037-w9",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "journey-037-w10",
+          "text": "AMELİYAT"
+        },
+        {
+          "id": "journey-037-w11",
+          "text": "YEMEK"
+        },
+        {
+          "id": "journey-037-w12",
+          "text": "BİLARDO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇALIŞMA, AMELİYAT, YEMEK, BİLARDO: sonuna masası gelir."
+    },
+    {
+      "id": "journey-037-g4",
+      "title": "SONUNA YUVASI GELİR",
+      "words": [
+        {
+          "id": "journey-037-w13",
+          "text": "KUŞ"
+        },
+        {
+          "id": "journey-037-w14",
+          "text": "AİLE"
+        },
+        {
+          "id": "journey-037-w15",
+          "text": "ARI"
+        },
+        {
+          "id": "journey-037-w16",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KUŞ, AİLE, ARI, ÇOCUK: sonuna yuvası gelir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-049",
+  "date": "2026-12-21",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-049-g1",
+      "title": "SONUNA BAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-049-w1",
+          "text": "YIL"
+        },
+        {
+          "id": "journey-049-w2",
+          "text": "SATIR"
+        },
+        {
+          "id": "journey-049-w3",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "journey-049-w4",
+          "text": "USTA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YIL, SATIR, KÖŞE, USTA: sonuna başı gelir."
+    },
+    {
+      "id": "journey-049-g2",
+      "title": "SONUNA KOLU GELİR",
+      "words": [
+        {
+          "id": "journey-049-w5",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-049-w6",
+          "text": "NEHİR"
+        },
+        {
+          "id": "journey-049-w7",
+          "text": "EMNİYET"
+        },
+        {
+          "id": "journey-049-w8",
+          "text": "DİREKSİYON"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KAPI, NEHİR, EMNİYET, DİREKSİYON: sonuna kolu gelir."
+    },
+    {
+      "id": "journey-049-g3",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-049-w9",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-049-w10",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-049-w11",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-049-w12",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    },
+    {
+      "id": "journey-049-g4",
+      "title": "SONUNA MASASI GELİR",
+      "words": [
+        {
+          "id": "journey-049-w13",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "journey-049-w14",
+          "text": "AMELİYAT"
+        },
+        {
+          "id": "journey-049-w15",
+          "text": "YEMEK"
+        },
+        {
+          "id": "journey-049-w16",
+          "text": "BİLARDO"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇALIŞMA, AMELİYAT, YEMEK, BİLARDO: sonuna masası gelir."
+    }
+  ]
+}
