@@ -33,6 +33,9 @@ export function AccountControl() {
     window.addEventListener("storage", sync);
     window.addEventListener("online", sync);
     window.addEventListener("focus", sync);
+    const refreshTimer = window.setInterval(() => {
+      if (document.visibilityState === "visible") sync();
+    }, 60_000);
 
     return () => {
       active = false;
@@ -40,6 +43,7 @@ export function AccountControl() {
       window.removeEventListener("storage", sync);
       window.removeEventListener("online", sync);
       window.removeEventListener("focus", sync);
+      window.clearInterval(refreshTimer);
     };
   }, []);
 
