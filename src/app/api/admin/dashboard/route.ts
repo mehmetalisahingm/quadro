@@ -17,6 +17,15 @@ function bearerToken(request: Request): string | null {
 }
 
 export async function GET(request: Request) {
+  try { return await loadDashboard(request); }
+  catch {
+    return NextResponse.json({ error: "dashboard_unavailable" }, {
+      status: 502, headers: { "cache-control": "no-store" },
+    });
+  }
+}
+
+async function loadDashboard(request: Request) {
   const supabase = config();
   if (!supabase) {
     return NextResponse.json({ error: "admin_dashboard_unavailable" }, { status: 503 });
@@ -34,6 +43,7 @@ export async function GET(request: Request) {
     },
     body: "{}",
     cache: "no-store",
+    signal: AbortSignal.timeout(8000),
   });
 
   if (!adminCheck.ok) {
@@ -51,6 +61,7 @@ export async function GET(request: Request) {
     },
     body: JSON.stringify({ p_limit: 50 }),
     cache: "no-store",
+    signal: AbortSignal.timeout(8000),
   });
 
   if (!dashboard.ok) {
@@ -65,6 +76,7 @@ export async function GET(request: Request) {
     headers: { apikey: supabase.secretKey, "content-type": "application/json" },
     body: JSON.stringify({ p_limit: 50 }),
     cache: "no-store",
+    signal: AbortSignal.timeout(8000),
   });
   const overview = activity.ok ? await activity.json() : null;
   return NextResponse.json({ ...snapshot, overview }, {

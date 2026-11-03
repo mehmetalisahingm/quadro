@@ -2,6 +2,8 @@
 
 export const AUTH_SESSION_STORAGE_KEY = "quadro:auth:v1";
 export const AUTH_SESSION_EVENT = "quadro:auth-session";
+let sessionRevision = 0;
+const refreshes = new Map<string, Promise<QuadroAuthSession | null>>();
 
 export type QuadroAuthUser = {
   id: string;
@@ -81,6 +83,7 @@ function safeStoredSession(raw: string | null): QuadroAuthSession | null {
 }
 
 function storeSession(session: QuadroAuthSession | null): void {
+  sessionRevision++;
   if (typeof window === "undefined") return;
   try {
     if (session) {
@@ -127,6 +130,7 @@ async function fetchUser(accessToken: string): Promise<QuadroAuthUser> {
   if (!config) throw new Error("Supabase auth yapılandırılmamış.");
 
   const response = await fetch(`${config.url}/auth/v1/user`, {
+    signal: AbortSignal.timeout(8000),
     method: "GET",
     headers: authHeaders(config.publishableKey, accessToken),
     cache: "no-store",
@@ -158,39 +162,62 @@ export async function refreshStoredSession(
   const now = Math.floor(Date.now() / 1000);
   if (session.expiresAt > now + 60) return session;
 
-  const response = await fetch(`${config.url}/auth/v1/token?grant_type=refresh_token`, {
-    method: "POST",
-    headers: authHeaders(config.publishableKey),
-    cache: "no-store",
-    body: JSON.stringify({ refresh_token: session.refreshToken }),
-  });
+  const existing = refreshes.get(session.refreshToken);
+  if (existing) return existing;
+  const task = refreshSessionOnce(session, config);
+  refreshes.set(session.refreshToken, task);
+  try { return await task; }
+  finally { if (refreshes.get(session.refreshToken) === task) refreshes.delete(session.refreshToken); }
+}
 
-  if (!response.ok) {
-    storeSession(null);
-    return null;
+async function refreshSessionOnce(session: QuadroAuthSession, config: { url: string; publishableKey: string }): Promise<QuadroAuthSession | null> {
+  const revision = sessionRevision;
+  const storedToken = readStoredSession()?.refreshToken;
+  const unchanged = () => revision === sessionRevision && readStoredSession()?.refreshToken === storedToken;
+  try {
+
+    const response = await fetch(`${config.url}/auth/v1/token?grant_type=refresh_token`, {
+      method: "POST",
+      headers: authHeaders(config.publishableKey),
+      cache: "no-store",
+      signal: AbortSignal.timeout(8000),
+      body: JSON.stringify({ refresh_token: session.refreshToken }),
+    });
+
+    if (!response.ok) {
+      if (!unchanged()) return readStoredSession();
+      if ([400, 401, 403].includes(response.status)) {
+        storeSession(null);
+        return null;
+      }
+      return session;
+    }
+
+    const data = (await response.json()) as SupabaseAuthResponse;
+    if (typeof data.access_token !== "string" || typeof data.refresh_token !== "string") {
+      return unchanged() ? session : readStoredSession();
+    }
+
+    const user = parseUser(data.user) ?? (await fetchUser(data.access_token));
+    const expiresIn = typeof data.expires_in === "number" ? data.expires_in : Number(data.expires_in);
+    const explicitExpiresAt = typeof data.expires_at === "number" ? data.expires_at : Number(data.expires_at);
+    const expiresAt = Number.isFinite(explicitExpiresAt) && explicitExpiresAt > 0
+      ? explicitExpiresAt
+      : Math.floor(Date.now() / 1000) + (Number.isFinite(expiresIn) && expiresIn > 0 ? expiresIn : 3600);
+
+    const next: QuadroAuthSession = {
+      accessToken: data.access_token,
+      refreshToken: data.refresh_token,
+      expiresAt,
+      user,
+    };
+    if (!unchanged()) return readStoredSession();
+    storeSession(next);
+    return next;
+  } catch {
+    // Offline, rate-limited and transient failures may be retried on focus/online.
+    return unchanged() ? session : readStoredSession();
   }
-
-  const data = (await response.json()) as SupabaseAuthResponse;
-  if (typeof data.access_token !== "string" || typeof data.refresh_token !== "string") {
-    storeSession(null);
-    return null;
-  }
-
-  const user = parseUser(data.user) ?? (await fetchUser(data.access_token));
-  const expiresIn = typeof data.expires_in === "number" ? data.expires_in : Number(data.expires_in);
-  const explicitExpiresAt = typeof data.expires_at === "number" ? data.expires_at : Number(data.expires_at);
-  const expiresAt = Number.isFinite(explicitExpiresAt) && explicitExpiresAt > 0
-    ? explicitExpiresAt
-    : Math.floor(Date.now() / 1000) + (Number.isFinite(expiresIn) && expiresIn > 0 ? expiresIn : 3600);
-
-  const next: QuadroAuthSession = {
-    accessToken: data.access_token,
-    refreshToken: data.refresh_token,
-    expiresAt,
-    user,
-  };
-  storeSession(next);
-  return next;
 }
 
 function callbackUrl(): string {
@@ -218,6 +245,7 @@ export async function sendMagicLink(email: string): Promise<void> {
   endpoint.searchParams.set("redirect_to", callbackUrl());
 
   const response = await fetch(endpoint, {
+    signal: AbortSignal.timeout(15000),
     method: "POST",
     headers: authHeaders(config.publishableKey),
     cache: "no-store",
@@ -247,6 +275,8 @@ export async function sendMagicLink(email: string): Promise<void> {
 export async function signOut(): Promise<void> {
   const session = readStoredSession();
   const config = authConfig();
+  // Release local access immediately; a late refresh must never restore it.
+  storeSession(null);
 
   if (session && config) {
     try {
@@ -254,13 +284,13 @@ export async function signOut(): Promise<void> {
         method: "POST",
         headers: authHeaders(config.publishableKey, session.accessToken),
         cache: "no-store",
+        signal: AbortSignal.timeout(8000),
       });
     } catch {
       // Uzak çıkış başarısız olsa bile yerel oturum silinir.
     }
   }
 
-  storeSession(null);
 }
 
 export function displayNameForUser(user: QuadroAuthUser): string {

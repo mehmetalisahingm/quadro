@@ -31,11 +31,15 @@ export function AccountControl() {
     sync();
     window.addEventListener(AUTH_SESSION_EVENT, sync);
     window.addEventListener("storage", sync);
+    window.addEventListener("online", sync);
+    window.addEventListener("focus", sync);
 
     return () => {
       active = false;
       window.removeEventListener(AUTH_SESSION_EVENT, sync);
       window.removeEventListener("storage", sync);
+      window.removeEventListener("online", sync);
+      window.removeEventListener("focus", sync);
     };
   }, []);
 
