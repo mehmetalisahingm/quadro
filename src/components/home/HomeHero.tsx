@@ -108,6 +108,9 @@ export function HomeHero({
 
         <p><Link className={styles.previousAction} href="/stats">İstatistiklerin →</Link></p>
         <p><Link className={styles.previousAction} href="/play">Bölümler · Kolay, Orta, Zor, Ultra Zor →</Link></p>
+        <p><Link className={styles.previousAction} href="/play?mode=ladder">🔥 Çarpan Merdiveni →</Link></p>
+        <p><Link className={styles.previousAction} href="/play?mode=bomb">💣 Bomba Kart →</Link></p>
+        <p><Link className={styles.previousAction} href="/play?mode=risk">Risk modu →</Link></p>
 
         <div className={styles.nextPuzzle} aria-label="Yeni bulmaca zamanı">
           <span className={styles.nextPuzzleKicker}>YENİ BULMACA</span>

@@ -8,6 +8,7 @@ import motionStyles from "./GameAnimations.module.css";
 export type WordTileProps = {
   id: WordId;
   text: string;
+  ariaLabel?: string;
   selected: boolean;
   disabled?: boolean;
   animation?: TileAnimationVerdict | null;
@@ -17,6 +18,7 @@ export type WordTileProps = {
 export function WordTile({
   id,
   text,
+  ariaLabel,
   selected,
   disabled = false,
   animation = null,
@@ -34,6 +36,7 @@ export function WordTile({
       type="button"
       className={`q-word-tile${animationClass ? ` ${animationClass}` : ""}`}
       aria-pressed={selected}
+      aria-label={ariaLabel}
       disabled={disabled}
       data-animation={animation ?? undefined}
       onClick={() => onToggle(id)}
