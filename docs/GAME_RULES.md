@@ -134,6 +134,10 @@ Hak düşüren gönderim hakkı sıfıra indirirse durum `lost` olur; dördünc�
 - Metin büyük harfe çevrilecekse `toLocaleUpperCase("tr-TR")` kullanılır. Varsayılan `toUpperCase()` `i` harfini `I` yapar ve Türkçe kelimeyi bozar.
 - Tekrar denetimi metinle değil `attemptKey(wordIds)` ile yapılır: dörtlü sıralanıp birleştirilir, sıra önemsizdir.
 
+## Resimli Quadro
+
+Resimli modda 16 kartın her biri görseldir; 4 grup, 4 hata hakkı, seçim, karıştırma, temizleme, çok yakın ve yinelenen tahmin kuralları bu belgedekiyle aynıdır ve aynı motor çalışır. Motor yalnız kart kimliklerini kullanır: görsel yolu veya açıklaması cevap hesabına girmez. Görsel yüklenemezse kart nesne açıklamasıyla oynanabilir kalır ve yeniden deneme hak harcamaz. Üçüncü tahta zor modda olduğu için çok yakın bildirimi orada yanlış olarak gösterilir.
+
 ## 8. Arayüz sınırı: UI iş kuralı hesaplamaz
 
 Arayüz motorun ürettiği durumu gösterir; hak, doğruluk, seri veya kazanma hesabını yeniden yapmaz (plan §6).

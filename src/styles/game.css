@@ -201,6 +201,116 @@
   opacity: 0.72;
 }
 
+/* Görsel kart: nesne her iki seçim durumunda aynı açık zeminde okunur. */
+.q-picture-slot {
+  position: relative;
+  min-width: 0;
+}
+
+.q-picture-tile {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 1;
+  padding: 7%;
+  overflow: hidden;
+  background: #fffdf7;
+  color: #20242d;
+}
+
+.q-picture-tile[aria-pressed="true"] {
+  border-color: var(--q-color-ink);
+  background: #fffdf7;
+  color: #20242d;
+  box-shadow:
+    inset 0 0 0 3px var(--q-color-ink),
+    0 7px 18px rgb(32 36 45 / 0.14);
+}
+
+.q-picture-tile[aria-pressed="true"]::after {
+  right: 3px;
+  bottom: 3px;
+  width: 20px;
+  height: 20px;
+  border-color: #fffdf7;
+  background: #20242d;
+}
+
+.q-picture-tile[aria-pressed="true"]::before {
+  right: 10px;
+  bottom: 8px;
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid #fffdf7;
+  border-bottom: 2px solid #fffdf7;
+  z-index: 2;
+}
+
+.q-picture-tile[aria-pressed="true"] .q-picture-image {
+  transform: scale(0.9);
+}
+
+.q-picture-tile[data-image-status="loading"] {
+  background: #ece9df;
+}
+
+.q-picture-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.q-picture-tile[data-image-status="loading"] .q-picture-image {
+  opacity: 0;
+}
+
+.q-picture-fallback {
+  font-size: clamp(9px, 2.6vw, 13px);
+  font-weight: var(--q-font-weight-medium);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.q-picture-retry {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  min-height: 28px;
+  padding: 0;
+  border: 1px solid #20242d;
+  border-radius: 50%;
+  background: #fffdf7;
+  color: #20242d;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.q-picture-strip {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 6px 0;
+}
+
+.q-picture-strip img {
+  width: min(44px, 20%);
+  height: auto;
+  aspect-ratio: 1;
+  padding: 3px;
+  border-radius: 8px;
+  background: #fffdf7;
+}
+
 .q-game-feedback {
   min-height: 28px;
   margin-top: 10px;

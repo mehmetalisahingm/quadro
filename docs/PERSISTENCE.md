@@ -26,7 +26,13 @@ sarmalayıcı içinde tutulur:
 ```
 quadro:save:v1:<dayKey>     → günün kaydı
 quadro:save:v1:last-day     → en son yazılan gün
+quadro:modes:v1:<mod>:<bulmaca>:r<revizyon>:<ad>  → moda özgü kayıt ve istatistik (#152)
 ```
+
+Resimli Quadro kayıtları `modeStorageKey` (`src/features/game/modes.ts`) ile mod, bulmaca
+kimliği ve içerik revizyonuna bağlanır. Günlük kayıt, kanal ve Keşif Yolu anahtarları
+değişmez; eski metin kayıtları olduğu gibi açılır. Yeni bir mod aynı düzeni kullanabilir.
+Resimli tahtaların sonucu günlük seri ve oranlara eklenmez, `/stats` sayfasında ayrı gösterilir.
 
 Anahtar güne özgüdür, şema sürümü anahtarın içindedir. Gün dönünce yeni gün
 yazılırken `last-day` işaretçisiyle dünün kaydı silinir; depoda tek bir oyun

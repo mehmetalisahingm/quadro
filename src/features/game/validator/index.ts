@@ -85,6 +85,13 @@ export const ISSUE_CODES = [
   "blind-word-shape",
   "blind-reveals-answers",
   "blind-order",
+  // Görsel tahta
+  "picture-id",
+  "picture-image",
+  "picture-image-src",
+  "picture-image-alt",
+  "picture-image-size",
+  "picture-image-duplicate",
 ] as const;
 
 /** Sorun kodu; mesaj metni değişse de kod kararlıdır ve testlerde buna bakılır. */
@@ -548,9 +555,15 @@ export type PuzzleParseResult =
 
 function narrowWord(value: unknown): PuzzleWord | null {
   if (!isRecord(value)) return null;
-  const { id, text } = value;
+  const { id, text, image } = value;
   if (typeof id !== "string" || typeof text !== "string") return null;
-  return { id, text };
+  if (image === undefined) return { id, text };
+  if (!isRecord(image)) return null;
+  const { src, alt, width, height } = image;
+  if (typeof src !== "string" || typeof alt !== "string" || typeof width !== "number" || typeof height !== "number") {
+    return null;
+  }
+  return { id, text, image: { src, alt, width, height } };
 }
 
 function narrowGroup(value: unknown): PuzzleGroup | null {
@@ -662,6 +675,78 @@ export function toPuzzle(file: DailyPuzzleFile): Puzzle {
     language: file.language,
     groups: file.groups,
   };
+}
+
+// ---------------------------------------------------------------------------
+// Görsel tahta doğrulaması
+// ---------------------------------------------------------------------------
+
+/** Görsel kart yolu: yalnız bu moda ayrılmış yerel dizin. */
+export const PICTURE_IMAGE_SRC_PATTERN = /^\/images\/pictures\/[a-z0-9]+(?:-[a-z0-9]+)*\.(?:svg|webp|png)$/;
+
+/**
+ * Resimli Quadro tahtasının görsel alanlarını denetler. Kart kimliği ve dörtlü
+ * kuralları {@link validatePuzzle} içindedir; dosyanın diskte bulunması ve kaynak
+ * kaydı `src/lib/daily/picturePuzzle.test.ts` ile doğrulanır.
+ *
+ * Görsel yolu veya açıklaması grubun başlığını ya da kimliğini taşıyamaz: cevap
+ * ne arayüzden okunabilir ne de ekran okuyucuyla ele verilir.
+ */
+export function validatePictureBoard(value: unknown): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  if (!isRecord(value)) return issues;
+
+  if (typeof value.id !== "string" || !/^picture-\d{3}$/.test(value.id)) {
+    issues.push({
+      code: "picture-id",
+      severity: "error",
+      path: "id",
+      message: "Görsel tahta kimliği picture-NNN biçiminde olmalı.",
+    });
+  }
+  if (!Array.isArray(value.groups)) return issues;
+
+  const seenSources = new Set<string>();
+  value.groups.forEach((group: unknown, groupIndex) => {
+    if (!isRecord(group) || !Array.isArray(group.words)) return;
+    const title = typeof group.title === "string" ? normalizeTr(group.title) : "";
+    const groupId = typeof group.id === "string" ? group.id : "";
+
+    group.words.forEach((word: unknown, wordIndex) => {
+      const path = `groups[${groupIndex}].words[${wordIndex}].image`;
+      const location = { groupIndex, wordIndex };
+      const image = isRecord(word) ? word.image : undefined;
+      if (!isRecord(image)) {
+        issues.push({ code: "picture-image", severity: "error", path, message: "Görsel kartta image alanı zorunludur.", ...location });
+        return;
+      }
+
+      if (typeof image.src !== "string" || !PICTURE_IMAGE_SRC_PATTERN.test(image.src)) {
+        issues.push({ code: "picture-image-src", severity: "error", path: `${path}.src`, message: "Görsel /images/pictures/ altında yerel bir dosya olmalı.", ...location });
+      } else {
+        if (seenSources.has(image.src)) {
+          issues.push({ code: "picture-image-duplicate", severity: "error", path: `${path}.src`, message: `Tahtada yinelenen görsel: ${image.src}`, ...location });
+        }
+        seenSources.add(image.src);
+        if (groupId !== "" && image.src.includes(groupId)) {
+          issues.push({ code: "picture-image-src", severity: "error", path: `${path}.src`, message: "Görsel yolu grup kimliğini taşıyamaz.", ...location });
+        }
+      }
+
+      if (!isFilledString(image.alt)) {
+        issues.push({ code: "picture-image-alt", severity: "error", path: `${path}.alt`, message: "Erişilebilir nesne açıklaması boş olamaz.", ...location });
+      } else if (title !== "" && normalizeTr(image.alt).includes(title)) {
+        issues.push({ code: "picture-image-alt", severity: "error", path: `${path}.alt`, message: "Açıklama gizli grubun adını söyleyemez.", ...location });
+      }
+
+      const positive = (size: unknown) => typeof size === "number" && Number.isInteger(size) && size > 0;
+      if (!positive(image.width) || !positive(image.height) || image.width !== image.height) {
+        issues.push({ code: "picture-image-size", severity: "error", path, message: "Görsel kare olmalı; width ve height pozitif ve eşit tam sayı olmalı.", ...location });
+      }
+    });
+  });
+
+  return issues;
 }
 
 // ---------------------------------------------------------------------------

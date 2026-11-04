@@ -5,20 +5,20 @@ import {
 } from "@/features/game/contracts";
 
 /** Oyuncuya gösterilen gönderim geri bildiriminin tek metin kaynağı. */
-export function feedbackMessage(outcome: SubmitOutcome | null): string {
+export function feedbackMessage(outcome: SubmitOutcome | null, cardNoun: string = "kelime"): string {
   if (!outcome) return "";
 
   switch (outcome.verdict) {
     case "correct":
       return `${outcome.solvedGroup.title} grubunu buldun.`;
     case "one-away":
-      return "Bir kelime uzaktasın.";
+      return `Bir ${cardNoun} uzaktasın.`;
     case "wrong":
-      return "Bu dört kelime aynı grupta değil.";
+      return `Bu dört ${cardNoun} aynı grupta değil.`;
     case "repeated":
       return "Bu dörtlüyü daha önce denedin.";
     case "invalid":
-      if (outcome.reason === "selection-count") return "Gruplamak için dört kelime seç.";
+      if (outcome.reason === "selection-count") return `Gruplamak için dört ${cardNoun} seç.`;
       if (outcome.reason === "game-ended") return "Bu oyun sona erdi.";
       return "Bu seçim artık geçerli değil.";
   }

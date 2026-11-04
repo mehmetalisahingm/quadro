@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "picture-003",
+  "date": "2026-11-03",
+  "language": "tr",
+  "status": "published",
+  "author": "Claude",
+  "reviewer": "Claude - öz denetim",
+  "groups": [
+    {
+      "id": "picture-003-g1",
+      "title": "TEKERLEKLİ EŞYALAR",
+      "difficulty": 1,
+      "explanation": "Hepsi tekerlek üzerinde yürür.",
+      "words": [
+        {
+          "id": "picture-003-w1",
+          "text": "PATEN",
+          "image": {
+            "src": "/images/pictures/paten.svg",
+            "alt": "Pembe paten",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w2",
+          "text": "EL ARABASI",
+          "image": {
+            "src": "/images/pictures/el-arabasi.svg",
+            "alt": "Yeşil el arabası",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w3",
+          "text": "BEBEK ARABASI",
+          "image": {
+            "src": "/images/pictures/bebek-arabasi.svg",
+            "alt": "Mor tenteli bebek arabası",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w4",
+          "text": "KAYKAY",
+          "image": {
+            "src": "/images/pictures/kaykay.svg",
+            "alt": "Turuncu kaykay",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-003-g2",
+      "title": "TUŞLU ALETLER",
+      "difficulty": 2,
+      "explanation": "Hepsi parmakla tuşlara basılarak kullanılır.",
+      "words": [
+        {
+          "id": "picture-003-w5",
+          "text": "PİYANO",
+          "image": {
+            "src": "/images/pictures/piyano.svg",
+            "alt": "Duvar piyanosu",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w6",
+          "text": "HESAP MAKİNESİ",
+          "image": {
+            "src": "/images/pictures/hesap-makinesi.svg",
+            "alt": "Ekranlı hesap makinesi",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w7",
+          "text": "DAKTİLO",
+          "image": {
+            "src": "/images/pictures/daktilo.svg",
+            "alt": "Kâğıt takılı daktilo",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w8",
+          "text": "YAZAR KASA",
+          "image": {
+            "src": "/images/pictures/yazar-kasa.svg",
+            "alt": "Çekmeceli yazar kasa",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-003-g3",
+      "title": "DİŞLERİ OLANLAR",
+      "difficulty": 3,
+      "explanation": "Hepsinin dişi var ama hiçbiri ısırmaz.",
+      "words": [
+        {
+          "id": "picture-003-w9",
+          "text": "TARAK",
+          "image": {
+            "src": "/images/pictures/tarak.svg",
+            "alt": "Ahşap saç tarağı",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w10",
+          "text": "TESTERE",
+          "image": {
+            "src": "/images/pictures/testere.svg",
+            "alt": "Saplı el testeresi",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w11",
+          "text": "FERMUAR",
+          "image": {
+            "src": "/images/pictures/fermuar.svg",
+            "alt": "Yarısı açık mavi fermuar",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w12",
+          "text": "ÇARK",
+          "image": {
+            "src": "/images/pictures/cark.svg",
+            "alt": "Metal çark",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-003-g4",
+      "title": "ADI KUM İLE BAŞLAYANLAR",
+      "difficulty": 4,
+      "explanation": "Kum saati, kumbara, kumanda ve kum kovası: ortak bağ nesnelerin işi değil, adlarının başındaki KUM.",
+      "words": [
+        {
+          "id": "picture-003-w13",
+          "text": "KUM SAATİ",
+          "image": {
+            "src": "/images/pictures/kum-saati.svg",
+            "alt": "Ahşap çerçeveli kum saati",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w14",
+          "text": "KUMBARA",
+          "image": {
+            "src": "/images/pictures/kumbara.svg",
+            "alt": "Pembe domuz şeklinde kumbara",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w15",
+          "text": "KUMANDA",
+          "image": {
+            "src": "/images/pictures/kumanda.svg",
+            "alt": "Uzaktan kumanda",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-003-w16",
+          "text": "KUM KOVASI",
+          "image": {
+            "src": "/images/pictures/kum-kovasi.svg",
+            "alt": "Küreğiyle kırmızı plaj kovası",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    }
+  ]
+}

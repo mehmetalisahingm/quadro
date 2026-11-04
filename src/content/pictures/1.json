@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "picture-001",
+  "date": "2026-11-01",
+  "language": "tr",
+  "status": "published",
+  "author": "Claude",
+  "reviewer": "Claude - öz denetim",
+  "groups": [
+    {
+      "id": "picture-001-g1",
+      "title": "ÇALGILAR",
+      "difficulty": 1,
+      "explanation": "Hepsi müzik yapmak için çalınır.",
+      "words": [
+        {
+          "id": "picture-001-w1",
+          "text": "GİTAR",
+          "image": {
+            "src": "/images/pictures/gitar.svg",
+            "alt": "Akustik gitar",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w2",
+          "text": "TROMPET",
+          "image": {
+            "src": "/images/pictures/trompet.svg",
+            "alt": "Sarı metal trompet",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w3",
+          "text": "FLÜT",
+          "image": {
+            "src": "/images/pictures/flut.svg",
+            "alt": "Ahşap blok flüt",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w4",
+          "text": "AKORDEON",
+          "image": {
+            "src": "/images/pictures/akordeon.svg",
+            "alt": "Kırmızı körüklü akordeon",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-001-g2",
+      "title": "TAŞITLAR",
+      "difficulty": 2,
+      "explanation": "Hepsi insan veya yük taşır.",
+      "words": [
+        {
+          "id": "picture-001-w5",
+          "text": "BİSİKLET",
+          "image": {
+            "src": "/images/pictures/bisiklet.svg",
+            "alt": "İki tekerlekli bisiklet",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w6",
+          "text": "GEMİ",
+          "image": {
+            "src": "/images/pictures/gemi.svg",
+            "alt": "Dalgalar üzerinde gemi",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w7",
+          "text": "KAMYON",
+          "image": {
+            "src": "/images/pictures/kamyon.svg",
+            "alt": "Kasalı kamyon",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w8",
+          "text": "UÇAK",
+          "image": {
+            "src": "/images/pictures/ucak.svg",
+            "alt": "Yolcu uçağı",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-001-g3",
+      "title": "SPOR MALZEMELERİ",
+      "difficulty": 3,
+      "explanation": "Hepsi sporda kullanılır ya da sporda kazanılır.",
+      "words": [
+        {
+          "id": "picture-001-w9",
+          "text": "FUTBOL TOPU",
+          "image": {
+            "src": "/images/pictures/futbol-topu.svg",
+            "alt": "Siyah beyaz futbol topu",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w10",
+          "text": "RAKET",
+          "image": {
+            "src": "/images/pictures/raket.svg",
+            "alt": "Tenis raketi",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w11",
+          "text": "DAMBIL",
+          "image": {
+            "src": "/images/pictures/dambil.svg",
+            "alt": "Ağırlık dambılı",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w12",
+          "text": "MADALYA",
+          "image": {
+            "src": "/images/pictures/madalya.svg",
+            "alt": "Kurdeleli altın madalya",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-001-g4",
+      "title": "OYUNCAKLAR",
+      "difficulty": 4,
+      "explanation": "Hepsi oyun için kullanılan oyuncaklardır.",
+      "words": [
+        {
+          "id": "picture-001-w13",
+          "text": "BALON",
+          "image": {
+            "src": "/images/pictures/balon.svg",
+            "alt": "İpli kırmızı balon",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w14",
+          "text": "UÇURTMA",
+          "image": {
+            "src": "/images/pictures/ucurtma.svg",
+            "alt": "Kuyruklu renkli uçurtma",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w15",
+          "text": "YOYO",
+          "image": {
+            "src": "/images/pictures/yoyo.svg",
+            "alt": "İpli mor yoyo",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-001-w16",
+          "text": "TOPAÇ",
+          "image": {
+            "src": "/images/pictures/topac.svg",
+            "alt": "Dönen ahşap topaç",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    }
+  ]
+}

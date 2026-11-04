@@ -27,12 +27,29 @@ export type GameStatus = "playing" | "won" | "lost";
 // Bulmaca verisi
 // ---------------------------------------------------------------------------
 
-/** Tahtadaki tek kelime kartı. */
+/**
+ * Görsel kartın sunum verisi. Motor bu alanı okumaz; cevap yalnız kart ve grup
+ * kimliklerinden hesaplanır. `alt` nesneyi tarif eder, gizli grubu söylemez.
+ */
+export type PuzzleWordImage = {
+  /** `public/` altındaki yerel görselin kök yolu. */
+  src: string;
+  /** Ekran okuyucu adı ve yükleme başarısız olduğunda gösterilen nesne açıklaması. */
+  alt: string;
+  /** Görselin piksel genişliği. */
+  width: number;
+  /** Görselin piksel yüksekliği. */
+  height: number;
+};
+
+/** Tahtadaki tek kart. */
 export type PuzzleWord = {
   /** Bulmaca içinde benzersiz kimlik. */
   id: WordId;
-  /** Oyuncuya içerikteki haliyle gösterilen metin. */
+  /** Metin kartında oyuncuya gösterilen metin; görsel kartta çözümden sonra görünen nesne adı. */
   text: string;
+  /** Yalnız görsel kartlarda bulunur. */
+  image?: PuzzleWordImage;
 };
 
 /** Ortak bir bağla birleşen dört kelimelik gizli grup. */
