@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-149",
+  "date": "2027-03-31",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-149-g1",
+      "title": "FIRINDA YAPILAN HAMUR İŞLERİ",
+      "words": [
+        {
+          "id": "journey-149-w1",
+          "text": "POĞAÇA"
+        },
+        {
+          "id": "journey-149-w2",
+          "text": "AÇMA"
+        },
+        {
+          "id": "journey-149-w3",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-149-w4",
+          "text": "BÖREK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "POĞAÇA, AÇMA, SİMİT, BÖREK: fırında yapılan hamur işleri."
+    },
+    {
+      "id": "journey-149-g2",
+      "title": "SONUNA AĞI GELİR",
+      "words": [
+        {
+          "id": "journey-149-w5",
+          "text": "ÖRÜMCEK"
+        },
+        {
+          "id": "journey-149-w6",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-149-w7",
+          "text": "İLETİŞİM"
+        },
+        {
+          "id": "journey-149-w8",
+          "text": "SİNİR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÖRÜMCEK, BALIK, İLETİŞİM, SİNİR: sonuna ağı gelir."
+    },
+    {
+      "id": "journey-149-g3",
+      "title": "EVCİL HAYVANLAR",
+      "words": [
+        {
+          "id": "journey-149-w9",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-149-w10",
+          "text": "KÖPEK"
+        },
+        {
+          "id": "journey-149-w11",
+          "text": "HAMSTER"
+        },
+        {
+          "id": "journey-149-w12",
+          "text": "MUHABBET KUŞU"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KEDİ, KÖPEK, HAMSTER, MUHABBET KUŞU: evcil hayvanlar."
+    },
+    {
+      "id": "journey-149-g4",
+      "title": "BİR KİTABIN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-149-w13",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "journey-149-w14",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "journey-149-w15",
+          "text": "DİZİN"
+        },
+        {
+          "id": "journey-149-w16",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÖNSÖZ, İÇİNDEKİLER, DİZİN, KAYNAKÇA: bir kitabın bölümleri."
+    }
+  ]
+}

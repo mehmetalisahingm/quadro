@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-114",
+  "date": "2027-02-24",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-114-g1",
+      "title": "AÇIK HAVA SPORLARI",
+      "words": [
+        {
+          "id": "journey-114-w1",
+          "text": "KAYAK"
+        },
+        {
+          "id": "journey-114-w2",
+          "text": "SÖRF"
+        },
+        {
+          "id": "journey-114-w3",
+          "text": "DAĞCILIK"
+        },
+        {
+          "id": "journey-114-w4",
+          "text": "YAMAÇ PARAŞÜTÜ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KAYAK, SÖRF, DAĞCILIK, YAMAÇ PARAŞÜTÜ: açık hava sporları."
+    },
+    {
+      "id": "journey-114-g2",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-114-w5",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-114-w6",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-114-w7",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-114-w8",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    },
+    {
+      "id": "journey-114-g3",
+      "title": "İLK HARFİ SİLİNCE YENİ SÖZCÜK",
+      "words": [
+        {
+          "id": "journey-114-w9",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-114-w10",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-114-w11",
+          "text": "KASA"
+        },
+        {
+          "id": "journey-114-w12",
+          "text": "SÖZ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ulak, alem, asa ve öz kalır."
+    },
+    {
+      "id": "journey-114-g4",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-114-w13",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-114-w14",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-114-w15",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-114-w16",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    }
+  ]
+}

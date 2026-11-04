@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-141",
+  "date": "2027-03-23",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-141-g1",
+      "title": "TİYATRODA GÖREV ALANLAR",
+      "words": [
+        {
+          "id": "journey-141-w1",
+          "text": "OYUNCU"
+        },
+        {
+          "id": "journey-141-w2",
+          "text": "YÖNETMEN"
+        },
+        {
+          "id": "journey-141-w3",
+          "text": "SUFLÖR"
+        },
+        {
+          "id": "journey-141-w4",
+          "text": "DEKORATÖR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OYUNCU, YÖNETMEN, SUFLÖR, DEKORATÖR: tiyatroda görev alanlar."
+    },
+    {
+      "id": "journey-141-g2",
+      "title": "SICAKLIK ÖLÇEKLERİ",
+      "words": [
+        {
+          "id": "journey-141-w5",
+          "text": "CELSİUS"
+        },
+        {
+          "id": "journey-141-w6",
+          "text": "FAHRENHEİT"
+        },
+        {
+          "id": "journey-141-w7",
+          "text": "KELVİN"
+        },
+        {
+          "id": "journey-141-w8",
+          "text": "RÉAUMUR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "CELSİUS, FAHRENHEİT, KELVİN, RÉAUMUR: sıcaklık ölçekleri."
+    },
+    {
+      "id": "journey-141-g3",
+      "title": "GEMİNİN YÖNLERİ",
+      "words": [
+        {
+          "id": "journey-141-w9",
+          "text": "PRUVA"
+        },
+        {
+          "id": "journey-141-w10",
+          "text": "PUPA"
+        },
+        {
+          "id": "journey-141-w11",
+          "text": "İSKELE"
+        },
+        {
+          "id": "journey-141-w12",
+          "text": "SANCAK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PRUVA, PUPA, İSKELE, SANCAK: geminin yönleri."
+    },
+    {
+      "id": "journey-141-g4",
+      "title": "HAVALİMANINDA",
+      "words": [
+        {
+          "id": "journey-141-w13",
+          "text": "TERMİNAL"
+        },
+        {
+          "id": "journey-141-w14",
+          "text": "PASAPORT"
+        },
+        {
+          "id": "journey-141-w15",
+          "text": "BİNİŞ KARTI"
+        },
+        {
+          "id": "journey-141-w16",
+          "text": "BAGAJ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TERMİNAL, PASAPORT, BİNİŞ KARTI, BAGAJ: havalimanında."
+    }
+  ]
+}

@@ -28,8 +28,8 @@ describe("30-step learning campaign", () => {
     expect([1, 8, 9, 16, 17, 24, 25, 30].map(journeyDifficulty)).toEqual(["easy", "easy", "medium", "medium", "hard", "hard", "ultra", "ultra"]);
   });
   it("rejects invalid steps and foreign IDs", async () => {
-    for (const step of [0, 51, -1, 1.5, NaN]) expect(await loadJourneyPuzzle(step)).toBeNull();
+    for (const step of [0, 201, -1, 1.5, NaN]) expect(await loadJourneyPuzzle(step)).toBeNull();
     expect(journeyStep("track-easy-001")).toBeNull();
-    expect(journeyStep("journey-051")).toBeNull();
+    expect(journeyStep("journey-201")).toBeNull();
   });
 });

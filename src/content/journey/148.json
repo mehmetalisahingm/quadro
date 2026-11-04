@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-148",
+  "date": "2027-03-30",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-148-g1",
+      "title": "HUKUKTA HAKLAR",
+      "words": [
+        {
+          "id": "journey-148-w1",
+          "text": "TELİF"
+        },
+        {
+          "id": "journey-148-w2",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-148-w3",
+          "text": "VETO"
+        },
+        {
+          "id": "journey-148-w4",
+          "text": "GEÇİŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "TELİF, MİRAS, VETO, GEÇİŞ: hukukta haklar."
+    },
+    {
+      "id": "journey-148-g2",
+      "title": "İÇECEK KAPLARI",
+      "words": [
+        {
+          "id": "journey-148-w5",
+          "text": "BARDAK"
+        },
+        {
+          "id": "journey-148-w6",
+          "text": "FİNCAN"
+        },
+        {
+          "id": "journey-148-w7",
+          "text": "KUPA"
+        },
+        {
+          "id": "journey-148-w8",
+          "text": "MATARA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BARDAK, FİNCAN, KUPA, MATARA: içecek kapları."
+    },
+    {
+      "id": "journey-148-g3",
+      "title": "KUŞ BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-148-w9",
+          "text": "GAGA"
+        },
+        {
+          "id": "journey-148-w10",
+          "text": "KANAT"
+        },
+        {
+          "id": "journey-148-w11",
+          "text": "TÜY"
+        },
+        {
+          "id": "journey-148-w12",
+          "text": "PENÇE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GAGA, KANAT, TÜY, PENÇE: kuş bölümleri."
+    },
+    {
+      "id": "journey-148-g4",
+      "title": "SONUNA NOKTASI GELİR",
+      "words": [
+        {
+          "id": "journey-148-w13",
+          "text": "ODAK"
+        },
+        {
+          "id": "journey-148-w14",
+          "text": "DÖNÜM"
+        },
+        {
+          "id": "journey-148-w15",
+          "text": "KAYNAMA"
+        },
+        {
+          "id": "journey-148-w16",
+          "text": "DONMA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ODAK, DÖNÜM, KAYNAMA, DONMA: sonuna noktası gelir."
+    }
+  ]
+}

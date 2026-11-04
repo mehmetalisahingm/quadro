@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-191",
+  "date": "2027-05-12",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-191-g1",
+      "title": "SONUNA ÇARKI GELİR",
+      "words": [
+        {
+          "id": "journey-191-w1",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "journey-191-w2",
+          "text": "SU"
+        },
+        {
+          "id": "journey-191-w3",
+          "text": "ŞANS"
+        },
+        {
+          "id": "journey-191-w4",
+          "text": "FELEK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DİŞLİ, SU, ŞANS, FELEK: sonuna çarkı gelir."
+    },
+    {
+      "id": "journey-191-g2",
+      "title": "YAĞIŞ TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-191-w5",
+          "text": "YAĞMUR"
+        },
+        {
+          "id": "journey-191-w6",
+          "text": "KAR"
+        },
+        {
+          "id": "journey-191-w7",
+          "text": "DOLU"
+        },
+        {
+          "id": "journey-191-w8",
+          "text": "ÇİSENTİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YAĞMUR, KAR, DOLU, ÇİSENTİ: yağış türleri."
+    },
+    {
+      "id": "journey-191-g3",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-191-w9",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-191-w10",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-191-w11",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-191-w12",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    },
+    {
+      "id": "journey-191-g4",
+      "title": "İŞİTMEYLE İLGİLİ TERİMLER",
+      "words": [
+        {
+          "id": "journey-191-w13",
+          "text": "SES"
+        },
+        {
+          "id": "journey-191-w14",
+          "text": "TON"
+        },
+        {
+          "id": "journey-191-w15",
+          "text": "TINI"
+        },
+        {
+          "id": "journey-191-w16",
+          "text": "RİTİM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SES, TON, TINI, RİTİM: işitmeyle ilgili terimler."
+    }
+  ]
+}

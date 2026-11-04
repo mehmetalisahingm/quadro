@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-116",
+  "date": "2027-02-26",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-116-g1",
+      "title": "SERAMİK YAPARKEN",
+      "words": [
+        {
+          "id": "journey-116-w1",
+          "text": "KİL"
+        },
+        {
+          "id": "journey-116-w2",
+          "text": "ÇARK"
+        },
+        {
+          "id": "journey-116-w3",
+          "text": "SIR"
+        },
+        {
+          "id": "journey-116-w4",
+          "text": "FIRIN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KİL, ÇARK, SIR, FIRIN: seramik yaparken."
+    },
+    {
+      "id": "journey-116-g2",
+      "title": "KUMAŞ ÇEŞİTLERİ",
+      "words": [
+        {
+          "id": "journey-116-w5",
+          "text": "KADİFE"
+        },
+        {
+          "id": "journey-116-w6",
+          "text": "SATEN"
+        },
+        {
+          "id": "journey-116-w7",
+          "text": "KETEN"
+        },
+        {
+          "id": "journey-116-w8",
+          "text": "DENİM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KADİFE, SATEN, KETEN, DENİM: kumaş çeşitleri."
+    },
+    {
+      "id": "journey-116-g3",
+      "title": "HEM ORGAN HEM NESNE PARÇASI",
+      "words": [
+        {
+          "id": "journey-116-w9",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-116-w10",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-116-w11",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-116-w12",
+          "text": "DİŞ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Koltuğun kolu, masanın ayağı, çekmecenin gözü, tarağın dişi."
+    },
+    {
+      "id": "journey-116-g4",
+      "title": "SONUNA DİLİ GELİR",
+      "words": [
+        {
+          "id": "journey-116-w13",
+          "text": "ANA"
+        },
+        {
+          "id": "journey-116-w14",
+          "text": "BEDEN"
+        },
+        {
+          "id": "journey-116-w15",
+          "text": "İŞARET"
+        },
+        {
+          "id": "journey-116-w16",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ANA, BEDEN, İŞARET, PROGRAMLAMA: sonuna dili gelir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-117",
+  "date": "2027-02-27",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-117-g1",
+      "title": "SONUNA ANAHTARI GELİR",
+      "words": [
+        {
+          "id": "journey-117-w1",
+          "text": "CEVAP"
+        },
+        {
+          "id": "journey-117-w2",
+          "text": "İNGİLİZ"
+        },
+        {
+          "id": "journey-117-w3",
+          "text": "FA"
+        },
+        {
+          "id": "journey-117-w4",
+          "text": "SOL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "CEVAP, İNGİLİZ, FA, SOL: sonuna anahtarı gelir."
+    },
+    {
+      "id": "journey-117-g2",
+      "title": "BAŞINA KARA GELİR",
+      "words": [
+        {
+          "id": "journey-117-w5",
+          "text": "DENİZ"
+        },
+        {
+          "id": "journey-117-w6",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-117-w7",
+          "text": "BİBER"
+        },
+        {
+          "id": "journey-117-w8",
+          "text": "KUTU"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DENİZ, KEDİ, BİBER, KUTU: başına kara gelir."
+    },
+    {
+      "id": "journey-117-g3",
+      "title": "AYAK GİYİMİ",
+      "words": [
+        {
+          "id": "journey-117-w9",
+          "text": "BOT"
+        },
+        {
+          "id": "journey-117-w10",
+          "text": "TERLİK"
+        },
+        {
+          "id": "journey-117-w11",
+          "text": "SPOR AYAKKABI"
+        },
+        {
+          "id": "journey-117-w12",
+          "text": "ÇİZME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BOT, TERLİK, SPOR AYAKKABI, ÇİZME: ayak giyimi."
+    },
+    {
+      "id": "journey-117-g4",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-117-w13",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-117-w14",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-117-w15",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-117-w16",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    }
+  ]
+}

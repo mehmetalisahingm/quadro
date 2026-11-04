@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-187",
+  "date": "2027-05-08",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-187-g1",
+      "title": "EKLE EŞYAYA DÖNÜŞEN ORGAN",
+      "words": [
+        {
+          "id": "journey-187-w1",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-187-w2",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-187-w3",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-187-w4",
+          "text": "BAŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "-lık ekinin uyumlu biçimleriyle gözlük, kulaklık, ayaklık, başlık."
+    },
+    {
+      "id": "journey-187-g2",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-187-w5",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-187-w6",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-187-w7",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-187-w8",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    },
+    {
+      "id": "journey-187-g3",
+      "title": "GEMİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-187-w9",
+          "text": "GÜVERTE"
+        },
+        {
+          "id": "journey-187-w10",
+          "text": "KAMARA"
+        },
+        {
+          "id": "journey-187-w11",
+          "text": "DÜMEN"
+        },
+        {
+          "id": "journey-187-w12",
+          "text": "BACA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GÜVERTE, KAMARA, DÜMEN, BACA: geminin bölümleri."
+    },
+    {
+      "id": "journey-187-g4",
+      "title": "TAKIM ELBİSEYLE",
+      "words": [
+        {
+          "id": "journey-187-w13",
+          "text": "CEKET"
+        },
+        {
+          "id": "journey-187-w14",
+          "text": "PANTOLON"
+        },
+        {
+          "id": "journey-187-w15",
+          "text": "KRAVAT"
+        },
+        {
+          "id": "journey-187-w16",
+          "text": "YELEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "CEKET, PANTOLON, KRAVAT, YELEK: takım elbiseyle."
+    }
+  ]
+}

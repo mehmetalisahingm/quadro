@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-184",
+  "date": "2027-05-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-184-g1",
+      "title": "SPOR MÜSABAKASINDA",
+      "words": [
+        {
+          "id": "journey-184-w1",
+          "text": "HAKEM"
+        },
+        {
+          "id": "journey-184-w2",
+          "text": "SKOR"
+        },
+        {
+          "id": "journey-184-w3",
+          "text": "RAKİP"
+        },
+        {
+          "id": "journey-184-w4",
+          "text": "TRİBÜN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HAKEM, SKOR, RAKİP, TRİBÜN: spor müsabakasında."
+    },
+    {
+      "id": "journey-184-g2",
+      "title": "DÜŞMEKLE İFADE KURAR",
+      "words": [
+        {
+          "id": "journey-184-w5",
+          "text": "AKLA"
+        },
+        {
+          "id": "journey-184-w6",
+          "text": "PEŞİNE"
+        },
+        {
+          "id": "journey-184-w7",
+          "text": "DARA"
+        },
+        {
+          "id": "journey-184-w8",
+          "text": "YOLA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "AKLA, PEŞİNE, DARA, YOLA: düşmekle ifade kurar."
+    },
+    {
+      "id": "journey-184-g3",
+      "title": "ORMAN AĞAÇLARI",
+      "words": [
+        {
+          "id": "journey-184-w9",
+          "text": "ÇAM"
+        },
+        {
+          "id": "journey-184-w10",
+          "text": "MEŞE"
+        },
+        {
+          "id": "journey-184-w11",
+          "text": "KAYIN"
+        },
+        {
+          "id": "journey-184-w12",
+          "text": "KÖKNAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇAM, MEŞE, KAYIN, KÖKNAR: orman ağaçları."
+    },
+    {
+      "id": "journey-184-g4",
+      "title": "SONUNA ÇARKI GELİR",
+      "words": [
+        {
+          "id": "journey-184-w13",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "journey-184-w14",
+          "text": "SU"
+        },
+        {
+          "id": "journey-184-w15",
+          "text": "ŞANS"
+        },
+        {
+          "id": "journey-184-w16",
+          "text": "FELEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DİŞLİ, SU, ŞANS, FELEK: sonuna çarkı gelir."
+    }
+  ]
+}

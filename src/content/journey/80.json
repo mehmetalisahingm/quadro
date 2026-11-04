@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-080",
+  "date": "2027-01-21",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-080-g1",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-080-w1",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-080-w2",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-080-w3",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-080-w4",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    },
+    {
+      "id": "journey-080-g2",
+      "title": "GEMİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-080-w5",
+          "text": "GÜVERTE"
+        },
+        {
+          "id": "journey-080-w6",
+          "text": "KAMARA"
+        },
+        {
+          "id": "journey-080-w7",
+          "text": "DÜMEN"
+        },
+        {
+          "id": "journey-080-w8",
+          "text": "BACA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "GÜVERTE, KAMARA, DÜMEN, BACA: geminin bölümleri."
+    },
+    {
+      "id": "journey-080-g3",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-080-w9",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-080-w10",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-080-w11",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-080-w12",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    },
+    {
+      "id": "journey-080-g4",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-080-w13",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-080-w14",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-080-w15",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-080-w16",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-180",
+  "date": "2027-05-01",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-180-g1",
+      "title": "SONUNA DİLİ GELİR",
+      "words": [
+        {
+          "id": "journey-180-w1",
+          "text": "ANA"
+        },
+        {
+          "id": "journey-180-w2",
+          "text": "BEDEN"
+        },
+        {
+          "id": "journey-180-w3",
+          "text": "İŞARET"
+        },
+        {
+          "id": "journey-180-w4",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ANA, BEDEN, İŞARET, PROGRAMLAMA: sonuna dili gelir."
+    },
+    {
+      "id": "journey-180-g2",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-180-w5",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-180-w6",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-180-w7",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-180-w8",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    },
+    {
+      "id": "journey-180-g3",
+      "title": "SONUNA DÜĞMESİ GELİR",
+      "words": [
+        {
+          "id": "journey-180-w9",
+          "text": "GÖMLEK"
+        },
+        {
+          "id": "journey-180-w10",
+          "text": "ASANSÖR"
+        },
+        {
+          "id": "journey-180-w11",
+          "text": "BAŞLAT"
+        },
+        {
+          "id": "journey-180-w12",
+          "text": "ACİL DURDURMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GÖMLEK, ASANSÖR, BAŞLAT, ACİL DURDURMA: sonuna düğmesi gelir."
+    },
+    {
+      "id": "journey-180-g4",
+      "title": "İNŞAAT MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-180-w13",
+          "text": "TUĞLA"
+        },
+        {
+          "id": "journey-180-w14",
+          "text": "ÇİMENTO"
+        },
+        {
+          "id": "journey-180-w15",
+          "text": "KUM"
+        },
+        {
+          "id": "journey-180-w16",
+          "text": "KİREÇ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TUĞLA, ÇİMENTO, KUM, KİREÇ: inşaat malzemeleri."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-169",
+  "date": "2027-04-20",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-169-g1",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-169-w1",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-169-w2",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-169-w3",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-169-w4",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    },
+    {
+      "id": "journey-169-g2",
+      "title": "KAMERADA AYARLAR",
+      "words": [
+        {
+          "id": "journey-169-w5",
+          "text": "POZLAMA"
+        },
+        {
+          "id": "journey-169-w6",
+          "text": "BEYAZ AYARI"
+        },
+        {
+          "id": "journey-169-w7",
+          "text": "ISO"
+        },
+        {
+          "id": "journey-169-w8",
+          "text": "ENSTANTANE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "POZLAMA, BEYAZ AYARI, ISO, ENSTANTANE: kamerada ayarlar."
+    },
+    {
+      "id": "journey-169-g3",
+      "title": "YAZI YAZMA GEREÇLERİ",
+      "words": [
+        {
+          "id": "journey-169-w9",
+          "text": "TÜKENMEZ KALEM"
+        },
+        {
+          "id": "journey-169-w10",
+          "text": "DOLMA KALEM"
+        },
+        {
+          "id": "journey-169-w11",
+          "text": "KURŞUN KALEM"
+        },
+        {
+          "id": "journey-169-w12",
+          "text": "KEÇELİ KALEM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "TÜKENMEZ KALEM, DOLMA KALEM, KURŞUN KALEM, KEÇELİ KALEM: yazı yazma gereçleri."
+    },
+    {
+      "id": "journey-169-g4",
+      "title": "SONUNA TABLOSU GELİR",
+      "words": [
+        {
+          "id": "journey-169-w13",
+          "text": "ÇARPIM"
+        },
+        {
+          "id": "journey-169-w14",
+          "text": "PERİYODİK"
+        },
+        {
+          "id": "journey-169-w15",
+          "text": "PUAN"
+        },
+        {
+          "id": "journey-169-w16",
+          "text": "GELİR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇARPIM, PERİYODİK, PUAN, GELİR: sonuna tablosu gelir."
+    }
+  ]
+}

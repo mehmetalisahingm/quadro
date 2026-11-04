@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-075",
+  "date": "2027-01-16",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-075-g1",
+      "title": "SONUNA YUVASI GELİR",
+      "words": [
+        {
+          "id": "journey-075-w1",
+          "text": "KUŞ"
+        },
+        {
+          "id": "journey-075-w2",
+          "text": "AİLE"
+        },
+        {
+          "id": "journey-075-w3",
+          "text": "ARI"
+        },
+        {
+          "id": "journey-075-w4",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KUŞ, AİLE, ARI, ÇOCUK: sonuna yuvası gelir."
+    },
+    {
+      "id": "journey-075-g2",
+      "title": "SONUNA KARTI GELİR",
+      "words": [
+        {
+          "id": "journey-075-w5",
+          "text": "KREDİ"
+        },
+        {
+          "id": "journey-075-w6",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "journey-075-w7",
+          "text": "HAFIZA"
+        },
+        {
+          "id": "journey-075-w8",
+          "text": "TEBRİK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KREDİ, KİMLİK, HAFIZA, TEBRİK: sonuna kartı gelir."
+    },
+    {
+      "id": "journey-075-g3",
+      "title": "MÜZİK ALETLERİ",
+      "words": [
+        {
+          "id": "journey-075-w9",
+          "text": "KEMAN"
+        },
+        {
+          "id": "journey-075-w10",
+          "text": "PİYANO"
+        },
+        {
+          "id": "journey-075-w11",
+          "text": "DAVUL"
+        },
+        {
+          "id": "journey-075-w12",
+          "text": "GİTAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KEMAN, PİYANO, DAVUL, GİTAR: müzik aletleri."
+    },
+    {
+      "id": "journey-075-g4",
+      "title": "MEVSİMLER",
+      "words": [
+        {
+          "id": "journey-075-w13",
+          "text": "İLKBAHAR"
+        },
+        {
+          "id": "journey-075-w14",
+          "text": "YAZ"
+        },
+        {
+          "id": "journey-075-w15",
+          "text": "SONBAHAR"
+        },
+        {
+          "id": "journey-075-w16",
+          "text": "KIŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "İLKBAHAR, YAZ, SONBAHAR, KIŞ: mevsimler."
+    }
+  ]
+}

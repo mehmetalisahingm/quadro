@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-164",
+  "date": "2027-04-15",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-164-g1",
+      "title": "YEMEK PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "journey-164-w1",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "journey-164-w2",
+          "text": "KIZARTMA"
+        },
+        {
+          "id": "journey-164-w3",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "journey-164-w4",
+          "text": "IZGARA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HAŞLAMA, KIZARTMA, BUĞULAMA, IZGARA: yemek pişirme yöntemleri."
+    },
+    {
+      "id": "journey-164-g2",
+      "title": "SICAKLIK ÖLÇEKLERİ",
+      "words": [
+        {
+          "id": "journey-164-w5",
+          "text": "CELSİUS"
+        },
+        {
+          "id": "journey-164-w6",
+          "text": "FAHRENHEİT"
+        },
+        {
+          "id": "journey-164-w7",
+          "text": "KELVİN"
+        },
+        {
+          "id": "journey-164-w8",
+          "text": "RÉAUMUR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "CELSİUS, FAHRENHEİT, KELVİN, RÉAUMUR: sıcaklık ölçekleri."
+    },
+    {
+      "id": "journey-164-g3",
+      "title": "BANKADA İŞLEMLER",
+      "words": [
+        {
+          "id": "journey-164-w9",
+          "text": "HAVALE"
+        },
+        {
+          "id": "journey-164-w10",
+          "text": "EFT"
+        },
+        {
+          "id": "journey-164-w11",
+          "text": "VİRMAN"
+        },
+        {
+          "id": "journey-164-w12",
+          "text": "PARA ÇEKME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HAVALE, EFT, VİRMAN, PARA ÇEKME: bankada işlemler."
+    },
+    {
+      "id": "journey-164-g4",
+      "title": "SPOR MÜSABAKASINDA",
+      "words": [
+        {
+          "id": "journey-164-w13",
+          "text": "HAKEM"
+        },
+        {
+          "id": "journey-164-w14",
+          "text": "SKOR"
+        },
+        {
+          "id": "journey-164-w15",
+          "text": "RAKİP"
+        },
+        {
+          "id": "journey-164-w16",
+          "text": "TRİBÜN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HAKEM, SKOR, RAKİP, TRİBÜN: spor müsabakasında."
+    }
+  ]
+}

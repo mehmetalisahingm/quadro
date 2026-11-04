@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-155",
+  "date": "2027-04-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-155-g1",
+      "title": "İSTASYONDA",
+      "words": [
+        {
+          "id": "journey-155-w1",
+          "text": "PERON"
+        },
+        {
+          "id": "journey-155-w2",
+          "text": "RAY"
+        },
+        {
+          "id": "journey-155-w3",
+          "text": "MAKAS"
+        },
+        {
+          "id": "journey-155-w4",
+          "text": "SİNYAL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "PERON, RAY, MAKAS, SİNYAL: istasyonda."
+    },
+    {
+      "id": "journey-155-g2",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-155-w5",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-155-w6",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-155-w7",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-155-w8",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    },
+    {
+      "id": "journey-155-g3",
+      "title": "DÜŞMEKLE İFADE KURAR",
+      "words": [
+        {
+          "id": "journey-155-w9",
+          "text": "AKLA"
+        },
+        {
+          "id": "journey-155-w10",
+          "text": "PEŞİNE"
+        },
+        {
+          "id": "journey-155-w11",
+          "text": "DARA"
+        },
+        {
+          "id": "journey-155-w12",
+          "text": "YOLA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "AKLA, PEŞİNE, DARA, YOLA: düşmekle ifade kurar."
+    },
+    {
+      "id": "journey-155-g4",
+      "title": "ÇATAL BIÇAK TAKIMINDA",
+      "words": [
+        {
+          "id": "journey-155-w13",
+          "text": "ÇATAL"
+        },
+        {
+          "id": "journey-155-w14",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "journey-155-w15",
+          "text": "KAŞIK"
+        },
+        {
+          "id": "journey-155-w16",
+          "text": "TATLI KAŞIĞI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇATAL, BIÇAK, KAŞIK, TATLI KAŞIĞI: çatal bıçak takımında."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-199",
+  "date": "2027-05-20",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-199-g1",
+      "title": "TEMEL RENK ADLARI",
+      "words": [
+        {
+          "id": "journey-199-w1",
+          "text": "KIRMIZI"
+        },
+        {
+          "id": "journey-199-w2",
+          "text": "MAVİ"
+        },
+        {
+          "id": "journey-199-w3",
+          "text": "YEŞİL"
+        },
+        {
+          "id": "journey-199-w4",
+          "text": "SARI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KIRMIZI, MAVİ, YEŞİL, SARI: temel renk adları."
+    },
+    {
+      "id": "journey-199-g2",
+      "title": "İÇİNDE MÜZİK NOTASI SAKLI",
+      "words": [
+        {
+          "id": "journey-199-w5",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-199-w6",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-199-w7",
+          "text": "DOLAP"
+        },
+        {
+          "id": "journey-199-w8",
+          "text": "FARE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Mİ-ras, Sİ-mit, DO-lap, FA-re."
+    },
+    {
+      "id": "journey-199-g3",
+      "title": "TERSTEN BAŞKA KELİME",
+      "words": [
+        {
+          "id": "journey-199-w9",
+          "text": "PAY"
+        },
+        {
+          "id": "journey-199-w10",
+          "text": "KAP"
+        },
+        {
+          "id": "journey-199-w11",
+          "text": "KOÇ"
+        },
+        {
+          "id": "journey-199-w12",
+          "text": "KES"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Yap, pak, çok ve sek."
+    },
+    {
+      "id": "journey-199-g4",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-199-w13",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-199-w14",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-199-w15",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-199-w16",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    }
+  ]
+}

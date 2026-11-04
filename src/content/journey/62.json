@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-062",
+  "date": "2027-01-03",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-062-g1",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-062-w1",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-062-w2",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-062-w3",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-062-w4",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    },
+    {
+      "id": "journey-062-g2",
+      "title": "TELLİ ÇALGILAR",
+      "words": [
+        {
+          "id": "journey-062-w5",
+          "text": "BAĞLAMA"
+        },
+        {
+          "id": "journey-062-w6",
+          "text": "UD"
+        },
+        {
+          "id": "journey-062-w7",
+          "text": "KANUN"
+        },
+        {
+          "id": "journey-062-w8",
+          "text": "ARP"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BAĞLAMA, UD, KANUN, ARP: telli çalgılar."
+    },
+    {
+      "id": "journey-062-g3",
+      "title": "YAZILI ANLATIM TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-062-w9",
+          "text": "ROMAN"
+        },
+        {
+          "id": "journey-062-w10",
+          "text": "ÖYKÜ"
+        },
+        {
+          "id": "journey-062-w11",
+          "text": "DENEME"
+        },
+        {
+          "id": "journey-062-w12",
+          "text": "MAKALE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ROMAN, ÖYKÜ, DENEME, MAKALE: yazılı anlatım türleri."
+    },
+    {
+      "id": "journey-062-g4",
+      "title": "SONUNA ÇARKI GELİR",
+      "words": [
+        {
+          "id": "journey-062-w13",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "journey-062-w14",
+          "text": "SU"
+        },
+        {
+          "id": "journey-062-w15",
+          "text": "ŞANS"
+        },
+        {
+          "id": "journey-062-w16",
+          "text": "FELEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DİŞLİ, SU, ŞANS, FELEK: sonuna çarkı gelir."
+    }
+  ]
+}

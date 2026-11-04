@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-136",
+  "date": "2027-03-18",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-136-g1",
+      "title": "BİR ŞİİRDE",
+      "words": [
+        {
+          "id": "journey-136-w1",
+          "text": "DİZE"
+        },
+        {
+          "id": "journey-136-w2",
+          "text": "BENT"
+        },
+        {
+          "id": "journey-136-w3",
+          "text": "UYAK"
+        },
+        {
+          "id": "journey-136-w4",
+          "text": "ÖLÇÜ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DİZE, BENT, UYAK, ÖLÇÜ: bir şiirde."
+    },
+    {
+      "id": "journey-136-g2",
+      "title": "SONUNA HAKKI GELİR",
+      "words": [
+        {
+          "id": "journey-136-w5",
+          "text": "YAYIN"
+        },
+        {
+          "id": "journey-136-w6",
+          "text": "SEÇME"
+        },
+        {
+          "id": "journey-136-w7",
+          "text": "GEÇİŞ"
+        },
+        {
+          "id": "journey-136-w8",
+          "text": "VETO"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YAYIN, SEÇME, GEÇİŞ, VETO: sonuna hakkı gelir."
+    },
+    {
+      "id": "journey-136-g3",
+      "title": "BALIKÇI DONANIMI",
+      "words": [
+        {
+          "id": "journey-136-w9",
+          "text": "OLTA"
+        },
+        {
+          "id": "journey-136-w10",
+          "text": "MİSİNA"
+        },
+        {
+          "id": "journey-136-w11",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-136-w12",
+          "text": "YEM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "OLTA, MİSİNA, İĞNE, YEM: balıkçı donanımı."
+    },
+    {
+      "id": "journey-136-g4",
+      "title": "SONUNA ÇARKI GELİR",
+      "words": [
+        {
+          "id": "journey-136-w13",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "journey-136-w14",
+          "text": "SU"
+        },
+        {
+          "id": "journey-136-w15",
+          "text": "ŞANS"
+        },
+        {
+          "id": "journey-136-w16",
+          "text": "FELEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DİŞLİ, SU, ŞANS, FELEK: sonuna çarkı gelir."
+    }
+  ]
+}

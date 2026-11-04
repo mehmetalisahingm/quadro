@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-060",
+  "date": "2027-01-01",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-060-g1",
+      "title": "SONUNA KÖPRÜSÜ GELİR",
+      "words": [
+        {
+          "id": "journey-060-w1",
+          "text": "ASMA"
+        },
+        {
+          "id": "journey-060-w2",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-060-w3",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-060-w4",
+          "text": "GÖNÜL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ASMA, BURUN, DİŞ, GÖNÜL: sonuna köprüsü gelir."
+    },
+    {
+      "id": "journey-060-g2",
+      "title": "MUTFAKTA YEMEK PİŞİRİRKEN",
+      "words": [
+        {
+          "id": "journey-060-w5",
+          "text": "TENCERE"
+        },
+        {
+          "id": "journey-060-w6",
+          "text": "TAVA"
+        },
+        {
+          "id": "journey-060-w7",
+          "text": "KEVGİR"
+        },
+        {
+          "id": "journey-060-w8",
+          "text": "KEPÇE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "TENCERE, TAVA, KEVGİR, KEPÇE: mutfakta yemek pişirirken."
+    },
+    {
+      "id": "journey-060-g3",
+      "title": "KUMAŞ ÇEŞİTLERİ",
+      "words": [
+        {
+          "id": "journey-060-w9",
+          "text": "KADİFE"
+        },
+        {
+          "id": "journey-060-w10",
+          "text": "SATEN"
+        },
+        {
+          "id": "journey-060-w11",
+          "text": "KETEN"
+        },
+        {
+          "id": "journey-060-w12",
+          "text": "DENİM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KADİFE, SATEN, KETEN, DENİM: kumaş çeşitleri."
+    },
+    {
+      "id": "journey-060-g4",
+      "title": "KURU YEMİŞLER",
+      "words": [
+        {
+          "id": "journey-060-w13",
+          "text": "FINDIK"
+        },
+        {
+          "id": "journey-060-w14",
+          "text": "BADEM"
+        },
+        {
+          "id": "journey-060-w15",
+          "text": "CEVİZ"
+        },
+        {
+          "id": "journey-060-w16",
+          "text": "ANTEP FISTIĞI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "FINDIK, BADEM, CEVİZ, ANTEP FISTIĞI: kuru yemişler."
+    }
+  ]
+}

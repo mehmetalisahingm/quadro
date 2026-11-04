@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-105",
+  "date": "2027-02-15",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-105-g1",
+      "title": "SONUNA EVİ GELİR",
+      "words": [
+        {
+          "id": "journey-105-w1",
+          "text": "HUZUR"
+        },
+        {
+          "id": "journey-105-w2",
+          "text": "KONUK"
+        },
+        {
+          "id": "journey-105-w3",
+          "text": "BASIM"
+        },
+        {
+          "id": "journey-105-w4",
+          "text": "GÖZLEM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HUZUR, KONUK, BASIM, GÖZLEM: sonuna evi gelir."
+    },
+    {
+      "id": "journey-105-g2",
+      "title": "İNŞAAT MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-105-w5",
+          "text": "TUĞLA"
+        },
+        {
+          "id": "journey-105-w6",
+          "text": "ÇİMENTO"
+        },
+        {
+          "id": "journey-105-w7",
+          "text": "KUM"
+        },
+        {
+          "id": "journey-105-w8",
+          "text": "KİREÇ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "TUĞLA, ÇİMENTO, KUM, KİREÇ: inşaat malzemeleri."
+    },
+    {
+      "id": "journey-105-g3",
+      "title": "ÇEMBERDE VE DAİREDE",
+      "words": [
+        {
+          "id": "journey-105-w9",
+          "text": "ÇAP"
+        },
+        {
+          "id": "journey-105-w10",
+          "text": "YARIÇAP"
+        },
+        {
+          "id": "journey-105-w11",
+          "text": "KİRİŞ"
+        },
+        {
+          "id": "journey-105-w12",
+          "text": "TEĞET"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇAP, YARIÇAP, KİRİŞ, TEĞET: çemberde ve dairede."
+    },
+    {
+      "id": "journey-105-g4",
+      "title": "SONUNA DÜĞMESİ GELİR",
+      "words": [
+        {
+          "id": "journey-105-w13",
+          "text": "GÖMLEK"
+        },
+        {
+          "id": "journey-105-w14",
+          "text": "ASANSÖR"
+        },
+        {
+          "id": "journey-105-w15",
+          "text": "BAŞLAT"
+        },
+        {
+          "id": "journey-105-w16",
+          "text": "ACİL DURDURMA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GÖMLEK, ASANSÖR, BAŞLAT, ACİL DURDURMA: sonuna düğmesi gelir."
+    }
+  ]
+}

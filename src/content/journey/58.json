@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-058",
+  "date": "2026-12-30",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-058-g1",
+      "title": "BALIKÇI DONANIMI",
+      "words": [
+        {
+          "id": "journey-058-w1",
+          "text": "OLTA"
+        },
+        {
+          "id": "journey-058-w2",
+          "text": "MİSİNA"
+        },
+        {
+          "id": "journey-058-w3",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-058-w4",
+          "text": "YEM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OLTA, MİSİNA, İĞNE, YEM: balıkçı donanımı."
+    },
+    {
+      "id": "journey-058-g2",
+      "title": "SONUNA AĞZI GELİR",
+      "words": [
+        {
+          "id": "journey-058-w5",
+          "text": "ŞİŞE"
+        },
+        {
+          "id": "journey-058-w6",
+          "text": "MAĞARA"
+        },
+        {
+          "id": "journey-058-w7",
+          "text": "TÜFEK"
+        },
+        {
+          "id": "journey-058-w8",
+          "text": "TORBA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ŞİŞE, MAĞARA, TÜFEK, TORBA: sonuna ağzı gelir."
+    },
+    {
+      "id": "journey-058-g3",
+      "title": "ÇİÇEKLER",
+      "words": [
+        {
+          "id": "journey-058-w9",
+          "text": "LALE"
+        },
+        {
+          "id": "journey-058-w10",
+          "text": "PAPATYA"
+        },
+        {
+          "id": "journey-058-w11",
+          "text": "MENEKŞE"
+        },
+        {
+          "id": "journey-058-w12",
+          "text": "KARANFİL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "LALE, PAPATYA, MENEKŞE, KARANFİL: çiçekler."
+    },
+    {
+      "id": "journey-058-g4",
+      "title": "DENİZ HAYVANLARI",
+      "words": [
+        {
+          "id": "journey-058-w13",
+          "text": "YUNUS"
+        },
+        {
+          "id": "journey-058-w14",
+          "text": "KÖPEK BALIĞI"
+        },
+        {
+          "id": "journey-058-w15",
+          "text": "AHTAPOT"
+        },
+        {
+          "id": "journey-058-w16",
+          "text": "DENİZATI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "YUNUS, KÖPEK BALIĞI, AHTAPOT, DENİZATI: deniz hayvanları."
+    }
+  ]
+}

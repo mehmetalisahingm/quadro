@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-119",
+  "date": "2027-03-01",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-119-g1",
+      "title": "SERAMİK YAPARKEN",
+      "words": [
+        {
+          "id": "journey-119-w1",
+          "text": "KİL"
+        },
+        {
+          "id": "journey-119-w2",
+          "text": "ÇARK"
+        },
+        {
+          "id": "journey-119-w3",
+          "text": "SIR"
+        },
+        {
+          "id": "journey-119-w4",
+          "text": "FIRIN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KİL, ÇARK, SIR, FIRIN: seramik yaparken."
+    },
+    {
+      "id": "journey-119-g2",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-119-w5",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-119-w6",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-119-w7",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-119-w8",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-119-g3",
+      "title": "İNŞAAT MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-119-w9",
+          "text": "TUĞLA"
+        },
+        {
+          "id": "journey-119-w10",
+          "text": "ÇİMENTO"
+        },
+        {
+          "id": "journey-119-w11",
+          "text": "KUM"
+        },
+        {
+          "id": "journey-119-w12",
+          "text": "KİREÇ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "TUĞLA, ÇİMENTO, KUM, KİREÇ: inşaat malzemeleri."
+    },
+    {
+      "id": "journey-119-g4",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-119-w13",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-119-w14",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-119-w15",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-119-w16",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    }
+  ]
+}

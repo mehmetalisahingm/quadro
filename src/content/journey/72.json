@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-072",
+  "date": "2027-01-13",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-072-g1",
+      "title": "DENİZCİ DÜĞÜMLERİ",
+      "words": [
+        {
+          "id": "journey-072-w1",
+          "text": "İZBARÇO"
+        },
+        {
+          "id": "journey-072-w2",
+          "text": "CAMADAN"
+        },
+        {
+          "id": "journey-072-w3",
+          "text": "KAZIK"
+        },
+        {
+          "id": "journey-072-w4",
+          "text": "SEKİZLİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İZBARÇO, CAMADAN, KAZIK, SEKİZLİ: denizci düğümleri."
+    },
+    {
+      "id": "journey-072-g2",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-072-w5",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-072-w6",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-072-w7",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-072-w8",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    },
+    {
+      "id": "journey-072-g3",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-072-w9",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-072-w10",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-072-w11",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-072-w12",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    },
+    {
+      "id": "journey-072-g4",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-072-w13",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-072-w14",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-072-w15",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-072-w16",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    }
+  ]
+}

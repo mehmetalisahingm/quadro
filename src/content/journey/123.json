@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-123",
+  "date": "2027-03-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-123-g1",
+      "title": "DENİZCİ DÜĞÜMLERİ",
+      "words": [
+        {
+          "id": "journey-123-w1",
+          "text": "İZBARÇO"
+        },
+        {
+          "id": "journey-123-w2",
+          "text": "CAMADAN"
+        },
+        {
+          "id": "journey-123-w3",
+          "text": "KAZIK"
+        },
+        {
+          "id": "journey-123-w4",
+          "text": "SEKİZLİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İZBARÇO, CAMADAN, KAZIK, SEKİZLİ: denizci düğümleri."
+    },
+    {
+      "id": "journey-123-g2",
+      "title": "SPOR MÜSABAKASINDA",
+      "words": [
+        {
+          "id": "journey-123-w5",
+          "text": "HAKEM"
+        },
+        {
+          "id": "journey-123-w6",
+          "text": "SKOR"
+        },
+        {
+          "id": "journey-123-w7",
+          "text": "RAKİP"
+        },
+        {
+          "id": "journey-123-w8",
+          "text": "TRİBÜN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HAKEM, SKOR, RAKİP, TRİBÜN: spor müsabakasında."
+    },
+    {
+      "id": "journey-123-g3",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-123-w9",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-123-w10",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-123-w11",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-123-w12",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-123-g4",
+      "title": "SONUNA YOLU GELİR",
+      "words": [
+        {
+          "id": "journey-123-w13",
+          "text": "İPEK"
+        },
+        {
+          "id": "journey-123-w14",
+          "text": "KARA"
+        },
+        {
+          "id": "journey-123-w15",
+          "text": "HAVA"
+        },
+        {
+          "id": "journey-123-w16",
+          "text": "DENİZ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "İPEK, KARA, HAVA, DENİZ: sonuna yolu gelir."
+    }
+  ]
+}

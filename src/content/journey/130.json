@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-130",
+  "date": "2027-03-12",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-130-g1",
+      "title": "BAŞINA KARA GELİR",
+      "words": [
+        {
+          "id": "journey-130-w1",
+          "text": "DENİZ"
+        },
+        {
+          "id": "journey-130-w2",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-130-w3",
+          "text": "BİBER"
+        },
+        {
+          "id": "journey-130-w4",
+          "text": "KUTU"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DENİZ, KEDİ, BİBER, KUTU: başına kara gelir."
+    },
+    {
+      "id": "journey-130-g2",
+      "title": "KÜREKLE İLERLEYEN ARAÇLAR",
+      "words": [
+        {
+          "id": "journey-130-w5",
+          "text": "KANO"
+        },
+        {
+          "id": "journey-130-w6",
+          "text": "KAYIK"
+        },
+        {
+          "id": "journey-130-w7",
+          "text": "GONDOL"
+        },
+        {
+          "id": "journey-130-w8",
+          "text": "RAFTİNG BOTU"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KANO, KAYIK, GONDOL, RAFTİNG BOTU: kürekle ilerleyen araçlar."
+    },
+    {
+      "id": "journey-130-g3",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-130-w9",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-130-w10",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-130-w11",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-130-w12",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-130-g4",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "journey-130-w13",
+          "text": "SABUN"
+        },
+        {
+          "id": "journey-130-w14",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "journey-130-w15",
+          "text": "HAVLU"
+        },
+        {
+          "id": "journey-130-w16",
+          "text": "LİF"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SABUN, ŞAMPUAN, HAVLU, LİF: banyoda kullanılanlar."
+    }
+  ]
+}

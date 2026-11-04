@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-159",
+  "date": "2027-04-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-159-g1",
+      "title": "SONUNA DİLİ GELİR",
+      "words": [
+        {
+          "id": "journey-159-w1",
+          "text": "ANA"
+        },
+        {
+          "id": "journey-159-w2",
+          "text": "BEDEN"
+        },
+        {
+          "id": "journey-159-w3",
+          "text": "İŞARET"
+        },
+        {
+          "id": "journey-159-w4",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ANA, BEDEN, İŞARET, PROGRAMLAMA: sonuna dili gelir."
+    },
+    {
+      "id": "journey-159-g2",
+      "title": "SONUNA MASASI GELİR",
+      "words": [
+        {
+          "id": "journey-159-w5",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "journey-159-w6",
+          "text": "AMELİYAT"
+        },
+        {
+          "id": "journey-159-w7",
+          "text": "YEMEK"
+        },
+        {
+          "id": "journey-159-w8",
+          "text": "BİLARDO"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÇALIŞMA, AMELİYAT, YEMEK, BİLARDO: sonuna masası gelir."
+    },
+    {
+      "id": "journey-159-g3",
+      "title": "AÇIK HAVA SPORLARI",
+      "words": [
+        {
+          "id": "journey-159-w9",
+          "text": "KAYAK"
+        },
+        {
+          "id": "journey-159-w10",
+          "text": "SÖRF"
+        },
+        {
+          "id": "journey-159-w11",
+          "text": "DAĞCILIK"
+        },
+        {
+          "id": "journey-159-w12",
+          "text": "YAMAÇ PARAŞÜTÜ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KAYAK, SÖRF, DAĞCILIK, YAMAÇ PARAŞÜTÜ: açık hava sporları."
+    },
+    {
+      "id": "journey-159-g4",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-159-w13",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-159-w14",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-159-w15",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-159-w16",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-070",
+  "date": "2027-01-11",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-070-g1",
+      "title": "SONUNA BOYU GELİR",
+      "words": [
+        {
+          "id": "journey-070-w1",
+          "text": "ÖMÜR"
+        },
+        {
+          "id": "journey-070-w2",
+          "text": "YOL"
+        },
+        {
+          "id": "journey-070-w3",
+          "text": "DALGA"
+        },
+        {
+          "id": "journey-070-w4",
+          "text": "DİZ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÖMÜR, YOL, DALGA, DİZ: sonuna boyu gelir."
+    },
+    {
+      "id": "journey-070-g2",
+      "title": "BANKADA İŞLEMLER",
+      "words": [
+        {
+          "id": "journey-070-w5",
+          "text": "HAVALE"
+        },
+        {
+          "id": "journey-070-w6",
+          "text": "EFT"
+        },
+        {
+          "id": "journey-070-w7",
+          "text": "VİRMAN"
+        },
+        {
+          "id": "journey-070-w8",
+          "text": "PARA ÇEKME"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HAVALE, EFT, VİRMAN, PARA ÇEKME: bankada işlemler."
+    },
+    {
+      "id": "journey-070-g3",
+      "title": "AYAK GİYİMİ",
+      "words": [
+        {
+          "id": "journey-070-w9",
+          "text": "BOT"
+        },
+        {
+          "id": "journey-070-w10",
+          "text": "TERLİK"
+        },
+        {
+          "id": "journey-070-w11",
+          "text": "SPOR AYAKKABI"
+        },
+        {
+          "id": "journey-070-w12",
+          "text": "ÇİZME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BOT, TERLİK, SPOR AYAKKABI, ÇİZME: ayak giyimi."
+    },
+    {
+      "id": "journey-070-g4",
+      "title": "SICAKLIK ÖLÇEKLERİ",
+      "words": [
+        {
+          "id": "journey-070-w13",
+          "text": "CELSİUS"
+        },
+        {
+          "id": "journey-070-w14",
+          "text": "FAHRENHEİT"
+        },
+        {
+          "id": "journey-070-w15",
+          "text": "KELVİN"
+        },
+        {
+          "id": "journey-070-w16",
+          "text": "RÉAUMUR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "CELSİUS, FAHRENHEİT, KELVİN, RÉAUMUR: sıcaklık ölçekleri."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-181",
+  "date": "2027-05-02",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-181-g1",
+      "title": "İÇİNDE SAYI ADI SAKLI",
+      "words": [
+        {
+          "id": "journey-181-w1",
+          "text": "BONCUK"
+        },
+        {
+          "id": "journey-181-w2",
+          "text": "BİNA"
+        },
+        {
+          "id": "journey-181-w3",
+          "text": "YÜZÜK"
+        },
+        {
+          "id": "journey-181-w4",
+          "text": "ALTIN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "b-ON-cuk, BİN-a, YÜZ-ük, ALTI-n."
+    },
+    {
+      "id": "journey-181-g2",
+      "title": "KÂĞIT KATLAMA BİÇİMLERİ",
+      "words": [
+        {
+          "id": "journey-181-w5",
+          "text": "AKORDEON"
+        },
+        {
+          "id": "journey-181-w6",
+          "text": "ZİKZAK"
+        },
+        {
+          "id": "journey-181-w7",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-181-w8",
+          "text": "PENCERE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "AKORDEON, ZİKZAK, KAPI, PENCERE: kâğıt katlama biçimleri."
+    },
+    {
+      "id": "journey-181-g3",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-181-w9",
+          "text": "SABIR"
+        },
+        {
+          "id": "journey-181-w10",
+          "text": "TEMEL"
+        },
+        {
+          "id": "journey-181-w11",
+          "text": "MIHENK"
+        },
+        {
+          "id": "journey-181-w12",
+          "text": "BÖBREK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SABIR, TEMEL, MIHENK, BÖBREK: sonuna taşı gelir."
+    },
+    {
+      "id": "journey-181-g4",
+      "title": "YEMEK PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "journey-181-w13",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "journey-181-w14",
+          "text": "KIZARTMA"
+        },
+        {
+          "id": "journey-181-w15",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "journey-181-w16",
+          "text": "IZGARA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HAŞLAMA, KIZARTMA, BUĞULAMA, IZGARA: yemek pişirme yöntemleri."
+    }
+  ]
+}

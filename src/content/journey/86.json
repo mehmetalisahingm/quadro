@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-086",
+  "date": "2027-01-27",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-086-g1",
+      "title": "DUYU ORGANLARI",
+      "words": [
+        {
+          "id": "journey-086-w1",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-086-w2",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-086-w3",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-086-w4",
+          "text": "DİL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GÖZ, KULAK, BURUN, DİL: duyu organları."
+    },
+    {
+      "id": "journey-086-g2",
+      "title": "TERSTEN AYNI OKUNUR",
+      "words": [
+        {
+          "id": "journey-086-w5",
+          "text": "KABAK"
+        },
+        {
+          "id": "journey-086-w6",
+          "text": "KÜÇÜK"
+        },
+        {
+          "id": "journey-086-w7",
+          "text": "NEDEN"
+        },
+        {
+          "id": "journey-086-w8",
+          "text": "RADAR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KABAK, KÜÇÜK, NEDEN, RADAR: tersten aynı okunur."
+    },
+    {
+      "id": "journey-086-g3",
+      "title": "KIŞLIK GİYSİLER",
+      "words": [
+        {
+          "id": "journey-086-w9",
+          "text": "ATKI"
+        },
+        {
+          "id": "journey-086-w10",
+          "text": "BERE"
+        },
+        {
+          "id": "journey-086-w11",
+          "text": "ELDİVEN"
+        },
+        {
+          "id": "journey-086-w12",
+          "text": "KAZAK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ATKI, BERE, ELDİVEN, KAZAK: kışlık giysiler."
+    },
+    {
+      "id": "journey-086-g4",
+      "title": "SONUNA BAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-086-w13",
+          "text": "YIL"
+        },
+        {
+          "id": "journey-086-w14",
+          "text": "SATIR"
+        },
+        {
+          "id": "journey-086-w15",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "journey-086-w16",
+          "text": "USTA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "YIL, SATIR, KÖŞE, USTA: sonuna başı gelir."
+    }
+  ]
+}

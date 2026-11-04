@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-091",
+  "date": "2027-02-01",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-091-g1",
+      "title": "MÜZİKTE HIZ TERİMLERİ",
+      "words": [
+        {
+          "id": "journey-091-w1",
+          "text": "ADAGİO"
+        },
+        {
+          "id": "journey-091-w2",
+          "text": "ANDANTE"
+        },
+        {
+          "id": "journey-091-w3",
+          "text": "ALLEGRO"
+        },
+        {
+          "id": "journey-091-w4",
+          "text": "PRESTO"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ADAGİO, ANDANTE, ALLEGRO, PRESTO: müzikte hız terimleri."
+    },
+    {
+      "id": "journey-091-g2",
+      "title": "BAHÇE BAKIMINDA",
+      "words": [
+        {
+          "id": "journey-091-w5",
+          "text": "BUDAMA"
+        },
+        {
+          "id": "journey-091-w6",
+          "text": "SULAMA"
+        },
+        {
+          "id": "journey-091-w7",
+          "text": "ÇAPALAMA"
+        },
+        {
+          "id": "journey-091-w8",
+          "text": "GÜBRELEME"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BUDAMA, SULAMA, ÇAPALAMA, GÜBRELEME: bahçe bakımında."
+    },
+    {
+      "id": "journey-091-g3",
+      "title": "SONUNA DİLİ GELİR",
+      "words": [
+        {
+          "id": "journey-091-w9",
+          "text": "ANA"
+        },
+        {
+          "id": "journey-091-w10",
+          "text": "BEDEN"
+        },
+        {
+          "id": "journey-091-w11",
+          "text": "İŞARET"
+        },
+        {
+          "id": "journey-091-w12",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ANA, BEDEN, İŞARET, PROGRAMLAMA: sonuna dili gelir."
+    },
+    {
+      "id": "journey-091-g4",
+      "title": "SONUNA NOKTASI GELİR",
+      "words": [
+        {
+          "id": "journey-091-w13",
+          "text": "ODAK"
+        },
+        {
+          "id": "journey-091-w14",
+          "text": "DÖNÜM"
+        },
+        {
+          "id": "journey-091-w15",
+          "text": "KAYNAMA"
+        },
+        {
+          "id": "journey-091-w16",
+          "text": "DONMA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ODAK, DÖNÜM, KAYNAMA, DONMA: sonuna noktası gelir."
+    }
+  ]
+}

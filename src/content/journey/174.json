@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-174",
+  "date": "2027-04-25",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-174-g1",
+      "title": "KÂĞIT KATLAMA BİÇİMLERİ",
+      "words": [
+        {
+          "id": "journey-174-w1",
+          "text": "AKORDEON"
+        },
+        {
+          "id": "journey-174-w2",
+          "text": "ZİKZAK"
+        },
+        {
+          "id": "journey-174-w3",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-174-w4",
+          "text": "PENCERE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "AKORDEON, ZİKZAK, KAPI, PENCERE: kâğıt katlama biçimleri."
+    },
+    {
+      "id": "journey-174-g2",
+      "title": "ÇİÇEKLER",
+      "words": [
+        {
+          "id": "journey-174-w5",
+          "text": "LALE"
+        },
+        {
+          "id": "journey-174-w6",
+          "text": "PAPATYA"
+        },
+        {
+          "id": "journey-174-w7",
+          "text": "MENEKŞE"
+        },
+        {
+          "id": "journey-174-w8",
+          "text": "KARANFİL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "LALE, PAPATYA, MENEKŞE, KARANFİL: çiçekler."
+    },
+    {
+      "id": "journey-174-g3",
+      "title": "BAHÇE BAKIMINDA",
+      "words": [
+        {
+          "id": "journey-174-w9",
+          "text": "BUDAMA"
+        },
+        {
+          "id": "journey-174-w10",
+          "text": "SULAMA"
+        },
+        {
+          "id": "journey-174-w11",
+          "text": "ÇAPALAMA"
+        },
+        {
+          "id": "journey-174-w12",
+          "text": "GÜBRELEME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BUDAMA, SULAMA, ÇAPALAMA, GÜBRELEME: bahçe bakımında."
+    },
+    {
+      "id": "journey-174-g4",
+      "title": "BİR ÖYKÜNÜN UNSURLARI",
+      "words": [
+        {
+          "id": "journey-174-w13",
+          "text": "KİŞİ"
+        },
+        {
+          "id": "journey-174-w14",
+          "text": "OLAY"
+        },
+        {
+          "id": "journey-174-w15",
+          "text": "YER"
+        },
+        {
+          "id": "journey-174-w16",
+          "text": "ZAMAN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KİŞİ, OLAY, YER, ZAMAN: bir öykünün unsurları."
+    }
+  ]
+}

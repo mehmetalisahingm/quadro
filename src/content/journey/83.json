@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-083",
+  "date": "2027-01-24",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-083-g1",
+      "title": "İÇİNDE SAYI ADI SAKLI",
+      "words": [
+        {
+          "id": "journey-083-w1",
+          "text": "BONCUK"
+        },
+        {
+          "id": "journey-083-w2",
+          "text": "BİNA"
+        },
+        {
+          "id": "journey-083-w3",
+          "text": "YÜZÜK"
+        },
+        {
+          "id": "journey-083-w4",
+          "text": "ALTIN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "b-ON-cuk, BİN-a, YÜZ-ük, ALTI-n."
+    },
+    {
+      "id": "journey-083-g2",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-083-w5",
+          "text": "SABIR"
+        },
+        {
+          "id": "journey-083-w6",
+          "text": "TEMEL"
+        },
+        {
+          "id": "journey-083-w7",
+          "text": "MIHENK"
+        },
+        {
+          "id": "journey-083-w8",
+          "text": "BÖBREK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SABIR, TEMEL, MIHENK, BÖBREK: sonuna taşı gelir."
+    },
+    {
+      "id": "journey-083-g3",
+      "title": "SONUNA ÇARKI GELİR",
+      "words": [
+        {
+          "id": "journey-083-w9",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "journey-083-w10",
+          "text": "SU"
+        },
+        {
+          "id": "journey-083-w11",
+          "text": "ŞANS"
+        },
+        {
+          "id": "journey-083-w12",
+          "text": "FELEK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DİŞLİ, SU, ŞANS, FELEK: sonuna çarkı gelir."
+    },
+    {
+      "id": "journey-083-g4",
+      "title": "SONUNA PERDESİ GELİR",
+      "words": [
+        {
+          "id": "journey-083-w13",
+          "text": "SAHNE"
+        },
+        {
+          "id": "journey-083-w14",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-083-w15",
+          "text": "SİS"
+        },
+        {
+          "id": "journey-083-w16",
+          "text": "DUŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SAHNE, GÖZ, SİS, DUŞ: sonuna perdesi gelir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-079",
+  "date": "2027-01-20",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-079-g1",
+      "title": "ORMAN AĞAÇLARI",
+      "words": [
+        {
+          "id": "journey-079-w1",
+          "text": "ÇAM"
+        },
+        {
+          "id": "journey-079-w2",
+          "text": "MEŞE"
+        },
+        {
+          "id": "journey-079-w3",
+          "text": "KAYIN"
+        },
+        {
+          "id": "journey-079-w4",
+          "text": "KÖKNAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÇAM, MEŞE, KAYIN, KÖKNAR: orman ağaçları."
+    },
+    {
+      "id": "journey-079-g2",
+      "title": "OKUL ÇANTASINDA",
+      "words": [
+        {
+          "id": "journey-079-w5",
+          "text": "DEFTER"
+        },
+        {
+          "id": "journey-079-w6",
+          "text": "KİTAP"
+        },
+        {
+          "id": "journey-079-w7",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-079-w8",
+          "text": "SİLGİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DEFTER, KİTAP, KALEM, SİLGİ: okul çantasında."
+    },
+    {
+      "id": "journey-079-g3",
+      "title": "TEMEL RENK ADLARI",
+      "words": [
+        {
+          "id": "journey-079-w9",
+          "text": "KIRMIZI"
+        },
+        {
+          "id": "journey-079-w10",
+          "text": "MAVİ"
+        },
+        {
+          "id": "journey-079-w11",
+          "text": "YEŞİL"
+        },
+        {
+          "id": "journey-079-w12",
+          "text": "SARI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KIRMIZI, MAVİ, YEŞİL, SARI: temel renk adları."
+    },
+    {
+      "id": "journey-079-g4",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-079-w13",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-079-w14",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-079-w15",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-079-w16",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    }
+  ]
+}

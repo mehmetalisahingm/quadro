@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-144",
+  "date": "2027-03-26",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-144-g1",
+      "title": "NARENCİYELER",
+      "words": [
+        {
+          "id": "journey-144-w1",
+          "text": "PORTAKAL"
+        },
+        {
+          "id": "journey-144-w2",
+          "text": "MANDALİNA"
+        },
+        {
+          "id": "journey-144-w3",
+          "text": "LİMON"
+        },
+        {
+          "id": "journey-144-w4",
+          "text": "GREYFURT"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "PORTAKAL, MANDALİNA, LİMON, GREYFURT: narenciyeler."
+    },
+    {
+      "id": "journey-144-g2",
+      "title": "ÇATAL BIÇAK TAKIMINDA",
+      "words": [
+        {
+          "id": "journey-144-w5",
+          "text": "ÇATAL"
+        },
+        {
+          "id": "journey-144-w6",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "journey-144-w7",
+          "text": "KAŞIK"
+        },
+        {
+          "id": "journey-144-w8",
+          "text": "TATLI KAŞIĞI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÇATAL, BIÇAK, KAŞIK, TATLI KAŞIĞI: çatal bıçak takımında."
+    },
+    {
+      "id": "journey-144-g3",
+      "title": "KURU YEMİŞLER",
+      "words": [
+        {
+          "id": "journey-144-w9",
+          "text": "FINDIK"
+        },
+        {
+          "id": "journey-144-w10",
+          "text": "BADEM"
+        },
+        {
+          "id": "journey-144-w11",
+          "text": "CEVİZ"
+        },
+        {
+          "id": "journey-144-w12",
+          "text": "ANTEP FISTIĞI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "FINDIK, BADEM, CEVİZ, ANTEP FISTIĞI: kuru yemişler."
+    },
+    {
+      "id": "journey-144-g4",
+      "title": "GEMİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-144-w13",
+          "text": "GÜVERTE"
+        },
+        {
+          "id": "journey-144-w14",
+          "text": "KAMARA"
+        },
+        {
+          "id": "journey-144-w15",
+          "text": "DÜMEN"
+        },
+        {
+          "id": "journey-144-w16",
+          "text": "BACA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GÜVERTE, KAMARA, DÜMEN, BACA: geminin bölümleri."
+    }
+  ]
+}

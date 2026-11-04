@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-069",
+  "date": "2027-01-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-069-g1",
+      "title": "KAYIT STÜDYOSUNDA",
+      "words": [
+        {
+          "id": "journey-069-w1",
+          "text": "MİKROFON"
+        },
+        {
+          "id": "journey-069-w2",
+          "text": "KULAKLIK"
+        },
+        {
+          "id": "journey-069-w3",
+          "text": "MİKSER"
+        },
+        {
+          "id": "journey-069-w4",
+          "text": "SES KARTI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "MİKROFON, KULAKLIK, MİKSER, SES KARTI: kayıt stüdyosunda."
+    },
+    {
+      "id": "journey-069-g2",
+      "title": "TOPLU TAŞIMA ARAÇLARI",
+      "words": [
+        {
+          "id": "journey-069-w5",
+          "text": "OTOBÜS"
+        },
+        {
+          "id": "journey-069-w6",
+          "text": "METRO"
+        },
+        {
+          "id": "journey-069-w7",
+          "text": "TRAMVAY"
+        },
+        {
+          "id": "journey-069-w8",
+          "text": "VAPUR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OTOBÜS, METRO, TRAMVAY, VAPUR: toplu taşıma araçları."
+    },
+    {
+      "id": "journey-069-g3",
+      "title": "KAMERADA AYARLAR",
+      "words": [
+        {
+          "id": "journey-069-w9",
+          "text": "POZLAMA"
+        },
+        {
+          "id": "journey-069-w10",
+          "text": "BEYAZ AYARI"
+        },
+        {
+          "id": "journey-069-w11",
+          "text": "ISO"
+        },
+        {
+          "id": "journey-069-w12",
+          "text": "ENSTANTANE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "POZLAMA, BEYAZ AYARI, ISO, ENSTANTANE: kamerada ayarlar."
+    },
+    {
+      "id": "journey-069-g4",
+      "title": "İÇİNDE SAYI ADI SAKLI",
+      "words": [
+        {
+          "id": "journey-069-w13",
+          "text": "BONCUK"
+        },
+        {
+          "id": "journey-069-w14",
+          "text": "BİNA"
+        },
+        {
+          "id": "journey-069-w15",
+          "text": "YÜZÜK"
+        },
+        {
+          "id": "journey-069-w16",
+          "text": "ALTIN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "b-ON-cuk, BİN-a, YÜZ-ük, ALTI-n."
+    }
+  ]
+}

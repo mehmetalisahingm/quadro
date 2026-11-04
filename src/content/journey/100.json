@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-100",
+  "date": "2027-02-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-100-g1",
+      "title": "EVCİL HAYVANLAR",
+      "words": [
+        {
+          "id": "journey-100-w1",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-100-w2",
+          "text": "KÖPEK"
+        },
+        {
+          "id": "journey-100-w3",
+          "text": "HAMSTER"
+        },
+        {
+          "id": "journey-100-w4",
+          "text": "MUHABBET KUŞU"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KEDİ, KÖPEK, HAMSTER, MUHABBET KUŞU: evcil hayvanlar."
+    },
+    {
+      "id": "journey-100-g2",
+      "title": "NARENCİYELER",
+      "words": [
+        {
+          "id": "journey-100-w5",
+          "text": "PORTAKAL"
+        },
+        {
+          "id": "journey-100-w6",
+          "text": "MANDALİNA"
+        },
+        {
+          "id": "journey-100-w7",
+          "text": "LİMON"
+        },
+        {
+          "id": "journey-100-w8",
+          "text": "GREYFURT"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PORTAKAL, MANDALİNA, LİMON, GREYFURT: narenciyeler."
+    },
+    {
+      "id": "journey-100-g3",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        {
+          "id": "journey-100-w9",
+          "text": "PEYNİR"
+        },
+        {
+          "id": "journey-100-w10",
+          "text": "ZEYTİN"
+        },
+        {
+          "id": "journey-100-w11",
+          "text": "REÇEL"
+        },
+        {
+          "id": "journey-100-w12",
+          "text": "BAL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PEYNİR, ZEYTİN, REÇEL, BAL: kahvaltılıklar."
+    },
+    {
+      "id": "journey-100-g4",
+      "title": "MÜZİK ALETLERİ",
+      "words": [
+        {
+          "id": "journey-100-w13",
+          "text": "KEMAN"
+        },
+        {
+          "id": "journey-100-w14",
+          "text": "PİYANO"
+        },
+        {
+          "id": "journey-100-w15",
+          "text": "DAVUL"
+        },
+        {
+          "id": "journey-100-w16",
+          "text": "GİTAR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KEMAN, PİYANO, DAVUL, GİTAR: müzik aletleri."
+    }
+  ]
+}

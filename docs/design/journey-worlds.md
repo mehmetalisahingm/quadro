@@ -1,0 +1,5 @@
+# Keşif Yolu: 15 additional worlds
+
+Built-in image_gen edits, 2026-11-04, from five user-selected concept sheets. Each panel was independently converted into a standalone background with UI, text, markers and borders removed. Themes: editorial paper, botanical garden, stars and observatory, coast, train, vinyl, underground library, rainy city, origami, underwater archive, desert, clockwork, arctic, glass greenhouse, ink sea. The game renders its own accessible interactive controls on top.
+
+Prompt template: "Create a standalone portrait illustration for the game background inspired by [theme] panel of the supplied concept image. Preserve its visual mood and composition, make the artwork fill the entire image. Remove phones, all UI, words, logos, numbers, buttons, level markers, stars, borders and paths. Render only continuous detailed environment art with an open central area for independently rendered game controls. High quality, original, coherent cinematic premium style." Optimized WebP assets are stored in public/images/journey/world-*-v1.webp. Subtle brightness animation respects reduced motion.

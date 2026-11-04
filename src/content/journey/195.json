@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-195",
+  "date": "2027-05-16",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-195-g1",
+      "title": "SONUNA KÖPRÜSÜ GELİR",
+      "words": [
+        {
+          "id": "journey-195-w1",
+          "text": "ASMA"
+        },
+        {
+          "id": "journey-195-w2",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-195-w3",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-195-w4",
+          "text": "GÖNÜL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ASMA, BURUN, DİŞ, GÖNÜL: sonuna köprüsü gelir."
+    },
+    {
+      "id": "journey-195-g2",
+      "title": "SONUNA ANAHTARI GELİR",
+      "words": [
+        {
+          "id": "journey-195-w5",
+          "text": "CEVAP"
+        },
+        {
+          "id": "journey-195-w6",
+          "text": "İNGİLİZ"
+        },
+        {
+          "id": "journey-195-w7",
+          "text": "FA"
+        },
+        {
+          "id": "journey-195-w8",
+          "text": "SOL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "CEVAP, İNGİLİZ, FA, SOL: sonuna anahtarı gelir."
+    },
+    {
+      "id": "journey-195-g3",
+      "title": "KAYIT STÜDYOSUNDA",
+      "words": [
+        {
+          "id": "journey-195-w9",
+          "text": "MİKROFON"
+        },
+        {
+          "id": "journey-195-w10",
+          "text": "KULAKLIK"
+        },
+        {
+          "id": "journey-195-w11",
+          "text": "MİKSER"
+        },
+        {
+          "id": "journey-195-w12",
+          "text": "SES KARTI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "MİKROFON, KULAKLIK, MİKSER, SES KARTI: kayıt stüdyosunda."
+    },
+    {
+      "id": "journey-195-g4",
+      "title": "DENİZ HAYVANLARI",
+      "words": [
+        {
+          "id": "journey-195-w13",
+          "text": "YUNUS"
+        },
+        {
+          "id": "journey-195-w14",
+          "text": "KÖPEK BALIĞI"
+        },
+        {
+          "id": "journey-195-w15",
+          "text": "AHTAPOT"
+        },
+        {
+          "id": "journey-195-w16",
+          "text": "DENİZATI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "YUNUS, KÖPEK BALIĞI, AHTAPOT, DENİZATI: deniz hayvanları."
+    }
+  ]
+}

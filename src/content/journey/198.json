@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-198",
+  "date": "2027-05-19",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-198-g1",
+      "title": "MEVSİMLER",
+      "words": [
+        {
+          "id": "journey-198-w1",
+          "text": "İLKBAHAR"
+        },
+        {
+          "id": "journey-198-w2",
+          "text": "YAZ"
+        },
+        {
+          "id": "journey-198-w3",
+          "text": "SONBAHAR"
+        },
+        {
+          "id": "journey-198-w4",
+          "text": "KIŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İLKBAHAR, YAZ, SONBAHAR, KIŞ: mevsimler."
+    },
+    {
+      "id": "journey-198-g2",
+      "title": "DİKİŞ KUTUSUNDA",
+      "words": [
+        {
+          "id": "journey-198-w5",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-198-w6",
+          "text": "İPLİK"
+        },
+        {
+          "id": "journey-198-w7",
+          "text": "YÜKSÜK"
+        },
+        {
+          "id": "journey-198-w8",
+          "text": "TOPLU İĞNE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İĞNE, İPLİK, YÜKSÜK, TOPLU İĞNE: dikiş kutusunda."
+    },
+    {
+      "id": "journey-198-g3",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-198-w9",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-198-w10",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-198-w11",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-198-w12",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    },
+    {
+      "id": "journey-198-g4",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-198-w13",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-198-w14",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-198-w15",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-198-w16",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    }
+  ]
+}

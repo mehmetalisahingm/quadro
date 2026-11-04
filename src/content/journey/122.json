@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-122",
+  "date": "2027-03-04",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-122-g1",
+      "title": "SONUNA BAĞI GELİR",
+      "words": [
+        {
+          "id": "journey-122-w1",
+          "text": "GÖNÜL"
+        },
+        {
+          "id": "journey-122-w2",
+          "text": "AYAKKABI"
+        },
+        {
+          "id": "journey-122-w3",
+          "text": "AKRABALIK"
+        },
+        {
+          "id": "journey-122-w4",
+          "text": "HİDROJEN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GÖNÜL, AYAKKABI, AKRABALIK, HİDROJEN: sonuna bağı gelir."
+    },
+    {
+      "id": "journey-122-g2",
+      "title": "TEMEL RENK ADLARI",
+      "words": [
+        {
+          "id": "journey-122-w5",
+          "text": "KIRMIZI"
+        },
+        {
+          "id": "journey-122-w6",
+          "text": "MAVİ"
+        },
+        {
+          "id": "journey-122-w7",
+          "text": "YEŞİL"
+        },
+        {
+          "id": "journey-122-w8",
+          "text": "SARI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KIRMIZI, MAVİ, YEŞİL, SARI: temel renk adları."
+    },
+    {
+      "id": "journey-122-g3",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-122-w9",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-122-w10",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-122-w11",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-122-w12",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    },
+    {
+      "id": "journey-122-g4",
+      "title": "BİRİNCİ AİLE ÜYELERİ",
+      "words": [
+        {
+          "id": "journey-122-w13",
+          "text": "ANNE"
+        },
+        {
+          "id": "journey-122-w14",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-122-w15",
+          "text": "KARDEŞ"
+        },
+        {
+          "id": "journey-122-w16",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ANNE, BABA, KARDEŞ, ÇOCUK: birinci aile üyeleri."
+    }
+  ]
+}

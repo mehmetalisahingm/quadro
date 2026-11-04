@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-074",
+  "date": "2027-01-15",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-074-g1",
+      "title": "MEYVELER",
+      "words": [
+        {
+          "id": "journey-074-w1",
+          "text": "MUZ"
+        },
+        {
+          "id": "journey-074-w2",
+          "text": "ÇİLEK"
+        },
+        {
+          "id": "journey-074-w3",
+          "text": "ELMA"
+        },
+        {
+          "id": "journey-074-w4",
+          "text": "ARMUT"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "MUZ, ÇİLEK, ELMA, ARMUT: meyveler."
+    },
+    {
+      "id": "journey-074-g2",
+      "title": "SONUNA HESABI GELİR",
+      "words": [
+        {
+          "id": "journey-074-w5",
+          "text": "BANKA"
+        },
+        {
+          "id": "journey-074-w6",
+          "text": "EV"
+        },
+        {
+          "id": "journey-074-w7",
+          "text": "FAİZ"
+        },
+        {
+          "id": "journey-074-w8",
+          "text": "OLASILIK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BANKA, EV, FAİZ, OLASILIK: sonuna hesabı gelir."
+    },
+    {
+      "id": "journey-074-g3",
+      "title": "SONUNA DÜĞMESİ GELİR",
+      "words": [
+        {
+          "id": "journey-074-w9",
+          "text": "GÖMLEK"
+        },
+        {
+          "id": "journey-074-w10",
+          "text": "ASANSÖR"
+        },
+        {
+          "id": "journey-074-w11",
+          "text": "BAŞLAT"
+        },
+        {
+          "id": "journey-074-w12",
+          "text": "ACİL DURDURMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GÖMLEK, ASANSÖR, BAŞLAT, ACİL DURDURMA: sonuna düğmesi gelir."
+    },
+    {
+      "id": "journey-074-g4",
+      "title": "İLK HARFİ SİLİNCE YENİ SÖZCÜK",
+      "words": [
+        {
+          "id": "journey-074-w13",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-074-w14",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-074-w15",
+          "text": "KASA"
+        },
+        {
+          "id": "journey-074-w16",
+          "text": "SÖZ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Ulak, alem, asa ve öz kalır."
+    }
+  ]
+}

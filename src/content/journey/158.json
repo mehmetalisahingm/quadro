@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-158",
+  "date": "2027-04-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-158-g1",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-158-w1",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-158-w2",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-158-w3",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-158-w4",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    },
+    {
+      "id": "journey-158-g2",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-158-w5",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-158-w6",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-158-w7",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-158-w8",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    },
+    {
+      "id": "journey-158-g3",
+      "title": "MÜZİK ALETLERİ",
+      "words": [
+        {
+          "id": "journey-158-w9",
+          "text": "KEMAN"
+        },
+        {
+          "id": "journey-158-w10",
+          "text": "PİYANO"
+        },
+        {
+          "id": "journey-158-w11",
+          "text": "DAVUL"
+        },
+        {
+          "id": "journey-158-w12",
+          "text": "GİTAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KEMAN, PİYANO, DAVUL, GİTAR: müzik aletleri."
+    },
+    {
+      "id": "journey-158-g4",
+      "title": "SONUNA BAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-158-w13",
+          "text": "YIL"
+        },
+        {
+          "id": "journey-158-w14",
+          "text": "SATIR"
+        },
+        {
+          "id": "journey-158-w15",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "journey-158-w16",
+          "text": "USTA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "YIL, SATIR, KÖŞE, USTA: sonuna başı gelir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-176",
+  "date": "2027-04-27",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-176-g1",
+      "title": "BALIKÇI DONANIMI",
+      "words": [
+        {
+          "id": "journey-176-w1",
+          "text": "OLTA"
+        },
+        {
+          "id": "journey-176-w2",
+          "text": "MİSİNA"
+        },
+        {
+          "id": "journey-176-w3",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-176-w4",
+          "text": "YEM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OLTA, MİSİNA, İĞNE, YEM: balıkçı donanımı."
+    },
+    {
+      "id": "journey-176-g2",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        {
+          "id": "journey-176-w5",
+          "text": "PEYNİR"
+        },
+        {
+          "id": "journey-176-w6",
+          "text": "ZEYTİN"
+        },
+        {
+          "id": "journey-176-w7",
+          "text": "REÇEL"
+        },
+        {
+          "id": "journey-176-w8",
+          "text": "BAL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PEYNİR, ZEYTİN, REÇEL, BAL: kahvaltılıklar."
+    },
+    {
+      "id": "journey-176-g3",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-176-w9",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-176-w10",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-176-w11",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-176-w12",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    },
+    {
+      "id": "journey-176-g4",
+      "title": "EVCİL HAYVANLAR",
+      "words": [
+        {
+          "id": "journey-176-w13",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-176-w14",
+          "text": "KÖPEK"
+        },
+        {
+          "id": "journey-176-w15",
+          "text": "HAMSTER"
+        },
+        {
+          "id": "journey-176-w16",
+          "text": "MUHABBET KUŞU"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KEDİ, KÖPEK, HAMSTER, MUHABBET KUŞU: evcil hayvanlar."
+    }
+  ]
+}

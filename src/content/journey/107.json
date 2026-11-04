@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-107",
+  "date": "2027-02-17",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-107-g1",
+      "title": "SONUNA DÜĞMESİ GELİR",
+      "words": [
+        {
+          "id": "journey-107-w1",
+          "text": "GÖMLEK"
+        },
+        {
+          "id": "journey-107-w2",
+          "text": "ASANSÖR"
+        },
+        {
+          "id": "journey-107-w3",
+          "text": "BAŞLAT"
+        },
+        {
+          "id": "journey-107-w4",
+          "text": "ACİL DURDURMA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GÖMLEK, ASANSÖR, BAŞLAT, ACİL DURDURMA: sonuna düğmesi gelir."
+    },
+    {
+      "id": "journey-107-g2",
+      "title": "TELLİ ÇALGILAR",
+      "words": [
+        {
+          "id": "journey-107-w5",
+          "text": "BAĞLAMA"
+        },
+        {
+          "id": "journey-107-w6",
+          "text": "UD"
+        },
+        {
+          "id": "journey-107-w7",
+          "text": "KANUN"
+        },
+        {
+          "id": "journey-107-w8",
+          "text": "ARP"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BAĞLAMA, UD, KANUN, ARP: telli çalgılar."
+    },
+    {
+      "id": "journey-107-g3",
+      "title": "MAHKEMEDE",
+      "words": [
+        {
+          "id": "journey-107-w9",
+          "text": "HÂKİM"
+        },
+        {
+          "id": "journey-107-w10",
+          "text": "SAVCI"
+        },
+        {
+          "id": "journey-107-w11",
+          "text": "TANIK"
+        },
+        {
+          "id": "journey-107-w12",
+          "text": "SANIK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HÂKİM, SAVCI, TANIK, SANIK: mahkemede."
+    },
+    {
+      "id": "journey-107-g4",
+      "title": "SONUNA AĞZI GELİR",
+      "words": [
+        {
+          "id": "journey-107-w13",
+          "text": "ŞİŞE"
+        },
+        {
+          "id": "journey-107-w14",
+          "text": "MAĞARA"
+        },
+        {
+          "id": "journey-107-w15",
+          "text": "TÜFEK"
+        },
+        {
+          "id": "journey-107-w16",
+          "text": "TORBA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ŞİŞE, MAĞARA, TÜFEK, TORBA: sonuna ağzı gelir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-101",
+  "date": "2027-02-11",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-101-g1",
+      "title": "ÇATAL BIÇAK TAKIMINDA",
+      "words": [
+        {
+          "id": "journey-101-w1",
+          "text": "ÇATAL"
+        },
+        {
+          "id": "journey-101-w2",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "journey-101-w3",
+          "text": "KAŞIK"
+        },
+        {
+          "id": "journey-101-w4",
+          "text": "TATLI KAŞIĞI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÇATAL, BIÇAK, KAŞIK, TATLI KAŞIĞI: çatal bıçak takımında."
+    },
+    {
+      "id": "journey-101-g2",
+      "title": "BALIKÇI DONANIMI",
+      "words": [
+        {
+          "id": "journey-101-w5",
+          "text": "OLTA"
+        },
+        {
+          "id": "journey-101-w6",
+          "text": "MİSİNA"
+        },
+        {
+          "id": "journey-101-w7",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-101-w8",
+          "text": "YEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OLTA, MİSİNA, İĞNE, YEM: balıkçı donanımı."
+    },
+    {
+      "id": "journey-101-g3",
+      "title": "TELLİ ÇALGILAR",
+      "words": [
+        {
+          "id": "journey-101-w9",
+          "text": "BAĞLAMA"
+        },
+        {
+          "id": "journey-101-w10",
+          "text": "UD"
+        },
+        {
+          "id": "journey-101-w11",
+          "text": "KANUN"
+        },
+        {
+          "id": "journey-101-w12",
+          "text": "ARP"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BAĞLAMA, UD, KANUN, ARP: telli çalgılar."
+    },
+    {
+      "id": "journey-101-g4",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-101-w13",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-101-w14",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-101-w15",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-101-w16",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    }
+  ]
+}

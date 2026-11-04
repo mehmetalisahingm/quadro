@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-193",
+  "date": "2027-05-14",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-193-g1",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-193-w1",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-193-w2",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-193-w3",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-193-w4",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    },
+    {
+      "id": "journey-193-g2",
+      "title": "SONUNA YOLU GELİR",
+      "words": [
+        {
+          "id": "journey-193-w5",
+          "text": "İPEK"
+        },
+        {
+          "id": "journey-193-w6",
+          "text": "KARA"
+        },
+        {
+          "id": "journey-193-w7",
+          "text": "HAVA"
+        },
+        {
+          "id": "journey-193-w8",
+          "text": "DENİZ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İPEK, KARA, HAVA, DENİZ: sonuna yolu gelir."
+    },
+    {
+      "id": "journey-193-g3",
+      "title": "KUMAŞ ÇEŞİTLERİ",
+      "words": [
+        {
+          "id": "journey-193-w9",
+          "text": "KADİFE"
+        },
+        {
+          "id": "journey-193-w10",
+          "text": "SATEN"
+        },
+        {
+          "id": "journey-193-w11",
+          "text": "KETEN"
+        },
+        {
+          "id": "journey-193-w12",
+          "text": "DENİM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KADİFE, SATEN, KETEN, DENİM: kumaş çeşitleri."
+    },
+    {
+      "id": "journey-193-g4",
+      "title": "BİR ŞİİRDE",
+      "words": [
+        {
+          "id": "journey-193-w13",
+          "text": "DİZE"
+        },
+        {
+          "id": "journey-193-w14",
+          "text": "BENT"
+        },
+        {
+          "id": "journey-193-w15",
+          "text": "UYAK"
+        },
+        {
+          "id": "journey-193-w16",
+          "text": "ÖLÇÜ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DİZE, BENT, UYAK, ÖLÇÜ: bir şiirde."
+    }
+  ]
+}

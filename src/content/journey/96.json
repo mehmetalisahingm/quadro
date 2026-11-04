@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-096",
+  "date": "2027-02-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-096-g1",
+      "title": "BANKADA İŞLEMLER",
+      "words": [
+        {
+          "id": "journey-096-w1",
+          "text": "HAVALE"
+        },
+        {
+          "id": "journey-096-w2",
+          "text": "EFT"
+        },
+        {
+          "id": "journey-096-w3",
+          "text": "VİRMAN"
+        },
+        {
+          "id": "journey-096-w4",
+          "text": "PARA ÇEKME"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HAVALE, EFT, VİRMAN, PARA ÇEKME: bankada işlemler."
+    },
+    {
+      "id": "journey-096-g2",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "journey-096-w5",
+          "text": "SABUN"
+        },
+        {
+          "id": "journey-096-w6",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "journey-096-w7",
+          "text": "HAVLU"
+        },
+        {
+          "id": "journey-096-w8",
+          "text": "LİF"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SABUN, ŞAMPUAN, HAVLU, LİF: banyoda kullanılanlar."
+    },
+    {
+      "id": "journey-096-g3",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        {
+          "id": "journey-096-w9",
+          "text": "PEYNİR"
+        },
+        {
+          "id": "journey-096-w10",
+          "text": "ZEYTİN"
+        },
+        {
+          "id": "journey-096-w11",
+          "text": "REÇEL"
+        },
+        {
+          "id": "journey-096-w12",
+          "text": "BAL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PEYNİR, ZEYTİN, REÇEL, BAL: kahvaltılıklar."
+    },
+    {
+      "id": "journey-096-g4",
+      "title": "SONUNA AĞZI GELİR",
+      "words": [
+        {
+          "id": "journey-096-w13",
+          "text": "ŞİŞE"
+        },
+        {
+          "id": "journey-096-w14",
+          "text": "MAĞARA"
+        },
+        {
+          "id": "journey-096-w15",
+          "text": "TÜFEK"
+        },
+        {
+          "id": "journey-096-w16",
+          "text": "TORBA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ŞİŞE, MAĞARA, TÜFEK, TORBA: sonuna ağzı gelir."
+    }
+  ]
+}

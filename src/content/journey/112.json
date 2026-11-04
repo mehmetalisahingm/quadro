@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-112",
+  "date": "2027-02-22",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-112-g1",
+      "title": "EKLE EŞYAYA DÖNÜŞEN ORGAN",
+      "words": [
+        {
+          "id": "journey-112-w1",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-112-w2",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-112-w3",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-112-w4",
+          "text": "BAŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "-lık ekinin uyumlu biçimleriyle gözlük, kulaklık, ayaklık, başlık."
+    },
+    {
+      "id": "journey-112-g2",
+      "title": "BİR KİTABIN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-112-w5",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "journey-112-w6",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "journey-112-w7",
+          "text": "DİZİN"
+        },
+        {
+          "id": "journey-112-w8",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÖNSÖZ, İÇİNDEKİLER, DİZİN, KAYNAKÇA: bir kitabın bölümleri."
+    },
+    {
+      "id": "journey-112-g3",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-112-w9",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-112-w10",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-112-w11",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-112-w12",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    },
+    {
+      "id": "journey-112-g4",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-112-w13",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-112-w14",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-112-w15",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-112-w16",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    }
+  ]
+}

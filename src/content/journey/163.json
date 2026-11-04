@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-163",
+  "date": "2027-04-14",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-163-g1",
+      "title": "KAMERADA AYARLAR",
+      "words": [
+        {
+          "id": "journey-163-w1",
+          "text": "POZLAMA"
+        },
+        {
+          "id": "journey-163-w2",
+          "text": "BEYAZ AYARI"
+        },
+        {
+          "id": "journey-163-w3",
+          "text": "ISO"
+        },
+        {
+          "id": "journey-163-w4",
+          "text": "ENSTANTANE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "POZLAMA, BEYAZ AYARI, ISO, ENSTANTANE: kamerada ayarlar."
+    },
+    {
+      "id": "journey-163-g2",
+      "title": "SICAKLIK ÖLÇEKLERİ",
+      "words": [
+        {
+          "id": "journey-163-w5",
+          "text": "CELSİUS"
+        },
+        {
+          "id": "journey-163-w6",
+          "text": "FAHRENHEİT"
+        },
+        {
+          "id": "journey-163-w7",
+          "text": "KELVİN"
+        },
+        {
+          "id": "journey-163-w8",
+          "text": "RÉAUMUR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "CELSİUS, FAHRENHEİT, KELVİN, RÉAUMUR: sıcaklık ölçekleri."
+    },
+    {
+      "id": "journey-163-g3",
+      "title": "SONUNA TABLOSU GELİR",
+      "words": [
+        {
+          "id": "journey-163-w9",
+          "text": "ÇARPIM"
+        },
+        {
+          "id": "journey-163-w10",
+          "text": "PERİYODİK"
+        },
+        {
+          "id": "journey-163-w11",
+          "text": "PUAN"
+        },
+        {
+          "id": "journey-163-w12",
+          "text": "GELİR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇARPIM, PERİYODİK, PUAN, GELİR: sonuna tablosu gelir."
+    },
+    {
+      "id": "journey-163-g4",
+      "title": "SONUNA BOYU GELİR",
+      "words": [
+        {
+          "id": "journey-163-w13",
+          "text": "ÖMÜR"
+        },
+        {
+          "id": "journey-163-w14",
+          "text": "YOL"
+        },
+        {
+          "id": "journey-163-w15",
+          "text": "DALGA"
+        },
+        {
+          "id": "journey-163-w16",
+          "text": "DİZ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÖMÜR, YOL, DALGA, DİZ: sonuna boyu gelir."
+    }
+  ]
+}

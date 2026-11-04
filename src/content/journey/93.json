@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-093",
+  "date": "2027-02-03",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-093-g1",
+      "title": "MAHKEMEDE",
+      "words": [
+        {
+          "id": "journey-093-w1",
+          "text": "HÂKİM"
+        },
+        {
+          "id": "journey-093-w2",
+          "text": "SAVCI"
+        },
+        {
+          "id": "journey-093-w3",
+          "text": "TANIK"
+        },
+        {
+          "id": "journey-093-w4",
+          "text": "SANIK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HÂKİM, SAVCI, TANIK, SANIK: mahkemede."
+    },
+    {
+      "id": "journey-093-g2",
+      "title": "SONUNA PERDESİ GELİR",
+      "words": [
+        {
+          "id": "journey-093-w5",
+          "text": "SAHNE"
+        },
+        {
+          "id": "journey-093-w6",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-093-w7",
+          "text": "SİS"
+        },
+        {
+          "id": "journey-093-w8",
+          "text": "DUŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SAHNE, GÖZ, SİS, DUŞ: sonuna perdesi gelir."
+    },
+    {
+      "id": "journey-093-g3",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-093-w9",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-093-w10",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-093-w11",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-093-w12",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    },
+    {
+      "id": "journey-093-g4",
+      "title": "SONUNA AĞI GELİR",
+      "words": [
+        {
+          "id": "journey-093-w13",
+          "text": "ÖRÜMCEK"
+        },
+        {
+          "id": "journey-093-w14",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-093-w15",
+          "text": "İLETİŞİM"
+        },
+        {
+          "id": "journey-093-w16",
+          "text": "SİNİR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÖRÜMCEK, BALIK, İLETİŞİM, SİNİR: sonuna ağı gelir."
+    }
+  ]
+}

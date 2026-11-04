@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-177",
+  "date": "2027-04-28",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-177-g1",
+      "title": "OKUL ÇANTASINDA",
+      "words": [
+        {
+          "id": "journey-177-w1",
+          "text": "DEFTER"
+        },
+        {
+          "id": "journey-177-w2",
+          "text": "KİTAP"
+        },
+        {
+          "id": "journey-177-w3",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-177-w4",
+          "text": "SİLGİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DEFTER, KİTAP, KALEM, SİLGİ: okul çantasında."
+    },
+    {
+      "id": "journey-177-g2",
+      "title": "BİR ŞİİRDE",
+      "words": [
+        {
+          "id": "journey-177-w5",
+          "text": "DİZE"
+        },
+        {
+          "id": "journey-177-w6",
+          "text": "BENT"
+        },
+        {
+          "id": "journey-177-w7",
+          "text": "UYAK"
+        },
+        {
+          "id": "journey-177-w8",
+          "text": "ÖLÇÜ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DİZE, BENT, UYAK, ÖLÇÜ: bir şiirde."
+    },
+    {
+      "id": "journey-177-g3",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-177-w9",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-177-w10",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-177-w11",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-177-w12",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-177-g4",
+      "title": "KÜREKLE İLERLEYEN ARAÇLAR",
+      "words": [
+        {
+          "id": "journey-177-w13",
+          "text": "KANO"
+        },
+        {
+          "id": "journey-177-w14",
+          "text": "KAYIK"
+        },
+        {
+          "id": "journey-177-w15",
+          "text": "GONDOL"
+        },
+        {
+          "id": "journey-177-w16",
+          "text": "RAFTİNG BOTU"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KANO, KAYIK, GONDOL, RAFTİNG BOTU: kürekle ilerleyen araçlar."
+    }
+  ]
+}

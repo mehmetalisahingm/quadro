@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-138",
+  "date": "2027-03-20",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-138-g1",
+      "title": "TEMEL RENK ADLARI",
+      "words": [
+        {
+          "id": "journey-138-w1",
+          "text": "KIRMIZI"
+        },
+        {
+          "id": "journey-138-w2",
+          "text": "MAVİ"
+        },
+        {
+          "id": "journey-138-w3",
+          "text": "YEŞİL"
+        },
+        {
+          "id": "journey-138-w4",
+          "text": "SARI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KIRMIZI, MAVİ, YEŞİL, SARI: temel renk adları."
+    },
+    {
+      "id": "journey-138-g2",
+      "title": "SONUNA AÇIĞI GELİR",
+      "words": [
+        {
+          "id": "journey-138-w5",
+          "text": "BÜTÇE"
+        },
+        {
+          "id": "journey-138-w6",
+          "text": "TİCARET"
+        },
+        {
+          "id": "journey-138-w7",
+          "text": "GÜVENLİK"
+        },
+        {
+          "id": "journey-138-w8",
+          "text": "PUAN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BÜTÇE, TİCARET, GÜVENLİK, PUAN: sonuna açığı gelir."
+    },
+    {
+      "id": "journey-138-g3",
+      "title": "İLK HARFİ SİLİNCE YENİ SÖZCÜK",
+      "words": [
+        {
+          "id": "journey-138-w9",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-138-w10",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-138-w11",
+          "text": "KASA"
+        },
+        {
+          "id": "journey-138-w12",
+          "text": "SÖZ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ulak, alem, asa ve öz kalır."
+    },
+    {
+      "id": "journey-138-g4",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-138-w13",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-138-w14",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-138-w15",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-138-w16",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    }
+  ]
+}
