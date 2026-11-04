@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-102",
+  "date": "2027-02-12",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-102-g1",
+      "title": "FIRINDA YAPILAN HAMUR İŞLERİ",
+      "words": [
+        {
+          "id": "journey-102-w1",
+          "text": "POĞAÇA"
+        },
+        {
+          "id": "journey-102-w2",
+          "text": "AÇMA"
+        },
+        {
+          "id": "journey-102-w3",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-102-w4",
+          "text": "BÖREK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "POĞAÇA, AÇMA, SİMİT, BÖREK: fırında yapılan hamur işleri."
+    },
+    {
+      "id": "journey-102-g2",
+      "title": "SONUNA KOLU GELİR",
+      "words": [
+        {
+          "id": "journey-102-w5",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-102-w6",
+          "text": "NEHİR"
+        },
+        {
+          "id": "journey-102-w7",
+          "text": "EMNİYET"
+        },
+        {
+          "id": "journey-102-w8",
+          "text": "DİREKSİYON"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KAPI, NEHİR, EMNİYET, DİREKSİYON: sonuna kolu gelir."
+    },
+    {
+      "id": "journey-102-g3",
+      "title": "BİR KİTABIN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-102-w9",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "journey-102-w10",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "journey-102-w11",
+          "text": "DİZİN"
+        },
+        {
+          "id": "journey-102-w12",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÖNSÖZ, İÇİNDEKİLER, DİZİN, KAYNAKÇA: bir kitabın bölümleri."
+    },
+    {
+      "id": "journey-102-g4",
+      "title": "İSTASYONDA",
+      "words": [
+        {
+          "id": "journey-102-w13",
+          "text": "PERON"
+        },
+        {
+          "id": "journey-102-w14",
+          "text": "RAY"
+        },
+        {
+          "id": "journey-102-w15",
+          "text": "MAKAS"
+        },
+        {
+          "id": "journey-102-w16",
+          "text": "SİNYAL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "PERON, RAY, MAKAS, SİNYAL: istasyonda."
+    }
+  ]
+}

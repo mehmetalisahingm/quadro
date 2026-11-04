@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-089",
+  "date": "2027-01-30",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-089-g1",
+      "title": "BİR KİTABIN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-089-w1",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "journey-089-w2",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "journey-089-w3",
+          "text": "DİZİN"
+        },
+        {
+          "id": "journey-089-w4",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÖNSÖZ, İÇİNDEKİLER, DİZİN, KAYNAKÇA: bir kitabın bölümleri."
+    },
+    {
+      "id": "journey-089-g2",
+      "title": "SONUNA KOLU GELİR",
+      "words": [
+        {
+          "id": "journey-089-w5",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-089-w6",
+          "text": "NEHİR"
+        },
+        {
+          "id": "journey-089-w7",
+          "text": "EMNİYET"
+        },
+        {
+          "id": "journey-089-w8",
+          "text": "DİREKSİYON"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KAPI, NEHİR, EMNİYET, DİREKSİYON: sonuna kolu gelir."
+    },
+    {
+      "id": "journey-089-g3",
+      "title": "DİKİŞ KUTUSUNDA",
+      "words": [
+        {
+          "id": "journey-089-w9",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-089-w10",
+          "text": "İPLİK"
+        },
+        {
+          "id": "journey-089-w11",
+          "text": "YÜKSÜK"
+        },
+        {
+          "id": "journey-089-w12",
+          "text": "TOPLU İĞNE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "İĞNE, İPLİK, YÜKSÜK, TOPLU İĞNE: dikiş kutusunda."
+    },
+    {
+      "id": "journey-089-g4",
+      "title": "AYAK GİYİMİ",
+      "words": [
+        {
+          "id": "journey-089-w13",
+          "text": "BOT"
+        },
+        {
+          "id": "journey-089-w14",
+          "text": "TERLİK"
+        },
+        {
+          "id": "journey-089-w15",
+          "text": "SPOR AYAKKABI"
+        },
+        {
+          "id": "journey-089-w16",
+          "text": "ÇİZME"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "BOT, TERLİK, SPOR AYAKKABI, ÇİZME: ayak giyimi."
+    }
+  ]
+}

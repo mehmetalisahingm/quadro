@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-055",
+  "date": "2026-12-27",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-055-g1",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-055-w1",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-055-w2",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-055-w3",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-055-w4",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    },
+    {
+      "id": "journey-055-g2",
+      "title": "SONUNA KARTI GELİR",
+      "words": [
+        {
+          "id": "journey-055-w5",
+          "text": "KREDİ"
+        },
+        {
+          "id": "journey-055-w6",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "journey-055-w7",
+          "text": "HAFIZA"
+        },
+        {
+          "id": "journey-055-w8",
+          "text": "TEBRİK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KREDİ, KİMLİK, HAFIZA, TEBRİK: sonuna kartı gelir."
+    },
+    {
+      "id": "journey-055-g3",
+      "title": "DENİZ HAYVANLARI",
+      "words": [
+        {
+          "id": "journey-055-w9",
+          "text": "YUNUS"
+        },
+        {
+          "id": "journey-055-w10",
+          "text": "KÖPEK BALIĞI"
+        },
+        {
+          "id": "journey-055-w11",
+          "text": "AHTAPOT"
+        },
+        {
+          "id": "journey-055-w12",
+          "text": "DENİZATI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "YUNUS, KÖPEK BALIĞI, AHTAPOT, DENİZATI: deniz hayvanları."
+    },
+    {
+      "id": "journey-055-g4",
+      "title": "SONUNA EVİ GELİR",
+      "words": [
+        {
+          "id": "journey-055-w13",
+          "text": "HUZUR"
+        },
+        {
+          "id": "journey-055-w14",
+          "text": "KONUK"
+        },
+        {
+          "id": "journey-055-w15",
+          "text": "BASIM"
+        },
+        {
+          "id": "journey-055-w16",
+          "text": "GÖZLEM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HUZUR, KONUK, BASIM, GÖZLEM: sonuna evi gelir."
+    }
+  ]
+}

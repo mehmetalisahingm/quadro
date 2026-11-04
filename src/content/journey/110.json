@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-110",
+  "date": "2027-02-20",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-110-g1",
+      "title": "SPOR MÜSABAKASINDA",
+      "words": [
+        {
+          "id": "journey-110-w1",
+          "text": "HAKEM"
+        },
+        {
+          "id": "journey-110-w2",
+          "text": "SKOR"
+        },
+        {
+          "id": "journey-110-w3",
+          "text": "RAKİP"
+        },
+        {
+          "id": "journey-110-w4",
+          "text": "TRİBÜN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HAKEM, SKOR, RAKİP, TRİBÜN: spor müsabakasında."
+    },
+    {
+      "id": "journey-110-g2",
+      "title": "HEM ORGAN HEM NESNE PARÇASI",
+      "words": [
+        {
+          "id": "journey-110-w5",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-110-w6",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-110-w7",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-110-w8",
+          "text": "DİŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Koltuğun kolu, masanın ayağı, çekmecenin gözü, tarağın dişi."
+    },
+    {
+      "id": "journey-110-g3",
+      "title": "KUMAŞ ÇEŞİTLERİ",
+      "words": [
+        {
+          "id": "journey-110-w9",
+          "text": "KADİFE"
+        },
+        {
+          "id": "journey-110-w10",
+          "text": "SATEN"
+        },
+        {
+          "id": "journey-110-w11",
+          "text": "KETEN"
+        },
+        {
+          "id": "journey-110-w12",
+          "text": "DENİM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KADİFE, SATEN, KETEN, DENİM: kumaş çeşitleri."
+    },
+    {
+      "id": "journey-110-g4",
+      "title": "TELLİ ÇALGILAR",
+      "words": [
+        {
+          "id": "journey-110-w13",
+          "text": "BAĞLAMA"
+        },
+        {
+          "id": "journey-110-w14",
+          "text": "UD"
+        },
+        {
+          "id": "journey-110-w15",
+          "text": "KANUN"
+        },
+        {
+          "id": "journey-110-w16",
+          "text": "ARP"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "BAĞLAMA, UD, KANUN, ARP: telli çalgılar."
+    }
+  ]
+}

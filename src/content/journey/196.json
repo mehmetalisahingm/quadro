@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-196",
+  "date": "2027-05-17",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-196-g1",
+      "title": "SONUNA BAĞI GELİR",
+      "words": [
+        {
+          "id": "journey-196-w1",
+          "text": "GÖNÜL"
+        },
+        {
+          "id": "journey-196-w2",
+          "text": "AYAKKABI"
+        },
+        {
+          "id": "journey-196-w3",
+          "text": "AKRABALIK"
+        },
+        {
+          "id": "journey-196-w4",
+          "text": "HİDROJEN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GÖNÜL, AYAKKABI, AKRABALIK, HİDROJEN: sonuna bağı gelir."
+    },
+    {
+      "id": "journey-196-g2",
+      "title": "SONUNA DÜĞMESİ GELİR",
+      "words": [
+        {
+          "id": "journey-196-w5",
+          "text": "GÖMLEK"
+        },
+        {
+          "id": "journey-196-w6",
+          "text": "ASANSÖR"
+        },
+        {
+          "id": "journey-196-w7",
+          "text": "BAŞLAT"
+        },
+        {
+          "id": "journey-196-w8",
+          "text": "ACİL DURDURMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "GÖMLEK, ASANSÖR, BAŞLAT, ACİL DURDURMA: sonuna düğmesi gelir."
+    },
+    {
+      "id": "journey-196-g3",
+      "title": "MUTFAKTA YEMEK PİŞİRİRKEN",
+      "words": [
+        {
+          "id": "journey-196-w9",
+          "text": "TENCERE"
+        },
+        {
+          "id": "journey-196-w10",
+          "text": "TAVA"
+        },
+        {
+          "id": "journey-196-w11",
+          "text": "KEVGİR"
+        },
+        {
+          "id": "journey-196-w12",
+          "text": "KEPÇE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "TENCERE, TAVA, KEVGİR, KEPÇE: mutfakta yemek pişirirken."
+    },
+    {
+      "id": "journey-196-g4",
+      "title": "ÇATAL BIÇAK TAKIMINDA",
+      "words": [
+        {
+          "id": "journey-196-w13",
+          "text": "ÇATAL"
+        },
+        {
+          "id": "journey-196-w14",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "journey-196-w15",
+          "text": "KAŞIK"
+        },
+        {
+          "id": "journey-196-w16",
+          "text": "TATLI KAŞIĞI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇATAL, BIÇAK, KAŞIK, TATLI KAŞIĞI: çatal bıçak takımında."
+    }
+  ]
+}

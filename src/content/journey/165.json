@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-165",
+  "date": "2027-04-16",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-165-g1",
+      "title": "TİYATRODA GÖREV ALANLAR",
+      "words": [
+        {
+          "id": "journey-165-w1",
+          "text": "OYUNCU"
+        },
+        {
+          "id": "journey-165-w2",
+          "text": "YÖNETMEN"
+        },
+        {
+          "id": "journey-165-w3",
+          "text": "SUFLÖR"
+        },
+        {
+          "id": "journey-165-w4",
+          "text": "DEKORATÖR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OYUNCU, YÖNETMEN, SUFLÖR, DEKORATÖR: tiyatroda görev alanlar."
+    },
+    {
+      "id": "journey-165-g2",
+      "title": "TERSTEN AYNI OKUNUR",
+      "words": [
+        {
+          "id": "journey-165-w5",
+          "text": "KABAK"
+        },
+        {
+          "id": "journey-165-w6",
+          "text": "KÜÇÜK"
+        },
+        {
+          "id": "journey-165-w7",
+          "text": "NEDEN"
+        },
+        {
+          "id": "journey-165-w8",
+          "text": "RADAR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KABAK, KÜÇÜK, NEDEN, RADAR: tersten aynı okunur."
+    },
+    {
+      "id": "journey-165-g3",
+      "title": "HEM ORGAN HEM NESNE PARÇASI",
+      "words": [
+        {
+          "id": "journey-165-w9",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-165-w10",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-165-w11",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-165-w12",
+          "text": "DİŞ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Koltuğun kolu, masanın ayağı, çekmecenin gözü, tarağın dişi."
+    },
+    {
+      "id": "journey-165-g4",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-165-w13",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-165-w14",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-165-w15",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-165-w16",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    }
+  ]
+}

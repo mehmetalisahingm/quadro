@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-168",
+  "date": "2027-04-19",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-168-g1",
+      "title": "MÜZEDE",
+      "words": [
+        {
+          "id": "journey-168-w1",
+          "text": "ESER"
+        },
+        {
+          "id": "journey-168-w2",
+          "text": "KOLEKSİYON"
+        },
+        {
+          "id": "journey-168-w3",
+          "text": "SERGİ"
+        },
+        {
+          "id": "journey-168-w4",
+          "text": "KÜRATÖR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ESER, KOLEKSİYON, SERGİ, KÜRATÖR: müzede."
+    },
+    {
+      "id": "journey-168-g2",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-168-w5",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-168-w6",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-168-w7",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-168-w8",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-168-g3",
+      "title": "MÜZİK ALETLERİ",
+      "words": [
+        {
+          "id": "journey-168-w9",
+          "text": "KEMAN"
+        },
+        {
+          "id": "journey-168-w10",
+          "text": "PİYANO"
+        },
+        {
+          "id": "journey-168-w11",
+          "text": "DAVUL"
+        },
+        {
+          "id": "journey-168-w12",
+          "text": "GİTAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KEMAN, PİYANO, DAVUL, GİTAR: müzik aletleri."
+    },
+    {
+      "id": "journey-168-g4",
+      "title": "SONUNA DÜĞMESİ GELİR",
+      "words": [
+        {
+          "id": "journey-168-w13",
+          "text": "GÖMLEK"
+        },
+        {
+          "id": "journey-168-w14",
+          "text": "ASANSÖR"
+        },
+        {
+          "id": "journey-168-w15",
+          "text": "BAŞLAT"
+        },
+        {
+          "id": "journey-168-w16",
+          "text": "ACİL DURDURMA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GÖMLEK, ASANSÖR, BAŞLAT, ACİL DURDURMA: sonuna düğmesi gelir."
+    }
+  ]
+}

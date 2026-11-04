@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-190",
+  "date": "2027-05-11",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-190-g1",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "journey-190-w1",
+          "text": "SABUN"
+        },
+        {
+          "id": "journey-190-w2",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "journey-190-w3",
+          "text": "HAVLU"
+        },
+        {
+          "id": "journey-190-w4",
+          "text": "LİF"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SABUN, ŞAMPUAN, HAVLU, LİF: banyoda kullanılanlar."
+    },
+    {
+      "id": "journey-190-g2",
+      "title": "HAVA TAŞITLARI",
+      "words": [
+        {
+          "id": "journey-190-w5",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-190-w6",
+          "text": "HELİKOPTER"
+        },
+        {
+          "id": "journey-190-w7",
+          "text": "PLANÖR"
+        },
+        {
+          "id": "journey-190-w8",
+          "text": "ZEPLİN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UÇAK, HELİKOPTER, PLANÖR, ZEPLİN: hava taşıtları."
+    },
+    {
+      "id": "journey-190-g3",
+      "title": "BİRİNCİ AİLE ÜYELERİ",
+      "words": [
+        {
+          "id": "journey-190-w9",
+          "text": "ANNE"
+        },
+        {
+          "id": "journey-190-w10",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-190-w11",
+          "text": "KARDEŞ"
+        },
+        {
+          "id": "journey-190-w12",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ANNE, BABA, KARDEŞ, ÇOCUK: birinci aile üyeleri."
+    },
+    {
+      "id": "journey-190-g4",
+      "title": "TERSTEN BAŞKA KELİME",
+      "words": [
+        {
+          "id": "journey-190-w13",
+          "text": "PAY"
+        },
+        {
+          "id": "journey-190-w14",
+          "text": "KAP"
+        },
+        {
+          "id": "journey-190-w15",
+          "text": "KOÇ"
+        },
+        {
+          "id": "journey-190-w16",
+          "text": "KES"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Yap, pak, çok ve sek."
+    }
+  ]
+}

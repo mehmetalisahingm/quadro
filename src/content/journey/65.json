@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-065",
+  "date": "2027-01-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-065-g1",
+      "title": "SONUNA BAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-065-w1",
+          "text": "YIL"
+        },
+        {
+          "id": "journey-065-w2",
+          "text": "SATIR"
+        },
+        {
+          "id": "journey-065-w3",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "journey-065-w4",
+          "text": "USTA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YIL, SATIR, KÖŞE, USTA: sonuna başı gelir."
+    },
+    {
+      "id": "journey-065-g2",
+      "title": "GEOMETRİK ŞEKİLLER",
+      "words": [
+        {
+          "id": "journey-065-w5",
+          "text": "DAİRE"
+        },
+        {
+          "id": "journey-065-w6",
+          "text": "KARE"
+        },
+        {
+          "id": "journey-065-w7",
+          "text": "ÜÇGEN"
+        },
+        {
+          "id": "journey-065-w8",
+          "text": "DİKDÖRTGEN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DAİRE, KARE, ÜÇGEN, DİKDÖRTGEN: geometrik şekiller."
+    },
+    {
+      "id": "journey-065-g3",
+      "title": "TRAFİKTE YOL GÖSTERENLER",
+      "words": [
+        {
+          "id": "journey-065-w9",
+          "text": "LEVHA"
+        },
+        {
+          "id": "journey-065-w10",
+          "text": "ŞERİT"
+        },
+        {
+          "id": "journey-065-w11",
+          "text": "OK"
+        },
+        {
+          "id": "journey-065-w12",
+          "text": "SİNYAL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "LEVHA, ŞERİT, OK, SİNYAL: trafikte yol gösterenler."
+    },
+    {
+      "id": "journey-065-g4",
+      "title": "BİLGİSAYAR DONANIMI",
+      "words": [
+        {
+          "id": "journey-065-w13",
+          "text": "EKRAN KARTI"
+        },
+        {
+          "id": "journey-065-w14",
+          "text": "İŞLEMCİ"
+        },
+        {
+          "id": "journey-065-w15",
+          "text": "ANAKART"
+        },
+        {
+          "id": "journey-065-w16",
+          "text": "SABİT DİSK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "EKRAN KARTI, İŞLEMCİ, ANAKART, SABİT DİSK: bilgisayar donanımı."
+    }
+  ]
+}

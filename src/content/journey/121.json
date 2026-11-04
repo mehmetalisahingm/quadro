@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-121",
+  "date": "2027-03-03",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-121-g1",
+      "title": "MEVSİMLER",
+      "words": [
+        {
+          "id": "journey-121-w1",
+          "text": "İLKBAHAR"
+        },
+        {
+          "id": "journey-121-w2",
+          "text": "YAZ"
+        },
+        {
+          "id": "journey-121-w3",
+          "text": "SONBAHAR"
+        },
+        {
+          "id": "journey-121-w4",
+          "text": "KIŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İLKBAHAR, YAZ, SONBAHAR, KIŞ: mevsimler."
+    },
+    {
+      "id": "journey-121-g2",
+      "title": "NARENCİYELER",
+      "words": [
+        {
+          "id": "journey-121-w5",
+          "text": "PORTAKAL"
+        },
+        {
+          "id": "journey-121-w6",
+          "text": "MANDALİNA"
+        },
+        {
+          "id": "journey-121-w7",
+          "text": "LİMON"
+        },
+        {
+          "id": "journey-121-w8",
+          "text": "GREYFURT"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PORTAKAL, MANDALİNA, LİMON, GREYFURT: narenciyeler."
+    },
+    {
+      "id": "journey-121-g3",
+      "title": "BAHÇE BAKIMINDA",
+      "words": [
+        {
+          "id": "journey-121-w9",
+          "text": "BUDAMA"
+        },
+        {
+          "id": "journey-121-w10",
+          "text": "SULAMA"
+        },
+        {
+          "id": "journey-121-w11",
+          "text": "ÇAPALAMA"
+        },
+        {
+          "id": "journey-121-w12",
+          "text": "GÜBRELEME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BUDAMA, SULAMA, ÇAPALAMA, GÜBRELEME: bahçe bakımında."
+    },
+    {
+      "id": "journey-121-g4",
+      "title": "MEYVELER",
+      "words": [
+        {
+          "id": "journey-121-w13",
+          "text": "MUZ"
+        },
+        {
+          "id": "journey-121-w14",
+          "text": "ÇİLEK"
+        },
+        {
+          "id": "journey-121-w15",
+          "text": "ELMA"
+        },
+        {
+          "id": "journey-121-w16",
+          "text": "ARMUT"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "MUZ, ÇİLEK, ELMA, ARMUT: meyveler."
+    }
+  ]
+}

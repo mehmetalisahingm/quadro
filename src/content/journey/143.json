@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-143",
+  "date": "2027-03-25",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-143-g1",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-143-w1",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-143-w2",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-143-w3",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-143-w4",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    },
+    {
+      "id": "journey-143-g2",
+      "title": "KÜTÜPHANEDE",
+      "words": [
+        {
+          "id": "journey-143-w5",
+          "text": "RAF"
+        },
+        {
+          "id": "journey-143-w6",
+          "text": "KATALOG"
+        },
+        {
+          "id": "journey-143-w7",
+          "text": "ÖDÜNÇ KARTI"
+        },
+        {
+          "id": "journey-143-w8",
+          "text": "OKUMA SALONU"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "RAF, KATALOG, ÖDÜNÇ KARTI, OKUMA SALONU: kütüphanede."
+    },
+    {
+      "id": "journey-143-g3",
+      "title": "YATAKTA BULUNANLAR",
+      "words": [
+        {
+          "id": "journey-143-w9",
+          "text": "YASTIK"
+        },
+        {
+          "id": "journey-143-w10",
+          "text": "YORGAN"
+        },
+        {
+          "id": "journey-143-w11",
+          "text": "ÇARŞAF"
+        },
+        {
+          "id": "journey-143-w12",
+          "text": "NEVRESİM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "YASTIK, YORGAN, ÇARŞAF, NEVRESİM: yatakta bulunanlar."
+    },
+    {
+      "id": "journey-143-g4",
+      "title": "MUTFAKTA YEMEK PİŞİRİRKEN",
+      "words": [
+        {
+          "id": "journey-143-w13",
+          "text": "TENCERE"
+        },
+        {
+          "id": "journey-143-w14",
+          "text": "TAVA"
+        },
+        {
+          "id": "journey-143-w15",
+          "text": "KEVGİR"
+        },
+        {
+          "id": "journey-143-w16",
+          "text": "KEPÇE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TENCERE, TAVA, KEVGİR, KEPÇE: mutfakta yemek pişirirken."
+    }
+  ]
+}

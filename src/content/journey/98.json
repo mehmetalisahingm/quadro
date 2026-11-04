@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-098",
+  "date": "2027-02-08",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-098-g1",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-098-w1",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-098-w2",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-098-w3",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-098-w4",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    },
+    {
+      "id": "journey-098-g2",
+      "title": "KÜREKLE İLERLEYEN ARAÇLAR",
+      "words": [
+        {
+          "id": "journey-098-w5",
+          "text": "KANO"
+        },
+        {
+          "id": "journey-098-w6",
+          "text": "KAYIK"
+        },
+        {
+          "id": "journey-098-w7",
+          "text": "GONDOL"
+        },
+        {
+          "id": "journey-098-w8",
+          "text": "RAFTİNG BOTU"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KANO, KAYIK, GONDOL, RAFTİNG BOTU: kürekle ilerleyen araçlar."
+    },
+    {
+      "id": "journey-098-g3",
+      "title": "SONUNA KÖPRÜSÜ GELİR",
+      "words": [
+        {
+          "id": "journey-098-w9",
+          "text": "ASMA"
+        },
+        {
+          "id": "journey-098-w10",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-098-w11",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-098-w12",
+          "text": "GÖNÜL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ASMA, BURUN, DİŞ, GÖNÜL: sonuna köprüsü gelir."
+    },
+    {
+      "id": "journey-098-g4",
+      "title": "KARA MEMELİLERİ",
+      "words": [
+        {
+          "id": "journey-098-w13",
+          "text": "GEYİK"
+        },
+        {
+          "id": "journey-098-w14",
+          "text": "TİLKİ"
+        },
+        {
+          "id": "journey-098-w15",
+          "text": "KURT"
+        },
+        {
+          "id": "journey-098-w16",
+          "text": "AYI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GEYİK, TİLKİ, KURT, AYI: kara memelileri."
+    }
+  ]
+}

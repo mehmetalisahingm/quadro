@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-094",
+  "date": "2027-02-04",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-094-g1",
+      "title": "BİR ÖYKÜNÜN UNSURLARI",
+      "words": [
+        {
+          "id": "journey-094-w1",
+          "text": "KİŞİ"
+        },
+        {
+          "id": "journey-094-w2",
+          "text": "OLAY"
+        },
+        {
+          "id": "journey-094-w3",
+          "text": "YER"
+        },
+        {
+          "id": "journey-094-w4",
+          "text": "ZAMAN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KİŞİ, OLAY, YER, ZAMAN: bir öykünün unsurları."
+    },
+    {
+      "id": "journey-094-g2",
+      "title": "SONUNA DİLİ GELİR",
+      "words": [
+        {
+          "id": "journey-094-w5",
+          "text": "ANA"
+        },
+        {
+          "id": "journey-094-w6",
+          "text": "BEDEN"
+        },
+        {
+          "id": "journey-094-w7",
+          "text": "İŞARET"
+        },
+        {
+          "id": "journey-094-w8",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ANA, BEDEN, İŞARET, PROGRAMLAMA: sonuna dili gelir."
+    },
+    {
+      "id": "journey-094-g3",
+      "title": "SONUNA MASASI GELİR",
+      "words": [
+        {
+          "id": "journey-094-w9",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "journey-094-w10",
+          "text": "AMELİYAT"
+        },
+        {
+          "id": "journey-094-w11",
+          "text": "YEMEK"
+        },
+        {
+          "id": "journey-094-w12",
+          "text": "BİLARDO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇALIŞMA, AMELİYAT, YEMEK, BİLARDO: sonuna masası gelir."
+    },
+    {
+      "id": "journey-094-g4",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-094-w13",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-094-w14",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-094-w15",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-094-w16",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-183",
+  "date": "2027-05-04",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-183-g1",
+      "title": "GAZETEDE",
+      "words": [
+        {
+          "id": "journey-183-w1",
+          "text": "MANŞET"
+        },
+        {
+          "id": "journey-183-w2",
+          "text": "HABER"
+        },
+        {
+          "id": "journey-183-w3",
+          "text": "KÖŞE YAZISI"
+        },
+        {
+          "id": "journey-183-w4",
+          "text": "KARİKATÜR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "MANŞET, HABER, KÖŞE YAZISI, KARİKATÜR: gazetede."
+    },
+    {
+      "id": "journey-183-g2",
+      "title": "BİR ÖYKÜNÜN UNSURLARI",
+      "words": [
+        {
+          "id": "journey-183-w5",
+          "text": "KİŞİ"
+        },
+        {
+          "id": "journey-183-w6",
+          "text": "OLAY"
+        },
+        {
+          "id": "journey-183-w7",
+          "text": "YER"
+        },
+        {
+          "id": "journey-183-w8",
+          "text": "ZAMAN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KİŞİ, OLAY, YER, ZAMAN: bir öykünün unsurları."
+    },
+    {
+      "id": "journey-183-g3",
+      "title": "SONUNA BOYU GELİR",
+      "words": [
+        {
+          "id": "journey-183-w9",
+          "text": "ÖMÜR"
+        },
+        {
+          "id": "journey-183-w10",
+          "text": "YOL"
+        },
+        {
+          "id": "journey-183-w11",
+          "text": "DALGA"
+        },
+        {
+          "id": "journey-183-w12",
+          "text": "DİZ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÖMÜR, YOL, DALGA, DİZ: sonuna boyu gelir."
+    },
+    {
+      "id": "journey-183-g4",
+      "title": "HUKUKTA HAKLAR",
+      "words": [
+        {
+          "id": "journey-183-w13",
+          "text": "TELİF"
+        },
+        {
+          "id": "journey-183-w14",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-183-w15",
+          "text": "VETO"
+        },
+        {
+          "id": "journey-183-w16",
+          "text": "GEÇİŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TELİF, MİRAS, VETO, GEÇİŞ: hukukta haklar."
+    }
+  ]
+}

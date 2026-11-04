@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-109",
+  "date": "2027-02-19",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-109-g1",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-109-w1",
+          "text": "SABIR"
+        },
+        {
+          "id": "journey-109-w2",
+          "text": "TEMEL"
+        },
+        {
+          "id": "journey-109-w3",
+          "text": "MIHENK"
+        },
+        {
+          "id": "journey-109-w4",
+          "text": "BÖBREK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SABIR, TEMEL, MIHENK, BÖBREK: sonuna taşı gelir."
+    },
+    {
+      "id": "journey-109-g2",
+      "title": "SONUNA GÖZÜ GELİR",
+      "words": [
+        {
+          "id": "journey-109-w5",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-109-w6",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-109-w7",
+          "text": "ÖKÜZ"
+        },
+        {
+          "id": "journey-109-w8",
+          "text": "KUŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İĞNE, BALIK, ÖKÜZ, KUŞ: sonuna gözü gelir."
+    },
+    {
+      "id": "journey-109-g3",
+      "title": "SAHNE AYDINLATMASINDA",
+      "words": [
+        {
+          "id": "journey-109-w9",
+          "text": "SPOT"
+        },
+        {
+          "id": "journey-109-w10",
+          "text": "PROJEKTÖR"
+        },
+        {
+          "id": "journey-109-w11",
+          "text": "REFLEKTÖR"
+        },
+        {
+          "id": "journey-109-w12",
+          "text": "IŞIK MASASI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SPOT, PROJEKTÖR, REFLEKTÖR, IŞIK MASASI: sahne aydınlatmasında."
+    },
+    {
+      "id": "journey-109-g4",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-109-w13",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-109-w14",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-109-w15",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-109-w16",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    }
+  ]
+}

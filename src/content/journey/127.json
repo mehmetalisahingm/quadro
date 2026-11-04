@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-127",
+  "date": "2027-03-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-127-g1",
+      "title": "SAHNE AYDINLATMASINDA",
+      "words": [
+        {
+          "id": "journey-127-w1",
+          "text": "SPOT"
+        },
+        {
+          "id": "journey-127-w2",
+          "text": "PROJEKTÖR"
+        },
+        {
+          "id": "journey-127-w3",
+          "text": "REFLEKTÖR"
+        },
+        {
+          "id": "journey-127-w4",
+          "text": "IŞIK MASASI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SPOT, PROJEKTÖR, REFLEKTÖR, IŞIK MASASI: sahne aydınlatmasında."
+    },
+    {
+      "id": "journey-127-g2",
+      "title": "SONUNA KÖPRÜSÜ GELİR",
+      "words": [
+        {
+          "id": "journey-127-w5",
+          "text": "ASMA"
+        },
+        {
+          "id": "journey-127-w6",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-127-w7",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-127-w8",
+          "text": "GÖNÜL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ASMA, BURUN, DİŞ, GÖNÜL: sonuna köprüsü gelir."
+    },
+    {
+      "id": "journey-127-g3",
+      "title": "SONUNA MASASI GELİR",
+      "words": [
+        {
+          "id": "journey-127-w9",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "journey-127-w10",
+          "text": "AMELİYAT"
+        },
+        {
+          "id": "journey-127-w11",
+          "text": "YEMEK"
+        },
+        {
+          "id": "journey-127-w12",
+          "text": "BİLARDO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇALIŞMA, AMELİYAT, YEMEK, BİLARDO: sonuna masası gelir."
+    },
+    {
+      "id": "journey-127-g4",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-127-w13",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-127-w14",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-127-w15",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-127-w16",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    }
+  ]
+}

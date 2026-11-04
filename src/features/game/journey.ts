@@ -1,14 +1,129 @@
 import type { GameDifficulty } from "./difficulty";
 
-export const JOURNEY_LENGTH = 50;
+export const JOURNEY_LENGTH = 200;
 export const JOURNEY_WORLDS = [
-  { title: "Keşif Masası", subtitle: "İlk ipuçlarını topla", symbol: "✧" },
-  { title: "Gizli Kütüphane", subtitle: "Sözcüklerin izinde", symbol: "❧" },
-  { title: "Kelimeler Şehri", subtitle: "Bağlar sokaklarda", symbol: "◇" },
-  { title: "Gece Gözlemevi", subtitle: "İşaretleri takip et", symbol: "☾" },
-  { title: "Yıldız Atlası", subtitle: "Bütünü keşfet", symbol: "✦" },
+  {
+    "title": "Keşif Masası",
+    "subtitle": "İlk ipuçlarını topla",
+    "symbol": "✧",
+    "image": "scene-desk.webp"
+  },
+  {
+    "title": "Gizli Kütüphane",
+    "subtitle": "Sözcüklerin izinde",
+    "symbol": "❧",
+    "image": "scene-library.webp"
+  },
+  {
+    "title": "Kelimeler Şehri",
+    "subtitle": "Bağlar sokaklarda",
+    "symbol": "◇",
+    "image": "scene-city.webp"
+  },
+  {
+    "title": "Gece Gözlemevi",
+    "subtitle": "İşaretleri takip et",
+    "symbol": "☾",
+    "image": "scene-observatory.webp"
+  },
+  {
+    "title": "Yıldız Atlası",
+    "subtitle": "Bütünü keşfet",
+    "symbol": "✦",
+    "image": "scene-stars.webp"
+  },
+  {
+    "title": "Kelimelerin İzinde",
+    "subtitle": "İnce çizgiler, yeni bağlar",
+    "symbol": "❋",
+    "image": "world-editorial-v1.webp"
+  },
+  {
+    "title": "Botanik Bahçesi",
+    "subtitle": "Çiçekler arasında keşif",
+    "symbol": "✿",
+    "image": "world-garden-v1.webp"
+  },
+  {
+    "title": "Yıldız Gözlemevi",
+    "subtitle": "Takımyıldızları birleştir",
+    "symbol": "✧",
+    "image": "world-observatory-v1.webp"
+  },
+  {
+    "title": "Sahil Kasabası",
+    "subtitle": "Gün doğumuna doğru",
+    "symbol": "☼",
+    "image": "world-coast-v1.webp"
+  },
+  {
+    "title": "Tren Yolculuğu",
+    "subtitle": "Yeni bir istasyona",
+    "symbol": "♧",
+    "image": "world-train-v1.webp"
+  },
+  {
+    "title": "Plak Stüdyosu",
+    "subtitle": "Bağların ritmini bul",
+    "symbol": "♫",
+    "image": "world-vinyl-v1.webp"
+  },
+  {
+    "title": "Yer Altı Kütüphanesi",
+    "subtitle": "Taşların sakladığı sırlar",
+    "symbol": "⌘",
+    "image": "world-library-v1.webp"
+  },
+  {
+    "title": "Yağmurlu Şehir",
+    "subtitle": "Işıklı sokaklarda",
+    "symbol": "☂",
+    "image": "world-raincity-v1.webp"
+  },
+  {
+    "title": "Kâğıt Dünyası",
+    "subtitle": "Katla ve keşfet",
+    "symbol": "◈",
+    "image": "world-origami-v1.webp"
+  },
+  {
+    "title": "Su Altı Arşivi",
+    "subtitle": "Dalgaların altında",
+    "symbol": "◉",
+    "image": "world-underwater-v1.webp"
+  },
+  {
+    "title": "Çölün Sırrı",
+    "subtitle": "Kumların içindeki izler",
+    "symbol": "☼",
+    "image": "world-desert-v1.webp"
+  },
+  {
+    "title": "Saatçinin Atölyesi",
+    "subtitle": "Çarklar arasında",
+    "symbol": "◷",
+    "image": "world-clockwork-v1.webp"
+  },
+  {
+    "title": "Kutup Işıkları",
+    "subtitle": "Buzların ötesinde",
+    "symbol": "❄",
+    "image": "world-arctic-v1.webp"
+  },
+  {
+    "title": "Cam Serası",
+    "subtitle": "Işık ve yapraklar",
+    "symbol": "❦",
+    "image": "world-greenhouse-v1.webp"
+  },
+  {
+    "title": "Mürekkep Denizi",
+    "subtitle": "Son çizgiyi birleştir",
+    "symbol": "✒",
+    "image": "world-inksea-v1.webp"
+  }
 ] as const;
-export const JOURNEY_LESSONS = [
+const INITIAL_JOURNEY_LESSONS = [
   "İlk grubu birlikte bulalım: tahtadaki dört meyveyi seç ve Grupla’ya bas. Sonra aynı aileden diğer dörtlüleri ara.",
   "Her seçimin aynı gruptan olmasına dikkat et. Dört kelime seçilmeden Grupla açılmaz.",
   "Seçtiğin kelimeye tekrar dokunarak seçimini kaldırabilirsin. Acele etme; süre sınırı yok.",
@@ -60,6 +175,7 @@ export const JOURNEY_LESSONS = [
   "Dört sözcüğün ortak tamamlayıcısını ararken her ifadeyi tek tek kontrol et.",
   "Bir tahmin tutmazsa başka bir açı dene; ilerlemen keşif yolunda korunur.",
 ] as const;
+export const JOURNEY_LESSONS: readonly string[] = Array.from({length: JOURNEY_LENGTH}, (_, i) => INITIAL_JOURNEY_LESSONS[i] ?? INITIAL_JOURNEY_LESSONS[30 + (i - 30) % 20]!);
 export function journeyDifficulty(step: number): GameDifficulty {
   return step <= 8 ? "easy" : step <= 16 ? "medium" : step <= 24 ? "hard" : "ultra";
 }

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-064",
+  "date": "2027-01-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-064-g1",
+      "title": "SONUNA AÇIĞI GELİR",
+      "words": [
+        {
+          "id": "journey-064-w1",
+          "text": "BÜTÇE"
+        },
+        {
+          "id": "journey-064-w2",
+          "text": "TİCARET"
+        },
+        {
+          "id": "journey-064-w3",
+          "text": "GÜVENLİK"
+        },
+        {
+          "id": "journey-064-w4",
+          "text": "PUAN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "BÜTÇE, TİCARET, GÜVENLİK, PUAN: sonuna açığı gelir."
+    },
+    {
+      "id": "journey-064-g2",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-064-w5",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-064-w6",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-064-w7",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-064-w8",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    },
+    {
+      "id": "journey-064-g3",
+      "title": "İÇECEK KAPLARI",
+      "words": [
+        {
+          "id": "journey-064-w9",
+          "text": "BARDAK"
+        },
+        {
+          "id": "journey-064-w10",
+          "text": "FİNCAN"
+        },
+        {
+          "id": "journey-064-w11",
+          "text": "KUPA"
+        },
+        {
+          "id": "journey-064-w12",
+          "text": "MATARA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BARDAK, FİNCAN, KUPA, MATARA: içecek kapları."
+    },
+    {
+      "id": "journey-064-g4",
+      "title": "KUŞ BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-064-w13",
+          "text": "GAGA"
+        },
+        {
+          "id": "journey-064-w14",
+          "text": "KANAT"
+        },
+        {
+          "id": "journey-064-w15",
+          "text": "TÜY"
+        },
+        {
+          "id": "journey-064-w16",
+          "text": "PENÇE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GAGA, KANAT, TÜY, PENÇE: kuş bölümleri."
+    }
+  ]
+}

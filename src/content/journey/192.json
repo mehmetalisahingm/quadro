@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-192",
+  "date": "2027-05-13",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-192-g1",
+      "title": "TOPLU TAŞIMA ARAÇLARI",
+      "words": [
+        {
+          "id": "journey-192-w1",
+          "text": "OTOBÜS"
+        },
+        {
+          "id": "journey-192-w2",
+          "text": "METRO"
+        },
+        {
+          "id": "journey-192-w3",
+          "text": "TRAMVAY"
+        },
+        {
+          "id": "journey-192-w4",
+          "text": "VAPUR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OTOBÜS, METRO, TRAMVAY, VAPUR: toplu taşıma araçları."
+    },
+    {
+      "id": "journey-192-g2",
+      "title": "İÇİNDE MÜZİK NOTASI SAKLI",
+      "words": [
+        {
+          "id": "journey-192-w5",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-192-w6",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-192-w7",
+          "text": "DOLAP"
+        },
+        {
+          "id": "journey-192-w8",
+          "text": "FARE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Mİ-ras, Sİ-mit, DO-lap, FA-re."
+    },
+    {
+      "id": "journey-192-g3",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-192-w9",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-192-w10",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-192-w11",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-192-w12",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-192-g4",
+      "title": "SONUNA HESABI GELİR",
+      "words": [
+        {
+          "id": "journey-192-w13",
+          "text": "BANKA"
+        },
+        {
+          "id": "journey-192-w14",
+          "text": "EV"
+        },
+        {
+          "id": "journey-192-w15",
+          "text": "FAİZ"
+        },
+        {
+          "id": "journey-192-w16",
+          "text": "OLASILIK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "BANKA, EV, FAİZ, OLASILIK: sonuna hesabı gelir."
+    }
+  ]
+}

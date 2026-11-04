@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-166",
+  "date": "2027-04-17",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-166-g1",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-166-w1",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-166-w2",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-166-w3",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-166-w4",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    },
+    {
+      "id": "journey-166-g2",
+      "title": "İÇECEK KAPLARI",
+      "words": [
+        {
+          "id": "journey-166-w5",
+          "text": "BARDAK"
+        },
+        {
+          "id": "journey-166-w6",
+          "text": "FİNCAN"
+        },
+        {
+          "id": "journey-166-w7",
+          "text": "KUPA"
+        },
+        {
+          "id": "journey-166-w8",
+          "text": "MATARA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BARDAK, FİNCAN, KUPA, MATARA: içecek kapları."
+    },
+    {
+      "id": "journey-166-g3",
+      "title": "YAZILI ANLATIM TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-166-w9",
+          "text": "ROMAN"
+        },
+        {
+          "id": "journey-166-w10",
+          "text": "ÖYKÜ"
+        },
+        {
+          "id": "journey-166-w11",
+          "text": "DENEME"
+        },
+        {
+          "id": "journey-166-w12",
+          "text": "MAKALE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ROMAN, ÖYKÜ, DENEME, MAKALE: yazılı anlatım türleri."
+    },
+    {
+      "id": "journey-166-g4",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-166-w13",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-166-w14",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-166-w15",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-166-w16",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    }
+  ]
+}

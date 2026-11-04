@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-053",
+  "date": "2026-12-25",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-053-g1",
+      "title": "SONUNA YOLU GELİR",
+      "words": [
+        {
+          "id": "journey-053-w1",
+          "text": "İPEK"
+        },
+        {
+          "id": "journey-053-w2",
+          "text": "KARA"
+        },
+        {
+          "id": "journey-053-w3",
+          "text": "HAVA"
+        },
+        {
+          "id": "journey-053-w4",
+          "text": "DENİZ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İPEK, KARA, HAVA, DENİZ: sonuna yolu gelir."
+    },
+    {
+      "id": "journey-053-g2",
+      "title": "SONUNA EVİ GELİR",
+      "words": [
+        {
+          "id": "journey-053-w5",
+          "text": "HUZUR"
+        },
+        {
+          "id": "journey-053-w6",
+          "text": "KONUK"
+        },
+        {
+          "id": "journey-053-w7",
+          "text": "BASIM"
+        },
+        {
+          "id": "journey-053-w8",
+          "text": "GÖZLEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HUZUR, KONUK, BASIM, GÖZLEM: sonuna evi gelir."
+    },
+    {
+      "id": "journey-053-g3",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-053-w9",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-053-w10",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-053-w11",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-053-w12",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-053-g4",
+      "title": "SONUNA DİLİ GELİR",
+      "words": [
+        {
+          "id": "journey-053-w13",
+          "text": "ANA"
+        },
+        {
+          "id": "journey-053-w14",
+          "text": "BEDEN"
+        },
+        {
+          "id": "journey-053-w15",
+          "text": "İŞARET"
+        },
+        {
+          "id": "journey-053-w16",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ANA, BEDEN, İŞARET, PROGRAMLAMA: sonuna dili gelir."
+    }
+  ]
+}

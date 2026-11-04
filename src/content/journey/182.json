@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-182",
+  "date": "2027-05-03",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-182-g1",
+      "title": "İNŞAAT MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-182-w1",
+          "text": "TUĞLA"
+        },
+        {
+          "id": "journey-182-w2",
+          "text": "ÇİMENTO"
+        },
+        {
+          "id": "journey-182-w3",
+          "text": "KUM"
+        },
+        {
+          "id": "journey-182-w4",
+          "text": "KİREÇ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "TUĞLA, ÇİMENTO, KUM, KİREÇ: inşaat malzemeleri."
+    },
+    {
+      "id": "journey-182-g2",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-182-w5",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-182-w6",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-182-w7",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-182-w8",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    },
+    {
+      "id": "journey-182-g3",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        {
+          "id": "journey-182-w9",
+          "text": "PEYNİR"
+        },
+        {
+          "id": "journey-182-w10",
+          "text": "ZEYTİN"
+        },
+        {
+          "id": "journey-182-w11",
+          "text": "REÇEL"
+        },
+        {
+          "id": "journey-182-w12",
+          "text": "BAL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PEYNİR, ZEYTİN, REÇEL, BAL: kahvaltılıklar."
+    },
+    {
+      "id": "journey-182-g4",
+      "title": "SONUNA DÜĞMESİ GELİR",
+      "words": [
+        {
+          "id": "journey-182-w13",
+          "text": "GÖMLEK"
+        },
+        {
+          "id": "journey-182-w14",
+          "text": "ASANSÖR"
+        },
+        {
+          "id": "journey-182-w15",
+          "text": "BAŞLAT"
+        },
+        {
+          "id": "journey-182-w16",
+          "text": "ACİL DURDURMA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GÖMLEK, ASANSÖR, BAŞLAT, ACİL DURDURMA: sonuna düğmesi gelir."
+    }
+  ]
+}

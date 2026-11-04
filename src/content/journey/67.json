@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-067",
+  "date": "2027-01-08",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-067-g1",
+      "title": "TERSTEN BAŞKA KELİME",
+      "words": [
+        {
+          "id": "journey-067-w1",
+          "text": "PAY"
+        },
+        {
+          "id": "journey-067-w2",
+          "text": "KAP"
+        },
+        {
+          "id": "journey-067-w3",
+          "text": "KOÇ"
+        },
+        {
+          "id": "journey-067-w4",
+          "text": "KES"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Yap, pak, çok ve sek."
+    },
+    {
+      "id": "journey-067-g2",
+      "title": "OKUL ÇANTASINDA",
+      "words": [
+        {
+          "id": "journey-067-w5",
+          "text": "DEFTER"
+        },
+        {
+          "id": "journey-067-w6",
+          "text": "KİTAP"
+        },
+        {
+          "id": "journey-067-w7",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-067-w8",
+          "text": "SİLGİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DEFTER, KİTAP, KALEM, SİLGİ: okul çantasında."
+    },
+    {
+      "id": "journey-067-g3",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-067-w9",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-067-w10",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-067-w11",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-067-w12",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    },
+    {
+      "id": "journey-067-g4",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-067-w13",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-067-w14",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-067-w15",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-067-w16",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-152",
+  "date": "2027-04-03",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-152-g1",
+      "title": "DENİZ HAYVANLARI",
+      "words": [
+        {
+          "id": "journey-152-w1",
+          "text": "YUNUS"
+        },
+        {
+          "id": "journey-152-w2",
+          "text": "KÖPEK BALIĞI"
+        },
+        {
+          "id": "journey-152-w3",
+          "text": "AHTAPOT"
+        },
+        {
+          "id": "journey-152-w4",
+          "text": "DENİZATI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YUNUS, KÖPEK BALIĞI, AHTAPOT, DENİZATI: deniz hayvanları."
+    },
+    {
+      "id": "journey-152-g2",
+      "title": "BİR ÖYKÜNÜN UNSURLARI",
+      "words": [
+        {
+          "id": "journey-152-w5",
+          "text": "KİŞİ"
+        },
+        {
+          "id": "journey-152-w6",
+          "text": "OLAY"
+        },
+        {
+          "id": "journey-152-w7",
+          "text": "YER"
+        },
+        {
+          "id": "journey-152-w8",
+          "text": "ZAMAN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KİŞİ, OLAY, YER, ZAMAN: bir öykünün unsurları."
+    },
+    {
+      "id": "journey-152-g3",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-152-w9",
+          "text": "SABIR"
+        },
+        {
+          "id": "journey-152-w10",
+          "text": "TEMEL"
+        },
+        {
+          "id": "journey-152-w11",
+          "text": "MIHENK"
+        },
+        {
+          "id": "journey-152-w12",
+          "text": "BÖBREK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SABIR, TEMEL, MIHENK, BÖBREK: sonuna taşı gelir."
+    },
+    {
+      "id": "journey-152-g4",
+      "title": "KARA MEMELİLERİ",
+      "words": [
+        {
+          "id": "journey-152-w13",
+          "text": "GEYİK"
+        },
+        {
+          "id": "journey-152-w14",
+          "text": "TİLKİ"
+        },
+        {
+          "id": "journey-152-w15",
+          "text": "KURT"
+        },
+        {
+          "id": "journey-152-w16",
+          "text": "AYI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GEYİK, TİLKİ, KURT, AYI: kara memelileri."
+    }
+  ]
+}

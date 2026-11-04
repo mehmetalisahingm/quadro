@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-108",
+  "date": "2027-02-18",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-108-g1",
+      "title": "SICAKLIK ÖLÇEKLERİ",
+      "words": [
+        {
+          "id": "journey-108-w1",
+          "text": "CELSİUS"
+        },
+        {
+          "id": "journey-108-w2",
+          "text": "FAHRENHEİT"
+        },
+        {
+          "id": "journey-108-w3",
+          "text": "KELVİN"
+        },
+        {
+          "id": "journey-108-w4",
+          "text": "RÉAUMUR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "CELSİUS, FAHRENHEİT, KELVİN, RÉAUMUR: sıcaklık ölçekleri."
+    },
+    {
+      "id": "journey-108-g2",
+      "title": "KÜTÜPHANEDE",
+      "words": [
+        {
+          "id": "journey-108-w5",
+          "text": "RAF"
+        },
+        {
+          "id": "journey-108-w6",
+          "text": "KATALOG"
+        },
+        {
+          "id": "journey-108-w7",
+          "text": "ÖDÜNÇ KARTI"
+        },
+        {
+          "id": "journey-108-w8",
+          "text": "OKUMA SALONU"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "RAF, KATALOG, ÖDÜNÇ KARTI, OKUMA SALONU: kütüphanede."
+    },
+    {
+      "id": "journey-108-g3",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-108-w9",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-108-w10",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-108-w11",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-108-w12",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-108-g4",
+      "title": "İÇİNDE SAYI ADI SAKLI",
+      "words": [
+        {
+          "id": "journey-108-w13",
+          "text": "BONCUK"
+        },
+        {
+          "id": "journey-108-w14",
+          "text": "BİNA"
+        },
+        {
+          "id": "journey-108-w15",
+          "text": "YÜZÜK"
+        },
+        {
+          "id": "journey-108-w16",
+          "text": "ALTIN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "b-ON-cuk, BİN-a, YÜZ-ük, ALTI-n."
+    }
+  ]
+}

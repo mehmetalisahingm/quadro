@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-128",
+  "date": "2027-03-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-128-g1",
+      "title": "SONUNA PERDESİ GELİR",
+      "words": [
+        {
+          "id": "journey-128-w1",
+          "text": "SAHNE"
+        },
+        {
+          "id": "journey-128-w2",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-128-w3",
+          "text": "SİS"
+        },
+        {
+          "id": "journey-128-w4",
+          "text": "DUŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SAHNE, GÖZ, SİS, DUŞ: sonuna perdesi gelir."
+    },
+    {
+      "id": "journey-128-g2",
+      "title": "MÜZEDE",
+      "words": [
+        {
+          "id": "journey-128-w5",
+          "text": "ESER"
+        },
+        {
+          "id": "journey-128-w6",
+          "text": "KOLEKSİYON"
+        },
+        {
+          "id": "journey-128-w7",
+          "text": "SERGİ"
+        },
+        {
+          "id": "journey-128-w8",
+          "text": "KÜRATÖR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ESER, KOLEKSİYON, SERGİ, KÜRATÖR: müzede."
+    },
+    {
+      "id": "journey-128-g3",
+      "title": "BİR ŞİİRDE",
+      "words": [
+        {
+          "id": "journey-128-w9",
+          "text": "DİZE"
+        },
+        {
+          "id": "journey-128-w10",
+          "text": "BENT"
+        },
+        {
+          "id": "journey-128-w11",
+          "text": "UYAK"
+        },
+        {
+          "id": "journey-128-w12",
+          "text": "ÖLÇÜ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DİZE, BENT, UYAK, ÖLÇÜ: bir şiirde."
+    },
+    {
+      "id": "journey-128-g4",
+      "title": "SPOR MÜSABAKASINDA",
+      "words": [
+        {
+          "id": "journey-128-w13",
+          "text": "HAKEM"
+        },
+        {
+          "id": "journey-128-w14",
+          "text": "SKOR"
+        },
+        {
+          "id": "journey-128-w15",
+          "text": "RAKİP"
+        },
+        {
+          "id": "journey-128-w16",
+          "text": "TRİBÜN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HAKEM, SKOR, RAKİP, TRİBÜN: spor müsabakasında."
+    }
+  ]
+}

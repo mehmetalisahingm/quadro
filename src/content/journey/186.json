@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-186",
+  "date": "2027-05-07",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-186-g1",
+      "title": "SONUNA PERDESİ GELİR",
+      "words": [
+        {
+          "id": "journey-186-w1",
+          "text": "SAHNE"
+        },
+        {
+          "id": "journey-186-w2",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-186-w3",
+          "text": "SİS"
+        },
+        {
+          "id": "journey-186-w4",
+          "text": "DUŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SAHNE, GÖZ, SİS, DUŞ: sonuna perdesi gelir."
+    },
+    {
+      "id": "journey-186-g2",
+      "title": "ORMAN AĞAÇLARI",
+      "words": [
+        {
+          "id": "journey-186-w5",
+          "text": "ÇAM"
+        },
+        {
+          "id": "journey-186-w6",
+          "text": "MEŞE"
+        },
+        {
+          "id": "journey-186-w7",
+          "text": "KAYIN"
+        },
+        {
+          "id": "journey-186-w8",
+          "text": "KÖKNAR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÇAM, MEŞE, KAYIN, KÖKNAR: orman ağaçları."
+    },
+    {
+      "id": "journey-186-g3",
+      "title": "GEMİNİN YÖNLERİ",
+      "words": [
+        {
+          "id": "journey-186-w9",
+          "text": "PRUVA"
+        },
+        {
+          "id": "journey-186-w10",
+          "text": "PUPA"
+        },
+        {
+          "id": "journey-186-w11",
+          "text": "İSKELE"
+        },
+        {
+          "id": "journey-186-w12",
+          "text": "SANCAK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PRUVA, PUPA, İSKELE, SANCAK: geminin yönleri."
+    },
+    {
+      "id": "journey-186-g4",
+      "title": "TAKIM ELBİSEYLE",
+      "words": [
+        {
+          "id": "journey-186-w13",
+          "text": "CEKET"
+        },
+        {
+          "id": "journey-186-w14",
+          "text": "PANTOLON"
+        },
+        {
+          "id": "journey-186-w15",
+          "text": "KRAVAT"
+        },
+        {
+          "id": "journey-186-w16",
+          "text": "YELEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "CEKET, PANTOLON, KRAVAT, YELEK: takım elbiseyle."
+    }
+  ]
+}

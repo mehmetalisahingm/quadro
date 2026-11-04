@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-095",
+  "date": "2027-02-05",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-095-g1",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-095-w1",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-095-w2",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-095-w3",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-095-w4",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-095-g2",
+      "title": "SONUNA TABLOSU GELİR",
+      "words": [
+        {
+          "id": "journey-095-w5",
+          "text": "ÇARPIM"
+        },
+        {
+          "id": "journey-095-w6",
+          "text": "PERİYODİK"
+        },
+        {
+          "id": "journey-095-w7",
+          "text": "PUAN"
+        },
+        {
+          "id": "journey-095-w8",
+          "text": "GELİR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÇARPIM, PERİYODİK, PUAN, GELİR: sonuna tablosu gelir."
+    },
+    {
+      "id": "journey-095-g3",
+      "title": "SONUNA DİLİ GELİR",
+      "words": [
+        {
+          "id": "journey-095-w9",
+          "text": "ANA"
+        },
+        {
+          "id": "journey-095-w10",
+          "text": "BEDEN"
+        },
+        {
+          "id": "journey-095-w11",
+          "text": "İŞARET"
+        },
+        {
+          "id": "journey-095-w12",
+          "text": "PROGRAMLAMA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ANA, BEDEN, İŞARET, PROGRAMLAMA: sonuna dili gelir."
+    },
+    {
+      "id": "journey-095-g4",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-095-w13",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-095-w14",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-095-w15",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-095-w16",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    }
+  ]
+}

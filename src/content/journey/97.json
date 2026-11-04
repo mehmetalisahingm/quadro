@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-097",
+  "date": "2027-02-07",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-097-g1",
+      "title": "TOPLU TAŞIMA ARAÇLARI",
+      "words": [
+        {
+          "id": "journey-097-w1",
+          "text": "OTOBÜS"
+        },
+        {
+          "id": "journey-097-w2",
+          "text": "METRO"
+        },
+        {
+          "id": "journey-097-w3",
+          "text": "TRAMVAY"
+        },
+        {
+          "id": "journey-097-w4",
+          "text": "VAPUR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OTOBÜS, METRO, TRAMVAY, VAPUR: toplu taşıma araçları."
+    },
+    {
+      "id": "journey-097-g2",
+      "title": "BANKADA İŞLEMLER",
+      "words": [
+        {
+          "id": "journey-097-w5",
+          "text": "HAVALE"
+        },
+        {
+          "id": "journey-097-w6",
+          "text": "EFT"
+        },
+        {
+          "id": "journey-097-w7",
+          "text": "VİRMAN"
+        },
+        {
+          "id": "journey-097-w8",
+          "text": "PARA ÇEKME"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HAVALE, EFT, VİRMAN, PARA ÇEKME: bankada işlemler."
+    },
+    {
+      "id": "journey-097-g3",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-097-w9",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-097-w10",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-097-w11",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-097-w12",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-097-g4",
+      "title": "ÇEMBERDE VE DAİREDE",
+      "words": [
+        {
+          "id": "journey-097-w13",
+          "text": "ÇAP"
+        },
+        {
+          "id": "journey-097-w14",
+          "text": "YARIÇAP"
+        },
+        {
+          "id": "journey-097-w15",
+          "text": "KİRİŞ"
+        },
+        {
+          "id": "journey-097-w16",
+          "text": "TEĞET"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÇAP, YARIÇAP, KİRİŞ, TEĞET: çemberde ve dairede."
+    }
+  ]
+}

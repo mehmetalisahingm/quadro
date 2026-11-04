@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-150",
+  "date": "2027-04-01",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-150-g1",
+      "title": "ÇİÇEKLER",
+      "words": [
+        {
+          "id": "journey-150-w1",
+          "text": "LALE"
+        },
+        {
+          "id": "journey-150-w2",
+          "text": "PAPATYA"
+        },
+        {
+          "id": "journey-150-w3",
+          "text": "MENEKŞE"
+        },
+        {
+          "id": "journey-150-w4",
+          "text": "KARANFİL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "LALE, PAPATYA, MENEKŞE, KARANFİL: çiçekler."
+    },
+    {
+      "id": "journey-150-g2",
+      "title": "TERSTEN BAŞKA KELİME",
+      "words": [
+        {
+          "id": "journey-150-w5",
+          "text": "PAY"
+        },
+        {
+          "id": "journey-150-w6",
+          "text": "KAP"
+        },
+        {
+          "id": "journey-150-w7",
+          "text": "KOÇ"
+        },
+        {
+          "id": "journey-150-w8",
+          "text": "KES"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Yap, pak, çok ve sek."
+    },
+    {
+      "id": "journey-150-g3",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-150-w9",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-150-w10",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-150-w11",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-150-w12",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    },
+    {
+      "id": "journey-150-g4",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-150-w13",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-150-w14",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-150-w15",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-150-w16",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    }
+  ]
+}

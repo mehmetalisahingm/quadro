@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-084",
+  "date": "2027-01-25",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-084-g1",
+      "title": "MEVSİMLER",
+      "words": [
+        {
+          "id": "journey-084-w1",
+          "text": "İLKBAHAR"
+        },
+        {
+          "id": "journey-084-w2",
+          "text": "YAZ"
+        },
+        {
+          "id": "journey-084-w3",
+          "text": "SONBAHAR"
+        },
+        {
+          "id": "journey-084-w4",
+          "text": "KIŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İLKBAHAR, YAZ, SONBAHAR, KIŞ: mevsimler."
+    },
+    {
+      "id": "journey-084-g2",
+      "title": "YATAKTA BULUNANLAR",
+      "words": [
+        {
+          "id": "journey-084-w5",
+          "text": "YASTIK"
+        },
+        {
+          "id": "journey-084-w6",
+          "text": "YORGAN"
+        },
+        {
+          "id": "journey-084-w7",
+          "text": "ÇARŞAF"
+        },
+        {
+          "id": "journey-084-w8",
+          "text": "NEVRESİM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YASTIK, YORGAN, ÇARŞAF, NEVRESİM: yatakta bulunanlar."
+    },
+    {
+      "id": "journey-084-g3",
+      "title": "İLK HARFİ SİLİNCE YENİ SÖZCÜK",
+      "words": [
+        {
+          "id": "journey-084-w9",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-084-w10",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-084-w11",
+          "text": "KASA"
+        },
+        {
+          "id": "journey-084-w12",
+          "text": "SÖZ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ulak, alem, asa ve öz kalır."
+    },
+    {
+      "id": "journey-084-g4",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-084-w13",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-084-w14",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-084-w15",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-084-w16",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    }
+  ]
+}

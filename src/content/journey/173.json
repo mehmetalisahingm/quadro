@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-173",
+  "date": "2027-04-24",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-173-g1",
+      "title": "SAHNE AYDINLATMASINDA",
+      "words": [
+        {
+          "id": "journey-173-w1",
+          "text": "SPOT"
+        },
+        {
+          "id": "journey-173-w2",
+          "text": "PROJEKTÖR"
+        },
+        {
+          "id": "journey-173-w3",
+          "text": "REFLEKTÖR"
+        },
+        {
+          "id": "journey-173-w4",
+          "text": "IŞIK MASASI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SPOT, PROJEKTÖR, REFLEKTÖR, IŞIK MASASI: sahne aydınlatmasında."
+    },
+    {
+      "id": "journey-173-g2",
+      "title": "BALIKÇI DONANIMI",
+      "words": [
+        {
+          "id": "journey-173-w5",
+          "text": "OLTA"
+        },
+        {
+          "id": "journey-173-w6",
+          "text": "MİSİNA"
+        },
+        {
+          "id": "journey-173-w7",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-173-w8",
+          "text": "YEM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OLTA, MİSİNA, İĞNE, YEM: balıkçı donanımı."
+    },
+    {
+      "id": "journey-173-g3",
+      "title": "SONUNA ANAHTARI GELİR",
+      "words": [
+        {
+          "id": "journey-173-w9",
+          "text": "CEVAP"
+        },
+        {
+          "id": "journey-173-w10",
+          "text": "İNGİLİZ"
+        },
+        {
+          "id": "journey-173-w11",
+          "text": "FA"
+        },
+        {
+          "id": "journey-173-w12",
+          "text": "SOL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "CEVAP, İNGİLİZ, FA, SOL: sonuna anahtarı gelir."
+    },
+    {
+      "id": "journey-173-g4",
+      "title": "KAYIT STÜDYOSUNDA",
+      "words": [
+        {
+          "id": "journey-173-w13",
+          "text": "MİKROFON"
+        },
+        {
+          "id": "journey-173-w14",
+          "text": "KULAKLIK"
+        },
+        {
+          "id": "journey-173-w15",
+          "text": "MİKSER"
+        },
+        {
+          "id": "journey-173-w16",
+          "text": "SES KARTI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "MİKROFON, KULAKLIK, MİKSER, SES KARTI: kayıt stüdyosunda."
+    }
+  ]
+}

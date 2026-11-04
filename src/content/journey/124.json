@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-124",
+  "date": "2027-03-06",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-124-g1",
+      "title": "MEVSİMLER",
+      "words": [
+        {
+          "id": "journey-124-w1",
+          "text": "İLKBAHAR"
+        },
+        {
+          "id": "journey-124-w2",
+          "text": "YAZ"
+        },
+        {
+          "id": "journey-124-w3",
+          "text": "SONBAHAR"
+        },
+        {
+          "id": "journey-124-w4",
+          "text": "KIŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İLKBAHAR, YAZ, SONBAHAR, KIŞ: mevsimler."
+    },
+    {
+      "id": "journey-124-g2",
+      "title": "KÂĞIT KATLAMA BİÇİMLERİ",
+      "words": [
+        {
+          "id": "journey-124-w5",
+          "text": "AKORDEON"
+        },
+        {
+          "id": "journey-124-w6",
+          "text": "ZİKZAK"
+        },
+        {
+          "id": "journey-124-w7",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-124-w8",
+          "text": "PENCERE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "AKORDEON, ZİKZAK, KAPI, PENCERE: kâğıt katlama biçimleri."
+    },
+    {
+      "id": "journey-124-g3",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-124-w9",
+          "text": "SABIR"
+        },
+        {
+          "id": "journey-124-w10",
+          "text": "TEMEL"
+        },
+        {
+          "id": "journey-124-w11",
+          "text": "MIHENK"
+        },
+        {
+          "id": "journey-124-w12",
+          "text": "BÖBREK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SABIR, TEMEL, MIHENK, BÖBREK: sonuna taşı gelir."
+    },
+    {
+      "id": "journey-124-g4",
+      "title": "ÇİÇEKLER",
+      "words": [
+        {
+          "id": "journey-124-w13",
+          "text": "LALE"
+        },
+        {
+          "id": "journey-124-w14",
+          "text": "PAPATYA"
+        },
+        {
+          "id": "journey-124-w15",
+          "text": "MENEKŞE"
+        },
+        {
+          "id": "journey-124-w16",
+          "text": "KARANFİL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "LALE, PAPATYA, MENEKŞE, KARANFİL: çiçekler."
+    }
+  ]
+}

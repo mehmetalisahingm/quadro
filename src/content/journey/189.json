@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-189",
+  "date": "2027-05-10",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-189-g1",
+      "title": "TRAFİKTE YOL GÖSTERENLER",
+      "words": [
+        {
+          "id": "journey-189-w1",
+          "text": "LEVHA"
+        },
+        {
+          "id": "journey-189-w2",
+          "text": "ŞERİT"
+        },
+        {
+          "id": "journey-189-w3",
+          "text": "OK"
+        },
+        {
+          "id": "journey-189-w4",
+          "text": "SİNYAL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "LEVHA, ŞERİT, OK, SİNYAL: trafikte yol gösterenler."
+    },
+    {
+      "id": "journey-189-g2",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-189-w5",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-189-w6",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-189-w7",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-189-w8",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-189-g3",
+      "title": "ÇİÇEKLER",
+      "words": [
+        {
+          "id": "journey-189-w9",
+          "text": "LALE"
+        },
+        {
+          "id": "journey-189-w10",
+          "text": "PAPATYA"
+        },
+        {
+          "id": "journey-189-w11",
+          "text": "MENEKŞE"
+        },
+        {
+          "id": "journey-189-w12",
+          "text": "KARANFİL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "LALE, PAPATYA, MENEKŞE, KARANFİL: çiçekler."
+    },
+    {
+      "id": "journey-189-g4",
+      "title": "SONUNA ANAHTARI GELİR",
+      "words": [
+        {
+          "id": "journey-189-w13",
+          "text": "CEVAP"
+        },
+        {
+          "id": "journey-189-w14",
+          "text": "İNGİLİZ"
+        },
+        {
+          "id": "journey-189-w15",
+          "text": "FA"
+        },
+        {
+          "id": "journey-189-w16",
+          "text": "SOL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "CEVAP, İNGİLİZ, FA, SOL: sonuna anahtarı gelir."
+    }
+  ]
+}

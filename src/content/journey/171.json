@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-171",
+  "date": "2027-04-22",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-171-g1",
+      "title": "SONUNA BOYU GELİR",
+      "words": [
+        {
+          "id": "journey-171-w1",
+          "text": "ÖMÜR"
+        },
+        {
+          "id": "journey-171-w2",
+          "text": "YOL"
+        },
+        {
+          "id": "journey-171-w3",
+          "text": "DALGA"
+        },
+        {
+          "id": "journey-171-w4",
+          "text": "DİZ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÖMÜR, YOL, DALGA, DİZ: sonuna boyu gelir."
+    },
+    {
+      "id": "journey-171-g2",
+      "title": "GEMİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-171-w5",
+          "text": "GÜVERTE"
+        },
+        {
+          "id": "journey-171-w6",
+          "text": "KAMARA"
+        },
+        {
+          "id": "journey-171-w7",
+          "text": "DÜMEN"
+        },
+        {
+          "id": "journey-171-w8",
+          "text": "BACA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "GÜVERTE, KAMARA, DÜMEN, BACA: geminin bölümleri."
+    },
+    {
+      "id": "journey-171-g3",
+      "title": "GEOMETRİK ŞEKİLLER",
+      "words": [
+        {
+          "id": "journey-171-w9",
+          "text": "DAİRE"
+        },
+        {
+          "id": "journey-171-w10",
+          "text": "KARE"
+        },
+        {
+          "id": "journey-171-w11",
+          "text": "ÜÇGEN"
+        },
+        {
+          "id": "journey-171-w12",
+          "text": "DİKDÖRTGEN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DAİRE, KARE, ÜÇGEN, DİKDÖRTGEN: geometrik şekiller."
+    },
+    {
+      "id": "journey-171-g4",
+      "title": "TOPLU TAŞIMA ARAÇLARI",
+      "words": [
+        {
+          "id": "journey-171-w13",
+          "text": "OTOBÜS"
+        },
+        {
+          "id": "journey-171-w14",
+          "text": "METRO"
+        },
+        {
+          "id": "journey-171-w15",
+          "text": "TRAMVAY"
+        },
+        {
+          "id": "journey-171-w16",
+          "text": "VAPUR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "OTOBÜS, METRO, TRAMVAY, VAPUR: toplu taşıma araçları."
+    }
+  ]
+}

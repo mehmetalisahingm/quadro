@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-077",
+  "date": "2027-01-18",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-077-g1",
+      "title": "SONUNA YOLU GELİR",
+      "words": [
+        {
+          "id": "journey-077-w1",
+          "text": "İPEK"
+        },
+        {
+          "id": "journey-077-w2",
+          "text": "KARA"
+        },
+        {
+          "id": "journey-077-w3",
+          "text": "HAVA"
+        },
+        {
+          "id": "journey-077-w4",
+          "text": "DENİZ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İPEK, KARA, HAVA, DENİZ: sonuna yolu gelir."
+    },
+    {
+      "id": "journey-077-g2",
+      "title": "HAVA TAŞITLARI",
+      "words": [
+        {
+          "id": "journey-077-w5",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-077-w6",
+          "text": "HELİKOPTER"
+        },
+        {
+          "id": "journey-077-w7",
+          "text": "PLANÖR"
+        },
+        {
+          "id": "journey-077-w8",
+          "text": "ZEPLİN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UÇAK, HELİKOPTER, PLANÖR, ZEPLİN: hava taşıtları."
+    },
+    {
+      "id": "journey-077-g3",
+      "title": "MÜZİKTE HIZ TERİMLERİ",
+      "words": [
+        {
+          "id": "journey-077-w9",
+          "text": "ADAGİO"
+        },
+        {
+          "id": "journey-077-w10",
+          "text": "ANDANTE"
+        },
+        {
+          "id": "journey-077-w11",
+          "text": "ALLEGRO"
+        },
+        {
+          "id": "journey-077-w12",
+          "text": "PRESTO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ADAGİO, ANDANTE, ALLEGRO, PRESTO: müzikte hız terimleri."
+    },
+    {
+      "id": "journey-077-g4",
+      "title": "SERAMİK YAPARKEN",
+      "words": [
+        {
+          "id": "journey-077-w13",
+          "text": "KİL"
+        },
+        {
+          "id": "journey-077-w14",
+          "text": "ÇARK"
+        },
+        {
+          "id": "journey-077-w15",
+          "text": "SIR"
+        },
+        {
+          "id": "journey-077-w16",
+          "text": "FIRIN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KİL, ÇARK, SIR, FIRIN: seramik yaparken."
+    }
+  ]
+}

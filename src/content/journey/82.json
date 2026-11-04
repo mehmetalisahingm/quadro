@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-082",
+  "date": "2027-01-23",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-082-g1",
+      "title": "FIRINDA YAPILAN HAMUR İŞLERİ",
+      "words": [
+        {
+          "id": "journey-082-w1",
+          "text": "POĞAÇA"
+        },
+        {
+          "id": "journey-082-w2",
+          "text": "AÇMA"
+        },
+        {
+          "id": "journey-082-w3",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-082-w4",
+          "text": "BÖREK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "POĞAÇA, AÇMA, SİMİT, BÖREK: fırında yapılan hamur işleri."
+    },
+    {
+      "id": "journey-082-g2",
+      "title": "TAKIM ELBİSEYLE",
+      "words": [
+        {
+          "id": "journey-082-w5",
+          "text": "CEKET"
+        },
+        {
+          "id": "journey-082-w6",
+          "text": "PANTOLON"
+        },
+        {
+          "id": "journey-082-w7",
+          "text": "KRAVAT"
+        },
+        {
+          "id": "journey-082-w8",
+          "text": "YELEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "CEKET, PANTOLON, KRAVAT, YELEK: takım elbiseyle."
+    },
+    {
+      "id": "journey-082-g3",
+      "title": "MÜZEDE",
+      "words": [
+        {
+          "id": "journey-082-w9",
+          "text": "ESER"
+        },
+        {
+          "id": "journey-082-w10",
+          "text": "KOLEKSİYON"
+        },
+        {
+          "id": "journey-082-w11",
+          "text": "SERGİ"
+        },
+        {
+          "id": "journey-082-w12",
+          "text": "KÜRATÖR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ESER, KOLEKSİYON, SERGİ, KÜRATÖR: müzede."
+    },
+    {
+      "id": "journey-082-g4",
+      "title": "BANKADA İŞLEMLER",
+      "words": [
+        {
+          "id": "journey-082-w13",
+          "text": "HAVALE"
+        },
+        {
+          "id": "journey-082-w14",
+          "text": "EFT"
+        },
+        {
+          "id": "journey-082-w15",
+          "text": "VİRMAN"
+        },
+        {
+          "id": "journey-082-w16",
+          "text": "PARA ÇEKME"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HAVALE, EFT, VİRMAN, PARA ÇEKME: bankada işlemler."
+    }
+  ]
+}

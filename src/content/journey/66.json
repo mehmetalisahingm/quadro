@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-066",
+  "date": "2027-01-07",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-066-g1",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-066-w1",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-066-w2",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-066-w3",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-066-w4",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    },
+    {
+      "id": "journey-066-g2",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-066-w5",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-066-w6",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-066-w7",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-066-w8",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    },
+    {
+      "id": "journey-066-g3",
+      "title": "SONUNA MASASI GELİR",
+      "words": [
+        {
+          "id": "journey-066-w9",
+          "text": "ÇALIŞMA"
+        },
+        {
+          "id": "journey-066-w10",
+          "text": "AMELİYAT"
+        },
+        {
+          "id": "journey-066-w11",
+          "text": "YEMEK"
+        },
+        {
+          "id": "journey-066-w12",
+          "text": "BİLARDO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇALIŞMA, AMELİYAT, YEMEK, BİLARDO: sonuna masası gelir."
+    },
+    {
+      "id": "journey-066-g4",
+      "title": "YEMEK PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "journey-066-w13",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "journey-066-w14",
+          "text": "KIZARTMA"
+        },
+        {
+          "id": "journey-066-w15",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "journey-066-w16",
+          "text": "IZGARA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HAŞLAMA, KIZARTMA, BUĞULAMA, IZGARA: yemek pişirme yöntemleri."
+    }
+  ]
+}

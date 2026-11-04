@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-120",
+  "date": "2027-03-02",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-120-g1",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-120-w1",
+          "text": "SABIR"
+        },
+        {
+          "id": "journey-120-w2",
+          "text": "TEMEL"
+        },
+        {
+          "id": "journey-120-w3",
+          "text": "MIHENK"
+        },
+        {
+          "id": "journey-120-w4",
+          "text": "BÖBREK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SABIR, TEMEL, MIHENK, BÖBREK: sonuna taşı gelir."
+    },
+    {
+      "id": "journey-120-g2",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        {
+          "id": "journey-120-w5",
+          "text": "PEYNİR"
+        },
+        {
+          "id": "journey-120-w6",
+          "text": "ZEYTİN"
+        },
+        {
+          "id": "journey-120-w7",
+          "text": "REÇEL"
+        },
+        {
+          "id": "journey-120-w8",
+          "text": "BAL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PEYNİR, ZEYTİN, REÇEL, BAL: kahvaltılıklar."
+    },
+    {
+      "id": "journey-120-g3",
+      "title": "KIŞLIK GİYSİLER",
+      "words": [
+        {
+          "id": "journey-120-w9",
+          "text": "ATKI"
+        },
+        {
+          "id": "journey-120-w10",
+          "text": "BERE"
+        },
+        {
+          "id": "journey-120-w11",
+          "text": "ELDİVEN"
+        },
+        {
+          "id": "journey-120-w12",
+          "text": "KAZAK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ATKI, BERE, ELDİVEN, KAZAK: kışlık giysiler."
+    },
+    {
+      "id": "journey-120-g4",
+      "title": "İÇİNDE MÜZİK NOTASI SAKLI",
+      "words": [
+        {
+          "id": "journey-120-w13",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-120-w14",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-120-w15",
+          "text": "DOLAP"
+        },
+        {
+          "id": "journey-120-w16",
+          "text": "FARE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Mİ-ras, Sİ-mit, DO-lap, FA-re."
+    }
+  ]
+}

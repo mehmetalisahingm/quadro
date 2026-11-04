@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-085",
+  "date": "2027-01-26",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-085-g1",
+      "title": "BİLGİSAYAR DONANIMI",
+      "words": [
+        {
+          "id": "journey-085-w1",
+          "text": "EKRAN KARTI"
+        },
+        {
+          "id": "journey-085-w2",
+          "text": "İŞLEMCİ"
+        },
+        {
+          "id": "journey-085-w3",
+          "text": "ANAKART"
+        },
+        {
+          "id": "journey-085-w4",
+          "text": "SABİT DİSK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "EKRAN KARTI, İŞLEMCİ, ANAKART, SABİT DİSK: bilgisayar donanımı."
+    },
+    {
+      "id": "journey-085-g2",
+      "title": "SONUNA SAATİ GELİR",
+      "words": [
+        {
+          "id": "journey-085-w5",
+          "text": "DUVAR"
+        },
+        {
+          "id": "journey-085-w6",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-085-w7",
+          "text": "CEP"
+        },
+        {
+          "id": "journey-085-w8",
+          "text": "ÇALAR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DUVAR, KOL, CEP, ÇALAR: sonuna saati gelir."
+    },
+    {
+      "id": "journey-085-g3",
+      "title": "SONUNA TAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-085-w9",
+          "text": "SABIR"
+        },
+        {
+          "id": "journey-085-w10",
+          "text": "TEMEL"
+        },
+        {
+          "id": "journey-085-w11",
+          "text": "MIHENK"
+        },
+        {
+          "id": "journey-085-w12",
+          "text": "BÖBREK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SABIR, TEMEL, MIHENK, BÖBREK: sonuna taşı gelir."
+    },
+    {
+      "id": "journey-085-g4",
+      "title": "SONUNA KÖKÜ GELİR",
+      "words": [
+        {
+          "id": "journey-085-w13",
+          "text": "SAÇ"
+        },
+        {
+          "id": "journey-085-w14",
+          "text": "DİŞ"
+        },
+        {
+          "id": "journey-085-w15",
+          "text": "SÖZCÜK"
+        },
+        {
+          "id": "journey-085-w16",
+          "text": "DENKLEM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SAÇ, DİŞ, SÖZCÜK, DENKLEM: sonuna kökü gelir."
+    }
+  ]
+}

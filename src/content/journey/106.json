@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-106",
+  "date": "2027-02-16",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-106-g1",
+      "title": "SONUNA TABLOSU GELİR",
+      "words": [
+        {
+          "id": "journey-106-w1",
+          "text": "ÇARPIM"
+        },
+        {
+          "id": "journey-106-w2",
+          "text": "PERİYODİK"
+        },
+        {
+          "id": "journey-106-w3",
+          "text": "PUAN"
+        },
+        {
+          "id": "journey-106-w4",
+          "text": "GELİR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÇARPIM, PERİYODİK, PUAN, GELİR: sonuna tablosu gelir."
+    },
+    {
+      "id": "journey-106-g2",
+      "title": "SONUNA GÖZÜ GELİR",
+      "words": [
+        {
+          "id": "journey-106-w5",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-106-w6",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-106-w7",
+          "text": "ÖKÜZ"
+        },
+        {
+          "id": "journey-106-w8",
+          "text": "KUŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İĞNE, BALIK, ÖKÜZ, KUŞ: sonuna gözü gelir."
+    },
+    {
+      "id": "journey-106-g3",
+      "title": "NARENCİYELER",
+      "words": [
+        {
+          "id": "journey-106-w9",
+          "text": "PORTAKAL"
+        },
+        {
+          "id": "journey-106-w10",
+          "text": "MANDALİNA"
+        },
+        {
+          "id": "journey-106-w11",
+          "text": "LİMON"
+        },
+        {
+          "id": "journey-106-w12",
+          "text": "GREYFURT"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "PORTAKAL, MANDALİNA, LİMON, GREYFURT: narenciyeler."
+    },
+    {
+      "id": "journey-106-g4",
+      "title": "BERBER MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-106-w13",
+          "text": "TARAK"
+        },
+        {
+          "id": "journey-106-w14",
+          "text": "USTURA"
+        },
+        {
+          "id": "journey-106-w15",
+          "text": "SAÇ MAKASI"
+        },
+        {
+          "id": "journey-106-w16",
+          "text": "TIRAŞ FIRÇASI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TARAK, USTURA, SAÇ MAKASI, TIRAŞ FIRÇASI: berber malzemeleri."
+    }
+  ]
+}

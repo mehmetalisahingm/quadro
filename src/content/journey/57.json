@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-057",
+  "date": "2026-12-29",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-057-g1",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-057-w1",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-057-w2",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-057-w3",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-057-w4",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    },
+    {
+      "id": "journey-057-g2",
+      "title": "DENİZCİ DÜĞÜMLERİ",
+      "words": [
+        {
+          "id": "journey-057-w5",
+          "text": "İZBARÇO"
+        },
+        {
+          "id": "journey-057-w6",
+          "text": "CAMADAN"
+        },
+        {
+          "id": "journey-057-w7",
+          "text": "KAZIK"
+        },
+        {
+          "id": "journey-057-w8",
+          "text": "SEKİZLİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "İZBARÇO, CAMADAN, KAZIK, SEKİZLİ: denizci düğümleri."
+    },
+    {
+      "id": "journey-057-g3",
+      "title": "İŞİTMEYLE İLGİLİ TERİMLER",
+      "words": [
+        {
+          "id": "journey-057-w9",
+          "text": "SES"
+        },
+        {
+          "id": "journey-057-w10",
+          "text": "TON"
+        },
+        {
+          "id": "journey-057-w11",
+          "text": "TINI"
+        },
+        {
+          "id": "journey-057-w12",
+          "text": "RİTİM"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SES, TON, TINI, RİTİM: işitmeyle ilgili terimler."
+    },
+    {
+      "id": "journey-057-g4",
+      "title": "HEM ORGAN HEM NESNE PARÇASI",
+      "words": [
+        {
+          "id": "journey-057-w13",
+          "text": "KOL"
+        },
+        {
+          "id": "journey-057-w14",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-057-w15",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-057-w16",
+          "text": "DİŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Koltuğun kolu, masanın ayağı, çekmecenin gözü, tarağın dişi."
+    }
+  ]
+}

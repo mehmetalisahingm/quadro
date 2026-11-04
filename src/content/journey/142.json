@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-142",
+  "date": "2027-03-24",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-142-g1",
+      "title": "YAĞIŞ TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-142-w1",
+          "text": "YAĞMUR"
+        },
+        {
+          "id": "journey-142-w2",
+          "text": "KAR"
+        },
+        {
+          "id": "journey-142-w3",
+          "text": "DOLU"
+        },
+        {
+          "id": "journey-142-w4",
+          "text": "ÇİSENTİ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YAĞMUR, KAR, DOLU, ÇİSENTİ: yağış türleri."
+    },
+    {
+      "id": "journey-142-g2",
+      "title": "YATAKTA BULUNANLAR",
+      "words": [
+        {
+          "id": "journey-142-w5",
+          "text": "YASTIK"
+        },
+        {
+          "id": "journey-142-w6",
+          "text": "YORGAN"
+        },
+        {
+          "id": "journey-142-w7",
+          "text": "ÇARŞAF"
+        },
+        {
+          "id": "journey-142-w8",
+          "text": "NEVRESİM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YASTIK, YORGAN, ÇARŞAF, NEVRESİM: yatakta bulunanlar."
+    },
+    {
+      "id": "journey-142-g3",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-142-w9",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-142-w10",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-142-w11",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-142-w12",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    },
+    {
+      "id": "journey-142-g4",
+      "title": "SONUNA HAKKI GELİR",
+      "words": [
+        {
+          "id": "journey-142-w13",
+          "text": "YAYIN"
+        },
+        {
+          "id": "journey-142-w14",
+          "text": "SEÇME"
+        },
+        {
+          "id": "journey-142-w15",
+          "text": "GEÇİŞ"
+        },
+        {
+          "id": "journey-142-w16",
+          "text": "VETO"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "YAYIN, SEÇME, GEÇİŞ, VETO: sonuna hakkı gelir."
+    }
+  ]
+}

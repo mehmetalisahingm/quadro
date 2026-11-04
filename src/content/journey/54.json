@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-054",
+  "date": "2026-12-26",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-054-g1",
+      "title": "ORMAN AĞAÇLARI",
+      "words": [
+        {
+          "id": "journey-054-w1",
+          "text": "ÇAM"
+        },
+        {
+          "id": "journey-054-w2",
+          "text": "MEŞE"
+        },
+        {
+          "id": "journey-054-w3",
+          "text": "KAYIN"
+        },
+        {
+          "id": "journey-054-w4",
+          "text": "KÖKNAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÇAM, MEŞE, KAYIN, KÖKNAR: orman ağaçları."
+    },
+    {
+      "id": "journey-054-g2",
+      "title": "GEOMETRİK ŞEKİLLER",
+      "words": [
+        {
+          "id": "journey-054-w5",
+          "text": "DAİRE"
+        },
+        {
+          "id": "journey-054-w6",
+          "text": "KARE"
+        },
+        {
+          "id": "journey-054-w7",
+          "text": "ÜÇGEN"
+        },
+        {
+          "id": "journey-054-w8",
+          "text": "DİKDÖRTGEN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DAİRE, KARE, ÜÇGEN, DİKDÖRTGEN: geometrik şekiller."
+    },
+    {
+      "id": "journey-054-g3",
+      "title": "KÜTÜPHANEDE",
+      "words": [
+        {
+          "id": "journey-054-w9",
+          "text": "RAF"
+        },
+        {
+          "id": "journey-054-w10",
+          "text": "KATALOG"
+        },
+        {
+          "id": "journey-054-w11",
+          "text": "ÖDÜNÇ KARTI"
+        },
+        {
+          "id": "journey-054-w12",
+          "text": "OKUMA SALONU"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "RAF, KATALOG, ÖDÜNÇ KARTI, OKUMA SALONU: kütüphanede."
+    },
+    {
+      "id": "journey-054-g4",
+      "title": "BERBER MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-054-w13",
+          "text": "TARAK"
+        },
+        {
+          "id": "journey-054-w14",
+          "text": "USTURA"
+        },
+        {
+          "id": "journey-054-w15",
+          "text": "SAÇ MAKASI"
+        },
+        {
+          "id": "journey-054-w16",
+          "text": "TIRAŞ FIRÇASI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TARAK, USTURA, SAÇ MAKASI, TIRAŞ FIRÇASI: berber malzemeleri."
+    }
+  ]
+}

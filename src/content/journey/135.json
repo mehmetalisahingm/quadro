@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-135",
+  "date": "2027-03-17",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-135-g1",
+      "title": "HAVA TAŞITLARI",
+      "words": [
+        {
+          "id": "journey-135-w1",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-135-w2",
+          "text": "HELİKOPTER"
+        },
+        {
+          "id": "journey-135-w3",
+          "text": "PLANÖR"
+        },
+        {
+          "id": "journey-135-w4",
+          "text": "ZEPLİN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "UÇAK, HELİKOPTER, PLANÖR, ZEPLİN: hava taşıtları."
+    },
+    {
+      "id": "journey-135-g2",
+      "title": "İLK HARFİ SİLİNCE YENİ SÖZCÜK",
+      "words": [
+        {
+          "id": "journey-135-w5",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-135-w6",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-135-w7",
+          "text": "KASA"
+        },
+        {
+          "id": "journey-135-w8",
+          "text": "SÖZ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Ulak, alem, asa ve öz kalır."
+    },
+    {
+      "id": "journey-135-g3",
+      "title": "İNŞAAT MALZEMELERİ",
+      "words": [
+        {
+          "id": "journey-135-w9",
+          "text": "TUĞLA"
+        },
+        {
+          "id": "journey-135-w10",
+          "text": "ÇİMENTO"
+        },
+        {
+          "id": "journey-135-w11",
+          "text": "KUM"
+        },
+        {
+          "id": "journey-135-w12",
+          "text": "KİREÇ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "TUĞLA, ÇİMENTO, KUM, KİREÇ: inşaat malzemeleri."
+    },
+    {
+      "id": "journey-135-g4",
+      "title": "YAĞIŞ TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-135-w13",
+          "text": "YAĞMUR"
+        },
+        {
+          "id": "journey-135-w14",
+          "text": "KAR"
+        },
+        {
+          "id": "journey-135-w15",
+          "text": "DOLU"
+        },
+        {
+          "id": "journey-135-w16",
+          "text": "ÇİSENTİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "YAĞMUR, KAR, DOLU, ÇİSENTİ: yağış türleri."
+    }
+  ]
+}

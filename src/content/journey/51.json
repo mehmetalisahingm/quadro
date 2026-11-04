@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-051",
+  "date": "2026-12-23",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-051-g1",
+      "title": "GEMİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-051-w1",
+          "text": "GÜVERTE"
+        },
+        {
+          "id": "journey-051-w2",
+          "text": "KAMARA"
+        },
+        {
+          "id": "journey-051-w3",
+          "text": "DÜMEN"
+        },
+        {
+          "id": "journey-051-w4",
+          "text": "BACA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GÜVERTE, KAMARA, DÜMEN, BACA: geminin bölümleri."
+    },
+    {
+      "id": "journey-051-g2",
+      "title": "DENİZ HAYVANLARI",
+      "words": [
+        {
+          "id": "journey-051-w5",
+          "text": "YUNUS"
+        },
+        {
+          "id": "journey-051-w6",
+          "text": "KÖPEK BALIĞI"
+        },
+        {
+          "id": "journey-051-w7",
+          "text": "AHTAPOT"
+        },
+        {
+          "id": "journey-051-w8",
+          "text": "DENİZATI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YUNUS, KÖPEK BALIĞI, AHTAPOT, DENİZATI: deniz hayvanları."
+    },
+    {
+      "id": "journey-051-g3",
+      "title": "MAHKEMEDE",
+      "words": [
+        {
+          "id": "journey-051-w9",
+          "text": "HÂKİM"
+        },
+        {
+          "id": "journey-051-w10",
+          "text": "SAVCI"
+        },
+        {
+          "id": "journey-051-w11",
+          "text": "TANIK"
+        },
+        {
+          "id": "journey-051-w12",
+          "text": "SANIK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HÂKİM, SAVCI, TANIK, SANIK: mahkemede."
+    },
+    {
+      "id": "journey-051-g4",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-051-w13",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-051-w14",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-051-w15",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-051-w16",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-090",
+  "date": "2027-01-31",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-090-g1",
+      "title": "DENİZ HAYVANLARI",
+      "words": [
+        {
+          "id": "journey-090-w1",
+          "text": "YUNUS"
+        },
+        {
+          "id": "journey-090-w2",
+          "text": "KÖPEK BALIĞI"
+        },
+        {
+          "id": "journey-090-w3",
+          "text": "AHTAPOT"
+        },
+        {
+          "id": "journey-090-w4",
+          "text": "DENİZATI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YUNUS, KÖPEK BALIĞI, AHTAPOT, DENİZATI: deniz hayvanları."
+    },
+    {
+      "id": "journey-090-g2",
+      "title": "TERSTEN AYNI OKUNUR",
+      "words": [
+        {
+          "id": "journey-090-w5",
+          "text": "KABAK"
+        },
+        {
+          "id": "journey-090-w6",
+          "text": "KÜÇÜK"
+        },
+        {
+          "id": "journey-090-w7",
+          "text": "NEDEN"
+        },
+        {
+          "id": "journey-090-w8",
+          "text": "RADAR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KABAK, KÜÇÜK, NEDEN, RADAR: tersten aynı okunur."
+    },
+    {
+      "id": "journey-090-g3",
+      "title": "KUŞ BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-090-w9",
+          "text": "GAGA"
+        },
+        {
+          "id": "journey-090-w10",
+          "text": "KANAT"
+        },
+        {
+          "id": "journey-090-w11",
+          "text": "TÜY"
+        },
+        {
+          "id": "journey-090-w12",
+          "text": "PENÇE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "GAGA, KANAT, TÜY, PENÇE: kuş bölümleri."
+    },
+    {
+      "id": "journey-090-g4",
+      "title": "FİLM ÇEKİMİNDE",
+      "words": [
+        {
+          "id": "journey-090-w13",
+          "text": "KLAKET"
+        },
+        {
+          "id": "journey-090-w14",
+          "text": "SENARYO"
+        },
+        {
+          "id": "journey-090-w15",
+          "text": "KURGU"
+        },
+        {
+          "id": "journey-090-w16",
+          "text": "DUBLAJ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KLAKET, SENARYO, KURGU, DUBLAJ: film çekiminde."
+    }
+  ]
+}

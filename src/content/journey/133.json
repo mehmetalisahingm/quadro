@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-133",
+  "date": "2027-03-15",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-133-g1",
+      "title": "KAMERADA AYARLAR",
+      "words": [
+        {
+          "id": "journey-133-w1",
+          "text": "POZLAMA"
+        },
+        {
+          "id": "journey-133-w2",
+          "text": "BEYAZ AYARI"
+        },
+        {
+          "id": "journey-133-w3",
+          "text": "ISO"
+        },
+        {
+          "id": "journey-133-w4",
+          "text": "ENSTANTANE"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "POZLAMA, BEYAZ AYARI, ISO, ENSTANTANE: kamerada ayarlar."
+    },
+    {
+      "id": "journey-133-g2",
+      "title": "BİR ÖYKÜNÜN UNSURLARI",
+      "words": [
+        {
+          "id": "journey-133-w5",
+          "text": "KİŞİ"
+        },
+        {
+          "id": "journey-133-w6",
+          "text": "OLAY"
+        },
+        {
+          "id": "journey-133-w7",
+          "text": "YER"
+        },
+        {
+          "id": "journey-133-w8",
+          "text": "ZAMAN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KİŞİ, OLAY, YER, ZAMAN: bir öykünün unsurları."
+    },
+    {
+      "id": "journey-133-g3",
+      "title": "YÜZME HAVUZUNDA",
+      "words": [
+        {
+          "id": "journey-133-w9",
+          "text": "KULVAR"
+        },
+        {
+          "id": "journey-133-w10",
+          "text": "TRAMPLEN"
+        },
+        {
+          "id": "journey-133-w11",
+          "text": "BONE"
+        },
+        {
+          "id": "journey-133-w12",
+          "text": "YÜZÜCÜ GÖZLÜĞÜ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KULVAR, TRAMPLEN, BONE, YÜZÜCÜ GÖZLÜĞÜ: yüzme havuzunda."
+    },
+    {
+      "id": "journey-133-g4",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-133-w13",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-133-w14",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-133-w15",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-133-w16",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-073",
+  "date": "2027-01-14",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-073-g1",
+      "title": "KÜREKLE İLERLEYEN ARAÇLAR",
+      "words": [
+        {
+          "id": "journey-073-w1",
+          "text": "KANO"
+        },
+        {
+          "id": "journey-073-w2",
+          "text": "KAYIK"
+        },
+        {
+          "id": "journey-073-w3",
+          "text": "GONDOL"
+        },
+        {
+          "id": "journey-073-w4",
+          "text": "RAFTİNG BOTU"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KANO, KAYIK, GONDOL, RAFTİNG BOTU: kürekle ilerleyen araçlar."
+    },
+    {
+      "id": "journey-073-g2",
+      "title": "BİR KİTABIN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-073-w5",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "journey-073-w6",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "journey-073-w7",
+          "text": "DİZİN"
+        },
+        {
+          "id": "journey-073-w8",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÖNSÖZ, İÇİNDEKİLER, DİZİN, KAYNAKÇA: bir kitabın bölümleri."
+    },
+    {
+      "id": "journey-073-g3",
+      "title": "SONUNA ANAHTARI GELİR",
+      "words": [
+        {
+          "id": "journey-073-w9",
+          "text": "CEVAP"
+        },
+        {
+          "id": "journey-073-w10",
+          "text": "İNGİLİZ"
+        },
+        {
+          "id": "journey-073-w11",
+          "text": "FA"
+        },
+        {
+          "id": "journey-073-w12",
+          "text": "SOL"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "CEVAP, İNGİLİZ, FA, SOL: sonuna anahtarı gelir."
+    },
+    {
+      "id": "journey-073-g4",
+      "title": "DENİZCİ DÜĞÜMLERİ",
+      "words": [
+        {
+          "id": "journey-073-w13",
+          "text": "İZBARÇO"
+        },
+        {
+          "id": "journey-073-w14",
+          "text": "CAMADAN"
+        },
+        {
+          "id": "journey-073-w15",
+          "text": "KAZIK"
+        },
+        {
+          "id": "journey-073-w16",
+          "text": "SEKİZLİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "İZBARÇO, CAMADAN, KAZIK, SEKİZLİ: denizci düğümleri."
+    }
+  ]
+}

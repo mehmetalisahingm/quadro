@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-078",
+  "date": "2027-01-19",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-078-g1",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "journey-078-w1",
+          "text": "SABUN"
+        },
+        {
+          "id": "journey-078-w2",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "journey-078-w3",
+          "text": "HAVLU"
+        },
+        {
+          "id": "journey-078-w4",
+          "text": "LİF"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "SABUN, ŞAMPUAN, HAVLU, LİF: banyoda kullanılanlar."
+    },
+    {
+      "id": "journey-078-g2",
+      "title": "SONUNA AÇIĞI GELİR",
+      "words": [
+        {
+          "id": "journey-078-w5",
+          "text": "BÜTÇE"
+        },
+        {
+          "id": "journey-078-w6",
+          "text": "TİCARET"
+        },
+        {
+          "id": "journey-078-w7",
+          "text": "GÜVENLİK"
+        },
+        {
+          "id": "journey-078-w8",
+          "text": "PUAN"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "BÜTÇE, TİCARET, GÜVENLİK, PUAN: sonuna açığı gelir."
+    },
+    {
+      "id": "journey-078-g3",
+      "title": "GAZETEDE",
+      "words": [
+        {
+          "id": "journey-078-w9",
+          "text": "MANŞET"
+        },
+        {
+          "id": "journey-078-w10",
+          "text": "HABER"
+        },
+        {
+          "id": "journey-078-w11",
+          "text": "KÖŞE YAZISI"
+        },
+        {
+          "id": "journey-078-w12",
+          "text": "KARİKATÜR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "MANŞET, HABER, KÖŞE YAZISI, KARİKATÜR: gazetede."
+    },
+    {
+      "id": "journey-078-g4",
+      "title": "YÜZME HAVUZUNDA",
+      "words": [
+        {
+          "id": "journey-078-w13",
+          "text": "KULVAR"
+        },
+        {
+          "id": "journey-078-w14",
+          "text": "TRAMPLEN"
+        },
+        {
+          "id": "journey-078-w15",
+          "text": "BONE"
+        },
+        {
+          "id": "journey-078-w16",
+          "text": "YÜZÜCÜ GÖZLÜĞÜ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KULVAR, TRAMPLEN, BONE, YÜZÜCÜ GÖZLÜĞÜ: yüzme havuzunda."
+    }
+  ]
+}

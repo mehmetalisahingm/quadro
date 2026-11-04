@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-059",
+  "date": "2026-12-31",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-059-g1",
+      "title": "ÇEMBERDE VE DAİREDE",
+      "words": [
+        {
+          "id": "journey-059-w1",
+          "text": "ÇAP"
+        },
+        {
+          "id": "journey-059-w2",
+          "text": "YARIÇAP"
+        },
+        {
+          "id": "journey-059-w3",
+          "text": "KİRİŞ"
+        },
+        {
+          "id": "journey-059-w4",
+          "text": "TEĞET"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÇAP, YARIÇAP, KİRİŞ, TEĞET: çemberde ve dairede."
+    },
+    {
+      "id": "journey-059-g2",
+      "title": "BİRİNCİ AİLE ÜYELERİ",
+      "words": [
+        {
+          "id": "journey-059-w5",
+          "text": "ANNE"
+        },
+        {
+          "id": "journey-059-w6",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-059-w7",
+          "text": "KARDEŞ"
+        },
+        {
+          "id": "journey-059-w8",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ANNE, BABA, KARDEŞ, ÇOCUK: birinci aile üyeleri."
+    },
+    {
+      "id": "journey-059-g3",
+      "title": "SONUNA KOLU GELİR",
+      "words": [
+        {
+          "id": "journey-059-w9",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-059-w10",
+          "text": "NEHİR"
+        },
+        {
+          "id": "journey-059-w11",
+          "text": "EMNİYET"
+        },
+        {
+          "id": "journey-059-w12",
+          "text": "DİREKSİYON"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KAPI, NEHİR, EMNİYET, DİREKSİYON: sonuna kolu gelir."
+    },
+    {
+      "id": "journey-059-g4",
+      "title": "GEMİNİN YÖNLERİ",
+      "words": [
+        {
+          "id": "journey-059-w13",
+          "text": "PRUVA"
+        },
+        {
+          "id": "journey-059-w14",
+          "text": "PUPA"
+        },
+        {
+          "id": "journey-059-w15",
+          "text": "İSKELE"
+        },
+        {
+          "id": "journey-059-w16",
+          "text": "SANCAK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "PRUVA, PUPA, İSKELE, SANCAK: geminin yönleri."
+    }
+  ]
+}

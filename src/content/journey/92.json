@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-092",
+  "date": "2027-02-02",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-092-g1",
+      "title": "TAKIM ELBİSEYLE",
+      "words": [
+        {
+          "id": "journey-092-w1",
+          "text": "CEKET"
+        },
+        {
+          "id": "journey-092-w2",
+          "text": "PANTOLON"
+        },
+        {
+          "id": "journey-092-w3",
+          "text": "KRAVAT"
+        },
+        {
+          "id": "journey-092-w4",
+          "text": "YELEK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "CEKET, PANTOLON, KRAVAT, YELEK: takım elbiseyle."
+    },
+    {
+      "id": "journey-092-g2",
+      "title": "DUYU ORGANLARI",
+      "words": [
+        {
+          "id": "journey-092-w5",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-092-w6",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-092-w7",
+          "text": "BURUN"
+        },
+        {
+          "id": "journey-092-w8",
+          "text": "DİL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "GÖZ, KULAK, BURUN, DİL: duyu organları."
+    },
+    {
+      "id": "journey-092-g3",
+      "title": "YEMEK PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "journey-092-w9",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "journey-092-w10",
+          "text": "KIZARTMA"
+        },
+        {
+          "id": "journey-092-w11",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "journey-092-w12",
+          "text": "IZGARA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "HAŞLAMA, KIZARTMA, BUĞULAMA, IZGARA: yemek pişirme yöntemleri."
+    },
+    {
+      "id": "journey-092-g4",
+      "title": "SONUNA HESABI GELİR",
+      "words": [
+        {
+          "id": "journey-092-w13",
+          "text": "BANKA"
+        },
+        {
+          "id": "journey-092-w14",
+          "text": "EV"
+        },
+        {
+          "id": "journey-092-w15",
+          "text": "FAİZ"
+        },
+        {
+          "id": "journey-092-w16",
+          "text": "OLASILIK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "BANKA, EV, FAİZ, OLASILIK: sonuna hesabı gelir."
+    }
+  ]
+}

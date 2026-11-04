@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-140",
+  "date": "2027-03-22",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-140-g1",
+      "title": "BİLGİSAYAR DONANIMI",
+      "words": [
+        {
+          "id": "journey-140-w1",
+          "text": "EKRAN KARTI"
+        },
+        {
+          "id": "journey-140-w2",
+          "text": "İŞLEMCİ"
+        },
+        {
+          "id": "journey-140-w3",
+          "text": "ANAKART"
+        },
+        {
+          "id": "journey-140-w4",
+          "text": "SABİT DİSK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "EKRAN KARTI, İŞLEMCİ, ANAKART, SABİT DİSK: bilgisayar donanımı."
+    },
+    {
+      "id": "journey-140-g2",
+      "title": "KÂĞIT KATLAMA BİÇİMLERİ",
+      "words": [
+        {
+          "id": "journey-140-w5",
+          "text": "AKORDEON"
+        },
+        {
+          "id": "journey-140-w6",
+          "text": "ZİKZAK"
+        },
+        {
+          "id": "journey-140-w7",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-140-w8",
+          "text": "PENCERE"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "AKORDEON, ZİKZAK, KAPI, PENCERE: kâğıt katlama biçimleri."
+    },
+    {
+      "id": "journey-140-g3",
+      "title": "BİR ÖYKÜNÜN UNSURLARI",
+      "words": [
+        {
+          "id": "journey-140-w9",
+          "text": "KİŞİ"
+        },
+        {
+          "id": "journey-140-w10",
+          "text": "OLAY"
+        },
+        {
+          "id": "journey-140-w11",
+          "text": "YER"
+        },
+        {
+          "id": "journey-140-w12",
+          "text": "ZAMAN"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KİŞİ, OLAY, YER, ZAMAN: bir öykünün unsurları."
+    },
+    {
+      "id": "journey-140-g4",
+      "title": "DENİZCİ DÜĞÜMLERİ",
+      "words": [
+        {
+          "id": "journey-140-w13",
+          "text": "İZBARÇO"
+        },
+        {
+          "id": "journey-140-w14",
+          "text": "CAMADAN"
+        },
+        {
+          "id": "journey-140-w15",
+          "text": "KAZIK"
+        },
+        {
+          "id": "journey-140-w16",
+          "text": "SEKİZLİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "İZBARÇO, CAMADAN, KAZIK, SEKİZLİ: denizci düğümleri."
+    }
+  ]
+}

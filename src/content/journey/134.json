@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-134",
+  "date": "2027-03-16",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-134-g1",
+      "title": "İSTASYONDA",
+      "words": [
+        {
+          "id": "journey-134-w1",
+          "text": "PERON"
+        },
+        {
+          "id": "journey-134-w2",
+          "text": "RAY"
+        },
+        {
+          "id": "journey-134-w3",
+          "text": "MAKAS"
+        },
+        {
+          "id": "journey-134-w4",
+          "text": "SİNYAL"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "PERON, RAY, MAKAS, SİNYAL: istasyonda."
+    },
+    {
+      "id": "journey-134-g2",
+      "title": "BİR BİTKİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-134-w5",
+          "text": "KÖK"
+        },
+        {
+          "id": "journey-134-w6",
+          "text": "GÖVDE"
+        },
+        {
+          "id": "journey-134-w7",
+          "text": "YAPRAK"
+        },
+        {
+          "id": "journey-134-w8",
+          "text": "ÇİÇEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "KÖK, GÖVDE, YAPRAK, ÇİÇEK: bir bitkinin bölümleri."
+    },
+    {
+      "id": "journey-134-g3",
+      "title": "DENİZ HAYVANLARI",
+      "words": [
+        {
+          "id": "journey-134-w9",
+          "text": "YUNUS"
+        },
+        {
+          "id": "journey-134-w10",
+          "text": "KÖPEK BALIĞI"
+        },
+        {
+          "id": "journey-134-w11",
+          "text": "AHTAPOT"
+        },
+        {
+          "id": "journey-134-w12",
+          "text": "DENİZATI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "YUNUS, KÖPEK BALIĞI, AHTAPOT, DENİZATI: deniz hayvanları."
+    },
+    {
+      "id": "journey-134-g4",
+      "title": "MAHKEMEDE",
+      "words": [
+        {
+          "id": "journey-134-w13",
+          "text": "HÂKİM"
+        },
+        {
+          "id": "journey-134-w14",
+          "text": "SAVCI"
+        },
+        {
+          "id": "journey-134-w15",
+          "text": "TANIK"
+        },
+        {
+          "id": "journey-134-w16",
+          "text": "SANIK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HÂKİM, SAVCI, TANIK, SANIK: mahkemede."
+    }
+  ]
+}

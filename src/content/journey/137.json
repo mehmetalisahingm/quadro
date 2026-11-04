@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-137",
+  "date": "2027-03-19",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-137-g1",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-137-w1",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-137-w2",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-137-w3",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-137-w4",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-137-g2",
+      "title": "SONUNA DEFTERİ GELİR",
+      "words": [
+        {
+          "id": "journey-137-w5",
+          "text": "HATIRA"
+        },
+        {
+          "id": "journey-137-w6",
+          "text": "ADRES"
+        },
+        {
+          "id": "journey-137-w7",
+          "text": "SEYİR"
+        },
+        {
+          "id": "journey-137-w8",
+          "text": "KASA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HATIRA, ADRES, SEYİR, KASA: sonuna defteri gelir."
+    },
+    {
+      "id": "journey-137-g3",
+      "title": "SONUNA ÇARKI GELİR",
+      "words": [
+        {
+          "id": "journey-137-w9",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "journey-137-w10",
+          "text": "SU"
+        },
+        {
+          "id": "journey-137-w11",
+          "text": "ŞANS"
+        },
+        {
+          "id": "journey-137-w12",
+          "text": "FELEK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "DİŞLİ, SU, ŞANS, FELEK: sonuna çarkı gelir."
+    },
+    {
+      "id": "journey-137-g4",
+      "title": "SONUNA EVİ GELİR",
+      "words": [
+        {
+          "id": "journey-137-w13",
+          "text": "HUZUR"
+        },
+        {
+          "id": "journey-137-w14",
+          "text": "KONUK"
+        },
+        {
+          "id": "journey-137-w15",
+          "text": "BASIM"
+        },
+        {
+          "id": "journey-137-w16",
+          "text": "GÖZLEM"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HUZUR, KONUK, BASIM, GÖZLEM: sonuna evi gelir."
+    }
+  ]
+}

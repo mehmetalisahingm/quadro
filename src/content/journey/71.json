@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-071",
+  "date": "2027-01-12",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-071-g1",
+      "title": "SONUNA BAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-071-w1",
+          "text": "YIL"
+        },
+        {
+          "id": "journey-071-w2",
+          "text": "SATIR"
+        },
+        {
+          "id": "journey-071-w3",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "journey-071-w4",
+          "text": "USTA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YIL, SATIR, KÖŞE, USTA: sonuna başı gelir."
+    },
+    {
+      "id": "journey-071-g2",
+      "title": "NARENCİYELER",
+      "words": [
+        {
+          "id": "journey-071-w5",
+          "text": "PORTAKAL"
+        },
+        {
+          "id": "journey-071-w6",
+          "text": "MANDALİNA"
+        },
+        {
+          "id": "journey-071-w7",
+          "text": "LİMON"
+        },
+        {
+          "id": "journey-071-w8",
+          "text": "GREYFURT"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PORTAKAL, MANDALİNA, LİMON, GREYFURT: narenciyeler."
+    },
+    {
+      "id": "journey-071-g3",
+      "title": "ÇEMBERDE VE DAİREDE",
+      "words": [
+        {
+          "id": "journey-071-w9",
+          "text": "ÇAP"
+        },
+        {
+          "id": "journey-071-w10",
+          "text": "YARIÇAP"
+        },
+        {
+          "id": "journey-071-w11",
+          "text": "KİRİŞ"
+        },
+        {
+          "id": "journey-071-w12",
+          "text": "TEĞET"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ÇAP, YARIÇAP, KİRİŞ, TEĞET: çemberde ve dairede."
+    },
+    {
+      "id": "journey-071-g4",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-071-w13",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-071-w14",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-071-w15",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-071-w16",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    }
+  ]
+}

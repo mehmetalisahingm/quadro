@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-061",
+  "date": "2027-01-02",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-061-g1",
+      "title": "SONUNA HAKKI GELİR",
+      "words": [
+        {
+          "id": "journey-061-w1",
+          "text": "YAYIN"
+        },
+        {
+          "id": "journey-061-w2",
+          "text": "SEÇME"
+        },
+        {
+          "id": "journey-061-w3",
+          "text": "GEÇİŞ"
+        },
+        {
+          "id": "journey-061-w4",
+          "text": "VETO"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "YAYIN, SEÇME, GEÇİŞ, VETO: sonuna hakkı gelir."
+    },
+    {
+      "id": "journey-061-g2",
+      "title": "MİMARIN ÇİZİMLERİ",
+      "words": [
+        {
+          "id": "journey-061-w5",
+          "text": "PLAN"
+        },
+        {
+          "id": "journey-061-w6",
+          "text": "KESİT"
+        },
+        {
+          "id": "journey-061-w7",
+          "text": "GÖRÜNÜŞ"
+        },
+        {
+          "id": "journey-061-w8",
+          "text": "PERSPEKTİF"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PLAN, KESİT, GÖRÜNÜŞ, PERSPEKTİF: mimarın çizimleri."
+    },
+    {
+      "id": "journey-061-g3",
+      "title": "SONUNA KARTI GELİR",
+      "words": [
+        {
+          "id": "journey-061-w9",
+          "text": "KREDİ"
+        },
+        {
+          "id": "journey-061-w10",
+          "text": "KİMLİK"
+        },
+        {
+          "id": "journey-061-w11",
+          "text": "HAFIZA"
+        },
+        {
+          "id": "journey-061-w12",
+          "text": "TEBRİK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KREDİ, KİMLİK, HAFIZA, TEBRİK: sonuna kartı gelir."
+    },
+    {
+      "id": "journey-061-g4",
+      "title": "SONUNA AĞI GELİR",
+      "words": [
+        {
+          "id": "journey-061-w13",
+          "text": "ÖRÜMCEK"
+        },
+        {
+          "id": "journey-061-w14",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-061-w15",
+          "text": "İLETİŞİM"
+        },
+        {
+          "id": "journey-061-w16",
+          "text": "SİNİR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÖRÜMCEK, BALIK, İLETİŞİM, SİNİR: sonuna ağı gelir."
+    }
+  ]
+}

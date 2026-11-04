@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-111",
+  "date": "2027-02-21",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-111-g1",
+      "title": "TEMEL RENK ADLARI",
+      "words": [
+        {
+          "id": "journey-111-w1",
+          "text": "KIRMIZI"
+        },
+        {
+          "id": "journey-111-w2",
+          "text": "MAVİ"
+        },
+        {
+          "id": "journey-111-w3",
+          "text": "YEŞİL"
+        },
+        {
+          "id": "journey-111-w4",
+          "text": "SARI"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KIRMIZI, MAVİ, YEŞİL, SARI: temel renk adları."
+    },
+    {
+      "id": "journey-111-g2",
+      "title": "BANYODA KULLANILANLAR",
+      "words": [
+        {
+          "id": "journey-111-w5",
+          "text": "SABUN"
+        },
+        {
+          "id": "journey-111-w6",
+          "text": "ŞAMPUAN"
+        },
+        {
+          "id": "journey-111-w7",
+          "text": "HAVLU"
+        },
+        {
+          "id": "journey-111-w8",
+          "text": "LİF"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "SABUN, ŞAMPUAN, HAVLU, LİF: banyoda kullanılanlar."
+    },
+    {
+      "id": "journey-111-g3",
+      "title": "KÜREKLE İLERLEYEN ARAÇLAR",
+      "words": [
+        {
+          "id": "journey-111-w9",
+          "text": "KANO"
+        },
+        {
+          "id": "journey-111-w10",
+          "text": "KAYIK"
+        },
+        {
+          "id": "journey-111-w11",
+          "text": "GONDOL"
+        },
+        {
+          "id": "journey-111-w12",
+          "text": "RAFTİNG BOTU"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KANO, KAYIK, GONDOL, RAFTİNG BOTU: kürekle ilerleyen araçlar."
+    },
+    {
+      "id": "journey-111-g4",
+      "title": "YAĞIŞ TÜRLERİ",
+      "words": [
+        {
+          "id": "journey-111-w13",
+          "text": "YAĞMUR"
+        },
+        {
+          "id": "journey-111-w14",
+          "text": "KAR"
+        },
+        {
+          "id": "journey-111-w15",
+          "text": "DOLU"
+        },
+        {
+          "id": "journey-111-w16",
+          "text": "ÇİSENTİ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "YAĞMUR, KAR, DOLU, ÇİSENTİ: yağış türleri."
+    }
+  ]
+}

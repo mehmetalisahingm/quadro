@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-170",
+  "date": "2027-04-21",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-170-g1",
+      "title": "SONUNA ÇARKI GELİR",
+      "words": [
+        {
+          "id": "journey-170-w1",
+          "text": "DİŞLİ"
+        },
+        {
+          "id": "journey-170-w2",
+          "text": "SU"
+        },
+        {
+          "id": "journey-170-w3",
+          "text": "ŞANS"
+        },
+        {
+          "id": "journey-170-w4",
+          "text": "FELEK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "DİŞLİ, SU, ŞANS, FELEK: sonuna çarkı gelir."
+    },
+    {
+      "id": "journey-170-g2",
+      "title": "OKUL ÇANTASINDA",
+      "words": [
+        {
+          "id": "journey-170-w5",
+          "text": "DEFTER"
+        },
+        {
+          "id": "journey-170-w6",
+          "text": "KİTAP"
+        },
+        {
+          "id": "journey-170-w7",
+          "text": "KALEM"
+        },
+        {
+          "id": "journey-170-w8",
+          "text": "SİLGİ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DEFTER, KİTAP, KALEM, SİLGİ: okul çantasında."
+    },
+    {
+      "id": "journey-170-g3",
+      "title": "İÇİNDE MÜZİK NOTASI SAKLI",
+      "words": [
+        {
+          "id": "journey-170-w9",
+          "text": "MİRAS"
+        },
+        {
+          "id": "journey-170-w10",
+          "text": "SİMİT"
+        },
+        {
+          "id": "journey-170-w11",
+          "text": "DOLAP"
+        },
+        {
+          "id": "journey-170-w12",
+          "text": "FARE"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Mİ-ras, Sİ-mit, DO-lap, FA-re."
+    },
+    {
+      "id": "journey-170-g4",
+      "title": "İÇECEK KAPLARI",
+      "words": [
+        {
+          "id": "journey-170-w13",
+          "text": "BARDAK"
+        },
+        {
+          "id": "journey-170-w14",
+          "text": "FİNCAN"
+        },
+        {
+          "id": "journey-170-w15",
+          "text": "KUPA"
+        },
+        {
+          "id": "journey-170-w16",
+          "text": "MATARA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "BARDAK, FİNCAN, KUPA, MATARA: içecek kapları."
+    }
+  ]
+}

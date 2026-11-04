@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-146",
+  "date": "2027-03-28",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-146-g1",
+      "title": "TOPLU TAŞIMA ARAÇLARI",
+      "words": [
+        {
+          "id": "journey-146-w1",
+          "text": "OTOBÜS"
+        },
+        {
+          "id": "journey-146-w2",
+          "text": "METRO"
+        },
+        {
+          "id": "journey-146-w3",
+          "text": "TRAMVAY"
+        },
+        {
+          "id": "journey-146-w4",
+          "text": "VAPUR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "OTOBÜS, METRO, TRAMVAY, VAPUR: toplu taşıma araçları."
+    },
+    {
+      "id": "journey-146-g2",
+      "title": "EKLE EŞYAYA DÖNÜŞEN ORGAN",
+      "words": [
+        {
+          "id": "journey-146-w5",
+          "text": "GÖZ"
+        },
+        {
+          "id": "journey-146-w6",
+          "text": "KULAK"
+        },
+        {
+          "id": "journey-146-w7",
+          "text": "AYAK"
+        },
+        {
+          "id": "journey-146-w8",
+          "text": "BAŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "-lık ekinin uyumlu biçimleriyle gözlük, kulaklık, ayaklık, başlık."
+    },
+    {
+      "id": "journey-146-g3",
+      "title": "AYAK GİYİMİ",
+      "words": [
+        {
+          "id": "journey-146-w9",
+          "text": "BOT"
+        },
+        {
+          "id": "journey-146-w10",
+          "text": "TERLİK"
+        },
+        {
+          "id": "journey-146-w11",
+          "text": "SPOR AYAKKABI"
+        },
+        {
+          "id": "journey-146-w12",
+          "text": "ÇİZME"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "BOT, TERLİK, SPOR AYAKKABI, ÇİZME: ayak giyimi."
+    },
+    {
+      "id": "journey-146-g4",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-146-w13",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-146-w14",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-146-w15",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-146-w16",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-172",
+  "date": "2027-04-23",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-172-g1",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-172-w1",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-172-w2",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-172-w3",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-172-w4",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    },
+    {
+      "id": "journey-172-g2",
+      "title": "NARENCİYELER",
+      "words": [
+        {
+          "id": "journey-172-w5",
+          "text": "PORTAKAL"
+        },
+        {
+          "id": "journey-172-w6",
+          "text": "MANDALİNA"
+        },
+        {
+          "id": "journey-172-w7",
+          "text": "LİMON"
+        },
+        {
+          "id": "journey-172-w8",
+          "text": "GREYFURT"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PORTAKAL, MANDALİNA, LİMON, GREYFURT: narenciyeler."
+    },
+    {
+      "id": "journey-172-g3",
+      "title": "TOPLU TAŞIMA ARAÇLARI",
+      "words": [
+        {
+          "id": "journey-172-w9",
+          "text": "OTOBÜS"
+        },
+        {
+          "id": "journey-172-w10",
+          "text": "METRO"
+        },
+        {
+          "id": "journey-172-w11",
+          "text": "TRAMVAY"
+        },
+        {
+          "id": "journey-172-w12",
+          "text": "VAPUR"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "OTOBÜS, METRO, TRAMVAY, VAPUR: toplu taşıma araçları."
+    },
+    {
+      "id": "journey-172-g4",
+      "title": "SAHNE AYDINLATMASINDA",
+      "words": [
+        {
+          "id": "journey-172-w13",
+          "text": "SPOT"
+        },
+        {
+          "id": "journey-172-w14",
+          "text": "PROJEKTÖR"
+        },
+        {
+          "id": "journey-172-w15",
+          "text": "REFLEKTÖR"
+        },
+        {
+          "id": "journey-172-w16",
+          "text": "IŞIK MASASI"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "SPOT, PROJEKTÖR, REFLEKTÖR, IŞIK MASASI: sahne aydınlatmasında."
+    }
+  ]
+}

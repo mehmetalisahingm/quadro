@@ -12,7 +12,7 @@ for (const scenario of ["healthy", "disabled-login", "admin-exposed", "journey-m
       if (path === "/api/admin/dashboard") return new Response("{}", { status: scenario === "admin-exposed" ? 200 : 401 });
       if (path === "/api/analytics") return new Response("{}", { status: 400 });
       if (path === "/login") return new Response(`<button ${scenario === "disabled-login" ? 'disabled=""' : ""}>E-posta ile giriş bağlantısı gönder</button>`);
-      if (path === "/journey") return new Response(scenario === "journey-missing" ? "" : '<div aria-label="50 adımlık keşif haritası"></div>');
+      if (path === "/journey") return new Response(scenario === "journey-missing" ? "" : '<div aria-label="200 adımlık keşif haritası"></div>');
       return new Response('<a href="/play?mode=daily">Oyna</a><header class="q-play-header"></header>');
     });
     const run = import(`./verify-live.mjs?scenario=${scenario}`);

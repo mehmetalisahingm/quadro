@@ -23,7 +23,7 @@ if (!daily.includes("q-play-header")) throw new Error("Daily game page is incomp
 await read("/play");
 await read("/animations");
 const journey = await (await read("/journey")).text();
-if (!journey.includes("50 adımlık keşif haritası")) throw new Error("Journey map is incomplete");
+if (!journey.includes("200 adımlık keşif haritası")) throw new Error("Journey map is incomplete");
 await read("/journey/step?level=1");
 const login = await (await read("/login")).text();
 const mailButton = [...login.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/g)]

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-153",
+  "date": "2027-04-04",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-153-g1",
+      "title": "BİR KİTABIN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-153-w1",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "journey-153-w2",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "journey-153-w3",
+          "text": "DİZİN"
+        },
+        {
+          "id": "journey-153-w4",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ÖNSÖZ, İÇİNDEKİLER, DİZİN, KAYNAKÇA: bir kitabın bölümleri."
+    },
+    {
+      "id": "journey-153-g2",
+      "title": "FOTOĞRAF ÇEKERKEN",
+      "words": [
+        {
+          "id": "journey-153-w5",
+          "text": "OBJEKTİF"
+        },
+        {
+          "id": "journey-153-w6",
+          "text": "DİYAFRAM"
+        },
+        {
+          "id": "journey-153-w7",
+          "text": "DEKLANŞÖR"
+        },
+        {
+          "id": "journey-153-w8",
+          "text": "FLAŞ"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "OBJEKTİF, DİYAFRAM, DEKLANŞÖR, FLAŞ: fotoğraf çekerken."
+    },
+    {
+      "id": "journey-153-g3",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-153-w9",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-153-w10",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-153-w11",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-153-w12",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-153-g4",
+      "title": "KIŞLIK GİYSİLER",
+      "words": [
+        {
+          "id": "journey-153-w13",
+          "text": "ATKI"
+        },
+        {
+          "id": "journey-153-w14",
+          "text": "BERE"
+        },
+        {
+          "id": "journey-153-w15",
+          "text": "ELDİVEN"
+        },
+        {
+          "id": "journey-153-w16",
+          "text": "KAZAK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ATKI, BERE, ELDİVEN, KAZAK: kışlık giysiler."
+    }
+  ]
+}

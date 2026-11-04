@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-145",
+  "date": "2027-03-27",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-145-g1",
+      "title": "SPOR MÜSABAKASINDA",
+      "words": [
+        {
+          "id": "journey-145-w1",
+          "text": "HAKEM"
+        },
+        {
+          "id": "journey-145-w2",
+          "text": "SKOR"
+        },
+        {
+          "id": "journey-145-w3",
+          "text": "RAKİP"
+        },
+        {
+          "id": "journey-145-w4",
+          "text": "TRİBÜN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "HAKEM, SKOR, RAKİP, TRİBÜN: spor müsabakasında."
+    },
+    {
+      "id": "journey-145-g2",
+      "title": "ÇATAL BIÇAK TAKIMINDA",
+      "words": [
+        {
+          "id": "journey-145-w5",
+          "text": "ÇATAL"
+        },
+        {
+          "id": "journey-145-w6",
+          "text": "BIÇAK"
+        },
+        {
+          "id": "journey-145-w7",
+          "text": "KAŞIK"
+        },
+        {
+          "id": "journey-145-w8",
+          "text": "TATLI KAŞIĞI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "ÇATAL, BIÇAK, KAŞIK, TATLI KAŞIĞI: çatal bıçak takımında."
+    },
+    {
+      "id": "journey-145-g3",
+      "title": "DENİZCİ DÜĞÜMLERİ",
+      "words": [
+        {
+          "id": "journey-145-w9",
+          "text": "İZBARÇO"
+        },
+        {
+          "id": "journey-145-w10",
+          "text": "CAMADAN"
+        },
+        {
+          "id": "journey-145-w11",
+          "text": "KAZIK"
+        },
+        {
+          "id": "journey-145-w12",
+          "text": "SEKİZLİ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "İZBARÇO, CAMADAN, KAZIK, SEKİZLİ: denizci düğümleri."
+    },
+    {
+      "id": "journey-145-g4",
+      "title": "YÜZME HAVUZUNDA",
+      "words": [
+        {
+          "id": "journey-145-w13",
+          "text": "KULVAR"
+        },
+        {
+          "id": "journey-145-w14",
+          "text": "TRAMPLEN"
+        },
+        {
+          "id": "journey-145-w15",
+          "text": "BONE"
+        },
+        {
+          "id": "journey-145-w16",
+          "text": "YÜZÜCÜ GÖZLÜĞÜ"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "KULVAR, TRAMPLEN, BONE, YÜZÜCÜ GÖZLÜĞÜ: yüzme havuzunda."
+    }
+  ]
+}

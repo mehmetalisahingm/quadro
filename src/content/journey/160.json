@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-160",
+  "date": "2027-04-11",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-160-g1",
+      "title": "HAVA TAŞITLARI",
+      "words": [
+        {
+          "id": "journey-160-w1",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-160-w2",
+          "text": "HELİKOPTER"
+        },
+        {
+          "id": "journey-160-w3",
+          "text": "PLANÖR"
+        },
+        {
+          "id": "journey-160-w4",
+          "text": "ZEPLİN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "UÇAK, HELİKOPTER, PLANÖR, ZEPLİN: hava taşıtları."
+    },
+    {
+      "id": "journey-160-g2",
+      "title": "BANKADA İŞLEMLER",
+      "words": [
+        {
+          "id": "journey-160-w5",
+          "text": "HAVALE"
+        },
+        {
+          "id": "journey-160-w6",
+          "text": "EFT"
+        },
+        {
+          "id": "journey-160-w7",
+          "text": "VİRMAN"
+        },
+        {
+          "id": "journey-160-w8",
+          "text": "PARA ÇEKME"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HAVALE, EFT, VİRMAN, PARA ÇEKME: bankada işlemler."
+    },
+    {
+      "id": "journey-160-g3",
+      "title": "KAPALI ALAN OYUNLARI",
+      "words": [
+        {
+          "id": "journey-160-w9",
+          "text": "SATRANÇ"
+        },
+        {
+          "id": "journey-160-w10",
+          "text": "DAMA"
+        },
+        {
+          "id": "journey-160-w11",
+          "text": "TAVLA"
+        },
+        {
+          "id": "journey-160-w12",
+          "text": "DOMİNO"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SATRANÇ, DAMA, TAVLA, DOMİNO: kapalı alan oyunları."
+    },
+    {
+      "id": "journey-160-g4",
+      "title": "TERSTEN BAŞKA KELİME",
+      "words": [
+        {
+          "id": "journey-160-w13",
+          "text": "PAY"
+        },
+        {
+          "id": "journey-160-w14",
+          "text": "KAP"
+        },
+        {
+          "id": "journey-160-w15",
+          "text": "KOÇ"
+        },
+        {
+          "id": "journey-160-w16",
+          "text": "KES"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "Yap, pak, çok ve sek."
+    }
+  ]
+}

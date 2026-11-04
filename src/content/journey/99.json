@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-099",
+  "date": "2027-02-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-099-g1",
+      "title": "PAZARDA TARTARKEN",
+      "words": [
+        {
+          "id": "journey-099-w1",
+          "text": "TERAZİ"
+        },
+        {
+          "id": "journey-099-w2",
+          "text": "KEFE"
+        },
+        {
+          "id": "journey-099-w3",
+          "text": "AĞIRLIK"
+        },
+        {
+          "id": "journey-099-w4",
+          "text": "KANTAR"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "TERAZİ, KEFE, AĞIRLIK, KANTAR: pazarda tartarken."
+    },
+    {
+      "id": "journey-099-g2",
+      "title": "BAŞINA KARA GELİR",
+      "words": [
+        {
+          "id": "journey-099-w5",
+          "text": "DENİZ"
+        },
+        {
+          "id": "journey-099-w6",
+          "text": "KEDİ"
+        },
+        {
+          "id": "journey-099-w7",
+          "text": "BİBER"
+        },
+        {
+          "id": "journey-099-w8",
+          "text": "KUTU"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "DENİZ, KEDİ, BİBER, KUTU: başına kara gelir."
+    },
+    {
+      "id": "journey-099-g3",
+      "title": "SONUNA AĞZI GELİR",
+      "words": [
+        {
+          "id": "journey-099-w9",
+          "text": "ŞİŞE"
+        },
+        {
+          "id": "journey-099-w10",
+          "text": "MAĞARA"
+        },
+        {
+          "id": "journey-099-w11",
+          "text": "TÜFEK"
+        },
+        {
+          "id": "journey-099-w12",
+          "text": "TORBA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "ŞİŞE, MAĞARA, TÜFEK, TORBA: sonuna ağzı gelir."
+    },
+    {
+      "id": "journey-099-g4",
+      "title": "TRAFİKTE YOL GÖSTERENLER",
+      "words": [
+        {
+          "id": "journey-099-w13",
+          "text": "LEVHA"
+        },
+        {
+          "id": "journey-099-w14",
+          "text": "ŞERİT"
+        },
+        {
+          "id": "journey-099-w15",
+          "text": "OK"
+        },
+        {
+          "id": "journey-099-w16",
+          "text": "SİNYAL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "LEVHA, ŞERİT, OK, SİNYAL: trafikte yol gösterenler."
+    }
+  ]
+}

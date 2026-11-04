@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-104",
+  "date": "2027-02-14",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-104-g1",
+      "title": "SONUNA ÇİZGİSİ GELİR",
+      "words": [
+        {
+          "id": "journey-104-w1",
+          "text": "UFUK"
+        },
+        {
+          "id": "journey-104-w2",
+          "text": "EKVATOR"
+        },
+        {
+          "id": "journey-104-w3",
+          "text": "FİNİŞ"
+        },
+        {
+          "id": "journey-104-w4",
+          "text": "ALIN"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "UFUK, EKVATOR, FİNİŞ, ALIN: sonuna çizgisi gelir."
+    },
+    {
+      "id": "journey-104-g2",
+      "title": "YEMEK PİŞİRME YÖNTEMLERİ",
+      "words": [
+        {
+          "id": "journey-104-w5",
+          "text": "HAŞLAMA"
+        },
+        {
+          "id": "journey-104-w6",
+          "text": "KIZARTMA"
+        },
+        {
+          "id": "journey-104-w7",
+          "text": "BUĞULAMA"
+        },
+        {
+          "id": "journey-104-w8",
+          "text": "IZGARA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "HAŞLAMA, KIZARTMA, BUĞULAMA, IZGARA: yemek pişirme yöntemleri."
+    },
+    {
+      "id": "journey-104-g3",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-104-w9",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-104-w10",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-104-w11",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-104-w12",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    },
+    {
+      "id": "journey-104-g4",
+      "title": "PAZARDA TARTARKEN",
+      "words": [
+        {
+          "id": "journey-104-w13",
+          "text": "TERAZİ"
+        },
+        {
+          "id": "journey-104-w14",
+          "text": "KEFE"
+        },
+        {
+          "id": "journey-104-w15",
+          "text": "AĞIRLIK"
+        },
+        {
+          "id": "journey-104-w16",
+          "text": "KANTAR"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "TERAZİ, KEFE, AĞIRLIK, KANTAR: pazarda tartarken."
+    }
+  ]
+}

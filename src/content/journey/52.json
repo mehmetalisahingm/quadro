@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-052",
+  "date": "2026-12-24",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-052-g1",
+      "title": "SONUNA GÖZÜ GELİR",
+      "words": [
+        {
+          "id": "journey-052-w1",
+          "text": "İĞNE"
+        },
+        {
+          "id": "journey-052-w2",
+          "text": "BALIK"
+        },
+        {
+          "id": "journey-052-w3",
+          "text": "ÖKÜZ"
+        },
+        {
+          "id": "journey-052-w4",
+          "text": "KUŞ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "İĞNE, BALIK, ÖKÜZ, KUŞ: sonuna gözü gelir."
+    },
+    {
+      "id": "journey-052-g2",
+      "title": "MATBAADA",
+      "words": [
+        {
+          "id": "journey-052-w5",
+          "text": "PUNTO"
+        },
+        {
+          "id": "journey-052-w6",
+          "text": "FORMA"
+        },
+        {
+          "id": "journey-052-w7",
+          "text": "CİLT"
+        },
+        {
+          "id": "journey-052-w8",
+          "text": "BASKI"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PUNTO, FORMA, CİLT, BASKI: matbaada."
+    },
+    {
+      "id": "journey-052-g3",
+      "title": "YÜZME HAVUZUNDA",
+      "words": [
+        {
+          "id": "journey-052-w9",
+          "text": "KULVAR"
+        },
+        {
+          "id": "journey-052-w10",
+          "text": "TRAMPLEN"
+        },
+        {
+          "id": "journey-052-w11",
+          "text": "BONE"
+        },
+        {
+          "id": "journey-052-w12",
+          "text": "YÜZÜCÜ GÖZLÜĞÜ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KULVAR, TRAMPLEN, BONE, YÜZÜCÜ GÖZLÜĞÜ: yüzme havuzunda."
+    },
+    {
+      "id": "journey-052-g4",
+      "title": "SONUNA BAĞI GELİR",
+      "words": [
+        {
+          "id": "journey-052-w13",
+          "text": "GÖNÜL"
+        },
+        {
+          "id": "journey-052-w14",
+          "text": "AYAKKABI"
+        },
+        {
+          "id": "journey-052-w15",
+          "text": "AKRABALIK"
+        },
+        {
+          "id": "journey-052-w16",
+          "text": "HİDROJEN"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "GÖNÜL, AYAKKABI, AKRABALIK, HİDROJEN: sonuna bağı gelir."
+    }
+  ]
+}

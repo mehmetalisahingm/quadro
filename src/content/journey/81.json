@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-081",
+  "date": "2027-01-22",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-081-g1",
+      "title": "GEMİNİN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-081-w1",
+          "text": "GÜVERTE"
+        },
+        {
+          "id": "journey-081-w2",
+          "text": "KAMARA"
+        },
+        {
+          "id": "journey-081-w3",
+          "text": "DÜMEN"
+        },
+        {
+          "id": "journey-081-w4",
+          "text": "BACA"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "GÜVERTE, KAMARA, DÜMEN, BACA: geminin bölümleri."
+    },
+    {
+      "id": "journey-081-g2",
+      "title": "SONUNA KANADI GELİR",
+      "words": [
+        {
+          "id": "journey-081-w5",
+          "text": "UÇAK"
+        },
+        {
+          "id": "journey-081-w6",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-081-w7",
+          "text": "PARTİ"
+        },
+        {
+          "id": "journey-081-w8",
+          "text": "KELEBEK"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "UÇAK, KAPI, PARTİ, KELEBEK: sonuna kanadı gelir."
+    },
+    {
+      "id": "journey-081-g3",
+      "title": "SAHNE AYDINLATMASINDA",
+      "words": [
+        {
+          "id": "journey-081-w9",
+          "text": "SPOT"
+        },
+        {
+          "id": "journey-081-w10",
+          "text": "PROJEKTÖR"
+        },
+        {
+          "id": "journey-081-w11",
+          "text": "REFLEKTÖR"
+        },
+        {
+          "id": "journey-081-w12",
+          "text": "IŞIK MASASI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "SPOT, PROJEKTÖR, REFLEKTÖR, IŞIK MASASI: sahne aydınlatmasında."
+    },
+    {
+      "id": "journey-081-g4",
+      "title": "MAHKEMEDE",
+      "words": [
+        {
+          "id": "journey-081-w13",
+          "text": "HÂKİM"
+        },
+        {
+          "id": "journey-081-w14",
+          "text": "SAVCI"
+        },
+        {
+          "id": "journey-081-w15",
+          "text": "TANIK"
+        },
+        {
+          "id": "journey-081-w16",
+          "text": "SANIK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "HÂKİM, SAVCI, TANIK, SANIK: mahkemede."
+    }
+  ]
+}

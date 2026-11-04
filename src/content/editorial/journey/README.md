@@ -20,3 +20,5 @@ sınırı değildir. Sunucu tarafından doğrulanmış admin, önizleme için ad
 Kampanyanın sabit tarihleri yalnız kayıt kimliğidir; günlük yayın tarihi değildir.
 
 31–50. adımlarda önceki adımlardaki bağlantılar yeni tahtalar halinde yeniden bir araya getirilmiştir. Tahta kombinasyonları farklıdır; bağımsız insan kör çözümü henüz yapılmamıştır.
+
+51–200. adımlar, mevcut bağlantı gruplarının benzersiz tam tahtalar oluşturacak şekilde yeniden düzenlenmesiyle oluşturuldu. Aynı grup farklı tahtalarda görülebilir. Otomatik kontroller şemayı, tekrarları ve kör tahtaları doğrular; bağımsız insan kör çözümü yapılmamıştır.

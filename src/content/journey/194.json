@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-194",
+  "date": "2027-05-15",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-194-g1",
+      "title": "MÜZİKTE HIZ TERİMLERİ",
+      "words": [
+        {
+          "id": "journey-194-w1",
+          "text": "ADAGİO"
+        },
+        {
+          "id": "journey-194-w2",
+          "text": "ANDANTE"
+        },
+        {
+          "id": "journey-194-w3",
+          "text": "ALLEGRO"
+        },
+        {
+          "id": "journey-194-w4",
+          "text": "PRESTO"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "ADAGİO, ANDANTE, ALLEGRO, PRESTO: müzikte hız terimleri."
+    },
+    {
+      "id": "journey-194-g2",
+      "title": "YATAKTA BULUNANLAR",
+      "words": [
+        {
+          "id": "journey-194-w5",
+          "text": "YASTIK"
+        },
+        {
+          "id": "journey-194-w6",
+          "text": "YORGAN"
+        },
+        {
+          "id": "journey-194-w7",
+          "text": "ÇARŞAF"
+        },
+        {
+          "id": "journey-194-w8",
+          "text": "NEVRESİM"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YASTIK, YORGAN, ÇARŞAF, NEVRESİM: yatakta bulunanlar."
+    },
+    {
+      "id": "journey-194-g3",
+      "title": "FİLM ÇEKİMİNDE",
+      "words": [
+        {
+          "id": "journey-194-w9",
+          "text": "KLAKET"
+        },
+        {
+          "id": "journey-194-w10",
+          "text": "SENARYO"
+        },
+        {
+          "id": "journey-194-w11",
+          "text": "KURGU"
+        },
+        {
+          "id": "journey-194-w12",
+          "text": "DUBLAJ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KLAKET, SENARYO, KURGU, DUBLAJ: film çekiminde."
+    },
+    {
+      "id": "journey-194-g4",
+      "title": "AYAK GİYİMİ",
+      "words": [
+        {
+          "id": "journey-194-w13",
+          "text": "BOT"
+        },
+        {
+          "id": "journey-194-w14",
+          "text": "TERLİK"
+        },
+        {
+          "id": "journey-194-w15",
+          "text": "SPOR AYAKKABI"
+        },
+        {
+          "id": "journey-194-w16",
+          "text": "ÇİZME"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "BOT, TERLİK, SPOR AYAKKABI, ÇİZME: ayak giyimi."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-179",
+  "date": "2027-04-30",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-179-g1",
+      "title": "KÜREKLE İLERLEYEN ARAÇLAR",
+      "words": [
+        {
+          "id": "journey-179-w1",
+          "text": "KANO"
+        },
+        {
+          "id": "journey-179-w2",
+          "text": "KAYIK"
+        },
+        {
+          "id": "journey-179-w3",
+          "text": "GONDOL"
+        },
+        {
+          "id": "journey-179-w4",
+          "text": "RAFTİNG BOTU"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KANO, KAYIK, GONDOL, RAFTİNG BOTU: kürekle ilerleyen araçlar."
+    },
+    {
+      "id": "journey-179-g2",
+      "title": "GAZETEDE",
+      "words": [
+        {
+          "id": "journey-179-w5",
+          "text": "MANŞET"
+        },
+        {
+          "id": "journey-179-w6",
+          "text": "HABER"
+        },
+        {
+          "id": "journey-179-w7",
+          "text": "KÖŞE YAZISI"
+        },
+        {
+          "id": "journey-179-w8",
+          "text": "KARİKATÜR"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "MANŞET, HABER, KÖŞE YAZISI, KARİKATÜR: gazetede."
+    },
+    {
+      "id": "journey-179-g3",
+      "title": "SONUNA YUVASI GELİR",
+      "words": [
+        {
+          "id": "journey-179-w9",
+          "text": "KUŞ"
+        },
+        {
+          "id": "journey-179-w10",
+          "text": "AİLE"
+        },
+        {
+          "id": "journey-179-w11",
+          "text": "ARI"
+        },
+        {
+          "id": "journey-179-w12",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "KUŞ, AİLE, ARI, ÇOCUK: sonuna yuvası gelir."
+    },
+    {
+      "id": "journey-179-g4",
+      "title": "TRAFİKTE YOL GÖSTERENLER",
+      "words": [
+        {
+          "id": "journey-179-w13",
+          "text": "LEVHA"
+        },
+        {
+          "id": "journey-179-w14",
+          "text": "ŞERİT"
+        },
+        {
+          "id": "journey-179-w15",
+          "text": "OK"
+        },
+        {
+          "id": "journey-179-w16",
+          "text": "SİNYAL"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "LEVHA, ŞERİT, OK, SİNYAL: trafikte yol gösterenler."
+    }
+  ]
+}

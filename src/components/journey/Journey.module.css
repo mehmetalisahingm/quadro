@@ -85,3 +85,20 @@
 .atlasZone:nth-child(3) { background-position: 76% center; }
 .atlasZone:nth-child(4) { background-position: 15% center; }
 .atlasZone:nth-child(5) { background-position: 15% center; }
+.atlasZone { animation: journeyWorldGlow 11s ease-in-out infinite alternate; }
+@keyframes journeyWorldGlow { from { filter: brightness(.94); } to { filter: brightness(1.06); } }
+@media(prefers-reduced-motion:reduce) { .atlasZone { animation:none; } }
+.world { width:17%; }
+.startFlag { bottom:35px; }
+@media(max-width:600px) { .world { width:17%; }.world strong { font-size:12px; } }
+/* Each world gives its level tiles a material that belongs to the scene. */
+.node[data-world="5"][data-state="locked"] .medallion,.node[data-world="14"][data-state="locked"] .medallion,.node[data-world="19"][data-state="locked"] .medallion { background:linear-gradient(145deg,#f2e4cb,#c2a481); color:#4d392d; border-color:#faf1d5; }
+.node[data-world="6"][data-state="locked"] .medallion,.node[data-world="18"][data-state="locked"] .medallion { background:linear-gradient(145deg,#ecdfbd,#a3a982); color:#30483a; border-color:#f7e8c3; }
+.node[data-world="7"][data-state="locked"] .medallion,.node[data-world="17"][data-state="locked"] .medallion { background:linear-gradient(145deg,#d7f2f1bd,#688dbdcf); color:#102e47; border-radius:28% 42% 30% 42%; border-color:#e5ffff; }
+.node[data-world="8"][data-state="locked"] .medallion { background:linear-gradient(145deg,#b8ebdddc,#478e94e8); color:#153e45; border-radius:42%; border-color:#e5fff3; }
+.node[data-world="9"][data-state="locked"] .medallion,.node[data-world="12"][data-state="locked"] .medallion { background:linear-gradient(145deg,#e6d2a6,#a87f52); color:#2e2a26; border-radius:12px; border:2px solid #f5dcac; }
+.node[data-world="10"][data-state="locked"] .medallion,.node[data-world="19"][data-state="locked"] .medallion { background:radial-gradient(circle,#632b2b,#210f13); color:#fae4b8; border-color:#dcb66d; border-radius:50%; }
+.node[data-world="11"][data-state="locked"] .medallion,.node[data-world="15"][data-state="locked"] .medallion { background:linear-gradient(145deg,#d9b382,#916b4c); color:#39261b; border-radius:22px 22px 10px 10px; border-color:#efce9d; }
+.node[data-world="13"][data-state="locked"] .medallion { background:linear-gradient(135deg,#fff3d8 49%,#d9c59c 50%); color:#413c38; border-radius:5px; transform:rotate(3deg); }
+.node[data-world="16"][data-state="locked"] .medallion { background:radial-gradient(circle,#f6e8bd 60%,#a97f4e 62%,#473021 75%); color:#463126; border-radius:50%; border-color:#e4c389; }
+.node[data-world="14"][data-state="locked"] .medallion { background:radial-gradient(circle at 35% 25%,#f4fff8,#9edbd6bd 50%,#3d8b98db); color:#153e48; border-color:#ecfff8; border-radius:50%; }

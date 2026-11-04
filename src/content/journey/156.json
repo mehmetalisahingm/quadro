@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-156",
+  "date": "2027-04-07",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-156-g1",
+      "title": "AYAK GİYİMİ",
+      "words": [
+        {
+          "id": "journey-156-w1",
+          "text": "BOT"
+        },
+        {
+          "id": "journey-156-w2",
+          "text": "TERLİK"
+        },
+        {
+          "id": "journey-156-w3",
+          "text": "SPOR AYAKKABI"
+        },
+        {
+          "id": "journey-156-w4",
+          "text": "ÇİZME"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "BOT, TERLİK, SPOR AYAKKABI, ÇİZME: ayak giyimi."
+    },
+    {
+      "id": "journey-156-g2",
+      "title": "AYNI HECENİN TEKRARI",
+      "words": [
+        {
+          "id": "journey-156-w5",
+          "text": "BABA"
+        },
+        {
+          "id": "journey-156-w6",
+          "text": "MAMA"
+        },
+        {
+          "id": "journey-156-w7",
+          "text": "CİCİ"
+        },
+        {
+          "id": "journey-156-w8",
+          "text": "LALA"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "Ba-ba, ma-ma, ci-ci, la-la. Lala tarihsel bir eğitici unvanıdır."
+    },
+    {
+      "id": "journey-156-g3",
+      "title": "SONUNA BAŞI GELİR",
+      "words": [
+        {
+          "id": "journey-156-w9",
+          "text": "YIL"
+        },
+        {
+          "id": "journey-156-w10",
+          "text": "SATIR"
+        },
+        {
+          "id": "journey-156-w11",
+          "text": "KÖŞE"
+        },
+        {
+          "id": "journey-156-w12",
+          "text": "USTA"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "YIL, SATIR, KÖŞE, USTA: sonuna başı gelir."
+    },
+    {
+      "id": "journey-156-g4",
+      "title": "TAKIM ELBİSEYLE",
+      "words": [
+        {
+          "id": "journey-156-w13",
+          "text": "CEKET"
+        },
+        {
+          "id": "journey-156-w14",
+          "text": "PANTOLON"
+        },
+        {
+          "id": "journey-156-w15",
+          "text": "KRAVAT"
+        },
+        {
+          "id": "journey-156-w16",
+          "text": "YELEK"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "CEKET, PANTOLON, KRAVAT, YELEK: takım elbiseyle."
+    }
+  ]
+}

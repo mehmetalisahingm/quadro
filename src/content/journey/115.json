@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-115",
+  "date": "2027-02-25",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-115-g1",
+      "title": "SONUNA YUVASI GELİR",
+      "words": [
+        {
+          "id": "journey-115-w1",
+          "text": "KUŞ"
+        },
+        {
+          "id": "journey-115-w2",
+          "text": "AİLE"
+        },
+        {
+          "id": "journey-115-w3",
+          "text": "ARI"
+        },
+        {
+          "id": "journey-115-w4",
+          "text": "ÇOCUK"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KUŞ, AİLE, ARI, ÇOCUK: sonuna yuvası gelir."
+    },
+    {
+      "id": "journey-115-g2",
+      "title": "KAHVALTILIKLAR",
+      "words": [
+        {
+          "id": "journey-115-w5",
+          "text": "PEYNİR"
+        },
+        {
+          "id": "journey-115-w6",
+          "text": "ZEYTİN"
+        },
+        {
+          "id": "journey-115-w7",
+          "text": "REÇEL"
+        },
+        {
+          "id": "journey-115-w8",
+          "text": "BAL"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "PEYNİR, ZEYTİN, REÇEL, BAL: kahvaltılıklar."
+    },
+    {
+      "id": "journey-115-g3",
+      "title": "MEVSİMLER",
+      "words": [
+        {
+          "id": "journey-115-w9",
+          "text": "İLKBAHAR"
+        },
+        {
+          "id": "journey-115-w10",
+          "text": "YAZ"
+        },
+        {
+          "id": "journey-115-w11",
+          "text": "SONBAHAR"
+        },
+        {
+          "id": "journey-115-w12",
+          "text": "KIŞ"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "İLKBAHAR, YAZ, SONBAHAR, KIŞ: mevsimler."
+    },
+    {
+      "id": "journey-115-g4",
+      "title": "KÂĞIT KATLAMA BİÇİMLERİ",
+      "words": [
+        {
+          "id": "journey-115-w13",
+          "text": "AKORDEON"
+        },
+        {
+          "id": "journey-115-w14",
+          "text": "ZİKZAK"
+        },
+        {
+          "id": "journey-115-w15",
+          "text": "KAPI"
+        },
+        {
+          "id": "journey-115-w16",
+          "text": "PENCERE"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "AKORDEON, ZİKZAK, KAPI, PENCERE: kâğıt katlama biçimleri."
+    }
+  ]
+}

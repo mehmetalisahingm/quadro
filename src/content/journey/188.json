@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "journey-188",
+  "date": "2027-05-09",
+  "language": "tr",
+  "status": "published",
+  "author": "Codex",
+  "reviewer": "Codex - oz denetim",
+  "groups": [
+    {
+      "id": "journey-188-g1",
+      "title": "YÜZME HAVUZUNDA",
+      "words": [
+        {
+          "id": "journey-188-w1",
+          "text": "KULVAR"
+        },
+        {
+          "id": "journey-188-w2",
+          "text": "TRAMPLEN"
+        },
+        {
+          "id": "journey-188-w3",
+          "text": "BONE"
+        },
+        {
+          "id": "journey-188-w4",
+          "text": "YÜZÜCÜ GÖZLÜĞÜ"
+        }
+      ],
+      "difficulty": 1,
+      "explanation": "KULVAR, TRAMPLEN, BONE, YÜZÜCÜ GÖZLÜĞÜ: yüzme havuzunda."
+    },
+    {
+      "id": "journey-188-g2",
+      "title": "GÖK CİSİMLERİ",
+      "words": [
+        {
+          "id": "journey-188-w5",
+          "text": "YILDIZ"
+        },
+        {
+          "id": "journey-188-w6",
+          "text": "GEZEGEN"
+        },
+        {
+          "id": "journey-188-w7",
+          "text": "KUYRUKLU YILDIZ"
+        },
+        {
+          "id": "journey-188-w8",
+          "text": "ASTEROİT"
+        }
+      ],
+      "difficulty": 2,
+      "explanation": "YILDIZ, GEZEGEN, KUYRUKLU YILDIZ, ASTEROİT: gök cisimleri."
+    },
+    {
+      "id": "journey-188-g3",
+      "title": "KAYIT STÜDYOSUNDA",
+      "words": [
+        {
+          "id": "journey-188-w9",
+          "text": "MİKROFON"
+        },
+        {
+          "id": "journey-188-w10",
+          "text": "KULAKLIK"
+        },
+        {
+          "id": "journey-188-w11",
+          "text": "MİKSER"
+        },
+        {
+          "id": "journey-188-w12",
+          "text": "SES KARTI"
+        }
+      ],
+      "difficulty": 3,
+      "explanation": "MİKROFON, KULAKLIK, MİKSER, SES KARTI: kayıt stüdyosunda."
+    },
+    {
+      "id": "journey-188-g4",
+      "title": "BİR KİTABIN BÖLÜMLERİ",
+      "words": [
+        {
+          "id": "journey-188-w13",
+          "text": "ÖNSÖZ"
+        },
+        {
+          "id": "journey-188-w14",
+          "text": "İÇİNDEKİLER"
+        },
+        {
+          "id": "journey-188-w15",
+          "text": "DİZİN"
+        },
+        {
+          "id": "journey-188-w16",
+          "text": "KAYNAKÇA"
+        }
+      ],
+      "difficulty": 4,
+      "explanation": "ÖNSÖZ, İÇİNDEKİLER, DİZİN, KAYNAKÇA: bir kitabın bölümleri."
+    }
+  ]
+}
