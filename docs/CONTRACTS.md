@@ -18,6 +18,7 @@ Bu belge motor, örnek adaptör ve arayüz arasındaki ortak tiplerin ne işe ya
 | `WordId` | Kelimenin kararlı kimliği; seçim metinle değil bununla yapılır | İçerik | Motor, arayüz, kayıt |
 | `GameStatus` | `playing`, `won`, `lost` | Motor | Arayüz, kayıt, seri |
 | `PuzzleWord`, `PuzzleGroup`, `Puzzle` | Kanonik bulmaca verisi | İçerik ve günlük yayın (Q18, Q19) | Motor, sonuç ekranı |
+| `PuzzleWordImage` | Görsel kartın isteğe bağlı sunum verisi (`src`, `alt`, `width`, `height`); motor okumaz (#152) | Resimli içerik | Arayüz |
 | `Attempt` | Tahmin geçmişinin bir kaydı | Motor | Paylaşım (Q15), istatistik |
 | `GameSnapshot` | Oyunun kalıcı, geri yüklenebilir durumu | Motor | Arayüz, kayıt (Q20) |
 | `SubmitOutcome` | Tek gönderimin geçici sonucu | Motor | Arayüz mesajı ve animasyonu |

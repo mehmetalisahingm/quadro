@@ -83,6 +83,18 @@ Mehmet'in talebiyle Codex, Utku'nun Q27 paketindeki `q-024`…`q-032` adayların
 
 Son dokuz adayın dosyaları bu dalda hazırdır. İlk altı aday `main` üzerinde; kalan dokuzun teslimi ve doğrulama kanıtları [Q27 tamamlayıcı paket](qa/Q27_REMAINING_NINE.md) kaydındadır. Birleşme ve insan yayın kararı henüz tamamlanmış sayılmaz.
 
+## Resimli Quadro (#152)
+
+Resimli tahtalar `picture-001`…`picture-003` kimliklerini kullanır; `q-` numarası ve yayın günü almaz, fiil kalıbı kullanmaz. Yiyecek, coğrafya ve hayvan/bitki temalarından kaçınıldı.
+
+| Tahta | Bağlantılar |
+| --- | --- |
+| `picture-001` | Çalgılar, taşıtlar, spor malzemeleri, oyuncaklar |
+| `picture-002` | Zamanı gösterenler, kesiciler, ışık verenler, elektrik sağlayanlar |
+| `picture-003` | Tekerlekli eşyalar, tuşlu aletler, dişleri olanlar, adı KUM ile başlayanlar |
+
+Çakışma taraması ve alternatif çözüm kontrolü [editoryal kayıtta](../src/content/editorial/pictures/README.md).
+
 ## Kullanım kuralı
 
 

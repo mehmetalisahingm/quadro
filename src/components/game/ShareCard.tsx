@@ -8,6 +8,8 @@ import {
   type Puzzle,
   type WordId,
 } from "@/features/game/contracts";
+import { GAME_MODES, gameModeOf } from "@/features/game/modes";
+import { pictureBoardNumber } from "@/features/game/pictures";
 import { trackBrowserEvent } from "@/lib/analytics";
 
 import { formatDuration } from "./presentation";
@@ -43,7 +45,13 @@ export function buildShareText(puzzle: Puzzle, snapshot: GameSnapshot): string {
   // Süre spoiler değildir: kelime, kategori ya da cevap bilgisi taşımaz.
   const duration = formatDuration(snapshot.activeSeconds);
 
-  return [`Quadro ${puzzle.date} ${score} · ${duration}`, ...rows].join("\n");
+  // Tahta numarası cevap taşımaz; resimli tahtaların yayın günü olmadığından tarih yazılmaz.
+  const pictureBoard = pictureBoardNumber(puzzle.id);
+  const heading = pictureBoard === null
+    ? `Quadro ${puzzle.date}`
+    : `${GAME_MODES.picture.label} · Tahta ${pictureBoard}`;
+
+  return [`${heading} ${score} · ${duration}`, ...rows].join("\n");
 }
 
 export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
@@ -98,7 +106,9 @@ export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
     <section className="q-share-card" aria-labelledby="share-title">
       <div>
         <h3 id="share-title" className="q-share-title">Sonucunu paylaş</h3>
-        <p className="q-share-description">Kelime ve kategori cevapları paylaşım metnine girmez.</p>
+        <p className="q-share-description">
+          {gameModeOf(puzzle.id) === "picture" ? "Görsel" : "Kelime"} ve kategori cevapları paylaşım metnine girmez.
+        </p>
       </div>
 
       <pre className="q-share-preview" aria-label="Spoilersız paylaşım önizlemesi">

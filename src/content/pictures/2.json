@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "id": "picture-002",
+  "date": "2026-11-02",
+  "language": "tr",
+  "status": "published",
+  "author": "Claude",
+  "reviewer": "Claude - öz denetim",
+  "groups": [
+    {
+      "id": "picture-002-g1",
+      "title": "ZAMANI GÖSTERENLER",
+      "difficulty": 1,
+      "explanation": "Hepsine bakarak saati, süreyi ya da günü öğrenirsin.",
+      "words": [
+        {
+          "id": "picture-002-w1",
+          "text": "KOL SAATİ",
+          "image": {
+            "src": "/images/pictures/kol-saati.svg",
+            "alt": "Kayışlı kol saati",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w2",
+          "text": "ÇALAR SAAT",
+          "image": {
+            "src": "/images/pictures/calar-saat.svg",
+            "alt": "Kırmızı çanlı saat",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w3",
+          "text": "TAKVİM",
+          "image": {
+            "src": "/images/pictures/takvim.svg",
+            "alt": "Duvar takvimi",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w4",
+          "text": "KRONOMETRE",
+          "image": {
+            "src": "/images/pictures/kronometre.svg",
+            "alt": "Elde tutulan kronometre",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-002-g2",
+      "title": "KESİCİLER",
+      "difficulty": 2,
+      "explanation": "Hepsinin keskin bir ağzı vardır.",
+      "words": [
+        {
+          "id": "picture-002-w5",
+          "text": "BIÇAK",
+          "image": {
+            "src": "/images/pictures/bicak.svg",
+            "alt": "Ahşap saplı bıçak",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w6",
+          "text": "BALTA",
+          "image": {
+            "src": "/images/pictures/balta.svg",
+            "alt": "Uzun saplı balta",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w7",
+          "text": "JİLET",
+          "image": {
+            "src": "/images/pictures/jilet.svg",
+            "alt": "İnce metal jilet",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w8",
+          "text": "KILIÇ",
+          "image": {
+            "src": "/images/pictures/kilic.svg",
+            "alt": "Altın kabzalı kılıç",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-002-g3",
+      "title": "IŞIK VERENLER",
+      "difficulty": 3,
+      "explanation": "Hepsi karanlığı aydınlatır.",
+      "words": [
+        {
+          "id": "picture-002-w9",
+          "text": "AMPUL",
+          "image": {
+            "src": "/images/pictures/ampul.svg",
+            "alt": "Vidalı cam ampul",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w10",
+          "text": "EL FENERİ",
+          "image": {
+            "src": "/images/pictures/el-feneri.svg",
+            "alt": "Yanan el feneri",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w11",
+          "text": "GAZ LAMBASI",
+          "image": {
+            "src": "/images/pictures/gaz-lambasi.svg",
+            "alt": "Camlı gaz lambası",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w12",
+          "text": "MEŞALE",
+          "image": {
+            "src": "/images/pictures/mesale.svg",
+            "alt": "Alevli meşale",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "picture-002-g4",
+      "title": "ELEKTRİK SAĞLAYANLAR",
+      "difficulty": 4,
+      "explanation": "Hepsi bir cihaza elektrik verir; ampul gibi elektrik harcamaz.",
+      "words": [
+        {
+          "id": "picture-002-w13",
+          "text": "PİL",
+          "image": {
+            "src": "/images/pictures/pil.svg",
+            "alt": "Silindir pil",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w14",
+          "text": "AKÜ",
+          "image": {
+            "src": "/images/pictures/aku.svg",
+            "alt": "İki kutuplu araba aküsü",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w15",
+          "text": "PRİZ",
+          "image": {
+            "src": "/images/pictures/priz.svg",
+            "alt": "Duvar prizi",
+            "width": 200,
+            "height": 200
+          }
+        },
+        {
+          "id": "picture-002-w16",
+          "text": "GÜNEŞ PANELİ",
+          "image": {
+            "src": "/images/pictures/gunes-paneli.svg",
+            "alt": "Güneşin altında duran panel",
+            "width": 200,
+            "height": 200
+          }
+        }
+      ]
+    }
+  ]
+}

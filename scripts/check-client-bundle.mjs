@@ -113,6 +113,15 @@ if (existsSync(journeyDirectory)) for (const filename of readdirSync(journeyDire
     izler: [puzzle.id, ...puzzle.groups.flatMap(group => [group.id, group.explanation, ...group.words.map(word => word.id)])] });
 }
 
+// Resimli tahtalar yalnız istenen sayfaya, istek anında iner; açıklamalar ve görsel
+// yolları derlenmiş pakette görünürse tahta cevapları pakete girmiş demektir.
+const pictureDirectory = join(kok, "src", "content", "pictures");
+if (existsSync(pictureDirectory)) for (const filename of readdirSync(pictureDirectory).filter(name => name.endsWith(".json"))) {
+  const puzzle = JSON.parse(readFileSync(join(pictureDirectory, filename), "utf8"));
+  gunler.push({ dosya: `pictures/${filename}`, gun: puzzle.date,
+    izler: [puzzle.id, ...puzzle.groups.flatMap(group => [group.id, group.title, group.explanation, ...group.words.flatMap(word => [word.id, word.image.src, word.image.alt])])] });
+}
+
 if (gunler.length === 0) {
   console.error(`Denetlenecek içerik bulunamadı: ${bulmacaDizini}`);
   process.exit(1);

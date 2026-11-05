@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { GameSnapshot, Puzzle } from "@/features/game/contracts";
+import { gameModeOf } from "@/features/game/modes";
 
+import { PictureStrip } from "./PictureStrip";
 import { getResultStats } from "./presentation";
 import { ShareCard } from "./ShareCard";
 
@@ -14,13 +16,17 @@ export function GameResult({ puzzle, snapshot }: GameResultProps) {
 
   const won = snapshot.status === "won";
   const stats = getResultStats(snapshot);
+  const isPicture = gameModeOf(puzzle.id) === "picture";
 
   return (
     <section className="q-result" aria-labelledby="game-result-title">
       <div className="q-result-heading">
-        <span className="q-result-eyebrow">{won ? "TAMAMLANDI" : "OYUN BİTTİ"}</span>
+        <span className="q-result-eyebrow">
+          {isPicture ? "RESİMLİ QUADRO · " : ""}
+          {won ? "TAMAMLANDI" : "OYUN BİTTİ"}
+        </span>
         <h2 id="game-result-title" className="q-result-title" tabIndex={-1}>
-          {won ? "Dört bağı da buldun." : "Bugünlük bu kadar."}
+          {won ? "Dört bağı da buldun." : isPicture ? "Bu tahta burada bitti." : "Bugünlük bu kadar."}
         </h2>
         <p className="q-result-copy">
           {won
@@ -57,6 +63,7 @@ export function GameResult({ puzzle, snapshot }: GameResultProps) {
                 <strong>{group.title}</strong>
                 <span>{found ? "Bulundu" : "Cevap"}</span>
               </div>
+              {group.words[0].image ? <PictureStrip words={group.words} /> : null}
               <p className="q-result-group-words">
                 {group.words.map((word) => word.text).join(" · ")}
               </p>

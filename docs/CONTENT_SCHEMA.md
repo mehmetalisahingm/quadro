@@ -110,6 +110,21 @@ gruba veya kelimeye ait sorunlarda `groupIndex` ile `wordIndex` de doldurulur.
 | `blind-reveals-answers` | error | `groups`, `difficulty`, `title`, `explanation`, `status` alanları bulunamaz. Bilinmeyen alanlar uyarı üretir. |
 | `blind-order` | error | Sıra karıştırılmış olmalı; kanonik sırayla birebir aynı olamaz. |
 
+### Resimli Quadro tahtası — `src/content/pictures/<n>.json`
+
+Günlük dosya şemasına ek olarak her kartta `image: { src, alt, width, height }` bulunur.
+`validatePictureBoard` denetler; görsel dosyalarının diskte ve kaynak kaydında
+(`src/content/editorial/pictures/assets.json`) bulunmasını `picturePuzzle.test.ts` doğrular.
+
+| Kod | Ağırlık | Kural |
+| --- | --- | --- |
+| `picture-id` | error | Kimlik `picture-NNN` biçiminde olmalı. |
+| `picture-image` | error | Her kartta `image` zorunlu. |
+| `picture-image-src` | error | Yol `/images/pictures/` altında yerel bir dosya olmalı, grup kimliği taşımamalı. |
+| `picture-image-alt` | error | Açıklama boş olamaz, grubun başlığını içeremez. |
+| `picture-image-size` | error | Görsel kare; `width` ve `height` pozitif, eşit tam sayı. |
+| `picture-image-duplicate` | error | Bir tahtada aynı görsel iki kez kullanılamaz. |
+
 ## Doğrulayıcının denetlemediği şey
 
 **İkinci tam gruplama (alternatif çözüm) makine ile denetlenmez.** 16 kelimeyi eşit

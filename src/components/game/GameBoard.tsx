@@ -43,7 +43,10 @@ import { gameOpeningFor, isStoryOpening } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
 import { trackIdentity } from "@/features/game/tracks";
 import { trackStorage } from "@/lib/persistence/trackStorage";
+import { GAME_MODES, gameModeOf } from "@/features/game/modes";
+import { pictureStorage } from "@/lib/persistence/pictureProgress";
 import { AdminGameNavigation } from "./AdminGameNavigation";
+import { PictureTile } from "./PictureTile";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
 
@@ -71,7 +74,14 @@ function prefersReducedMotion(): boolean {
 
 export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRules, playIntro = true }: GameBoardProps = {}) {
   const track = trackIdentity((dailyPuzzle ?? standardPuzzle).id);
-  const chapterStorage = useMemo(() => dailyPuzzle && journeyStep(dailyPuzzle.id) ? journeyStorage(dailyPuzzle.id) : dailyPuzzle && trackIdentity(dailyPuzzle.id) ? trackStorage(dailyPuzzle.id) : undefined, [dailyPuzzle]);
+  const gameMode = gameModeOf((dailyPuzzle ?? standardPuzzle).id);
+  const isPictureMode = gameMode === "picture";
+  const cardNoun = GAME_MODES[gameMode].cardNoun;
+  const chapterStorage = useMemo(() => {
+    if (!dailyPuzzle) return undefined;
+    if (gameModeOf(dailyPuzzle.id) === "picture") return pictureStorage(dailyPuzzle.id, dailyPuzzle.revision);
+    return journeyStep(dailyPuzzle.id) ? journeyStorage(dailyPuzzle.id) : trackIdentity(dailyPuzzle.id) ? trackStorage(dailyPuzzle.id) : undefined;
+  }, [dailyPuzzle]);
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
@@ -279,7 +289,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       ) : null}
 
       <RecoveryNotice restore={restore} />
-      {isAdmin ? <AdminGameNavigation key={puzzle.id} currentDay={puzzle.date} trackDifficulty={track?.difficulty} journeyLevel={journeyStep(puzzle.id) ?? undefined} /> : null}
+      {isAdmin && !isPictureMode ? <AdminGameNavigation key={puzzle.id} currentDay={puzzle.date} trackDifficulty={track?.difficulty} journeyLevel={journeyStep(puzzle.id) ?? undefined} /> : null}
       <div className={difficultyStyles.toolbar}>
         <span className={difficultyStyles.badge} data-difficulty={difficulty}>{mode.label} mod</span>
         {onOpenRules ? (
@@ -291,7 +301,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
       <div className="q-game-intro">
         <h1 id="game-board-title" className="q-game-title" tabIndex={-1}>Gizli bağları bul</h1>
         <p id="game-board-instructions" className="q-game-description">
-          Birbiriyle bağlantılı dört kelimeyi seç. Dört doğru grup bulduğunda oyun tamamlanır.
+          Birbiriyle bağlantılı dört {cardNoun} seç. Dört doğru grup bulduğunda oyun tamamlanır.
         </p>
         {isAdmin ? <p className="q-game-description"><strong>Admin modu · sınırsız hata hakkı</strong></p> : null}
         {isPlaying ? <SoundPreference enabled={sounds.enabled} onChange={sounds.setEnabledByUser} /> : null}
@@ -301,7 +311,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
         <>
           <div className="q-game-status-row">
             <span>
-              {isPlaying ? "Dört kelime seç" : snapshot.status === "won" ? "Son grup bulundu" : "Son tahmin işlendi"}
+              {isPlaying ? `Dört ${cardNoun} seç` : snapshot.status === "won" ? "Son grup bulundu" : "Son tahmin işlendi"}
             </span>
             <span className="q-game-selection-count" aria-live="polite" aria-atomic="true">
               {isPlaying ? `${snapshot.selectedWordIds.length}/${GAME_CONSTANTS.groupSize} seçili` : "Sonuç hazırlanıyor"}
@@ -326,7 +336,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
           {snapshot.remainingWordOrder.length > 0 ? (
             <div
               className={`q-game-board${playIntro && cinematicBoardReady ? ` ${motionStyles.boardCinematicReveal}` : ""}`}
-              aria-label={`${snapshot.remainingWordOrder.length} çözülmemiş kelimelik oyun tahtası`}
+              aria-label={`${snapshot.remainingWordOrder.length} çözülmemiş ${cardNoun === "kelime" ? "kelimelik" : "görselli"} oyun tahtası`}
               aria-describedby="game-board-instructions"
               data-cinematic-ready={cinematicBoardReady ? "true" : undefined}
             >
@@ -334,6 +344,19 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
                 const word = wordById.get(wordId);
                 if (!word) return null;
                 const animation = animatedAttempt?.wordIds.includes(wordId) ? animatedAttempt.verdict : null;
+                if (word.image) {
+                  return (
+                    <PictureTile
+                      key={wordId}
+                      id={wordId}
+                      image={word.image}
+                      selected={snapshot.selectedWordIds.includes(wordId)}
+                      disabled={isTransitioning || !isPlaying || !cinematicDone}
+                      animation={animation}
+                      onToggle={toggleWord}
+                    />
+                  );
+                }
                 return (
                   <WordTile
                     key={wordId}
@@ -356,7 +379,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
             aria-live="polite"
             aria-atomic="true"
           >
-            {feedbackMessage(feedback)}
+            {feedbackMessage(feedback, cardNoun)}
             {snapshot.status !== "lost" && (feedback?.verdict === "wrong" || feedback?.verdict === "one-away") && (
               <FootballReaction key={snapshot.attempts.length} variant={snapshot.attempts.length % 2 === 0 ? "whistle" : "flag"} />
             )}
