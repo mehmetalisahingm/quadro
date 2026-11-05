@@ -84,6 +84,32 @@ test("yavaş ve başarısız görsel: açıklama gösterilir, yeniden deneme ça
   await expect(ilk).toHaveAttribute("aria-pressed", "true");
 });
 
+test("yavaş görsel: yüklenirken kart seçilir, taşma olmaz, seçim yüklemeden sonra korunur", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  let beklet = true;
+  const bekleyenler: (() => void)[] = [];
+  await page.route("**/images/pictures/*.svg*", async (route) => {
+    if (beklet) await new Promise<void>((serbest) => bekleyenler.push(serbest));
+    await route.continue();
+  });
+  await page.goto("/pictures/board?board=1", { waitUntil: "commit" });
+
+  await expect(tahta(page).getByRole("button")).toHaveCount(16);
+  await expect(tahta(page).locator('[data-image-status="loading"]')).toHaveCount(16);
+  await tasmaYok(page);
+  await kanit(page, "yavas-yukleme");
+
+  const ilk = tahta(page).locator(".q-picture-tile").first();
+  await ilk.click();
+  await expect(ilk).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByText("4 hata hakkı kaldı")).toBeAttached();
+
+  beklet = false;
+  bekleyenler.forEach((serbest) => serbest());
+  await expect(tahta(page).locator('[data-image-status="loaded"]')).toHaveCount(16);
+  await expect(ilk).toHaveAttribute("aria-pressed", "true");
+});
+
 test("tahta tamamlanır; sonuç, paylaşım ve istatistik modu söyler", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   const icerik = JSON.parse(readFileSync("src/content/pictures/1.json", "utf8")) as {

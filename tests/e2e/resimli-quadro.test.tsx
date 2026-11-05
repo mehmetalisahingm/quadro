@@ -4,9 +4,11 @@ import { describe, expect, it } from "vitest";
 
 import { buildShareText } from "@/components/game/ShareCard";
 import { PictureLobby } from "@/components/pictures/PictureLobby";
+import { RiskGame } from "@/components/game/RiskGame";
 import { PictureStage } from "@/components/pictures/PictureStage";
 import { StatsExperience } from "@/components/stats/StatsExperience";
 import type { Puzzle } from "@/features/game/contracts";
+import { standardPuzzle } from "@/features/game/fixtures/puzzles";
 import { createGameStore } from "@/features/game/state/gameStore";
 import { loadPicturePuzzle } from "@/lib/daily/picturePuzzle";
 import { pictureStorage, readPictureProgress } from "@/lib/persistence/pictureProgress";
@@ -189,6 +191,27 @@ describe("mod ayrımı", () => {
     const panel = await screen.findByRole("region", { name: "Resimli Quadro" });
     expect(panel.textContent).toContain("1/3");
     expect(panel.textContent).toContain("yalnız günlük oyuna aittir");
+  });
+
+  it("Risk modu ile Resimli mod birbirinin kaydını değiştirmez", async () => {
+    const riskKey = `quadro:risk:v1:${standardPuzzle.date}:${standardPuzzle.id}:${standardPuzzle.revision}`;
+    render(<RiskGame puzzle={standardPuzzle} />);
+    finishTransition();
+    await createUser().click(screen.getByRole("button", { name: standardPuzzle.groups[0].words[0].text }));
+    const riskBefore = window.localStorage.getItem(riskKey);
+    expect(riskBefore).toContain(standardPuzzle.groups[0].words[0].id);
+    cleanup();
+
+    win((await loadPicturePuzzle(1))!);
+    expect(window.localStorage.getItem(riskKey)).toBe(riskBefore);
+
+    const pictureBefore = JSON.stringify(readPictureProgress());
+    render(<RiskGame puzzle={standardPuzzle} />);
+    finishTransition();
+    await createUser().click(screen.getByRole("button", { name: standardPuzzle.groups[0].words[1].text }));
+    expect(window.localStorage.getItem(riskKey)).not.toBe(riskBefore);
+    expect(JSON.stringify(readPictureProgress())).toBe(pictureBefore);
+    expect(pictureBefore).toContain('"status":"won"');
   });
 
   it("tahtalar birbirinin kaydına ve başka revizyona karışmaz", async () => {
