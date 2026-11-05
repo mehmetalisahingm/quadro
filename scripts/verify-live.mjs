@@ -25,6 +25,11 @@ await read("/animations");
 const journey = await (await read("/journey")).text();
 if (!journey.includes("200 adımlık keşif haritası")) throw new Error("Journey map is incomplete");
 await read("/journey/step?level=1");
+const pictures = await (await read("/pictures")).text();
+if (!pictures.includes("Resimli Quadro")) throw new Error("Picture mode is incomplete");
+await read("/pictures/board?board=1");
+await read("/images/pictures/gitar.svg");
+await read("/play?mode=risk");
 const login = await (await read("/login")).text();
 const mailButton = [...login.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/g)]
   .find(match => match[2].includes("giriş bağlantısı gönder"));
