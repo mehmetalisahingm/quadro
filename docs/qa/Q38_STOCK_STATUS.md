@@ -23,7 +23,7 @@ Geçerli `published` dosya olmadığı için günlük oyun `daily-reserve.json` 
 
 ## Karar: takvim taşındı
 
-Mehmet [#41'de](https://github.com/mehmetalisahingm/quadro/issues/41) resmî yayın gününü **11 Kasım 2026** olarak belirledi ve tarih kaydırmayı onayladı: `q-001` 2026-11-11, her `q-N` bir sonraki gün. Taşıma ayrı PR'da (`codex/q38-takvim-tasima`); kimlikler, çözümler ve `draft` durumları korunuyor.
+Mehmet [#41'de](https://github.com/mehmetalisahingm/quadro/issues/41) resmî yayın gününü **11 Kasım 2026** olarak belirledi ve tarih kaydırmayı onayladı: `q-001` 2026-11-11, her `q-N` bir sonraki gün. Taşıma #163 PR'ında; kimlikler, çözümler ve `draft` durumları korunuyor.
 
 Taşıma merge edildikten sonra aynı araçla ölçüm:
 
@@ -40,7 +40,7 @@ Kalan iş yalnız onay: en az ilk 14 günün yazar dışından gözden geçirili
 
 - [x] İlk yayın günü: 11 Kasım 2026 (#41, hedef)
 - [x] Takvim kararı: tarih kaydırma (#41)
-- [ ] Takvim taşıma PR'ının merge edilmesi
+- [ ] Takvim taşıma PR'ının (#163) merge edilmesi
 - [ ] Her gün için yazar dışından gözden geçirme ve `published` durumu
 - [ ] `npm run release:stock -- --start <gün> --strict` başarılı
 - [ ] `CONTENT_OPERATIONS.md` içindeki takvim ve sorumluluk tablosu dolu
