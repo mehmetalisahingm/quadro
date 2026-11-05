@@ -2,12 +2,40 @@
 
 Bu kayıt Q33 için laboratuvar/CI kanıtını gerçek cihaz gözleminden ayırır. Gerçek cihaz sonucu burada uydurulmaz; Q33 ancak hedef cihaz gözlemi de eklendiğinde tamamen kapanır.
 
+## Kasım 2026 yeniden ölçüm
+
+Eylül ölçümünden sonra Keşif Yolu, Resimli Quadro, Risk modları ve açılış görselleri eklendi. Bu bölüm aşağıdaki eski sayıların yerine geçer; eski bölümler kayıt için duruyor. Ölçüm yerel üretim derlemesinde yapıldı, tek koşudur ve **son kullanıcı cihaz performansı değildir.**
+
+Paket boyutu (`npm run build`, sonra `npm run report:bundle`, commit `af6a5f0`):
+
+| Varlık | Dosya | Ham | Gzip |
+| --- | ---: | ---: | ---: |
+| Statik JS | 28 | 882,1 KB | 283,6 KB |
+| Statik CSS | 6 | 149,8 KB | 35,5 KB |
+
+Sayfa ağırlığı (Windows, Chromium, localhost, soğuk önbellek, yüklemeden sonra 2,5 sn bekleme, bant kısıtı yok):
+
+| Sayfa | İstek | Toplam | Script | Görsel | FCP |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `/` | 33 | 229 KB | 174 KB | 1 KB | 1756 ms (ilk istek, sunucu soğuk) |
+| `/play` | 21 | 247 KB | 202 KB | 0 KB | 348 ms |
+| `/pictures/board` | 38 | 256 KB | 197 KB | 14 KB | 252 ms |
+| `/stats` | 18 | 196 KB | 153 KB | 0 KB | 196 ms |
+| **`/journey`** | 39 | **7121 KB** | 156 KB | **6913 KB** | 308 ms |
+
+### Bulgular
+
+1. **Açık: `/journey` ilk açılışta yaklaşık 7 MB görsel indiriyor.** `public/images/journey` toplam 8,5 MB ve sayfa bu görsellerin çoğunu tek açılışta yüklüyor. Günlük oyunu bekletmez, ama mobil veride Keşif Yolu için ciddi bir maliyettir; aşağıdaki "ağır medya yok" sonucu bu sayfa için artık geçerli değildir. Düzeltme `src/components/journey/` içinde, sahibi Mehmet: ekranda olmayan dünyaların görselleri ertelenmeli.
+2. **Günlük oyun ana eylemi bekletmiyor.** `/play` görsel indirmeden yaklaşık 250 KB ile açılıyor.
+3. **İçerik sızıntısı yok.** `npm run check:bundle` bu commit'te geçti; denetim günlük, mod, Keşif Yolu ve Resimli içeriği kapsıyor.
+
 ## Durum
 
 - Laboratuvar / CI denetimi: **TAMAM**
 - İstemci içerik sızıntısı denetimi: **TAMAM**
 - Ses / font maliyeti kod incelemesi: **TAMAM**
 - Kart animasyonu / layout incelemesi: **TAMAM**
+- `/journey` görsel yükü: **AÇIK BULGU** (Mehmet)
 - Gerçek cihaz gözlemi: **BEKLİYOR**
 
 ## Referans laboratuvar koşusu
@@ -105,4 +133,4 @@ Laboratuvar ölçümü ile gerçek cihaz gözlemi özellikle ayrı raporlanacakt
 
 ## Q33 karar kaydı
 
-**Laboratuvar tarafında blocker yok.** Q33'ün teknik/bundle incelemesi tamamlandı; issue yalnız gerçek cihaz gözlemi eksik olduğu için açık kalmalıdır.
+**Günlük akışta laboratuvar blocker'ı yok.** Issue iki nedenle açık kalmalıdır: gerçek cihaz gözlemi eksik ve `/journey` görsel yükü için karar bekleniyor.
