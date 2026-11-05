@@ -1,5 +1,7 @@
 # Q29 — q-018…q-023 temiz kör review handoff
 
+> Takvim #41 kararıyla 2026-11-11 tabanına taşındı ([kayıt](../../../docs/CONTENT_RESERVATIONS.md#takvim-yeniden-planlaması-41)). Dosya bağlantıları güncellendi; metindeki tarihler kaydın yazıldığı günkü planı anlatır.
+
 Bu dosya Q29'da kalan 6 adayın **çözüm metadata'sına bakmamış** bir reviewer/oturum tarafından incelenmesi içindir. Burada bilerek cevap dosyası, grup adı veya çözüm kelimeleri verilmez.
 
 ## Neden ayrı handoff var?
@@ -12,12 +14,12 @@ Reviewer aşağıdaki altı kör dosyadan başka puzzle/editorial çözüm dosya
 
 | Aday | Yalnız önce açılacak blind dosya | Reviewer | Tarih | Karar |
 | --- | --- | --- | --- | --- |
-| q-018 | `src/content/editorial/blind/2026-10-07.json` | — | — | BEKLİYOR |
-| q-019 | `src/content/editorial/blind/2026-10-08.json` | — | — | BEKLİYOR |
-| q-020 | `src/content/editorial/blind/2026-10-09.json` | — | — | BEKLİYOR |
-| q-021 | `src/content/editorial/blind/2026-10-10.json` | — | — | BEKLİYOR |
-| q-022 | `src/content/editorial/blind/2026-10-11.json` | — | — | BEKLİYOR |
-| q-023 | `src/content/editorial/blind/2026-10-12.json` | — | — | BEKLİYOR |
+| q-018 | `src/content/editorial/blind/2026-11-28.json` | — | — | BEKLİYOR |
+| q-019 | `src/content/editorial/blind/2026-11-29.json` | — | — | BEKLİYOR |
+| q-020 | `src/content/editorial/blind/2026-11-30.json` | — | — | BEKLİYOR |
+| q-021 | `src/content/editorial/blind/2026-12-01.json` | — | — | BEKLİYOR |
+| q-022 | `src/content/editorial/blind/2026-12-02.json` | — | — | BEKLİYOR |
+| q-023 | `src/content/editorial/blind/2026-12-03.json` | — | — | BEKLİYOR |
 
 ## Sıra
 

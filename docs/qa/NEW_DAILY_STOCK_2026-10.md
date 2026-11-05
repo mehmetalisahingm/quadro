@@ -1,5 +1,7 @@
 # Quadro Q38 — Yeni aday günlük bulmaca stoğu
 
+> Takvim #41 kararıyla 2026-11-11 tabanına taşındı ([kayıt](../CONTENT_RESERVATIONS.md#takvim-yeniden-planlaması-41)). Dosya bağlantıları güncellendi; metindeki tarihler kaydın yazıldığı günkü planı anlatır.
+
 Tarih: 16 Ekim 2026. Durum: **Taslak; insan editoryal onayı bekleniyor.**
 
 - Mevcut günlük dosyalar: 2026-09-20 .. 2026-10-21 (32 gün); son günlerin bir kısmı draft.

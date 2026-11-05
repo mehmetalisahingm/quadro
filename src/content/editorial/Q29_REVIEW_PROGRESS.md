@@ -1,5 +1,7 @@
 # Q29 — kör review ilerleme kaydı
 
+> Takvim #41 kararıyla 2026-11-11 tabanına taşındı ([kayıt](../../../docs/CONTENT_RESERVATIONS.md#takvim-yeniden-planlaması-41)). Dosya bağlantıları güncellendi; metindeki tarihler kaydın yazıldığı günkü planı anlatır.
+
 İnceleme tarihi: **2026-09-26**
 
 Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `src/content/editorial/blind/` altındaki cevapsız tahta üzerinden çözüldü; kanonik puzzle dosyaları ancak dört grup çıkarıldıktan sonra açıldı. Kör çözümle kanonik gruplar dokuz adayın dokuzunda da birebir eşleşti.
@@ -29,7 +31,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 ## Ayrıntılı kör çözüm notları
 
 ### q-024 · revision 1
-- Kör tahta: `blind/2026-10-13.json`
+- Kör tahta: `blind/2026-12-04.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: tamir aletleri.
 - Zor katman: `___ KODU` ve `___ TAŞI` bağlantılarını ayırmak.
@@ -38,7 +40,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 - Karar: **ONAY**.
 
 ### q-025 · revision 1
-- Kör tahta: `blind/2026-10-14.json`
+- Kör tahta: `blind/2026-12-05.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: yatak takımı.
 - Zor katman: son harfi silince sayı adı mekanizması.
@@ -47,7 +49,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 - Karar: **ONAY**.
 
 ### q-026 · revision 1
-- Kör tahta: `blind/2026-10-15.json`
+- Kör tahta: `blind/2026-12-06.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: banyo eşyaları.
 - Zor katman: `___ HAKKI`.
@@ -56,7 +58,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 - Karar: **ONAY**.
 
 ### q-027 · revision 1
-- Kör tahta: `blind/2026-10-16.json`
+- Kör tahta: `blind/2026-12-07.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: dikiş kutusu.
 - Zor katman: `___ DIŞI`.
@@ -65,7 +67,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 - Karar: **ONAY**.
 
 ### q-028 · revision 1
-- Kör tahta: `blind/2026-10-17.json`
+- Kör tahta: `blind/2026-12-08.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: iş makineleri.
 - Zor katman: `___ ÇEKİMİ`.
@@ -74,7 +76,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 - Karar: **ONAY**.
 
 ### q-029 · revision 1
-- Kör tahta: `blind/2026-10-18.json`
+- Kör tahta: `blind/2026-12-09.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: gazete sayfası öğeleri.
 - Zor katman: aynı beş harfin farklı dizilişleri.
@@ -83,7 +85,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 - Karar: **ONAY**.
 
 ### q-030 · revision 1
-- Kör tahta: `blind/2026-10-19.json`
+- Kör tahta: `blind/2026-12-10.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: masaüstü bilgisayar parçaları.
 - Zor katman: `___ GÖREVLİSİ`.
@@ -92,7 +94,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 - Karar: **ONAY**.
 
 ### q-031 · revision 1
-- Kör tahta: `blind/2026-10-20.json`
+- Kör tahta: `blind/2026-12-11.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: parçaları birleştiren elemanlar.
 - Zor katman: `___ PAYI`.
@@ -101,7 +103,7 @@ Bu kayıt Q29'un tamamı değildir. `q-024`…`q-032` adayları önce yalnız `s
 - Karar: **ONAY**.
 
 ### q-032 · revision 1
-- Kör tahta: `blind/2026-10-21.json`
+- Kör tahta: `blind/2026-12-12.json`
 - Çözüm: 4/4; kanonik cevapla birebir eşleşti.
 - İlk tutamak: oyun kâğıdı sembolleri.
 - Zor katman: aynı hecenin iki kez yazılması.

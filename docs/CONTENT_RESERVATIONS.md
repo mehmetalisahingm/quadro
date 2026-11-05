@@ -10,10 +10,10 @@ Q27 son paketinin tabanı olan `b4706bb` üzerinde 23 günlük bulmaca (`q-001`�
 
 | Kişi | Numara aralığı | Tarih aralığı | Kapsam |
 | --- | --- | --- | --- |
-| Mehmet | `q-001`…`q-017` | 2026-09-20 → 2026-10-06 | Q26 (`q-001`…`q-015`) ve ek/yedek içerik olarak `q-016`/`q-017` |
-| Utku | `q-018`…`q-032` | 2026-10-07 → 2026-10-21 | Q27, 15 aday |
+| Mehmet | `q-001`…`q-017` | 2026-11-11 → 2026-11-27 | Q26 (`q-001`…`q-015`) ve ek/yedek içerik olarak `q-016`/`q-017` |
+| Utku | `q-018`…`q-032` | 2026-11-28 → 2026-12-12 | Q27, 15 aday |
 
-**Kural: numara ile tarih birebir kilitlidir.** `q-001` = 2026-09-20 ve her numara bir sonraki güne düşer (`q-N` = 2026-09-20 + (N − 1) gün). Bir numara başka bir tarihe taşınmaz ve bir tarih başka bir numarayla doldurulmaz. `q-032` sonrasındaki numaralar henüz kimseye ayrılmadı; almak isteyen önce bu tabloya işler.
+**Kural: numara ile tarih birebir kilitlidir.** `q-001` = 2026-11-11 ve her numara bir sonraki güne düşer (`q-N` = 2026-11-11 + (N − 1) gün). İlk taban 2026-09-20 idi; bkz. [takvim yeniden planlaması](#takvim-yeniden-planlaması-41). Bir numara başka bir tarihe taşınmaz ve bir tarih başka bir numarayla doldurulmaz. `q-032` sonrasındaki numaralar henüz kimseye ayrılmadı; almak isteyen önce bu tabloya işler.
 
 Not: `PUZZLE_GUIDE.md` içindeki "Mehmet 1–15, Utku 16–30" ilk plandır. `q-016`/`q-017` Mehmet tarafından üretildiği için Utku'nun aralığı `q-018`…`q-032` olarak kaydırıldı.
 
@@ -60,8 +60,8 @@ Az kullanılmış ve tercih edilebilir alanlar: organ, para birimi, dans, burç,
 
 | Kişi | Numara/tarih aralığı | Ayrılan fiil kalıpları | Kaçınılacak temalar | Durum |
 | --- | --- | --- | --- | --- |
-| Mehmet | `q-001`…`q-017` (2026-09-20 → 2026-10-06) | SAYMAK, SARMAK, DÖNMEK, ARAMAK, BULMAK, DÜŞMEK, SOKMAK, YIKMAK, ÇEVİRMEK + diğer boş kalıplar | Yiyecek/mutfak, coğrafya/yer adı, hayvan/bitki, "başına ___ gelenler" | Tamamlandı (`q-001`…`q-017` `main`'de) |
-| Utku | `q-018`…`q-032` (2026-10-07 → 2026-10-21) | DÖKMEK (kullanıldı: `q-018`), BASMAK (kullanıldı: `q-019`), SÜRMEK (kullanıldı: `q-021`, deyim anlamı), GEÇMEK (kullanıldı: `q-022`), VURMAK (kullanıldı: `q-023`), ÇALMAK (kullanıldı: `q-020`), SİLMEK | Yiyecek/mutfak, coğrafya/yer adı, hayvan/bitki, "başına ___ gelenler" | Üretiliyor (`q-018`: organ, para birimi, dans; `q-019`: burç, metal, müzik türü; `q-020`: esnaf meslekleri, tiyatro, uzay; `q-021`: giyim aksesuarı, değerli taş, duygu; `q-022`: denizcilik, mimari öğeler, el sanatları; `q-023`: rüzgâr, opera ses türü, matematik işlemi; 6/15) |
+| Mehmet | `q-001`…`q-017` (2026-11-11 → 2026-11-27) | SAYMAK, SARMAK, DÖNMEK, ARAMAK, BULMAK, DÜŞMEK, SOKMAK, YIKMAK, ÇEVİRMEK + diğer boş kalıplar | Yiyecek/mutfak, coğrafya/yer adı, hayvan/bitki, "başına ___ gelenler" | Tamamlandı (`q-001`…`q-017` `main`'de) |
+| Utku | `q-018`…`q-032` (2026-11-28 → 2026-12-12) | DÖKMEK (kullanıldı: `q-018`), BASMAK (kullanıldı: `q-019`), SÜRMEK (kullanıldı: `q-021`, deyim anlamı), GEÇMEK (kullanıldı: `q-022`), VURMAK (kullanıldı: `q-023`), ÇALMAK (kullanıldı: `q-020`), SİLMEK | Yiyecek/mutfak, coğrafya/yer adı, hayvan/bitki, "başına ___ gelenler" | Üretiliyor (`q-018`: organ, para birimi, dans; `q-019`: burç, metal, müzik türü; `q-020`: esnaf meslekleri, tiyatro, uzay; `q-021`: giyim aksesuarı, değerli taş, duygu; `q-022`: denizcilik, mimari öğeler, el sanatları; `q-023`: rüzgâr, opera ses türü, matematik işlemi; 6/15) |
 
 Durum değerleri: **rezerve** (ayrıldı, üretim başlamadı) · **üretiliyor** (taslak dalda) · **tamamlandı** (`main`'e merge edildi).
 
@@ -71,15 +71,15 @@ Mehmet'in talebiyle Codex, Utku'nun Q27 paketindeki `q-024`…`q-032` adayların
 
 | Aday | Tarih | Ayrılan bağlantılar |
 | --- | --- | --- |
-| q-024 | 2026-10-13 | Tamir çantası, yayın türleri, sonuna kodu ve taşı gelenler |
-| q-025 | 2026-10-14 | Yatak takımı, satranç, sonuna kâğıdı gelenler, son harfi silince sayı olanlar |
-| q-026 | 2026-10-15 | Banyo eşyaları, fotoğraf ayarları, bilgisayar eylemleri, sonuna hakkı gelenler |
-| q-027 | 2026-10-16 | Dikiş kutusu, noktalama, ışıkla ilgili sözcükler, sonuna dışı gelenler |
-| q-028 | 2026-10-17 | İnşaat makineleri, edebî türler, sonuna sınavı ve çekimi gelenler |
-| q-029 | 2026-10-18 | Çanta türleri, gazete bölümleri, ekrandaki hareketler, harfleri aynı olan sözcükler |
-| q-030 | 2026-10-19 | Masaüstü bilgisayar donanımı, resim boyaları, ses nitelikleri, sonuna görevlisi gelenler |
-| q-031 | 2026-10-20 | Bağlantı elemanları, kitap bölümleri, zaman zarfları, sonuna payı gelenler |
-| q-032 | 2026-10-21 | Yol işaretleri, belge türleri, oyun kâğıdı renkleri, aynı hecenin tekrarı |
+| q-024 | 2026-12-04 | Tamir çantası, yayın türleri, sonuna kodu ve taşı gelenler |
+| q-025 | 2026-12-05 | Yatak takımı, satranç, sonuna kâğıdı gelenler, son harfi silince sayı olanlar |
+| q-026 | 2026-12-06 | Banyo eşyaları, fotoğraf ayarları, bilgisayar eylemleri, sonuna hakkı gelenler |
+| q-027 | 2026-12-07 | Dikiş kutusu, noktalama, ışıkla ilgili sözcükler, sonuna dışı gelenler |
+| q-028 | 2026-12-08 | İnşaat makineleri, edebî türler, sonuna sınavı ve çekimi gelenler |
+| q-029 | 2026-12-09 | Çanta türleri, gazete bölümleri, ekrandaki hareketler, harfleri aynı olan sözcükler |
+| q-030 | 2026-12-10 | Masaüstü bilgisayar donanımı, resim boyaları, ses nitelikleri, sonuna görevlisi gelenler |
+| q-031 | 2026-12-11 | Bağlantı elemanları, kitap bölümleri, zaman zarfları, sonuna payı gelenler |
+| q-032 | 2026-12-12 | Yol işaretleri, belge türleri, oyun kâğıdı renkleri, aynı hecenin tekrarı |
 
 Son dokuz adayın dosyaları bu dalda hazırdır. İlk altı aday `main` üzerinde; kalan dokuzun teslimi ve doğrulama kanıtları [Q27 tamamlayıcı paket](qa/Q27_REMAINING_NINE.md) kaydındadır. Birleşme ve insan yayın kararı henüz tamamlanmış sayılmaz.
 
@@ -94,6 +94,19 @@ Resimli tahtalar `picture-001`…`picture-003` kimliklerini kullanır; `q-` numa
 | `picture-003` | Tekerlekli eşyalar, tuşlu aletler, dişleri olanlar, adı KUM ile başlayanlar |
 
 Çakışma taraması ve alternatif çözüm kontrolü [editoryal kayıtta](../src/content/editorial/pictures/README.md).
+
+## Takvim yeniden planlaması (#41)
+
+Mehmet'in [#41 kararıyla](https://github.com/mehmetalisahingm/quadro/issues/41) resmî yayın günü 11 Kasım 2026 oldu ve takvimin tabanı taşındı: `q-001` 2026-09-20 yerine 2026-11-11'e, her `q-N` bir sonraki güne. Mevcut 48 aday 11 Kasım–28 Aralık 2026 arasına düşer; ilk 30 gün 11 Kasım–10 Aralık'tır.
+
+Bu, numara-tarih kilidinin kayıtlı tek istisnasıdır. Taşımada:
+
+- Kimlikler, revizyonlar, gruplar, çözümler ve `draft` durumları değişmedi; hiçbir aday onaylanmadı.
+- Bulmaca, kör tahta ve editoryal kayıt dosyaları birlikte yeni tarihe taşındı; içerikte yalnız `date` alanı değişti.
+- Editoryal kayıtların başına eski tarih notu eklendi. Kayıtların içindeki diğer tarihler yazıldıkları günkü durumu anlatır, değiştirilmedi.
+- Tablolardaki aralıklar yeni tabana göre güncellendi; fiil, tema ve sahiplik bölüşümü aynı kaldı.
+
+Yeni bir taban değişikliği yine iki kişinin onayıyla ve bu bölüme kayıtla yapılır.
 
 ## Kullanım kuralı
 
