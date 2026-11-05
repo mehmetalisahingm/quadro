@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ChallengeGame } from "@/components/game/ChallengeGame";
+import { RiskGame } from "@/components/game/RiskGame";
 import { DifficultyLobby } from "@/components/game/DifficultyLobby";
 import { PlayExperience } from "@/components/game/PlayExperience";
 import { TrackNavigation } from "@/components/game/TrackNavigation";
@@ -28,6 +30,9 @@ type PlayPageProps = {
 export async function generateMetadata({ searchParams }: PlayPageProps): Promise<Metadata> {
   const { mode, difficulty, level, day } = await searchParams;
   const tutorialMode = mode === "tutorial";
+  if (mode === "ladder" || mode === "bomb" || mode === "risk") {
+    return { title: mode === "ladder" ? "Çarpan Merdiveni" : mode === "bomb" ? "Bomba Kart" : "Risk modu", description: "Gizli bağları bul, riskleri yönet." };
+  }
   const track = TRACKS.find(item => item.id === difficulty);
   if (!tutorialMode && !day && mode !== "daily") return {
     title: track ? `${track.label} · Bölüm ${level ?? 1}` : "Kolay, Orta, Zor, Ultra Zor",
@@ -71,6 +76,16 @@ function dailyKicker(state: DailyPuzzleState): string {
 
 export default async function PlayPage({ searchParams }: PlayPageProps) {
   const { mode, day, difficulty, level: requestedLevel } = await searchParams;
+  if (mode === "ladder" || mode === "bomb" || mode === "risk") {
+    const daily = await loadPlayableDaily({ dayKey: resolvePublicationDay() });
+    return <main className="q-play-page">
+      <header className="q-play-header">
+        <Link className="q-play-brand" href="/" aria-label="Quadro ana sayfasına dön">QUADRO</Link>
+        <span className="q-play-kicker">{mode === "ladder" ? "ÇARPAN MERDİVENİ" : mode === "bomb" ? "BOMBA KART" : "RİSK MODU"}</span>
+      </header>
+      {daily.status === "ok" ? mode === "risk" ? <RiskGame puzzle={daily.puzzle} /> : <ChallengeGame puzzle={daily.puzzle} mode={mode} /> : <DailyPuzzleSection state={daily} />}
+    </main>;
+  }
   if (mode !== "tutorial" && day !== undefined &&
     (!isPublicationDayKey(day) || day > resolvePublicationDay())) notFound();
   if (mode !== "tutorial" && mode !== "daily" && (difficulty !== undefined || day === undefined)) {

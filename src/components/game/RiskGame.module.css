@@ -1,0 +1,21 @@
+.shell { display: grid; gap: 18px; }
+.heading { padding: 28px; border-radius: 20px; color: #fff9ed; background: radial-gradient(circle at 90% 0%, #9a7139, transparent 45%), #29271f; }
+.heading span { color: #e8c989; font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+.heading h1 { margin: 12px 0; font: 400 clamp(32px, 7vw, 48px)/1.05 Georgia, serif; }
+.heading p { max-width: 48ch; margin: 0; color: #e7ddc8; line-height: 1.6; }
+.scoreboard { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.scoreboard div { display: grid; gap: 5px; padding: 16px; border: 1px solid #ded4c2; border-radius: 14px; background: #fffaf1; }
+.scoreboard span { color: #776e60; font-size: 10px; letter-spacing: .12em; }
+.scoreboard strong { color: #332c21; font-size: 24px; }
+.wager { display: grid; gap: 10px; padding: 18px; border: 1px solid #decaa4; border-radius: 14px; background: #f7edda; }
+.wager label, .wager div { display: flex; justify-content: space-between; gap: 12px; }
+.wager input { width: 100%; accent-color: #8b6022; }
+.wager div { color: #756957; font-size: 12px; }
+.feedback { min-height: 1.5em; margin: 0; text-align: center; }
+.result { display: grid; gap: 12px; }
+.result h2, .result p { margin: 0; }
+.back { color: #655b4a; text-underline-offset: 4px; }
+.loading { padding: 30px; text-align: center; }
+.tileWrap { position: relative; min-width: 0; display: flex; }
+.tileWrap > button { width: 100%; }
+.bombBadge { position: absolute; top: 3px; right: 5px; font-size: 16px; pointer-events: none; }
