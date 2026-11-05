@@ -122,3 +122,9 @@ Q42'de ilk hafta sonunda stok durumu, hata listesi ve D1/D7 değerlendirme tarih
 ## Kapanış sınırı
 
 Bu prosedürün hazırlanması Q38 veya Q42'yi tek başına kapatmaz. Q38 için gerçek 30 onaylı puzzle + tarih/revision matrisi; Q42 için gerçek yayın sonrası bir haftalık operasyon verisi gerekir.
+
+## Otomatik stok denetimi
+
+`npm run release:stock -- --start YYYY-MM-DD --as-of YYYY-MM-DD` 30 günlük takvimi ve 14 günlük ileri stoğu ayrı raporlar. `--json` makine çıktısı verir, `--strict` hazır değilse hata koduyla çıkar. İlk yayın tarihi Q41 kararıyla girilir, tahmin edilmez.
+
+Onaylı gün, yazarından farklı bir kişinin gözden geçirdiği `published` dosyadır; `review-pending` ve `optional-blind-trial` gözden geçiren sayılmaz. Komut onay üretmez ve kör denemenin gerçekten yapıldığını doğrulayamaz. Güncel durum: [Q38 stok durumu](qa/Q38_STOCK_STATUS.md).

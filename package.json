@@ -18,6 +18,7 @@
     "test:watch": "vitest",
     "test:e2e": "vitest run tests/e2e",
     "validate:content": "node --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/validate-content.mjs && vitest run src/lib/daily/modePuzzle.test.ts src/lib/daily/journeyPuzzle.test.ts src/lib/daily/picturePuzzle.test.ts",
+    "release:stock": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/release-stock.mjs",
     "check:bundle": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-client-bundle.mjs",
     "test:browser": "playwright test -c playwright.config.mjs",
     "check": "npm run lint && npm run typecheck && npm run test && npm run validate:content && npm run build && npm run check:bundle",
