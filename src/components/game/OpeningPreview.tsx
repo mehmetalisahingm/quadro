@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import type { OpeningScene } from "@/animations/openingScenes";
 import { FilmScene, MetroScene, RecordScene } from "./OpeningSceneArt";
-import { GAME_OPENINGS, gameOpeningFor } from "@/animations/openingScenes";
+import { GAME_OPENINGS } from "@/animations/openingScenes";
 import { StoryOpening } from "./StoryOpening";
 import { BoardPrelude } from "./BoardPrelude";
 import { BaggageScene, DominoScene, ElevatorScene } from "./TravelOpeningArt";
@@ -79,9 +79,9 @@ export function OpeningPreview() {
           <div className={styles.description}><span>03 / SES ARŞİVİ <i>00:03</i></span><h2>Bağlantının ritmi.</h2><p>Plak döner, iğne iner. Kartlar müziğin ritmiyle tahtaya akar.</p><button type="button" onClick={(event) => play("record", event.currentTarget)}>Plağı oynat <span aria-hidden="true">↗</span></button></div>
         </article>
       </div>
-      <section className={styles.testDays} aria-label="Arka arkaya yirmi üç test oyunu">
-        <span>23 OYUNU SIRAYLA DENE</span>
-        <div>{TEST_DAYS.map((day, index) => <Link key={day} href={`/play?day=${day}`}><small>{String(index + 1).padStart(2, "0")}</small><b>{day.slice(5)}</b><i>{gameOpeningFor(`q-${index + 1}`, day)}</i></Link>)}</div>
+      <section className={styles.testDays} aria-label={`Arka arkaya ${TEST_DAYS.length} test oyunu`}>
+        <span>{TEST_DAYS.length} OYUNU SIRAYLA DENE</span>
+        <div>{TEST_DAYS.map((day, index) => <Link key={day} href={`/play?day=${day}`}><small>{String(index + 1).padStart(2, "0")}</small><b>{day.slice(5)}</b><i>Oyunu aç</i></Link>)}</div>
       </section>
       <footer className={styles.footer}><span>Her açılışta aynı oyun. Farklı bir ilk sahne.</span><button type="button" onClick={(event) => play("four-corners", event.currentTarget)}>Dört köşeyi oynat ↗</button></footer>
       {active === "board-prelude" ? <BoardPrelude onComplete={finish} /> : active ? <StoryOpening key={active} scene={active} words={PREVIEW_WORDS} onComplete={finish} /> : null}
