@@ -66,6 +66,14 @@ export function ArcadeHome({ state, puzzleNumber, dateLabel, progressLabel, next
     <h2 className={styles.sectionTitle}><span>🏆</span> Özel meydan okumalar</h2>
     <div className={styles.modeGrid}>{modes.map((mode) => <Link href={mode.href} key={mode.id} className={styles.mode} data-mode={mode.id}><span className={styles.modeArt} aria-hidden="true">{mode.symbol}</span><strong>{mode.title}</strong><p>{mode.detail}</p><span className={styles.smallButton}>▶ Oyna <b>›</b></span></Link>)}</div>
     <div className={styles.more}><Link href="/challenges">Tüm özel modları keşfet →</Link><Link href="/play?mode=tutorial">Nasıl oynanır? →</Link></div>
+    <section className={styles.guidePreview} aria-labelledby="quadronasiloynanir">
+      <div>
+        <span className={styles.guideKicker}>✧ YENİ BAŞLAYANLAR İÇİN</span>
+        <h2 id="quadronasiloynanir">Play Quadro nasıl oynanır?</h2>
+        <p>Quadro, 16 kelime arasında dört gizli bağlantı bulduğun Türkçe bir kelime gruplama oyunudur. Dörderli grupları keşfet, dört hata hakkını dikkatli kullan ve günlük bulmacayı tamamla.</p>
+      </div>
+      <Link href="/nasil-oynanir">Kuralları ve ipuçlarını keşfet <span aria-hidden="true">→</span></Link>
+    </section>
   </ArcadeShell>;
 }
 
