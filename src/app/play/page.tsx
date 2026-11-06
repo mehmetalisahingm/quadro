@@ -32,22 +32,25 @@ export async function generateMetadata({ searchParams }: PlayPageProps): Promise
   const { mode, difficulty, level, day } = await searchParams;
   const tutorialMode = mode === "tutorial";
   if (mode === "ladder" || mode === "bomb" || mode === "risk") {
-    return { title: mode === "ladder" ? "Çarpan Merdiveni" : mode === "bomb" ? "Bomba Kart" : "Risk modu", description: "Gizli bağları bul, riskleri yönet." };
+    return { title: mode === "ladder" ? "Çarpan Merdiveni" : mode === "bomb" ? "Bomba Kart" : "Risk modu", description: "Gizli bağları bul, riskleri yönet.", alternates: { canonical: "/play" } };
   }
   const track = TRACKS.find(item => item.id === difficulty);
   if (!tutorialMode && !day && mode !== "daily") return {
     title: track ? `${track.label} · Bölüm ${level ?? 1}` : "Kolay, Orta, Zor, Ultra Zor",
     description: `Dört zorluk modu, her modda ${TRACK_LEVEL_COUNT} farklı bulmaca. 16 kelimenin gizli bağlarını keşfet.`,
+    alternates: { canonical: "/play" },
   };
 
   return tutorialMode
     ? {
         title: "Kısa öğretici",
         description: TUTORIAL_DESCRIPTION,
+        alternates: { canonical: "/play" },
       }
     : {
         title: "Bugünün bulmacası",
         description: PLAY_DESCRIPTION,
+        alternates: { canonical: "/play" },
       };
 }
 
