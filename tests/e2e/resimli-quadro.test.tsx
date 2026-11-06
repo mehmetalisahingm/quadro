@@ -194,7 +194,7 @@ describe("mod ayrımı", () => {
   });
 
   it("Risk modu ile Resimli mod birbirinin kaydını değiştirmez", async () => {
-    const riskKey = `quadro:risk:v1:${standardPuzzle.date}:${standardPuzzle.id}:${standardPuzzle.revision}`;
+    const riskKey = `quadro:risk:v2:${standardPuzzle.date}:${standardPuzzle.id}:${standardPuzzle.revision}`;
     render(<RiskGame puzzle={standardPuzzle} />);
     finishTransition();
     await createUser().click(screen.getByRole("button", { name: standardPuzzle.groups[0].words[0].text }));
