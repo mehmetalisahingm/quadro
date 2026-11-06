@@ -1,4 +1,8 @@
+import type { Metadata } from "next";
 import { connection } from "next/server";
+import { SITE_ORIGIN } from "@/lib/config";
+
+export const metadata: Metadata = { alternates: { canonical: SITE_ORIGIN } };
 import { HomeExperience } from "@/components/home/HomeExperience";
 import { loadPlayableDaily } from "@/lib/daily/playableDaily";
 import { formatCountdown } from "@/components/home/homeState";
