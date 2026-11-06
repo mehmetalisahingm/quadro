@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": 2,
+  "revision": 3,
   "id": "q-009",
   "date": "2026-11-19",
   "language": "tr",
@@ -82,27 +82,27 @@
     },
     {
       "id": "q009-g4",
-      "title": "İÇİNDE VÜCUT PARÇASI SAKLAYANLAR",
+      "title": "DÜĞÜN",
       "words": [
         {
-          "id": "q009-w17",
-          "text": "KAŞIK"
+          "id": "q009-w21",
+          "text": "GELİN"
         },
         {
-          "id": "q009-w18",
-          "text": "DİZİ"
+          "id": "q009-w22",
+          "text": "DAMAT"
         },
         {
-          "id": "q009-w19",
-          "text": "BELGE"
+          "id": "q009-w23",
+          "text": "NİKÂH"
         },
         {
-          "id": "q009-w20",
-          "text": "KOLONYA"
+          "id": "q009-w24",
+          "text": "KINA"
         }
       ],
       "difficulty": 4,
-      "explanation": "Kaşık (kaş), dizi (diz), belge (bel) ve kolonya (kol) sözcüklerinin içinde bir vücut parçası saklıdır."
+      "explanation": "Gelin, damat, nikâh ve kına düğünle ilgili sözcüklerdir."
     }
   ]
 }
