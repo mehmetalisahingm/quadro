@@ -5,6 +5,7 @@ import { PictureLobby } from "@/components/pictures/PictureLobby";
 export const metadata: Metadata = {
   title: "Resimli Quadro",
   description: "On altı çizim, dört gizli bağ. Ortak bağı olan görselleri bul.",
+  alternates: { canonical: "/pictures" },
 };
 
 export default function PicturesPage() {
