@@ -8,6 +8,9 @@ vi.mock("@/lib/daily/playableDaily", () => ({
     status: "ok", dayKey, puzzle: standardPuzzle, source: "test",
   })),
 }));
+vi.mock("@/lib/daily/modePuzzle", () => ({
+  loadModePuzzle: vi.fn(async () => ({ ...standardPuzzle, id: "track-medium-001" })),
+}));
 
 const userId = "11111111-1111-4111-8111-111111111111";
 function complete() {
@@ -67,5 +70,17 @@ describe("authenticated server result submission", () => {
     vi.stubGlobal("fetch", fetcher);
     expect((await POST(request(complete()))).status).toBe(401);
     expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+  it("replays and stores a verified special game with its mode", async () => {
+    const puzzle = { ...standardPuzzle, id: "special-1-track-medium-001", date: "2026-09-20" };
+    let snapshot = createInitialSnapshot(puzzle, { random: () => .5 });
+    for (const group of puzzle.groups) for (const word of group.words) { snapshot = toggleWord(puzzle, snapshot, word.id); if (snapshot.selectedWordIds.length === 4) snapshot = submitSelection(puzzle, snapshot).snapshot; }
+    const fetcher = vi.fn().mockResolvedValueOnce(Response.json({ id: userId })).mockResolvedValueOnce(new Response(null, { status: 201 }));
+    vi.stubGlobal("fetch", fetcher);
+    const incoming = new Request("https://example.test/api/game-results", { method:"POST", headers:{ "content-type":"application/json", authorization:"Bearer valid-user-token", origin:"https://example.test" }, body:JSON.stringify({ snapshot, special:{ mode:"risk", wagers:[10,10,10,10], visitorId:"123e4567-e89b-42d3-a456-426614174000" } }) });
+    expect((await POST(incoming)).status).toBe(202);
+    const payload = JSON.parse(fetcher.mock.calls[1]![1].body as string);
+    expect(payload.puzzle_id).toMatch(/^s:risk:2026-09-20:/);
+    expect(payload.result).toBe("won");
   });
 });

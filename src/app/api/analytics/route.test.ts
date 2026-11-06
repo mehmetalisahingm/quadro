@@ -18,6 +18,11 @@ afterEach(() => {
 });
 
 describe("POST /api/analytics", () => {
+  it("rejects invalid special mode and score payloads", async () => {
+    const event = { id: "evt-1", name: "game_finish", at: new Date().toISOString(), properties: { puzzleId: "p", revision: 1, dayKey: "2026-11-06", status: "won", attemptCount: 4, mistakesUsed: 0, activeSeconds: 0, mode: "invalid", score: 500 } };
+    expect((await POST(request({ visitorId: VALID_VISITOR, event }))).status).toBe(400);
+    expect((await POST(request({ visitorId: VALID_VISITOR, event: { ...event, properties: { ...event.properties, mode: "bomb", score: -1 } } }))).status).toBe(400);
+  });
   it.each([null, [], "text", 1])("rejects non-object JSON without throwing: %j", async value => {
     expect((await POST(request(value))).status).toBe(400);
   });

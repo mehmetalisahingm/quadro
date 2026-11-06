@@ -6,8 +6,11 @@ import { loadModePuzzle } from "@/lib/daily/modePuzzle";
 import { loadJourneyPuzzle } from "@/lib/daily/journeyPuzzle";
 import { loadPicturePuzzle } from "@/lib/daily/picturePuzzle";
 import { loadPlayableDaily } from "@/lib/daily/playableDaily";
-import { resolvePublicationDay } from "@/lib/daily/publicationDay";
+import { isPublicationDayKey, resolvePublicationDay } from "@/lib/daily/publicationDay";
 import { verifyFinishedSnapshot } from "@/lib/results/verify";
+import { verifySpecialFinishedSnapshot } from "@/lib/results/verifySpecial";
+import type { SpecialMode } from "@/features/game/specialEnergy";
+import { specialRecordId } from "@/features/game/specialRecordId";
 import type { Puzzle } from "@/features/game/contracts";
 
 export const runtime = "nodejs";
@@ -28,6 +31,19 @@ async function loadMatchingPuzzle(id: string, day: string): Promise<Puzzle | nul
   if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || day > resolvePublicationDay()) return null;
   const daily = await loadPlayableDaily({ dayKey: day });
   return daily.status === "ok" && daily.puzzle.id === id ? daily.puzzle : null;
+}
+
+async function loadSpecialPuzzle(id: string, day: string): Promise<Puzzle | null> {
+  const match = /^special-(\d+)-(track-(?:easy|medium|balanced|hard)-\d{3})$/.exec(id);
+  if (!match || !isPublicationDayKey(day) || day > resolvePublicationDay()) return null;
+  const run = Number(match[1]);
+  const track = trackIdentity(match[2]!);
+  if (!Number.isSafeInteger(run) || run < 1 || !track) return null;
+  const slot = (run - 1) % 48;
+  const expected = ["medium", "hard", "easy", "ultra"][Math.floor(slot / 12)];
+  if (track.difficulty !== expected || track.level !== slot % 12 + 1) return null;
+  const puzzle = await loadModePuzzle(track.difficulty, track.level);
+  return puzzle ? { ...puzzle, id, date: day } : null;
 }
 
 async function readSmallJson(request: Request): Promise<unknown> {
@@ -88,9 +104,13 @@ export async function POST(request: Request) {
   if (!raw || typeof raw.puzzleId !== "string" || raw.puzzleId.length > 96 ||
       typeof raw.dayKey !== "string" || raw.dayKey.length !== 10) return fail(400, "invalid_snapshot");
 
-  const puzzle = await loadMatchingPuzzle(raw.puzzleId, raw.dayKey);
+  const special = "special" in payload && payload.special && typeof payload.special === "object" && !Array.isArray(payload.special)
+    ? payload.special as { mode?: unknown; wagers?: unknown; bombId?: unknown; visitorId?: unknown } : null;
+  const mode = special && (special.mode === "risk" || special.mode === "ladder" || special.mode === "bomb") ? special.mode as SpecialMode : null;
+  if (special && (!mode || typeof special.visitorId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(special.visitorId))) return fail(400, "invalid_special_proof");
+  const puzzle = mode ? await loadSpecialPuzzle(raw.puzzleId, raw.dayKey) : await loadMatchingPuzzle(raw.puzzleId, raw.dayKey);
   if (!puzzle || puzzle.id !== raw.puzzleId) return fail(400, "unknown_puzzle");
-  const verified = verifyFinishedSnapshot(puzzle, snapshot);
+  const verified = mode && special ? verifySpecialFinishedSnapshot(puzzle, snapshot, { mode, wagers: special.wagers, bombId: special.bombId }) : verifyFinishedSnapshot(puzzle, snapshot);
   if (!verified) return fail(400, "invalid_run");
 
   try {
@@ -102,7 +122,7 @@ export async function POST(request: Request) {
       },
       cache: "no-store", signal: AbortSignal.timeout(8000),
       body: JSON.stringify({
-        user_id: userId, puzzle_id: puzzle.id, puzzle_revision: puzzle.revision,
+        user_id: userId, puzzle_id: mode && special ? specialRecordId(mode, puzzle.date, puzzle.id, special.visitorId as string) : puzzle.id, puzzle_revision: puzzle.revision,
         result: verified.result, attempt_count: verified.attemptCount,
         mistakes_used: verified.mistakesUsed, active_seconds: verified.activeSeconds,
         played_at: new Date().toISOString(),

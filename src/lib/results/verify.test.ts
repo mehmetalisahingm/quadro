@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { standardPuzzle } from "@/features/game/fixtures/puzzles";
-import { createInitialSnapshot, submitSelection, toggleWord } from "@/features/game/engine";
+import { clearSelection, createInitialSnapshot, submitSelection, toggleWord } from "@/features/game/engine";
 import { verifyFinishedSnapshot } from "./verify";
 
 function completePuzzle() {
@@ -42,5 +42,17 @@ describe("sunucu oyun sonucu replay koruması", () => {
     const run = completePuzzle();
     expect(verifyFinishedSnapshot(standardPuzzle, { ...run, attempts: [] })).toBeNull();
     expect(verifyFinishedSnapshot(standardPuzzle, { ...run, activeSeconds: -1 })).toBeNull();
+  });
+
+  it("yanlış tahminden sonra seçim değiştirip kazanılan oyunu kabul eder", () => {
+    let run = createInitialSnapshot(standardPuzzle, { random: () => 0.5 });
+    for (const group of standardPuzzle.groups) run = toggleWord(standardPuzzle, run, group.words[0].id);
+    run = submitSelection(standardPuzzle, run).snapshot;
+    run = clearSelection(run);
+    for (const group of standardPuzzle.groups) {
+      for (const word of group.words) run = toggleWord(standardPuzzle, run, word.id);
+      run = submitSelection(standardPuzzle, run).snapshot;
+    }
+    expect(verifyFinishedSnapshot(standardPuzzle, run)).toMatchObject({ result: "won", attemptCount: 5, mistakesUsed: 1 });
   });
 });
