@@ -56,8 +56,8 @@ export function SpecialModeGate({ mode, day }: { mode: SpecialMode; day: string 
   const sync = useCallback(() => {
     try {
       setState(readSpecialState()); setNow(Date.now());
-      const prefix = `quadro:${mode}:v1:${day}:`;
-      setHasPrevious(Array.from({ length: localStorage.length }, (_, i) => localStorage.key(i)).some(key => key?.startsWith(prefix)));
+      const prefixes = [`quadro:${mode}:v1:${day}:`, `quadro:${mode}:v2:${day}:`];
+      setHasPrevious(Array.from({ length: localStorage.length }, (_, i) => localStorage.key(i)).some(key => prefixes.some(prefix => key?.startsWith(prefix))));
     }
     catch { setError("Enerji bilgisi kaydedilemiyor. Oynamak için tarayıcı depolamasına izin ver."); }
   }, [mode, day]);
