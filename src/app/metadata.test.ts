@@ -9,6 +9,7 @@ import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { metadata as homeMetadata, WEBSITE_JSON_LD } from "@/app/page";
 import { metadata as guideMetadata } from "@/app/nasil-oynanir/page";
+import { metadata as tipsMetadata } from "@/app/kelime-bulmacasi-ipuclari/page";
 import { generateMetadata } from "@/app/play/page";
 import { APP_NAME, APP_TAGLINE, APP_TITLE, PLAY_DESCRIPTION, SITE_ORIGIN, TUTORIAL_DESCRIPTION } from "@/lib/config";
 
@@ -29,6 +30,8 @@ describe("Q37 metadata", () => {
     });
     expect(sitemap().map((item) => item.url)).toContain(`${SITE_ORIGIN}/nasil-oynanir`);
     expect(guideMetadata.alternates).toMatchObject({ canonical: "/nasil-oynanir" });
+    expect(sitemap().map((item) => item.url)).toContain(`${SITE_ORIGIN}/kelime-bulmacasi-ipuclari`);
+    expect(tipsMetadata.alternates).toMatchObject({ canonical: "/kelime-bulmacasi-ipuclari" });
   });
 
   it("ana sayfa marka, açıklama, ikon ve sosyal önizlemeyi açıkça tanımlar", () => {
