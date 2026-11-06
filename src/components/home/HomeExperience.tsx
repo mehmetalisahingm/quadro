@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { trackBrowserEventOnce } from "@/lib/analytics";
 import { defaultSnapshotStorage } from "@/lib/persistence/storage";
 
-import { HomeHero } from "./HomeHero";
+import { ArcadeHome } from "@/components/arcade/ArcadeHome";
 import {
   formatCountdown,
   resolveHomeState,
@@ -120,7 +120,7 @@ export function HomeExperience({
   }, [player.previousGame]);
 
   return (
-    <HomeHero
+    <ArcadeHome
       state={player.state}
       puzzleNumber={puzzleNumber}
       dateLabel={dateLabel}

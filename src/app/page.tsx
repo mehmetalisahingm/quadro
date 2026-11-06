@@ -1,7 +1,5 @@
 import { connection } from "next/server";
 import { HomeExperience } from "@/components/home/HomeExperience";
-import { JourneyEntry } from "@/components/journey/JourneyEntry";
-import { PictureEntry } from "@/components/pictures/PictureEntry";
 import { loadPlayableDaily } from "@/lib/daily/playableDaily";
 import { formatCountdown } from "@/components/home/homeState";
 import {
@@ -73,8 +71,6 @@ export default async function HomePage() {
         nextRolloverAt={boundary.toISOString()}
         initialCountdownLabel={formatCountdown(boundary.getTime(), now.getTime())}
       />
-      <JourneyEntry />
-      <PictureEntry />
     </main>
   );
 }
