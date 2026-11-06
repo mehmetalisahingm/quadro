@@ -2,9 +2,9 @@ import { cleanup, render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import HomePage from "@/app/page";
-import gunlukBulmaca20 from "@/content/puzzles/2026-09-20.json";
-import gunlukBulmaca21 from "@/content/puzzles/2026-09-21.json";
-import gunlukBulmaca22 from "@/content/puzzles/2026-09-22.json";
+import gunlukBulmaca20 from "@/content/puzzles/2026-11-11.json";
+import gunlukBulmaca21 from "@/content/puzzles/2026-11-12.json";
+import gunlukBulmaca22 from "@/content/puzzles/2026-11-13.json";
 import { normalizeTr } from "@/features/game/contracts";
 import { createInitialSnapshot, createSeededRandom } from "@/features/game/engine";
 import { DEFAULT_ENGINE_SEED } from "@/features/game/react/engineController";
