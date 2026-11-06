@@ -6,7 +6,7 @@ const publicRoutes = ["/", "/play", "/challenges", "/journey", "/pictures"] as c
 export default function sitemap(): MetadataRoute.Sitemap {
   return publicRoutes.map((pathname, index) => ({
     url: new URL(pathname, SITE_ORIGIN).toString(),
-    changeFrequency: index === 0 ? "daily" : "weekly",
+    changeFrequency: index === 0 ? ("daily" as const) : ("weekly" as const),
     priority: index === 0 ? 1 : 0.7,
   }));
 }
