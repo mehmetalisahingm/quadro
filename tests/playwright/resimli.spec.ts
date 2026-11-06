@@ -43,8 +43,8 @@ for (const genislik of [320, 390]) {
 test("masaüstü: ana ekrandan girilir, tahta klavyeyle oynanır", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto("/");
-  await page.getByRole("link", { name: "Görsellerle oyna ↗" }).click();
-  await expect(page.getByRole("heading", { name: "Resimli Quadro" })).toBeVisible();
+  await page.getByRole("link", { name: /Resimli Quadro.*Görsellerle oyna/ }).click();
+  await expect(page.getByRole("heading", { name: "Resimli Quadro", level: 1, exact: true })).toBeVisible();
   await kanit(page, "lobi");
 
   await page.getByRole("link", { name: /Tahta 1/ }).click();
