@@ -3,6 +3,16 @@ import { connection } from "next/server";
 import { SITE_ORIGIN } from "@/lib/config";
 
 export const metadata: Metadata = { alternates: { canonical: SITE_ORIGIN } };
+
+/** Google may use this to understand the site's preferred brand name. */
+export const WEBSITE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Play Quadro",
+  alternateName: ["Quadro", "playquadro.com.tr"],
+  url: `${SITE_ORIGIN}/`,
+  inLanguage: "tr-TR",
+};
 import { HomeExperience } from "@/components/home/HomeExperience";
 import { loadPlayableDaily } from "@/lib/daily/playableDaily";
 import { formatCountdown } from "@/components/home/homeState";
@@ -64,6 +74,10 @@ export default async function HomePage() {
 
   return (
     <main className="q-page-shell">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD).replace(/</g, "\\u003c") }}
+      />
       <HomeExperience
         today={{
           dayKey,

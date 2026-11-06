@@ -1,0 +1,21 @@
+.layout { display: grid; gap: 26px; margin: 20px 0 40px; color: #e9f4ff; }
+.layout h2 { margin: 0 0 14px; font-size: clamp(21px, 3vw, 28px); color: #fff1af; line-height: 1.25; }
+.layout h3 { margin: 0 0 8px; font-size: 17px; color: #f9fbff; }
+.layout p { margin: 0; line-height: 1.7; color: #d5e8f3; }
+.layout a:not(.primary):not(.secondary) { color: #a8e6ff; text-underline-offset: 3px; }
+.intro,.panel { padding: 27px; border: 2px solid #55d6ca; border-radius: 22px; background: radial-gradient(circle at 90% 0%, #3d91ad55, transparent 50%), linear-gradient(140deg, #153b60, #153958); box-shadow: inset 0 2px #ffffff33, 0 6px 0 #0b2942; }
+.eyebrow { display: block; margin-bottom: 10px; color: #ffe192; font-size: 12px; font-weight: 900; letter-spacing: .07em; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.primary,.secondary { padding: 12px 18px; display: inline-flex; align-items: center; border: 2px solid #ffe49e; border-radius: 999px; font-weight: 800; text-decoration: none; }
+.primary { background: linear-gradient(#ffef9b, #ffc849); color: #3c2b1c; box-shadow: 0 4px 0 #996620; }
+.secondary { color: #fff0bc; background: #122b4e; }
+.section { margin-top: 4px; }
+.stepGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.step,.tip { padding: 22px; border: 1px solid #629ad1; border-radius: 18px; background: linear-gradient(145deg, #1a436a, #1a3157); box-shadow: 0 5px 0 #112848; }
+.number { display: inline-block; color: #ffe295; font-weight: 900; letter-spacing: .1em; font-size: 25px; margin-bottom: 12px; }
+.tipGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.tip { border-color: #9d88d7; background: linear-gradient(145deg, #3a336e, #24264f); }
+.panel h3 { margin-top: 20px; }
+.back { text-align: center; margin: 8px auto 0; }
+.layout a:focus-visible { outline: 3px solid #ffe7a5; outline-offset: 4px; }
+@media(max-width:750px) { .tipGrid { grid-template-columns: 1fr; } .stepGrid { grid-template-columns:1fr; } .intro,.panel,.step,.tip { padding: 19px; } }
