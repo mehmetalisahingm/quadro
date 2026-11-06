@@ -87,7 +87,7 @@ export default async function PlayPage({ searchParams }: PlayPageProps) {
         <Link className="q-play-brand" href="/" aria-label="Quadro ana sayfasına dön">QUADRO</Link>
         <span className="q-play-kicker">{mode === "ladder" ? "ÇARPAN MERDİVENİ" : mode === "bomb" ? "BOMBA KART" : "RİSK MODU"}</span>
       </header>
-      {previous ? previous.status === "ok" ? <><p>Önceki günlük oyun kaydın · Can ve seri hedefinden bağımsız</p>{mode === "risk" ? <RiskGame puzzle={previous.puzzle} /> : <ChallengeGame puzzle={previous.puzzle} mode={mode} />}</> : <DailyPuzzleSection state={previous} /> : <SpecialModeGate mode={mode} day={resolvePublicationDay()} />}
+      {previous ? previous.status === "ok" ? <><p>Önceki günlük oyun kaydın · Enerji ve skordan bağımsız</p>{mode === "risk" ? <RiskGame puzzle={previous.puzzle} /> : <ChallengeGame puzzle={previous.puzzle} mode={mode} />}</> : <DailyPuzzleSection state={previous} /> : <SpecialModeGate mode={mode} day={resolvePublicationDay()} />}
     </main>;
   }
   if (mode !== "tutorial" && day !== undefined &&
