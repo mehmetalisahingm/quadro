@@ -95,6 +95,7 @@ export default function HowToPlayPage() {
           <h3>Kelime gruplama ile kelime tahmini aynı mı?</h3>
           <p>Hayır. Quadro&apos;da bir kelimenin harflerini tahmin etmek yerine, verilen kelimeler arasındaki ortak anlam veya bağlantıları bulursun.</p>
         </section>
+        <p className={styles.back}><Link href="/kelime-bulmacasi-ipuclari">Kelime bağlantılarını bulmak için stratejileri oku →</Link></p>
         <p className={styles.back}><Link href="/">← Quadro ana sayfasına dön</Link></p>
       </article>
     </ArcadeShell>
