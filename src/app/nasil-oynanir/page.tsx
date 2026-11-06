@@ -82,18 +82,18 @@ export default function HowToPlayPage() {
         </section>
         <section aria-labelledby="game-options" className={styles.panel}>
           <h2 id="game-options">Günlük bulmaca dışında neler var?</h2>
-          <p>Quadro'da <Link href="/play">Kolay, Orta, Zor ve Ultra Zor</Link> seviyelerini seçebilir, <Link href="/pictures">Resimli Quadro</Link> ile görsel bağlantıları arayabilir veya <Link href="/journey">Keşif Yolu</Link> bölümlerinde ilerleyebilirsin. <Link href="/challenges">Özel meydan okumalar</Link> bölümünde farklı oyun kurallarıyla oynanan modlar da bulunur.</p>
+          <p>Quadro&apos;da <Link href="/play">Kolay, Orta, Zor ve Ultra Zor</Link> seviyelerini seçebilir, <Link href="/pictures">Resimli Quadro</Link> ile görsel bağlantıları arayabilir veya <Link href="/journey">Keşif Yolu</Link> bölümlerinde ilerleyebilirsin. <Link href="/challenges">Özel meydan okumalar</Link> bölümünde farklı oyun kurallarıyla oynanan modlar da bulunur.</p>
         </section>
         <section aria-labelledby="faq" className={styles.panel}>
           <h2 id="faq">Sık sorulan sorular</h2>
           <h3>Play Quadro ücretsiz mi?</h3>
-          <p>Evet. Quadro'yu web tarayıcısından ücretsiz açıp oynayabilirsin.</p>
+          <p>Evet. Quadro&apos;yu web tarayıcısından ücretsiz açıp oynayabilirsin.</p>
           <h3>Her gün yeni bir oyun var mı?</h3>
-          <p>Günlük bulmaca Türkiye saatiyle 00.00'da yenilenir. Bunun dışında zorluk seviyelerine göre bölüm seçebilirsin.</p>
-          <h3>Quadro'yu telefondan oynayabilir miyim?</h3>
+          <p>Günlük bulmaca Türkiye saatiyle 00.00&apos;da yenilenir. Bunun dışında zorluk seviyelerine göre bölüm seçebilirsin.</p>
+          <h3>Quadro&apos;yu telefondan oynayabilir miyim?</h3>
           <p>Evet. Oyun hem mobil tarayıcıda hem de bilgisayarda oynanacak şekilde tasarlanmıştır.</p>
           <h3>Kelime gruplama ile kelime tahmini aynı mı?</h3>
-          <p>Hayır. Quadro'da bir kelimenin harflerini tahmin etmek yerine, verilen kelimeler arasındaki ortak anlam veya bağlantıları bulursun.</p>
+          <p>Hayır. Quadro&apos;da bir kelimenin harflerini tahmin etmek yerine, verilen kelimeler arasındaki ortak anlam veya bağlantıları bulursun.</p>
         </section>
         <p className={styles.back}><Link href="/">← Quadro ana sayfasına dön</Link></p>
       </article>
