@@ -25,6 +25,7 @@ const nextConfig = {
     "/journey/step": ["./src/content/journey/*.json"],
     "/pictures/board": ["./src/content/pictures/*.json"],
     "/api/health": ["./src/content/puzzles/*.json", "./src/content/modes/*.json"],
+    "/api/game-results": ["./src/content/puzzles/*.json", "./src/content/modes/*.json", "./src/content/journey/*.json", "./src/content/pictures/*.json"],
     "/": ["./src/content/puzzles/*.json", "./src/content/modes/*.json"],
     "/play": ["./src/content/puzzles/*.json", "./src/content/modes/*.json"],
   },
