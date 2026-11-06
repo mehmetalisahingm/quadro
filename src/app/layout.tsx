@@ -7,6 +7,7 @@ import {
   APP_NAME,
   APP_TAGLINE,
   APP_TITLE,
+  SITE_ORIGIN,
   BRAND_COLORS,
   SOCIAL_IMAGE_ALT,
 } from "@/lib/config";
@@ -21,11 +22,8 @@ function resolveMetadataBase(): URL {
     return new URL(process.env.NEXT_PUBLIC_SITE_URL);
   }
 
-  if (process.env.VERCEL_URL) {
-    return new URL(`https://${process.env.VERCEL_URL}`);
-  }
-
-  return new URL("http://localhost:3000");
+  // Never let a temporary Vercel deployment URL become the public social-image origin.
+  return new URL(SITE_ORIGIN);
 }
 
 export const metadata: Metadata = {
@@ -56,6 +54,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
+    url: SITE_ORIGIN,
     type: "website",
     locale: "tr_TR",
     siteName: APP_NAME,
