@@ -2,7 +2,10 @@ import { GAME_CONSTANTS } from "@/features/game/contracts";
 
 export const APP_NAME = "Quadro" as const;
 
-export const APP_TITLE = "Quadro — Türkçe günlük bağlantı bulmacası" as const;
+/** Canonical production origin, shared by metadata, robots and sitemap. */
+export const SITE_ORIGIN = "https://playquadro.com.tr" as const;
+
+export const APP_TITLE = "Play Quadro — Ücretsiz Günlük Kelime ve Bağlantı Bulmacası" as const;
 
 export const APP_TAGLINE =
   "Türkçe günlük gruplama bulmacası: 16 kelime, 4 gizli bağ, 4 hata hakkı." as const;
