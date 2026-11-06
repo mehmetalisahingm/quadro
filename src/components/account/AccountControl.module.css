@@ -8,6 +8,15 @@
   gap: 0.5rem;
 }
 
+:global(body:has([data-arcade-page])) .loginLink,
+:global(body:has([data-arcade-page])) .accountPill,
+:global(body:has([data-arcade-page])) .signOutButton {
+  background: linear-gradient(#24679d, #102c57);
+  color: #f3f8ff;
+  border-color: #72bde0;
+  box-shadow: inset 0 1px #ffffff70, 0 3px 0 #071a3e, 0 8px 18px #00112270;
+}
+
 .loginLink,
 .accountPill,
 .signOutButton {
