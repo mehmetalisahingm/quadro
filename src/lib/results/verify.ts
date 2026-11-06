@@ -1,6 +1,6 @@
 import type { Puzzle, GameSnapshot, Attempt } from "@/features/game/contracts";
 import { GAME_CONSTANTS } from "@/features/game/contracts";
-import { createInitialSnapshot, submitSelection, toggleWord } from "@/features/game/engine";
+import { clearSelection, createInitialSnapshot, submitSelection, toggleWord } from "@/features/game/engine";
 
 /** Replay a submitted terminal run against the published server-side puzzle.
  * This rejects arbitrary result/status flips, although full anti-cheat requires
@@ -21,6 +21,7 @@ export function verifyFinishedSnapshot(puzzle: Puzzle, input: unknown): { result
         !Array.isArray(attempt.wordIds) || attempt.wordIds.length !== 4 ||
         !attempt.wordIds.every(id => typeof id === "string") || new Set(attempt.wordIds).size !== 4) return null;
     if (state.status !== "playing") return null;
+    state = clearSelection(state);
     for (const id of attempt.wordIds) {
       state = toggleWord(puzzle, state, id);
     }

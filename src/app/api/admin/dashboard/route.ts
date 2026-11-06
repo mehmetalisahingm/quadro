@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { loadSpecialOverview } from "@/lib/analytics/specialOverview";
 
 export const runtime = "nodejs";
 
@@ -79,7 +80,8 @@ async function loadDashboard(request: Request) {
     signal: AbortSignal.timeout(8000),
   });
   const overview = activity.ok ? await activity.json() : null;
-  return NextResponse.json({ ...snapshot, overview }, {
+  const specialModes = await loadSpecialOverview(supabase.url, supabase.secretKey);
+  return NextResponse.json({ ...snapshot, overview, specialModes }, {
     headers: { "cache-control": "no-store" },
   });
 }

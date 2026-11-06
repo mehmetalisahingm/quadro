@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { GameSnapshot, Puzzle } from "@/features/game/contracts";
 import { clearSelection, createInitialSnapshot, createSeededRandom, shuffleBoard, submitSelection, toggleWord } from "@/features/game/engine";
 import { checkCompatibility } from "@/lib/persistence/compatibility";
 import { parseStoredRecord } from "@/lib/persistence/record";
 import { feedbackMessage } from "./presentation";
+import { specialFinish, specialProgress, specialStart } from "@/lib/analytics/specialMode";
+import { persistSignedInSpecialResult } from "@/lib/results/remote";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
 import styles from "./RiskGame.module.css";
@@ -46,6 +48,7 @@ export function RiskGame({ puzzle, onFinish }: { puzzle: Puzzle; onFinish?: (poi
   const [wager, setWager] = useState(10);
   const [message, setMessage] = useState("");
   const [storageError, setStorageError] = useState(false);
+  const submittedResult = useRef<string | null>(null);
   useEffect(() => {
     const timer = window.setTimeout(() => setGame(readGame(puzzle, key)), 0);
     return () => window.clearTimeout(timer);
@@ -53,11 +56,18 @@ export function RiskGame({ puzzle, onFinish }: { puzzle: Puzzle; onFinish?: (poi
   useEffect(() => {
     if (!game) return;
     const balance = scoreFor(game);
+    if (onFinish && game.snapshot.status === "playing" && balance > 0) specialStart(puzzle, "risk", game.snapshot.attempts.length > 0);
     if (game.snapshot.status !== "playing" || balance === 0) {
       const base = game.snapshot.solvedGroupIds.length * 100;
-      onFinish?.(base + Math.max(0, balance - 100));
+      const points = base + Math.max(0, balance - 100);
+      if (onFinish) specialFinish(puzzle, "risk", game.snapshot, game.snapshot.mistakesRemaining, points);
+      if (onFinish && submittedResult.current !== puzzle.id) {
+        submittedResult.current = puzzle.id;
+        persistSignedInSpecialResult(game.snapshot, { mode: "risk", wagers: game.wagers });
+      }
+      onFinish?.(points);
     }
-  }, [game, onFinish]);
+  }, [game, onFinish, puzzle]);
 
   function commit(next: RiskState) {
     setGame(next);
@@ -77,6 +87,7 @@ export function RiskGame({ puzzle, onFinish }: { puzzle: Puzzle; onFinish?: (poi
     setMessage(feedbackMessage(result.outcome));
     if (result.outcome.verdict === "invalid" || result.outcome.verdict === "repeated") return;
     commit({ snapshot: result.snapshot, wagers: [...game.wagers, amount] });
+    if (onFinish) specialProgress(puzzle, "risk", result.snapshot, result.snapshot.mistakesRemaining);
     setMessage(`${feedbackMessage(result.outcome)} ${result.outcome.verdict === "correct" ? "+" : "−"}${amount} puan.`);
   }
 

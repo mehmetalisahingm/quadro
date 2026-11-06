@@ -62,6 +62,7 @@ type AnalyticsOverview = {
 
 type DashboardSnapshot = {
   overview?: AnalyticsOverview | null;
+  specialModes?: { modes: { mode: "risk" | "ladder" | "bomb"; starts: number; finishes: number; wins: number; losses: number }[]; recent: { mode: "risk" | "ladder" | "bomb"; puzzleId: string; outcome: "won" | "lost"; score: number; attempts: number; mistakes: number; at: string }[] } | null;
   totals: DashboardTotals;
   puzzles: PuzzleMetric[];
   recentResults: RecentResult[];
@@ -183,6 +184,16 @@ export default function AdminPage() {
                     </article>
                   ))}
                 </div>
+
+                <section style={{ ...cardStyle, overflowX: "auto" }} aria-labelledby="special-mode-stats">
+                  <h2 id="special-mode-stats" style={{ marginTop: 0 }}>Özel mod performansı</h2>
+                  <p>Son 30 günde anonim oyun olayları. Bu ölçüm yalnız yeni sürümden sonraki oyunları kapsar; erişim veya kota sorunlarında eksik olabilir.</p>
+                  {dashboard.specialModes ? <table style={{ width: "100%", minWidth: 520 }}>
+                    <thead><tr><th align="left">Mod</th><th>Başladı</th><th>Bitti</th><th>Kazanıldı</th><th>Kaybedildi</th></tr></thead>
+                    <tbody>{dashboard.specialModes.modes.map(row => <tr key={row.mode}><td>{row.mode === "risk" ? "Risk" : row.mode === "ladder" ? "Çarpan Merdiveni" : "Bomba Kart"}</td><td align="center">{row.starts}</td><td align="center">{row.finishes}</td><td align="center">{row.wins}</td><td align="center">{row.losses}</td></tr>)}</tbody>
+                  </table> : <p>Özel mod verileri şu anda alınamıyor.</p>}
+                  {dashboard.specialModes && <><h3>Son özel oyunlar</h3>{dashboard.specialModes.recent.length ? <table style={{ width: "100%", minWidth: 700 }}><thead><tr><th align="left">Mod</th><th align="left">Bulmaca</th><th>Sonuç</th><th>Puan</th><th>Deneme</th><th>Hata</th><th align="left">Tarih</th></tr></thead><tbody>{dashboard.specialModes.recent.map((row, index) => <tr key={`${row.puzzleId}:${row.at}:${index}`}><td>{row.mode === "risk" ? "Risk" : row.mode === "ladder" ? "Çarpan Merdiveni" : "Bomba Kart"}</td><td>{row.puzzleId}</td><td align="center">{row.outcome === "won" ? "Kazandı" : "Kaybetti"}</td><td align="center">{row.score}</td><td align="center">{row.attempts}</td><td align="center">{row.mistakes}</td><td>{new Date(row.at).toLocaleString("tr-TR")}</td></tr>)}</tbody></table> : <p>Henüz yeni özel oyun sonucu yok.</p>}</>}
+                </section>
 
                 {dashboard.overview ? (
                   <section style={{ ...cardStyle, display: "grid", gap: "1rem" }}>

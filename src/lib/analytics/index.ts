@@ -19,6 +19,7 @@ export type AnalyticsEventProperties = {
     revision: number;
     dayKey: string;
     resumed: boolean;
+    mode?: "risk" | "ladder" | "bomb";
   };
   game_progress: {
     puzzleId: string;
@@ -28,6 +29,7 @@ export type AnalyticsEventProperties = {
     attemptCount: number;
     mistakesRemaining: number;
     activeSeconds: number;
+    mode?: "risk" | "ladder" | "bomb";
   };
   first_attempt: {
     puzzleId: string;
@@ -43,6 +45,8 @@ export type AnalyticsEventProperties = {
     attemptCount: number;
     mistakesUsed: number;
     activeSeconds: number;
+    mode?: "risk" | "ladder" | "bomb";
+    score?: number;
   };
   share_attempt: {
     puzzleId: string;

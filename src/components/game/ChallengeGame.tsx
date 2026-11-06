@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { GameSnapshot, Puzzle } from "@/features/game/contracts";
 import { clearSelection, createInitialSnapshot, createSeededRandom, shuffleBoard, submitSelection, toggleWord } from "@/features/game/engine";
 import { checkCompatibility } from "@/lib/persistence/compatibility";
 import { parseStoredRecord } from "@/lib/persistence/record";
 import { feedbackMessage } from "./presentation";
+import { specialFinish, specialProgress, specialStart } from "@/lib/analytics/specialMode";
+import { persistSignedInSpecialResult } from "@/lib/results/remote";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
 import styles from "./RiskGame.module.css";
@@ -80,6 +82,7 @@ export function ChallengeGame({ puzzle, mode, onFinish }: { puzzle: Puzzle; mode
   const [game, setGame] = useState<ChallengeState | null>(null);
   const [message, setMessage] = useState("");
   const [storageError, setStorageError] = useState(false);
+  const submittedResult = useRef<string | null>(null);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -95,12 +98,18 @@ export function ChallengeGame({ puzzle, mode, onFinish }: { puzzle: Puzzle; mode
   useEffect(() => {
     if (!game) return;
     const remaining = mode === "bomb" ? bombTotals(game).remaining : game.snapshot.mistakesRemaining;
+    if (onFinish && game.snapshot.status === "playing" && remaining > 0) specialStart(puzzle, mode, game.snapshot.attempts.length > 0);
     if (game.snapshot.status !== "playing" || remaining === 0) {
       const base = game.snapshot.solvedGroupIds.length * 100;
       const points = mode === "bomb" ? bombTotals(game).score : base + ladderTotals(game).bonus;
+      if (onFinish) specialFinish(puzzle, mode, game.snapshot, remaining, points);
+      if (onFinish && submittedResult.current !== `${mode}:${puzzle.id}`) {
+        submittedResult.current = `${mode}:${puzzle.id}`;
+        persistSignedInSpecialResult(game.snapshot, { mode, bombId: game.bombId });
+      }
       onFinish?.(points);
     }
-  }, [game, mode, onFinish]);
+  }, [game, mode, onFinish, puzzle]);
 
   function commit(next: ChallengeState) {
     setGame(next);
@@ -123,7 +132,9 @@ export function ChallengeGame({ puzzle, mode, onFinish }: { puzzle: Puzzle; mode
       setMessage(feedbackMessage(result.outcome));
       return;
     }
-    commit({ ...game, snapshot: result.snapshot });
+    const next = { ...game, snapshot: result.snapshot };
+    commit(next);
+    if (onFinish) specialProgress(puzzle, mode, result.snapshot, mode === "bomb" ? bombTotals(next).remaining : result.snapshot.mistakesRemaining);
     const extra = mode === "bomb" && includesBomb ? (result.outcome.verdict === "correct" ? " Bomba bonusu: +100 puan!" : " Bomba patladı: bir ek hata hakkı gitti.") : "";
     setMessage(feedbackMessage(result.outcome) + extra);
   }

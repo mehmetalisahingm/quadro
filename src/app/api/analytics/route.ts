@@ -19,10 +19,10 @@ const MAX_BODY_BYTES = 8 * 1024;
 // Only coarse analytics fields are accepted: never store chosen words, answer keys, or raw user content.
 const FIELDS: Record<string, readonly string[]> = {
   home_view: ["state", "dayKey", "puzzleAvailable"],
-  game_start: ["puzzleId", "revision", "dayKey", "resumed"],
-  game_progress: ["puzzleId", "revision", "dayKey", "solvedGroups", "attemptCount", "mistakesRemaining", "activeSeconds"],
+  game_start: ["puzzleId", "revision", "dayKey", "resumed", "mode"],
+  game_progress: ["puzzleId", "revision", "dayKey", "solvedGroups", "attemptCount", "mistakesRemaining", "activeSeconds", "mode"],
   first_attempt: ["puzzleId", "revision", "verdict", "mistakesRemaining"],
-  game_finish: ["puzzleId", "revision", "dayKey", "status", "attemptCount", "mistakesUsed", "activeSeconds"],
+  game_finish: ["puzzleId", "revision", "dayKey", "status", "attemptCount", "mistakesUsed", "activeSeconds", "mode", "score"],
   share_attempt: ["puzzleId", "revision", "method"],
   retention_visit: ["cohortDay", "activeDay", "dayOffset", "milestone"],
 };
@@ -121,6 +121,15 @@ export async function POST(request: Request) {
 
   if (Object.keys(properties).some((key) => !FIELDS[event.name as string]?.includes(key))) {
     return NextResponse.json({ error: "unsupported_event_properties" }, { status: 400 });
+  }
+  if (properties.mode !== undefined && (typeof properties.mode !== "string" || !["risk", "ladder", "bomb"].includes(properties.mode))) {
+    return NextResponse.json({ error: "invalid_mode" }, { status: 400 });
+  }
+  if (properties.mode !== undefined && event.name === "game_finish" && properties.status !== "won" && properties.status !== "lost") {
+    return NextResponse.json({ error: "invalid_status" }, { status: 400 });
+  }
+  if (properties.score !== undefined && (!Number.isInteger(properties.score) || Number(properties.score) < 0 || Number(properties.score) > 10000 || properties.mode === undefined)) {
+    return NextResponse.json({ error: "invalid_score" }, { status: 400 });
   }
   if (event.name === "game_progress" && (
     !Number.isInteger(properties.solvedGroups) || Number(properties.solvedGroups) < 0 || Number(properties.solvedGroups) > 4 ||
