@@ -6,6 +6,7 @@ import type { GameSnapshot, Puzzle } from "@/features/game/contracts";
 import { clearSelection, createInitialSnapshot, createSeededRandom, shuffleBoard, submitSelection, toggleWord } from "@/features/game/engine";
 import { checkCompatibility } from "@/lib/persistence/compatibility";
 import { parseStoredRecord } from "@/lib/persistence/record";
+import { wrongGuesses, type SpecialFinish } from "./specialFinish";
 import { feedbackMessage } from "./presentation";
 import { SolvedGroup } from "./SolvedGroup";
 import { WordTile } from "./WordTile";
@@ -40,7 +41,7 @@ function readGame(puzzle: Puzzle, key: string): RiskState {
   } catch { return fresh; }
 }
 
-export function RiskGame({ puzzle, onFinish }: { puzzle: Puzzle; onFinish?: (points: number) => void }) {
+export function RiskGame({ puzzle, onFinish }: { puzzle: Puzzle; onFinish?: (result: SpecialFinish) => void }) {
   const key = `quadro:risk:v1:${puzzle.date}:${puzzle.id}:${puzzle.revision}`;
   const [game, setGame] = useState<RiskState | null>(null);
   const [wager, setWager] = useState(10);
@@ -54,8 +55,7 @@ export function RiskGame({ puzzle, onFinish }: { puzzle: Puzzle; onFinish?: (poi
     if (!game) return;
     const balance = scoreFor(game);
     if (game.snapshot.status !== "playing" || balance === 0) {
-      const base = game.snapshot.solvedGroupIds.length * 100;
-      onFinish?.(base + Math.max(0, balance - 100));
+      onFinish?.({ won: game.snapshot.status === "won", mistakes: wrongGuesses(game.snapshot), bonus: Math.max(0, balance - 100) });
     }
   }, [game, onFinish]);
 
@@ -83,9 +83,9 @@ export function RiskGame({ puzzle, onFinish }: { puzzle: Puzzle; onFinish?: (poi
   return <section className={`q-game-shell ${styles.shell}`} aria-labelledby="risk-title">
     <div className={styles.heading}><span>QUADRO · RİSK</span><h1 id="risk-title">Ne kadar eminsin?</h1>
       <p>100 puanla başla. Dörtlünü seç, puan yatır. Doğru tahmin kazandırır, yanlış tahmin yatırdığın puanı götürür. Dört hatada veya puanın sıfıra inince oyun biter.</p>
-      <p>{onFinish ? "Her doğru grup 100 temel puan kazandırır; 100 başlangıç puanının üzerindeki bakiyen bonus olarak üç oyun hedefine eklenir." : "Bugünün günlük bulmacasıyla oynarsın."}</p></div>
+      <p>{onFinish ? "Kazanırsan temel skorun 400 − 100 × yanlış tahmindir. 100 başlangıç puanının üzerindeki bakiyen mod bonusudur; enerji kazandırmaz." : "Bugünün günlük bulmacasıyla oynarsın."}</p></div>
     <div className={styles.scoreboard}><div><span>PUANIN</span><strong>{score}</strong></div><div><span>KALAN HATA</span><strong>{snapshot.mistakesRemaining} / 4</strong></div></div>
-    {onFinish && <p>Hedefe yazılacak puan: <strong>{snapshot.solvedGroupIds.length * 100 + Math.max(0, score - 100)}</strong></p>}
+    {onFinish && <p>Mod bonusu: <strong>{Math.max(0, score - 100)}</strong> · enerji vermez</p>}
     {storageError && <p role="alert">İlerleme kaydedilemedi. Bu sekme açıkken oynamaya devam edebilirsin.</p>}
     {snapshot.solvedGroupIds.map((id) => { const group = puzzle.groups.find((item) => item.id === id); return group ? <SolvedGroup key={id} group={group} /> : null; })}
     {!finished && <>
