@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SpecialModeGate } from "@/components/game/SpecialModeGate";
 import { ChallengeGame } from "@/components/game/ChallengeGame";
 import { RiskGame } from "@/components/game/RiskGame";
 import { DifficultyLobby } from "@/components/game/DifficultyLobby";
@@ -23,7 +24,7 @@ import {
 } from "@/lib/daily";
 
 type PlayPageProps = {
-  searchParams: Promise<{ mode?: string; day?: string; view?: string; difficulty?: string; level?: string }>;
+  searchParams: Promise<{ mode?: string; day?: string; view?: string; difficulty?: string; level?: string; legacy?: string }>;
 };
 
 
@@ -31,22 +32,25 @@ export async function generateMetadata({ searchParams }: PlayPageProps): Promise
   const { mode, difficulty, level, day } = await searchParams;
   const tutorialMode = mode === "tutorial";
   if (mode === "ladder" || mode === "bomb" || mode === "risk") {
-    return { title: mode === "ladder" ? "Çarpan Merdiveni" : mode === "bomb" ? "Bomba Kart" : "Risk modu", description: "Gizli bağları bul, riskleri yönet." };
+    return { title: mode === "ladder" ? "Çarpan Merdiveni" : mode === "bomb" ? "Bomba Kart" : "Risk modu", description: "Gizli bağları bul, riskleri yönet.", alternates: { canonical: "/play" } };
   }
   const track = TRACKS.find(item => item.id === difficulty);
   if (!tutorialMode && !day && mode !== "daily") return {
     title: track ? `${track.label} · Bölüm ${level ?? 1}` : "Kolay, Orta, Zor, Ultra Zor",
     description: `Dört zorluk modu, her modda ${TRACK_LEVEL_COUNT} farklı bulmaca. 16 kelimenin gizli bağlarını keşfet.`,
+    alternates: { canonical: "/play" },
   };
 
   return tutorialMode
     ? {
         title: "Kısa öğretici",
         description: TUTORIAL_DESCRIPTION,
+        alternates: { canonical: "/play" },
       }
     : {
         title: "Bugünün bulmacası",
         description: PLAY_DESCRIPTION,
+        alternates: { canonical: "/play" },
       };
 }
 
@@ -75,15 +79,15 @@ function dailyKicker(state: DailyPuzzleState): string {
 }
 
 export default async function PlayPage({ searchParams }: PlayPageProps) {
-  const { mode, day, difficulty, level: requestedLevel } = await searchParams;
+  const { mode, day, difficulty, level: requestedLevel, legacy } = await searchParams;
   if (mode === "ladder" || mode === "bomb" || mode === "risk") {
-    const daily = await loadPlayableDaily({ dayKey: resolvePublicationDay() });
+    const previous = legacy === "1" ? await loadPlayableDaily({ dayKey: resolvePublicationDay() }) : null;
     return <main className="q-play-page">
       <header className="q-play-header">
         <Link className="q-play-brand" href="/" aria-label="Quadro ana sayfasına dön">QUADRO</Link>
         <span className="q-play-kicker">{mode === "ladder" ? "ÇARPAN MERDİVENİ" : mode === "bomb" ? "BOMBA KART" : "RİSK MODU"}</span>
       </header>
-      {daily.status === "ok" ? mode === "risk" ? <RiskGame puzzle={daily.puzzle} /> : <ChallengeGame puzzle={daily.puzzle} mode={mode} /> : <DailyPuzzleSection state={daily} />}
+      {previous ? previous.status === "ok" ? <><p>Önceki günlük oyun kaydın · Can ve seri hedefinden bağımsız</p>{mode === "risk" ? <RiskGame puzzle={previous.puzzle} /> : <ChallengeGame puzzle={previous.puzzle} mode={mode} />}</> : <DailyPuzzleSection state={previous} /> : <SpecialModeGate mode={mode} day={resolvePublicationDay()} />}
     </main>;
   }
   if (mode !== "tutorial" && day !== undefined &&

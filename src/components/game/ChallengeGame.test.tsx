@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { standardPuzzle } from "@/features/game/fixtures";
 import { ChallengeGame } from "./ChallengeGame";
 
@@ -75,5 +75,26 @@ describe("özel oyun modları", () => {
     for (const group of standardPuzzle.groups) choose(group.words);
     expect(screen.getByText("Dört bağı da buldun!")).toBeTruthy();
     expect(screen.getAllByText("1000")).toHaveLength(2);
+  });
+
+  it("üç oyun hedefine temel puan ve mod bonusunu bildirir", async () => {
+    const finish = vi.fn();
+    render(<ChallengeGame puzzle={standardPuzzle} mode="bomb" onFinish={finish} />);
+    await screen.findByRole("button", { name: /bombalı kart/i });
+    for (const group of standardPuzzle.groups) {
+      for (const word of group.words) fireEvent.click(screen.getByRole("button", { name: new RegExp(`^${word.text}(, bombalı kart)?$`) }));
+      fireEvent.click(screen.getByRole("button", { name: "Grupla" }));
+    }
+    await waitFor(() => expect(finish).toHaveBeenCalledWith(500));
+  });
+
+  it("kasaya alınmış çarpan bonusunu sonraki temel puanlarla karıştırmaz", async () => {
+    render(<ChallengeGame puzzle={standardPuzzle} mode="ladder" onFinish={vi.fn()} />);
+    await screen.findByRole("button", { name: "Kasaya al" });
+    choose(standardPuzzle.groups[0].words);
+    choose(standardPuzzle.groups[1].words);
+    fireEvent.click(screen.getByRole("button", { name: "Kasaya al" }));
+    choose(standardPuzzle.groups[2].words);
+    expect(screen.getByText(/Hedefe yazılacak puan:/).textContent).toContain("400");
   });
 });

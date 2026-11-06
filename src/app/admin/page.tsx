@@ -8,6 +8,7 @@ import { readStoredSession } from "@/lib/auth/client";
 import { AdminGameNavigation } from "@/components/game/AdminGameNavigation";
 import { TrackNavigation } from "@/components/game/TrackNavigation";
 import { PublicationStatus } from "@/components/game/PublicationStatus";
+import { RegisteredUsers } from "@/components/admin/RegisteredUsers";
 
 type DashboardTotals = {
   visitors: number;
@@ -158,6 +159,7 @@ export default function AdminPage() {
               <Link href="/play">Bulmacaya dön →</Link>
             </div>
 
+            <RegisteredUsers />
             <AdminGameNavigation />
             <PublicationStatus />
             <TrackNavigation />

@@ -1,7 +1,19 @@
+import type { Metadata } from "next";
 import { connection } from "next/server";
+import { SITE_ORIGIN } from "@/lib/config";
+
+export const metadata: Metadata = { alternates: { canonical: SITE_ORIGIN } };
+
+/** Google may use this to understand the site's preferred brand name. */
+export const WEBSITE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Play Quadro",
+  alternateName: ["Quadro", "playquadro.com.tr"],
+  url: `${SITE_ORIGIN}/`,
+  inLanguage: "tr-TR",
+};
 import { HomeExperience } from "@/components/home/HomeExperience";
-import { JourneyEntry } from "@/components/journey/JourneyEntry";
-import { PictureEntry } from "@/components/pictures/PictureEntry";
 import { loadPlayableDaily } from "@/lib/daily/playableDaily";
 import { formatCountdown } from "@/components/home/homeState";
 import {
@@ -62,6 +74,10 @@ export default async function HomePage() {
 
   return (
     <main className="q-page-shell">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD).replace(/</g, "\\u003c") }}
+      />
       <HomeExperience
         today={{
           dayKey,
@@ -73,8 +89,6 @@ export default async function HomePage() {
         nextRolloverAt={boundary.toISOString()}
         initialCountdownLabel={formatCountdown(boundary.getTime(), now.getTime())}
       />
-      <JourneyEntry />
-      <PictureEntry />
     </main>
   );
 }
