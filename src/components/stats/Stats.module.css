@@ -22,6 +22,10 @@
 .action { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; border-radius: var(--q-radius-sm); padding: 12px 20px; text-decoration: none; background: var(--q-color-ink); color: var(--q-color-surface); font-weight: 650; }
 .secondary { background: transparent; color: var(--q-color-ink); border: 1px solid var(--q-color-border-strong); }
 .warning { border-left: 4px solid var(--q-color-warning); padding-left: 16px; color: var(--q-color-ink-muted); }
+.history { list-style: none; padding: 0; margin: 0; }
+.history li { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--q-color-border); font-size: 13px; }
+.history li span:first-child { overflow-wrap: anywhere; font-weight: 650; }
+.history time { margin-left: auto; color: var(--q-color-ink-muted); }
 .loading { min-height: 420px; padding-top: 30px; }
 .loadingBlocks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .loadingBlocks span { height: 126px; border-radius: var(--q-radius-md); background: var(--q-color-border); opacity: .45; }
