@@ -7,7 +7,8 @@ import { metadata as rootMetadata } from "@/app/layout";
 import manifest from "@/app/manifest";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
-import { metadata as homeMetadata } from "@/app/page";
+import { metadata as homeMetadata, WEBSITE_JSON_LD } from "@/app/page";
+import { metadata as guideMetadata } from "@/app/nasil-oynanir/page";
 import { generateMetadata } from "@/app/play/page";
 import { APP_NAME, APP_TAGLINE, APP_TITLE, PLAY_DESCRIPTION, SITE_ORIGIN, TUTORIAL_DESCRIPTION } from "@/lib/config";
 
@@ -18,6 +19,16 @@ describe("Q37 metadata", () => {
     expect(homeMetadata.alternates).toMatchObject({ canonical: SITE_ORIGIN });
     expect(robots().sitemap).toBe(`${SITE_ORIGIN}/sitemap.xml`);
     expect(sitemap().map((entry) => entry.url)).toEqual(expect.arrayContaining([SITE_ORIGIN + "/", SITE_ORIGIN + "/play"]));
+  });
+
+  it("site adı yapılandırılmış verisi ve öğretici URL'si Google'a açıktır", () => {
+    expect(WEBSITE_JSON_LD).toMatchObject({
+      "@type": "WebSite",
+      name: "Play Quadro",
+      url: `${SITE_ORIGIN}/`,
+    });
+    expect(sitemap().map((item) => item.url)).toContain(`${SITE_ORIGIN}/nasil-oynanir`);
+    expect(guideMetadata.alternates).toMatchObject({ canonical: "/nasil-oynanir" });
   });
 
   it("ana sayfa marka, açıklama, ikon ve sosyal önizlemeyi açıkça tanımlar", () => {
