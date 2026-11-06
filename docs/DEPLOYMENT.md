@@ -99,7 +99,7 @@ Tatbikat üretimi etkilediği için ancak iki kişinin onayıyla, trafiğin dü�
 | Secret/env sözleşmesi | Hazır; değerlerin Vercel'de ayarlı olduğu Mehmet tarafından doğrulanacak |
 | Vercel `quadro` projesi | Var |
 | Preview URL + commit smoke | Bekliyor |
-| Production otomatik kabul | Son başarılı koşu `56f1636` (4 Kasım); `af6a5f0` için koşulmadı |
+| Production otomatik kabul | `325bb25` için geçti, 6 Kasım: 16/16 kontrol, Resimli ve Risk dahil ([koşu](https://github.com/mehmetalisahingm/quadro/actions/runs/42245111471)). Aynı gün main'deki eski betik `/journey` etiketi yüzünden düşmüştü; bu PR'da düzeltildi |
 | Production elle smoke | Bekliyor |
 | Rollback hedefi | `c806392` belirlendi; **tatbikat yapılmadı** |
 
