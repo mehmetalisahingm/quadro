@@ -29,6 +29,10 @@ const nextConfig = {
     "/": ["./src/content/puzzles/*.json", "./src/content/modes/*.json"],
     "/play": ["./src/content/puzzles/*.json", "./src/content/modes/*.json"],
   },
+  // Editorial material and test fixtures are never runtime dependencies.
+  outputFileTracingExcludes: {
+    "/*": ["./src/content/editorial/**/*", "./tests/**/*", "./docs/**/*"],
+  },
 };
 
 export default nextConfig;
