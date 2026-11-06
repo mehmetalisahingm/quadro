@@ -102,3 +102,22 @@ describe("özel mod enerji kapısı", () => {
     expect(readSpecialState(Date.now()).sequence).toBe(2);
   });
 });
+
+describe("özel mod tahta seçimi (#171)", () => {
+  it("parkurda oynanmış tahtayı atlar", async () => {
+    // Slot 0 Orta parkurun 1. bölümü; oyuncu onu parkurda oynamış.
+    localStorage.setItem("quadro:tracks:v1:track-medium-001:quadro:save:v1:2026-10-05", "{}");
+    render(<SpecialModeGate mode="ladder" day={day} />);
+    fireEvent.click(await screen.findByRole("button", { name: "Oyuna başla · 10 enerji" }));
+    await screen.findByRole("button", { name: "Kasaya al" });
+    expect(readSpecialState(Date.now()).active?.slot).toBe(1);
+    expect(vi.mocked(fetch).mock.calls.at(-1)?.[0]).toContain("slot=1");
+  });
+
+  it("hiç görülmemişse sıradaki slotu kullanır", async () => {
+    render(<SpecialModeGate mode="ladder" day={day} />);
+    fireEvent.click(await screen.findByRole("button", { name: "Oyuna başla · 10 enerji" }));
+    await screen.findByRole("button", { name: "Kasaya al" });
+    expect(readSpecialState(Date.now()).active?.slot).toBe(0);
+  });
+});

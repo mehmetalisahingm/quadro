@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { pickUnseenSlot, readSeenTrackIds } from "@/features/game/challengeSlots";
 import type { Puzzle } from "@/features/game/contracts";
 import {
   beginRun,
@@ -23,6 +24,12 @@ import { RiskGame } from "./RiskGame";
 import { ChallengeGame } from "./ChallengeGame";
 import type { SpecialFinish } from "./specialFinish";
 import styles from "./RiskGame.module.css";
+
+/** Oyuncunun parkurda, günlük yedekte veya önceki özel oyunda gördüğü tahtayı atlar (#171). */
+function withUnseenBoard(state: SpecialState | null): SpecialState | null {
+  if (!state?.active) return state;
+  return { ...state, active: { ...state.active, slot: pickUnseenSlot(state.active.slot, readSeenTrackIds()) } };
+}
 
 async function getPuzzle(run: SpecialRun): Promise<Puzzle> {
   const params = new URLSearchParams({ slot: String(run.slot), run: String(run.id), day: run.day });
@@ -88,12 +95,12 @@ export function SpecialModeGate({ mode, day }: { mode: SpecialMode; day: string 
     starting.current = true;
     setBusy(true); setError("");
     try {
-      const candidate = beginRun(readSpecialState(), mode, Date.now(), day);
+      const candidate = withUnseenBoard(beginRun(readSpecialState(), mode, Date.now(), day));
       if (!candidate?.active) { sync(); return; }
       const board = await getPuzzle(candidate.active);
       // Tahta gelene kadar başka sekme oyun başlatmış olabilir; harcama en güncel durumdan yapılır.
-      const next = beginRun(readSpecialState(), mode, Date.now(), day);
-      if (!next?.active || next.active.id !== candidate.active.id) { sync(); return; }
+      const next = withUnseenBoard(beginRun(readSpecialState(), mode, Date.now(), day));
+      if (!next?.active || next.active.id !== candidate.active.id || next.active.slot !== candidate.active.slot) { sync(); return; }
       saveSpecialState(next);
       setState(next); setPuzzle(board); setRun(next.active); setBonus(null);
     } catch { setError("Oyun başlatılamadı. Enerjin harcanmadı; tekrar dene."); }
