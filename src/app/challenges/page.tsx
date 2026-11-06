@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArcadeShell, ArcadeTitle } from "@/components/arcade/ArcadeShell";
 import styles from "@/components/arcade/ArcadeHub.module.css";
 
-export const metadata: Metadata = { title: "Özel Meydan Okumalar", description: "Risk, Çarpan Merdiveni ve Bomba Kart modlarını keşfet." };
+export const metadata: Metadata = { title: "Özel Meydan Okumalar", description: "Risk, Çarpan Merdiveni ve Bomba Kart modlarını keşfet.", alternates: { canonical: "/challenges" } };
 
 const modes = [
   { href: "/play?mode=risk", icon: "🎲", title: "Risk", detail: "Ne kadar eminsin? Her tahminde puan yatır, doğru bağlantıyla kazancını büyüt.", note: "100 puanla başla" },
