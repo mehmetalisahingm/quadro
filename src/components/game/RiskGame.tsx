@@ -40,7 +40,7 @@ function readGame(puzzle: Puzzle, key: string): RiskState {
   } catch { return fresh; }
 }
 
-export function RiskGame({ puzzle }: { puzzle: Puzzle }) {
+export function RiskGame({ puzzle, onFinish }: { puzzle: Puzzle; onFinish?: (points: number) => void }) {
   const key = `quadro:risk:v1:${puzzle.date}:${puzzle.id}:${puzzle.revision}`;
   const [game, setGame] = useState<RiskState | null>(null);
   const [wager, setWager] = useState(10);
@@ -50,6 +50,14 @@ export function RiskGame({ puzzle }: { puzzle: Puzzle }) {
     const timer = window.setTimeout(() => setGame(readGame(puzzle, key)), 0);
     return () => window.clearTimeout(timer);
   }, [puzzle, key]);
+  useEffect(() => {
+    if (!game) return;
+    const balance = scoreFor(game);
+    if (game.snapshot.status !== "playing" || balance === 0) {
+      const base = game.snapshot.solvedGroupIds.length * 100;
+      onFinish?.(base + Math.max(0, balance - 100));
+    }
+  }, [game, onFinish]);
 
   function commit(next: RiskState) {
     setGame(next);
@@ -75,8 +83,9 @@ export function RiskGame({ puzzle }: { puzzle: Puzzle }) {
   return <section className={`q-game-shell ${styles.shell}`} aria-labelledby="risk-title">
     <div className={styles.heading}><span>QUADRO · RİSK</span><h1 id="risk-title">Ne kadar eminsin?</h1>
       <p>100 puanla başla. Dörtlünü seç, puan yatır. Doğru tahmin kazandırır, yanlış tahmin yatırdığın puanı götürür. Dört hatada veya puanın sıfıra inince oyun biter.</p>
-      <p>Bugünün günlük bulmacasıyla oynarsın.</p></div>
+      <p>{onFinish ? "Her doğru grup 100 temel puan kazandırır; 100 başlangıç puanının üzerindeki bakiyen bonus olarak üç oyun hedefine eklenir." : "Bugünün günlük bulmacasıyla oynarsın."}</p></div>
     <div className={styles.scoreboard}><div><span>PUANIN</span><strong>{score}</strong></div><div><span>KALAN HATA</span><strong>{snapshot.mistakesRemaining} / 4</strong></div></div>
+    {onFinish && <p>Hedefe yazılacak puan: <strong>{snapshot.solvedGroupIds.length * 100 + Math.max(0, score - 100)}</strong></p>}
     {storageError && <p role="alert">İlerleme kaydedilemedi. Bu sekme açıkken oynamaya devam edebilirsin.</p>}
     {snapshot.solvedGroupIds.map((id) => { const group = puzzle.groups.find((item) => item.id === id); return group ? <SolvedGroup key={id} group={group} /> : null; })}
     {!finished && <>

@@ -18,22 +18,28 @@ function ladderTotals(state: ChallengeState) {
   let bank = 0;
   let pot = 0;
   let multiplier = 1;
+  let baseInPot = 0;
+  let bankedBase = 0;
   for (const [index, attempt] of state.snapshot.attempts.entries()) {
     if (attempt.verdict === "correct") {
       pot += 100 * multiplier;
+      baseInPot += 100;
       multiplier += 1;
     } else {
       pot = 0;
+      baseInPot = 0;
       multiplier = 1;
     }
     if (state.banks.includes(index + 1)) {
       bank += pot;
+      bankedBase += baseInPot;
       pot = 0;
+      baseInPot = 0;
       multiplier = 1;
     }
   }
-  if (state.snapshot.status === "won") return { bank: bank + pot, pot: 0, multiplier };
-  return { bank, pot, multiplier };
+  if (state.snapshot.status === "won") return { bank: bank + pot, pot: 0, multiplier, bonus: Math.max(0, bank + pot - bankedBase - baseInPot) };
+  return { bank, pot, multiplier, bonus: Math.max(0, bank - bankedBase) };
 }
 
 function bombTotals(state: ChallengeState) {
@@ -69,7 +75,7 @@ function readGame(puzzle: Puzzle, mode: ChallengeMode, key: string): ChallengeSt
   } catch { return null; }
 }
 
-export function ChallengeGame({ puzzle, mode }: { puzzle: Puzzle; mode: ChallengeMode }) {
+export function ChallengeGame({ puzzle, mode, onFinish }: { puzzle: Puzzle; mode: ChallengeMode; onFinish?: (points: number) => void }) {
   const key = `quadro:${mode}:v1:${puzzle.date}:${puzzle.id}:${puzzle.revision}`;
   const [game, setGame] = useState<ChallengeState | null>(null);
   const [message, setMessage] = useState("");
@@ -86,6 +92,15 @@ export function ChallengeGame({ puzzle, mode }: { puzzle: Puzzle; mode: Challeng
     }, 0);
     return () => window.clearTimeout(timer);
   }, [puzzle, mode, key]);
+  useEffect(() => {
+    if (!game) return;
+    const remaining = mode === "bomb" ? bombTotals(game).remaining : game.snapshot.mistakesRemaining;
+    if (game.snapshot.status !== "playing" || remaining === 0) {
+      const base = game.snapshot.solvedGroupIds.length * 100;
+      const points = mode === "bomb" ? bombTotals(game).score : base + ladderTotals(game).bonus;
+      onFinish?.(points);
+    }
+  }, [game, mode, onFinish]);
 
   function commit(next: ChallengeState) {
     setGame(next);
@@ -123,8 +138,9 @@ export function ChallengeGame({ puzzle, mode }: { puzzle: Puzzle; mode: Challeng
     <div className={styles.heading}><span>QUADRO · {mode === "ladder" ? "ÇARPAN MERDİVENİ" : "BOMBA KART"}</span>
       <h1 id="challenge-title">{mode === "ladder" ? "Devam mı, kasa mı?" : "Bombayı doğru yerde kullan."}</h1>
       <p>{mode === "ladder" ? "Her doğru grup 100 puan × çarpan kazandırır. Kasaya alırsan çarpan sıfırlanır, yanlışta kasaya alınmayan puanlar silinir. Son grupta biriken puan otomatik kasaya girer." : "Bombalı kartı içeren doğru grup 200, diğer doğru gruplar 100 puan kazandırır. Bombalı yanlış tahmin iki hata hakkı götürür."}</p>
-      <p>Bugünün günlük bulmacasıyla oynarsın. Dört hata hakkın var.</p></div>
+      <p>{onFinish ? "Her doğru grup 100 temel puan verir;" : "Bugünün günlük bulmacasıyla oynarsın;"} dört hata hakkın var.{onFinish && (mode === "ladder" ? " Kasadaki temel puanın üzeri hedefe bonus ekler." : " Bombalı doğru grup 100 bonus puan kazandırır.")}</p></div>
     <div className={styles.scoreboard}><div><span>{mode === "ladder" ? "KASADA" : "PUANIN"}</span><strong>{mode === "ladder" ? ladder.bank : bomb.score}</strong></div><div><span>KALAN HATA</span><strong>{remaining} / 4</strong></div></div>
+    {onFinish && <p>Hedefe yazılacak puan: <strong>{mode === "bomb" ? bomb.score : snapshot.solvedGroupIds.length * 100 + ladder.bonus}</strong>{mode === "ladder" && ladder.pot > 0 ? " (ortadaki puan kasaya alınca bonus olabilir)" : ""}</p>}
     {mode === "ladder" && <div className={styles.wager}><span>Ortadaki puan <strong>{ladder.pot}</strong> · Sonraki çarpan <strong>{ladder.multiplier}×</strong></span>
       {!finished && <button type="button" className="q-game-control" disabled={ladder.pot === 0} onClick={bankPot}>Kasaya al</button>}</div>}
     {storageError && <p role="alert">İlerleme kaydedilemedi. Bu sekme açıkken oynamaya devam edebilirsin.</p>}
