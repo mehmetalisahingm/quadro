@@ -4,7 +4,7 @@ import type { GameSnapshot } from "@/features/game/contracts";
 import { createSampleScenario, standardPuzzle } from "@/features/game/fixtures";
 
 import { formatDuration, getResultStats } from "./presentation";
-import { buildShareText } from "./ShareCard";
+import { buildShareMessage, buildShareText } from "./ShareCard";
 
 /** Paylaşım metninin başlık satırı. */
 function header(snapshot: GameSnapshot): string {
@@ -107,6 +107,22 @@ describe("buildShareText · süre", () => {
     for (const group of standardPuzzle.groups) {
       expect(lines.join("\n")).not.toContain(group.title);
       for (const word of group.words) expect(lines.join("\n")).not.toContain(word.text);
+    }
+  });
+});
+
+describe("sonuç paylaşımı · oyuncu kazanımı", () => {
+  it("sonuç karelerini bozmadan oynanabilir bağlantı ekler", () => {
+    const { snapshot } = createSampleScenario("won").controller;
+    const core = buildShareText(standardPuzzle, snapshot);
+    const message = buildShareMessage(standardPuzzle, snapshot);
+    expect(message.startsWith(`${core}\n\n`)).toBe(true);
+    expect(message).toContain(
+      "https://playquadro.com.tr/?utm_source=player_share&utm_medium=referral&utm_campaign=result_card",
+    );
+    for (const group of standardPuzzle.groups) {
+      expect(message).not.toContain(group.title);
+      for (const word of group.words) expect(message).not.toContain(word.text);
     }
   });
 });
