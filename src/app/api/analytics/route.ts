@@ -24,7 +24,7 @@ const FIELDS: Record<string, readonly string[]> = {
   first_attempt: ["puzzleId", "revision", "verdict", "mistakesRemaining"],
   game_finish: ["puzzleId", "revision", "dayKey", "status", "attemptCount", "mistakesUsed", "activeSeconds", "mode", "score"],
   share_attempt: ["puzzleId", "revision", "method"],
-  retention_visit: ["cohortDay", "activeDay", "dayOffset", "milestone"],
+  retention_visit: ["cohortDay", "activeDay", "dayOffset", "milestone", "utmSource", "utmMedium", "utmCampaign"],
 };
 
 export const runtime = "nodejs";
@@ -121,6 +121,16 @@ export async function POST(request: Request) {
 
   if (Object.keys(properties).some((key) => !FIELDS[event.name as string]?.includes(key))) {
     return NextResponse.json({ error: "unsupported_event_properties" }, { status: 400 });
+  }
+  // Never accept arbitrary campaign strings; they could contain personal data.
+  for (const key of ["utmSource", "utmMedium", "utmCampaign"]) {
+    if (properties[key] !== undefined && (
+      event.name !== "retention_visit" ||
+      typeof properties[key] !== "string" ||
+      !/^[a-z0-9_-]{1,40}$/i.test(properties[key])
+    )) {
+      return NextResponse.json({ error: "invalid_campaign" }, { status: 400 });
+    }
   }
   if (properties.mode !== undefined && (typeof properties.mode !== "string" || !["risk", "ladder", "bomb"].includes(properties.mode))) {
     return NextResponse.json({ error: "invalid_mode" }, { status: 400 });
