@@ -67,7 +67,7 @@ describe("tahmin geri bildirimleri", () => {
     // Tekrar, oyunu bitirecek hakkı da tüketmez; geçmişe girmediği için paylaşım satırı üretmez.
     for (const words of YANLISLAR.slice(1)) await guess(user, words);
     expect(statValue(resultRegion("Bugünlük bu kadar."), "Hata")).toBe("4");
-    expect(sharePreview().split("\n")).toHaveLength(1 + 4);
+    expect(sharePreview().split("\n").slice(1, -2)).toHaveLength(4);
   });
 
   it("hızlı çift gönderme hakkı iki kez düşürmez, doğru grubu bir kez açar", async () => {
@@ -177,7 +177,8 @@ describe("paylaşım", () => {
     const preview = sharePreview();
     const [header, ...rows] = preview.split("\n");
     expect(header).toBe(`Quadro ${puzzle.date} 4/4 · ${statValue(result, "Süre")}`);
-    expect(rows).toEqual(["🟦🟦🟦🟪", "🟦🟨🟪🟨", "🟨🟨🟨🟨", "🟪🟪🟪🟪", "🟩🟩🟩🟩", "🟦🟦🟦🟦"]);
+    expect(rows.slice(0, -2)).toEqual(["🟦🟦🟦🟪", "🟦🟨🟪🟨", "🟨🟨🟨🟨", "🟪🟪🟪🟪", "🟩🟩🟩🟩", "🟦🟦🟦🟦"]);
+    expect(rows.at(-1)).toContain("https://playquadro.com.tr/?utm_source=player_share");
     expect(leakedAnswers(preview)).toEqual([]);
 
     const shareCard = screen.getByRole("region", { name: "Sonucunu paylaş" });

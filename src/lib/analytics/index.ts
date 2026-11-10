@@ -58,6 +58,9 @@ export type AnalyticsEventProperties = {
     activeDay: string;
     dayOffset: number;
     milestone: "D0" | "D1" | "D7" | "other";
+    utmSource?: string;
+    utmMedium?: string;
+    utmCampaign?: string;
   };
 };
 
@@ -227,6 +230,24 @@ export function calendarDayOffset(fromDay: string, toDay: string): number {
   return Math.round((to - from) / 86_400_000);
 }
 
+/** Marketing params are optional and restricted to short anonymous channel labels. */
+function browserCampaignAttribution(): Pick<AnalyticsEventProperties["retention_visit"], "utmSource" | "utmMedium" | "utmCampaign"> {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const safe = (key: string): string | undefined => {
+    const value = params.get(key);
+    return value && /^[a-z0-9_-]{1,40}$/i.test(value) ? value : undefined;
+  };
+  const utmSource = safe("utm_source");
+  const utmMedium = safe("utm_medium");
+  const utmCampaign = safe("utm_campaign");
+  return {
+    ...(utmSource ? { utmSource } : {}),
+    ...(utmMedium ? { utmMedium } : {}),
+    ...(utmCampaign ? { utmCampaign } : {}),
+  };
+}
+
 export function recordBrowserRetentionVisit(now = new Date()): void {
   const storage = browserStorage();
   if (!storage) return;
@@ -245,7 +266,7 @@ export function recordBrowserRetentionVisit(now = new Date()): void {
     createAnalyticsClient({ storage, emit: dispatchBrowserEvent }).trackOnce(
       `retention:${activeDay}`,
       "retention_visit",
-      { cohortDay, activeDay, dayOffset, milestone },
+      { cohortDay, activeDay, dayOffset, milestone, ...browserCampaignAttribution() },
     );
   } catch {
     // Gizli sekme, kota veya depolama engeli ölçümü devre dışı bırakabilir.
