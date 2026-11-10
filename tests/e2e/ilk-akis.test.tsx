@@ -131,7 +131,8 @@ describe("kazanma", () => {
     const preview = sharePreview();
     const [header, ...rows] = preview.split("\n");
     expect(header).toBe(`Quadro ${puzzle.date} 4/4 · ${statValue(result, "Süre")}`);
-    expect(rows).toEqual(["🟩🟩🟩🟩", "🟨🟨🟨🟨", "🟦🟦🟦🟦", "🟪🟪🟪🟪"]);
+    expect(rows.slice(0, -2)).toEqual(["🟩🟩🟩🟩", "🟨🟨🟨🟨", "🟦🟦🟦🟦", "🟪🟪🟪🟪"]);
+    expect(rows.at(-1)).toContain("https://playquadro.com.tr/?utm_source=player_share");
     expect(leakedAnswers(preview)).toEqual([]);
 
     await user.click(screen.getByRole("button", { name: "Paylaş" }));
@@ -174,7 +175,8 @@ describe("kaybetme", () => {
     const preview = sharePreview();
     const [header, ...rows] = preview.split("\n");
     expect(header).toBe(`Quadro ${puzzle.date} 0/4 · ${statValue(result, "Süre")}`);
-    expect(rows).toHaveLength(4);
+    expect(rows.slice(0, -2)).toHaveLength(4);
+    expect(rows.at(-1)).toContain("playquadro.com.tr");
     expect(leakedAnswers(preview)).toEqual([]);
   });
 });
