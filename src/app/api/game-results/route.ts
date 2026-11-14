@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { createHash } from "node:crypto";
+import { isThrottled } from "@/lib/security/requestThrottle";
 import { trackIdentity } from "@/features/game/tracks";
 import { journeyStep } from "@/features/game/journey";
 import { pictureBoardNumber } from "@/features/game/pictures";
@@ -75,6 +77,9 @@ export async function POST(request: Request) {
   const bearer = request.headers.get("authorization") ?? "";
   if (!bearer.startsWith("Bearer ") || bearer.length > 8192 || bearer.length < 15) return fail(401, "unauthorized");
   if (Number(request.headers.get("content-length") ?? 0) > MAX_BYTES) return fail(413, "payload_too_large");
+  // Hash the bearer so plaintext tokens are never retained as rate-limit keys.
+  const tokenFingerprint = createHash("sha256").update(bearer).digest("hex");
+  if (isThrottled(`game:${tokenFingerprint}`, 30, 60_000)) return fail(429, "rate_limited");
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, "");
   const publicKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
