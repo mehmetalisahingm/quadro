@@ -15,12 +15,12 @@ Utku's review of main e7a84fd identified S-01..S-20.
 - HSTS without subdomain preload; report-only CSP; hide X-Powered-By.
 - Avoid displaying attacker-controlled callback error text.
 - CI least-privilege token and no persisted checkout credentials; remove abandoned write-enabled tutorial workflow.
-- Add linked /gizlilik draft.
+- Prepared /gizlilik content, but do not deploy an incomplete legal notice. S-06 remains a release blocker pending verified owner/contact, rights-request details and legal review.
 
 ## Remaining release checks (do not mark closed)
 - [ ] S-03/S-05: Vercel Firewall project access failed with 404; reconnect Vercel integration and configure **distributed** rate limits. Check legitimate bursts to avoid blocking gameplay.
 - [ ] S-04/S-07: PKCE + server-side httpOnly session migration needs an isolated compatibility-tested auth implementation; current client stores refresh tokens in localStorage and implicit callback still accepts tokens.
-- [ ] S-06: replace draft placeholders with verified data-controller identity, working contact address, exact processing legal basis, retention, international data transfer determination and rights-request channel; obtain legal review.
+- [ ] S-06: publish the /gizlilik disclosure after verified data-controller identity, working contact address, exact processing legal basis, retention, international data transfer determination and rights-request channel are documented and legally reviewed.
 - [x] S-10: pinned active workflow GitHub Actions to immutable commit SHAs resolved from the exact upstream tags and documented versions.
 - [ ] S-12: verify HSTS at custom domain following release.
 - [ ] S-13: add server-only boundaries after auditing imports and tests.

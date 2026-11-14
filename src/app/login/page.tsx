@@ -80,8 +80,6 @@ export default function LoginPage() {
         {message ? <p className={styles.message}>{message}</p> : null}
         {error ? <p className={styles.error} role="alert">{error}</p> : null}
 
-        <p className={styles.note}>Hesap açmadan önce <Link href="/gizlilik">gizlilik ve kişisel veriler aydınlatmasını</Link> okuyabilirsin.</p>
-
         <Link className={styles.back} href="/">
           ← Oyuna dön
         </Link>

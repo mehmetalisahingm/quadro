@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_ORIGIN } from "@/lib/config";
 
-const publicRoutes = ["/", "/play", "/challenges", "/journey", "/pictures", "/nasil-oynanir", "/kelime-bulmacasi-ipuclari", "/gizlilik"] as const;
+const publicRoutes = ["/", "/play", "/challenges", "/journey", "/pictures", "/nasil-oynanir", "/kelime-bulmacasi-ipuclari"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return publicRoutes.map((pathname, index) => ({

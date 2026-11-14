@@ -74,7 +74,6 @@ export function ArcadeHome({ state, puzzleNumber, dateLabel, progressLabel, next
       </div>
       <Link href="/nasil-oynanir">Kuralları ve ipuçlarını keşfet <span aria-hidden="true">→</span></Link>
     </section>
-    <footer style={{ textAlign: "center", padding: "1.5rem 0", fontSize: "0.85rem" }}><Link href="/gizlilik">Gizlilik ve kişisel veriler</Link></footer>
   </ArcadeShell>;
 }
 
