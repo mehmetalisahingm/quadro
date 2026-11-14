@@ -21,7 +21,7 @@ Utku's review of main e7a84fd identified S-01..S-20.
 - [ ] S-03/S-05: Vercel Firewall project access failed with 404; reconnect Vercel integration and configure **distributed** rate limits. Check legitimate bursts to avoid blocking gameplay.
 - [ ] S-04/S-07: PKCE + server-side httpOnly session migration needs an isolated compatibility-tested auth implementation; current client stores refresh tokens in localStorage and implicit callback still accepts tokens.
 - [ ] S-06: replace draft placeholders with verified data-controller identity, working contact address, exact processing legal basis, retention, international data transfer determination and rights-request channel; obtain legal review.
-- [ ] S-10: pin action revisions after separately verifying correct immutable SHA for the versions in all active workflows.
+- [x] S-10: pinned active workflow GitHub Actions to immutable commit SHAs resolved from the exact upstream tags and documented versions.
 - [ ] S-12: verify HSTS at custom domain following release.
 - [ ] S-13: add server-only boundaries after auditing imports and tests.
 - [ ] S-14/S-15: if competitive rankings or prizes are introduced, move answer verification entirely server-side.

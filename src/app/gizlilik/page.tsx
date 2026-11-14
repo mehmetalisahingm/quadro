@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <p>
         Quadro hesabı olmadan da oynanabilir. Hesap oluşturan oyuncuların e-posta adresi
         kimlik doğrulama ve hesapla ilişkilendirilen oyun sonuçları için işlenir.
-        Oyun, tarayıcıda oyun durumu ve tercihler saklar; sunucu tarafı anonim analitik
+        Oyun, tarayıcıda oyun durumu ve tercihler saklar; sunucu tarafı takma adlı analitik
         kayıtları için kalıcı, rastgele oluşturulmuş bir ziyaretçi kimliği kullanılır.
       </p>
       <h2>İşlenen veri kategorileri</h2>
