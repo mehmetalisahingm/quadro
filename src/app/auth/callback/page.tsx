@@ -13,7 +13,8 @@ export default function AuthCallbackPage() {
     const authError = params.get("error_description") ?? params.get("error");
     if (authError) {
       window.history.replaceState({}, "", window.location.pathname);
-      void Promise.resolve().then(() => setError(authError));
+      // Never render an attacker-controlled URL fragment as a trusted site message.
+      void Promise.resolve().then(() => setError("Giriş bağlantısı geçersiz veya süresi dolmuş. Yeniden giriş yapmayı dene."));
       return;
     }
 
@@ -24,7 +25,8 @@ export default function AuthCallbackPage() {
       })
       .catch((caught) => {
         window.history.replaceState({}, "", window.location.pathname);
-        setError(caught instanceof Error ? caught.message : "Giriş tamamlanamadı.");
+        console.error("[auth] callback failed", caught instanceof Error ? caught.name : "unknown");
+        setError("Giriş tamamlanamadı. Yeni bir giriş bağlantısı iste.");
       });
   }, []);
 

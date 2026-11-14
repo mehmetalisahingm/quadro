@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
   // Minimal defense-in-depth headers. Do not set a restrictive CSP here without
   // testing Next.js inline scripts and the Supabase authentication redirect.
   async headers() {
@@ -11,6 +12,10 @@ const nextConfig = {
         { key: "X-Frame-Options", value: "DENY" },
         { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        // Start with report-only CSP so that Next.js hydration and Supabase redirects are not broken.
+        { key: "Content-Security-Policy-Report-Only", value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data: blob:; font-src 'self' data:; connect-src 'self' https://*.supabase.co; object-src 'none'; base-uri 'self'; frame-ancestors 'none'" },
+        // Do not use includeSubDomains/preload until every subdomain has been validated.
+        { key: "Strict-Transport-Security", value: "max-age=31536000" },
       ],
     }];
   },

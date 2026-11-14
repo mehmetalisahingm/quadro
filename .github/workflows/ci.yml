@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 # Aynı dal için eski koşuları iptal et
 concurrency:
   group: ci-${{ github.ref }}
@@ -19,6 +22,8 @@ jobs:
     steps:
       - name: Depoyu çek
         uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Node kurulumu (.nvmrc sürümü + npm önbelleği)
         uses: actions/setup-node@v7.0.0
