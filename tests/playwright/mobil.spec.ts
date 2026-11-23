@@ -30,3 +30,29 @@ test("320px görünüm yatay taşmaz ve kart seçimi çalışır", async ({ page
   await firstTile.click();
   await expect(firstTile).toHaveAttribute("aria-pressed", "true");
 });
+
+for (const width of [320, 390]) {
+  test(`${width}px mobil mod etiketi hesap düğmesinin altına girmez`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 800 });
+    for (const mode of ["risk", "ladder", "bomb"]) {
+      await page.goto(`/play?mode=${mode}`);
+      const account = page.getByLabel("Hesap");
+      const kicker = page.locator(".q-play-header .q-play-kicker");
+      await expect(account).toBeVisible();
+      await expect(kicker).toBeVisible();
+      const positions = await page.evaluate(() => {
+        const accountRect = document.querySelector('[aria-label="Hesap"]')?.getBoundingClientRect();
+        const kickerRect = document.querySelector(".q-play-header .q-play-kicker")?.getBoundingClientRect();
+        return {
+          accountBottom: accountRect?.bottom ?? Number.POSITIVE_INFINITY,
+          kickerTop: kickerRect?.top ?? 0,
+          kickerRight: kickerRect?.right ?? Number.POSITIVE_INFINITY,
+          scrollWidth: document.documentElement.scrollWidth,
+        };
+      });
+      expect(positions.kickerTop).toBeGreaterThanOrEqual(positions.accountBottom + 2);
+      expect(positions.kickerRight).toBeLessThanOrEqual(width + 0.5);
+      expect(positions.scrollWidth).toBeLessThanOrEqual(width + 0.5);
+    }
+  });
+}

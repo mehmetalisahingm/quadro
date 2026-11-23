@@ -53,6 +53,20 @@ a {
   letter-spacing: 0.04em;
 }
 
+/* Fixed account links occupy the top-right area on small screens.
+ * Keep the entire mode label below that row, including at 320px wide.
+ * No game state or opening animations are affected. */
+@media (max-width: 639px) {
+  .q-play-header {
+    padding-top: 52px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+  .q-play-kicker {
+    overflow-wrap: anywhere;
+  }
+}
+
 @media (min-width: 640px) {
   .q-play-page {
     padding: 28px 24px 64px;
