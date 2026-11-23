@@ -11,6 +11,7 @@ import {
 import { GAME_MODES, gameModeOf } from "@/features/game/modes";
 import { pictureBoardNumber } from "@/features/game/pictures";
 import { trackBrowserEvent } from "@/lib/analytics";
+import { SITE_ORIGIN } from "@/lib/config";
 
 import { formatDuration } from "./presentation";
 
@@ -54,8 +55,17 @@ export function buildShareText(puzzle: Puzzle, snapshot: GameSnapshot): string {
   return [`${heading} ${score} · ${duration}`, ...rows].join("\n");
 }
 
+/** Add a clickable, spoiler-free entry point; every share can bring a new player. */
+export function buildShareMessage(puzzle: Puzzle, snapshot: GameSnapshot): string {
+  const isPicture = gameModeOf(puzzle.id) === "picture";
+  const path = isPicture ? "/pictures" : "/";
+  const link = `${SITE_ORIGIN}${path}?utm_source=player_share&utm_medium=referral&utm_campaign=result_card`;
+  const invitation = isPicture ? "Resimli Quadro'yu sen de dene" : "Quadro'yu sen de dene";
+  return `${buildShareText(puzzle, snapshot)}\n\n${invitation}: ${link}`;
+}
+
 export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
-  const shareText = useMemo(() => buildShareText(puzzle, snapshot), [puzzle, snapshot]);
+  const shareText = useMemo(() => buildShareMessage(puzzle, snapshot), [puzzle, snapshot]);
   const [status, setStatus] = useState("");
   const [showFallback, setShowFallback] = useState(false);
 

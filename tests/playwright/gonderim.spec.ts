@@ -66,7 +66,10 @@ test("Grupla'ya hızlı çift basış tek gönderim olarak işlenir", async ({ p
   await oyunuKazan(page);
 
   const izgara = await paylasimMetni(page);
-  expect(izgara.split("\n")).toHaveLength(1 + 1 + GAME_CONSTANTS.groupCount);
+  const satirlar = izgara.split("\n");
+  // Paylaşım ızgarasına boş ayraç ve davet bağlantısı eklendi.
+  expect(satirlar).toHaveLength(1 + 1 + GAME_CONSTANTS.groupCount + 2);
+  expect(satirlar.at(-1)).toContain("Quadro'yu sen de dene: https://playquadro.com.tr/");
   await expect(sonucIstatistigi(page, "Hata")).toHaveText("1");
 });
 

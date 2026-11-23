@@ -129,3 +129,33 @@ describe("anonymous progress analytics privacy checks", () => {
     expect(response.status).toBe(204);
   });
 });
+
+describe("campaign source privacy", () => {
+  it("accepts safe UTM labels in retention events without a configured database", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "");
+    vi.stubEnv("SUPABASE_SECRET_KEY", "");
+    const response = await POST(request({
+      visitorId: VALID_VISITOR,
+      event: {
+        id: "evt-utm-1", name: "retention_visit", at: new Date().toISOString(),
+        properties: {
+          cohortDay: "2026-11-10", activeDay: "2026-11-10",
+          dayOffset: 0, milestone: "D0", utmSource: "player_share",
+          utmMedium: "referral", utmCampaign: "result_card",
+        },
+      },
+    }));
+    expect(response.status).toBe(204);
+  });
+
+  it("rejects UTM values that might leak private information", async () => {
+    const response = await POST(request({
+      visitorId: VALID_VISITOR,
+      event: {
+        id: "evt-utm-2", name: "retention_visit", at: new Date().toISOString(),
+        properties: { utmSource: "person@example.com" },
+      },
+    }));
+    expect(response.status).toBe(400);
+  });
+});

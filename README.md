@@ -1,8 +1,8 @@
 # Quadro
 
-Türkçe günlük gruplama bulmacası: **16 kelime, 4 gizli bağ, 4 hata hakkı.**
+🎮 **[Quadro'yu ücretsiz oyna](https://playquadro.com.tr/)** — indirme gerektirmeyen Türkçe günlük kelime ve bağlantı bulmacası.
 
-> `Quadro` mevcut proje adıdır; yayın öncesinde isim değişirse metadata ve kullanıcı yüzeyleri birlikte güncellenir.
+Türkçe günlük gruplama bulmacası: **16 kelime, 4 gizli bağ, 4 hata hakkı.**
 
 ## Nasıl oynanır?
 
@@ -19,9 +19,9 @@ Her gün ekranda 16 kelime görünür. Birbiriyle aynı gizli bağı paylaşan d
 
 `Ana sayfa → günlük bulmaca → kazanma/kaybetme → sonuç/paylaşım → istatistik`
 
-Repo şu anda **yayın öncesi kalite ve kabul** aşamasındadır. Güncel görev durumu için GitHub issue'ları kaynak kabul edilir; README tek başına release onayı anlamına gelmez.
+Web sürümü [playquadro.com.tr](https://playquadro.com.tr/) adresinde erişilebilir. İçerik, mobil deneyim ve kalite kontrolleri sürüyor; README tek başına ürün kalite kabulü anlamına gelmez.
 
-Yayın öncesi kalan ana kapılar:
+İyileştirme ve büyüme öncesi kalite kapıları:
 
 - iki yazarın içeriklerinin karşılıklı kör kalite review'larının tamamlanması,
 - 20–30 gerçek katılımcılı ürün pilotu,
@@ -32,7 +32,7 @@ Yayın öncesi kalan ana kapılar:
 
 ## Teknik durum
 
-- **Next.js 16.3.5** (App Router)
+- **Next.js 16.4.5** (App Router)
 - **React 19.1.1**
 - **TypeScript 5.7.3**
 - Node.js ≥ 20.9; repoda `.nvmrc` = 22
@@ -88,6 +88,7 @@ Yerel uygulama varsayılan olarak `http://localhost:3000` adresinde açılır.
 - [Yayın kontrol listesi](docs/RELEASE_CHECKLIST.md)
 - [Deployment runbook](docs/DEPLOYMENT.md) — Q40 hazırlık branch'i main'e alındığında aktif olur
 - [Pilot planı](docs/research/Q35_PILOT_PLAN.md)
+- [Organik büyüme deneyi ve tanıtım metinleri](docs/growth/LAUNCH_PLAYBOOK_2026-11.md)
 
 ## Yayın ilkeleri
 
