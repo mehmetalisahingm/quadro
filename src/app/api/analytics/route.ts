@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isThrottled } from "@/lib/security/requestThrottle";
 
 const UUID_V4_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -54,6 +55,10 @@ function configuredSupabase(): { url: string; secretKey: string } | null {
 }
 
 export async function POST(request: Request) {
+  const origin = request.headers.get("origin");
+  if (origin && origin !== new URL(request.url).origin) {
+    return NextResponse.json({ error: "forbidden_origin" }, { status: 403 });
+  }
   const contentType = request.headers.get("content-type") ?? "";
   if (!contentType.toLowerCase().startsWith("application/json")) {
     return NextResponse.json({ error: "unsupported_media_type" }, { status: 415 });
@@ -142,6 +147,11 @@ export async function POST(request: Request) {
   const serializedProperties = JSON.stringify(properties);
   if (serializedProperties.length > 4_096) {
     return NextResponse.json({ error: "properties_too_large" }, { status: 413 });
+  }
+
+  // Best-effort per-instance throttle; global protection still requires a platform WAF.
+  if (isThrottled(`analytics:${visitorId}`, 30, 60_000)) {
+    return NextResponse.json({ error: "rate_limited" }, { status: 429 });
   }
 
   if (process.env.QUADRO_ANALYTICS_DISABLED === "1") {
