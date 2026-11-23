@@ -4,7 +4,7 @@
   "private": true,
   "description": "Türkçe günlük gruplama bulmacası — 16 kelime, 4 gizli bağ, 4 hata hakkı.",
   "engines": {
-    "node": ">=20.9.0"
+    "node": "24.x"
   },
   "packageManager": "npm@10.9.7",
   "scripts": {
