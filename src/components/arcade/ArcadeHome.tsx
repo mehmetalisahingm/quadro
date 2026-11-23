@@ -13,6 +13,7 @@ import { parseStoredRecord } from "@/lib/persistence/record";
 import { snapshotStorageKey } from "@/lib/persistence/snapshotStore";
 import { trackStorage } from "@/lib/persistence/trackStorage";
 import { ArcadeShell, ArcadeTitle } from "./ArcadeShell";
+import { NavigationPending } from "./NavigationPending";
 import styles from "./ArcadeHome.module.css";
 
 const modes = [
@@ -51,7 +52,7 @@ export function ArcadeHome({ state, puzzleNumber, dateLabel, progressLabel, next
       <div className={styles.calendar} aria-hidden="true"><span>BUGÜN</span><strong>{dateLabel.split(" ")[0]}</strong><small>{dateLabel.split(" ")[1]}</small></div>
       <div className={styles.dailyCopy}><span className={styles.kicker}>✦ GÜNLÜK BULMACA {puzzleNumber !== null ? ` · #${puzzleNumber}` : ""}</span><h2>Bugünün bulmacası</h2><p>Dört kelimenin ortak bağını bul, dört grubu tamamla.</p>
         {progressLabel && <p className={styles.progressText} aria-live="polite">{progressLabel}</p>}
-        <Link href={dailyHref} className={styles.goldButton}><span aria-hidden="true">▶</span> {dailyLabel} <span aria-hidden="true">›</span></Link>
+        <Link href={dailyHref} className={styles.goldButton}><span aria-hidden="true">▶</span> {dailyLabel} <span aria-hidden="true">›</span><NavigationPending /></Link>
         <div className={styles.countdown} aria-label="Yeni bulmaca zamanı"><span>Yeni bulmaca · {nextPuzzleLabel}</span><span>Türkiye saatiyle 00.00</span></div>
       </div>
       <div className={styles.letterTiles} aria-hidden="true"><i>Q</i><i>U</i><i>A</i><i>D</i></div>
@@ -62,9 +63,9 @@ export function ArcadeHome({ state, puzzleNumber, dateLabel, progressLabel, next
       <Link href="/pictures" className={`${styles.feature} ${styles.pictures}`}><div><span className={styles.icon}>▧</span><h2>Resimli Quadro</h2><p>Görsellerin arasındaki<br />gizli bağı bul.</p></div><Image className={styles.pictureArt} src="/images/pictures/mode-entry.svg" alt="" width={165} height={165} unoptimized /><div className={styles.featureFooter}><span>Görsellerle oyna</span><strong>{pictureWins !== undefined ? `${pictureWins} / ${PICTURE_BOARD_COUNT} tahta` : "→"}</strong></div></Link>
     </div>
     <h2 className={styles.sectionTitle}><span>▥</span> Zorluk seviyelerine göre oyna</h2>
-    <div className={styles.trackGrid}>{TRACKS.map((track, index) => <Link key={track.id} href={trackHref(track.id)} className={styles.track} data-track={track.id}><span className={styles.trackIcon}>{["❧","▥","◆","♛"][index]}</span><strong>{track.label}</strong><small>{track.description}</small><span className={styles.trackProgress}>✦ {tracks ? `${tracks[index]} / ${TRACK_LEVEL_COUNT} bölüm` : `${TRACK_LEVEL_COUNT} bölüm`}</span></Link>)}</div>
+    <div className={styles.trackGrid}>{TRACKS.map((track, index) => <Link key={track.id} href={trackHref(track.id)} className={styles.track} data-track={track.id}><span className={styles.trackIcon}>{["❧","▥","◆","♛"][index]}</span><strong>{track.label}<NavigationPending /></strong><small>{track.description}</small><span className={styles.trackProgress}>✦ {tracks ? `${tracks[index]} / ${TRACK_LEVEL_COUNT} bölüm` : `${TRACK_LEVEL_COUNT} bölüm`}</span></Link>)}</div>
     <h2 className={styles.sectionTitle}><span>🏆</span> Özel meydan okumalar</h2>
-    <div className={styles.modeGrid}>{modes.map((mode) => <Link href={mode.href} key={mode.id} className={styles.mode} data-mode={mode.id}><span className={styles.modeArt} aria-hidden="true">{mode.symbol}</span><strong>{mode.title}</strong><p>{mode.detail}</p><span className={styles.smallButton}>▶ Oyna <b>›</b></span></Link>)}</div>
+    <div className={styles.modeGrid}>{modes.map((mode) => <Link href={mode.href} key={mode.id} className={styles.mode} data-mode={mode.id}><span className={styles.modeArt} aria-hidden="true">{mode.symbol}</span><strong>{mode.title}</strong><p>{mode.detail}</p><span className={styles.smallButton}>▶ Oyna <b>›</b><NavigationPending /></span></Link>)}</div>
     <div className={styles.more}><Link href="/challenges">Tüm özel modları keşfet →</Link><Link href="/play?mode=tutorial">Nasıl oynanır? →</Link></div>
     <section className={styles.guidePreview} aria-labelledby="quadronasiloynanir">
       <div>

@@ -20,7 +20,7 @@ export async function loadPlayableDaily(options: LoadDailyPuzzleOptions & { rese
     for (let offset = 0; offset < files.length; offset++) {
       const name = files[(start + offset) % files.length]!;
       try {
-        const parsed = parseDailyPuzzleFile(JSON.parse(await readFile(join(directory, name), "utf8")));
+        const parsed = parseDailyPuzzleFile(JSON.parse(await readFile(/* turbopackIgnore: true */ join(/* turbopackIgnore: true */ directory, name), "utf8")));
         if (!parsed.ok || parsed.file.status !== "published") continue;
         const puzzle = toPuzzle(parsed.file);
         return { status: "ok", dayKey, source: `reserve:${parsed.file.id}`,
