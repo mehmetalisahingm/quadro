@@ -1,16 +1,16 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
 
-import prototip20 from "@/content/puzzles/2026-09-20.json";
-import prototip21 from "@/content/puzzles/2026-09-21.json";
-import prototip22 from "@/content/puzzles/2026-09-22.json";
-import prototip23 from "@/content/puzzles/2026-09-23.json";
-import prototip24 from "@/content/puzzles/2026-09-24.json";
-import prototip1007 from "@/content/puzzles/2026-10-07.json";
-import prototip1008 from "@/content/puzzles/2026-10-08.json";
-import prototip1009 from "@/content/puzzles/2026-10-09.json";
-import prototip1010 from "@/content/puzzles/2026-10-10.json";
-import prototip1011 from "@/content/puzzles/2026-10-11.json";
-import prototip1012 from "@/content/puzzles/2026-10-12.json";
+import prototip20 from "@/content/puzzles/2026-11-11.json";
+import prototip21 from "@/content/puzzles/2026-11-12.json";
+import prototip22 from "@/content/puzzles/2026-11-13.json";
+import prototip23 from "@/content/puzzles/2026-11-14.json";
+import prototip24 from "@/content/puzzles/2026-11-15.json";
+import prototip1007 from "@/content/puzzles/2026-11-28.json";
+import prototip1008 from "@/content/puzzles/2026-11-29.json";
+import prototip1009 from "@/content/puzzles/2026-11-30.json";
+import prototip1010 from "@/content/puzzles/2026-12-01.json";
+import prototip1011 from "@/content/puzzles/2026-12-02.json";
+import prototip1012 from "@/content/puzzles/2026-12-03.json";
 import {
   GAME_CONSTANTS,
   normalizeTr,

@@ -12,6 +12,8 @@ Bir bulmaca ancak şu üç koşul birlikte sağlanırsa yayın stoğunda `ONAYLI
 
 Yazar kendi içeriğini tek başına yayın için onaylayamaz.
 
+Taslak hedef takvim [Q38 11 Kasım yayın planında](qa/Q38_RELEASE_CALENDAR_2026-11-11.md) yer alır. Bu yalnız aday tarihi planıdır; **onaylı stok kayıtları** ve son yayın onayı tamamlanmadı.
+
 ## 30 günlük takvim
 
 Q38 tamamlanırken tablo gerçek yayın tarihiyle doldurulur.

@@ -1,5 +1,7 @@
 # İçerik rezervasyonları
 
+> **GÜNCEL YAYIN TARİHİ KARARI — 5 Kasım 2026:** #41 kapsamında eski Eylül–Kasım tarih kilidi yalnız yayın planlaması için değiştirildi. `q-001` **2026-11-11**, `q-048` **2026-12-28**; aradaki bütün kimlikler ardışık 52 gün ileri taşındı. Kimlikler, fiil/tema sahipliği ve eski tarihçe değişmez. **Aşağıdaki eski numara/tarih tabloları artık tarihsel üretim kaydıdır, geçerli yayın takvimi değildir.** Güncel eşleme: [11 Kasım yayın takvimi](qa/Q38_RELEASE_CALENDAR_2026-11-11.md). 48 aday halen `draft` ve son resmî yayın Mehmet+Utku ayrı onaylarını gerektirir.
+
 Bu dosya, Utku ve Mehmet'in paralel bulmaca üretirken aynı numarayı, tarihi, fiil kalıbını veya temayı iki kez kullanmasını önlemek için tutulan ortak kayıttır. İki kişi aynı tema, aynı fiil kalıbı ve aynı numara/tarih üzerinde defalarca çakıştı; aşağıdaki bölüşüm iki tarafın anlaştığı kuraldır.
 
 **Yeni bir bulmacaya başlamadan önce herkes bu dosyaya bakar.** Bulmaca yazım kuralları [`PUZZLE_GUIDE.md`](PUZZLE_GUIDE.md), şema kuralları [`CONTENT_SCHEMA.md`](CONTENT_SCHEMA.md) içindedir; numara, tarih, kalıp ve tema sahipliğinde esas olan bu dosyadır.
