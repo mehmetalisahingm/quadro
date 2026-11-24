@@ -3,12 +3,15 @@ import { describe, expect, it, vi } from "vitest";
 
 import PlayPage from "@/app/play/page";
 import { PlayExperience, playModeKey } from "@/components/game/PlayExperience";
-import { gameOpeningFor } from "@/animations/openingScenes";
-import { parseStoredRecord } from "@/lib/persistence/record";
+import { GameBoard } from "@/components/game/GameBoard";
+import { gameOpeningFor, openingWords } from "@/animations/openingScenes";
+import { createEngineController } from "@/features/game/react/engineController";
+import { parseStoredRecord, serializeRecord } from "@/lib/persistence/record";
 import { snapshotStorageKey } from "@/lib/persistence/snapshotStore";
 
 import {
   UC_GEZEGEN_BIR_SEHIR,
+  YANLISLAR,
   createUser,
   enterGame,
   feedbackText,
@@ -18,11 +21,42 @@ import {
   puzzle,
   registerFlowHooks,
   remainingMistakes,
+  selectWords,
+  submitButton,
 } from "./helpers";
 
 registerFlowHooks();
 
 describe("karşılama → açılış → zorluk modu", () => {
+  it("kısmen çözülmüş oyun açılışında kartları grup düzeninde göstermez", () => {
+    const resumed = { ...puzzle, id: "q-002" };
+    const controller = createEngineController({ puzzle: resumed });
+    for (const word of resumed.groups[0].words) controller.toggleWord(word.id);
+    const result = controller.submitSelection();
+    expect(result.outcome.verdict).toBe("correct");
+    localStorage.setItem(snapshotStorageKey(resumed.date), serializeRecord(result.snapshot, new Date().toISOString()));
+
+    const { container } = render(<GameBoard puzzle={resumed} />);
+    const cards = Array.from(container.querySelectorAll("[data-opening-card] span"), (card) => card.textContent);
+    expect(cards).toEqual(openingWords(resumed));
+    expect(cards).toHaveLength(16);
+  });
+
+  it("yanlış tahminlerde iki hakem tepkisini sırayla gösterir", async () => {
+    render(await PlayPage({ searchParams: Promise.resolve({ day: "2026-09-20" }) }));
+    const user = createUser();
+    await enterGame(user);
+    await selectWords(user, YANLISLAR[0]);
+    await user.click(submitButton());
+    expect(document.querySelector('[data-football-reaction="flag"]')).toBeTruthy();
+    expect(feedbackText()).toContain("aynı grupta değil");
+    act(() => vi.advanceTimersByTime(400));
+    await selectWords(user, YANLISLAR[1]);
+    await user.click(submitButton());
+    expect(document.querySelector('[data-football-reaction="whistle"]')).toBeTruthy();
+    expect(feedbackText()).toContain("aynı grupta değil");
+  });
+
   it("kayıtlı mod sonraki bulmacanın açılış animasyonunu atlatmaz", () => {
     const nextPuzzle = { ...puzzle, id: "saved-opening", date: "2026-09-21" };
     localStorage.setItem(playModeKey(nextPuzzle), "easy");

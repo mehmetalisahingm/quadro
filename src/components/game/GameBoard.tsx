@@ -39,7 +39,7 @@ import { StoryOpening } from "./StoryOpening";
 import { GameBackdrop } from "./GameBackdrop";
 import { journeyStep } from "@/features/game/journey";
 import { journeyStorage } from "@/lib/persistence/journeyProgress";
-import { gameOpeningFor, isStoryOpening } from "@/animations/openingScenes";
+import { gameOpeningFor, isStoryOpening, openingWords } from "@/animations/openingScenes";
 import { RecoveryNotice } from "./RecoveryNotice";
 import { trackIdentity } from "@/features/game/tracks";
 import { trackStorage } from "@/lib/persistence/trackStorage";
@@ -61,8 +61,6 @@ type AnimatedAttempt = {
   wordIds: WordId[];
   verdict: TileAnimationVerdict;
 };
-
-const CINEMATIC_WORD_ORDER = [0, 5, 10, 15, 3, 6, 9, 12, 1, 4, 11, 14, 2, 7, 8, 13] as const;
 
 function prefersReducedMotion(): boolean {
   return (
@@ -177,10 +175,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
         .filter((word): word is string => word !== undefined);
     }
 
-    const allWords = puzzle.groups.flatMap((group) => group.words);
-    return CINEMATIC_WORD_ORDER
-      .map((index) => allWords[index]?.text)
-      .filter((word): word is string => word !== undefined);
+    return openingWords(puzzle);
   }, [puzzle, snapshot.remainingWordOrder, wordById]);
 
   const canSubmit =

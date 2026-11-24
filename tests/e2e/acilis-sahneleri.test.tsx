@@ -2,6 +2,7 @@ import { act, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { StoryOpening } from "@/components/game/StoryOpening";
 import { BoardPrelude } from "@/components/game/BoardPrelude";
+import { OpeningPreview } from "@/components/game/OpeningPreview";
 import { GAME_OPENINGS, gameOpeningFor, OPENING_DURATION, OPENING_SCENES } from "@/animations/openingScenes";
 import { createUser, registerFlowHooks } from "./helpers";
 
@@ -9,6 +10,15 @@ registerFlowHooks();
 const words = Array.from({ length: 16 }, (_, index) => `KELİME ${index + 1}`);
 
 describe("opening lifecycle", () => {
+  it("test oyunu bağlantıları doğrulanmamış sahne adı göstermez", () => {
+    render(<OpeningPreview />);
+    const region = screen.getByRole("region", { name: `Arka arkaya ${GAME_OPENINGS.length} test oyunu` });
+    const links = region.querySelectorAll("a");
+    expect(links).toHaveLength(GAME_OPENINGS.length);
+    expect(links[0]?.getAttribute("href")).toBe("/play?day=2026-09-20");
+    expect(links[0]?.textContent).toContain("Oyunu aç");
+  });
+
   it("ilk 23 numaralı bulmaca 23 açılışın tamamını kapsar", () => {
     const assigned = Array.from({ length: GAME_OPENINGS.length }, (_, index) =>
       gameOpeningFor(`q-${String(index + 1).padStart(3, "0")}`, "2026-10-06"),
