@@ -41,8 +41,8 @@ export function BoardPrelude({ onComplete, onReveal, poster = false }: BoardPrel
   useEffect(() => {
     if (poster) return;
     const media = window.matchMedia?.("(prefers-reduced-motion: reduce)");
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    // The fixed opening overlay owns its own clipping; never lock the document.
+    // Overlapping openings can otherwise restore a stale hidden body overflow.
     skipRef.current?.focus({ preventScroll: true });
     const revealTimer = window.setTimeout(() => { if (!completedRef.current) revealRef.current?.(); }, PRELUDE_MS - 400);
     // animationend owns the handoff; the timer also works if CSS never loads.
@@ -54,7 +54,6 @@ export function BoardPrelude({ onComplete, onReveal, poster = false }: BoardPrel
     return () => {
       window.clearTimeout(timer);
       window.clearTimeout(revealTimer);
-      document.body.style.overflow = previousOverflow;
       media?.removeEventListener?.("change", handlePreference);
     };
   }, [finish, poster]);
