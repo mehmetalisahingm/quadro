@@ -41,8 +41,7 @@ export function StoryOpening({ scene, words, onComplete, onReveal }: {
     const timer = window.setTimeout(finish, media?.matches ? 0 : OPENING_DURATION + 120);
     const revealTimer = window.setTimeout(() => revealRef.current?.(), OPENING_DURATION - 350);
     const preferenceChange = () => { if (media?.matches) finish(); };
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    // The fixed overlay handles its own clipping without locking the page.
     skipRef.current?.focus({ preventScroll: true });
     media?.addEventListener?.("change", preferenceChange);
     window.addEventListener("resize", finish);
@@ -71,7 +70,6 @@ export function StoryOpening({ scene, words, onComplete, onReveal }: {
       window.clearTimeout(timer);
       window.clearTimeout(revealTimer);
       animations.forEach((animation) => animation.cancel());
-      document.body.style.overflow = previousOverflow;
       media?.removeEventListener?.("change", preferenceChange);
       window.removeEventListener("resize", finish);
     };

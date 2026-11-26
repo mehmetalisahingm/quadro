@@ -23,11 +23,11 @@ describe("opening lifecycle", () => {
     expect(new Set(openings).size).toBe(3);
   });
 
-  it("restored sculpture reveals the board before exit and releases scrolling", () => {
+  it("restored sculpture reveals the board before exit without locking scrolling", () => {
     const done = vi.fn(), reveal = vi.fn();
     const previous = document.body.style.overflow;
     const { unmount } = render(<BoardPrelude onComplete={done} onReveal={reveal} />);
-    expect(document.body.style.overflow).toBe("hidden");
+    expect(document.body.style.overflow).toBe(previous);
     expect(screen.getByRole("button", { name: "Oyuna geç" })).toBe(document.activeElement);
     act(() => vi.advanceTimersByTime(3000));
     expect(reveal).toHaveBeenCalledTimes(1);
@@ -63,11 +63,22 @@ describe("opening lifecycle", () => {
     expect(done).toHaveBeenCalledTimes(1);
   });
 
+  it("preserves scrolling when the site and story openings overlap", () => {
+    const previous = document.body.style.overflow;
+    const site = render(<BoardPrelude onComplete={vi.fn()} />);
+    const story = render(<StoryOpening scene="metro" words={words} onComplete={vi.fn()} />);
+    expect(document.body.style.overflow).toBe(previous);
+    site.unmount();
+    story.unmount();
+    expect(document.body.style.overflow).toBe(previous);
+  });
+
   it("bypasses the scene for reduced motion and restores page scrolling", () => {
     vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() })));
     const done = vi.fn();
     const previous = document.body.style.overflow;
     const { unmount } = render(<StoryOpening scene="metro" words={words} onComplete={done} />);
+    expect(document.body.style.overflow).toBe(previous);
     act(() => vi.advanceTimersByTime(0));
     expect(done).toHaveBeenCalledTimes(1);
     unmount();
