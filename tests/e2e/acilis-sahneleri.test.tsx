@@ -63,11 +63,22 @@ describe("opening lifecycle", () => {
     expect(done).toHaveBeenCalledTimes(1);
   });
 
+  it("preserves scrolling when the site and story openings overlap", () => {
+    const previous = document.body.style.overflow;
+    const site = render(<BoardPrelude onComplete={vi.fn()} />);
+    const story = render(<StoryOpening scene="metro" words={words} onComplete={vi.fn()} />);
+    expect(document.body.style.overflow).toBe(previous);
+    site.unmount();
+    story.unmount();
+    expect(document.body.style.overflow).toBe(previous);
+  });
+
   it("bypasses the scene for reduced motion and restores page scrolling", () => {
     vi.stubGlobal("matchMedia", vi.fn(() => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() })));
     const done = vi.fn();
     const previous = document.body.style.overflow;
     const { unmount } = render(<StoryOpening scene="metro" words={words} onComplete={done} />);
+    expect(document.body.style.overflow).toBe(previous);
     act(() => vi.advanceTimersByTime(0));
     expect(done).toHaveBeenCalledTimes(1);
     unmount();
