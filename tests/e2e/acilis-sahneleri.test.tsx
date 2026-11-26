@@ -23,11 +23,11 @@ describe("opening lifecycle", () => {
     expect(new Set(openings).size).toBe(3);
   });
 
-  it("restored sculpture reveals the board before exit and releases scrolling", () => {
+  it("restored sculpture reveals the board before exit without locking scrolling", () => {
     const done = vi.fn(), reveal = vi.fn();
     const previous = document.body.style.overflow;
     const { unmount } = render(<BoardPrelude onComplete={done} onReveal={reveal} />);
-    expect(document.body.style.overflow).toBe("hidden");
+    expect(document.body.style.overflow).toBe(previous);
     expect(screen.getByRole("button", { name: "Oyuna geç" })).toBe(document.activeElement);
     act(() => vi.advanceTimersByTime(3000));
     expect(reveal).toHaveBeenCalledTimes(1);
