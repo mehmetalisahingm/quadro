@@ -22,6 +22,8 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: ciUzerinde,
   retries: ciUzerinde ? 1 : 0,
+  // Yerelde süreye duyarlı akış testleri, varsayılan işçi sayısında zaman aşımına düşüyor.
+  workers: ciUzerinde ? undefined : 4,
   timeout: 30_000,
   expect: { timeout: 5_000 },
   reporter: ciUzerinde

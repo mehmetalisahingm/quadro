@@ -9,6 +9,8 @@ export default defineConfig({
     },
   },
   test: {
+    // Çok çekirdekli makinede varsayılan işçi sayısı jsdom testlerini zaman aşımına düşürüyor.
+    maxWorkers: 4,
     // Vitest 4'te `environmentMatchGlobs` kaldırıldı; birim ve DOM akışları ayrı projelerdir.
     projects: [
       {
