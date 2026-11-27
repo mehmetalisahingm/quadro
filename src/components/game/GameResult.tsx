@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PlacementAd } from "@/components/ads/PlacementAds";
 import type { GameSnapshot, Puzzle } from "@/features/game/contracts";
 import { gameModeOf } from "@/features/game/modes";
 
@@ -75,6 +76,8 @@ export function GameResult({ puzzle, snapshot }: GameResultProps) {
 
       <ShareCard puzzle={puzzle} snapshot={snapshot} />
       <p><Link href="/stats">Tüm istatistiklerin →</Link></p>
+      <p><Link href="/">Yeni bulmacaları keşfet →</Link></p>
+      {!isPicture && <PlacementAd placement="result" />}
     </section>
   );
 }

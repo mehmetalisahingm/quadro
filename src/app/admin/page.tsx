@@ -9,6 +9,7 @@ import { AdminGameNavigation } from "@/components/game/AdminGameNavigation";
 import { TrackNavigation } from "@/components/game/TrackNavigation";
 import { PublicationStatus } from "@/components/game/PublicationStatus";
 import { RegisteredUsers } from "@/components/admin/RegisteredUsers";
+import { AdRevenuePanel } from "@/components/admin/AdRevenuePanel";
 
 type DashboardTotals = {
   visitors: number;
@@ -160,6 +161,7 @@ export default function AdminPage() {
               <Link href="/play">Bulmacaya dön →</Link>
             </div>
 
+            <AdRevenuePanel />
             <RegisteredUsers />
             <AdminGameNavigation />
             <PublicationStatus />

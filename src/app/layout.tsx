@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { PlacementAdsProvider } from "@/components/ads/PlacementAds";
+import { resolveAdSlot } from "@/lib/ads/config";
 
 import { AccountControl } from "@/components/account/AccountControl";
 import { SiteEntrance } from "@/components/game/SiteEntrance";
@@ -90,14 +92,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const common = { environment: process.env.VERCEL_ENV, enabled: process.env.QUADRO_ADSENSE_ENABLED, cmpReady: process.env.QUADRO_ADSENSE_CMP_READY };
+  const slots = { home: resolveAdSlot({ ...common, slot: process.env.QUADRO_ADSENSE_HOME_SLOT }), result: resolveAdSlot({ ...common, slot: process.env.QUADRO_ADSENSE_RESULT_SLOT }) };
   return (
     <html lang="tr">
       <body>
         <AnalyticsRuntime />
-        <SiteEntrance>
-          <AccountControl />
-          {children}
-        </SiteEntrance>
+        <PlacementAdsProvider slots={slots}>
+          <SiteEntrance>
+            <AccountControl />
+            {children}
+          </SiteEntrance>
+        </PlacementAdsProvider>
       </body>
     </html>
   );

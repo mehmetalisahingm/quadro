@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { PlacementAd } from "@/components/ads/PlacementAds";
 import { useSyncExternalStore } from "react";
 import type { HomeHeroProps } from "@/components/home/HomeHero";
 import { JOURNEY_LENGTH } from "@/features/game/journey";
@@ -75,6 +76,8 @@ export function ArcadeHome({ state, puzzleNumber, dateLabel, progressLabel, next
       </div>
       <Link href="/nasil-oynanir">Kuralları ve ipuçlarını keşfet <span aria-hidden="true">→</span></Link>
     </section>
+    <section className={styles.guidePreview} aria-label="English practice"><div><span className={styles.guideKicker}>ENGLISH PRACTICE</span><h2>Play in English</h2><p>Try three English word connections puzzles and share your score with friends.</p></div><Link href="/en" lang="en">Play English puzzles →</Link></section>
+    <PlacementAd placement="home" />
     <nav className={styles.more} aria-label="Site bilgileri"><Link href="/hakkimizda">Hakkımızda</Link><Link href="/gizlilik-politikasi">Gizlilik ve çerezler</Link><Link href="/iletisim">İletişim</Link></nav>
   </ArcadeShell>;
 }
