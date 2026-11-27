@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideAd } from "@/components/ads/GuideAd";
 import { ArcadeShell, ArcadeTitle } from "@/components/arcade/ArcadeShell";
 import { SITE_ORIGIN } from "@/lib/config";
 import styles from "./guide.module.css";
@@ -80,6 +81,7 @@ export default function HowToPlayPage() {
             ))}
           </div>
         </section>
+        <GuideAd />
         <section aria-labelledby="game-options" className={styles.panel}>
           <h2 id="game-options">Günlük bulmaca dışında neler var?</h2>
           <p>Quadro&apos;da <Link href="/play">Kolay, Orta, Zor ve Ultra Zor</Link> seviyelerini seçebilir, <Link href="/pictures">Resimli Quadro</Link> ile görsel bağlantıları arayabilir veya <Link href="/journey">Keşif Yolu</Link> bölümlerinde ilerleyebilirsin. <Link href="/challenges">Özel meydan okumalar</Link> bölümünde farklı oyun kurallarıyla oynanan modlar da bulunur.</p>
