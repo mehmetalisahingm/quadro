@@ -8,8 +8,12 @@ Bu dosya Q41 için yayın kararı iskeletidir. Bağımlılıklar tamamlanmadan y
 - Commit SHA: —
 - Preview URL: —
 - Production URL: —
-- Planlanan yayın tarihi: —
+- Planlanan yayın tarihi: **11 Kasım 2026 Çarşamba, 00.00 Europe/Istanbul** (hedef; nihai GO değil)
 - Karar tarihi: —
+
+- Aday takvim: [`Q38_RELEASE_CALENDAR_2026-11-11.md`](qa/Q38_RELEASE_CALENDAR_2026-11-11.md) — 48 tarih ileri taşındı; içerik onayı ayrı.
+- Dağıtım: `main` otomatik production dağıtımı korunuyor; **deploy, Q41 resmî yayın kabulü sayılmaz**.
+- Görsel yük: `/journey` yaklaşık 7 MB ilk yük optimizasyonu şimdilik ertelendi; gerçek cihaz P0/P1 olursa tekrar ele alınır.
 
 ## Zorunlu bağımlılıklar
 

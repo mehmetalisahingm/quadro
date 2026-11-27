@@ -1,27 +1,27 @@
 import { describe, expect, it } from "vitest";
 
-import prototip20 from "@/content/puzzles/2026-09-20.json";
-import prototip21 from "@/content/puzzles/2026-09-21.json";
-import prototip22 from "@/content/puzzles/2026-09-22.json";
-import prototip23 from "@/content/puzzles/2026-09-23.json";
-import prototip24 from "@/content/puzzles/2026-09-24.json";
-import prototip1007 from "@/content/puzzles/2026-10-07.json";
-import prototip1008 from "@/content/puzzles/2026-10-08.json";
-import prototip1009 from "@/content/puzzles/2026-10-09.json";
-import prototip1010 from "@/content/puzzles/2026-10-10.json";
-import prototip1011 from "@/content/puzzles/2026-10-11.json";
-import prototip1012 from "@/content/puzzles/2026-10-12.json";
-import korTahta20 from "@/content/editorial/blind/2026-09-20.json";
-import korTahta21 from "@/content/editorial/blind/2026-09-21.json";
-import korTahta22 from "@/content/editorial/blind/2026-09-22.json";
-import korTahta23 from "@/content/editorial/blind/2026-09-23.json";
-import korTahta24 from "@/content/editorial/blind/2026-09-24.json";
-import korTahta1007 from "@/content/editorial/blind/2026-10-07.json";
-import korTahta1008 from "@/content/editorial/blind/2026-10-08.json";
-import korTahta1009 from "@/content/editorial/blind/2026-10-09.json";
-import korTahta1010 from "@/content/editorial/blind/2026-10-10.json";
-import korTahta1011 from "@/content/editorial/blind/2026-10-11.json";
-import korTahta1012 from "@/content/editorial/blind/2026-10-12.json";
+import prototip20 from "@/content/puzzles/2026-11-11.json";
+import prototip21 from "@/content/puzzles/2026-11-12.json";
+import prototip22 from "@/content/puzzles/2026-11-13.json";
+import prototip23 from "@/content/puzzles/2026-11-14.json";
+import prototip24 from "@/content/puzzles/2026-11-15.json";
+import prototip1007 from "@/content/puzzles/2026-11-28.json";
+import prototip1008 from "@/content/puzzles/2026-11-29.json";
+import prototip1009 from "@/content/puzzles/2026-11-30.json";
+import prototip1010 from "@/content/puzzles/2026-12-01.json";
+import prototip1011 from "@/content/puzzles/2026-12-02.json";
+import prototip1012 from "@/content/puzzles/2026-12-03.json";
+import korTahta20 from "@/content/editorial/blind/2026-11-11.json";
+import korTahta21 from "@/content/editorial/blind/2026-11-12.json";
+import korTahta22 from "@/content/editorial/blind/2026-11-13.json";
+import korTahta23 from "@/content/editorial/blind/2026-11-14.json";
+import korTahta24 from "@/content/editorial/blind/2026-11-15.json";
+import korTahta1007 from "@/content/editorial/blind/2026-11-28.json";
+import korTahta1008 from "@/content/editorial/blind/2026-11-29.json";
+import korTahta1009 from "@/content/editorial/blind/2026-11-30.json";
+import korTahta1010 from "@/content/editorial/blind/2026-12-01.json";
+import korTahta1011 from "@/content/editorial/blind/2026-12-02.json";
+import korTahta1012 from "@/content/editorial/blind/2026-12-03.json";
 import {
   ISSUE_CODES,
   MAX_COMFORTABLE_WORD_LENGTH,
@@ -67,17 +67,17 @@ const kodlar = (issues: readonly ValidationIssue[]): IssueCode[] =>
   issues.map((issue) => issue.code);
 
 const prototipler = [
-  ["2026-09-20", prototip20, korTahta20],
-  ["2026-09-21", prototip21, korTahta21],
-  ["2026-09-22", prototip22, korTahta22],
-  ["2026-09-23", prototip23, korTahta23],
-  ["2026-09-24", prototip24, korTahta24],
-  ["2026-10-07", prototip1007, korTahta1007],
-  ["2026-10-08", prototip1008, korTahta1008],
-  ["2026-10-09", prototip1009, korTahta1009],
-  ["2026-10-10", prototip1010, korTahta1010],
-  ["2026-10-11", prototip1011, korTahta1011],
-  ["2026-10-12", prototip1012, korTahta1012],
+  ["2026-11-11", prototip20, korTahta20],
+  ["2026-11-12", prototip21, korTahta21],
+  ["2026-11-13", prototip22, korTahta22],
+  ["2026-11-14", prototip23, korTahta23],
+  ["2026-11-15", prototip24, korTahta24],
+  ["2026-11-28", prototip1007, korTahta1007],
+  ["2026-11-29", prototip1008, korTahta1008],
+  ["2026-11-30", prototip1009, korTahta1009],
+  ["2026-12-01", prototip1010, korTahta1010],
+  ["2026-12-02", prototip1011, korTahta1011],
+  ["2026-12-03", prototip1012, korTahta1012],
 ] as const;
 
 describe("validatePuzzle — geçerli içerik", () => {

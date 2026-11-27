@@ -6,7 +6,7 @@ type Group = { title: string; words: { id: string; text: string }[] };
 type Candidate = { id: string; date: string; status: string; groups: Group[] };
 const root = resolve(process.cwd(), "src/content/puzzles");
 const blindRoot = resolve(process.cwd(), "src/content/editorial/blind");
-const first = new Date(Date.UTC(2026, 9, 22));
+const first = new Date(Date.UTC(2026, 11, 13));
 const fileOf = (dir: string, day: string) => JSON.parse(readFileSync(join(dir, day + ".json"), "utf8"));
 const normalized = (text: string) => text.trim().toLocaleUpperCase("tr-TR");
 const signature = (group: Group) => group.words.map(word => normalized(word.text)).sort().join("|");
@@ -16,7 +16,7 @@ describe("new daily candidate stock (Q38)", () => {
     const ids = new Set<string>();
     const olderGroups = new Map<string, string>();
     for (let i = 0; i < 32; i += 1) {
-      const day = new Date(Date.UTC(2026, 8, 20) + i * 86_400_000).toISOString().slice(0, 10);
+      const day = new Date(Date.UTC(2026, 10, 11) + i * 86_400_000).toISOString().slice(0, 10);
       const old = fileOf(root, day) as Candidate;
       for (const group of old.groups) {
         if (!olderGroups.has(signature(group))) olderGroups.set(signature(group), day);
