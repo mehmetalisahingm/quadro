@@ -6,7 +6,7 @@ Epic #202 · iskelet #203. Expo SDK 58 (React Native 0.88) + TypeScript. Oyun ku
 Oyun ekranı (#207): 7×7 tahta, 3 parçalık tepsi, sürükle-bırak ve dokunarak yerleştirme. Tam
 tasarım sistemi ve diğer ekranlar #214'te gelir.
 
-> **Geçici sözlük:** `src/game/devDictionary.ts` yalnız ekranı denemek için elle yazılmış ~280
+> **Geçici sözlük:** `src/game/devDictionary.ts` yalnız ekranı denemek için elle yazılmış 248
 > kelimedir. Lisanslı sözlük #204'te gelir ve bunun yerini alır; bu liste yayına çıkmaz.
 
 ## Kurulum
