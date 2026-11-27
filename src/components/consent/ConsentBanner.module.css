@@ -133,6 +133,22 @@
   box-shadow: var(--q-shadow-focus);
 }
 
+/* Dar telefonlarda şerit kısa kalsın: tahta ilk ekranda görünsün. */
+@media (max-width: 380px) {
+  .banner {
+    padding-block: var(--q-space-2);
+  }
+
+  .text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .secondary {
+    min-height: 32px;
+  }
+}
+
 @media (min-width: 720px) {
   .inner {
     grid-template-columns: minmax(0, 1fr) auto;

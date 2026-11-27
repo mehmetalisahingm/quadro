@@ -64,8 +64,8 @@ export function ConsentBanner({ adsAvailable = false }: { adsAvailable?: boolean
         <div className={styles.copy}>
           <h2 id="consent-title" ref={heading} tabIndex={-1} className={styles.title}>Çerez tercihleri</h2>
           <p id="consent-text" className={styles.text}>
-            İzin verirsen oyunu iyileştirmek için anonim kullanım ölçümü yaparız: hangi bağlantıdan geldiğin,
-            sonraki günlerde geri dönüp dönmediğin ve bulmacaların nasıl oynandığı. Veriler AB&apos;deki sunucularda tutulur.
+            İzin verirsen oyunu iyileştirmek için anonim ölçüm yaparız: nereden geldiğin, geri dönüp dönmediğin ve
+            nasıl oynadığın. Veriler AB&apos;de tutulur.
             {adsAvailable ? " Reklam onayı, Google reklamlarının çerez kullanmasına izin verir." : ""}
             {" "}Reddedersen oyun aynen çalışır. <Link href="/gizlilik-politikasi">Ayrıntılar</Link>
           </p>
