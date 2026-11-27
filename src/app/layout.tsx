@@ -29,6 +29,9 @@ function resolveMetadataBase(): URL {
 export const metadata: Metadata = {
   metadataBase: resolveMetadataBase(),
   applicationName: APP_NAME,
+  other: {
+    "google-adsense-account": "ca-pub-3615988430927806",
+  },
   title: {
     default: APP_TITLE,
     template: `%s | ${APP_NAME}`,
