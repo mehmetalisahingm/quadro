@@ -11,6 +11,8 @@ import {
 import { GAME_MODES, gameModeOf } from "@/features/game/modes";
 import { pictureBoardNumber } from "@/features/game/pictures";
 import { trackBrowserEvent } from "@/lib/analytics";
+import { captureProductEvent } from "@/lib/analytics/posthog";
+import { puzzleContext } from "@/lib/analytics/product";
 import { SITE_ORIGIN } from "@/lib/config";
 
 import { formatDuration } from "./presentation";
@@ -74,6 +76,10 @@ export function ShareCard({ puzzle, snapshot }: ShareCardProps) {
       puzzleId: puzzle.id,
       revision: puzzle.revision,
       method,
+    });
+    captureProductEvent("share_click", {
+      ...puzzleContext(puzzle),
+      method: method === "native-share" ? "share" : "copy",
     });
   };
 

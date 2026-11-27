@@ -25,6 +25,8 @@ import {
 import { usePersistentGame } from "@/features/game/state";
 import { currentUserIsAdmin } from "@/lib/auth/admin";
 import { AUTH_SESSION_EVENT, readStoredSession } from "@/lib/auth/client";
+import { captureProductEvent } from "@/lib/analytics/posthog";
+import { puzzleContext } from "@/lib/analytics/product";
 
 import motionStyles from "./GameAnimations.module.css";
 import difficultyStyles from "./GameDifficulty.module.css";
@@ -106,9 +108,11 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
     };
   }, []);
 
+  const hintsUsedRef = useRef(0);
   const { puzzle, controller, restore } = usePersistentGame(dailyPuzzle ?? standardPuzzle, {
     unlimitedMistakes: isAdmin,
     storage: chapterStorage,
+    hintsUsedRef,
   });
   const { snapshot } = controller;
   const opening = gameOpeningFor(puzzle.id, puzzle.date);
@@ -131,6 +135,16 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
   const terminalSoundPending = useRef(false);
 
   useEffect(() => { hintStore.hydrate(); }, [hintStore]);
+  useEffect(() => { hintsUsedRef.current = hints.revealedGroupIds.length; }, [hints.revealedGroupIds.length]);
+
+  const revealHint = () => {
+    const before = hintStore.getState().revealedGroupIds.length;
+    hintStore.revealNext(snapshot.solvedGroupIds);
+    const after = hintStore.getState().revealedGroupIds.length;
+    hintsUsedRef.current = after;
+    // Yalnız kaçıncı ipucu olduğu gönderilir; açılan grubun adı ya da kimliği asla.
+    if (after > before) captureProductEvent("hint_used", { ...puzzleContext(puzzle), hint_index: after });
+  };
 
   useEffect(
     () => () => {
@@ -405,7 +419,7 @@ export function GameBoard({ puzzle: dailyPuzzle, difficulty = "medium", onOpenRu
                   type="button"
                   className={difficultyStyles.hintButton}
                   disabled={!hints.hydrated || !cinematicDone || isTransitioning || hintsRemaining === 0 || !hasUnrevealedGroup}
-                  onClick={() => hintStore.revealNext(snapshot.solvedGroupIds)}
+                  onClick={revealHint}
                 >
                   <span aria-hidden="true">✦</span> Kategori ipucu
                 </button>

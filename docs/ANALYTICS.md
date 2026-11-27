@@ -107,3 +107,50 @@ Ana sayfa analitiği artık aynı tarayıcıda aynı gün bir kez üretilir; bu 
 Acil kapatma için sunucu ortam değişkeni `QUADRO_ANALYTICS_DISABLED=1` kullanılabilir. Supabase Free ve Vercel Hobby'de kota dolması verinin durmasına/yayının kısıtlanmasına sebep olabilir; proje planı değiştirilmeden ücretli ölçeklemeye güvenilmez. KVKK/gizlilik bildirimlerinin gerçek üretim yayını öncesi gözden geçirilmesi gerekir.
 
 **Saklama politikası henüz otomatik uygulanmıyor:** mevcut olaylar veritabanında kalır. Veri temizliği ayrı, denetlenebilir bir operasyon olarak kurulmalıdır; mevcut geçmişi izinsiz silme yoktur. **Kota garantisi değildir:** Bu limit SQL'e ulaşan başarılı olayları sınırlar, Vercel'e gelen HTTP isteklerinin veya Supabase'e yapılmış sayısız SQL sorgusunun kaynak kullanımını sınırlamaz. Planlar Free/Hobby olarak doğrulanmalı, ücretli plan ve eklentiler açılmamalıdır.
+
+## Çerez onayı ve PostHog EU (Kasım 2026)
+
+Bu bölüm yukarıdakilerin önüne geçer: **artık hiçbir ölçüm onaysız çalışmaz.**
+
+### Onay katmanı (`src/lib/consent`)
+
+- Kategoriler: `necessary` (her zaman açık), `analytics`, `ads`. Varsayılan: analitik ve reklam kapalı.
+- Seçim `localStorage["quadro:consent:v1"]` içinde yalnız `{ version, analytics, ads, decidedAt }` olarak tutulur; 12 ay sonra yeniden sorulur.
+- Karar verilmeden: PostHog paketi indirilmez, `/api/analytics`'e istek gitmez, `quadro:visitor:v1` / kohort / olay kuyruğu yazılmaz. UTM etiketleri yalnız sayfa belleğinde bekler (`src/lib/analytics/campaign.ts`).
+- Kabul: `retention_visit` kaydedilir, PostHog yüklenir, bellekteki UTM oturuma ve kişi profiline (`initial_utm_*`, bir kez) eklenir.
+- Ret ya da geri alma: PostHog durdurulur (`opt_out_capturing` + `reset`), `ph_*` anahtarları ve yukarıdaki Supabase ölçüm anahtarları cihazdan silinir.
+- Şerit (`src/components/consent/ConsentBanner.tsx`) sayfa akışında en üsttedir, sabit katman değildir; tahtanın üstüne binmez. Footer'daki **Çerez tercihleri** (`SiteFooter`) şeridi yeniden açar.
+- Reklam: `DisplayAd` yalnız `ads` onayı varsa AdSense script'ini ekler. Şeritte reklam kategorisi yalnız reklam gerçekten açılabilirse (`resolveAdSlot`) gösterilir. AB/İngiltere/İsviçre trafiği için Google sertifikalı CMP şartı ayrıca değerlendirilmelidir (`docs/adsense-launch.md`).
+- İstisna: giriş yapmış kullanıcının özel mod sonucunu hesabına kaydetmek için `quadro:result-device:v1` cihaz kanıtı tutulur (zorunlu kategori, ölçüme gitmez). Eski `quadro:visitor:v1` değeri varsa bir kez kopyalanır, böylece mevcut kayıtlar bozulmaz.
+
+### PostHog olayları (`src/lib/analytics/product.ts`)
+
+| Olay | Alanlar |
+| --- | --- |
+| `puzzle_start` | `mode` (daily/easy/medium/hard/ultra/journey/pictures), `level` veya `day`, `resumed` |
+| `puzzle_complete` | ortak alanlar + `result` (won/lost), `mistakes`, `duration_s`, `hints_used` |
+| `share_click` | ortak alanlar + `method` (share/copy) |
+| `hint_used` | ortak alanlar + `hint_index` (kaçıncı ipucu; açılan grup **gönderilmez**) |
+| `$pageview` | PostHog'un sayfa görüntüleme olayı (SPA geçişleri dahil) |
+
+Her olay `sanitizeProductProperties` ile izinli alanlardan yeniden kurulur. `before_send`, URL'lerden hash'i (ör. `/auth/callback#access_token=…`) ve izinli olmayan sorgu parametrelerini siler; kalanlar: `utm_*`, `mode`, `day`, `difficulty`, `level`, `board`. Otomatik yakalama, oturum kaydı, anketler, ısı haritası, özellik bayrakları ve harici script yükleme kapalıdır. Kalıcılık yalnız `localStorage` (çerez yok). Özel modlar (Risk / Merdiven / Bomba) şimdilik yalnız Supabase hattına yazar.
+
+PostHog otomasyon tarayıcılarını (`navigator.webdriver`, HeadlessChrome) bot sayıp atar; bu üretimde istenen davranıştır. `tests/playwright/onay.spec.ts` gerçek ziyaretçi akışını sınamak için bu işaretleri yalnız kendi içinde gizler.
+
+### PostHog proje ayarları (bir kez, panelden)
+
+1. Bölge: **EU Cloud** (`eu.posthog.com`) üzerinde proje açın.
+2. Project settings → **Discard client IP data**: açık. (İstemci tarafında IP'yi kapatan bir seçenek yoktur; bu ayar zorunlu.)
+3. Data retention: en fazla 12 ay (gizlilik metniyle aynı).
+4. Session replay, surveys, heatmaps: kapalı bırakın (kod zaten istemez).
+5. Project API key (`phc_…`) → Vercel'e `NEXT_PUBLIC_POSTHOG_KEY`; host boş bırakılırsa `https://eu.i.posthog.com` kullanılır.
+
+### Retention (1./7./30. gün) raporu
+
+1. PostHog → **Product analytics** → **New insight** → **Retention**.
+2. *Cohortlu ilk olay*: `$pageview` (ya da yalnız oyuncular için `puzzle_start`). *Geri dönüş olayı*: `puzzle_start`.
+3. Periyot **Day**, aralık en az 30 gün; tablo D1, D7 ve D30 sütunlarını verir.
+4. Kanala göre kırmak için **Breakdown** → kişi özelliği `initial_utm_source` (TikTok / Instagram ayrımı burada görünür); kampanya için `initial_utm_campaign`.
+5. Kaydedip bir dashboard'a ekleyin.
+
+Bu metrik de tarayıcı bazlıdır: yalnız onay veren ziyaretçileri kapsar ve site verisini silen kullanıcı yeni kişi sayılır.

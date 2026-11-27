@@ -1,0 +1,50 @@
+.footer {
+  padding: var(--q-space-6) var(--q-space-4) var(--q-space-6);
+  font-family: var(--q-font-sans);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--q-space-2) var(--q-space-5);
+  max-width: var(--q-content-max);
+  margin: 0 auto;
+  font-size: 0.85rem;
+}
+
+.links a,
+.linkButton {
+  line-height: 1.5;
+  color: var(--q-color-ink-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.linkButton {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.links a:focus-visible,
+.linkButton:focus-visible {
+  outline: none;
+  border-radius: var(--q-radius-sm);
+  box-shadow: var(--q-shadow-focus);
+}
+
+/* Koyu arcade sayfalarında footer aynı zemini sürdürür (AccountControl ile aynı seçici). */
+:global(body:has([data-arcade-page])) .footer {
+  background: #061535;
+}
+
+:global(body:has([data-arcade-page])) .links a,
+:global(body:has([data-arcade-page])) .linkButton {
+  color: #c9def2;
+}

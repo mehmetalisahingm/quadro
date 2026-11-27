@@ -3,7 +3,31 @@
 import type { GameSnapshot } from "@/features/game/contracts";
 import { readStoredSession } from "@/lib/auth/client";
 import type { SpecialMode } from "@/features/game/specialEnergy";
-import { getOrCreateVisitorId } from "@/lib/analytics/remote";
+import { makeVisitorId, UUID_V4, VISITOR_ID_STORAGE_KEY } from "@/lib/analytics/remote";
+
+/**
+ * Hesaba özel mod sonucu kaydı için cihaz kanıtı. Analitik kimliğinden ayrıdır: yalnız
+ * giriş yapmış kullanıcının kendi istediği kayıt için kullanılır (zorunlu kategori),
+ * ölçüme gönderilmez ve analitik onayı reddedilince silinmez.
+ */
+export const RESULT_DEVICE_STORAGE_KEY = "quadro:result-device:v1";
+
+export function getOrCreateResultDeviceId(): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const storage = window.localStorage;
+    const existing = storage.getItem(RESULT_DEVICE_STORAGE_KEY);
+    if (existing && UUID_V4.test(existing)) return existing;
+    // Eski sürümde aynı amaçla ziyaretçi kimliği kullanılıyordu; bugünkü kayıtlar kopmasın.
+    const legacy = storage.getItem(VISITOR_ID_STORAGE_KEY);
+    const created = legacy && UUID_V4.test(legacy) ? legacy : makeVisitorId();
+    if (!created) return null;
+    storage.setItem(RESULT_DEVICE_STORAGE_KEY, created);
+    return created;
+  } catch {
+    return null;
+  }
+}
 
 export function persistSignedInGameResult(snapshot: GameSnapshot): void {
   if (snapshot.status === "playing") return;
@@ -11,7 +35,9 @@ export function persistSignedInGameResult(snapshot: GameSnapshot): void {
 }
 
 export function persistSignedInSpecialResult(snapshot: GameSnapshot, special: { mode: SpecialMode; wagers?: number[]; bombId?: string | null }): void {
-  const visitorId = getOrCreateVisitorId();
+  // Giriş yoksa cihaza kimlik yazmanın gereği de yoktur.
+  if (typeof window === "undefined" || !readStoredSession()) return;
+  const visitorId = getOrCreateResultDeviceId();
   if (visitorId) sendResult(snapshot, { ...special, visitorId });
 }
 

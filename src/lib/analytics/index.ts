@@ -1,4 +1,7 @@
-import { forwardAnalyticsEvent } from "./remote";
+import { hasAnalyticsConsent } from "@/lib/consent";
+
+import { captureLandingCampaign } from "./campaign";
+import { forwardAnalyticsEvent, VISITOR_ID_STORAGE_KEY } from "./remote";
 
 export const ANALYTICS_STORAGE_KEY = "quadro:analytics:v1";
 export const ANALYTICS_DEDUPE_KEY = "quadro:analytics:dedupe:v1";
@@ -166,8 +169,9 @@ export function createAnalyticsClient({
   return { readEvents, track, trackOnce };
 }
 
+/** Analitik onayı yoksa hiçbir ölçüm verisi cihaza yazılmaz ve sunucuya gitmez. */
 function browserStorage(): AnalyticsStorage | null {
-  if (typeof window === "undefined") return null;
+  if (typeof window === "undefined" || !hasAnalyticsConsent()) return null;
   try {
     const storage = window.localStorage;
     const probe = "quadro:analytics:probe";
@@ -230,22 +234,9 @@ export function calendarDayOffset(fromDay: string, toDay: string): number {
   return Math.round((to - from) / 86_400_000);
 }
 
-/** Marketing params are optional and restricted to short anonymous channel labels. */
+/** Kampanya etiketleri giriş anında bellekte yakalanır (bkz. campaign.ts). */
 function browserCampaignAttribution(): Pick<AnalyticsEventProperties["retention_visit"], "utmSource" | "utmMedium" | "utmCampaign"> {
-  if (typeof window === "undefined") return {};
-  const params = new URLSearchParams(window.location.search);
-  const safe = (key: string): string | undefined => {
-    const value = params.get(key);
-    return value && /^[a-z0-9_-]{1,40}$/i.test(value) ? value : undefined;
-  };
-  const utmSource = safe("utm_source");
-  const utmMedium = safe("utm_medium");
-  const utmCampaign = safe("utm_campaign");
-  return {
-    ...(utmSource ? { utmSource } : {}),
-    ...(utmMedium ? { utmMedium } : {}),
-    ...(utmCampaign ? { utmCampaign } : {}),
-  };
+  return captureLandingCampaign();
 }
 
 export function recordBrowserRetentionVisit(now = new Date()): void {
@@ -270,5 +261,22 @@ export function recordBrowserRetentionVisit(now = new Date()): void {
     );
   } catch {
     // Gizli sekme, kota veya depolama engeli ölçümü devre dışı bırakabilir.
+  }
+}
+
+/** Onay reddedildiğinde ya da geri alındığında yerel ölçüm kayıtlarını siler. */
+export const ANALYTICS_LOCAL_KEYS = [
+  ANALYTICS_STORAGE_KEY,
+  ANALYTICS_DEDUPE_KEY,
+  ANALYTICS_COHORT_KEY,
+  VISITOR_ID_STORAGE_KEY,
+] as const;
+
+export function clearAnalyticsStorage(): void {
+  if (typeof window === "undefined") return;
+  try {
+    for (const key of ANALYTICS_LOCAL_KEYS) window.localStorage.removeItem(key);
+  } catch {
+    // Depolama erişilemiyorsa silinecek kayıt da yoktur.
   }
 }

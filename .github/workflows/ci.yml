@@ -54,7 +54,12 @@ jobs:
       - name: İçerik doğrulaması (bulmaca şeması)
         run: npm run validate:content
 
+      # Sahte PostHog değerleri yalnız ölçüm yolunun derlenmesi içindir. Alan adı gerçek
+      # değildir; onay testleri (tests/playwright/onay.spec.ts) tüm istekleri yakalar.
       - name: Üretim derlemesi (next build)
+        env:
+          NEXT_PUBLIC_POSTHOG_KEY: phc_playwright_placeholder
+          NEXT_PUBLIC_POSTHOG_HOST: https://posthog.quadro.test
         run: npm run build
 
       # Q19 kabul ölçütü: gelecek gün dosyaları ve editoryal kayıtlar istemci paketinde

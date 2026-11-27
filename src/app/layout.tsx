@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from "next";
 
 import { AccountControl } from "@/components/account/AccountControl";
+import { ConsentBanner } from "@/components/consent/ConsentBanner";
 import { SiteEntrance } from "@/components/game/SiteEntrance";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { resolveAdSlot } from "@/lib/ads/config";
 import { AnalyticsRuntime } from "@/lib/analytics/AnalyticsRuntime";
 import {
   APP_NAME,
@@ -90,13 +93,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Reklam kategorisi yalnız reklam gerçekten açılabilecekse onay şeridinde sorulur.
+  const adsAvailable = resolveAdSlot({
+    environment: process.env.VERCEL_ENV,
+    enabled: process.env.QUADRO_ADSENSE_ENABLED,
+    cmpReady: process.env.QUADRO_ADSENSE_CMP_READY,
+    slot: process.env.QUADRO_ADSENSE_GUIDE_SLOT,
+  }) !== null;
+
   return (
     <html lang="tr">
       <body>
+        <ConsentBanner adsAvailable={adsAvailable} />
         <AnalyticsRuntime />
         <SiteEntrance>
           <AccountControl />
           {children}
+          <SiteFooter />
         </SiteEntrance>
       </body>
     </html>
