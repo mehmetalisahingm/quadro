@@ -6,6 +6,8 @@ import {
   type Puzzle,
 } from "@/features/game/contracts";
 import { trackBrowserEvent, trackBrowserEventOnce } from "@/lib/analytics";
+import { captureProductEvent } from "@/lib/analytics/posthog";
+import { puzzleContext } from "@/lib/analytics/product";
 import type { SnapshotStorage } from "@/lib/persistence";
 import { persistSignedInGameResult } from "@/lib/results/remote";
 
@@ -23,13 +25,15 @@ export type UsePersistentGameOptions = {
   dayKey?: string;
   storage?: SnapshotStorage;
   unlimitedMistakes?: boolean;
+  /** Bitişte ölçüme eklenecek kullanılan ipucu sayısı (yalnız sayı; hangi grup olduğu değil). */
+  hintsUsedRef?: { readonly current: number };
 };
 
 export function usePersistentGame(
   puzzle: Puzzle,
   options: UsePersistentGameOptions = {},
 ): PersistentGame {
-  const { dayKey, storage, unlimitedMistakes = false } = options;
+  const { dayKey, storage, unlimitedMistakes = false, hintsUsedRef } = options;
 
   const store = useMemo(
     () => createGameStore({ puzzle, dayKey, storage, unlimitedMistakes }),
@@ -60,7 +64,12 @@ export function usePersistentGame(
       dayKey: state.snapshot.dayKey,
       resumed: state.snapshot.attempts.length > 0,
     });
+    captureProductEvent("puzzle_start", {
+      ...puzzleContext(puzzle),
+      resumed: state.snapshot.attempts.length > 0,
+    });
   }, [
+    puzzle,
     puzzle.id,
     puzzle.revision,
     state.restore.status,
@@ -125,6 +134,16 @@ export function usePersistentGame(
             },
           );
 
+          if (!unlimitedMistakes) {
+            captureProductEvent("puzzle_complete", {
+              ...puzzleContext(puzzle),
+              result: result.snapshot.status,
+              mistakes: GAME_CONSTANTS.maxMistakes - result.snapshot.mistakesRemaining,
+              duration_s: Math.round(result.snapshot.activeSeconds),
+              hints_used: hintsUsedRef?.current ?? 0,
+            });
+          }
+
           // Adminın sınırsız-hak test oyunları gerçek oyuncu başarı metriklerini kirletmesin.
           if (!unlimitedMistakes) persistSignedInGameResult(result.snapshot);
         }
@@ -132,7 +151,7 @@ export function usePersistentGame(
         return result;
       },
     }),
-    [state.snapshot, store, unlimitedMistakes],
+    [state.snapshot, store, unlimitedMistakes, puzzle, hintsUsedRef],
   );
 
   return { puzzle, controller, restore: state.restore };

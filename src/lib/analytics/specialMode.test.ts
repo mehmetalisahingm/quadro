@@ -4,8 +4,12 @@ import { standardPuzzle } from "@/features/game/fixtures";
 import { createInitialSnapshot } from "@/features/game/engine";
 import { ANALYTICS_STORAGE_KEY } from "./index";
 import { specialFinish, specialProgress, specialStart } from "./specialMode";
+import { saveConsent } from "@/lib/consent";
 
-beforeEach(() => localStorage.clear());
+beforeEach(() => {
+  localStorage.clear();
+  saveConsent({ analytics: true, ads: false });
+});
 describe("special mode telemetry", () => {
   it("deduplicates starts and finishes, keeps modes separate and records effective bomb mistakes", () => {
     const snapshot = { ...createInitialSnapshot(standardPuzzle, { random: () => .5 }), attempts: [{ id:"a1", wordIds:standardPuzzle.groups[0].words.map(w => w.id) as [string,string,string,string], verdict:"wrong" as const }] };

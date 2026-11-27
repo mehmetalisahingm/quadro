@@ -1,13 +1,16 @@
 "use client";
 
 import Script from "next/script";
-import { useRef } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import { ADSENSE_CLIENT } from "@/lib/ads/config";
+import { consentSnapshot, serverConsentSnapshot, subscribeConsent } from "@/lib/consent";
 import styles from "./DisplayAd.module.css";
 
 export function DisplayAd({ slot }: { slot: string }) {
   const unit = useRef<HTMLModElement>(null);
   const requested = useRef(false);
+  // Reklam onayı (consentSnapshot ikinci hanesi) yoksa AdSense script'i hiç eklenmez.
+  const consent = useSyncExternalStore(subscribeConsent, consentSnapshot, serverConsentSnapshot);
 
   function requestAd() {
     if (requested.current || !unit.current || window.location.hostname !== "playquadro.com.tr") return;
@@ -19,6 +22,8 @@ export function DisplayAd({ slot }: { slot: string }) {
       // Blocked or unavailable advertisements must never interrupt the guide.
     }
   }
+
+  if (consent.length !== 2 || consent[1] !== "1") return null;
 
   return <aside className={styles.container} aria-label="Reklam">
     <span className={styles.label}>Reklam</span>

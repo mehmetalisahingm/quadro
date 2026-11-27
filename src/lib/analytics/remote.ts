@@ -1,10 +1,14 @@
 "use client";
 
+import { hasAnalyticsConsent } from "@/lib/consent";
+
 import type { AnalyticsEvent } from "./index";
 
 export const VISITOR_ID_STORAGE_KEY = "quadro:visitor:v1";
 
-function makeVisitorId(): string | null {
+export const UUID_V4 = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+export function makeVisitorId(): string | null {
   if (typeof crypto === "undefined") return null;
 
   if (typeof crypto.randomUUID === "function") {
@@ -23,11 +27,12 @@ function makeVisitorId(): string | null {
 }
 
 export function getOrCreateVisitorId(): string | null {
-  if (typeof window === "undefined") return null;
+  // Kalıcı ziyaretçi kimliği yalnız analitik onayından sonra oluşturulur.
+  if (typeof window === "undefined" || !hasAnalyticsConsent()) return null;
 
   try {
     const existing = window.localStorage.getItem(VISITOR_ID_STORAGE_KEY);
-    if (existing && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(existing)) return existing;
+    if (existing && UUID_V4.test(existing)) return existing;
 
     const created = makeVisitorId();
     if (!created) return null;
@@ -40,7 +45,7 @@ export function getOrCreateVisitorId(): string | null {
 }
 
 export function forwardAnalyticsEvent(event: AnalyticsEvent): void {
-  if (process.env.NODE_ENV === "test" || typeof window === "undefined") return;
+  if (process.env.NODE_ENV === "test" || typeof window === "undefined" || !hasAnalyticsConsent()) return;
 
   const visitorId = getOrCreateVisitorId();
   if (!visitorId || typeof window.fetch !== "function") return;

@@ -1,0 +1,180 @@
+/* Çerez şeridi: tokens.css ile uyumlu, sayfa akışında en üstte, kompakt. */
+.banner {
+  position: relative;
+  z-index: 1;
+  padding: var(--q-space-3) var(--q-space-4);
+  background: var(--q-color-surface-raised);
+  border-bottom: 1px solid var(--q-color-border);
+  box-shadow: var(--q-shadow-card);
+  color: var(--q-color-ink);
+  font-family: var(--q-font-sans);
+}
+
+/* Yalnız footer'dan bilerek açıldığında: kullanıcının bulunduğu yerde, alttan sabit. */
+.floating {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 60;
+  padding-bottom: calc(var(--q-space-3) + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--q-color-border);
+  border-bottom: 0;
+  box-shadow: 0 -6px 18px rgb(32 36 45 / 0.12);
+}
+
+/* Alttaki panelde sağ üstte "Giriş Yap" düğmesi yoktur. */
+.floating .title {
+  padding-right: 0;
+  min-height: 0;
+}
+
+.inner {
+  display: grid;
+  gap: var(--q-space-3);
+  width: 100%;
+  max-width: var(--q-content-max);
+  margin: 0 auto;
+}
+
+/* Başlık satırı, sağ üstte sabit duran "Giriş Yap" düğmesine yer bırakır. */
+.title {
+  display: flex;
+  align-items: center;
+  min-height: var(--q-touch-target);
+  padding-right: 140px;
+  margin: 0 0 var(--q-space-1);
+  font-size: 0.95rem;
+  font-weight: var(--q-font-weight-bold);
+}
+
+.title:focus {
+  outline: none;
+}
+
+.text {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--q-color-ink-muted);
+}
+
+.text a {
+  color: var(--q-color-focus);
+  font-weight: var(--q-font-weight-semibold);
+}
+
+.choices {
+  display: grid;
+  gap: var(--q-space-2);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.choice {
+  display: flex;
+  gap: var(--q-space-2);
+  align-items: flex-start;
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.choice input {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--q-color-focus);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--q-space-2);
+}
+
+/* Reddet ve Kabul et bilinçli olarak aynı stile sahiptir: biri diğerinden baskın değildir. */
+.button,
+.secondary {
+  min-height: var(--q-touch-target);
+  padding: 0 var(--q-space-4);
+  border-radius: var(--q-radius-pill);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: var(--q-font-weight-semibold);
+  cursor: pointer;
+}
+
+.button {
+  border: 1px solid var(--q-color-ink);
+  background: var(--q-color-ink);
+  color: var(--q-color-surface-raised);
+}
+
+.secondary {
+  grid-column: 1 / -1;
+  min-height: 36px;
+  border: 0;
+  background: transparent;
+  color: var(--q-color-ink-muted);
+  text-decoration: underline;
+}
+
+.button:focus-visible,
+.secondary:focus-visible,
+.choice input:focus-visible {
+  outline: none;
+  box-shadow: var(--q-shadow-focus);
+}
+
+/* Dar telefonlarda şerit kısa kalsın: tahta ilk ekranda görünsün. */
+@media (max-width: 380px) {
+  .banner {
+    padding-block: var(--q-space-2);
+  }
+
+  .text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .secondary {
+    min-height: 32px;
+  }
+}
+
+@media (min-width: 720px) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  /* Sağ üstte sabit "Giriş Yap" düğmesine yer: düğmeler onun altında kalmaz. */
+  .banner:not(.floating) .inner {
+    padding-right: 140px;
+  }
+
+  .banner:not(.floating) .title {
+    padding-right: 0;
+  }
+
+  .choices {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .actions {
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+  }
+
+  .secondary {
+    grid-column: auto;
+  }
+}
