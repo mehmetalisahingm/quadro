@@ -1,7 +1,14 @@
-/** Motorun sürümü: snapshot ve replay kayıtları bu değeri taşır. */
-export const ENGINE_VERSION = "0.0.0";
-
 export { BOARD_SIZE, cellAt, countFilled, createBoard, isInside } from "./board";
 export type { Board, Cell, Letter, Position } from "./board";
-export { createRandom, seedFromString } from "./random";
+export { DEFAULT_CONFIG, resolveConfig } from "./config";
+export type { Direction, EngineConfig } from "./config";
+export { applyMove, canPlace, createGame, ENGINE_VERSION, hasAnyLegalPlacement, legalPlacements } from "./game";
+export type { CreateGameOptions, GameState, Move, MoveOutcome, MoveResult } from "./game";
+export { makePiece, naivePieceSource, SHAPE_IDS, SHAPES, TURKISH_LETTER_WEIGHTS } from "./pieces";
+export type { Piece, PieceCell, PieceSource, PieceSourceContext, ShapeId } from "./pieces";
+export { createRandom, randomStep, seedFromString } from "./random";
 export type { Random } from "./random";
+export { parseState, replay, serializeState } from "./replay";
+export type { ReplayLog, ReplayOutcome } from "./replay";
+export { clearedCells, findWords, scoreWords } from "./words";
+export type { Dictionary, FoundWord } from "./words";
