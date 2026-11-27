@@ -14,7 +14,7 @@ export function EnglishPractice() {
   const [mistakes,setMistakes] = useState(0);
   const [message,setMessage] = useState("");
   const groups = boards[board]!;
-  const words = order.map(i => groups.flatMap(g => [...g.words])[i]!);
+  const words = order.map(i => groups.flatMap((g): string[] => [...g.words])[i]!);
   const done = solved.length === 4 || mistakes >= 4;
   function reset(next: number) { setBoard(next); setSelected([]); setSolved([]); setMistakes(0); setMessage(""); }
   function submit() {
