@@ -29,6 +29,23 @@ npm ci
 npm test
 ```
 
+## Kayıt (#208)
+
+- Her hamle anında cihaza yazılır; uygulama arka plana geçince bir kez daha yazılır. Süreç
+  öldürülse ya da telefon yeniden başlasa bile açılışta son hamleden devam edilir.
+- Depo: `expo-sqlite` anahtar-değer tablosu. Her yazma kendi SQLite işleminde yapılır, yarım
+  değer kalmaz. Web önizlemesinde localStorage.
+- Kayıtlar ayrı tutulur ve her okumada doğrulanır:
+  - `quadro-words:game:v1`: motorun sürümlü snapshot'ı (`parseState` ile doğrulanır),
+  - `…:game:v1:backup`: bir önceki iyi kayıt; ana kayıt bozulursa oradan devam edilir,
+  - `quadro-words:game-meta:v1`: oyunun en uzun kelimesi ve kurtarma kullanıldı mı,
+  - `quadro-words:records:v1`: desteksiz ve destekli rekor ayrı, oyun ve kelime sayısı,
+  - `quadro-words:settings:v1`: titreşim ve öğretici.
+- Motor sürümü değişirse eski oyun devam ettirilmez (rekorlar korunur).
+- Ayarlar → "Kayıtlı verileri sil" (onay adımlı) bu cihazdaki tüm Quadro Words verisini siler.
+- Kayıt mantığı `src/persistence/persistence.ts` içinde ve platformdan bağımsız;
+  `npm test` bellek içi depoyla test eder (yazma sırasında süreç öldürülmesi dahil).
+
 ## Web önizlemesi (yalnız geliştirme)
 
 Cihaz olmadan arayüzü görmek için: `npm run web`. Gesture Handler ve Reanimated web'de de çalışır,
@@ -69,7 +86,7 @@ Expo Go yerine **development build** ile çalışır.
 
 ## Sürüm notları
 
-- `expo` 58.0.25 ve `expo-dev-client` 58.0.20'de sabit: projede iki haftadan yeni paket
+- `expo` 58.0.25, `expo-dev-client` 58.0.20 ve `expo-sqlite` 58.0.17 sabit: projede iki haftadan yeni paket
   sürümü kullanılmaz. `expo install --check` daha yeni bir yama önerirse bu kural gereği
   `package.json` içindeki `expo.install.exclude` ile atlanır; yükseltme ayrı bir PR'da yapılır.
 - `@expo/fingerprint`'in kullandığı minimatch için `overrides` ile 11.0.1 (kök projeyle aynı
