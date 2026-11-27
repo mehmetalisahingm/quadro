@@ -1,0 +1,68 @@
+# Quadro Words — Android uygulaması
+
+Epic #202 · iskelet #203. Expo SDK 58 (React Native 0.88) + TypeScript. Oyun kuralları
+`packages/words-engine` içindeki platformdan bağımsız motorda; bu klasör yalnız mobil arayüzdür.
+
+Bu ekran bir geliştirme iskeletidir: ortak motorun mobilde çalıştığını gösterir ve yayına çıkmaz.
+Oyun ekranı #207'de, tasarım sistemi #214'te gelir.
+
+## Kurulum
+
+Kök web projesinden bağımsızdır; kendi `package.json` ve kilit dosyası vardır.
+
+```bash
+cd apps/mobile
+npm ci
+npm run typecheck
+npm run lint
+npm run doctor
+```
+
+Motor testleri:
+
+```bash
+cd packages/words-engine
+npm ci
+npm test
+```
+
+## Cihazda çalıştırma
+
+Uygulama ileride reklam (AdMob, #209) ve Play Billing (#220) gibi yerel modüller kullanacağı için
+Expo Go yerine **development build** ile çalışır.
+
+- **Yerel derleme** (Android Studio ve SDK kurulu olmalı): `npm run android`. `android/` klasörü
+  üretilen çıktıdır ve git'e girmez (Continuous Native Generation).
+- **EAS derlemesi:** `eas build --profile development --platform android`. Çıkan APK cihaza
+  kurulur, ardından `npm start` ile geliştirme sunucusuna bağlanır.
+
+## Derleme profilleri (`eas.json`)
+
+| Profil | Çıktı | Amaç |
+|---|---|---|
+| `development` | APK, dev client | Geliştirme ve cihaz testi |
+| `preview` | APK | İç test dağıtımı |
+| `production` | AAB | Google Play (yalnız kabul kapılarından sonra, #212) |
+
+## Android hedefi
+
+- `targetSdkVersion` ve `compileSdkVersion` 36 (Android 16). Google Play, 31 Ağustos 2026'dan
+  itibaren yeni uygulama ve güncellemelerde API 36 istiyor:
+  [Google Play hedef API şartı](https://support.google.com/googleplay/android-developer/answer/11926878).
+- Uygulama kimliği önerisi `tr.com.playquadro.words`. Mağazaya kaydetmeden önce sahip onayı
+  gerekir; Play Console'a bir kez kaydedilen kimlik değiştirilemez.
+
+## İmzalama ve gizli bilgiler
+
+- Keystore, servis hesabı JSON'u ve Play/EAS kimlik bilgileri **asla** repoya girmez; kökteki
+  `.gitignore` bu dosya türlerini dışarıda bırakır.
+- Üretim imzası için EAS'ın yönettiği kimlik bilgileri ya da repo dışında saklanan bir keystore
+  kullanılır. Karar ve erişim sahibe aittir (#211, #222).
+
+## Sürüm notları
+
+- `expo` 58.0.25 ve `expo-dev-client` 58.0.20'de sabit: projede iki haftadan yeni paket
+  sürümü kullanılmaz. `expo install --check` daha yeni bir yama önerirse bu kural gereği
+  `package.json` içindeki `expo.install.exclude` ile atlanır; yükseltme ayrı bir PR'da yapılır.
+- `@expo/fingerprint`'in kullandığı minimatch için `overrides` ile 11.0.1 (kök projeyle aynı
+  güvenlik düzeltmesi).

@@ -1,0 +1,44 @@
+{
+  "name": "quadro-words",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.ts",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "doctor": "npx --yes expo-doctor@1.21.8",
+    "bundle:android": "expo export --platform android --output-dir dist"
+  },
+  "dependencies": {
+    "@quadro/words-engine": "file:../../packages/words-engine",
+    "expo": "58.0.25",
+    "expo-build-properties": "58.0.12",
+    "expo-dev-client": "58.0.20",
+    "expo-status-bar": "58.0.5",
+    "react": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-safe-area-context": "5.11.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "eslint": "9.39.1",
+    "eslint-config-expo": "58.0.4",
+    "typescript": "6.0.3"
+  },
+  "overrides": {
+    "minimatch": "11.0.1"
+  },
+  "expo": {
+    "install": {
+      "exclude": [
+        "expo",
+        "expo-dev-client"
+      ]
+    }
+  }
+}

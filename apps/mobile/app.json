@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Quadro Words",
+    "slug": "quadro-words",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#f6f3ee",
+    "android": {
+      "package": "tr.com.playquadro.words"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36
+          }
+        }
+      ]
+    ]
+  }
+}

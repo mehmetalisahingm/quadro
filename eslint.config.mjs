@@ -14,5 +14,8 @@ export default defineConfig([
     "playwright-report/**",
     "test-results/**",
     "next-env.d.ts",
+    // Mobil uygulama ve ortak motorun kendi lint/typecheck adımları var (mobile.yml).
+    "apps/**",
+    "packages/**",
   ]),
 ]);

@@ -31,5 +31,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "tests/playwright"]
+  // Mobil uygulama ve ortak motor kendi tsconfig'leriyle denetlenir (.github/workflows/mobile.yml).
+  "exclude": ["node_modules", "tests/playwright", "apps", "packages"]
 }

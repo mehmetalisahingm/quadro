@@ -1,0 +1,95 @@
+name: Mobile
+
+# Quadro Words (#202): ortak motor ve Expo uygulaması. Web CI'dan ayrıdır ve yalnız
+# mobil dosyalar değişince koşar; kök Next projesinin kurulumuna ve derlemesine dokunmaz.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/mobile/**"
+      - "packages/words-engine/**"
+      - ".github/workflows/mobile.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/mobile/**"
+      - "packages/words-engine/**"
+      - ".github/workflows/mobile.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mobile-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  engine:
+    name: Motor (typecheck + test)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: packages/words-engine
+    steps:
+      - name: Depoyu çek
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Node kurulumu
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: packages/words-engine/package-lock.json
+
+      - name: Bağımlılıklar
+        run: npm ci
+
+      - name: Tip denetimi
+        run: npm run typecheck
+
+      - name: Birim testleri
+        run: npm test
+
+  app:
+    name: Uygulama (typecheck, lint, doctor, Android bundle)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - name: Depoyu çek
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Node kurulumu
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: apps/mobile/package-lock.json
+
+      - name: Bağımlılıklar
+        run: npm ci
+
+      - name: Bağımlılık güvenlik denetimi (üretim)
+        run: npm audit --omit=dev --audit-level=moderate
+
+      - name: Tip denetimi
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      # Expo SDK sürüm uyumu ve yapılandırma denetimi. expo ve expo-dev-client, iki haftalık
+      # sürüm bekleme kuralı gereği package.json'da expo.install.exclude ile hariç tutulur.
+      - name: Expo doctor
+        run: npm run doctor
+
+      # Yerel derleme olmadan JS paketinin (ortak motor dahil) Android için çıktığını doğrular.
+      - name: Android JS paketi
+        run: npm run bundle:android

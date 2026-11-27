@@ -1,0 +1,21 @@
+{
+  "name": "@quadro/words-engine",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Quadro Words için platformdan bağımsız, deterministik oyun motoru.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "4.1.12"
+  }
+}
