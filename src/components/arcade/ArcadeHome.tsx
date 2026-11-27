@@ -75,6 +75,7 @@ export function ArcadeHome({ state, puzzleNumber, dateLabel, progressLabel, next
       </div>
       <Link href="/nasil-oynanir">Kuralları ve ipuçlarını keşfet <span aria-hidden="true">→</span></Link>
     </section>
+    <nav className={styles.more} aria-label="Site bilgileri"><Link href="/hakkimizda">Hakkımızda</Link><Link href="/gizlilik-politikasi">Gizlilik ve çerezler</Link><Link href="/iletisim">İletişim</Link></nav>
   </ArcadeShell>;
 }
 
