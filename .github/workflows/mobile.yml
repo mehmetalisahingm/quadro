@@ -85,6 +85,10 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      # Kayıt mantığı gibi React Native'e bağlı olmayan saf modüller.
+      - name: Birim testleri
+        run: npm test
+
       # Expo SDK sürüm uyumu ve yapılandırma denetimi. expo ve expo-dev-client, iki haftalık
       # sürüm bekleme kuralı gereği package.json'da expo.install.exclude ile hariç tutulur.
       - name: Expo doctor

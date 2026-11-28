@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState, type ComponentRef } from "rea
 import {
   AccessibilityInfo,
   Pressable,
+  Share,
   StyleSheet,
   Text,
   View,
@@ -25,6 +26,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { scheduleOnRN } from "react-native-worklets";
 
 import { palette, type Palette } from "../theme";
+import { shareText } from "../persistence/persistence";
 import { describePiece, pieceSize, PieceView } from "./PieceView";
 import { useWordsGame } from "./useWordsGame";
 
@@ -55,7 +57,7 @@ function useLayout(boardSize: number) {
 export function GameScreen() {
   const colors = palette(useColorScheme());
   const reduceMotion = useReducedMotion();
-  const { state, best, lastMove, tryPlace, restart, canPlaceAt } = useWordsGame();
+  const { state, meta, best, records, settings, notice, lastMove, tryPlace, restart, updateSettings, eraseAll, canPlaceAt } = useWordsGame();
   const size = state.config.boardSize;
   const { cell, slot: slotSize, trayCell, trayGap } = useLayout(size);
   const step = cell + GAP;
@@ -63,8 +65,12 @@ export function GameScreen() {
   const [selected, setSelected] = useState<number | null>(null);
   const [hover, setHover] = useState<Hover>(null);
   const [dragSlot, setDragSlot] = useState<number | null>(null);
-  const [tutorial, setTutorial] = useState(true);
-  const [haptics, setHaptics] = useState(true);
+  const [panel, setPanel] = useState<"closed" | "open" | "confirm-new" | "confirm-erase">("closed");
+  const haptics = settings.haptics;
+  const tutorial = !settings.tutorialSeen;
+  const dismissTutorial = () => {
+    if (!settings.tutorialSeen) updateSettings({ tutorialSeen: true });
+  };
   const [flashDoneId, setFlashDoneId] = useState(0);
 
   // Sürükleme: önizlemenin sol üst köşesi (pencere koordinatı) UI thread'de tutulur.
@@ -105,7 +111,7 @@ export function GameScreen() {
     const result = tryPlace(slot, row, col);
     if (!result) return false;
     setSelected(null);
-    setTutorial(false);
+    dismissTutorial();
     buzz(result.words.length > 0 ? "clear" : "place");
     if (result.words.length > 0) {
       AccessibilityInfo.announceForAccessibility(`${result.words.map((w) => w.word).join(", ")} silindi, ${result.points} puan.`);
@@ -219,19 +225,18 @@ export function GameScreen() {
           ) : null}
         </View>
         <Pressable
-          onPress={() => setHaptics((value) => !value)}
-          accessibilityRole="switch"
-          accessibilityState={{ checked: haptics }}
-          accessibilityLabel="Titreşim"
+          onPress={() => setPanel((value) => (value === "closed" ? "open" : "closed"))}
+          accessibilityRole="button"
+          accessibilityState={{ expanded: panel !== "closed" }}
           style={[styles.toggle, { borderColor: colors.line }]}
           hitSlop={8}
         >
-          <Text style={[styles.small, { color: colors.ink }]}>Titreşim {haptics ? "açık" : "kapalı"}</Text>
+          <Text style={[styles.small, { color: colors.ink }]}>Ayarlar</Text>
         </Pressable>
       </View>
 
       <Text style={[styles.words, { color: colors.accent }]} accessibilityLiveRegion="polite">
-        {lastWords.length > 0 ? lastWords.map((w) => w.word).join(" · ") : " "}
+        {notice ?? (lastWords.length > 0 ? lastWords.map((w) => w.word).join(" · ") : " ")}
       </Text>
 
       <View ref={boardRef} onLayout={measureBoard} style={[styles.board, { gap: GAP }]} accessibilityLabel={`${size} satır ${size} sütunluk tahta`}>
@@ -302,27 +307,99 @@ export function GameScreen() {
         </Animated.View>
       ) : null}
 
-      {tutorial && !state.over ? (
+      {tutorial && !state.over && panel === "closed" ? (
         <View style={[styles.card, { backgroundColor: colors.surface, borderColor: colors.line }]} accessibilityLiveRegion="polite">
           <Text style={[styles.cardText, { color: colors.ink }]}>
             Bir parçayı sürükleyip tahtaya bırak. Yan yana ya da alt alta 4 harflik bir kelime kurunca kelime silinir. Dokunarak da
             seçip yerleştirebilirsin.
           </Text>
-          <Pressable onPress={() => setTutorial(false)} accessibilityRole="button" style={[styles.button, { backgroundColor: colors.ink }]}>
+          <Pressable onPress={dismissTutorial} accessibilityRole="button" style={[styles.button, { backgroundColor: colors.ink }]}>
             <Text style={[styles.buttonText, { color: colors.canvas }]}>Anladım</Text>
           </Pressable>
         </View>
       ) : null}
 
-      {state.over ? (
+      {panel !== "closed" ? (
+        <View style={[styles.card, { backgroundColor: colors.surface, borderColor: colors.line }]} accessibilityViewIsModal>
+          {panel === "open" ? (
+            <>
+              <Text style={[styles.overTitle, { color: colors.ink }]}>Ayarlar</Text>
+              <Pressable
+                onPress={() => updateSettings({ haptics: !haptics })}
+                accessibilityRole="switch"
+                accessibilityState={{ checked: haptics }}
+                accessibilityLabel="Titreşim"
+                style={styles.settingRow}
+              >
+                <Text style={[styles.cardText, { color: colors.ink }]}>Titreşim</Text>
+                <Text style={[styles.cardText, { color: colors.accent, fontWeight: "700" }]}>{haptics ? "Açık" : "Kapalı"}</Text>
+              </Pressable>
+              <Text style={[styles.small, { color: colors.muted }]}>
+                Rekor {records.best} · {records.games} oyun · {records.words} kelime
+                {records.longestWord > 0 ? ` · en uzun ${records.longestWord} harf` : ""}
+              </Text>
+              <View style={styles.actions}>
+                <Pressable onPress={() => setPanel("confirm-new")} accessibilityRole="button" style={[styles.button, styles.outline, { borderColor: colors.ink }]}>
+                  <Text style={[styles.buttonText, { color: colors.ink }]}>Yeni oyun</Text>
+                </Pressable>
+                <Pressable onPress={() => setPanel("confirm-erase")} accessibilityRole="button" style={[styles.button, styles.outline, { borderColor: colors.ink }]}>
+                  <Text style={[styles.buttonText, { color: colors.ink }]}>Kayıtlı verileri sil</Text>
+                </Pressable>
+              </View>
+              <Pressable onPress={() => setPanel("closed")} accessibilityRole="button" style={[styles.button, { backgroundColor: colors.ink }]}>
+                <Text style={[styles.buttonText, { color: colors.canvas }]}>Kapat</Text>
+              </Pressable>
+            </>
+          ) : (
+            <>
+              <Text style={[styles.overTitle, { color: colors.ink }]}>{panel === "confirm-new" ? "Yeni oyun başlasın mı?" : "Veriler silinsin mi?"}</Text>
+              <Text style={[styles.cardText, { color: colors.muted }]}>
+                {panel === "confirm-new"
+                  ? `Bu oyun ${state.score} puanla bitirilecek ve skoru rekorlarına işlenecek.`
+                  : "Kayıtlı oyun, rekorlar, istatistikler ve ayarlar bu cihazdan silinecek. Bu işlem geri alınamaz."}
+              </Text>
+              <View style={styles.actions}>
+                <Pressable
+                  onPress={() => {
+                    if (panel === "confirm-new") restart();
+                    else eraseAll();
+                    setPanel("closed");
+                  }}
+                  accessibilityRole="button"
+                  style={[styles.button, { backgroundColor: colors.ink }]}
+                >
+                  <Text style={[styles.buttonText, { color: colors.canvas }]}>{panel === "confirm-new" ? "Yeni oyun" : "Sil"}</Text>
+                </Pressable>
+                <Pressable onPress={() => setPanel("open")} accessibilityRole="button" style={[styles.button, styles.outline, { borderColor: colors.ink }]}>
+                  <Text style={[styles.buttonText, { color: colors.ink }]}>Vazgeç</Text>
+                </Pressable>
+              </View>
+            </>
+          )}
+        </View>
+      ) : null}
+
+      {state.over && panel === "closed" ? (
         <View style={[styles.card, { backgroundColor: colors.surface, borderColor: colors.line }]} accessibilityViewIsModal>
           <Text style={[styles.overTitle, { color: colors.ink }]}>Oyun bitti</Text>
           <Text style={[styles.cardText, { color: colors.muted }]}>
             Hiçbir parça sığmıyor. Puan {state.score} · {state.wordCount} kelime · rekor {best}
+            {records.bestAssisted > 0 ? ` · destekli rekor ${records.bestAssisted}` : ""}
           </Text>
-          <Pressable onPress={restart} accessibilityRole="button" style={[styles.button, { backgroundColor: colors.ink }]}>
-            <Text style={[styles.buttonText, { color: colors.canvas }]}>Yeniden oyna</Text>
-          </Pressable>
+          <View style={styles.actions}>
+            <Pressable onPress={restart} accessibilityRole="button" style={[styles.button, { backgroundColor: colors.ink }]}>
+              <Text style={[styles.buttonText, { color: colors.canvas }]}>Yeniden oyna</Text>
+            </Pressable>
+            <Pressable
+              onPress={() => {
+                Share.share({ message: shareText(state.score, state.wordCount, meta.longestWord) }).catch(() => undefined);
+              }}
+              accessibilityRole="button"
+              style={[styles.button, styles.outline, { borderColor: colors.ink }]}
+            >
+              <Text style={[styles.buttonText, { color: colors.ink }]}>Sonucu paylaş</Text>
+            </Pressable>
+          </View>
         </View>
       ) : null}
     </SafeAreaView>
@@ -451,4 +528,7 @@ const styles = StyleSheet.create({
   overTitle: { fontSize: 22, fontWeight: "700" },
   button: { alignSelf: "flex-start", borderRadius: 999, paddingHorizontal: 18, minHeight: 44, justifyContent: "center" },
   buttonText: { fontSize: 15, fontWeight: "700" },
+  outline: { borderWidth: 1.5, backgroundColor: "transparent" },
+  actions: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
+  settingRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", minHeight: 44 },
 });
