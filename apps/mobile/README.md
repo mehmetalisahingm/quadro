@@ -3,8 +3,11 @@
 Epic #202 · iskelet #203. Expo SDK 58 (React Native 0.88) + TypeScript. Oyun kuralları
 `packages/words-engine` içindeki platformdan bağımsız motorda; bu klasör yalnız mobil arayüzdür.
 
-Bu ekran bir geliştirme iskeletidir: ortak motorun mobilde çalıştığını gösterir ve yayına çıkmaz.
-Oyun ekranı #207'de, tasarım sistemi #214'te gelir.
+Oyun ekranı (#207): 7×7 tahta, 3 parçalık tepsi, sürükle-bırak ve dokunarak yerleştirme. Tam
+tasarım sistemi ve diğer ekranlar #214'te gelir.
+
+> **Geçici sözlük:** `src/game/devDictionary.ts` yalnız ekranı denemek için elle yazılmış 248
+> kelimedir. Lisanslı sözlük #204'te gelir ve bunun yerini alır; bu liste yayına çıkmaz.
 
 ## Kurulum
 
@@ -25,6 +28,11 @@ cd packages/words-engine
 npm ci
 npm test
 ```
+
+## Web önizlemesi (yalnız geliştirme)
+
+Cihaz olmadan arayüzü görmek için: `npm run web`. Gesture Handler ve Reanimated web'de de çalışır,
+ama dokunma hissi, titreşim ve performans yalnız gerçek Android cihazda doğrulanır.
 
 ## Cihazda çalıştırma
 
