@@ -129,6 +129,12 @@
 /src/app/api/                   @Utkuuzun14
 
 # ---------------------------------------------------------------------------
+# Quadro Words mobil (#202): ortak motor Utku'da; uygulama ve arayüz ortak.
+# ---------------------------------------------------------------------------
+/packages/words-engine/         @Utkuuzun14
+/apps/mobile/                   @Utkuuzun14 @mehmetalisahingm
+
+# ---------------------------------------------------------------------------
 # Sahipliğin kendisi: en son satır, en özel kural
 # ---------------------------------------------------------------------------
 # Kod sahipliğini kimse tek taraflı değiştirmesin diye bu dosya ortaktır.
